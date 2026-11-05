@@ -7,8 +7,8 @@ Live site (after enabling GitHub Pages, see below): https://broth11.github.io/AP
 ## Publish with GitHub Pages
 
 1. On GitHub, open the repo, then **Settings > Pages**.
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Choose branch **main** and folder **/docs**, then **Save**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**. Do not use "Deploy from a branch": the private transcripts submodule makes branch builds fail.
+3. Every push to `main` that changes `docs/` runs `.github/workflows/pages.yml` and publishes the site. To publish by hand, open **Actions > Deploy site to GitHub Pages > Run workflow**.
 4. After a minute the site is live at the URL above.
 
 Only the `docs/` folder is published. Transcripts, notes, and the archive stay out of the site.
@@ -44,7 +44,7 @@ Then open http://localhost:8000.
 │   └── data/
 │       ├── lessons.json       all 58 videos: unit, topic, title, status
 │       └── lessons/23.json    content for one lesson (2.10 so far)
-├── transcripts/               raw captions for all 58 videos, plus the index
+├── transcripts/               private submodule: raw captions and the playlist index
 ├── notes/                     project notes, design decisions, transcript log
 └── archive/                   the original single-file build
 ```
@@ -59,9 +59,17 @@ Section types: `decision`, `procedure`, `explorer`, `desmos`, `wording`, `mcq`, 
 
 ## Transcripts
 
-`transcripts/` holds 58 raw, auto-generated caption files from Michael Porinchak's AP Statistics Complete Course playlist, collected 4 November 2026. They are uncorrected, so notation and names may contain caption errors. Filenames start with the playlist position and end with the YouTube video ID. `transcripts/playlist-index.csv` lists titles and links.
+`transcripts/` is a git submodule pointing at the private repo `broth11/AP-Statistics-Hub-transcripts`. The captions belong to the video's creator, so only the site's authors can read them. Public visitors see only the pointer.
 
-The captions belong to the video's creator. This repo is public, so they are public too. If you would rather not republish them, make the repo private (GitHub Pages on a private repo needs a paid plan) or move `transcripts/` out and keep it local.
+Authors with access fetch it with:
+
+```
+git clone --recurse-submodules https://github.com/broth11/AP-Statistics-Hub.git
+# or, in an existing clone:
+git submodule update --init
+```
+
+It holds 58 raw, auto-generated caption files from Michael Porinchak's AP Statistics Complete Course playlist, collected 4 November 2026, plus `playlist-index.csv` and `playlist-index.json`. They are uncorrected, so notation and names may contain caption errors.
 
 ## Open items
 
