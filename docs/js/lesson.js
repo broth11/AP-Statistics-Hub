@@ -1,4 +1,5 @@
 // Lesson page: one template that renders any lesson from data/lessons/<n>.json.
+// Every section module exports render(sec, ctx), optional renderSide(sec, ctx), and mount(el, sec, ctx).
 import './tex-text.js';
 import { esc, tex, fmtTime, getJSON, $, $$ } from './util.js';
 import { renderTopbar } from './shell.js';
@@ -23,26 +24,30 @@ function scrollToId(id) {
   window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - hh + (id === 's-video' ? 14 : 0), behavior: 'smooth' });
 }
 
-function sectionHtml(sec, isLast) {
+function notesHtml(sec) {
+  return (sec.notes || []).map((n) => `<div class="callout"><b>${esc(n.label || 'Note.')}</b> ${tex(n.text)}</div>`).join('');
+}
+
+function sectionHtml(sec, isLast, ctx) {
   const mod = TYPES[sec.type];
   const header = `
     <button class="sec-toggle" data-toggle="${esc(sec.id)}" aria-expanded="false">
       <div class="kicker">${esc(sec.kicker)}</div>
       <h2>${esc(sec.title)} <span class="mark">+</span></h2>
     </button>`;
-  const body = `<div class="${STACKED.has(sec.type) ? '' : 'sec-body'}" data-body hidden>${mod.render(sec)}</div>`;
+  const body = `<div class="${STACKED.has(sec.type) ? '' : 'sec-body'}" data-body hidden>${mod.render(sec, ctx)}${notesHtml(sec)}</div>`;
   const classes = `sec${TIGHT.has(sec.type) ? ' sec--tight' : ''}${isLast ? ' sec--last' : ''}`;
   if (STACKED.has(sec.type)) {
     return `<section id="s-${esc(sec.id)}" class="${classes}">${header}${body}</section>`;
   }
-  const side = mod.renderSide ? mod.renderSide(sec) : '';
+  const side = mod.renderSide ? mod.renderSide(sec, ctx) : '';
   return `<section id="s-${esc(sec.id)}" class="${classes}"><div class="sec-grid"><div class="sec-side">${header}${side}</div>${body}</div></section>`;
 }
 
-function lessonHtml(L) {
+function lessonHtml(L, ctx) {
   const moments = L.moments.map((m) => `
     <button class="moment" data-seek="${m.t}">
-      <span class="time">${fmtTime(m.t)}</span>
+      <span class="time">${fmtTime(m.t)}${m.verified === false ? '<span class="unverified">unverified</span>' : ''}</span>
       <span class="body">
         <span class="eyebrow">${esc(m.type)}</span>
         <span class="mtitle">${tex(m.title)}</span>
@@ -52,10 +57,11 @@ function lessonHtml(L) {
   const yt = `https://www.youtube.com/embed/${L.videoId}?enablejsapi=1&rel=0&modestbranding=1`;
   return `
     <div class="lesson">
+      ${L.review && L.review.status !== 'approved' ? '<div class="draft-banner"><b>Draft.</b> This page has not been reviewed yet. Timestamps and wording may change.</div>' : ''}
       <a class="link-btn" href="index.html#unit-${L.unit}">All lessons</a>
       <div class="lesson-head">
         <div>
-          <div class="kicker">Unit ${L.unit} · Topic ${esc(L.topic)}</div>
+          <div class="kicker">${esc(ctx.unitLabel)}${L.topic ? ' · Topic ' + esc(L.topic) : ''}</div>
           <h1>${esc(L.title)}</h1>
         </div>
         <div class="intro">${tex(L.intro)}</div>
@@ -73,18 +79,18 @@ function lessonHtml(L) {
           <div class="moments-box">${moments}</div>
         </div>
       </div>
-      ${L.sections.map((s, i) => sectionHtml(s, i === L.sections.length - 1)).join('')}
-      <div class="page-foot">${esc(L.footer)}</div>
+      ${L.sections.map((s, i) => sectionHtml(s, i === L.sections.length - 1, ctx)).join('')}
+      ${L.footer ? `<div class="page-foot">${esc(L.footer)}</div>` : ''}
     </div>`;
 }
 
-function wire(L) {
+function wire(L, ctx) {
   const mounted = {};
   const open = {};
 
   L.sections.forEach((sec) => {
     const el = document.getElementById('s-' + sec.id);
-    mounted[sec.id] = TYPES[sec.type].mount($('[data-body]', el), sec) || {};
+    mounted[sec.id] = TYPES[sec.type].mount($('[data-body]', el), sec, ctx) || {};
     open[sec.id] = false;
   });
 
@@ -132,22 +138,35 @@ function wire(L) {
   });
 }
 
+async function loadExplorers(L) {
+  const names = [...new Set(L.sections.filter((s) => s.type === 'explorer').map((s) => s.explorer))];
+  const out = {};
+  for (const name of names) {
+    if (!/^[a-z0-9-]+$/.test(name || '')) throw new Error(`Bad explorer name "${name}"`);
+    out[name] = await import(`./explorers/${name}.js`);
+  }
+  return out;
+}
+
 async function main() {
   const app = document.getElementById('app');
   const bar = document.getElementById('topbar');
   const n = new URLSearchParams(location.search).get('v');
   try {
-    const index = await getJSON('data/lessons.json');
-    bar.innerHTML = renderTopbar({ units: index.units });
+    const site = await getJSON('data/site.json');
+    bar.innerHTML = renderTopbar({ site });
     if (!/^\d+$/.test(n || '')) throw new Error('No lesson chosen.');
     const L = await getJSON(`data/lessons/${n}.json`).catch(() => {
       throw new Error('This lesson does not have a study page yet.');
     });
-    document.title = `${L.topic} ${L.title} | AP Statistics`;
+    for (const sec of L.sections) if (!TYPES[sec.type]) throw new Error(`Unknown section type "${sec.type}"`);
+    const unit = site.units.find((u) => u.id === L.unit);
+    const ctx = { site, explorers: await loadExplorers(L), unitLabel: unit ? unit.kicker : 'Unit ' + L.unit };
+    document.title = `${L.topic} ${L.title} | ${site.course}`;
     const sections = [{ id: 'video', label: 'Video' }, ...L.sections.map((s) => ({ id: s.id, label: s.tab }))];
-    bar.innerHTML = renderTopbar({ units: index.units, activeUnit: L.unit, crumb: `Unit ${L.unit} › ${L.topic} ${L.title}`, sections });
-    app.innerHTML = lessonHtml(L);
-    wire(L);
+    bar.innerHTML = renderTopbar({ site, activeUnit: L.unit, crumb: `${unit ? unit.tab : 'Unit ' + L.unit} › ${L.topic} ${L.title}`, sections });
+    app.innerHTML = lessonHtml(L, ctx);
+    wire(L, ctx);
   } catch (e) {
     app.innerHTML = `<div class="error">${esc(e.message)} <a href="index.html">Back to all lessons</a></div>`;
   }

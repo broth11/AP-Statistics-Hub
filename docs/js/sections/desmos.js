@@ -1,8 +1,7 @@
 // Desmos walkthrough: an empty calculator plus guided steps. No button loads a solution.
 import { esc, tex, fmtTime } from '../util.js';
-import { DESMOS_KEY, DESMOS_SRC } from '../config.js';
 
-export function render(sec) {
+export function render(sec, ctx) {
   const steps = sec.steps.map((d, i) => `
     <div class="dstep">
       <div class="row1"><span class="num">${i + 1}</span><span class="stitle">${esc(d.title)}</span></div>
@@ -21,19 +20,19 @@ export function render(sec) {
         <div class="desmos-calc" data-calc></div>
         <div class="desmos-actions">
           <button class="btn btn-secondary" data-clear>Clear calculator</button>
-          <span class="small-note">${esc(sec.note)}</span>
+          <span class="small-note">${esc(sec.note || ctx.site.calculator.examNote || '')}</span>
         </div>
       </div>
     </div>`;
 }
 
 let loading = null;
-function loadDesmos() {
+function loadDesmos(cfg) {
   if (window.Desmos) return Promise.resolve(window.Desmos);
   if (!loading) {
     loading = new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = `${DESMOS_SRC}?apiKey=${encodeURIComponent(DESMOS_KEY)}`;
+      s.src = `${cfg.desmosSrc}?apiKey=${encodeURIComponent(cfg.desmosApiKey)}`;
       s.onload = () => resolve(window.Desmos);
       s.onerror = () => reject(new Error('Desmos failed to load'));
       document.head.appendChild(s);
@@ -42,7 +41,7 @@ function loadDesmos() {
   return loading;
 }
 
-export function mount(el) {
+export function mount(el, sec, ctx) {
   let calc = null;
   const host = el.querySelector('[data-calc]');
 
@@ -58,7 +57,7 @@ export function mount(el) {
   // The calculator is created the first time the section opens, so it measures a visible box.
   return {
     onOpen() {
-      loadDesmos().then((Desmos) => {
+      loadDesmos(ctx.site.calculator).then((Desmos) => {
         if (!calc) calc = Desmos.GraphingCalculator(host, { expressionsTopbar: true, settingsMenu: true, expressions: true });
         else calc.resize();
       }).catch(() => { host.textContent = 'The Desmos calculator could not load. Check your connection and reload.'; });

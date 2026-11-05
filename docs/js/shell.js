@@ -1,8 +1,8 @@
 // The sticky top bar shared by the home page and the lesson pages.
 import { esc } from './util.js';
 
-export function renderTopbar({ units, activeUnit = null, crumb = '', sections = null }) {
-  const tabs = units.map((u) =>
+export function renderTopbar({ site, activeUnit = null, crumb = '', sections = null }) {
+  const tabs = site.units.map((u) =>
     `<a class="unit-tab${u.id === activeUnit ? ' is-active' : ''}" href="index.html#unit-${u.id}">${esc(u.tab)}</a>`
   ).join('');
   const secBar = sections ? `
@@ -12,7 +12,7 @@ export function renderTopbar({ units, activeUnit = null, crumb = '', sections = 
     </div>` : '';
   return `
     <div class="topbar-row">
-      <a class="site-title" href="index.html">AP Statistics / Video Study Guide</a>
+      <a class="site-title" href="index.html">${esc(site.siteTitle)}</a>
       <div class="crumb">${esc(crumb)}</div>
     </div>
     <nav class="unit-tabs" aria-label="Units">${tabs}</nav>

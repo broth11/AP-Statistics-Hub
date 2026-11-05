@@ -23,3 +23,15 @@ export async function getJSON(url) {
   if (!res.ok) throw new Error(`Could not load ${url} (${res.status})`);
   return res.json();
 }
+
+// Standard normal CDF (Abramowitz and Stegun 7.1.26, error below 1.5e-7).
+export function normalCdf(z) {
+  const t = 1 / (1 + 0.3275911 * Math.abs(z) / Math.SQRT2);
+  const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-(z * z) / 2);
+  return z >= 0 ? 0.5 * (1 + y) : 0.5 * (1 - y);
+}
+
+export const shuffle = (a) => {
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+};

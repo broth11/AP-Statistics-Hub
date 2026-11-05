@@ -1,6 +1,6 @@
 # AP Statistics Hub
 
-A study site for AP Statistics students: a video study guide organized by unit and lesson. Each lesson page pairs the video with key moments, a decision check, a procedure, an interactive explorer, a Desmos walkthrough, exam wording and traps, multiple choice, and a free-response practice box.
+A study site for AP Statistics students: a video study guide organized by unit and lesson. Each lesson page pairs the video with key moments and the sections the topic needs: a decision check, a procedure, an interactive explorer, a Desmos walkthrough, exam wording and traps, multiple choice, and a free-response practice box.
 
 Live site (after enabling GitHub Pages, see below): https://broth11.github.io/AP-Statistics-Hub/
 
@@ -39,23 +39,38 @@ Then open http://localhost:8000.
 │   │   ├── shell.js           top bar
 │   │   ├── video.js           YouTube seek control
 │   │   ├── tex-text.js        <tex-text> element (KaTeX)
-│   │   ├── config.js          Desmos key and script URL
-│   │   └── sections/          one module per lesson section
+│   │   ├── sections/          one module per lesson section
+│   │   └── explorers/         the explorer library (binomial, random-assignment, one-proportion-test)
 │   └── data/
+│       ├── site.json          course config: titles, units, calculator, FRQ symbols
 │       ├── lessons.json       all 58 videos: unit, topic, title, status
-│       └── lessons/23.json    content for one lesson (2.10 so far)
+│       └── lessons/<n>.json   one study page per video (n = playlist position)
+├── .claude/skills/video-study-site/   the skill that builds lesson pages
 ├── transcripts/               private submodule: raw captions and the playlist index
 ├── notes/                     project notes, design decisions, transcript log
 └── archive/                   the original single-file build
 ```
 
-## Add a lesson
+## Build lesson pages with the skill
 
-1. Copy `docs/data/lessons/23.json` to `docs/data/lessons/<n>.json`, where `<n>` is the playlist number in `lessons.json`.
-2. Fill in the video ID, key moments, and the sections you want. Sections appear in the order listed, and any section can be left out.
-3. In `docs/data/lessons.json`, change that lesson's `status` from `transcript` to `live`. Its row on the home page becomes a link.
+The `video-study-site` skill in `.claude/skills/` builds pages. Open this repo in Claude Code (or a Claude session with the repo attached) and ask, for example:
 
-Section types: `decision`, `procedure`, `explorer`, `desmos`, `wording`, `mcq`, `frq`. The `explorer` and `desmos` modules are built around the binomial distribution for now. A new topic that needs a different explorer gets its own module in `docs/js/sections/`.
+- "Build the study page for 2.11 Part 1."
+- "Build all of Unit 4."
+- "Here is a new playlist: <link>. Fetch the transcripts and build the site."
+
+For each lesson it reads the transcript, writes `docs/data/lessons/<n>.json`, reuses or adds an explorer, checks the page, and opens a pull request with a review report. Every timestamp in the report sits next to the transcript text found at that time, and every wording change or suspected caption error is flagged. Pages start as drafts: the home page lists them as "Draft" without a link, and the page itself shows a draft banner.
+
+Fetching a new playlist needs YouTube access, so that step runs on your own computer (`pip install yt-dlp` first). The skill gives the exact command if it cannot run it.
+
+### Approve a draft
+
+1. Open `lesson.html?v=<n>` on the site or locally and work through the review report in the pull request.
+2. In `docs/data/lessons/<n>.json`, set `review.status` to `approved` and `verified: true` on each moment and trap you checked.
+3. In `docs/data/lessons.json`, set the lesson's `status` to `live`.
+4. Merge the pull request. Pages republishes on its own.
+
+Or ask Claude to do steps 2 and 3 once you have checked the page.
 
 ## Transcripts
 

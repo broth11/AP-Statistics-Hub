@@ -1,0 +1,601 @@
+{
+ "n": 36,
+ "unit": 3,
+ "topic": "3.6 & 3.7",
+ "title": "P-values and Carrying Out a Test for a Population Proportion",
+ "videoId": "p7XiYTPdmXM",
+ "videoTitle": "AP Statistics Topic 3.6 & 3.7 P-values and Carrying Out a Test for a Population Proportion",
+ "intro": "After this lesson you can calculate the test statistic for a one-sample $z$ test for $p$, find and interpret the p-value, compare it with $\\alpha$, and write a conclusion in context.",
+ "moments": [
+  {
+   "t": 87,
+   "type": "Concept",
+   "title": "What a test is trying to show",
+   "text": "The goal is to find evidence for the alternative hypothesis. The two possible conclusions are evidence or a lack of evidence.",
+   "verified": false
+  },
+  {
+   "t": 112,
+   "type": "Worked example",
+   "title": "Restaurant takeout claim",
+   "text": "$H_0: p=0.60$, $H_a: p>0.60$. In a random sample of 250 customers, 170 ordered takeout, $\\hat p=0.68$.",
+   "verified": false
+  },
+  {
+   "t": 195,
+   "type": "Key idea",
+   "title": "Samples vary",
+   "text": "A sample proportion means little until you compare it with all the sample proportions you could get.",
+   "verified": false
+  },
+  {
+   "t": 411,
+   "type": "Procedure",
+   "title": "PHANTOM steps",
+   "text": "Parameter, Hypotheses, Assess conditions, Name the test, Test statistic, Obtain the p-value, Make a decision.",
+   "verified": false
+  },
+  {
+   "t": 450,
+   "type": "Concept",
+   "title": "The null distribution",
+   "text": "Assume $H_0$ is true and build the sampling distribution of $\\hat p$ centered at $p_0$.",
+   "verified": false
+  },
+  {
+   "t": 720,
+   "type": "Formula",
+   "title": "Test statistic",
+   "text": "$z=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$ tells you where $\\hat p$ falls in the null distribution.",
+   "verified": false
+  },
+  {
+   "t": 843,
+   "type": "Key idea",
+   "title": "Beyond 2 standard deviations",
+   "text": "A $z$ beyond about $\\pm2$ is unusual if the null is true.",
+   "verified": false
+  },
+  {
+   "t": 1125,
+   "type": "Key idea",
+   "title": "The SD is built on $p_0$",
+   "text": "The whole sampling distribution assumes the null proportion is true, so the standard deviation uses $p_0$.",
+   "verified": false
+  },
+  {
+   "t": 1194,
+   "type": "Definition",
+   "title": "P-value",
+   "text": "The probability, assuming $H_0$ is true, of a result as extreme as or more extreme than the one observed.",
+   "verified": false
+  },
+  {
+   "t": 1290,
+   "type": "Calculator",
+   "title": "Normal distribution in Desmos",
+   "text": "Plus, Inference, Probability Distributions, Normal with mean 0 and SD 1, then Cumulative Probability.",
+   "verified": false
+  },
+  {
+   "t": 1603,
+   "type": "Procedure",
+   "title": "Two-sided alternative: double it",
+   "text": "For $H_a: p\\ne p_0$, find one tail and multiply by 2.",
+   "verified": false
+  },
+  {
+   "t": 1741,
+   "type": "Key idea",
+   "title": "Smaller p-value, stronger evidence",
+   "text": "The lower the p-value, the more convincing the evidence for $H_a$.",
+   "verified": false
+  },
+  {
+   "t": 1800,
+   "type": "Definition",
+   "title": "Significance level",
+   "text": "$\\alpha$, usually 0.05 or 0.01, is the cutoff for statistically significant.",
+   "verified": false
+  },
+  {
+   "t": 1925,
+   "type": "Exam wording",
+   "title": "Reject $H_0$ does not mean $H_0$ is false",
+   "text": "Say there is convincing evidence for $H_a$, not that you proved it.",
+   "verified": false
+  },
+  {
+   "t": 1992,
+   "type": "Exam wording",
+   "title": "Never conclude $H_0$ is true",
+   "text": "Fail to reject means there is not convincing evidence for $H_a$.",
+   "verified": false
+  },
+  {
+   "t": 2038,
+   "type": "Exam wording",
+   "title": "Conclusion in context",
+   "text": "State it in terms of $H_a$, in context, with non-definitive language.",
+   "verified": false
+  },
+  {
+   "t": 2293,
+   "type": "Worked example",
+   "title": "Dog park: full test",
+   "text": "361 of 465 residents want the park. Is that convincing evidence that more than 75% do?",
+   "verified": false
+  },
+  {
+   "t": 2488,
+   "type": "Calculator",
+   "title": "z test for proportions in Desmos",
+   "text": "Enter successes and sample size, choose the test, enter $p_0$ and the tail.",
+   "verified": false
+  },
+  {
+   "t": 2632,
+   "type": "Worked example",
+   "title": "Dog park conclusion",
+   "text": "The p-value is above 0.05, so fail to reject $H_0$: not convincing evidence that more than 75% want it.",
+   "verified": false
+  },
+  {
+   "t": 2790,
+   "type": "Exam question",
+   "title": "Pick the correct test statistic",
+   "text": "Numerator $\\hat p-p_0$, and the SD uses $p_0$, not $\\hat p$.",
+   "verified": false
+  }
+ ],
+ "sections": [
+  {
+   "id": "decide",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Reject or fail to reject?",
+   "cards": [
+    {
+     "letter": "≤",
+     "name": "p-value ≤ α",
+     "text": "Reject $H_0$. There is convincing evidence for $H_a$."
+    },
+    {
+     "letter": ">",
+     "name": "p-value > α",
+     "text": "Fail to reject $H_0$. There is not convincing evidence for $H_a$."
+    }
+   ],
+   "columns": [
+    "Example",
+    "$H_a$",
+    "p-value",
+    "Compare with $\\alpha=0.05$",
+    "Decision"
+   ],
+   "verdictColumn": 4,
+   "rows": [
+    {
+     "cells": [
+      "Restaurant: 170 of 250 order takeout",
+      "$p>0.60$",
+      "$\\approx 0.0049$",
+      "Below 0.05",
+      "Reject $H_0$"
+     ],
+     "seek": 1290
+    },
+    {
+     "cells": [
+      "Light bulbs: 6.46% of 650 defective",
+      "$p<0.08$",
+      "$\\approx 0.074$",
+      "Above 0.05",
+      "Fail to reject $H_0$"
+     ],
+     "seek": 1500
+    },
+    {
+     "cells": [
+      "Remote learning: 141 of 300 parents",
+      "$p\\ne0.50$",
+      "$\\approx 0.299$",
+      "Above 0.05",
+      "Fail to reject $H_0$"
+     ],
+     "seek": 1603
+    },
+    {
+     "cells": [
+      "Dog park: 361 of 465 residents",
+      "$p>0.75$",
+      "$\\approx 0.095$",
+      "Above 0.05",
+      "Fail to reject $H_0$"
+     ],
+     "seek": 2632
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video describes tests as \"proving\" the alternative and says the restaurant sample \"should not have occurred.\" On the AP exam, say the result would be very unlikely if $H_0$ were true, so there is convincing evidence for $H_a$. A test never proves either hypothesis."
+    }
+   ]
+  },
+  {
+   "id": "steps",
+   "type": "procedure",
+   "tab": "Test statistic",
+   "kicker": "Procedure",
+   "title": "Carry out the test",
+   "intro": "A full test follows the PHANTOM steps from the video. This lesson adds the last three.",
+   "steps": [
+    "Parameter: define $p$ in context.",
+    "Hypotheses: $H_0: p=p_0$ and $H_a$ with $<$, $>$ or $\\ne$.",
+    "Assess conditions: random, 10%, and large counts using $np_0\\ge10$ and $n(1-p_0)\\ge10$.",
+    "Name the test: one-sample $z$ test for $p$.",
+    "Test statistic: $z=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$.",
+    "Obtain the p-value from the standard normal distribution, in the direction of $H_a$.",
+    "Make a decision by comparing the p-value with $\\alpha$, then conclude in context."
+   ],
+   "parts": [
+    {
+     "label": "Center",
+     "tex": "$p_0=0.60$",
+     "text": "The null distribution assumes $H_0$ is true."
+    },
+    {
+     "label": "Standard deviation",
+     "tex": "$\\sqrt{\\dfrac{0.60(0.40)}{250}}$",
+     "text": "Built from $p_0$, not from $\\hat p$."
+    },
+    {
+     "label": "Observed",
+     "tex": "$\\hat p=\\dfrac{170}{250}=0.68$",
+     "text": "The sample result we are judging."
+    }
+   ],
+   "line": "$z=\\dfrac{0.68-0.60}{\\sqrt{0.60(0.40)/250}}\\approx 2.58\\;\\Rightarrow\\;\\text{p-value}=P(Z\\ge2.58)\\approx 0.0049$",
+   "buttons": [
+    {
+     "label": "Watch PHANTOM (6:51)",
+     "seek": 411
+    },
+    {
+     "label": "Watch the test statistic (12:00)",
+     "seek": 720
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "type": "explorer",
+   "explorer": "one-proportion-test",
+   "tab": "Explorer",
+   "kicker": "Interactive",
+   "title": "Null distribution explorer",
+   "intro": "Set $n$, $p_0$ and the number of successes. The curve is the null distribution of $\\hat p$, and the shaded tail is the p-value. Simulate samples to see where it comes from.",
+   "stories": {
+    "rest": "A restaurant chain claims more than 60% of customers order takeout. In a random sample of 250 customers, 170 ordered takeout. $H_a: p>0.60$.",
+    "bulb": "A company claims fewer than 8% of its light bulbs are defective. In a random sample of 650 bulbs, 42 were defective. $H_a: p<0.08$.",
+    "remote": "A school board believes the share of parents who support remote learning is different from 50%. In a random sample of 300 parents, 141 support it. $H_a: p\\ne0.50$.",
+    "dog": "A city will build a dog park only if more than 75% of residents want it. In a random sample of 465 residents, 361 want it. $H_a: p>0.75$."
+   },
+   "initial": {
+    "n": 250,
+    "p0": 0.6,
+    "x": 170,
+    "alt": "gt",
+    "alpha": 0.05,
+    "story": "rest"
+   },
+   "presets": [
+    {
+     "label": "Restaurant",
+     "sub": "$n=250,\\ \\hat p=0.68$",
+     "n": 250,
+     "p0": 0.6,
+     "x": 170,
+     "alt": "gt",
+     "story": "rest"
+    },
+    {
+     "label": "Light bulbs",
+     "sub": "$n=650,\\ \\hat p=0.065$",
+     "n": 650,
+     "p0": 0.08,
+     "x": 42,
+     "alt": "lt",
+     "story": "bulb"
+    },
+    {
+     "label": "Remote learning",
+     "sub": "$n=300,\\ \\hat p=0.47$",
+     "n": 300,
+     "p0": 0.5,
+     "x": 141,
+     "alt": "ne",
+     "story": "remote"
+    },
+    {
+     "label": "Dog park",
+     "sub": "$n=465,\\ \\hat p=0.776$",
+     "n": 465,
+     "p0": 0.75,
+     "x": 361,
+     "alt": "gt",
+     "story": "dog"
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Work through each task in it yourself, the way you would on the exam, then check what you observe.",
+   "steps": [
+    {
+     "title": "Test statistic by hand",
+     "suppose": "we want $z$ for the restaurant: 170 of 250 customers, $p_0=0.60$.",
+     "how": "type (0.68-0.6)/sqrt(0.6*0.4/250) on a new line.",
+     "observe": "The value is positive because $\\hat p$ is above $p_0$, and it is beyond 2, so the sample is unusual if $H_0$ is true.",
+     "expected": "$z\\approx 2.582$",
+     "seek": 720
+    },
+    {
+     "title": "Right-tail p-value",
+     "suppose": "we want $P(Z\\ge2.582)$ for $H_a: p>0.60$.",
+     "how": "tap the plus button, choose Inference, then Probability Distributions, then Normal with mean 0 and standard deviation 1. Open Cumulative Probability, choose the right option and enter 2.582.",
+     "observe": "Only a sliver of the curve is shaded. Open the dropdown for more decimals.",
+     "expected": "p-value $\\approx 0.0049$",
+     "seek": 1290
+    },
+    {
+     "title": "Left-tail p-value",
+     "suppose": "we want the p-value for the light bulbs: 42 of 650 defective, $H_a: p<0.08$.",
+     "how": "find $z$ with (42/650-0.08)/sqrt(0.08*0.92/650), then use Cumulative Probability with the left option.",
+     "observe": "The tail is on the left because $H_a$ uses $<$. The video rounds $\\hat p$ to 0.0646 and gets $z=-1.453$; small differences come from rounding.",
+     "expected": "$z\\approx -1.446$ and p-value $\\approx 0.0741$",
+     "seek": 1500
+    },
+    {
+     "title": "Two-sided p-value",
+     "suppose": "we want the p-value for remote learning: 141 of 300, $H_a: p\\ne0.50$.",
+     "how": "find $z$, use the left option for $P(Z\\le z)$, then multiply that value by 2 on a new line.",
+     "observe": "Doubling counts results this far from 0.50 in either direction.",
+     "expected": "$z\\approx -1.039$, one tail $\\approx 0.1493$, p-value $\\approx 0.2987$",
+     "seek": 1603
+    },
+    {
+     "title": "The whole test in Desmos",
+     "suppose": "we want Desmos to do the dog park test: 361 of 465, $H_0: p=0.75$, $H_a: p>0.75$.",
+     "how": "tap the plus button, choose Inference, then the z test for proportions. Enter 361 successes and 465 for the sample size, create the test, choose the hypothesis test, enter 0.75 and choose the right tail.",
+     "observe": "Desmos reports $z$ and the p-value without rounding. The $z$ is positive because 361/465 is above 0.75.",
+     "expected": "$z\\approx 1.312$ and p-value $\\approx 0.0948$",
+     "seek": 2488
+    },
+    {
+     "title": "Report the decision",
+     "suppose": "Desmos gives the p-value for part of a free-response question.",
+     "how": "compare it with $\\alpha=0.05$ and write the decision and conclusion in context.",
+     "observe": "A bare p-value does not earn credit. Show the comparison and the conclusion.",
+     "expected": "Because $0.0948>0.05$, fail to reject $H_0$. There is not convincing evidence that more than 75% of all residents want the dog park.",
+     "seek": 2632
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Saying the test proves $H_a$",
+     "weak": "This proves more than 60% of customers order takeout.",
+     "better": "Because the p-value of 0.0049 is less than $\\alpha=0.05$, we reject $H_0$. There is convincing evidence that more than 60% of all the chain's customers order takeout.",
+     "seek": 87,
+     "verified": false
+    },
+    {
+     "kind": "Common trap",
+     "title": "Accepting the null hypothesis",
+     "weak": "We accept $H_0$: half of parents support remote learning.",
+     "better": "Because the p-value of 0.299 is greater than $\\alpha=0.05$, we fail to reject $H_0$. There is not convincing evidence that the proportion of all parents in the city who support remote learning differs from 0.50.",
+     "seek": 1992,
+     "verified": false
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Interpret the p-value",
+     "weak": "There is a 0.0049 probability that $H_0$ is true.",
+     "better": "Assuming 60% of all customers order takeout, there is about a 0.0049 probability of getting a sample proportion of 0.68 or higher in a random sample of 250 customers.",
+     "seek": 1385,
+     "verified": false
+    },
+    {
+     "kind": "Common trap",
+     "title": "Using $\\hat p$ in the standard deviation",
+     "weak": "$\\sqrt{0.28(0.72)/200}$",
+     "better": "In a significance test the standard deviation uses the null value: $\\sqrt{0.35(0.65)/200}$.",
+     "seek": 2905,
+     "verified": false
+    },
+    {
+     "kind": "Common trap",
+     "title": "Forgetting to double for $\\ne$",
+     "weak": "p-value $=P(Z\\le-1.039)\\approx0.1493$",
+     "better": "For $H_a: p\\ne0.50$, the p-value is $2P(Z\\le-1.039)\\approx0.2987$.",
+     "seek": 1603,
+     "verified": false
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "For the restaurant test of $H_0: p=0.60$ against $H_a: p>0.60$, the p-value is 0.0049. Which is the correct interpretation?",
+     "opts": [
+      "There is a 0.0049 probability that 60% of customers order takeout",
+      "Assuming 60% of all customers order takeout, there is a 0.0049 probability of getting a sample proportion of 0.68 or higher by chance",
+      "There is a 0.0049 probability that more than 60% of customers order takeout",
+      "0.49% of customers order takeout"
+     ],
+     "ok": 1,
+     "why": [
+      "A p-value is not the probability that a hypothesis is true. It assumes $H_0$ is true.",
+      "It is a conditional probability: assuming $H_0$, how likely is a result at least this extreme.",
+      "The p-value says nothing directly about the probability of $H_a$.",
+      "The p-value is not a proportion of customers."
+     ],
+     "seek": 1194
+    },
+    {
+     "stem": "A city claims 40% of residents bike to work. In a random sample of 150 residents, 51 bike to work. Which is the test statistic for $H_a: p<0.40$?",
+     "opts": [
+      "$\\dfrac{0.34-0.40}{\\sqrt{0.34(0.66)/150}}$",
+      "$\\dfrac{0.40-0.34}{\\sqrt{0.40(0.60)/150}}$",
+      "$\\dfrac{0.34-0.40}{\\sqrt{0.40(0.60)/150}}$",
+      "$\\dfrac{0.34-0.40}{\\sqrt{0.40(0.60)/149}}$"
+     ],
+     "ok": 2,
+     "why": [
+      "The standard deviation in a test uses $p_0=0.40$, not $\\hat p$.",
+      "The numerator is backward: it should be $\\hat p-p_0$.",
+      "$\\hat p=51/150=0.34$, minus $p_0$, over the standard deviation built from $p_0$. This gives $z=-1.5$.",
+      "The denominator uses $n=150$, not $n-1$."
+     ],
+     "seek": 2905
+    },
+    {
+     "stem": "A test of $H_0: p=0.25$ against $H_a: p\\ne0.25$ gives $z=1.80$. What is the p-value?",
+     "opts": [
+      "0.0359",
+      "0.0719",
+      "0.9641",
+      "0.1438"
+     ],
+     "ok": 1,
+     "why": [
+      "That is one tail. A two-sided test doubles it.",
+      "$2P(Z\\ge1.80)=2(0.0359)\\approx0.0719$.",
+      "That is $P(Z\\le1.80)$, the area on the wrong side.",
+      "That doubles the two-sided p-value again."
+     ],
+     "seek": 1603
+    },
+    {
+     "stem": "A test gives a p-value of 0.032 with a significance level of $\\alpha=0.01$. Which conclusion is correct?",
+     "opts": [
+      "Reject $H_0$; there is convincing evidence for $H_a$",
+      "Fail to reject $H_0$; this shows $H_0$ is true",
+      "Reject $H_0$, because 0.032 is less than 0.05",
+      "Fail to reject $H_0$; there is not convincing evidence for $H_a$"
+     ],
+     "ok": 3,
+     "why": [
+      "0.032 is greater than 0.01, so the result is not significant at this level.",
+      "Failing to reject never shows that $H_0$ is true.",
+      "The stated level is 0.01. You compare with the $\\alpha$ you were given.",
+      "0.032 > 0.01, so fail to reject, and say there is not convincing evidence for $H_a$."
+     ],
+     "seek": 1992
+    },
+    {
+     "stem": "Why does the standard deviation in a one-sample $z$ test for $p$ use $p_0$ instead of $\\hat p$?",
+     "opts": [
+      "The test assumes $H_0$ is true, so the null distribution is centered at $p_0$ with a standard deviation computed from $p_0$",
+      "$\\hat p$ is not known until after the sample is taken",
+      "Using $p_0$ always gives a smaller standard deviation",
+      "The large counts condition requires it"
+     ],
+     "ok": 0,
+     "why": [
+      "Every part of the null distribution comes from assuming $H_0$, including its spread.",
+      "$\\hat p$ is known when you compute the test statistic. Confidence intervals do use it.",
+      "It can be larger or smaller depending on the values.",
+      "The large counts check in a test also uses $p_0$, but that is not why the formula uses it."
+     ],
+     "seek": 1125
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "A school district of 9,000 students claims that more than 70% of its students eat breakfast before school. A reporter takes a random sample of 120 students; 92 say they eat breakfast before school.",
+   "parts": [
+    "(a) State the hypotheses and define the parameter.",
+    "(b) Check the conditions for a one-sample $z$ test for $p$.",
+    "(c) Calculate the test statistic and the p-value.",
+    "(d) At $\\alpha=0.05$, what should the reporter conclude? Answer in context."
+   ],
+   "sample": [
+    "(a) $H_0: p=0.70$ and $H_a: p>0.70$, where $p$ is the proportion of all students in the district who eat breakfast before school.",
+    "(b) Random: the students were a random sample. 10%: 120 is less than 10% of 9,000 students. Large counts: $120(0.70)=84\\ge10$ and $120(0.30)=36\\ge10$.",
+    "(c) $\\hat p=92/120\\approx0.767$. $z=\\dfrac{0.767-0.70}{\\sqrt{0.70(0.30)/120}}\\approx1.59$. p-value $=P(Z\\ge1.59)\\approx0.056$.",
+    "(d) Because the p-value of 0.056 is greater than $\\alpha=0.05$, the reporter should fail to reject $H_0$. There is not convincing evidence that more than 70% of all students in the district eat breakfast before school."
+   ],
+   "checklist": [
+    "(a) Correct hypotheses with the parameter defined in context",
+    "(b) Checks random, 10% and large counts, using $p_0$ for large counts",
+    "(c) Test statistic about 1.59 with the standard deviation built from $p_0$",
+    "(c) P-value about 0.056 from the right tail",
+    "(d) Compares the p-value with $\\alpha=0.05$ and fails to reject $H_0$",
+    "(d) Conclusion in context about $H_a$, with no claim that $H_0$ is true"
+   ]
+  }
+ ],
+ "footer": "Status: draft from auto-generated captions, timestamps unverified against the video frames, practice questions newly written. Test values were computed when the page was written.",
+ "review": {
+  "status": "draft",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "At 1:27 the video says tests are about \"proving\" the alternative. The page uses \"convincing evidence\" and shows a wording note."
+   },
+   {
+    "kind": "wording",
+    "text": "At 23:00 the video says the restaurant sample \"should not have occurred.\" The page says it would be very unlikely if $H_0$ were true."
+   },
+   {
+    "kind": "caption",
+    "text": "At 21:30 the captions say \"the null proportion of 68%\"; the null is 60% and 68% is the sample. Check the audio."
+   },
+   {
+    "kind": "caption",
+    "text": "At 42:39 the captions say Desmos gives \"negative 1.312\" for the dog park. The correct value is $z\\approx+1.312$, since 361/465 is above 0.75. The page uses the positive value."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names (Inference, Probability Distributions, z test for proportions) come from the captions and are unconfirmed against the current calculator."
+   },
+   {
+    "kind": "values",
+    "text": "Light bulbs: the video rounds $\\hat p$ to 0.0646 and gets $z=-1.453$; the page computes from 42/650 and gets $z\\approx-1.446$, p-value $\\approx0.0741$. Confirm 42 defective bulbs on screen."
+   },
+   {
+    "kind": "timestamps",
+    "text": "All timestamps come from the captions and are unverified against the video frames."
+   },
+   {
+    "kind": "explorer",
+    "text": "New explorer: one-proportion-test. Check the presets and the simulation in class."
+   }
+  ]
+ }
+}
