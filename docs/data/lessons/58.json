@@ -1,0 +1,537 @@
+{
+ "n": 58,
+ "unit": 3,
+ "topic": "3.3",
+ "title": "Constructing a Confidence Interval for a Population Proportion",
+ "videoId": "doukJEZYxtc",
+ "videoTitle": "AP Statistics Topic 3.3 Constructing a Confidence Interval for a Population Proportion",
+ "intro": "After this lesson you can check the conditions for a one-sample $z$ interval, build the interval with $z^*$ and the standard error, work backwards from an interval, and write the conclusion in context.",
+ "moments": [
+  {
+   "t": 98,
+   "type": "Definition",
+   "title": "Confidence interval",
+   "text": "An interval estimate for a parameter, built around the sample proportion. The procedure is a one-sample $z$ interval for a population proportion."
+  },
+  {
+   "t": 210,
+   "type": "Procedure",
+   "title": "Define the parameter first",
+   "text": "Name the proportion, the response variable and the population in context."
+  },
+  {
+   "t": 293,
+   "type": "Worked example",
+   "title": "Ohio teens in marching band",
+   "text": "The goal is the proportion of all Ohio teens in a marching band, using a sample of 380."
+  },
+  {
+   "t": 457,
+   "type": "Key idea",
+   "title": "The middle 95%",
+   "text": "95% of sample proportions fall within 1.96 standard deviations of $p$."
+  },
+  {
+   "t": 496,
+   "type": "Calculator",
+   "title": "Find $z^*$ in Desmos",
+   "text": "Normal with mean 0 and SD 1, Cumulative Probability, switch to bounds, inner, then enter the confidence level."
+  },
+  {
+   "t": 647,
+   "type": "Key idea",
+   "title": "The interval is a net",
+   "text": "Go 1.96 standard deviations each way from $\\hat p$. If $\\hat p$ is in the middle 95%, the net catches $p$."
+  },
+  {
+   "t": 811,
+   "type": "Key idea",
+   "title": "Why the net sometimes misses",
+   "text": "5% of sample proportions fall outside the middle 95%, so some intervals miss $p$."
+  },
+  {
+   "t": 923,
+   "type": "Definition",
+   "title": "Standard error",
+   "text": "We do not know $p$, so the standard error uses $\\hat p$ in place of $p$ to estimate the standard deviation."
+  },
+  {
+   "t": 1031,
+   "type": "Formula",
+   "title": "Confidence interval",
+   "text": "$\\hat p\\pm z^*\\sqrt{\\dfrac{\\hat p(1-\\hat p)}{n}}$"
+  },
+  {
+   "t": 1048,
+   "type": "Key idea",
+   "title": "Other confidence levels",
+   "text": "$z^*$ is 1.645 for 90% and 2.576 for 99%. More confidence needs a wider net."
+  },
+  {
+   "t": 1385,
+   "type": "Definition",
+   "title": "Margin of error",
+   "text": "The part you add and subtract, $z^*\\times\\text{SE}$. The interval is two margins wide."
+  },
+  {
+   "t": 1460,
+   "type": "Worked example",
+   "title": "Marching band interval",
+   "text": "$\\hat p=91/380\\approx0.239$. With 95% confidence the interval runs from about 19.6% to 28.2%."
+  },
+  {
+   "t": 1631,
+   "type": "Procedure",
+   "title": "PANIC",
+   "text": "Parameter, Appropriateness, Name, Interval, Conclusion."
+  },
+  {
+   "t": 1764,
+   "type": "Worked example",
+   "title": "Online homework platform",
+   "text": "156 of 240 students support the switch. Build a 92% interval."
+  },
+  {
+   "t": 1847,
+   "type": "Procedure",
+   "title": "Appropriateness conditions",
+   "text": "Random sample, $n$ at most 10% of the population, and at least 10 successes and 10 failures."
+  },
+  {
+   "t": 2047,
+   "type": "Calculator",
+   "title": "Interval in Desmos",
+   "text": "Plus, Inference, $z$ test for proportions, enter successes and sample size, create, then open the confidence interval."
+  },
+  {
+   "t": 2181,
+   "type": "Exam wording",
+   "title": "Three parts of the conclusion",
+   "text": "State the confidence level, the interval, and the parameter in context."
+  },
+  {
+   "t": 2242,
+   "type": "Worked example",
+   "title": "Work backwards from an interval",
+   "text": "Given 90% confidence and (0.42, 0.54), find $\\hat p$, the margin of error, and $n$."
+  },
+  {
+   "t": 2410,
+   "type": "Procedure",
+   "title": "Solve the margin of error for $n$",
+   "text": "$n=\\hat p(1-\\hat p)\\left(\\dfrac{z^*}{\\text{ME}}\\right)^2$."
+  }
+ ],
+ "sections": [
+  {
+   "id": "appropriate",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Is a one-sample $z$ interval appropriate?",
+   "cards": [
+    {
+     "letter": "R",
+     "name": "Random",
+     "text": "The data come from a random sample."
+    },
+    {
+     "letter": "T",
+     "name": "10% condition",
+     "text": "$n$ is at most 10% of the population, so independence is reasonable."
+    },
+    {
+     "letter": "L",
+     "name": "Large counts",
+     "text": "At least 10 successes and 10 failures in the sample: $n\\hat p\\ge10$ and $n(1-\\hat p)\\ge10$."
+    }
+   ],
+   "columns": [
+    "Situation",
+    "Random?",
+    "10%?",
+    "Successes and failures",
+    "Use the interval?"
+   ],
+   "verdictColumn": 4,
+   "rows": [
+    {
+     "cells": [
+      "Random sample of 240 students from a large district, 156 support a change",
+      "Yes",
+      "Yes",
+      "156 and 84",
+      "Yes"
+     ],
+     "seek": 1847
+    },
+    {
+     "cells": [
+      "Voluntary web poll answered by 300 viewers, 210 agree",
+      "No",
+      "Cannot check",
+      "210 and 90",
+      "No, not random"
+     ],
+     "seek": 1847
+    },
+    {
+     "cells": [
+      "Random sample of 40 customers, 38 are satisfied",
+      "Yes",
+      "Yes",
+      "38 and 2",
+      "No, only 2 failures"
+     ],
+     "seek": 1847
+    },
+    {
+     "cells": [
+      "Random sample of 60 members of a club of 400, 36 attend",
+      "Yes",
+      "No, 60 > 40",
+      "36 and 24",
+      "No, over 10%"
+     ],
+     "seek": 1847
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "In a confidence interval the large counts check uses the sample counts, $n\\hat p$ and $n(1-\\hat p)$, because $p$ is unknown. In a test (topic 3.5) you will use the null value instead."
+    }
+   ]
+  },
+  {
+   "id": "panic",
+   "type": "procedure",
+   "tab": "Procedure",
+   "kicker": "Procedure",
+   "title": "Build and report an interval with PANIC",
+   "intro": "Every confidence interval question follows five steps. The first and third can be done in one sentence.",
+   "steps": [
+    "Parameter: define $p$ with the population and the response variable.",
+    "Appropriateness: random, at most 10% of the population, and at least 10 successes and 10 failures.",
+    "Name: one-sample $z$ interval for a population proportion.",
+    "Interval: $\\hat p\\pm z^*\\sqrt{\\hat p(1-\\hat p)/n}$, or use the calculator.",
+    "Conclusion: confidence level, interval, and parameter in context."
+   ],
+   "parts": [
+    {
+     "label": "Point estimate",
+     "tex": "$\\hat p=\\dfrac{91}{380}\\approx0.239$",
+     "text": "The center of the interval."
+    },
+    {
+     "label": "Critical value",
+     "tex": "$z^*=1.96$",
+     "text": "Middle 95% of the standard normal distribution."
+    },
+    {
+     "label": "Standard error",
+     "tex": "$\\sqrt{\\dfrac{0.239(1-0.239)}{380}}\\approx0.0219$",
+     "text": "Uses $\\hat p$ because $p$ is unknown."
+    },
+    {
+     "label": "Margin of error",
+     "tex": "$1.96(0.0219)\\approx0.0429$",
+     "text": "How far to go up and down."
+    }
+   ],
+   "line": "$0.239\\pm0.0429\\;\\Rightarrow\\;(0.1966,\\ 0.2824)$",
+   "buttons": [
+    {
+     "label": "Watch PANIC (27:11)",
+     "seek": 1631
+    },
+    {
+     "label": "Watch the formula (17:11)",
+     "seek": 1031
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "type": "explorer",
+   "tab": "Explorer",
+   "kicker": "Interactive",
+   "title": "Interval capture explorer",
+   "explorer": "ci-capture",
+   "intro": "Each press draws 100 random samples and builds an interval from each one. Gray intervals catch the true $p$ and red intervals miss. Change the confidence level or the sample size and watch the widths and the capture rate.",
+   "stories": {
+    "band": "Suppose 24% of all Ohio teens are in a marching band. Each sample is 380 randomly chosen teens, and each one gives its own interval for $p$.",
+    "big": "Same population, but each sample is 1,500 teens. The intervals are much narrower."
+   },
+   "initial": {
+    "n": 380,
+    "p": 0.24,
+    "level": 0.95,
+    "story": "band"
+   },
+   "presets": [
+    {
+     "label": "90% confidence",
+     "sub": "$n=380,\\ p=0.24$",
+     "n": 380,
+     "p": 0.24,
+     "level": 0.9,
+     "story": "band"
+    },
+    {
+     "label": "95% confidence",
+     "sub": "$n=380,\\ p=0.24$",
+     "n": 380,
+     "p": 0.24,
+     "level": 0.95,
+     "story": "band"
+    },
+    {
+     "label": "99% confidence",
+     "sub": "$n=380,\\ p=0.24$",
+     "n": 380,
+     "p": 0.24,
+     "level": 0.99,
+     "story": "band"
+    },
+    {
+     "label": "Bigger sample",
+     "sub": "$n=1500,\\ p=0.24$",
+     "n": 1500,
+     "p": 0.24,
+     "level": 0.95,
+     "story": "big"
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Work through each task in it yourself, the way you would on the exam, then check what you observe.",
+   "steps": [
+    {
+     "title": "Find a critical value",
+     "suppose": "we want $z^*$ for a 92% confidence interval.",
+     "how": "tap the plus button, choose Inference, then Probability Distributions, then Normal with mean 0 and standard deviation 1. Open Cumulative Probability, switch from area to bounds, choose the inner option and enter 0.92.",
+     "observe": "The two bounds are the same size with opposite signs, because the middle 92% is symmetric. Try 0.95 and 0.99 to see $z^*$ grow.",
+     "expected": "$z^*\\approx\\pm1.751$ (and $\\pm1.960$ for 95%, $\\pm2.576$ for 99%)",
+     "seek": 496
+    },
+    {
+     "title": "Margin of error by hand",
+     "suppose": "we want the margin of error for 156 of 240 students, 92% confidence.",
+     "how": "type 156/240 for $\\hat p$, then 1.751*sqrt(0.65*0.35/240) on a new line.",
+     "observe": "This is the amount added and subtracted. Subtract it from 0.65 for the lower bound and add it for the upper bound.",
+     "expected": "margin of error $\\approx0.0539$, interval $\\approx(0.5961,\\ 0.7039)$",
+     "seek": 1385
+    },
+    {
+     "title": "The whole interval in Desmos",
+     "suppose": "we want Desmos to build the 92% interval for 156 of 240.",
+     "how": "tap the plus button, choose Inference, then the $z$ test for proportions. Enter 156 successes and 240 for the sample size and create the test. Open the confidence interval and change the confidence level to 0.92.",
+     "observe": "Desmos shows the interval, the point estimate 0.65 and the standard error. Check that the numbers entered are 156 and 240 before reading the interval.",
+     "expected": "$(0.5961,\\ 0.7039)$",
+     "seek": 2047
+    },
+    {
+     "title": "Work backwards: the margin of error",
+     "suppose": "we are given the 90% interval (0.42, 0.54) and want $\\hat p$ and the margin of error.",
+     "how": "type (0.42+0.54)/2 for the midpoint, then (0.54-0.42)/2 for the half-width.",
+     "observe": "The point estimate is always the midpoint of the interval and the margin of error is half its width.",
+     "expected": "$\\hat p=0.48$ and margin of error $=0.06$",
+     "seek": 2327
+    },
+    {
+     "title": "Work backwards: the sample size",
+     "suppose": "we want $n$ for that interval, with $z^*=1.645$.",
+     "how": "type 0.48*0.52/(0.06/1.645)^2 on a new line.",
+     "observe": "The result is 187.6. Round up to the next whole number so the margin of error is no larger than 0.06.",
+     "expected": "$n\\approx187.6$, so $n=188$",
+     "seek": 2410
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Defining the parameter without the population",
+     "weak": "$p$ is the proportion in the marching band.",
+     "better": "$p$ is the proportion of all teens in Ohio who are in a marching band.",
+     "seek": 210
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Naming the procedure",
+     "weak": "A $z$-test.",
+     "better": "A one-sample $z$ interval for a population proportion.",
+     "seek": 1631
+    },
+    {
+     "kind": "Common trap",
+     "title": "Using $p$ in the standard error",
+     "weak": "$\\sqrt{\\dfrac{p(1-p)}{380}}$",
+     "better": "We do not know $p$, so the standard error uses $\\hat p$: $\\sqrt{\\dfrac{0.239(0.761)}{380}}$.",
+     "seek": 923
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Writing the conclusion",
+     "weak": "(0.5961, 0.7039)",
+     "better": "I am 92% confident that the proportion of all students in this district who support the new homework platform is between 0.596 and 0.704.",
+     "seek": 2181
+    },
+    {
+     "kind": "Common trap",
+     "title": "Rounding the sample size down",
+     "weak": "$n=187.6$, so $n=187$.",
+     "better": "Always round up. $n=188$ makes the margin of error at most 0.06, and 187 would not.",
+     "seek": 2410
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A 95% confidence interval for a population proportion is (0.31, 0.43). What are the sample proportion and the margin of error?",
+     "opts": [
+      "$\\hat p=0.31$ and margin of error $=0.12$",
+      "$\\hat p=0.37$ and margin of error $=0.06$",
+      "$\\hat p=0.37$ and margin of error $=0.12$",
+      "$\\hat p=0.43$ and margin of error $=0.06$"
+     ],
+     "ok": 1,
+     "why": [
+      "The point estimate is the midpoint, not an endpoint, and 0.12 is the full width.",
+      "The midpoint is $(0.31+0.43)/2=0.37$ and the half-width is $(0.43-0.31)/2=0.06$.",
+      "0.12 is the width of the interval, which is two margins of error.",
+      "0.43 is the upper endpoint, not the point estimate."
+     ],
+     "seek": 2327
+    },
+    {
+     "stem": "A random sample of 200 people has $\\hat p=0.35$. Which expression is the standard error used in a confidence interval?",
+     "opts": [
+      "$\\sqrt{0.40(0.60)/200}$",
+      "$\\sqrt{0.35(0.65)}/200$",
+      "$0.35(0.65)/\\sqrt{200}$",
+      "$\\sqrt{0.35(0.65)/200}$"
+     ],
+     "ok": 3,
+     "why": [
+      "0.40 is not given anywhere. The standard error uses the sample proportion 0.35.",
+      "The whole fraction belongs under the square root, not just the numerator.",
+      "The square root should cover the whole fraction.",
+      "$\\text{SE}=\\sqrt{\\hat p(1-\\hat p)/n}$ with $\\hat p=0.35$."
+     ],
+     "seek": 923
+    },
+    {
+     "stem": "Which is the best conclusion for a 90% interval of (0.42, 0.54) for the proportion of registered voters in a county who support a tax increase?",
+     "opts": [
+      "I am 90% confident that the proportion of all registered voters in the county who support the tax increase is between 0.42 and 0.54",
+      "There is a 90% chance the sample proportion is between 0.42 and 0.54",
+      "90% of voters support the tax increase",
+      "The proportion of voters is between 0.42 and 0.54"
+     ],
+     "ok": 0,
+     "why": [
+      "This gives the confidence level, the interval and the parameter in context.",
+      "The sample proportion is the midpoint of this interval and is known exactly.",
+      "The interval estimates a single proportion, not 90% of voters.",
+      "This leaves out the confidence level and the word confident."
+     ],
+     "seek": 2181
+    },
+    {
+     "stem": "Which value of $z^*$ is used for a 90% confidence interval?",
+     "opts": [
+      "1.282",
+      "1.960",
+      "1.645",
+      "2.576"
+     ],
+     "ok": 2,
+     "why": [
+      "1.282 leaves 10% in one tail, not 10% in two tails.",
+      "1.960 is for 95%.",
+      "90% in the middle leaves 5% in each tail, which gives $z^*=1.645$.",
+      "2.576 is for 99%."
+     ],
+     "seek": 1048
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "A gym has 6,400 members. A researcher randomly selects 520 members and finds that 182 of them use the pool.",
+   "parts": [
+    "(a) Name the procedure and define the parameter.",
+    "(b) Check the conditions for the procedure.",
+    "(c) Construct a 90% confidence interval.",
+    "(d) Write a conclusion in context."
+   ],
+   "sample": [
+    "(a) A one-sample $z$ interval for a population proportion. $p$ is the proportion of all members of the gym who use the pool.",
+    "(b) Random: the 520 members were randomly selected. 10%: 520 is less than 10% of 6,400, which is 640. Large counts: 182 successes and 338 failures, both at least 10.",
+    "(c) $\\hat p=182/520=0.35$ and $z^*=1.645$. $0.35\\pm1.645\\sqrt{\\dfrac{0.35(0.65)}{520}}=0.3156$ to $0.3844$, so the interval is about (0.316, 0.384).",
+    "(d) I am 90% confident that the proportion of all members of the gym who use the pool is between 0.316 and 0.384."
+   ],
+   "checklist": [
+    "(a) Procedure named and parameter defined with population and variable",
+    "(b) Random, 10% (with 640) and large counts (182 and 338) checked",
+    "(c) $\\hat p=0.35$ and $z^*=1.645$ used",
+    "(c) Standard error built from $\\hat p$, margin of error about 0.034",
+    "(c) Interval about (0.316, 0.384)",
+    "(d) Confidence level, interval and parameter in context"
+   ]
+  }
+ ],
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Test values were computed when the page was written.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "caption",
+    "text": "At 36:10 the captions give the lower bound of the school-district interval as 56.61%. The interval computed from 156 of 240 is (0.5961, 0.7039), and the video's own work and Desmos screen show 0.5961, so the page uses 59.61%."
+   },
+   {
+    "kind": "caption",
+    "text": "At 34:28 the video first types 156 out of 280 and corrects itself to 240. The page uses 240."
+   },
+   {
+    "kind": "caption",
+    "text": "At 18:25 the captions give the 99% critical value as \"2.76\". The page uses 2.576, which the video also gives at 17:43 and 21:31."
+   },
+   {
+    "kind": "values",
+    "text": "Sample size from the work-backwards problem: the video says about 188 (computed 187.6); the page rounds up to 188 and says to round up."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names (Inference, Probability Distributions, z test for proportions with a confidence interval option) come from the captions and are unconfirmed against the current calculator."
+   },
+   {
+    "kind": "explorer",
+    "text": "New explorer: ci-capture. Check the presets and that the capture rate settles near the chosen level after several batches."
+   }
+  ]
+ }
+}

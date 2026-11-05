@@ -1,0 +1,621 @@
+{
+ "n": 34,
+ "unit": 3,
+ "topic": "3.4",
+ "title": "Justifying a Claim Based on a Confidence Interval for a Proportion",
+ "videoId": "-PJeesGn6Nc",
+ "videoTitle": "AP Statistics Topic 3.4 Justifying a Claim Based on a Confidence Interval for a Population Proportion",
+ "intro": "After this lesson you can interpret an interval and its confidence level, say what changes the width of an interval, decide whether an interval supports a claim, and find the sample size for a target margin of error.",
+ "moments": [
+  {
+   "t": 67,
+   "type": "Overview",
+   "title": "What this lesson adds",
+   "text": "Interpreting an interval, interpreting the confidence level, the effect of confidence and sample size, justifying claims, and sample size for a target margin."
+  },
+  {
+   "t": 113,
+   "type": "Worked example",
+   "title": "Utah governor's poll",
+   "text": "180 of 345 registered voters say they will vote for her, and she builds a 95% interval."
+  },
+  {
+   "t": 172,
+   "type": "Exam wording",
+   "title": "Interpret the interval",
+   "text": "State the confidence level, both endpoints, and the parameter in context."
+  },
+  {
+   "t": 282,
+   "type": "Key idea",
+   "title": "If the truth is outside the interval",
+   "text": "Then the sample was one of the unusual 5%, extremely high or low."
+  },
+  {
+   "t": 435,
+   "type": "Key idea",
+   "title": "Either in the interval or not",
+   "text": "The true proportion is either in your interval or it is not, and you cannot tell which."
+  },
+  {
+   "t": 517,
+   "type": "Common trap",
+   "title": "Confident is not a probability",
+   "text": "Do not say there is a 95% chance that $p$ is in the interval."
+  },
+  {
+   "t": 559,
+   "type": "Exam wording",
+   "title": "Interpret the confidence level",
+   "text": "In repeated random sampling with the same $n$, about $C$% of the intervals capture $p$."
+  },
+  {
+   "t": 680,
+   "type": "Visual",
+   "title": "Many intervals",
+   "text": "Intervals from many samples: most catch the true proportion and about 5% miss."
+  },
+  {
+   "t": 878,
+   "type": "Key idea",
+   "title": "More confidence, wider interval",
+   "text": "A higher level raises $z^*$ and the margin of error, so the interval is wider and less precise."
+  },
+  {
+   "t": 956,
+   "type": "Key idea",
+   "title": "Bigger sample, smaller margin",
+   "text": "$n$ is in the denominator of the standard error, so a larger $n$ shrinks the margin of error."
+  },
+  {
+   "t": 1065,
+   "type": "Worked example",
+   "title": "Does the governor have evidence?",
+   "text": "(0.469, 0.575) contains 0.50 and values below it, so it does not show she gets more than 50%."
+  },
+  {
+   "t": 1214,
+   "type": "Worked example",
+   "title": "A different interval",
+   "text": "If the interval were (0.524, 0.604), the whole interval is above 0.50, which supports her claim."
+  },
+  {
+   "t": 1247,
+   "type": "Procedure",
+   "title": "Solve for the sample size",
+   "text": "Start from a desired margin of error and solve the margin-of-error formula for $n$."
+  },
+  {
+   "t": 1363,
+   "type": "Key idea",
+   "title": "Choosing $\\hat p$ before sampling",
+   "text": "Use a proportion from a previous study, or 0.5 when you have no idea."
+  },
+  {
+   "t": 1474,
+   "type": "Worked example",
+   "title": "Tax poll, margin 0.03 at 95%",
+   "text": "With $\\hat p=0.5$ the sample size is about 1,067, rounded up to 1,068."
+  },
+  {
+   "t": 1682,
+   "type": "Worked example",
+   "title": "Self-checkout, margin 0.04 at 90%",
+   "text": "Using 42% from a previous study, about 412 customers."
+  },
+  {
+   "t": 1813,
+   "type": "Worked example",
+   "title": "Undergraduate part-time jobs",
+   "text": "A 90% interval of (0.31, 0.39) from 400 students. Interpret it, interpret the level, and judge two claims."
+  },
+  {
+   "t": 1962,
+   "type": "Worked example",
+   "title": "Dean versus president",
+   "text": "The whole interval is below 40%, so it supports the dean. It includes 36%, so it does not support the president."
+  }
+ ],
+ "sections": [
+  {
+   "id": "claims",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Does the interval support the claim?",
+   "cards": [
+    {
+     "letter": "✓",
+     "name": "Convincing evidence",
+     "text": "Every value in the interval is on the side of the claim."
+    },
+    {
+     "letter": "✗",
+     "name": "Not convincing",
+     "text": "The interval contains the claimed boundary value or values on both sides of it."
+    }
+   ],
+   "columns": [
+    "Claim",
+    "Interval",
+    "Where is the claimed value?",
+    "Convincing evidence?"
+   ],
+   "verdictColumn": 3,
+   "rows": [
+    {
+     "cells": [
+      "Governor: more than 50% will vote for her",
+      "(0.469, 0.574)",
+      "0.50 is inside the interval",
+      "No"
+     ],
+     "seek": 1065
+    },
+    {
+     "cells": [
+      "Governor, if the interval had been",
+      "(0.524, 0.604)",
+      "The whole interval is above 0.50",
+      "Yes"
+     ],
+     "seek": 1214
+    },
+    {
+     "cells": [
+      "Dean: fewer than 40% work",
+      "(0.31, 0.39)",
+      "The whole interval is below 0.40",
+      "Yes"
+     ],
+     "seek": 1962
+    },
+    {
+     "cells": [
+      "President: more than 36% work",
+      "(0.31, 0.39)",
+      "0.36 is inside the interval",
+      "No"
+     ],
+     "seek": 2021
+    },
+    {
+     "cells": [
+      "The proportion differs from 0.50",
+      "(0.469, 0.574)",
+      "0.50 is a plausible value",
+      "No"
+     ],
+     "seek": 1065
+    },
+    {
+     "cells": [
+      "The proportion differs from 0.50",
+      "(0.524, 0.604)",
+      "0.50 is not in the interval",
+      "Yes"
+     ],
+     "seek": 1214
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video says the governor \"might\" win and \"might\" lose. On the exam, write that the interval does not provide convincing evidence for the claim because it includes 0.50 and values below it. Do not argue from how many values sit on each side of 0.50."
+    }
+   ]
+  },
+  {
+   "id": "effects",
+   "type": "decision",
+   "tab": "Effects",
+   "kicker": "Decision check",
+   "title": "What changes the interval?",
+   "cards": [
+    {
+     "letter": "C",
+     "name": "Confidence level",
+     "text": "Higher level means larger $z^*$, so a wider interval."
+    },
+    {
+     "letter": "n",
+     "name": "Sample size",
+     "text": "Larger $n$ means a smaller standard error, so a narrower interval."
+    }
+   ],
+   "columns": [
+    "Change",
+    "$z^*$",
+    "Standard error",
+    "Margin of error",
+    "Interval"
+   ],
+   "verdictColumn": 4,
+   "rows": [
+    {
+     "cells": [
+      "Raise the level from 95% to 99%",
+      "Increases",
+      "Same",
+      "Increases",
+      "Wider, less precise"
+     ],
+     "seek": 878
+    },
+    {
+     "cells": [
+      "Lower the level from 95% to 90%",
+      "Decreases",
+      "Same",
+      "Decreases",
+      "Narrower, less confident"
+     ],
+     "seek": 878
+    },
+    {
+     "cells": [
+      "Take a larger random sample",
+      "Same",
+      "Decreases",
+      "Decreases",
+      "Narrower, more precise"
+     ],
+     "seek": 956
+    },
+    {
+     "cells": [
+      "Raise the level and also take a larger sample",
+      "Increases",
+      "Decreases",
+      "Can stay small",
+      "Higher confidence without losing precision"
+     ],
+     "seek": 956
+    }
+   ]
+  },
+  {
+   "id": "size",
+   "type": "procedure",
+   "tab": "Sample size",
+   "kicker": "Procedure",
+   "title": "Choose a sample size for a target margin of error",
+   "intro": "Researchers often start with the margin of error they want and solve for $n$. Solve $\\text{ME}=z^*\\sqrt{\\hat p(1-\\hat p)/n}$ for $n$.",
+   "steps": [
+    "Write down the margin of error ME you want.",
+    "Find $z^*$ for the confidence level.",
+    "Choose $\\hat p$ before sampling: use a proportion from a previous study if the problem gives one, otherwise use 0.5.",
+    "Compute $n=\\hat p(1-\\hat p)\\left(\\dfrac{z^*}{\\text{ME}}\\right)^2$.",
+    "Round up to the next whole number."
+   ],
+   "parts": [
+    {
+     "label": "No prior information",
+     "tex": "$\\hat p=0.5$",
+     "text": "Gives the largest $n$, so the margin of error is guaranteed."
+    },
+    {
+     "label": "Prior study",
+     "tex": "$\\hat p=0.42$",
+     "text": "Use the earlier proportion when the problem gives it."
+    },
+    {
+     "label": "Tax poll",
+     "tex": "$n=0.5(0.5)\\left(\\dfrac{1.96}{0.03}\\right)^2\\approx1067.1$",
+     "text": "Round up to 1,068."
+    },
+    {
+     "label": "Self-checkout",
+     "tex": "$n=0.42(0.58)\\left(\\dfrac{1.645}{0.04}\\right)^2\\approx412.0$",
+     "text": "Round up to 412."
+    }
+   ],
+   "line": "$n=\\hat p(1-\\hat p)\\left(\\dfrac{z^*}{\\text{ME}}\\right)^2\\;\\Rightarrow\\;n\\approx1067.1\\text{, so }n=1,068$",
+   "buttons": [
+    {
+     "label": "Watch solving for n (20:47)",
+     "seek": 1247
+    },
+    {
+     "label": "Watch the tax poll example (24:34)",
+     "seek": 1474
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "type": "explorer",
+   "tab": "Explorer",
+   "kicker": "Interactive",
+   "title": "Interval capture explorer",
+   "explorer": "ci-capture",
+   "intro": "Draw several batches of 100 intervals. Compare 90%, 95% and 99%, and then raise $n$. A higher level catches more but gives wider intervals, and a larger $n$ gives narrower ones. Even at 99%, about 1 interval in 100 misses.",
+   "stories": {
+    "gov": "Suppose 52% of Utah's registered voters would vote for the governor. Each poll surveys 345 randomly chosen voters, and each gives its own interval for $p$.",
+    "gov4": "Same voters, but each poll surveys 1,380 voters, four times as many."
+   },
+   "initial": {
+    "n": 345,
+    "p": 0.52,
+    "level": 0.95,
+    "story": "gov"
+   },
+   "presets": [
+    {
+     "label": "95% confidence",
+     "sub": "$n=345,\\ p=0.52$",
+     "n": 345,
+     "p": 0.52,
+     "level": 0.95,
+     "story": "gov"
+    },
+    {
+     "label": "99% confidence",
+     "sub": "$n=345,\\ p=0.52$",
+     "n": 345,
+     "p": 0.52,
+     "level": 0.99,
+     "story": "gov"
+    },
+    {
+     "label": "Four times the sample",
+     "sub": "$n=1380,\\ p=0.52$",
+     "n": 1380,
+     "p": 0.52,
+     "level": 0.95,
+     "story": "gov4"
+    },
+    {
+     "label": "99% and bigger",
+     "sub": "$n=1380,\\ p=0.52$",
+     "n": 1380,
+     "p": 0.52,
+     "level": 0.99,
+     "story": "gov4"
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Work through each task in it yourself, the way you would on the exam, then check what you observe.",
+   "steps": [
+    {
+     "title": "Critical value for 90%",
+     "suppose": "we want $z^*$ for 90% confidence.",
+     "how": "tap the plus button, choose Inference, then Probability Distributions, then Normal with mean 0 and standard deviation 1. Open Cumulative Probability, switch from area to bounds, choose the inner option and enter 0.90.",
+     "observe": "The bounds are $\\pm$ the same number. Repeat with 0.95 and 0.99 and compare.",
+     "expected": "$z^*\\approx1.645$",
+     "seek": 1722
+    },
+    {
+     "title": "Sample size with no prior information",
+     "suppose": "we want $n$ for a margin of error of 0.03 at 95% confidence, with no prior proportion.",
+     "how": "type 0.5*0.5/(0.03/1.96)^2 on a new line.",
+     "observe": "The calculator shows 1067.1. A sample of 1,067 would give a margin just above 0.03, so round up.",
+     "expected": "$n\\approx1067.1$, so $n=1,068$",
+     "seek": 1474
+    },
+    {
+     "title": "Sample size with a previous study",
+     "suppose": "we want $n$ for a margin of error of 0.04 at 90% confidence, given that a previous study found 42%.",
+     "how": "type 0.42*0.58/(0.04/1.645)^2 on a new line.",
+     "observe": "The result is 412.0. Compare it with the no-prior answer for the same margin: using 0.5 would need more.",
+     "expected": "$n\\approx412.0$, so $n=412$",
+     "seek": 1682
+    },
+    {
+     "title": "The governor's interval",
+     "suppose": "we want the 95% interval for 180 of 345 voters, to check the claim that she gets more than 50%.",
+     "how": "tap the plus button, choose Inference, then the $z$ test for proportions. Enter 180 successes and 345 for the sample size, create the test and open the confidence interval.",
+     "observe": "Check whether 0.50 is inside the interval. If it is, the interval does not provide convincing evidence for the claim.",
+     "expected": "$(0.4690,\\ 0.5744)$, which contains 0.50",
+     "seek": 1065
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Calling confidence a probability",
+     "weak": "There is a 95% probability that the true proportion is between 0.469 and 0.574.",
+     "better": "I am 95% confident that the proportion of all registered voters in Utah who will vote for the governor is between 46.9% and 57.4%.",
+     "seek": 517
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Interpreting the confidence level",
+     "weak": "95% of the time, the true proportion is in 0.469 to 0.574.",
+     "better": "If many random samples of 345 registered voters in Utah were taken, about 95% of the intervals constructed this way would capture the true proportion who will vote for the governor.",
+     "seek": 559
+    },
+    {
+     "kind": "Common trap",
+     "title": "Counting values on each side of the claim",
+     "weak": "There are more values above 0.50 than below, so she will win.",
+     "better": "The interval includes 0.50 and values below it, so it does not provide convincing evidence that more than 50% of voters will vote for her.",
+     "seek": 1065
+    },
+    {
+     "kind": "Common trap",
+     "title": "Treating a higher level as a free upgrade",
+     "weak": "A 99% interval is better because it is more confident.",
+     "better": "A 99% interval has a larger $z^*$, so it is wider and less precise. To keep it narrow, increase the sample size.",
+     "seek": 878
+    },
+    {
+     "kind": "Common trap",
+     "title": "Rounding the sample size to the nearest whole number",
+     "weak": "$n=1067.1$, so $n=1067$.",
+     "better": "Round up. $n=1,068$ guarantees a margin of error of at most 0.03, while 1,067 falls just short.",
+     "seek": 1474
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A 90% confidence interval for a population proportion is calculated from a random sample. Which statement correctly interprets the 90% confidence level?",
+     "opts": [
+      "There is a 90% probability that the true proportion is in this interval",
+      "90% of the population is in this interval",
+      "In repeated random samples of the same size, about 90% of the intervals made this way would capture the true proportion",
+      "The sample proportion is within 90% of the true proportion"
+     ],
+     "ok": 2,
+     "why": [
+      "Once the interval is computed, the true proportion either is in it or is not.",
+      "The interval estimates a proportion, not a share of the population.",
+      "The level describes the long-run capture rate of the method across many samples.",
+      "The level is not about how close $\\hat p$ is to $p$ in percentage terms."
+     ],
+     "seek": 559
+    },
+    {
+     "stem": "All else equal, the sample size for a 95% interval is increased from 400 to 1,600. What happens to the margin of error?",
+     "opts": [
+      "It is doubled",
+      "It is cut in half",
+      "It is cut to one quarter",
+      "It does not change"
+     ],
+     "ok": 1,
+     "why": [
+      "A larger sample makes the margin smaller.",
+      "$n$ is under a square root, so quadrupling $n$ cuts the standard error and the margin of error in half.",
+      "It would be one quarter only if $n$ were not under a square root.",
+      "The margin of error depends on $n$."
+     ],
+     "seek": 956
+    },
+    {
+     "stem": "A 95% confidence interval for a proportion of residents who support a plan is (0.58, 0.66). Does it provide convincing evidence for the claim that more than 55% support it?",
+     "opts": [
+      "Yes, because every value in the interval is greater than 0.55",
+      "No, because the interval is wider than 0.05",
+      "No, because the midpoint 0.62 is not 0.55",
+      "Yes, because 0.66 is greater than 0.55"
+     ],
+     "ok": 0,
+     "why": [
+      "The lowest plausible value, 0.58, is still above 0.55.",
+      "Width does not matter. What matters is whether 0.55 is in the interval.",
+      "The midpoint is the point estimate. The claim is judged by the whole interval.",
+      "One endpoint being above 0.55 is not enough. The whole interval must be."
+     ],
+     "seek": 1214
+    },
+    {
+     "stem": "No prior information is available. About how large a sample is needed for a 95% confidence interval with a margin of error of at most 0.05?",
+     "opts": [
+      "39",
+      "384",
+      "769",
+      "385"
+     ],
+     "ok": 3,
+     "why": [
+      "This is $z^*/\\text{ME}=1.96/0.05$ without squaring or multiplying by $\\hat p(1-\\hat p)$.",
+      "$0.5(0.5)(1.96/0.05)^2=384.16$. Rounding down to 384 would give a margin just over 0.05.",
+      "This doubles the correct value.",
+      "$n=384.16$, so round up to 385."
+     ],
+     "seek": 1474
+    },
+    {
+     "stem": "Which change would make a confidence interval for a proportion narrower?",
+     "opts": [
+      "Raising the confidence level from 95% to 99%",
+      "Taking a larger random sample",
+      "Taking a smaller random sample",
+      "Using a sample proportion closer to 0.5"
+     ],
+     "ok": 1,
+     "why": [
+      "A higher level increases $z^*$ and widens the interval.",
+      "A larger $n$ decreases the standard error and the margin of error.",
+      "A smaller $n$ increases the standard error.",
+      "$\\hat p(1-\\hat p)$ is largest at 0.5, which makes the standard error larger, not smaller."
+     ],
+     "seek": 956
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "A principal wants to estimate the proportion of students at her school who walk to school. A random sample of 200 students gives a 90% confidence interval of (0.19, 0.29).",
+   "parts": [
+    "(a) Interpret the interval in context.",
+    "(b) Interpret the 90% confidence level.",
+    "(c) A school board member claims that fewer than 35% of students walk. Does the interval provide convincing evidence for the claim? Justify your answer.",
+    "(d) The principal plans a new random sample with a margin of error of at most 0.02 at 95% confidence. Using the sample proportion from this interval, find the sample size needed."
+   ],
+   "sample": [
+    "(a) I am 90% confident that the proportion of all students at this school who walk to school is between 0.19 and 0.29.",
+    "(b) If many random samples of 200 students were taken, about 90% of the intervals constructed this way would capture the true proportion of students who walk to school.",
+    "(c) Yes. Every value in the interval is below 0.35, so the interval provides convincing evidence that fewer than 35% of students walk to school.",
+    "(d) The sample proportion is the midpoint, $\\hat p=0.24$. $n=0.24(0.76)\\left(\\dfrac{1.96}{0.02}\\right)^2\\approx1751.8$, so the principal needs at least 1,752 students."
+   ],
+   "checklist": [
+    "(a) Confidence level, both endpoints and the parameter in context",
+    "(b) Repeated random samples of 200 and about 90% of the intervals capture the proportion",
+    "(b) Does not refer to this one interval",
+    "(c) Notes the whole interval is below 0.35 and concludes the claim is supported",
+    "(d) Uses $\\hat p=0.24$ (the midpoint) and $z^*=1.96$",
+    "(d) $n\\approx1752$ rounded up to 1,752"
+   ]
+  }
+ ],
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Test values were computed when the page was written.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "caption",
+    "text": "At 2:05 the video says 345 registered voters and at 2:17 it says 180 out of 340. The interval it shows matches 345, so the page uses 180 of 345."
+   },
+   {
+    "kind": "values",
+    "text": "Governor interval: 180 of 345 gives (0.4690, 0.5744). The video shows an upper bound of 0.575; the page uses 0.574 because the exact upper bound is 0.5744. Confirm the screen."
+   },
+   {
+    "kind": "wording",
+    "text": "At 18:45 the video argues about the number of decimal values above and below 50%. The page drops that argument and uses the exam reason: the interval contains 0.50 and values below it."
+   },
+   {
+    "kind": "wording",
+    "text": "The video says the governor \"might win but might lose.\" The page uses \"does not provide convincing evidence\"."
+   },
+   {
+    "kind": "values",
+    "text": "Sample size: the video says about 1,068 and 412. The page computes 1067.1 and 412.0 and rounds up. The video says it rounds up \"to make it a little better\"; the page gives the exam reason, that rounding down could leave the margin above the target."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names (Inference, Probability Distributions, z test for proportions with a confidence interval option) are not shown in this video and come from topic 3.3; they are unconfirmed against the current calculator."
+   },
+   {
+    "kind": "explorer",
+    "text": "Reuses the new ci-capture explorer from lesson 3.3 with different presets."
+   }
+  ]
+ }
+}
