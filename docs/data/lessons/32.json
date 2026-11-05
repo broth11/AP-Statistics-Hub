@@ -1,0 +1,513 @@
+{
+ "n": 32,
+ "unit": 3,
+ "topic": "3.1",
+ "title": "Estimators",
+ "videoId": "0LF-ykNnJBU",
+ "videoTitle": "AP Statistics Topic 3.1 Estimators",
+ "intro": "After this lesson you can tell a parameter from a statistic, find a point estimate, and decide whether an estimator is unbiased by comparing the average of many estimates with the true value.",
+ "moments": [
+  {
+   "t": 66,
+   "type": "Definition",
+   "title": "Unbiased estimator",
+   "text": "An estimator is unbiased if, on average, it neither overestimates nor underestimates the parameter."
+  },
+  {
+   "t": 134,
+   "type": "Definition",
+   "title": "Parameter",
+   "text": "A numerical summary of a population. The two you will use most are $\\mu$ and $p$."
+  },
+  {
+   "t": 174,
+   "type": "Definition",
+   "title": "Statistic",
+   "text": "A numerical summary of a sample, such as $\\bar x$ or $\\hat p$."
+  },
+  {
+   "t": 186,
+   "type": "Definition",
+   "title": "Estimator",
+   "text": "A statistic used to estimate a population parameter."
+  },
+  {
+   "t": 249,
+   "type": "Procedure",
+   "title": "Three steps to check for bias",
+   "text": "Identify the parameter, look at many sample estimates, then compare their average with the parameter."
+  },
+  {
+   "t": 293,
+   "type": "Worked example",
+   "title": "Brushing teeth, unbiased",
+   "text": "The true proportion is 70%. Samples near 71%, 68%, 72%, 67%, 70% and 73% average out close to 0.70."
+  },
+  {
+   "t": 346,
+   "type": "Worked example",
+   "title": "Brushing teeth, biased",
+   "text": "Samples of 43%, 32%, 48%, 31% and 29% average far below 70%, so the estimates are biased low."
+  },
+  {
+   "t": 423,
+   "type": "Definition",
+   "title": "Point estimate",
+   "text": "One statistic that points toward the parameter. $\\hat p$ is a point estimate of $p$."
+  },
+  {
+   "t": 482,
+   "type": "Key idea",
+   "title": "Which statistics are estimators",
+   "text": "$\\hat p$ estimates $p$, $\\bar x$ estimates $\\mu$, and a sample median or range can estimate its population version."
+  },
+  {
+   "t": 523,
+   "type": "Worked example",
+   "title": "Later school start times",
+   "text": "150 of 200 students support it, so $\\hat p=0.75$ is the point estimate of $p$."
+  },
+  {
+   "t": 564,
+   "type": "Worked example",
+   "title": "Mean test score",
+   "text": "Scores 82, 90, 88, 94 and 86 give $\\bar x=88$, a point estimate of $\\mu$."
+  },
+  {
+   "t": 655,
+   "type": "Exam question",
+   "title": "Name the parameter and the statistic",
+   "text": "Read the problem: the parameter is the proportion of all students, the statistic is $\\hat p$ from the sample of 150."
+  },
+  {
+   "t": 722,
+   "type": "Key idea",
+   "title": "Parameter or statistic?",
+   "text": "If it describes all of a population, it is a parameter. If it comes from a sample, it is a statistic."
+  },
+  {
+   "t": 837,
+   "type": "Worked example",
+   "title": "Average of estimates equals the truth",
+   "text": "True $p=0.40$ and five estimates average exactly 0.40, so the estimator is unbiased."
+  },
+  {
+   "t": 891,
+   "type": "Worked example",
+   "title": "Average of estimates is too high",
+   "text": "True $\\mu=150$ but five estimates average 156, a sign of bias."
+  },
+  {
+   "t": 964,
+   "type": "Exam question",
+   "title": "Why a random sample can be used as an estimator",
+   "text": "Random selection avoids favoring one kind of customer, so $\\hat p=0.73$ points toward $p$."
+  }
+ ],
+ "sections": [
+  {
+   "id": "stat",
+   "type": "decision",
+   "tab": "Parameter or statistic",
+   "kicker": "Decision check",
+   "title": "Parameter or statistic?",
+   "cards": [
+    {
+     "letter": "P",
+     "name": "Parameter",
+     "text": "Describes a whole population, such as $p$ or $\\mu$. There is one true value."
+    },
+    {
+     "letter": "S",
+     "name": "Statistic",
+     "text": "Describes a sample, such as $\\hat p$ or $\\bar x$. It changes from sample to sample."
+    }
+   ],
+   "columns": [
+    "Situation",
+    "Describes",
+    "Parameter or statistic?"
+   ],
+   "verdictColumn": 2,
+   "rows": [
+    {
+     "cells": [
+      "Average height of all NBA players",
+      "The whole population",
+      "Parameter"
+     ],
+     "seek": 722
+    },
+    {
+     "cells": [
+      "Average height of 50 randomly selected NBA players",
+      "A sample",
+      "Statistic"
+     ],
+     "seek": 722
+    },
+    {
+     "cells": [
+      "Proportion of all households in Ohio with a pet",
+      "The whole population",
+      "Parameter"
+     ],
+     "seek": 722
+    },
+    {
+     "cells": [
+      "Proportion of 500 sampled households with a pet",
+      "A sample",
+      "Statistic"
+     ],
+     "seek": 722
+    },
+    {
+     "cells": [
+      "Proportion of the 150 surveyed students who have a part-time job",
+      "A sample",
+      "Statistic"
+     ],
+     "seek": 655
+    }
+   ]
+  },
+  {
+   "id": "bias",
+   "type": "decision",
+   "tab": "Biased or unbiased",
+   "kicker": "Decision check",
+   "title": "Is the estimator biased?",
+   "cards": [
+    {
+     "letter": "=",
+     "name": "Unbiased",
+     "text": "The average of many estimates is very close to the parameter."
+    },
+    {
+     "letter": "≠",
+     "name": "Biased",
+     "text": "The average of many estimates is consistently above or below the parameter."
+    }
+   ],
+   "columns": [
+    "Case",
+    "True value",
+    "Average of the estimates",
+    "Verdict"
+   ],
+   "verdictColumn": 3,
+   "rows": [
+    {
+     "cells": [
+      "Brushing teeth: estimates 71%, 68%, 72%, 67%, 70%, 73%",
+      "70%",
+      "70.2%",
+      "Unbiased"
+     ],
+     "seek": 293
+    },
+    {
+     "cells": [
+      "Brushing teeth: estimates 43%, 32%, 48%, 31%, 29%",
+      "70%",
+      "36.6%",
+      "Biased (too low)"
+     ],
+     "seek": 346
+    },
+    {
+     "cells": [
+      "Five samples: 0.39, 0.42, 0.38, 0.41, 0.40",
+      "0.40",
+      "0.40",
+      "Unbiased"
+     ],
+     "seek": 837
+    },
+    {
+     "cells": [
+      "Five sample means: 158, 154, 157, 155, 156",
+      "150",
+      "156",
+      "Biased (too high)"
+     ],
+     "seek": 891
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video says samples chosen at random \"should be\" unbiased. Be more exact: random selection removes the systematic over- or under-representation that causes bias, so the center of the sampling distribution of $\\hat p$ is $p$. An unbiased estimator still gives a different value in every sample."
+    }
+   ]
+  },
+  {
+   "id": "check",
+   "type": "procedure",
+   "tab": "Procedure",
+   "kicker": "Procedure",
+   "title": "Check an estimator and find a point estimate",
+   "intro": "To decide whether an estimator is unbiased, look at many estimates, never just one. A single sample can miss by chance.",
+   "steps": [
+    "Identify the parameter you are estimating, with the population and variable in context.",
+    "Look at many sample estimates of that parameter.",
+    "Find the average of the estimates. Close to the parameter means unbiased. Consistently high or low means biased."
+   ],
+   "parts": [
+    {
+     "label": "Sample proportion",
+     "tex": "$\\hat p=\\dfrac{150}{200}=0.75$",
+     "text": "Point estimate of $p$, the proportion of all students who support later start times."
+    },
+    {
+     "label": "Sample mean",
+     "tex": "$\\bar x=\\dfrac{82+90+88+94+86}{5}=88$",
+     "text": "Point estimate of $\\mu$, the mean score of all students."
+    },
+    {
+     "label": "Another proportion",
+     "tex": "$\\hat p=\\dfrac{315}{500}=0.63$",
+     "text": "Point estimate of the proportion of all voters who support the school levy."
+    }
+   ],
+   "line": "$\\text{average of many estimates}\\approx\\text{parameter}\\;\\Rightarrow\\;\\text{unbiased estimator}$",
+   "buttons": [
+    {
+     "label": "Watch the three steps (4:09)",
+     "seek": 249
+    },
+    {
+     "label": "Watch point estimates (7:03)",
+     "seek": 423
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "type": "explorer",
+   "tab": "Explorer",
+   "kicker": "Interactive",
+   "title": "Sampling distribution explorer",
+   "explorer": "sampling-distribution",
+   "intro": "Press Take 1,000 samples. Each sample gives one $\\hat p$, and the histogram stacks them. For a random sample the dashed line, the average of the $\\hat p$ values, lands on the true $p$. Switch to Biased sample and it moves away from $p$, even with a large $n$.",
+   "bias": true,
+   "biasFactor": 1.5,
+   "stories": {
+    "nut": "About 17% of a large population is allergic to peanuts. Each sample is 140 randomly chosen people, and we record the proportion who are allergic.",
+    "teeth": "Suppose 70% of all kids brush their teeth every night. Each sample is 100 randomly chosen kids.",
+    "fan": "Same 70%, but the survey is shared only on a toothbrush fan page, so kids who brush nightly are 1.5 times as likely to be in the sample."
+   },
+   "initial": {
+    "n": 140,
+    "p": 0.17,
+    "story": "nut"
+   },
+   "presets": [
+    {
+     "label": "Peanut allergy",
+     "sub": "$n=140,\\ p=0.17$",
+     "n": 140,
+     "p": 0.17,
+     "mode": "random",
+     "story": "nut"
+    },
+    {
+     "label": "Nightly brushing",
+     "sub": "$n=100,\\ p=0.70$",
+     "n": 100,
+     "p": 0.7,
+     "mode": "random",
+     "story": "teeth"
+    },
+    {
+     "label": "Biased survey",
+     "sub": "$n=100,\\ p=0.70$",
+     "n": 100,
+     "p": 0.7,
+     "mode": "biased",
+     "story": "fan"
+    },
+    {
+     "label": "Still biased",
+     "sub": "$n=500,\\ p=0.70$",
+     "n": 500,
+     "p": 0.7,
+     "mode": "biased",
+     "story": "fan"
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Treating a sample value as the parameter",
+     "weak": "$p=0.75$ is the proportion of students who support later start times.",
+     "better": "$\\hat p=0.75$ is the sample proportion. It is a point estimate of $p$, the proportion of all students at the school who support later start times.",
+     "seek": 523
+    },
+    {
+     "kind": "Common trap",
+     "title": "Naming the parameter without the population",
+     "weak": "The parameter is the proportion with a part-time job.",
+     "better": "The parameter is $p$, the proportion of all students at the high school who have a part-time job. The statistic is $\\hat p$ from the random sample of 150 students.",
+     "seek": 655
+    },
+    {
+     "kind": "Common trap",
+     "title": "Thinking unbiased means every sample is right",
+     "weak": "The estimator is unbiased, so our sample proportion must equal the population proportion.",
+     "better": "Unbiased means the sampling distribution of $\\hat p$ is centered at $p$. Any one sample proportion still varies from $p$.",
+     "seek": 66
+    },
+    {
+     "kind": "Common trap",
+     "title": "Judging bias from a single sample",
+     "weak": "The sample mean was 158 and the true mean is 150, so the estimator is biased.",
+     "better": "One sample can miss by chance. The five estimates average 156, well above 150, so the estimates are consistently high and the estimator is biased.",
+     "seek": 891
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Why a random sample supports using $\\hat p$",
+     "weak": "Random samples are always accurate.",
+     "better": "Because the customers were randomly selected, the sample is not systematically weighted toward fans or critics, so $\\hat p$ is an unbiased estimator of $p$. It will still vary from sample to sample.",
+     "seek": 1011
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A company knows that 62% of all 40,000 of its customers renewed a subscription. A manager randomly selects 300 customers and finds that 57% renewed. Which statement is correct?",
+     "opts": [
+      "0.62 is a statistic and 0.57 is a parameter",
+      "0.62 is a parameter and 0.57 is a statistic",
+      "Both are parameters because both describe renewals",
+      "Both are statistics because both are proportions"
+     ],
+     "ok": 1,
+     "why": [
+      "The parameter describes all customers, so 0.62 is the parameter.",
+      "0.62 describes the whole population and 0.57 describes the sample.",
+      "Only the value for all customers is a parameter.",
+      "A proportion is a statistic only when it comes from a sample."
+     ],
+     "seek": 722
+    },
+    {
+     "stem": "The true proportion of voters who favor a measure is 0.52. Five random samples give sample proportions 0.50, 0.55, 0.49, 0.54 and 0.53. What do these estimates suggest?",
+     "opts": [
+      "The estimator appears unbiased, because the average, 0.522, is very close to 0.52",
+      "The estimator is biased, because no sample proportion equals 0.52",
+      "The estimator is biased, because the average is greater than 0.52",
+      "The estimator is biased, because the sample proportions differ from each other"
+     ],
+     "ok": 0,
+     "why": [
+      "Estimates vary, but their average is within 0.002 of the parameter.",
+      "Samples are not expected to match $p$ exactly. Bias is about the average.",
+      "0.522 is greater than 0.52 by only 0.002, which is not a systematic miss.",
+      "Variation from sample to sample happens for every estimator, biased or not."
+     ],
+     "seek": 837
+    },
+    {
+     "stem": "Which statement describes an unbiased estimator?",
+     "opts": [
+      "Every sample statistic equals the parameter",
+      "The statistic does not change from sample to sample",
+      "The mean of the sampling distribution of the statistic equals the parameter",
+      "The statistic comes from a sample larger than 10% of the population"
+     ],
+     "ok": 2,
+     "why": [
+      "Unbiased does not mean every estimate is exact.",
+      "Statistics always vary from sample to sample.",
+      "The center of the sampling distribution is the parameter, so on average the estimator is right.",
+      "Sample size and the 10% condition are not part of the definition."
+     ],
+     "seek": 66
+    },
+    {
+     "stem": "A survey of 250 teenagers finds that 190 support a later start to the school day. What is the point estimate of the proportion of all teenagers who support it?",
+     "opts": [
+      "190",
+      "0.24",
+      "250/190 ≈ 1.32",
+      "0.76"
+     ],
+     "ok": 3,
+     "why": [
+      "190 is a count, not a proportion.",
+      "0.24 is the proportion who do not support it.",
+      "This inverts the fraction.",
+      "$\\hat p=190/250=0.76$."
+     ],
+     "seek": 523
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "A town official wants to estimate the proportion of the town's households that recycle. She selects a random sample of 180 households and finds that 117 recycle.",
+   "parts": [
+    "(a) Identify the parameter and the statistic.",
+    "(b) Calculate the point estimate.",
+    "(c) The official later learns that the true proportion is 0.65. Five more random samples of 180 households give sample proportions 0.64, 0.69, 0.66, 0.62 and 0.65. Find the average and decide whether these results are consistent with an unbiased estimator.",
+    "(d) A second official surveyed only people at the recycling drop-off. Five samples of 180 gave 0.91, 0.88, 0.93, 0.90 and 0.89. Is this estimator biased? Explain the cause."
+   ],
+   "sample": [
+    "(a) The parameter is $p$, the proportion of all households in the town that recycle. The statistic is $\\hat p$, the proportion of the 180 sampled households that recycle.",
+    "(b) $\\hat p=117/180=0.65$.",
+    "(c) The average of the five estimates is $(0.64+0.69+0.66+0.62+0.65)/5=0.652$, which is very close to the true value 0.65. The estimates vary but center on $p$, so they are consistent with an unbiased estimator.",
+    "(d) The average is $(0.91+0.88+0.93+0.90+0.89)/5=0.902$, far above 0.65. The estimates are consistently too high, so the estimator is biased. People at the drop-off are more likely to recycle, so the sample over-represents recyclers."
+   ],
+   "checklist": [
+    "(a) Parameter defined with the population and variable, and $\\hat p$ named as the statistic",
+    "(b) $\\hat p=0.65$ shown as 117 out of 180",
+    "(c) Average computed (about 0.65) and compared with 0.65",
+    "(c) Concludes the estimator appears unbiased, noting that individual estimates vary",
+    "(d) Average computed (about 0.90) and compared with 0.65",
+    "(d) Concludes biased and names the cause, a sample taken only from recyclers"
+   ]
+  }
+ ],
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Test values were computed when the page was written.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "At 17:03 the video says random samples \"should be\" unbiased. The page says random selection removes systematic over- or under-representation and shows a wording note."
+   },
+   {
+    "kind": "values",
+    "text": "The five-sample brushing-teeth biased example (43%, 32%, 48%, 31%, 29%) averages 36.6%; the video does not state the average. The six unbiased estimates (71%, 68%, 72%, 67%, 70%, 73%) average 70.2%."
+   },
+   {
+    "kind": "explorer",
+    "text": "New explorer: sampling-distribution. The Biased sample mode and its factor of 1.5 are this page's own illustration, not from the video. Check the presets and the dashed average line in class."
+   },
+   {
+    "kind": "placement",
+    "text": "No calculator section: the video uses no calculator for 3.1."
+   }
+  ]
+ }
+}

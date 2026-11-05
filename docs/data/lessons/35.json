@@ -1,0 +1,507 @@
+{
+ "n": 35,
+ "unit": 3,
+ "topic": "3.5",
+ "title": "Setting Up a Test for a Population Proportion",
+ "videoId": "j5bGcG2x8O8",
+ "videoTitle": "AP Statistics Topic 3.5 Setting Up a Test for a Population Proportion",
+ "intro": "After this lesson you can define the parameter, state the null and alternative hypotheses, check the conditions with the null proportion, and name a one-sample $z$ test for a population proportion.",
+ "moments": [
+  {
+   "t": 89,
+   "type": "Definition",
+   "title": "Hypothesis test",
+   "text": "A procedure that uses sample data to decide about a claim for a population parameter. Here, a one-sample $z$ test for a proportion."
+  },
+  {
+   "t": 157,
+   "type": "Concept",
+   "title": "Two forms of inference",
+   "text": "A confidence interval estimates the parameter. A test checks a claim about it."
+  },
+  {
+   "t": 195,
+   "type": "Worked example",
+   "title": "Restaurant takeout",
+   "text": "The chain claims more than 60% order takeout. In a sample of 250, 170 did, so $\\hat p=0.68$."
+  },
+  {
+   "t": 285,
+   "type": "Key idea",
+   "title": "Two reasons $\\hat p$ can differ",
+   "text": "Samples vary, or the truth really is different. The test helps decide between them."
+  },
+  {
+   "t": 328,
+   "type": "Worked example",
+   "title": "Light bulbs",
+   "text": "A maker claims fewer than 8% are defective. In a sample of 650, 42 were, so $\\hat p\\approx0.065$."
+  },
+  {
+   "t": 420,
+   "type": "Worked example",
+   "title": "Remote learning",
+   "text": "A board thinks the proportion of parents who support it differs from 50%. In 300 parents, 141 do."
+  },
+  {
+   "t": 492,
+   "type": "Concept",
+   "title": "Putting a proportion on trial",
+   "text": "Assume the null value is true, then ask whether the sample gives convincing evidence against it."
+  },
+  {
+   "t": 561,
+   "type": "Procedure",
+   "title": "PHANTOM",
+   "text": "Parameter, Hypotheses, Assumptions, Name, Test statistic, Obtain the p-value, Make a conclusion. This lesson covers the first four."
+  },
+  {
+   "t": 667,
+   "type": "Exam wording",
+   "title": "Parameter and name in one sentence",
+   "text": "\"A one-sample $z$ test for $p$, the proportion of all ... who ...\""
+  },
+  {
+   "t": 773,
+   "type": "Procedure",
+   "title": "Check the conditions",
+   "text": "Random sample, $n$ at most 10% of the population, and at least 10 expected successes and failures."
+  },
+  {
+   "t": 873,
+   "type": "Key idea",
+   "title": "Use $p_0$ for large counts, not $\\hat p$",
+   "text": "Check $np_0\\ge10$ and $n(1-p_0)\\ge10$ with the null proportion."
+  },
+  {
+   "t": 1023,
+   "type": "Definition",
+   "title": "Null and alternative hypotheses",
+   "text": "$H_0$ is the status quo. $H_a$ is the claim the test looks for evidence of."
+  },
+  {
+   "t": 1107,
+   "type": "Key idea",
+   "title": "Always $p$, never $\\hat p$",
+   "text": "Hypotheses are about the population parameter."
+  },
+  {
+   "t": 1266,
+   "type": "Key idea",
+   "title": "Same number, equal sign in the null",
+   "text": "$H_0$ always uses $=$, and both hypotheses use the same value."
+  },
+  {
+   "t": 1307,
+   "type": "Concept",
+   "title": "One-sided and two-sided tests",
+   "text": "$>$ is an upper test, $<$ is a lower test, and $\\ne$ is a two-sided test."
+  },
+  {
+   "t": 1393,
+   "type": "Visual",
+   "title": "Tails of the null distribution",
+   "text": "Only the tail in the direction of $H_a$ matters. A two-sided test uses both tails."
+  },
+  {
+   "t": 1448,
+   "type": "Key idea",
+   "title": "The setup does not use the sample",
+   "text": "Parameter, hypotheses, conditions and name all come from the claim, not from $\\hat p$."
+  },
+  {
+   "t": 1510,
+   "type": "Worked example",
+   "title": "Dog park",
+   "text": "The council builds the park only with evidence that more than 75% want it. Sample: 361 of 465."
+  },
+  {
+   "t": 1814,
+   "type": "Exam question",
+   "title": "Pick the correct hypotheses",
+   "text": "The claim is the alternative, the null uses $=$, and neither uses $\\hat p$."
+  }
+ ],
+ "sections": [
+  {
+   "id": "direction",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Which alternative hypothesis?",
+   "cards": [
+    {
+     "letter": ">",
+     "name": "Upper test",
+     "text": "The claim says more than, greater than, or higher than $p_0$."
+    },
+    {
+     "letter": "<",
+     "name": "Lower test",
+     "text": "The claim says fewer than, less than, or lower than $p_0$."
+    },
+    {
+     "letter": "≠",
+     "name": "Two-sided test",
+     "text": "The claim says different from, changed from, or not equal to $p_0$."
+    }
+   ],
+   "columns": [
+    "Claim",
+    "$H_0$",
+    "$H_a$",
+    "Type of test"
+   ],
+   "verdictColumn": 3,
+   "rows": [
+    {
+     "cells": [
+      "More than 60% of customers order takeout",
+      "$p=0.60$",
+      "$p>0.60$",
+      "Upper (one-sided)"
+     ],
+     "seek": 195
+    },
+    {
+     "cells": [
+      "Fewer than 8% of bulbs are defective",
+      "$p=0.08$",
+      "$p<0.08$",
+      "Lower (one-sided)"
+     ],
+     "seek": 328
+    },
+    {
+     "cells": [
+      "The share of parents who support remote learning differs from 50%",
+      "$p=0.50$",
+      "$p\\ne0.50$",
+      "Two-sided"
+     ],
+     "seek": 420
+    },
+    {
+     "cells": [
+      "More than 75% of residents want the dog park",
+      "$p=0.75$",
+      "$p>0.75$",
+      "Upper (one-sided)"
+     ],
+     "seek": 1510
+    },
+    {
+     "cells": [
+      "Support for a plan has dropped below 45%",
+      "$p=0.45$",
+      "$p<0.45$",
+      "Lower (one-sided)"
+     ],
+     "seek": 1307
+    },
+    {
+     "cells": [
+      "A company thinks its on-time rate is no longer 90%",
+      "$p=0.90$",
+      "$p\\ne0.90$",
+      "Two-sided"
+     ],
+     "seek": 1307
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video treats \"at least 35%\" as \"more than 35%\" in its multiple-choice example. A claim of \"at least\" or \"at most\" includes the boundary, so read the problem for a strict word such as more than, fewer than or different from before choosing $H_a$. On the exam, $H_0$ is still written with an equals sign."
+    }
+   ]
+  },
+  {
+   "id": "setup",
+   "type": "procedure",
+   "tab": "Setup",
+   "kicker": "Procedure",
+   "title": "Set up a test with PHANTOM",
+   "intro": "The first four PHANTOM steps set up the test. None of them uses the sample proportion. The last three steps (test statistic, p-value, conclusion) come in topics 3.6 and 3.7.",
+   "steps": [
+    "Parameter: define $p$ with the population and the response variable.",
+    "Hypotheses: $H_0: p=p_0$ and $H_a$ with $<$, $>$ or $\\ne$, using the same number.",
+    "Assumptions: random sample, $n$ at most 10% of the population, and $np_0\\ge10$, $n(1-p_0)\\ge10$.",
+    "Name the test: one-sample $z$ test for a population proportion. Steps 1 and 4 fit in one sentence."
+   ],
+   "parts": [
+    {
+     "label": "Parameter and name",
+     "tex": "$p=$ proportion of all Oakville residents who favor the dog park",
+     "text": "One-sample $z$ test for $p$."
+    },
+    {
+     "label": "Random and 10%",
+     "tex": "465 random, less than 10% of residents",
+     "text": "Assume the city has more than 4,650 residents when the size is not given."
+    },
+    {
+     "label": "Large counts",
+     "tex": "$465(0.75)=348.75\\ge10$ and $465(0.25)=116.25\\ge10$",
+     "text": "Uses $p_0=0.75$, not $\\hat p=0.776$."
+    },
+    {
+     "label": "Hypotheses",
+     "tex": "$H_0: p=0.75$ and $H_a: p>0.75$",
+     "text": "The council wants evidence of more than 75%."
+    }
+   ],
+   "line": "$\\text{Setup uses }p_0\\text{ and the claim, never }\\hat p$",
+   "buttons": [
+    {
+     "label": "Watch PHANTOM (9:21)",
+     "seek": 561
+    },
+    {
+     "label": "Watch the dog park setup (25:10)",
+     "seek": 1510
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "type": "explorer",
+   "tab": "Explorer",
+   "kicker": "Interactive",
+   "title": "Which tail counts?",
+   "explorer": "one-proportion-test",
+   "intro": "Switch between $H_a: p<p_0$, $H_a: p>p_0$ and $H_a: p\\ne p_0$ and watch which tail of the null distribution is shaded. The curve is centered at $p_0$ and is built assuming $H_0$ is true. You will use the $z$ and p-value readouts in topics 3.6 and 3.7; for now, look only at the tails.",
+   "stories": {
+    "rest": "A restaurant chain claims more than 60% of customers order takeout. In a random sample of 250 customers, 170 ordered takeout. $H_a: p>0.60$.",
+    "bulb": "A company claims fewer than 8% of its light bulbs are defective. In a random sample of 650 bulbs, 42 were defective. $H_a: p<0.08$.",
+    "remote": "A school board believes the share of parents who support remote learning is different from 50%. In a random sample of 300 parents, 141 support it. $H_a: p\\ne0.50$.",
+    "dog": "A city will build a dog park only if more than 75% of residents want it. In a random sample of 465 residents, 361 want it. $H_a: p>0.75$."
+   },
+   "initial": {
+    "n": 250,
+    "p0": 0.6,
+    "x": 170,
+    "alt": "gt",
+    "alpha": 0.05,
+    "story": "rest"
+   },
+   "presets": [
+    {
+     "label": "Restaurant",
+     "sub": "$n=250,\\ \\hat p=0.68$",
+     "n": 250,
+     "p0": 0.6,
+     "x": 170,
+     "alt": "gt",
+     "story": "rest"
+    },
+    {
+     "label": "Light bulbs",
+     "sub": "$n=650,\\ \\hat p=0.065$",
+     "n": 650,
+     "p0": 0.08,
+     "x": 42,
+     "alt": "lt",
+     "story": "bulb"
+    },
+    {
+     "label": "Remote learning",
+     "sub": "$n=300,\\ \\hat p=0.47$",
+     "n": 300,
+     "p0": 0.5,
+     "x": 141,
+     "alt": "ne",
+     "story": "remote"
+    },
+    {
+     "label": "Dog park",
+     "sub": "$n=465,\\ \\hat p=0.776$",
+     "n": 465,
+     "p0": 0.75,
+     "x": 361,
+     "alt": "gt",
+     "story": "dog"
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Putting $\\hat p$ in the hypotheses",
+     "weak": "$H_0: \\hat p=0.60$ and $H_a: \\hat p>0.60$",
+     "better": "$H_0: p=0.60$ and $H_a: p>0.60$, where $p$ is the proportion of all customers who order takeout.",
+     "seek": 1107
+    },
+    {
+     "kind": "Common trap",
+     "title": "Checking large counts with the sample proportion",
+     "weak": "$250(0.68)=170\\ge10$ and $250(0.32)=80\\ge10$",
+     "better": "Use the null value: $250(0.60)=150\\ge10$ and $250(0.40)=100\\ge10$.",
+     "seek": 873
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Defining the parameter",
+     "weak": "$p$ is the proportion who order takeout.",
+     "better": "$p$ is the proportion of all customers of the restaurant chain who order takeout rather than dine in.",
+     "seek": 667
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Naming the test",
+     "weak": "A $t$ test.",
+     "better": "A one-sample $z$ test for a population proportion.",
+     "seek": 667
+    },
+    {
+     "kind": "Common trap",
+     "title": "Writing the null with an inequality or a different number",
+     "weak": "$H_0: p\\le0.35$ and $H_a: p>0.40$",
+     "better": "$H_0: p=0.35$ and $H_a: p>0.35$. The equals sign is always in $H_0$, and both hypotheses use the same number.",
+     "seek": 1266
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A coach claims that more than 40% of the players in a large league are left-handed. In a random sample of 120 players, 54 are left-handed. Which are the correct hypotheses?",
+     "opts": [
+      "$H_0: p=0.40$ and $H_a: p>0.40$",
+      "$H_0: \\hat p=0.40$ and $H_a: \\hat p>0.40$",
+      "$H_0: p=0.45$ and $H_a: p>0.40$",
+      "$H_0: p>0.40$ and $H_a: p=0.40$"
+     ],
+     "ok": 0,
+     "why": [
+      "The claim is the alternative, the null uses $=$, and both use the same value and the parameter $p$.",
+      "Hypotheses are about the population parameter, not the sample proportion.",
+      "The sample proportion 54/120 = 0.45 does not appear in the hypotheses.",
+      "The claim belongs in $H_a$, and the null has the equals sign."
+     ],
+     "seek": 1814
+    },
+    {
+     "stem": "A test of $H_0: p=0.30$ is based on a random sample of 120 players, 45 of whom are successes. Which pair of calculations checks the large counts condition?",
+     "opts": [
+      "$120(0.375)=45$ and $120(0.625)=75$",
+      "$120(0.30)=36$ and $120(0.70)=84$",
+      "$45(0.30)=13.5$ and $45(0.70)=31.5$",
+      "$120(0.30)=36$ and $120(0.375)=45$"
+     ],
+     "ok": 1,
+     "why": [
+      "These use the sample proportion 0.375, which is not used in a test.",
+      "Use the null value: $np_0=36$ and $n(1-p_0)=84$, both at least 10.",
+      "The sample count is not multiplied by $p_0$.",
+      "The second count must use $1-p_0$, and neither uses $\\hat p$."
+     ],
+     "seek": 873
+    },
+    {
+     "stem": "A test has alternative hypothesis $H_a: p\\ne0.50$. What kind of test is this?",
+     "opts": [
+      "One-sided upper",
+      "One-sided lower",
+      "Two-sided",
+      "Paired"
+     ],
+     "ok": 2,
+     "why": [
+      "An upper test has $H_a: p>p_0$.",
+      "A lower test has $H_a: p<p_0$.",
+      "The $\\ne$ symbol means evidence in either direction counts, so both tails are used.",
+      "A paired test compares two measurements on the same subjects."
+     ],
+     "seek": 1307
+    },
+    {
+     "stem": "Which statement about the setup of a one-sample $z$ test for $p$ is correct?",
+     "opts": [
+      "The standard deviation of the null distribution is found from $\\hat p$",
+      "The conditions are checked with the sample proportion",
+      "The hypotheses and the conditions use $p_0$ and not $\\hat p$",
+      "The alternative hypothesis uses the sample proportion"
+     ],
+     "ok": 2,
+     "why": [
+      "The null distribution is built assuming $H_0$ is true, so it uses $p_0$.",
+      "Large counts use the null proportion in a test.",
+      "The setup comes from the claim, not from the sample.",
+      "The alternative is about $p$, the population parameter."
+     ],
+     "seek": 1448
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "A battery manufacturer claims that 90% of its batteries last more than 10 hours. A consumer group suspects the true percentage is lower. The group tests a random sample of 180 batteries from a shipment of 5,000, and 154 last more than 10 hours.",
+   "parts": [
+    "(a) Name the procedure and define the parameter.",
+    "(b) State the hypotheses.",
+    "(c) Check the conditions for the procedure.",
+    "(d) Explain why the sample proportion $154/180$ is not used in parts (b) and (c)."
+   ],
+   "sample": [
+    "(a) A one-sample $z$ test for a population proportion. $p$ is the proportion of all batteries in the shipment that last more than 10 hours.",
+    "(b) $H_0: p=0.90$ and $H_a: p<0.90$.",
+    "(c) Random: the 180 batteries were a random sample. 10%: 180 is less than 10% of 5,000, which is 500. Large counts: $180(0.90)=162\\ge10$ and $180(0.10)=18\\ge10$.",
+    "(d) The test begins by assuming $H_0$ is true, so the hypotheses and the conditions use the null value 0.90. The sample proportion 0.856 is the evidence that will be compared with 0.90 in the test statistic."
+   ],
+   "checklist": [
+    "(a) One-sample $z$ test for a population proportion, with the parameter defined in context",
+    "(b) $H_0: p=0.90$ and $H_a: p<0.90$ with $p$, not $\\hat p$",
+    "(c) Random sample stated",
+    "(c) 10% condition checked against 500",
+    "(c) Large counts computed with 0.90 (162 and 18)",
+    "(d) Says the setup uses the null value and the sample proportion is evidence used later"
+   ]
+  }
+ ],
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Test values were computed when the page was written.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "At 30:14 the video treats a claim of \"at least 35%\" as the alternative $p>35\\%$. The page says to look for a strict word in the claim and adds a wording note."
+   },
+   {
+    "kind": "wording",
+    "text": "At 7:57 the video describes the test as putting a proportion \"on trial\". The page keeps the idea but uses the exam terms assume $H_0$ and convincing evidence."
+   },
+   {
+    "kind": "caption",
+    "text": "At 30:14 the captions say \"composed transportation plan\". The video's example is a proposed transportation plan; the page does not use it."
+   },
+   {
+    "kind": "values",
+    "text": "The video rounds the light-bulb sample proportion to 6.46%; the page uses 42/650 = 0.0646 (shown as 0.065 on the preset). Confirm 42 defective bulbs on screen."
+   },
+   {
+    "kind": "placement",
+    "text": "No calculator section: the video uses no calculator for 3.5."
+   },
+   {
+    "kind": "explorer",
+    "text": "Reuses the one-proportion-test explorer from lesson 3.6 and 3.7 with a new introduction that points to the tails. The $z$ and p-value readouts are visible but not the focus."
+   }
+  ]
+ }
+}

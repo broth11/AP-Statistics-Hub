@@ -1,0 +1,547 @@
+{
+ "n": 33,
+ "unit": 3,
+ "topic": "3.2",
+ "title": "Sampling Distributions for Sample Proportions",
+ "videoId": "XlNzVMf235o",
+ "videoTitle": "AP Statistics Topic 3.2 Sampling Distributions for Sample Proportions",
+ "intro": "After this lesson you can describe the center, spread and shape of the sampling distribution of $\\hat p$, check the conditions with numbers, and use the normal model to find probabilities.",
+ "moments": [
+  {
+   "t": 60,
+   "type": "Definition",
+   "title": "Sampling distribution of $\\hat p$",
+   "text": "The distribution of all possible sample proportions from all possible samples of one size from one population."
+  },
+  {
+   "t": 92,
+   "type": "Concept",
+   "title": "One $p$, many $\\hat p$",
+   "text": "A population has one proportion but every sample has its own, so $\\hat p$ is a random variable."
+  },
+  {
+   "t": 198,
+   "type": "Worked example",
+   "title": "Peanut allergy",
+   "text": "$p=0.17$ and samples of 140 people. Samples of 25, 32 and 27 allergic people give 17.9%, 22.9% and 19.3%."
+  },
+  {
+   "t": 355,
+   "type": "Key idea",
+   "title": "Three characteristics, three conditions",
+   "text": "Describe the center, spread and shape, and check the condition that goes with each."
+  },
+  {
+   "t": 378,
+   "type": "Formula",
+   "title": "Center",
+   "text": "$\\mu_{\\hat p}=p$, provided the samples are random."
+  },
+  {
+   "t": 503,
+   "type": "Formula",
+   "title": "Spread",
+   "text": "$\\sigma_{\\hat p}=\\sqrt{\\dfrac{p(1-p)}{n}}$ measures sampling variability."
+  },
+  {
+   "t": 591,
+   "type": "Key idea",
+   "title": "Independence and the 10% condition",
+   "text": "Sampling without replacement is fine when $n$ is at most 10% of the population."
+  },
+  {
+   "t": 746,
+   "type": "Key idea",
+   "title": "Shape",
+   "text": "The sampling distribution is approximately normal when the sample is big enough."
+  },
+  {
+   "t": 782,
+   "type": "Key idea",
+   "title": "Normality condition",
+   "text": "Expect at least 10 successes and 10 failures: $np\\ge10$ and $n(1-p)\\ge10$."
+  },
+  {
+   "t": 915,
+   "type": "Worked example",
+   "title": "Streaming documentaries",
+   "text": "27% of subscribers watch a documentary weekly. For $n=600$: center 0.27, SD about 0.0181, approximately normal."
+  },
+  {
+   "t": 1211,
+   "type": "Key idea",
+   "title": "Bigger samples vary less",
+   "text": "Changing $n$ from 600 to 2,000 leaves the center at 0.27 but shrinks the SD to about 0.0099."
+  },
+  {
+   "t": 1323,
+   "type": "Worked example",
+   "title": "$P(\\hat p>0.30)$",
+   "text": "Find $z$ for 0.30, then use the standard normal distribution. The answer is about 0.049."
+  },
+  {
+   "t": 1437,
+   "type": "Calculator",
+   "title": "Normal probabilities in Desmos",
+   "text": "Plus, Inference, Probability Distributions, Normal with mean 0 and SD 1, then Cumulative Probability."
+  },
+  {
+   "t": 1569,
+   "type": "Worked example",
+   "title": "Commuters and public transit",
+   "text": "$p=0.18$ and $n=1000$ give SD about 0.0121. About 90% of samples land between 16% and 20%."
+  },
+  {
+   "t": 1990,
+   "type": "Worked example",
+   "title": "At most 50% live on campus",
+   "text": "For $p=0.54$ and $n=250$, $P(\\hat p\\le0.50)\\approx0.102$."
+  },
+  {
+   "t": 2089,
+   "type": "Worked example",
+   "title": "Social media regulation",
+   "text": "$p=0.65$ and $n=400$ give SD about 0.0238."
+  },
+  {
+   "t": 2169,
+   "type": "Exam question",
+   "title": "Cutoffs for the most extreme 5%",
+   "text": "Split 5% into 2.5% in each tail and find the $z$-scores that mark them."
+  },
+  {
+   "t": 2360,
+   "type": "Procedure",
+   "title": "Turn $z$ back into $\\hat p$",
+   "text": "Solve $\\pm1.96=\\dfrac{\\hat p-0.65}{0.0238}$ to get about 0.603 and 0.697."
+  },
+  {
+   "t": 2518,
+   "type": "Key idea",
+   "title": "Build the model with no sample at all",
+   "text": "All you need is $p$ and $n$ to show what every sample proportion could look like."
+  }
+ ],
+ "sections": [
+  {
+   "id": "normal",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Can I use a normal model for $\\hat p$?",
+   "cards": [
+    {
+     "letter": "C",
+     "name": "Center",
+     "text": "$\\mu_{\\hat p}=p$ when the sample is random."
+    },
+    {
+     "letter": "S",
+     "name": "Spread",
+     "text": "$\\sigma_{\\hat p}=\\sqrt{p(1-p)/n}$ when $n$ is at most 10% of the population."
+    },
+    {
+     "letter": "N",
+     "name": "Shape",
+     "text": "Approximately normal when $np\\ge10$ and $n(1-p)\\ge10$."
+    }
+   ],
+   "columns": [
+    "Scenario",
+    "$np$",
+    "$n(1-p)$",
+    "Approximately normal?"
+   ],
+   "verdictColumn": 3,
+   "rows": [
+    {
+     "cells": [
+      "Streaming: $p=0.27$, $n=600$",
+      "162",
+      "438",
+      "Yes"
+     ],
+     "seek": 915
+    },
+    {
+     "cells": [
+      "Commuters: $p=0.18$, $n=1000$",
+      "180",
+      "820",
+      "Yes"
+     ],
+     "seek": 1569
+    },
+    {
+     "cells": [
+      "Campus: $p=0.54$, $n=250$",
+      "135",
+      "115",
+      "Yes"
+     ],
+     "seek": 1867
+    },
+    {
+     "cells": [
+      "Rare event: $p=0.04$, $n=150$",
+      "6",
+      "144",
+      "No, $np<10$"
+     ],
+     "seek": 782
+    },
+    {
+     "cells": [
+      "Very common: $p=0.97$, $n=200$",
+      "194",
+      "6",
+      "No, $n(1-p)<10$"
+     ],
+     "seek": 782
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "When you describe a sampling distribution, give each condition with its numbers, for example $600(0.27)=162\\ge10$ and $600(0.73)=438\\ge10$. A phrase like \"the conditions are met\" earns less credit."
+    }
+   ]
+  },
+  {
+   "id": "steps",
+   "type": "procedure",
+   "tab": "Procedure",
+   "kicker": "Procedure",
+   "title": "Describe the sampling distribution of $\\hat p$",
+   "intro": "Six items earn the credit: center, spread and shape, each with its condition. You need only $p$ and $n$, not a sample.",
+   "steps": [
+    "Center: $\\mu_{\\hat p}=p$. Condition: the samples are random.",
+    "Spread: $\\sigma_{\\hat p}=\\sqrt{p(1-p)/n}$. Condition: $n$ is at most 10% of the population, which you assume when the population size is unknown.",
+    "Shape: approximately normal. Condition: $np\\ge10$ and $n(1-p)\\ge10$, computed with $p$.",
+    "To find a probability, convert $\\hat p$ to $z=\\dfrac{\\hat p-p}{\\sigma_{\\hat p}}$ and use the standard normal distribution."
+   ],
+   "parts": [
+    {
+     "label": "Center",
+     "tex": "$\\mu_{\\hat p}=0.27$",
+     "text": "The streaming service reports $p=0.27$."
+    },
+    {
+     "label": "Spread",
+     "tex": "$\\sqrt{\\dfrac{0.27(0.73)}{600}}\\approx0.0181$",
+     "text": "How far sample proportions typically sit from 0.27."
+    },
+    {
+     "label": "Shape",
+     "tex": "$600(0.27)=162,\\ 600(0.73)=438$",
+     "text": "Both at least 10, so the model is approximately normal."
+    }
+   ],
+   "line": "$z=\\dfrac{0.30-0.27}{0.0181}\\approx1.655\\;\\Rightarrow\\;P(\\hat p>0.30)\\approx0.0489$",
+   "buttons": [
+    {
+     "label": "Watch the three characteristics (5:55)",
+     "seek": 355
+    },
+    {
+     "label": "Watch the full description (15:15)",
+     "seek": 915
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "type": "explorer",
+   "tab": "Explorer",
+   "kicker": "Interactive",
+   "title": "Sampling distribution explorer",
+   "explorer": "sampling-distribution",
+   "intro": "Set $n$ and $p$, then take 1,000 samples. The histogram is built from simulated sample proportions and the curve is the model from this lesson. Watch the spread shrink as $n$ grows while the center stays at $p$.",
+   "stories": {
+    "stream": "27% of a streaming service's subscribers watch at least one documentary a week. Each sample is 600 randomly chosen subscribers.",
+    "comm": "18% of a city's commuters use public transit. Each sample is 1,000 randomly chosen commuters.",
+    "camp": "54% of first-year students at a university live on campus. Each sample is 250 randomly chosen students.",
+    "poll": "65% of adults support stricter rules for social media. Each sample is 400 randomly chosen adults."
+   },
+   "initial": {
+    "n": 600,
+    "p": 0.27,
+    "story": "stream"
+   },
+   "presets": [
+    {
+     "label": "Streaming",
+     "sub": "$n=600,\\ p=0.27$",
+     "n": 600,
+     "p": 0.27,
+     "story": "stream"
+    },
+    {
+     "label": "Commuters",
+     "sub": "$n=1000,\\ p=0.18$",
+     "n": 1000,
+     "p": 0.18,
+     "story": "comm"
+    },
+    {
+     "label": "Campus",
+     "sub": "$n=250,\\ p=0.54$",
+     "n": 250,
+     "p": 0.54,
+     "story": "camp"
+    },
+    {
+     "label": "Poll",
+     "sub": "$n=400,\\ p=0.65$",
+     "n": 400,
+     "p": 0.65,
+     "story": "poll"
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Work through each task in it yourself, the way you would on the exam, then check what you observe.",
+   "steps": [
+    {
+     "title": "Right-tail probability",
+     "suppose": "we want $P(\\hat p>0.30)$ for the streaming service: $p=0.27$, $n=600$.",
+     "how": "find $z$ by typing (0.30-0.27)/sqrt(0.27*0.73/600) on a new line. Then tap the plus button, choose Inference, then Probability Distributions, then Normal with mean 0 and standard deviation 1. Open Cumulative Probability, choose the right option and enter your $z$.",
+     "observe": "Only a small sliver on the right is shaded. Open the dropdown for more decimals.",
+     "expected": "$z\\approx1.655$ and probability $\\approx0.0489$",
+     "seek": 1437
+    },
+    {
+     "title": "Between two values",
+     "suppose": "we want the chance that a sample of 1,000 commuters has $\\hat p$ between 0.16 and 0.20, with $p=0.18$.",
+     "how": "find the standard deviation with sqrt(0.18*0.82/1000), then $z=\\pm0.02/\\text{SD}$. In Cumulative Probability choose the inner option and enter the two $z$-scores.",
+     "observe": "The shaded area is the large central chunk. The two $z$-scores are the same size with opposite signs because 0.16 and 0.20 are equally far from 0.18.",
+     "expected": "$z\\approx\\pm1.646$ and probability $\\approx0.9003$",
+     "seek": 1745
+    },
+    {
+     "title": "Left-tail probability",
+     "suppose": "we want $P(\\hat p\\le0.50)$ for campus housing: $p=0.54$, $n=250$.",
+     "how": "find $z$ for 0.50, then in Cumulative Probability choose the left option and enter it.",
+     "observe": "The shaded tail is on the left because \"at most\" points down. Whether you use $<$ or $\\le$ makes no difference for a continuous model.",
+     "expected": "$z\\approx-1.269$ and probability $\\approx0.1022$",
+     "seek": 1990
+    },
+    {
+     "title": "Cutoffs for the most extreme 5%",
+     "suppose": "we want the values of $\\hat p$ that bound the most extreme 5% for $p=0.65$, $n=400$.",
+     "how": "in Cumulative Probability switch from area to bounds, choose the inner option and enter 0.95 to get $z^*$. Then type 0.65-1.96*sqrt(0.65*0.35/400) and 0.65+1.96*sqrt(0.65*0.35/400) on new lines.",
+     "observe": "The bounds are symmetric because the normal model is. Sample proportions outside the two cutoffs are the unusual ones.",
+     "expected": "$z^*\\approx\\pm1.96$, cutoffs $\\approx0.6033$ and $0.6967$",
+     "seek": 2360
+    },
+    {
+     "title": "Effect of sample size",
+     "suppose": "we want to compare the spread for $n=600$ and $n=2000$ when $p=0.27$.",
+     "how": "type sqrt(0.27*0.73/600) and sqrt(0.27*0.73/2000) on separate lines.",
+     "observe": "The center is 0.27 in both cases. Only the standard deviation changes, and the larger sample has the smaller one.",
+     "expected": "$\\approx0.0181$ for $n=600$ and $\\approx0.0099$ for $n=2000$",
+     "seek": 1211
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Describing the center",
+     "weak": "The mean is 0.27.",
+     "better": "The mean of the sampling distribution of $\\hat p$ is $\\mu_{\\hat p}=0.27$, because the samples are random, so $\\hat p$ is an unbiased estimator of $p$.",
+     "seek": 378
+    },
+    {
+     "kind": "Common trap",
+     "title": "Checking conditions without numbers",
+     "weak": "The conditions are met, so the model is normal.",
+     "better": "Random: the sample was random. 10%: 600 is less than 10% of all subscribers. Large counts: $600(0.27)=162\\ge10$ and $600(0.73)=438\\ge10$.",
+     "seek": 915
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Interpreting the standard deviation",
+     "weak": "0.0181 is the standard deviation of the 600 subscribers.",
+     "better": "In samples of 600 subscribers, the sample proportion typically varies by about 0.0181 from the population proportion 0.27.",
+     "seek": 503
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Writing a probability in context",
+     "weak": "The probability is 0.049.",
+     "better": "$P(\\hat p>0.30)\\approx0.049$: about a 4.9% chance that a random sample of 600 subscribers has more than 30% who watch a documentary weekly.",
+     "seek": 1323
+    },
+    {
+     "kind": "Common trap",
+     "title": "Saying a larger sample moves the center",
+     "weak": "With $n=2000$ the mean of $\\hat p$ gets closer to 0.27.",
+     "better": "The center stays at $\\mu_{\\hat p}=0.27$ for every $n$. A larger $n$ shrinks the standard deviation from about 0.0181 to about 0.0099.",
+     "seek": 1211
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A population has $p=0.40$. What is the standard deviation of the sampling distribution of $\\hat p$ for random samples of size 250?",
+     "opts": [
+      "0.0310",
+      "0.0010",
+      "0.0400",
+      "0.0152"
+     ],
+     "ok": 0,
+     "why": [
+      "$\\sqrt{0.40(0.60)/250}\\approx0.0310$.",
+      "This is the variance-style value $0.40(0.60)/250$ with the square root left off.",
+      "This leaves out the factor $(1-p)$ under the square root.",
+      "This divides by $\\sqrt{250}$ instead of taking the square root of the whole fraction."
+     ],
+     "seek": 503
+    },
+    {
+     "stem": "Which condition makes the formula $\\sigma_{\\hat p}=\\sqrt{p(1-p)/n}$ appropriate?",
+     "opts": [
+      "The sample is random",
+      "The sample is at most 10% of the population",
+      "$np\\ge10$ and $n(1-p)\\ge10$",
+      "$n\\ge30$"
+     ],
+     "ok": 1,
+     "why": [
+      "Random sampling is what makes the center equal $p$.",
+      "This is the 10% condition, which supports independence and so the spread formula.",
+      "These counts make the shape approximately normal.",
+      "$n\\ge30$ belongs to sampling distributions of means, not to this formula."
+     ],
+     "seek": 591
+    },
+    {
+     "stem": "The sample size is multiplied by 4 and $p$ stays the same. What happens to the standard deviation of $\\hat p$?",
+     "opts": [
+      "It is multiplied by 4",
+      "It is multiplied by 2",
+      "It is divided by 2",
+      "It does not change"
+     ],
+     "ok": 2,
+     "why": [
+      "$n$ sits under a square root in the denominator, so the SD does not grow with $n$.",
+      "The SD gets smaller, not larger.",
+      "$\\sqrt{4}=2$ and $n$ is in the denominator, so the SD is cut in half.",
+      "The center is unchanged, but the spread depends on $n$."
+     ],
+     "seek": 1211
+    },
+    {
+     "stem": "For $p=0.30$ and $n=200$, which is closest to $P(\\hat p\\ge0.35)$?",
+     "opts": [
+      "0.0614",
+      "0.9386",
+      "0.1228",
+      "0.3500"
+     ],
+     "ok": 0,
+     "why": [
+      "$z=(0.35-0.30)/0.0324\\approx1.543$, and the right-tail area is about 0.0614.",
+      "This is the area to the left of $z$, not the right tail.",
+      "This doubles the tail, which is for a two-sided question.",
+      "This is the value of $\\hat p$, not a probability."
+     ],
+     "seek": 1323
+    },
+    {
+     "stem": "A rare trait has $p=0.04$ and random samples have $n=150$. Which statement is correct?",
+     "opts": [
+      "The sampling distribution of $\\hat p$ is approximately normal because $n>30$",
+      "The sampling distribution is approximately normal because the sample is random",
+      "A normal model is not appropriate because $np=6$ is less than 10",
+      "A normal model is not appropriate because $n$ is more than 10% of the population"
+     ],
+     "ok": 2,
+     "why": [
+      "$n>30$ is not the condition for proportions.",
+      "Random sampling does not guarantee a normal shape.",
+      "$150(0.04)=6<10$, so the expected number of successes is too small.",
+      "Nothing in the problem says $n$ is more than 10% of the population."
+     ],
+     "seek": 782
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "A school district reports that 22% of its 15,000 students ride the bus. A researcher plans to take a random sample of 400 students.",
+   "parts": [
+    "(a) Describe the sampling distribution of $\\hat p$, the sample proportion who ride the bus: give its center, spread and shape, and check the conditions.",
+    "(b) Find the probability that fewer than 20% of the sampled students ride the bus.",
+    "(c) Would a sample proportion of 0.30 be unusual? Justify your answer."
+   ],
+   "sample": [
+    "(a) Center: $\\mu_{\\hat p}=0.22$, because the sample is random. Spread: $\\sigma_{\\hat p}=\\sqrt{0.22(0.78)/400}\\approx 0.0207$, and 400 is less than 10% of 15,000, which is 1,500. Shape: approximately normal, because $400(0.22)=88\\ge10$ and $400(0.78)=312\\ge10$.",
+    "(b) $z=\\dfrac{0.20-0.22}{0.0207}\\approx-0.966$, so $P(\\hat p<0.20)\\approx0.167$. About a 16.7% chance that fewer than 20% of the sampled students ride the bus.",
+    "(c) $z=\\dfrac{0.30-0.22}{0.0207}\\approx3.86$, which is more than 3 standard deviations above the mean. A sample proportion of 0.30 would be very unlikely if $p=0.22$, so it would be unusual."
+   ],
+   "checklist": [
+    "(a) Center 0.22 with the random-sample condition",
+    "(a) Spread about 0.0207 with the 10% condition checked against 1,500",
+    "(a) Approximately normal with $88\\ge10$ and $312\\ge10$ shown",
+    "(b) Correct $z$ (about -0.97) and left-tail probability about 0.167",
+    "(b) Probability stated in context",
+    "(c) $z$ about 3.86 and a conclusion that 0.30 is unusual"
+   ]
+  }
+ ],
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Test values were computed when the page was written.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "caption",
+    "text": "At 32:28 the captions give the number of campus students who would not live on campus as \"1505\". The page uses 250 × 0.46 = 115."
+   },
+   {
+    "kind": "caption",
+    "text": "At 35:38 the captions give the standard deviation as \"00238\". The page uses 0.0238."
+   },
+   {
+    "kind": "values",
+    "text": "Streaming probability: the video rounds the SD to 0.0181 and gets $z=1.657$ and 0.0488; the page computes $z\\approx1.655$ and 0.0489."
+   },
+   {
+    "kind": "values",
+    "text": "Commuters between 16% and 20%: the video gets $z=\\pm1.653$ and 0.902; the page computes $z\\approx\\pm1.646$ and 0.9003, so the answer is about 0.900. Confirm the 1.653 on screen."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names (Inference, Probability Distributions, Normal, Cumulative Probability with area and bounds, inner, left, right) come from the captions and are unconfirmed against the current calculator."
+   },
+   {
+    "kind": "explorer",
+    "text": "New explorer: sampling-distribution. Check the presets and the 1,000-sample simulation in class."
+   }
+  ]
+ }
+}
