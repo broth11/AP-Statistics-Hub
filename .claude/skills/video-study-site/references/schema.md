@@ -18,11 +18,11 @@ Any string may contain `$...$` math. Times (`t`, `seek`) are whole seconds into 
   "moments": [ ... ],
   "sections": [ ... ],           // rendered in this order
   "footer": "Status: draft from auto-generated captions, ...",    // optional
-  "review": { "status": "draft", "flags": [ { "kind": "wording", "text": "..." } ] }
+  "review": { "status": "approved", "flags": [ { "kind": "wording", "text": "..." } ] }
 }
 ```
 
-`review.status` is `draft` or `approved`. A draft shows a banner on the page. Flag `kind` is free text; use `wording`, `caption`, `calculator`, `values`, `timestamps`, `explorer`, `placement`. Flags are not shown on the page but are public in the JSON, so keep them factual and short.
+`review.status` is `approved` (normal; set in every PR) or `draft` (shows a banner, for a page the teacher wants held back). Flag `kind` is free text; use `wording`, `caption`, `calculator`, `values`, `timestamps`, `explorer`, `placement`. Flags are not shown on the page but are public in the JSON, so keep them factual and short.
 
 ## Moments
 
@@ -116,7 +116,7 @@ Each step renders as "Suppose ... To do that, ... Observe." with a "Show expecte
 
 ```json
 { "n": 13, "unit": 1, "topic": "1.13", "title": "Experimental Design", "videoId": "2Yn1235uFzE",
-  "transcript": "13-2Yn1235uFzE.txt", "status": "draft" }
+  "transcript": "13-2Yn1235uFzE.txt", "status": "live" }
 ```
 
-`status`: `transcript` (listed only), `next` (planned), `draft` (page exists, in review, not linked), `live` (linked from the home page). Only the teacher's approval moves a lesson to `live`.
+`status`: `transcript` (listed only), `next` (planned), `draft` (page exists, held back, not linked), `live` (linked from the home page). A PR sets its lessons to `live`, so they publish when it is merged.

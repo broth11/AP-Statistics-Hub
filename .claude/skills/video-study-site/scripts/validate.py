@@ -185,7 +185,7 @@ def main():
 
     if a.report:
         print(f"\n## Review: {L.get('topic', '')} {L.get('title', '')}\n")
-        print(f"Draft page: `lesson.html?v={a.n}` (status `{rv.get('status')}`). Video: https://www.youtube.com/watch?v={L.get('videoId')}\n")
+        print(f"Page: `lesson.html?v={a.n}` (status `{rv.get('status')}`). Video: https://www.youtube.com/watch?v={L.get('videoId')}\n")
         flags = rv.get("flags", [])
         if flags:
             print("### Flags to check\n")
@@ -203,7 +203,7 @@ def main():
             claim = obj.get("title") or obj.get("label") or obj.get("stem") or obj.get("scenario") or (obj.get("cells") or [""])[0]
             claim = re.sub(r"\s+", " ", str(claim))[:70].replace("|", "/")
             print(f"| [{fmt(int(v))}](https://www.youtube.com/watch?v={L.get('videoId')}&t={int(v)}s) | {claim} | {here.replace('|', '/')} |")
-        print("\nTo approve: set `review.status` to `approved` in the lesson file and `status` to `live` in `docs/data/lessons.json`. Set `verified: true` on each moment and trap you checked.")
+        print("\nMerging the PR publishes this page. After checking timestamps against the video, ask for `verified: true` on the items you confirmed to remove their \"unverified\" labels.")
     return 1 if errors else 0
 
 

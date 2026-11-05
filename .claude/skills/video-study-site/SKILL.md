@@ -29,9 +29,9 @@ Read `references/schema.md` before writing a lesson file. Read `references/explo
 
 ## What the teacher decides (settled defaults)
 
-- **Scope per run:** one lesson, a list, a unit, or the whole playlist. Each lesson is its own draft. For more than 5 lessons, work in batches of up to 5 per branch so each review stays manageable, and say so.
-- **Review gate:** pages are drafts until the teacher approves. Never set a lesson to `live` yourself.
-- **Git:** each run goes on its own branch and opens a pull request. Nothing reaches students until the teacher merges and approves.
+- **Scope per run:** one lesson, a list, a unit, or the whole playlist. Each lesson is its own page. For more than 5 lessons, work in batches of up to 5 per branch so each review stays manageable, and say so.
+- **Review gate:** the pull request is the review. Each PR sets its lessons to `live`, so merging it publishes them. Nothing reaches students until the teacher merges.
+- **Git:** each run goes on its own branch and opens a pull request. Never push lesson pages straight to `main`.
 - **Accuracy:** flag, never fix silently. Every moment and trap carries `"verified": false`. Where the video's wording is weaker than exam wording, write the stronger wording, add a visible wording note on the page, and add a review flag.
 - **Reference material:** the teacher may supply a CED, a syllabus, a skills list, question-archetype cards, or scoring guidelines. Use whatever is supplied to align topics, vocabulary, and question styles. If nothing is supplied, ground everything in the transcript and standard course knowledge.
 
@@ -88,7 +88,7 @@ For each lesson `n`:
 4. **Explorer.** Check the catalog in `references/explorers.md`. Reuse an explorer if one fits; add config options to it if it nearly fits; build a new library module only when nothing fits. New explorers follow the layout and interface rules there and get added to the catalog.
 5. **Write the content** (rules below) into `docs/data/lessons/<n>.json`. Generate it with a short script when it contains numbers, so every value is **computed in code**, never typed from memory. Re-run the computation after any edit to the inputs.
 6. **Flags.** Add `review.flags` for: weak video wording you strengthened, apparent caption errors (wrong sign, misspoken number), values that depend on what is on screen, calculator menu names taken from the captions, any new explorer, and the standing note that timestamps are unverified.
-7. In `lessons.json`, set the lesson's `status` to `draft` (shows "Draft" on the home page, not linked). Set `review.status` to `draft` in the lesson file. If `site.json` `home.pilot` mentions which lessons exist, update it.
+7. In `lessons.json`, set the lesson's `status` to `live`. Set `review.status` to `approved` in the lesson file. Both take effect only when the teacher merges the PR. Leave every `verified` as `false`. If `site.json` `home.pilot` mentions which lessons exist, update it.
 
 ### 5. Check
 
@@ -106,11 +106,11 @@ Read the report's timestamp table. Every row should show transcript text that ma
 
 ### 6. Pull request
 
-Commit on the branch, push, and open a PR titled `Draft: <topic> <title>` (or a batch title). The body is the validator's review report for each lesson, plus a short list of anything new (explorers, schema options). If `gh` is unavailable or not signed in, push the branch and give the teacher the compare link: `https://github.com/<owner>/<repo>/compare/main...<branch>`.
+Commit on the branch, push, and open a PR titled `<topic> <title>` (or a batch title). The body is the validator's review report for each lesson, plus a short list of anything new (explorers, schema options). Start the body with one line: "Merging this publishes these lessons." Before the PR is merged the teacher can preview a page at `lesson.html?v=<n>` by serving the branch locally. If `gh` is unavailable or not signed in, push the branch and give the teacher the compare link: `https://github.com/<owner>/<repo>/compare/main...<branch>`.
 
-### 7. Approval (when the teacher says a page is approved)
+### 7. After review
 
-In the lesson file set `review.status` to `approved` and `verified: true` on the moments and traps the teacher confirmed. In `lessons.json` set `status` to `live`. Keep flags that are still open.
+Merging the PR is the approval; nothing else is needed to publish. When the teacher says they have checked timestamps against the video, set `verified: true` on those moments and traps (this removes their "unverified" labels) and remove flags they resolved. If the teacher wants a page held back without merging, set its `status` to `draft` and `review.status` to `draft` on the branch.
 
 ## Content rules
 

@@ -59,18 +59,11 @@ The `video-study-site` skill in `.claude/skills/` builds pages. Open this repo i
 - "Build all of Unit 4."
 - "Here is a new playlist: <link>. Fetch the transcripts and build the site."
 
-For each lesson it reads the transcript, writes `docs/data/lessons/<n>.json`, reuses or adds an explorer, checks the page, and opens a pull request with a review report. Every timestamp in the report sits next to the transcript text found at that time, and every wording change or suspected caption error is flagged. Pages start as drafts: the home page lists them as "Draft" without a link, and the page itself shows a draft banner.
+For each lesson it reads the transcript, writes `docs/data/lessons/<n>.json`, reuses or adds an explorer, checks the page, and opens a pull request with a review report. Every timestamp in the report sits next to the transcript text found at that time, and every wording change or suspected caption error is flagged.
+
+**Merging the pull request publishes the lessons.** Review the report, then merge. Timestamps keep a small "unverified" label until you check them against the video and ask Claude to mark them verified.
 
 Fetching a new playlist needs YouTube access, so that step runs on your own computer (`pip install yt-dlp` first). The skill gives the exact command if it cannot run it.
-
-### Approve a draft
-
-1. Open `lesson.html?v=<n>` on the site or locally and work through the review report in the pull request.
-2. In `docs/data/lessons/<n>.json`, set `review.status` to `approved` and `verified: true` on each moment and trap you checked.
-3. In `docs/data/lessons.json`, set the lesson's `status` to `live`.
-4. Merge the pull request. Pages republishes on its own.
-
-Or ask Claude to do steps 2 and 3 once you have checked the page.
 
 ## Transcripts
 
