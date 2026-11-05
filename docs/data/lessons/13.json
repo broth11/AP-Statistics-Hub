@@ -1,0 +1,530 @@
+{
+ "n": 13,
+ "unit": 1,
+ "topic": "1.13",
+ "title": "Experimental Design",
+ "videoId": "2Yn1235uFzE",
+ "videoTitle": "AP Statistics Topic 1.13 Experimental Design",
+ "intro": "After this lesson you can name the four principles of a well-designed experiment, describe how to randomly assign treatments, choose between a completely randomized, randomized block and matched pairs design, and state what the results let you conclude.",
+ "moments": [
+  {
+   "t": 60,
+   "type": "Concept",
+   "title": "What an experiment is for",
+   "text": "Researchers impose treatments of the explanatory variable on experimental units and measure the response. People are called subjects.",
+   "verified": false
+  },
+  {
+   "t": 185,
+   "type": "Overview",
+   "title": "Four principles",
+   "text": "Comparison, random assignment, replication and direct control.",
+   "verified": false
+  },
+  {
+   "t": 251,
+   "type": "Concept",
+   "title": "Comparison and control groups",
+   "text": "At least two treatment groups. A control group, given a placebo, an existing treatment or nothing, is there for comparison.",
+   "verified": false
+  },
+  {
+   "t": 308,
+   "type": "Key idea",
+   "title": "Treat every unit the same",
+   "text": "All units are treated alike except for the treatment they are purposely given.",
+   "verified": false
+  },
+  {
+   "t": 345,
+   "type": "Concept",
+   "title": "Confounding variable",
+   "text": "A variable distributed differently among the treatment groups that also affects the response.",
+   "verified": false
+  },
+  {
+   "t": 662,
+   "type": "Concept",
+   "title": "Single-blind and double-blind",
+   "text": "Single-blind: subjects or the people who interact with them do not know the treatment. Double-blind: neither knows.",
+   "verified": false
+  },
+  {
+   "t": 780,
+   "type": "Concept",
+   "title": "Placebo and the placebo effect",
+   "text": "A fake or inactive treatment so every subject believes they are getting something.",
+   "verified": false
+  },
+  {
+   "t": 1083,
+   "type": "Principle",
+   "title": "Random assignment",
+   "text": "Creates treatment groups that are roughly equivalent with respect to the extraneous variables you cannot control.",
+   "verified": false
+  },
+  {
+   "t": 1265,
+   "type": "Procedure",
+   "title": "How to describe random assignment",
+   "text": "Number the subjects, use a random number generator, ignore repeats and unused numbers, and give the first group of numbers treatment 1.",
+   "verified": false
+  },
+  {
+   "t": 1380,
+   "type": "Principle",
+   "title": "Replication",
+   "text": "Enough experimental units in each treatment group so a treatment effect can be told apart from chance variation.",
+   "verified": false
+  },
+  {
+   "t": 1560,
+   "type": "Key idea",
+   "title": "Why more units help",
+   "text": "Larger groups average out natural differences and give more precise estimates of the treatment effect.",
+   "verified": false
+  },
+  {
+   "t": 1705,
+   "type": "Principle",
+   "title": "Direct control",
+   "text": "Hold other variables constant across groups: same water, sunlight, soil and temperature for every plot.",
+   "verified": false
+  },
+  {
+   "t": 1930,
+   "type": "Design",
+   "title": "Completely randomized design",
+   "text": "Treatments are assigned to all experimental units completely at random.",
+   "verified": false
+  },
+  {
+   "t": 2089,
+   "type": "Design",
+   "title": "Randomized block design",
+   "text": "Group similar units into blocks first, then randomly assign treatments within each block.",
+   "verified": false
+  },
+  {
+   "t": 2343,
+   "type": "Worked example",
+   "title": "Blocking on location",
+   "text": "Plots near the forest and near the river form two blocks, so both fertilizers appear in each location.",
+   "verified": false
+  },
+  {
+   "t": 2529,
+   "type": "Key idea",
+   "title": "Purpose of blocking",
+   "text": "Separate the variation caused by the blocking variable from the rest, giving a more precise comparison of treatments.",
+   "verified": false
+  },
+  {
+   "t": 2610,
+   "type": "Design",
+   "title": "Matched pairs design",
+   "text": "A block design with two treatments. Pair similar units and randomly assign one treatment to each member.",
+   "verified": false
+  },
+  {
+   "t": 3060,
+   "type": "Worked example",
+   "title": "Each subject gets both treatments",
+   "text": "Sunscreen A on one arm and B on the other, with the arm chosen at random.",
+   "verified": false
+  },
+  {
+   "t": 3240,
+   "type": "Exam wording",
+   "title": "Cause and effect, and to whom",
+   "text": "Random assignment allows a cause-and-effect conclusion. With volunteers, generalize only to people like them.",
+   "verified": false
+  }
+ ],
+ "sections": [
+  {
+   "id": "principles",
+   "type": "decision",
+   "tab": "Which design?",
+   "kicker": "Decision check",
+   "title": "Which design fits?",
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Comparison",
+     "text": "At least two treatment groups, often including a control group."
+    },
+    {
+     "letter": "2",
+     "name": "Random assignment",
+     "text": "Chance decides which units get which treatment."
+    },
+    {
+     "letter": "3",
+     "name": "Replication",
+     "text": "Enough units in each group to see past chance variation."
+    },
+    {
+     "letter": "4",
+     "name": "Direct control",
+     "text": "Everything except the treatment is kept the same."
+    }
+   ],
+   "columns": [
+    "Scenario",
+    "Treatments",
+    "One variable to account for?",
+    "Design"
+   ],
+   "verdictColumn": 3,
+   "rows": [
+    {
+     "cells": [
+      "300 patients with high blood pressure; 50 mg, 100 mg or placebo",
+      "3",
+      "No",
+      "Completely randomized"
+     ],
+     "seek": 1960
+    },
+    {
+     "cells": [
+      "Same patients, but age matters most: young, middle-aged and older groups first",
+      "3",
+      "Age",
+      "Randomized block"
+     ],
+     "seek": 2160
+    },
+    {
+     "cells": [
+      "Grass plots, some near a forest and some near a river; fertilizer A or B",
+      "2",
+      "Location",
+      "Randomized block"
+     ],
+     "seek": 2343
+    },
+    {
+     "cells": [
+      "Pairs of similar people; one gets sunscreen A, the other B",
+      "2",
+      "Matched on age, skin and more",
+      "Matched pairs"
+     ],
+     "seek": 2940
+    },
+    {
+     "cells": [
+      "Each person gets sunscreen A on one arm and B on the other, arm chosen at random",
+      "2",
+      "Each person is their own pair",
+      "Matched pairs"
+     ],
+     "seek": 3060
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video says random assignment \"evenly splits\" extraneous variables into the groups. On the AP exam, say random assignment creates groups that are roughly equivalent, so any remaining differences between groups are due to chance. It does not guarantee equal groups."
+    }
+   ]
+  },
+  {
+   "id": "assign",
+   "type": "procedure",
+   "tab": "Random assignment",
+   "kicker": "Procedure",
+   "title": "Describe random assignment so it earns credit",
+   "intro": "AP questions often ask how you would randomly assign treatments. Use the method from the video for 100 subjects and three groups:",
+   "steps": [
+    "Give each subject a unique number from 1 to 100.",
+    "Use a random number generator to pick numbers from 1 to 100. Ignore repeats and numbers outside 1 to 100.",
+    "The subjects with the first 33 numbers picked get treatment 1 (50 mg). The next 33 get treatment 2 (100 mg).",
+    "The remaining 34 subjects get treatment 3 (placebo)."
+   ],
+   "parts": [
+    {
+     "label": "Label",
+     "tex": "1 to 100",
+     "text": "Every subject gets their own number."
+    },
+    {
+     "label": "Randomize",
+     "tex": "RNG",
+     "text": "Say what you randomize with and how you handle repeats."
+    },
+    {
+     "label": "Assign",
+     "tex": "33, 33, 34",
+     "text": "Say which numbers go to which treatment."
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Watch the method (21:05)",
+     "seek": 1265
+    },
+    {
+     "label": "Watch the block version (36:00)",
+     "seek": 2160
+    }
+   ],
+   "notes": [
+    {
+     "label": "For a block design,",
+     "text": "do the same steps separately inside each block, so every treatment appears in every block."
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "type": "explorer",
+   "explorer": "random-assignment",
+   "tab": "Explorer",
+   "kicker": "Interactive",
+   "title": "Random assignment explorer",
+   "intro": "Assign the subjects many times. Watch how far apart the two groups end up on age, then compare a bigger study and a blocked design.",
+   "story": "Researchers test vitamin D on patients with high blood pressure. Older patients tend to have higher blood pressure, so age is an extraneous variable. Half of the patients get vitamin D and half get a placebo.",
+   "labels": {
+    "variable": "older",
+    "other": "younger",
+    "groupA": "Vitamin D",
+    "groupB": "Placebo"
+   },
+   "initial": {
+    "n": 30,
+    "older": 0.4,
+    "mode": "crd"
+   },
+   "presets": [
+    {
+     "label": "Small study",
+     "sub": "$n=8$, random",
+     "n": 8,
+     "older": 0.5,
+     "mode": "crd"
+    },
+    {
+     "label": "Vitamin D study",
+     "sub": "$n=30$, random",
+     "n": 30,
+     "older": 0.4,
+     "mode": "crd"
+    },
+    {
+     "label": "Large study",
+     "sub": "$n=200$, random",
+     "n": 200,
+     "older": 0.4,
+     "mode": "crd"
+    },
+    {
+     "label": "Blocked by age",
+     "sub": "$n=30$, blocks",
+     "n": 30,
+     "older": 0.4,
+     "mode": "block"
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Saying random assignment makes groups equal",
+     "weak": "Random assignment makes the two groups the same.",
+     "better": "Random assignment creates groups that are roughly equivalent, so differences in age, diet or stress between the groups are due to chance.",
+     "seek": 1083,
+     "verified": false
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Name the confounding in context",
+     "weak": "Age is a confounding variable.",
+     "better": "If the 50 mg group had mostly older patients, age would be confounded with the treatment: older patients tend to have higher blood pressure, so we could not tell whether the vitamin D or age caused the difference.",
+     "seek": 345,
+     "verified": false
+    },
+    {
+     "kind": "Common trap",
+     "title": "Defining replication as repeating the study",
+     "weak": "Replication means doing the experiment again.",
+     "better": "Replication means using enough experimental units in each treatment group so a real treatment effect can be told apart from chance variation.",
+     "seek": 1380,
+     "verified": false
+    },
+    {
+     "kind": "Common trap",
+     "title": "Mixing up blocking and random assignment",
+     "weak": "We block so the groups are random.",
+     "better": "We block by age so similar subjects are grouped together, then randomly assign treatments within each block. This separates the variation caused by age from the treatment effect.",
+     "seek": 2529,
+     "verified": false
+    },
+    {
+     "kind": "Exam wording",
+     "title": "State the scope of the conclusion",
+     "weak": "Vitamin D lowers blood pressure for everyone.",
+     "better": "Because treatments were randomly assigned, we can conclude vitamin D caused the lower blood pressure, but only for patients similar to the volunteers in the study.",
+     "seek": 3240,
+     "verified": false
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A gardener wants to know whether a new fertilizer increases tomato yield. She has 40 plants. Which feature of her study would allow a cause-and-effect conclusion?",
+     "opts": [
+      "Using all 40 plants instead of 10",
+      "Weighing the tomatoes on an accurate scale",
+      "Randomly assigning 20 plants to the new fertilizer and 20 to the old one",
+      "Buying the plants from a single nursery"
+     ],
+     "ok": 2,
+     "why": [
+      "More plants is replication. It improves precision, but without random assignment other differences between the groups could explain the result.",
+      "Careful measurement matters, but it does not rule out other explanations for a difference.",
+      "Random assignment makes the groups roughly equivalent apart from the fertilizer, so a large difference can be attributed to the treatment.",
+      "This may reduce variation between plants, but it does not decide which plants get which fertilizer."
+     ],
+     "seek": 3240
+    },
+    {
+     "stem": "In a study of a pain reliever, neither the patients nor the nurses who record their pain scores know who received the drug and who received a placebo. This study is",
+     "opts": [
+      "single-blind",
+      "double-blind",
+      "a matched pairs design",
+      "a randomized block design"
+     ],
+     "ok": 1,
+     "why": [
+      "Single-blind means only one of the two, the subjects or the people evaluating them, is unaware.",
+      "Both the subjects and the people who interact with them and record the response are unaware of the treatment.",
+      "Nothing here pairs subjects or gives each one both treatments.",
+      "Blinding says who knows the treatment. Blocking is about grouping similar units first."
+     ],
+     "seek": 703
+    },
+    {
+     "stem": "Which of these is a matched pairs design?",
+     "opts": [
+      "Each of 60 students types a passage on keyboard A and on keyboard B, in a random order, and typing speed is recorded",
+      "60 students are split by grade level, then each grade is randomly assigned to one of three programs",
+      "60 students are randomly assigned to keyboard A or keyboard B",
+      "Students choose which keyboard they prefer, and typing speeds are compared"
+     ],
+     "ok": 0,
+     "why": [
+      "Two treatments, each student gets both, and the order is randomized. Each student acts as their own pair.",
+      "Three programs and blocks of more than two units make this a randomized block design, not matched pairs.",
+      "This is a completely randomized design with two treatments.",
+      "Letting students choose means there is no random assignment, so this is not a well-designed experiment."
+     ],
+     "seek": 3060
+    },
+    {
+     "stem": "A study compares two diets. Researchers separate the men and the women, then randomly assign the diets within each group. What is the main purpose of separating men and women?",
+     "opts": [
+      "To make sure the sample represents all adults",
+      "To remove the need for random assignment",
+      "To allow the results to apply to everyone",
+      "To reduce the variation in weight loss caused by sex, so the diet comparison is more precise"
+     ],
+     "ok": 3,
+     "why": [
+      "Representing a population comes from random sampling, not from blocking.",
+      "Random assignment still happens, within each block.",
+      "Who the results apply to depends on how subjects were selected.",
+      "Blocking on sex separates that source of variation from the treatment effect."
+     ],
+     "seek": 2529
+    },
+    {
+     "stem": "80 volunteers are randomly assigned to daily meditation or no meditation for six weeks. The meditation group has significantly lower stress scores. Which conclusion is best?",
+     "opts": [
+      "Meditation lowers stress for all adults",
+      "Meditation lowers stress for people similar to these volunteers",
+      "Meditation is associated with lower stress, but we cannot say it causes it",
+      "No conclusion is possible because the subjects were volunteers"
+     ],
+     "ok": 1,
+     "why": [
+      "The subjects were not randomly selected from all adults, so we cannot generalize that far.",
+      "Random assignment supports cause and effect. Volunteers limit who the results apply to.",
+      "Random assignment is exactly what allows a cause-and-effect conclusion here.",
+      "Volunteers limit generalization, but random assignment still supports a conclusion for people like them."
+     ],
+     "seek": 3256
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "A gym wants to know whether a 10-minute warm-up routine improves 40-meter sprint times compared with no warm-up. Forty members volunteer. Sixteen of them are over 50 years old.",
+   "parts": [
+    "(a) Identify the treatments and the response variable.",
+    "(b) Describe how to randomly assign the 40 members to the treatments in a completely randomized design.",
+    "(c) Explain why blocking by age might be better than a completely randomized design, and describe how to carry it out.",
+    "(d) To whom can the results be generalized? Explain."
+   ],
+   "sample": [
+    "(a) The treatments are the 10-minute warm-up routine and no warm-up. The response variable is the 40-meter sprint time.",
+    "(b) Number the members 1 to 40. Use a random number generator to pick numbers from 1 to 40, ignoring repeats. The members with the first 20 numbers picked do the warm-up; the other 20 do no warm-up. Then all members run the sprint and their times are recorded.",
+    "(c) Age likely affects sprint time, since older members may run slower. Blocking separates that variation from the effect of the warm-up. Form two blocks: the 16 members over 50 and the 24 members 50 or younger. Within the over-50 block, randomly assign 8 to the warm-up and 8 to no warm-up; within the other block, randomly assign 12 to each. Compare sprint times within each block.",
+    "(d) Because the members volunteered, the results apply only to gym members similar to these volunteers. Random assignment lets us conclude that the warm-up caused any significant difference for people like them."
+   ],
+   "checklist": [
+    "(a) Names both treatments and the response variable in context",
+    "(b) Labels the 40 members, describes the random mechanism and how repeats are handled",
+    "(b) Says which members get each treatment and that sprint times are then measured",
+    "(c) Explains, in context, why age is linked to sprint time and blocks on it",
+    "(c) Randomly assigns treatments within each block",
+    "(d) Limits generalization to people like the volunteers"
+   ]
+  }
+ ],
+ "footer": "Status: draft from auto-generated captions, timestamps unverified against the video frames, practice questions newly written.",
+ "review": {
+  "status": "draft",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "At 18:05 the video says random assignment \"evenly splits\" extraneous variables. The page uses \"roughly equivalent\" instead and shows a wording note."
+   },
+   {
+    "kind": "wording",
+    "text": "At 23:05 the video defines replication as \"more than one experimental unit\" per treatment. The page uses the AP framing of enough units to tell a treatment effect from chance."
+   },
+   {
+    "kind": "wording",
+    "text": "At 42:30 the video says blocking means \"you no longer have to worry about\" the blocking variable. The page says blocking separates that variation instead."
+   },
+   {
+    "kind": "timestamps",
+    "text": "All timestamps come from the captions and are unverified against the video frames."
+   },
+   {
+    "kind": "explorer",
+    "text": "New explorer: random-assignment. Check that the default study (30 subjects) and the presets read well in class."
+   }
+  ]
+ }
+}

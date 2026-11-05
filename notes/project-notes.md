@@ -4,7 +4,7 @@ Moved to Claude on 2026-11-05 from a previous project. The old copy is read-only
 
 ## Status (5 Nov 2026)
 
-Moved to GitHub and rebuilt as a modular static site in `docs/` (plain HTML, CSS, JavaScript, and one JSON file per lesson). The original single-file build is in `archive/`. Only lesson 2.10 has a study page so far. See the README for how to publish with GitHub Pages and add lessons.
+Moved to GitHub and rebuilt as a modular static site in `docs/` (plain HTML, CSS, JavaScript, and one JSON file per lesson). The original single-file build is in `archive/`. 2.10 is live. 1.13 and 3.6-3.7 were built with the `video-study-site` skill and are drafts in review. Transcripts moved to the private `AP-Statistics-Hub-transcripts` repo, linked as a submodule. See the README for publishing and building lessons.
 
 ## What it is
 

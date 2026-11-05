@@ -1,8 +1,8 @@
 // Free response: plain-text box with a symbols bar, then a sample response and a scoring checklist.
 import { esc, tex } from '../util.js';
 
-export function render(sec) {
-  const keys = sec.symbols.map(([title, ch]) => `<button class="frq-key" type="button" title="${esc(title)}" data-ins="${esc(ch)}">${esc(ch)}</button>`).join('');
+export function render(sec, ctx) {
+  const keys = (sec.symbols || ctx.site.frqSymbols || []).map(([title, ch]) => `<button class="frq-key" type="button" title="${esc(title)}" data-ins="${esc(ch)}">${esc(ch)}</button>`).join('');
   const checks = sec.checklist.map((c, i) => `
     <button class="check" role="checkbox" aria-checked="false" data-check="${i}"><span class="box"></span><span>${tex(c)}</span></button>`).join('');
   return `
@@ -12,7 +12,7 @@ export function render(sec) {
       <div class="frq-tools"><span class="lab">Symbols</span><div class="frq-keys">${keys}</div></div>
       <textarea class="input" data-frq placeholder="Type your response in plain text. Insert statistical symbols from the menu above."></textarea>
     </div>
-    <div class="small-note">${esc(sec.note)}</div>
+    <div class="small-note">${esc(sec.note || ctx.site.frqNote || '')}</div>
     <div><button class="btn btn-primary" data-frq-toggle>Reveal sample response and scoring checklist</button></div>
     <div class="frq-reveal" data-frq-reveal hidden>
       <div class="frq-sample">${sec.sample.map(tex).join('')}</div>
