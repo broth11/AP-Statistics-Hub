@@ -47,7 +47,7 @@ function sectionHtml(sec, isLast, ctx) {
 function lessonHtml(L, ctx) {
   const moments = L.moments.map((m) => `
     <button class="moment" data-seek="${m.t}">
-      <span class="time">${fmtTime(m.t)}${m.verified === false ? '<span class="unverified">unverified</span>' : ''}</span>
+      <span class="time">${fmtTime(m.t)}</span>
       <span class="body">
         <span class="eyebrow">${esc(m.type)}</span>
         <span class="mtitle">${tex(m.title)}</span>

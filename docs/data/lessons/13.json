@@ -11,134 +11,115 @@
    "t": 60,
    "type": "Concept",
    "title": "What an experiment is for",
-   "text": "Researchers impose treatments of the explanatory variable on experimental units and measure the response. People are called subjects.",
-   "verified": false
+   "text": "Researchers impose treatments of the explanatory variable on experimental units and measure the response. People are called subjects."
   },
   {
    "t": 185,
    "type": "Overview",
    "title": "Four principles",
-   "text": "Comparison, random assignment, replication and direct control.",
-   "verified": false
+   "text": "Comparison, random assignment, replication and direct control."
   },
   {
    "t": 251,
    "type": "Concept",
    "title": "Comparison and control groups",
-   "text": "At least two treatment groups. A control group, given a placebo, an existing treatment or nothing, is there for comparison.",
-   "verified": false
+   "text": "At least two treatment groups. A control group, given a placebo, an existing treatment or nothing, is there for comparison."
   },
   {
    "t": 308,
    "type": "Key idea",
    "title": "Treat every unit the same",
-   "text": "All units are treated alike except for the treatment they are purposely given.",
-   "verified": false
+   "text": "All units are treated alike except for the treatment they are purposely given."
   },
   {
    "t": 345,
    "type": "Concept",
    "title": "Confounding variable",
-   "text": "A variable distributed differently among the treatment groups that also affects the response.",
-   "verified": false
+   "text": "A variable distributed differently among the treatment groups that also affects the response."
   },
   {
    "t": 662,
    "type": "Concept",
    "title": "Single-blind and double-blind",
-   "text": "Single-blind: subjects or the people who interact with them do not know the treatment. Double-blind: neither knows.",
-   "verified": false
+   "text": "Single-blind: subjects or the people who interact with them do not know the treatment. Double-blind: neither knows."
   },
   {
    "t": 780,
    "type": "Concept",
    "title": "Placebo and the placebo effect",
-   "text": "A fake or inactive treatment so every subject believes they are getting something.",
-   "verified": false
+   "text": "A fake or inactive treatment so every subject believes they are getting something."
   },
   {
    "t": 1083,
    "type": "Principle",
    "title": "Random assignment",
-   "text": "Creates treatment groups that are roughly equivalent with respect to the extraneous variables you cannot control.",
-   "verified": false
+   "text": "Creates treatment groups that are roughly equivalent with respect to the extraneous variables you cannot control."
   },
   {
    "t": 1265,
    "type": "Procedure",
    "title": "How to describe random assignment",
-   "text": "Number the subjects, use a random number generator, ignore repeats and unused numbers, and give the first group of numbers treatment 1.",
-   "verified": false
+   "text": "Number the subjects, use a random number generator, ignore repeats and unused numbers, and give the first group of numbers treatment 1."
   },
   {
    "t": 1380,
    "type": "Principle",
    "title": "Replication",
-   "text": "Enough experimental units in each treatment group so a treatment effect can be told apart from chance variation.",
-   "verified": false
+   "text": "Enough experimental units in each treatment group so a treatment effect can be told apart from chance variation."
   },
   {
    "t": 1560,
    "type": "Key idea",
    "title": "Why more units help",
-   "text": "Larger groups average out natural differences and give more precise estimates of the treatment effect.",
-   "verified": false
+   "text": "Larger groups average out natural differences and give more precise estimates of the treatment effect."
   },
   {
    "t": 1705,
    "type": "Principle",
    "title": "Direct control",
-   "text": "Hold other variables constant across groups: same water, sunlight, soil and temperature for every plot.",
-   "verified": false
+   "text": "Hold other variables constant across groups: same water, sunlight, soil and temperature for every plot."
   },
   {
    "t": 1930,
    "type": "Design",
    "title": "Completely randomized design",
-   "text": "Treatments are assigned to all experimental units completely at random.",
-   "verified": false
+   "text": "Treatments are assigned to all experimental units completely at random."
   },
   {
    "t": 2089,
    "type": "Design",
    "title": "Randomized block design",
-   "text": "Group similar units into blocks first, then randomly assign treatments within each block.",
-   "verified": false
+   "text": "Group similar units into blocks first, then randomly assign treatments within each block."
   },
   {
    "t": 2343,
    "type": "Worked example",
    "title": "Blocking on location",
-   "text": "Plots near the forest and near the river form two blocks, so both fertilizers appear in each location.",
-   "verified": false
+   "text": "Plots near the forest and near the river form two blocks, so both fertilizers appear in each location."
   },
   {
    "t": 2529,
    "type": "Key idea",
    "title": "Purpose of blocking",
-   "text": "Separate the variation caused by the blocking variable from the rest, giving a more precise comparison of treatments.",
-   "verified": false
+   "text": "Separate the variation caused by the blocking variable from the rest, giving a more precise comparison of treatments."
   },
   {
    "t": 2610,
    "type": "Design",
    "title": "Matched pairs design",
-   "text": "A block design with two treatments. Pair similar units and randomly assign one treatment to each member.",
-   "verified": false
+   "text": "A block design with two treatments. Pair similar units and randomly assign one treatment to each member."
   },
   {
    "t": 3060,
    "type": "Worked example",
    "title": "Each subject gets both treatments",
-   "text": "Sunscreen A on one arm and B on the other, with the arm chosen at random.",
-   "verified": false
+   "text": "Sunscreen A on one arm and B on the other, with the arm chosen at random."
   },
   {
    "t": 3240,
    "type": "Exam wording",
    "title": "Cause and effect, and to whom",
-   "text": "Random assignment allows a cause-and-effect conclusion. With volunteers, generalize only to people like them.",
-   "verified": false
+   "text": "Random assignment allows a cause-and-effect conclusion. With volunteers, generalize only to people like them."
   }
  ],
  "sections": [
@@ -341,40 +322,35 @@
      "title": "Saying random assignment makes groups equal",
      "weak": "Random assignment makes the two groups the same.",
      "better": "Random assignment creates groups that are roughly equivalent, so differences in age, diet or stress between the groups are due to chance.",
-     "seek": 1083,
-     "verified": false
+     "seek": 1083
     },
     {
      "kind": "Exam wording",
      "title": "Name the confounding in context",
      "weak": "Age is a confounding variable.",
      "better": "If the 50 mg group had mostly older patients, age would be confounded with the treatment: older patients tend to have higher blood pressure, so we could not tell whether the vitamin D or age caused the difference.",
-     "seek": 345,
-     "verified": false
+     "seek": 345
     },
     {
      "kind": "Common trap",
      "title": "Defining replication as repeating the study",
      "weak": "Replication means doing the experiment again.",
      "better": "Replication means using enough experimental units in each treatment group so a real treatment effect can be told apart from chance variation.",
-     "seek": 1380,
-     "verified": false
+     "seek": 1380
     },
     {
      "kind": "Common trap",
      "title": "Mixing up blocking and random assignment",
      "weak": "We block so the groups are random.",
      "better": "We block by age so similar subjects are grouped together, then randomly assign treatments within each block. This separates the variation caused by age from the treatment effect.",
-     "seek": 2529,
-     "verified": false
+     "seek": 2529
     },
     {
      "kind": "Exam wording",
      "title": "State the scope of the conclusion",
      "weak": "Vitamin D lowers blood pressure for everyone.",
      "better": "Because treatments were randomly assigned, we can conclude vitamin D caused the lower blood pressure, but only for patients similar to the volunteers in the study.",
-     "seek": 3240,
-     "verified": false
+     "seek": 3240
     }
    ]
   },
@@ -501,7 +477,7 @@
    ]
   }
  ],
- "footer": "Status: draft from auto-generated captions, timestamps unverified against the video frames, practice questions newly written.",
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written.",
  "review": {
   "status": "approved",
   "flags": [
@@ -516,10 +492,6 @@
    {
     "kind": "wording",
     "text": "At 42:30 the video says blocking means \"you no longer have to worry about\" the blocking variable. The page says blocking separates that variation instead."
-   },
-   {
-    "kind": "timestamps",
-    "text": "All timestamps come from the captions and are unverified against the video frames."
    },
    {
     "kind": "explorer",

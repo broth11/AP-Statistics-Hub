@@ -27,7 +27,7 @@ Any string may contain `$...$` math. Times (`t`, `seek`) are whole seconds into 
 ## Moments
 
 ```json
-{ "t": 1265, "type": "Procedure", "title": "How to describe random assignment", "text": "Number the subjects, ...", "verified": false }
+{ "t": 1265, "type": "Procedure", "title": "How to describe random assignment", "text": "Number the subjects, ..." }
 ```
 
 `type` is a short label: Concept, Definition, Key idea, Principle, Procedure, Formula, Worked example, Calculator, Exam wording, Exam question, Design, Visual, Reference, Overview. Moments must be in time order.
@@ -89,7 +89,7 @@ Each step renders as "Suppose ... To do that, ... Observe." with a "Show expecte
 ```json
 { "type": "wording",
   "traps": [ { "kind": "Common trap", "title": "Reporting a bare decimal", "weak": "0.0266",
-               "better": "$P(H=6)=0.0266$. The probability that ...", "seek": 2270, "verified": false } ] }
+               "better": "$P(H=6)=0.0266$. The probability that ...", "seek": 2270 } ] }
 ```
 
 `kind` is "Common trap" or "Exam wording". `weak` is shown in quotes, so do not add quote marks.

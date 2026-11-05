@@ -9,7 +9,7 @@ export function render(sec) {
         <div class="weak"><div class="lbl">✕ Weak</div>${tex('“' + t.weak + '”')}</div>
         <div><div class="lbl">✓ Better</div>${tex(t.better)}</div>
       </div>
-      <div class="foot">${t.verified === false ? '<span class="unverified">unverified</span>' : ''}<button class="btn btn-ghost" data-seek="${t.seek}">Video ${fmtTime(t.seek)}</button></div>
+      <div class="foot"><button class="btn btn-ghost" data-seek="${t.seek}">Video ${fmtTime(t.seek)}</button></div>
     </div>`).join('');
   return `<div class="traps">${traps}</div>`;
 }

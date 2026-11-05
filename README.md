@@ -61,7 +61,7 @@ The `video-study-site` skill in `.claude/skills/` builds pages. Open this repo i
 
 For each lesson it reads the transcript, writes `docs/data/lessons/<n>.json`, reuses or adds an explorer, checks the page, and opens a pull request with a review report. Every timestamp in the report sits next to the transcript text found at that time, and every wording change or suspected caption error is flagged.
 
-**Merging the pull request publishes the lessons.** Review the report, then merge. Timestamps keep a small "unverified" label until you check them against the video and ask Claude to mark them verified.
+**Merging the pull request publishes the lessons.** Review the report, then merge.
 
 Fetching a new playlist needs YouTube access, so that step runs on your own computer (`pip install yt-dlp` first). The skill gives the exact command if it cannot run it.
 

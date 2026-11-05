@@ -11,141 +11,121 @@
    "t": 87,
    "type": "Concept",
    "title": "What a test is trying to show",
-   "text": "The goal is to find evidence for the alternative hypothesis. The two possible conclusions are evidence or a lack of evidence.",
-   "verified": false
+   "text": "The goal is to find evidence for the alternative hypothesis. The two possible conclusions are evidence or a lack of evidence."
   },
   {
    "t": 112,
    "type": "Worked example",
    "title": "Restaurant takeout claim",
-   "text": "$H_0: p=0.60$, $H_a: p>0.60$. In a random sample of 250 customers, 170 ordered takeout, $\\hat p=0.68$.",
-   "verified": false
+   "text": "$H_0: p=0.60$, $H_a: p>0.60$. In a random sample of 250 customers, 170 ordered takeout, $\\hat p=0.68$."
   },
   {
    "t": 195,
    "type": "Key idea",
    "title": "Samples vary",
-   "text": "A sample proportion means little until you compare it with all the sample proportions you could get.",
-   "verified": false
+   "text": "A sample proportion means little until you compare it with all the sample proportions you could get."
   },
   {
    "t": 411,
    "type": "Procedure",
    "title": "PHANTOM steps",
-   "text": "Parameter, Hypotheses, Assess conditions, Name the test, Test statistic, Obtain the p-value, Make a decision.",
-   "verified": false
+   "text": "Parameter, Hypotheses, Assess conditions, Name the test, Test statistic, Obtain the p-value, Make a decision."
   },
   {
    "t": 450,
    "type": "Concept",
    "title": "The null distribution",
-   "text": "Assume $H_0$ is true and build the sampling distribution of $\\hat p$ centered at $p_0$.",
-   "verified": false
+   "text": "Assume $H_0$ is true and build the sampling distribution of $\\hat p$ centered at $p_0$."
   },
   {
    "t": 720,
    "type": "Formula",
    "title": "Test statistic",
-   "text": "$z=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$ tells you where $\\hat p$ falls in the null distribution.",
-   "verified": false
+   "text": "$z=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$ tells you where $\\hat p$ falls in the null distribution."
   },
   {
    "t": 843,
    "type": "Key idea",
    "title": "Beyond 2 standard deviations",
-   "text": "A $z$ beyond about $\\pm2$ is unusual if the null is true.",
-   "verified": false
+   "text": "A $z$ beyond about $\\pm2$ is unusual if the null is true."
   },
   {
    "t": 1125,
    "type": "Key idea",
    "title": "The SD is built on $p_0$",
-   "text": "The whole sampling distribution assumes the null proportion is true, so the standard deviation uses $p_0$.",
-   "verified": false
+   "text": "The whole sampling distribution assumes the null proportion is true, so the standard deviation uses $p_0$."
   },
   {
    "t": 1194,
    "type": "Definition",
    "title": "P-value",
-   "text": "The probability, assuming $H_0$ is true, of a result as extreme as or more extreme than the one observed.",
-   "verified": false
+   "text": "The probability, assuming $H_0$ is true, of a result as extreme as or more extreme than the one observed."
   },
   {
    "t": 1290,
    "type": "Calculator",
    "title": "Normal distribution in Desmos",
-   "text": "Plus, Inference, Probability Distributions, Normal with mean 0 and SD 1, then Cumulative Probability.",
-   "verified": false
+   "text": "Plus, Inference, Probability Distributions, Normal with mean 0 and SD 1, then Cumulative Probability."
   },
   {
    "t": 1603,
    "type": "Procedure",
    "title": "Two-sided alternative: double it",
-   "text": "For $H_a: p\\ne p_0$, find one tail and multiply by 2.",
-   "verified": false
+   "text": "For $H_a: p\\ne p_0$, find one tail and multiply by 2."
   },
   {
    "t": 1741,
    "type": "Key idea",
    "title": "Smaller p-value, stronger evidence",
-   "text": "The lower the p-value, the more convincing the evidence for $H_a$.",
-   "verified": false
+   "text": "The lower the p-value, the more convincing the evidence for $H_a$."
   },
   {
    "t": 1800,
    "type": "Definition",
    "title": "Significance level",
-   "text": "$\\alpha$, usually 0.05 or 0.01, is the cutoff for statistically significant.",
-   "verified": false
+   "text": "$\\alpha$, usually 0.05 or 0.01, is the cutoff for statistically significant."
   },
   {
    "t": 1925,
    "type": "Exam wording",
    "title": "Reject $H_0$ does not mean $H_0$ is false",
-   "text": "Say there is convincing evidence for $H_a$, not that you proved it.",
-   "verified": false
+   "text": "Say there is convincing evidence for $H_a$, not that you proved it."
   },
   {
    "t": 1992,
    "type": "Exam wording",
    "title": "Never conclude $H_0$ is true",
-   "text": "Fail to reject means there is not convincing evidence for $H_a$.",
-   "verified": false
+   "text": "Fail to reject means there is not convincing evidence for $H_a$."
   },
   {
    "t": 2038,
    "type": "Exam wording",
    "title": "Conclusion in context",
-   "text": "State it in terms of $H_a$, in context, with non-definitive language.",
-   "verified": false
+   "text": "State it in terms of $H_a$, in context, with non-definitive language."
   },
   {
    "t": 2293,
    "type": "Worked example",
    "title": "Dog park: full test",
-   "text": "361 of 465 residents want the park. Is that convincing evidence that more than 75% do?",
-   "verified": false
+   "text": "361 of 465 residents want the park. Is that convincing evidence that more than 75% do?"
   },
   {
    "t": 2488,
    "type": "Calculator",
    "title": "z test for proportions in Desmos",
-   "text": "Enter successes and sample size, choose the test, enter $p_0$ and the tail.",
-   "verified": false
+   "text": "Enter successes and sample size, choose the test, enter $p_0$ and the tail."
   },
   {
    "t": 2632,
    "type": "Worked example",
    "title": "Dog park conclusion",
-   "text": "The p-value is above 0.05, so fail to reject $H_0$: not convincing evidence that more than 75% want it.",
-   "verified": false
+   "text": "The p-value is above 0.05, so fail to reject $H_0$: not convincing evidence that more than 75% want it."
   },
   {
    "t": 2790,
    "type": "Exam question",
    "title": "Pick the correct test statistic",
-   "text": "Numerator $\\hat p-p_0$, and the SD uses $p_0$, not $\\hat p$.",
-   "verified": false
+   "text": "Numerator $\\hat p-p_0$, and the SD uses $p_0$, not $\\hat p$."
   }
  ],
  "sections": [
@@ -400,40 +380,35 @@
      "title": "Saying the test proves $H_a$",
      "weak": "This proves more than 60% of customers order takeout.",
      "better": "Because the p-value of 0.0049 is less than $\\alpha=0.05$, we reject $H_0$. There is convincing evidence that more than 60% of all the chain's customers order takeout.",
-     "seek": 87,
-     "verified": false
+     "seek": 87
     },
     {
      "kind": "Common trap",
      "title": "Accepting the null hypothesis",
      "weak": "We accept $H_0$: half of parents support remote learning.",
      "better": "Because the p-value of 0.299 is greater than $\\alpha=0.05$, we fail to reject $H_0$. There is not convincing evidence that the proportion of all parents in the city who support remote learning differs from 0.50.",
-     "seek": 1992,
-     "verified": false
+     "seek": 1992
     },
     {
      "kind": "Exam wording",
      "title": "Interpret the p-value",
      "weak": "There is a 0.0049 probability that $H_0$ is true.",
      "better": "Assuming 60% of all customers order takeout, there is about a 0.0049 probability of getting a sample proportion of 0.68 or higher in a random sample of 250 customers.",
-     "seek": 1385,
-     "verified": false
+     "seek": 1385
     },
     {
      "kind": "Common trap",
      "title": "Using $\\hat p$ in the standard deviation",
      "weak": "$\\sqrt{0.28(0.72)/200}$",
      "better": "In a significance test the standard deviation uses the null value: $\\sqrt{0.35(0.65)/200}$.",
-     "seek": 2905,
-     "verified": false
+     "seek": 2905
     },
     {
      "kind": "Common trap",
      "title": "Forgetting to double for $\\ne$",
      "weak": "p-value $=P(Z\\le-1.039)\\approx0.1493$",
      "better": "For $H_a: p\\ne0.50$, the p-value is $2P(Z\\le-1.039)\\approx0.2987$.",
-     "seek": 1603,
-     "verified": false
+     "seek": 1603
     }
    ]
   },
@@ -560,7 +535,7 @@
    ]
   }
  ],
- "footer": "Status: draft from auto-generated captions, timestamps unverified against the video frames, practice questions newly written. Test values were computed when the page was written.",
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Test values were computed when the page was written.",
  "review": {
   "status": "approved",
   "flags": [
@@ -587,10 +562,6 @@
    {
     "kind": "values",
     "text": "Light bulbs: the video rounds $\\hat p$ to 0.0646 and gets $z=-1.453$; the page computes from 42/650 and gets $z\\approx-1.446$, p-value $\\approx0.0741$. Confirm 42 defective bulbs on screen."
-   },
-   {
-    "kind": "timestamps",
-    "text": "All timestamps come from the captions and are unverified against the video frames."
    },
    {
     "kind": "explorer",

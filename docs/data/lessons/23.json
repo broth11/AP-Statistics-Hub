@@ -11,120 +11,103 @@
    "t": 38,
    "type": "Concept",
    "title": "What a binomial random variable is",
-   "text": "A discrete random variable that counts the successes in $n$ repeated independent trials, each with success probability $p$.",
-   "verified": false
+   "text": "A discrete random variable that counts the successes in $n$ repeated independent trials, each with success probability $p$."
   },
   {
    "t": 236,
    "type": "Decision check",
    "title": "BITS: four conditions",
-   "text": "Binary, Independent, fixed number of Trials, same probability of Success. All four must hold.",
-   "verified": false
+   "text": "Binary, Independent, fixed number of Trials, same probability of Success. All four must hold."
   },
   {
    "t": 336,
    "type": "Worked check",
    "title": "Free throws: binomial",
-   "text": "Eight shots at 78%. Passes all four conditions.",
-   "verified": false
+   "text": "Eight shots at 78%. Passes all four conditions."
   },
   {
    "t": 404,
    "type": "Worked check",
    "title": "Changing probability: not binomial",
-   "text": "The make probability rises and falls with results, so I and S fail.",
-   "verified": false
+   "text": "The make probability rises and falls with results, so I and S fail."
   },
   {
    "t": 472,
    "type": "Worked check",
    "title": "Candies without replacement: not binomial",
-   "text": "Drawing 5 from 20 shifts the probability from 25% to about 21% or 26%.",
-   "verified": false
+   "text": "Drawing 5 from 20 shifts the probability from 25% to about 21% or 26%."
   },
   {
    "t": 571,
    "type": "Worked check",
    "title": "Millions of candies: close enough",
-   "text": "The probability barely moves, so the 10% condition lets you treat it as binomial.",
-   "verified": false
+   "text": "The probability barely moves, so the 10% condition lets you treat it as binomial."
   },
   {
    "t": 793,
    "type": "Procedure",
    "title": "Build the distribution by hand",
-   "text": "Starts with $P(X=0)=0.22^8$, then counts the orderings for 1, 2, 3 makes.",
-   "verified": false
+   "text": "Starts with $P(X=0)=0.22^8$, then counts the orderings for 1, 2, 3 makes."
   },
   {
    "t": 1267,
    "type": "Procedure",
    "title": "Counting combinations",
-   "text": "The number of ways to place $x$ successes among $n$ trials is $\\binom{n}{x}$.",
-   "verified": false
+   "text": "The number of ways to place $x$ successes among $n$ trials is $\\binom{n}{x}$."
   },
   {
    "t": 1364,
    "type": "Calculator",
    "title": "nCr in Desmos",
-   "text": "Keypad, Functions, nCr(8, 2) gives $\\binom{8}{2}=28$.",
-   "verified": false
+   "text": "Keypad, Functions, nCr(8, 2) gives $\\binom{8}{2}=28$."
   },
   {
    "t": 1616,
    "type": "Formula",
    "title": "The binomial probability formula",
-   "text": "$\\binom{n}{x}\\,p^x(1-p)^{n-x}$",
-   "verified": false
+   "text": "$\\binom{n}{x}\\,p^x(1-p)^{n-x}$"
   },
   {
    "t": 1731,
    "type": "Parameters",
    "title": "$\\text{Mean}=np$ and $\\text{SD}=\\sqrt{np(1-p)}$",
-   "text": "These formulas work only for a binomial random variable.",
-   "verified": false
+   "text": "These formulas work only for a binomial random variable."
   },
   {
    "t": 1942,
    "type": "Visual",
    "title": "Binomial distribution in Desmos",
-   "text": "Inference, Probability Distributions, Binomial. Each dot is $P(X=k)$.",
-   "verified": false
+   "text": "Inference, Probability Distributions, Binomial. Each dot is $P(X=k)$."
   },
   {
    "t": 2046,
    "type": "Procedure",
    "title": "\"At least one\" with the complement",
-   "text": "$P(X\\ge1)=1-P(X=0)$.",
-   "verified": false
+   "text": "$P(X\\ge1)=1-P(X=0)$."
   },
   {
    "t": 2162,
    "type": "Calculator",
    "title": "Cumulative probability",
-   "text": "Use the left or right option in Desmos for \"at most\" and \"at least\".",
-   "verified": false
+   "text": "Use the left or right option in Desmos for \"at most\" and \"at least\"."
   },
   {
    "t": 2270,
    "type": "Exam wording",
    "title": "Name the event, not just the number",
-   "text": "Write $P(X\\ge3)=0.492$, with the variable in context.",
-   "verified": false
+   "text": "Write $P(X\\ge3)=0.492$, with the variable in context."
   },
   {
    "t": 2296,
    "type": "Exam wording",
    "title": "Interpret the mean and SD",
-   "text": "Say what is averaged over repeated groups, and how much the count varies.",
-   "verified": false
+   "text": "Say what is averaged over repeated groups, and how much the count varies."
   },
   {
    "t": 2365,
    "type": "Reference",
    "title": "Formula sheet",
-   "text": "The video says the binomial formulas are provided on the exam. Confirm on the current formula sheet.",
-   "verified": false
+   "text": "The video says the binomial formulas are provided on the exam. Confirm on the current formula sheet."
   }
  ],
  "sections": [
@@ -390,32 +373,28 @@
      "title": "Reporting a bare decimal",
      "weak": "0.0266",
      "better": "$P(H=6)=0.0266$. The probability that exactly 6 of 20 people are left-handed is about 0.0266.",
-     "seek": 2270,
-     "verified": false
+     "seek": 2270
     },
     {
      "kind": "Common trap",
      "title": "Using $np$ and $\\sqrt{np(1-p)}$ on any random variable",
      "weak": "Mean = 6.24 for any discrete variable.",
      "better": "First justify BITS. The formulas $np$ and $\\sqrt{np(1-p)}$ apply only to a binomial random variable.",
-     "seek": 1821,
-     "verified": false
+     "seek": 1821
     },
     {
      "kind": "Exam wording",
      "title": "Interpret the mean in context",
      "weak": "The mean is 2.6.",
      "better": "In many random groups of 20 people, the number of left-handed people averages about 2.6.",
-     "seek": 2296,
-     "verified": false
+     "seek": 2296
     },
     {
      "kind": "Exam wording",
      "title": "Interpret the standard deviation",
      "weak": "The SD is 1.504.",
      "better": "The number of left-handed people in a group of 20 typically varies from the mean of 2.6 by about 1.5 people.",
-     "seek": 2296,
-     "verified": false
+     "seek": 2296
     }
    ]
   },
@@ -539,14 +518,10 @@
    ]
   }
  ],
- "footer": "Status: draft from auto-generated captions, timestamps unverified against the video frames, practice questions newly written. Binomial values were computed when the page was written.",
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Binomial values were computed when the page was written.",
  "review": {
   "status": "approved",
   "flags": [
-   {
-    "kind": "timestamps",
-    "text": "Timestamps not yet checked against the video frames."
-   },
    {
     "kind": "calculator",
     "text": "Desmos menu names and whether the between option includes both endpoints are unconfirmed."

@@ -85,8 +85,6 @@ def check_section(s, i, repo):
     elif t == "wording":
         for j, tr in enumerate(s.get("traps", [])):
             need(tr, ["kind", "title", "weak", "better", "seek"], f"{where}.traps[{j}]")
-            if "verified" not in tr:
-                warn(f"{where}.traps[{j}]: no 'verified' field")
     elif t == "mcq":
         for j, q in enumerate(s.get("questions", [])):
             w = f"{where}.questions[{j}]"
@@ -152,8 +150,6 @@ def main():
         warn(f"{len(ms)} key moments (aim for 8 to 20)")
     for j, m in enumerate(ms):
         need(m, ["t", "type", "title", "text"], f"moments[{j}]")
-        if "verified" not in m:
-            warn(f"moments[{j}]: no 'verified' field")
 
     ids = [s.get("id") for s in L.get("sections", [])]
     if len(ids) != len(set(ids)):
@@ -203,7 +199,7 @@ def main():
             claim = obj.get("title") or obj.get("label") or obj.get("stem") or obj.get("scenario") or (obj.get("cells") or [""])[0]
             claim = re.sub(r"\s+", " ", str(claim))[:70].replace("|", "/")
             print(f"| [{fmt(int(v))}](https://www.youtube.com/watch?v={L.get('videoId')}&t={int(v)}s) | {claim} | {here.replace('|', '/')} |")
-        print("\nMerging the PR publishes this page. After checking timestamps against the video, ask for `verified: true` on the items you confirmed to remove their \"unverified\" labels.")
+        print("\nMerging the PR publishes this page.")
     return 1 if errors else 0
 
 
