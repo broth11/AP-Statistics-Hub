@@ -2,9 +2,13 @@
 
 Moved to Claude on 2026-11-05 from a previous project. The old copy is read-only. This file captures where the work stood so it can continue here.
 
+## Status (5 Nov 2026)
+
+Moved to GitHub and rebuilt as a modular static site in `docs/` (plain HTML, CSS, JavaScript, and one JSON file per lesson). The original single-file build is in `archive/`. Only lesson 2.10 has a study page so far. See the README for how to publish with GitHub Pages and add lessons.
+
 ## What it is
 
-A single-page study site for AP Statistics students: a video study guide organized by unit and lesson, with exam-prep tools built in. The working file is `AP Stats Study Site.dc.html`, styled with the "Modernist" design system. Students use the Casio fx-CG50 in class, but the Desmos section targets exam-style calculator skills.
+A single-page study site for AP Statistics students: a video study guide organized by unit and lesson, with exam-prep tools built in. The original working file (now archived) was `AP Stats Study Site.dc.html`, styled with the "Modernist" design system. Students use the Casio fx-CG50 in class, but the Desmos section targets exam-style calculator skills.
 
 ## Site structure
 

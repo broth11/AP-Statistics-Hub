@@ -1,0 +1,587 @@
+{
+ "n": 23,
+ "unit": 2,
+ "topic": "2.10",
+ "title": "The Binomial Distribution",
+ "videoId": "RjM0zSdqHPk",
+ "videoTitle": "AP Statistics Topic 2.10 The Binomial Distribution",
+ "intro": "After this lesson you can check whether a random variable is binomial, calculate $P(X=k)$, $P(X\\le k)$ and $P(X\\ge k)$, and find and interpret the mean and standard deviation.",
+ "moments": [
+  {
+   "t": 38,
+   "type": "Concept",
+   "title": "What a binomial random variable is",
+   "text": "A discrete random variable that counts the successes in $n$ repeated independent trials, each with success probability $p$."
+  },
+  {
+   "t": 236,
+   "type": "Decision check",
+   "title": "BITS: four conditions",
+   "text": "Binary, Independent, fixed number of Trials, same probability of Success. All four must hold."
+  },
+  {
+   "t": 336,
+   "type": "Worked check",
+   "title": "Free throws: binomial",
+   "text": "Eight shots at 78%. Passes all four conditions."
+  },
+  {
+   "t": 404,
+   "type": "Worked check",
+   "title": "Changing probability: not binomial",
+   "text": "The make probability rises and falls with results, so I and S fail."
+  },
+  {
+   "t": 472,
+   "type": "Worked check",
+   "title": "Candies without replacement: not binomial",
+   "text": "Drawing 5 from 20 shifts the probability from 25% to about 21% or 26%."
+  },
+  {
+   "t": 571,
+   "type": "Worked check",
+   "title": "Millions of candies: close enough",
+   "text": "The probability barely moves, so the 10% condition lets you treat it as binomial."
+  },
+  {
+   "t": 793,
+   "type": "Procedure",
+   "title": "Build the distribution by hand",
+   "text": "Starts with $P(X=0)=0.22^8$, then counts the orderings for 1, 2, 3 makes."
+  },
+  {
+   "t": 1267,
+   "type": "Procedure",
+   "title": "Counting combinations",
+   "text": "The number of ways to place $x$ successes among $n$ trials is $\\binom{n}{x}$."
+  },
+  {
+   "t": 1364,
+   "type": "Calculator",
+   "title": "nCr in Desmos",
+   "text": "Keypad, Functions, nCr(8, 2) gives $\\binom{8}{2}=28$."
+  },
+  {
+   "t": 1616,
+   "type": "Formula",
+   "title": "The binomial probability formula",
+   "text": "$\\binom{n}{x}\\,p^x(1-p)^{n-x}$"
+  },
+  {
+   "t": 1731,
+   "type": "Parameters",
+   "title": "$\\text{Mean}=np$ and $\\text{SD}=\\sqrt{np(1-p)}$",
+   "text": "These formulas work only for a binomial random variable."
+  },
+  {
+   "t": 1942,
+   "type": "Visual",
+   "title": "Binomial distribution in Desmos",
+   "text": "Inference, Probability Distributions, Binomial. Each dot is $P(X=k)$."
+  },
+  {
+   "t": 2046,
+   "type": "Procedure",
+   "title": "\"At least one\" with the complement",
+   "text": "$P(X\\ge1)=1-P(X=0)$."
+  },
+  {
+   "t": 2162,
+   "type": "Calculator",
+   "title": "Cumulative probability",
+   "text": "Use the left or right option in Desmos for \"at most\" and \"at least\"."
+  },
+  {
+   "t": 2270,
+   "type": "Exam wording",
+   "title": "Name the event, not just the number",
+   "text": "Write $P(X\\ge3)=0.492$, with the variable in context."
+  },
+  {
+   "t": 2296,
+   "type": "Exam wording",
+   "title": "Interpret the mean and SD",
+   "text": "Say what is averaged over repeated groups, and how much the count varies."
+  },
+  {
+   "t": 2365,
+   "type": "Reference",
+   "title": "Formula sheet",
+   "text": "The video says the binomial formulas are provided on the exam. Confirm on the current formula sheet."
+  }
+ ],
+ "sections": [
+  {
+   "id": "bits",
+   "type": "decision",
+   "tab": "Is it binomial?",
+   "kicker": "Decision check",
+   "title": "Is it binomial? Check BITS",
+   "cards": [
+    {
+     "letter": "B",
+     "name": "Binary",
+     "text": "Each trial is a success or a failure."
+    },
+    {
+     "letter": "I",
+     "name": "Independent",
+     "text": "One trial does not change the next."
+    },
+    {
+     "letter": "T",
+     "name": "Trials",
+     "text": "The number of trials n is fixed in advance."
+    },
+    {
+     "letter": "S",
+     "name": "Same probability",
+     "text": "P(success) = p on every trial."
+    }
+   ],
+   "columns": [
+    "Scenario",
+    "B",
+    "I",
+    "T",
+    "S",
+    "Binomial?",
+    "Video"
+   ],
+   "rows": [
+    {
+     "scenario": "McKenzie makes 78% of free throws; 8 shots, M = number made",
+     "b": "Yes",
+     "i": "Yes",
+     "t": "Yes",
+     "s": "Yes",
+     "verdict": "Binomial",
+     "seek": 336
+    },
+    {
+     "scenario": "Kayla's make probability rises 2% after a make and drops 10% after a miss",
+     "b": "Yes",
+     "i": "No",
+     "t": "Yes",
+     "s": "No",
+     "verdict": "Not binomial",
+     "seek": 404
+    },
+    {
+     "scenario": "5 candies without replacement from a bag of 20 with 5 red",
+     "b": "Yes",
+     "i": "No",
+     "t": "Yes",
+     "s": "No",
+     "verdict": "Not binomial",
+     "seek": 472
+    },
+    {
+     "scenario": "5 candies without replacement from millions, 25% red",
+     "b": "Yes",
+     "i": "10% condition",
+     "t": "Yes",
+     "s": "About",
+     "verdict": "Binomial",
+     "seek": 571
+    }
+   ],
+   "note": {
+    "label": "Wording check.",
+    "text": "The video says drawing without replacement \"violates independence\" but the change is negligible for millions of candies. On the AP exam, state the 10% condition instead: when sampling without replacement, n is less than 10% of the population."
+   }
+  },
+  {
+   "id": "formula",
+   "type": "procedure",
+   "tab": "Formula",
+   "kicker": "Procedure",
+   "title": "Where the formula comes from",
+   "intro": "McKenzie makes 78% of her free throws and shoots 8. Each specific sequence with 3 makes and 5 misses has probability $0.78^3 \\cdot 0.22^5$. The number of different sequences is $\\binom{8}{3}$.",
+   "parts": [
+    {
+     "label": "Combinations",
+     "tex": "$\\binom{8}{3}=56$",
+     "text": "Ways to place 3 makes among 8 shots. Desmos: nCr(8,3)."
+    },
+    {
+     "label": "Successes",
+     "tex": "$p^x=0.78^3$",
+     "text": "One factor of p for each success."
+    },
+    {
+     "label": "Failures",
+     "tex": "$(1-p)^{n-x}=0.22^5$",
+     "text": "n − x = 5 failures."
+    }
+   ],
+   "line": "$P(X=x)=\\binom{n}{x}\\,p^x(1-p)^{n-x}\\;\\Rightarrow\\;P(X=3)=0.0137$",
+   "buttons": [
+    {
+     "label": "Watch the derivation (13:13)",
+     "seek": 793
+    },
+    {
+     "label": "Watch the formula (26:56)",
+     "seek": 1616
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "type": "explorer",
+   "tab": "Explorer",
+   "kicker": "Interactive",
+   "title": "Binomial explorer",
+   "intro": "Change $n$ and $p$. Choose the event, then read the highlighted probability. This is the same picture Desmos draws in the video at 32:22.",
+   "stories": {
+    "ft": "A basketball player makes 78% of her free throws, and each shot is independent. She takes $n=8$ shots. Let $X$ be the number she makes, so $p=0.78$.",
+    "lh": "About 13% of people are left-handed. Pick $n=20$ people at random and let $X$ be the number who are left-handed, so $p=0.13$."
+   },
+   "initial": {
+    "n": 8,
+    "p": 0.78,
+    "k": 3,
+    "mode": "eq",
+    "story": "ft"
+   },
+   "presets": [
+    {
+     "label": "Free throws",
+     "sub": "$n=8,\\ p=0.78$",
+     "n": 8,
+     "p": 0.78,
+     "k": 3,
+     "mode": "eq",
+     "story": "ft"
+    },
+    {
+     "label": "Left-handed",
+     "sub": "$n=20,\\ p=0.13$",
+     "n": 20,
+     "p": 0.13,
+     "k": 6,
+     "mode": "eq",
+     "story": "lh"
+    },
+    {
+     "label": "Left-handed, at most",
+     "sub": "$n=20,\\ P(X\\le4)$",
+     "n": 20,
+     "p": 0.13,
+     "k": 4,
+     "mode": "le",
+     "story": "lh"
+    },
+    {
+     "label": "Left-handed, at least",
+     "sub": "$n=20,\\ P(X\\ge3)$",
+     "n": 20,
+     "p": 0.13,
+     "k": 3,
+     "mode": "ge",
+     "story": "lh"
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Work through each task in it yourself, the way you would on the exam, then check what you observe.",
+   "note": "On the exam, use the Desmos calculator built into Bluebook.",
+   "steps": [
+    {
+     "title": "Read one probability",
+     "suppose": "we want $P(X=6)$ for a group of 20 people when 13% are left-handed.",
+     "how": "tap the plus button, choose Inference, then Probability Distributions, then Binomial. Enter 20 for trials and 0.13 for the probability of success, then Create distribution.",
+     "observe": "Each dot is one value of $X$. Tap the dot at 6 to read its probability. The tallest dots are at 2 and 3, and the right side tails off.",
+     "seek": 1942,
+     "expected": "$P(X=6)\\approx 0.0266$"
+    },
+    {
+     "title": "At most",
+     "suppose": "we want $P(X\\le4)$.",
+     "how": "on the binomial item, open Cumulative Probability, choose the left option and enter 4.",
+     "observe": "The dots for 0 through 4 are highlighted and their total is shown. Compare it with adding the dots one at a time.",
+     "seek": 2162,
+     "expected": "$P(X\\le4)\\approx 0.8917$"
+    },
+    {
+     "title": "At least",
+     "suppose": "we want $P(X\\ge3)$.",
+     "how": "open Cumulative Probability, choose the right option and enter 3.",
+     "observe": "The dots for 3 through 20 are highlighted. Check that the value equals $1-P(X\\le2)$, found with the left option.",
+     "seek": 2248,
+     "expected": "$P(X\\ge3)\\approx 0.4920$, and $1-P(X\\le2)$ gives the same value. $P(X\\le2)\\approx 0.5080$."
+    },
+    {
+     "title": "At least one",
+     "suppose": "we want $P(X\\ge1)$ and a faster way than adding 20 dots.",
+     "how": "read the dot at 0 for $P(X=0)$, then type 1 minus that value on a new line. Check it against the right option with 1.",
+     "observe": "The two values agree. The only outcome left out is zero left-handed people.",
+     "seek": 2046,
+     "expected": "$P(X=0)\\approx 0.0617$, so $P(X\\ge1)\\approx 0.9383$."
+    },
+    {
+     "title": "Between two values",
+     "suppose": "we want $P(2\\le X\\le5)$.",
+     "how": "open Cumulative Probability and choose the between option with 2 and 5.",
+     "observe": "Look at which dots are highlighted to see whether the endpoints are included.",
+     "seek": 2162,
+     "expected": "$P(2\\le X\\le5)\\approx 0.7169$ with both endpoints included. If your value differs, check which option you chose."
+    },
+    {
+     "title": "Mean and standard deviation",
+     "suppose": "we want the mean and standard deviation of $X$.",
+     "how": "on a new line type 20*0.13, then type a square root with 20*0.13*0.87 inside it.",
+     "observe": "The mean is 2.6 and the standard deviation is about 1.504, matching the video. The mean sits near the tallest dots.",
+     "seek": 2296,
+     "expected": "$\\mu=2.6$ and $\\sigma\\approx 1.504$."
+    },
+    {
+     "title": "Report the result",
+     "suppose": "Desmos gives a number for part of a free-response question.",
+     "how": "write the event and the context, such as $P(H\\ge3)=0.492$, the probability that at least 3 of 20 people are left-handed.",
+     "observe": "A bare decimal does not earn full credit. The notation and the sentence are part of the answer.",
+     "seek": 2270,
+     "expected": "$P(H\\ge3)\\approx 0.4920$, written with the event and the context."
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Reporting a bare decimal",
+     "weak": "0.0266",
+     "better": "$P(H=6)=0.0266$. The probability that exactly 6 of 20 people are left-handed is about 0.0266.",
+     "seek": 2270
+    },
+    {
+     "kind": "Common trap",
+     "title": "Using $np$ and $\\sqrt{np(1-p)}$ on any random variable",
+     "weak": "Mean = 6.24 for any discrete variable.",
+     "better": "First justify BITS. The formulas $np$ and $\\sqrt{np(1-p)}$ apply only to a binomial random variable.",
+     "seek": 1821
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Interpret the mean in context",
+     "weak": "The mean is 2.6.",
+     "better": "In many random groups of 20 people, the number of left-handed people averages about 2.6.",
+     "seek": 2296
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Interpret the standard deviation",
+     "weak": "The SD is 1.504.",
+     "better": "The number of left-handed people in a group of 20 typically varies from the mean of 2.6 by about 1.5 people.",
+     "seek": 2296
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "Which random variable is binomial?",
+     "opts": [
+      "The number of cards drawn from a deck until the first ace appears",
+      "The number of heads in 12 flips of a fair coin",
+      "The heights of 10 randomly chosen students",
+      "The number of hearts when 5 cards are drawn from a 52-card deck without replacement"
+     ],
+     "ok": 1,
+     "why": [
+      "There is no fixed number of trials n.",
+      "Binary, independent, 12 trials, and p = 0.5 each flip.",
+      "Height is not a count of successes.",
+      "Without replacement from a small deck changes the probability of a heart, and 5 is more than 10% of 52."
+     ],
+     "seek": 236
+    },
+    {
+     "stem": "$X$ is binomial with $n=15$ and $p=0.4$. What are the mean and standard deviation of $X$?",
+     "opts": [
+      "$\\mu=6,\\ \\sigma=1.90$",
+      "$\\mu=6,\\ \\sigma=3.6$",
+      "$\\mu=9,\\ \\sigma=1.90$",
+      "$\\mu=6,\\ \\sigma=2.45$"
+     ],
+     "ok": 0,
+     "why": [
+      "$\\mu=15(0.4)=6$ and $\\sigma=\\sqrt{15(0.4)(0.6)}=\\sqrt{3.6}\\approx1.90$.",
+      "The variance is 3.6. The SD is its square root.",
+      "That uses $1-p$ for the mean.",
+      "That omits $p$ or $1-p$ inside the root."
+     ],
+     "seek": 1731
+    },
+    {
+     "stem": "$X$ is binomial with $n=10$ and $p=0.2$. Which is $P(X\\ge1)$?",
+     "opts": [
+      "0.1074",
+      "0.8926",
+      "0.7316",
+      "0.2"
+     ],
+     "ok": 1,
+     "why": [
+      "That is $P(X=0)$, the event you do not want.",
+      "$P(X\\ge1)=1-P(X=0)=1-0.8^{10}\\approx0.8926$.",
+      "That is $1-P(X=1)$, which leaves out $X=0$ and misreads the event.",
+      "That is $p$ for one trial, not the probability for 10 trials."
+     ],
+     "seek": 2046
+    },
+    {
+     "stem": "McKenzie makes 78% of her free throws and shoots 8. Which expression gives P(she makes exactly 3)?",
+     "opts": [
+      "$(0.78)^3(0.22)^5$",
+      "$\\binom{8}{3}(0.78)^5(0.22)^3$",
+      "$\\binom{8}{3}(0.78)^3(0.22)^5$",
+      "$\\binom{8}{3}(0.78)^3(0.22)^3$"
+     ],
+     "ok": 2,
+     "why": [
+      "This is one specific sequence. It needs the number of orderings.",
+      "The exponents are swapped: 3 successes go with $p$.",
+      "Combinations × $p^3$ × $(1-p)^5$.",
+      "The failures exponent must be $n-x=5$."
+     ],
+     "seek": 1616
+    },
+    {
+     "stem": "A bag holds 20 candies, 5 of them red. You take 5 candies without replacement and count the red ones. Why is the count not binomial?",
+     "opts": [
+      "Each candy is not red or not red, so it is not binary",
+      "The probability of red changes from draw to draw because the sample is a large share of the bag",
+      "The number of trials is not fixed",
+      "The candies are not chosen at random"
+     ],
+     "ok": 1,
+     "why": [
+      "Red or not red is binary.",
+      "After one draw, the chance of red drops to 4/19 or rises to 5/19, and 5 is 25% of 20, well over 10%.",
+      "The number of draws is 5.",
+      "Random selection is not the issue here."
+     ],
+     "seek": 472
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "A basketball player makes 70% of her free throws. Assume each shot is independent. She shoots 12 free throws. Let $X$ be the number she makes.",
+   "parts": [
+    "(a) Justify that $X$ is a binomial random variable.",
+    "(b) Find the probability that she makes at least 10 free throws.",
+    "(c) Calculate and interpret the mean and standard deviation of $X$."
+   ],
+   "sample": [
+    "(a) Each shot is binary (make or miss). Shots are independent. The number of trials is fixed at $n=12$. The probability of a make is $p=0.70$ on every shot.",
+    "(b) $P(X\\ge10)=P(10)+P(11)+P(12)=0.2528$, using a binomial distribution with $n=12$ and $p=0.7$. The probability she makes at least 10 of 12 shots is about 0.2528.",
+    "(c) $\\mu=12(0.7)=8.4$ and $\\sigma=\\sqrt{12(0.7)(0.3)}=1.59$. If she shoots 12 free throws many times, she makes 8.4 on average, and the number made typically varies from that mean by about 1.59."
+   ],
+   "checklist": [
+    "(a) Names all four conditions in context: binary, independent, 12 trials, $p=0.70$ each shot",
+    "(b) Identifies the event $P(X\\ge10)$ with a binomial model, $n=12$, $p=0.7$",
+    "(b) Correct probability 0.2528 stated in context",
+    "(c) Mean 8.4 with an interpretation about repeated sets of 12 shots",
+    "(c) SD 1.59 with an interpretation of the typical variation in makes"
+   ],
+   "note": "Practice box modeled on Bluebook's plain-text response with a symbols menu. Typing shortcuts: p-hat, x-bar, mu, sigma, sqrt(), x^2, >=, <=. Check the College Board's AP Statistics Digital Response Guidelines for accepted notation.",
+   "symbols": [
+    [
+     "mu",
+     "μ"
+    ],
+    [
+     "sigma",
+     "σ"
+    ],
+    [
+     "p-hat",
+     "p̂"
+    ],
+    [
+     "x-bar",
+     "x̄"
+    ],
+    [
+     "pi",
+     "π"
+    ],
+    [
+     "alpha",
+     "α"
+    ],
+    [
+     "beta",
+     "β"
+    ],
+    [
+     "chi-square",
+     "χ²"
+    ],
+    [
+     "Less than or equal",
+     "≤"
+    ],
+    [
+     "Greater than or equal",
+     "≥"
+    ],
+    [
+     "Not equal",
+     "≠"
+    ],
+    [
+     "Plus or minus",
+     "±"
+    ],
+    [
+     "Times",
+     "×"
+    ],
+    [
+     "Square root",
+     "√"
+    ],
+    [
+     "Squared",
+     "²"
+    ],
+    [
+     "Sum",
+     "Σ"
+    ],
+    [
+     "Null hypothesis",
+     "H₀"
+    ],
+    [
+     "Alternative hypothesis",
+     "Hₐ"
+    ]
+   ]
+  }
+ ],
+ "footer": "Status: draft from auto-generated captions, timestamps unverified against the video frames, practice questions newly written. Binomial values were computed when the page was written."
+}

@@ -1,0 +1,564 @@
+{
+ "units": [
+  {
+   "id": 1,
+   "kicker": "Unit 1",
+   "tab": "Unit 1",
+   "name": "Exploring one-variable data and collecting data"
+  },
+  {
+   "id": 2,
+   "kicker": "Unit 2",
+   "tab": "Unit 2",
+   "name": "Probability, random variables and distributions"
+  },
+  {
+   "id": 3,
+   "kicker": "Unit 3",
+   "tab": "Unit 3",
+   "name": "Inference for proportions and chi-square"
+  },
+  {
+   "id": 4,
+   "kicker": "Unit 4",
+   "tab": "Unit 4",
+   "name": "Inference for means"
+  },
+  {
+   "id": 5,
+   "kicker": "Unit 5",
+   "tab": "Unit 5",
+   "name": "Two quantitative variables and regression"
+  },
+  {
+   "id": 6,
+   "kicker": "Also",
+   "tab": "Reviews",
+   "name": "Reviews and FRQ strategy"
+  }
+ ],
+ "lessons": [
+  {
+   "n": 1,
+   "unit": 1,
+   "topic": "1.1",
+   "title": "What Can We Learn From Data",
+   "videoId": "qd2j0SM8Q1k",
+   "transcript": "01-qd2j0SM8Q1k.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 2,
+   "unit": 1,
+   "topic": "1.2",
+   "title": "Variables",
+   "videoId": "FkRh2d0107Y",
+   "transcript": "02-FkRh2d0107Y.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 3,
+   "unit": 1,
+   "topic": "1.3",
+   "title": "Tabular Representation and Summary Statistics of One Categorical Variable",
+   "videoId": "chnlfzt5h7U",
+   "transcript": "03-chnlfzt5h7U.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 4,
+   "unit": 1,
+   "topic": "1.4",
+   "title": "Graphical Representations for One Categorical Variable",
+   "videoId": "LKd3jLSUO7o",
+   "transcript": "04-LKd3jLSUO7o.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 5,
+   "unit": 1,
+   "topic": "1.5",
+   "title": "Graphical Representations for One Quantitative Variable",
+   "videoId": "M_vngDYhh1w",
+   "transcript": "05-M_vngDYhh1w.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 6,
+   "unit": 1,
+   "topic": "1.6",
+   "title": "Descriptions for One Quantitative Variable Distributions",
+   "videoId": "l78Z7DIBFYs",
+   "transcript": "06-l78Z7DIBFYs.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 7,
+   "unit": 1,
+   "topic": "1.7",
+   "title": "Summary Statistics for One Quantitative Variable",
+   "videoId": "SwZZOEganjk",
+   "transcript": "07-SwZZOEganjk.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 8,
+   "unit": 1,
+   "topic": "1.8",
+   "title": "Graphical Representations of Summary Statistics",
+   "videoId": "Lg9m6zUW8mo",
+   "transcript": "08-Lg9m6zUW8mo.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 9,
+   "unit": 1,
+   "topic": "1.9",
+   "title": "Comparisons of the Distributions for One Quantitative Variable",
+   "videoId": "S2wXF4QVYPU",
+   "transcript": "09-S2wXF4QVYPU.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 10,
+   "unit": 1,
+   "topic": "1.10",
+   "title": "The Investigative Question and Data Collection",
+   "videoId": "IYWYyduwffw",
+   "transcript": "10-IYWYyduwffw.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 11,
+   "unit": 1,
+   "topic": "1.11",
+   "title": "Random Sampling",
+   "videoId": "NeudfIXPyuc",
+   "transcript": "11-NeudfIXPyuc.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 12,
+   "unit": 1,
+   "topic": "1.12",
+   "title": "Potential Problems with Sampling",
+   "videoId": "zU6WVOy2FxY",
+   "transcript": "12-zU6WVOy2FxY.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 13,
+   "unit": 1,
+   "topic": "1.13",
+   "title": "Experimental Design",
+   "videoId": "2Yn1235uFzE",
+   "transcript": "13-2Yn1235uFzE.txt",
+   "status": "next"
+  },
+  {
+   "n": 14,
+   "unit": 2,
+   "topic": "2.1",
+   "title": "Tabular and Graphical Representations for Two Categorical Variables",
+   "videoId": "9evOZ-G1g5g",
+   "transcript": "14-9evOZ-G1g5g.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 15,
+   "unit": 2,
+   "topic": "2.2",
+   "title": "Summary Statistics for Two Categorical Variables",
+   "videoId": "bk7wLPVuIAg",
+   "transcript": "15-bk7wLPVuIAg.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 16,
+   "unit": 2,
+   "topic": "2.3",
+   "title": "Estimating Probabilities Using Simulation",
+   "videoId": "ulQnBgp3wBI",
+   "transcript": "16-ulQnBgp3wBI.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 17,
+   "unit": 2,
+   "topic": "2.4",
+   "title": "Introduction to Probability",
+   "videoId": "Hqbdo84oOsw",
+   "transcript": "17-Hqbdo84oOsw.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 18,
+   "unit": 2,
+   "topic": "2.5",
+   "title": "Mutually Exclusive Events",
+   "videoId": "bCJ5o5cHi6A",
+   "transcript": "18-bCJ5o5cHi6A.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 19,
+   "unit": 2,
+   "topic": "2.6",
+   "title": "Conditional Probability",
+   "videoId": "vBNIYkaZ9h8",
+   "transcript": "19-vBNIYkaZ9h8.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 20,
+   "unit": 2,
+   "topic": "2.7",
+   "title": "Independent Events and Unions of Events",
+   "videoId": "_28pty9vVEc",
+   "transcript": "20-_28pty9vVEc.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 21,
+   "unit": 2,
+   "topic": "2.8",
+   "title": "Intro to Random Variables and Probability Distributions",
+   "videoId": "Jnoa_K8UENE",
+   "transcript": "21-Jnoa_K8UENE.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 22,
+   "unit": 2,
+   "topic": "2.9",
+   "title": "Parameters of Random Variables",
+   "videoId": "T_istd8A-EM",
+   "transcript": "22-T_istd8A-EM.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 23,
+   "unit": 2,
+   "topic": "2.10",
+   "title": "The Binomial Distribution",
+   "videoId": "RjM0zSdqHPk",
+   "transcript": "23-RjM0zSdqHPk.txt",
+   "status": "live"
+  },
+  {
+   "n": 24,
+   "unit": 2,
+   "topic": "2.11",
+   "title": "The Normal Distribution, Part 1",
+   "videoId": "lOboR7JMBNo",
+   "transcript": "24-lOboR7JMBNo.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 25,
+   "unit": 2,
+   "topic": "2.11",
+   "title": "The Normal Distribution, Part 2",
+   "videoId": "QoluCX-4xgc",
+   "transcript": "25-QoluCX-4xgc.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 27,
+   "unit": 2,
+   "topic": "2.12",
+   "title": "Sampling Distributions and Central Limit Theorem",
+   "videoId": "ZCnaIQLd-L0",
+   "transcript": "27-ZCnaIQLd-L0.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 32,
+   "unit": 3,
+   "topic": "3.1",
+   "title": "Estimators",
+   "videoId": "0LF-ykNnJBU",
+   "transcript": "32-0LF-ykNnJBU.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 33,
+   "unit": 3,
+   "topic": "3.2",
+   "title": "Sampling Distributions for Sample Proportions",
+   "videoId": "XlNzVMf235o",
+   "transcript": "33-XlNzVMf235o.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 58,
+   "unit": 3,
+   "topic": "3.3",
+   "title": "Constructing a Confidence Interval for a Population Proportion",
+   "videoId": "doukJEZYxtc",
+   "transcript": "58-doukJEZYxtc.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 34,
+   "unit": 3,
+   "topic": "3.4",
+   "title": "Justifying a Claim Based on a Confidence Interval for a Proportion",
+   "videoId": "-PJeesGn6Nc",
+   "transcript": "34--PJeesGn6Nc.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 35,
+   "unit": 3,
+   "topic": "3.5",
+   "title": "Setting Up a Test for a Population Proportion",
+   "videoId": "j5bGcG2x8O8",
+   "transcript": "35-j5bGcG2x8O8.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 36,
+   "unit": 3,
+   "topic": "3.6 & 3.7",
+   "title": "P-values and Carrying Out a Test for a Population Proportion",
+   "videoId": "p7XiYTPdmXM",
+   "transcript": "36-p7XiYTPdmXM.txt",
+   "status": "next"
+  },
+  {
+   "n": 37,
+   "unit": 3,
+   "topic": "3.8",
+   "title": "Potential Errors When Performing a Test",
+   "videoId": "LCA7nDSr22E",
+   "transcript": "37-LCA7nDSr22E.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 39,
+   "unit": 3,
+   "topic": "3.9",
+   "title": "Sampling Distributions for the Difference Between Sample Proportions",
+   "videoId": "mARGkehrWO8",
+   "transcript": "39-mARGkehrWO8.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 40,
+   "unit": 3,
+   "topic": "3.10 & 3.11",
+   "title": "Confidence Interval for the Difference of Population Proportions",
+   "videoId": "ALAB8wJFCXw",
+   "transcript": "40-ALAB8wJFCXw.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 41,
+   "unit": 3,
+   "topic": "3.12 & 3.13",
+   "title": "Conducting a Test for Difference Between Two Population Proportions",
+   "videoId": "OFwjXRV6Kz4",
+   "transcript": "41-OFwjXRV6Kz4.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 42,
+   "unit": 3,
+   "topic": "3.14",
+   "title": "Setting Up a Chi-Square Test for Homogeneity or Independence",
+   "videoId": "C-G5yul7gxw",
+   "transcript": "42-C-G5yul7gxw.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 43,
+   "unit": 3,
+   "topic": "3.15",
+   "title": "Carrying Out a Chi-Square Test for Homogeneity or Independence",
+   "videoId": "5Sm9cSKPcM0",
+   "transcript": "43-5Sm9cSKPcM0.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 44,
+   "unit": 4,
+   "topic": "4.1",
+   "title": "Sampling Distributions for Sample Means",
+   "videoId": "yK_9xhlOVGY",
+   "transcript": "44-yK_9xhlOVGY.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 45,
+   "unit": 4,
+   "topic": "4.2 & 4.3",
+   "title": "Constructing a Confidence Interval for a Population Mean",
+   "videoId": "nfZdWugblmo",
+   "transcript": "45-nfZdWugblmo.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 46,
+   "unit": 4,
+   "topic": "4.4 & 4.5",
+   "title": "Setting Up and Carrying Out a Test for a Population Mean",
+   "videoId": "96MVLC9vj70",
+   "transcript": "46-96MVLC9vj70.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 47,
+   "unit": 4,
+   "topic": "4.4 & 4.5",
+   "title": "Paired t-Test for a Mean Difference",
+   "videoId": "H5PilVptRxk",
+   "transcript": "47-H5PilVptRxk.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 48,
+   "unit": 4,
+   "topic": "4.6",
+   "title": "Sampling Distributions for the Difference Between Two Sample Means",
+   "videoId": "LWv4LwDplN8",
+   "transcript": "48-LWv4LwDplN8.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 49,
+   "unit": 4,
+   "topic": "4.7 & 4.8",
+   "title": "Constructing an Interval for the Difference Between Two Population Means",
+   "videoId": "_Uni0u_KyTA",
+   "transcript": "49-_Uni0u_KyTA.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 50,
+   "unit": 4,
+   "topic": "4.9 & 4.10",
+   "title": "Conducting a Test for the Difference Between Two Population Means",
+   "videoId": "3U6gHhhnNFQ",
+   "transcript": "50-3U6gHhhnNFQ.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 51,
+   "unit": 5,
+   "topic": "5.1",
+   "title": "Graphical Representations Between Two Quantitative Variables",
+   "videoId": "mXj6JktK3Wc",
+   "transcript": "51-mXj6JktK3Wc.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 52,
+   "unit": 5,
+   "topic": "5.2",
+   "title": "Correlation",
+   "videoId": "0elQQfV_JTQ",
+   "transcript": "52-0elQQfV_JTQ.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 53,
+   "unit": 5,
+   "topic": "5.3",
+   "title": "Linear Regression Models",
+   "videoId": "6_z73MwBzis",
+   "transcript": "53-6_z73MwBzis.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 54,
+   "unit": 5,
+   "topic": "5.4",
+   "title": "Residuals",
+   "videoId": "xQUMK9v4UbI",
+   "transcript": "54-xQUMK9v4UbI.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 55,
+   "unit": 5,
+   "topic": "5.5",
+   "title": "Least-Squares Regression",
+   "videoId": "zuNF4mS2BhI",
+   "transcript": "55-zuNF4mS2BhI.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 26,
+   "unit": 6,
+   "topic": "",
+   "title": "FRQ #1 strategy",
+   "videoId": "STOsZSDHv-A",
+   "transcript": "26-STOsZSDHv-A.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 38,
+   "unit": 6,
+   "topic": "",
+   "title": "FRQ #3 strategy",
+   "videoId": "rBH2lrokFU0",
+   "transcript": "38-rBH2lrokFU0.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 28,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 1 Review, Part A: Exploring One-Variable Data",
+   "videoId": "y3-_cbFkq0Q",
+   "transcript": "28-y3-_cbFkq0Q.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 29,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 1 Review, Part B: Collecting Data",
+   "videoId": "XaNyNVGVEm8",
+   "transcript": "29-XaNyNVGVEm8.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 30,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 2 Review, Part A: Two Categorical Variables and Probability",
+   "videoId": "im1o4yDSyNI",
+   "transcript": "30-im1o4yDSyNI.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 31,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 2 Review, Part B: Random Variables and Probability Distributions",
+   "videoId": "ShvNEcdgHLU",
+   "transcript": "31-ShvNEcdgHLU.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 56,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 1 Review (2027): One-Variable Data and Collecting Data",
+   "videoId": "clUW8VzI11U",
+   "transcript": "56-clUW8VzI11U.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 57,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 2 Review (2027): Probability, Random Variables and Distributions",
+   "videoId": "XqbpuK23nVg",
+   "transcript": "57-XqbpuK23nVg.txt",
+   "status": "transcript"
+  }
+ ]
+}
