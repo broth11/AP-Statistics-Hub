@@ -33,7 +33,7 @@ function sectionHtml(sec, isLast, ctx) {
   const header = `
     <button class="sec-toggle" data-toggle="${esc(sec.id)}" aria-expanded="false">
       <div class="kicker">${esc(sec.kicker)}</div>
-      <h2>${tex(sec.title)} <span class="mark">+</span></h2>
+      <h2><span class="mark" aria-hidden="true">+</span>${tex(sec.title)}</h2>
     </button>`;
   const body = `<div class="${STACKED.has(sec.type) ? '' : 'sec-body'}" data-body hidden>${mod.render(sec, ctx)}${notesHtml(sec)}</div>`;
   const classes = `sec${TIGHT.has(sec.type) ? ' sec--tight' : ''}${isLast ? ' sec--last' : ''}`;
