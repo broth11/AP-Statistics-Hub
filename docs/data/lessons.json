@@ -521,6 +521,78 @@
    "videoId": "XqbpuK23nVg",
    "transcript": "57-XqbpuK23nVg.txt",
    "status": "transcript"
+  },
+  {
+   "n": 101,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 1 Review, Part A: Exploring One-Variable Data",
+   "videoId": "y3-_cbFkq0Q",
+   "transcript": "unit-summaries/01-y3-_cbFkq0Q.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 102,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 1 Review, Part B: Collecting Data",
+   "videoId": "XaNyNVGVEm8",
+   "transcript": "unit-summaries/02-XaNyNVGVEm8.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 103,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 2 Review, Part A: Two Categorical Variables and Probability",
+   "videoId": "im1o4yDSyNI",
+   "transcript": "unit-summaries/03-im1o4yDSyNI.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 104,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 2 Review, Part B: Random Variables and Probability Distributions",
+   "videoId": "ShvNEcdgHLU",
+   "transcript": "unit-summaries/04-ShvNEcdgHLU.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 105,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 3 Review, Part A: Confidence Intervals for Population Proportions",
+   "videoId": "PY5KgTBAyiM",
+   "transcript": "unit-summaries/05-PY5KgTBAyiM.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 106,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 3 Review, Part B: Hypothesis Tests for Population Proportions",
+   "videoId": "KCLGlu-VsH0",
+   "transcript": "unit-summaries/06-KCLGlu-VsH0.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 107,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 4 Review: Inference for Quantitative Data, Means",
+   "videoId": "yDiUew_wkD0",
+   "transcript": "unit-summaries/07-yDiUew_wkD0.txt",
+   "status": "transcript"
+  },
+  {
+   "n": 108,
+   "unit": 6,
+   "topic": "",
+   "title": "Unit 5 Review: Regression Analysis",
+   "videoId": "zzyu5v-0yXk",
+   "transcript": "unit-summaries/08-zzyu5v-0yXk.txt",
+   "status": "transcript"
   }
  ]
 }

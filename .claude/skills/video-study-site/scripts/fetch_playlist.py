@@ -61,8 +61,12 @@ def fetch_captions(video_id, workdir):
         "yt-dlp", "--skip-download", "--sub-format", "json3", "--sub-langs", "en.*,en",
         "-o", str(Path(workdir) / "%(id)s.%(ext)s"), "--no-warnings", "--quiet",
     ]
-    for flag in ("--write-subs", "--write-auto-subs"):
-        subprocess.run(base + [flag, url], capture_output=True, text=True)
+    # Last pass asks for the original-language auto track by name: some videos list many
+    # translated "en" variants, and the wildcard request then saves nothing.
+    for flag, langs in (("--write-subs", "en.*,en"), ("--write-auto-subs", "en.*,en"), ("--write-auto-subs", "en-orig")):
+        cmd = list(base)
+        cmd[cmd.index("--sub-langs") + 1] = langs
+        subprocess.run(cmd + [flag, url], capture_output=True, text=True)
         found = sorted(Path(workdir).glob(f"{video_id}*.json3"))
         if found:
             return found[0]
