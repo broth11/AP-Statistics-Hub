@@ -6,7 +6,7 @@ export function render(sec) {
     <div class="part">
       <div class="eyebrow">${esc(p.label)}</div>
       <div class="big">${tex(p.tex)}</div>
-      <div class="text">${esc(p.text)}</div>
+      <div class="text">${tex(p.text)}</div>
     </div>`).join('');
   const buttons = (sec.buttons || []).map((b) => `<button class="btn btn-secondary" data-seek="${b.seek}">${esc(b.label)}</button>`).join('');
   return `

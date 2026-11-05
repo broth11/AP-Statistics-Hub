@@ -92,7 +92,7 @@ export function mount(el, sec) {
       const x0 = grp * 150 + 6;
       svg += `<text x="${x0 + 65}" y="14" text-anchor="middle" font-size="12" font-weight="700" fill="#201e1d">${esc(grp ? lab.groupB : lab.groupA)}</text>`;
       svg += `<rect x="${x0}" y="22" width="130" height="200" fill="none" stroke="#bab6b6" stroke-width="1"></rect>`;
-      if (!S.g) return;
+      if (!S.g) { svg += `<text x="${x0 + 65}" y="118" text-anchor="middle" font-size="12" fill="#605d5d">Not assigned yet</text>`; return; }
       const members = [];
       S.g.forEach((v, i) => { if (v === grp) members.push(i < kk); });
       members.sort((a, b) => b - a).forEach((isOld, j) => {
@@ -103,7 +103,6 @@ export function mount(el, sec) {
     });
     svg += `<circle cx="16" cy="244" r="5" fill="#ec3013"></circle><text x="26" y="248" font-size="11" fill="#201e1d">${esc(lab.variable)}</text>`;
     svg += `<circle cx="86" cy="244" r="5" fill="#bab6b6"></circle><text x="96" y="248" font-size="11" fill="#201e1d">${esc(lab.other)}</text>`;
-    if (!S.g) svg += `<text x="150" y="125" text-anchor="middle" font-size="13" fill="#605d5d">Press Assign once</text>`;
 
     // Right: histogram of the difference in % older (A minus B), from -50 to 50 points.
     const X0 = 330, W = 300, base = 210, span = 50, bw = 4;

@@ -91,12 +91,13 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 
 /* Lesson page */
 .lesson { max-width: 1200px; margin: 0 auto; padding: 32px 32px 96px; }
+/* Title card: title and intro each span the full width, stacked */
 .lesson-head {
-  margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;
-  align-items: end; padding-bottom: 32px; border-bottom: 2px solid var(--color-divider);
+  margin-top: 16px; display: flex; flex-direction: column; gap: 12px;
+  padding-bottom: 28px; border-bottom: 2px solid var(--color-divider);
 }
-.lesson-head h1 { margin: 8px 0 0; font-size: clamp(36px, 5vw, 64px); line-height: 0.98; letter-spacing: -0.03em; }
-.lesson-head .intro { font-size: 15px; line-height: 1.5; }
+.lesson-head h1 { margin: 6px 0 0; font-size: clamp(20px, 2.5vw, 32px); line-height: 1.1; letter-spacing: -0.02em; }
+.lesson-head .intro { font-size: 17px; line-height: 1.5; }
 
 .video-sec { display: flex; flex-wrap: wrap; gap: 32px; padding: 32px 0; border-bottom: 2px solid var(--color-divider); align-items: start; }
 .video-col { position: sticky; top: 176px; flex: 3 1 480px; min-width: 0; }
@@ -172,10 +173,13 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 .ex-chart { background: var(--color-surface); padding: 8px 16px; flex: 1; min-height: 0; display: flex; }
 .ex-chart svg { width: 100%; height: 100%; display: block; min-height: 0; }
 .ex-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 2px solid var(--color-divider); flex: none; text-align: center; }
-.ex-stat { padding: 10px 16px; border-right: 1px solid var(--color-divider); }
+/* Stat row: formula labels bottom-aligned on one line, result tops aligned on one line */
+.ex-stats { grid-auto-rows: auto; }
+.ex-stat { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 6px; padding: 10px 16px; border-right: 1px solid var(--color-divider); }
 .ex-stat:last-child { border-right: 0; }
-.ex-stat .label { font-size: 11px; letter-spacing: 0.1em; opacity: 0.65; }
-.ex-stat .value { font-size: 32px; font-weight: 800; }
+.ex-stat .label { align-self: end; font-size: 13px; letter-spacing: 0.06em; opacity: 0.7; }
+.ex-stat .label .katex { letter-spacing: 0; }
+.ex-stat .value { align-self: start; font-size: 25px; line-height: 1.15; font-weight: 800; }
 .ex-stat .value.accent { color: var(--color-accent-700); }
 
 /* Desmos */
@@ -275,7 +279,7 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 .ex-actions { display: grid; gap: 8px; flex: none; }
 .ex-actions .btn { font-size: 13px; justify-content: center; text-align: center; width: 100%; }
 .ex-actions .ex-mode { border-color: var(--color-divider); }
-.ex-stat .value.small { font-size: 22px; line-height: 1.45; }
+.ex-stat .value.small { font-size: 18px; line-height: 1.35; }
 
 .steps { margin: 0; padding-left: 22px; font-size: 15px; line-height: 1.55; display: flex; flex-direction: column; gap: 6px; }
 
@@ -286,5 +290,11 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
   .ex-sliders { grid-template-columns: 1fr !important; gap: 12px; }
   .ex-stats.ex-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   .ex-stat { border-bottom: 1px solid var(--color-divider); }
-  .ex-stat .value { font-size: 24px; }
+  .ex-stat .value { font-size: 22px; }
 }
+
+/* Navigation never underlines, even where a browser forces link underlines */
+.site-title, .unit-tab, a.lesson-row { text-decoration: none !important; }
+
+/* A math expression is one object: it never breaks across lines */
+.katex { white-space: nowrap; }

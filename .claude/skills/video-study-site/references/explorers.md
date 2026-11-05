@@ -39,6 +39,7 @@ Start the file with a comment block that says what it shows and lists the sectio
 - Controls sit in equal-width columns, centered, stretched to full width: `.ex-presets`, `.ex-sliders`, `.ex-modes`, `.ex-actions`, `.ex-stats`, with `.ex-cols-2/3/4` to set the count.
 - Preset buttons show a name on row 1 and the values on row 2 (`<span>Name</span>` then `tex(sub)`), and values never split across rows.
 - Every explorer has a short story under its title in the side column: who, how many, and what is being measured.
+- **Stat row** (`.ex-stats` of `.ex-stat` cells, each a `.label` then a `.value`): formula and expression labels are 13px; bold results are 25px (decision text uses `.value.small`, 18px). The cells use a CSS subgrid so every label sits on one shared baseline row and every result starts on one shared top edge, as if one horizontal line cut through the tops of all the results. Keep one `.label` and one `.value` per cell so the subgrid lines up. Put a line break between the parts of a two-part result (for example "Reject $H_0$" then "at $\alpha=0.05$") so it never wraps mid-phrase.
 - Toggle buttons use `.ex-mode` with `aria-pressed`. The main action is `.btn-primary`; the rest are `.btn-secondary`.
 - Colors come from the design system: accent `#ec3013` for the highlighted event, `#bab6b6` for the rest, ink `#201e1d`. Labels are flush left except inside explorer controls, which are centered.
 - At 390px wide there is no horizontal scroll (the site CSS drops presets and actions to 2 columns and sliders to 1).

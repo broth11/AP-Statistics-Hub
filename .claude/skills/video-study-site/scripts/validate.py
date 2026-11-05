@@ -163,9 +163,14 @@ def main():
     for p, v in seeks(L):
         if v < 0 or (end is not None and v > end + 15):
             err(f"{p} = {v}s is outside the video (ends {end}s)")
+    plain = re.compile(r"(\.tab|\.kicker|\.type|\.letter|\.label|\.kind|^videoTitle)$")
     for p, sv in strings(L):
         if sv.count("$") % 2:
             err(f"{p}: unbalanced $ math delimiters")
+        if "$" in sv and plain.search(p) and not p.endswith("presets") and ".sub" not in p:
+            err(f"{p}: shown as plain text, so $...$ will not render; remove the math")
+        if re.search(r"\\[a-zA-Z]", re.sub(r"\$[^$]*\$", "", sv)):
+            err(f"{p}: LaTeX command outside $...$ will show raw")
         if "—" in sv:
             warn(f"{p}: em dash; rewrite the sentence")
 

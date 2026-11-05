@@ -21,7 +21,7 @@ docs/                     the published site
   css/modernist.css       design tokens (swap these to restyle a site)
 transcripts/              PRIVATE git submodule: NN-<videoId>.txt and playlist-index.json
 .claude/skills/video-study-site/
-  scripts/                fetch_playlist.py, build_index.py, find.py, validate.py
+  scripts/                fetch_playlist.py, build_index.py, find.py, validate.py, check_pages.py
   references/             schema.md, explorers.md, new-site.md
 ```
 
@@ -97,12 +97,15 @@ python3 .claude/skills/video-study-site/scripts/validate.py . <n>            # m
 python3 .claude/skills/video-study-site/scripts/validate.py . <n> --report   # review report for the PR
 ```
 
-Read the report's timestamp table. Every row should show transcript text that matches its claim; move any timestamp that lands before or after its idea. Then load the page in a browser (serve `docs/` with `python3 -m http.server`, open `lesson.html?v=<n>`, expand all sections):
+Then run the page check, which loads each page in a browser with every section open:
 
-- no console errors; every section opens; MCQ marks and FRQ reveal work;
-- explorer: presets give the values your script computed, and the explorer fits one screen at 1440x900;
-- math renders: no raw `$` left inside `tex-text` and no `.katex-error`. If the KaTeX CDN is blocked in a cloud workspace, install `katex@0.16.11` with npm and route the CDN URL to the local copy in the test browser;
-- at 390px wide there is no horizontal scroll.
+```
+python3 .claude/skills/video-study-site/scripts/check_pages.py . <n> [<n> ...] --shots <folder>
+```
+
+It fails on unrendered math or raw LaTeX anywhere on the page, KaTeX errors, page errors, an explorer taller than the screen, stat results that do not share one top edge, a title card that is not full width, or horizontal scroll at 390px. If the KaTeX CDN is blocked (common in cloud workspaces), `npm i katex@0.16.11` in a scratch folder and set `KATEX_DIR` to its `node_modules/katex/dist`. Look at the screenshots it saves.
+
+Read the report's timestamp table. Every row should show transcript text that matches its claim; move any timestamp that lands before or after its idea. Finally, click through the explorer presets and confirm they give the values your script computed, and that MCQ marks and the FRQ reveal work.
 
 ### 6. Pull request
 
@@ -112,11 +115,19 @@ Commit on the branch, push, and open a PR titled `<topic> <title>` (or a batch t
 
 Merging the PR is the approval; nothing else is needed to publish. Remove flags the teacher says are resolved. If the teacher wants a page held back without merging, set its `status` to `draft` and `review.status` to `draft` on the branch.
 
+## Page formatting (house rules, set in `docs/css/site.css`)
+
+- **Title card:** the lesson title and the intro sentence are stacked, and each spans the full content width. The title is `clamp(20px, 2.5vw, 32px)` (half the old display size); the intro is 17px. Keep the title to the topic name, since a long title wraps across the full width.
+- **Explorer stat row:** labels (formulas and expressions) are 13px; bold results are 25px, with decision text at 18px; all results share one top edge. Details in `references/explorers.md`.
+- **Math never breaks:** a math expression is one object and never wraps across lines (`.katex { white-space: nowrap; }`). Text around it may wrap. In tight spaces, such as stat cells and buttons, add a line break between phrases yourself so the result reads cleanly, for example "Reject $H_0$" then "at $\alpha=0.05$".
+- **Math rendering:** every content string goes through `tex()` in the page code, so math renders wherever it appears. When you add a section type or an explorer, render content fields with `tex()`, not `esc()`; keep `esc()` only for ids, attributes, and the plain-text fields listed under Math.
+- If the teacher changes a formatting rule, change `site.css` (or the module), update this list, and rerun `check_pages.py` on every live lesson.
+
 ## Content rules
 
 - **Original practice.** Write every MCQ and FRQ fresh. Do not copy the video's questions, a textbook's, or the College Board's. Reuse the video's scenarios only in worked examples and explorers, where they help students connect back to the video.
 - **Quotes.** Keep any transcript quote to a short phrase inside a wording note or flag. Explanations are in your own words.
-- **Math.** All math goes in `$...$` for KaTeX, including simple expressions like `$p=0.12$` and `$P(X=2)$`. Write formulas as `$\text{Mean}=np$`. Plain-text exceptions: decimals inside prose answers, and the `weak` strings in traps that show a bare number on purpose.
+- **Math.** All math goes in `$...$` for KaTeX, including simple expressions like `$p=0.12$` and `$P(X=2)$`. Write formulas as `$\text{Mean}=np$`. Plain-text exceptions: decimals inside prose answers, and the `weak` strings in traps that show a bare number on purpose. Never write a LaTeX command (`\hat`, `\frac`, `\alpha`) outside `$...$`. These fields are shown as plain text, so they must contain no math at all: `tab`, `kicker`, moment `type`, card `letter`, part `label`, trap `kind`, and preset `label` (put the math in the preset's `sub`). The validator rejects both mistakes.
 - **Exam wording.** Conclusions in context, about the alternative, with non-definitive language. Interpretations name the variable, the context, and the condition. When the video's wording is weaker, the page uses the exam wording and says so in a note.
 - **Traps.** `weak` is the realistic wrong answer (shown in quotes), `better` is the full-credit version. 4 to 5 per lesson, each with the moment in the video that teaches it.
 - **Multiple choice.** 3 to 5 questions, 4 options each, one explanation per option (why it is right, or the specific mistake it reflects), a video link, and the correct position varied across questions. Distractors are real misconceptions, not nonsense.

@@ -126,7 +126,7 @@ export function mount(el, sec) {
     q('[data-ph]').textContent = ph.toFixed(4);
     q('[data-z]').textContent = z.toFixed(3);
     q('[data-pv]').textContent = pv < 0.0001 ? '< 0.0001' : pv.toFixed(4);
-    q('[data-dec]').innerHTML = pv <= S.alpha ? tex(`Reject $H_0$ at $\\alpha=${S.alpha}$`) : tex(`Fail to reject $H_0$ at $\\alpha=${S.alpha}$`);
+    q('[data-dec]').innerHTML = tex(pv <= S.alpha ? 'Reject $H_0$' : 'Fail to reject $H_0$') + '<br>' + tex(`at $\\alpha=${S.alpha}$`);
   }
 
   const clear = () => { S.sims = []; };

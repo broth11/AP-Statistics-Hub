@@ -33,7 +33,7 @@ function sectionHtml(sec, isLast, ctx) {
   const header = `
     <button class="sec-toggle" data-toggle="${esc(sec.id)}" aria-expanded="false">
       <div class="kicker">${esc(sec.kicker)}</div>
-      <h2>${esc(sec.title)} <span class="mark">+</span></h2>
+      <h2>${tex(sec.title)} <span class="mark">+</span></h2>
     </button>`;
   const body = `<div class="${STACKED.has(sec.type) ? '' : 'sec-body'}" data-body hidden>${mod.render(sec, ctx)}${notesHtml(sec)}</div>`;
   const classes = `sec${TIGHT.has(sec.type) ? ' sec--tight' : ''}${isLast ? ' sec--last' : ''}`;
@@ -62,7 +62,7 @@ function lessonHtml(L, ctx) {
       <div class="lesson-head">
         <div>
           <div class="kicker">${esc(ctx.unitLabel)}${L.topic ? ' · Topic ' + esc(L.topic) : ''}</div>
-          <h1>${esc(L.title)}</h1>
+          <h1>${tex(L.title)}</h1>
         </div>
         <div class="intro">${tex(L.intro)}</div>
       </div>
@@ -80,7 +80,7 @@ function lessonHtml(L, ctx) {
         </div>
       </div>
       ${L.sections.map((s, i) => sectionHtml(s, i === L.sections.length - 1, ctx)).join('')}
-      ${L.footer ? `<div class="page-foot">${esc(L.footer)}</div>` : ''}
+      ${L.footer ? `<div class="page-foot">${tex(L.footer)}</div>` : ''}
     </div>`;
 }
 

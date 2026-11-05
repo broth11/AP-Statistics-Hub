@@ -5,7 +5,7 @@ export function render(sec) {
   const cards = (sec.cards || []).map((c) => `
     <div class="bits-card">
       <div class="letter">${esc(c.letter)}</div>
-      <div class="name">${esc(c.name)}</div>
+      <div class="name">${tex(c.name)}</div>
       <div class="text">${tex(c.text)}</div>
     </div>`).join('');
   const head = [...sec.columns, 'Video'].map((c) => `<th>${tex(c)}</th>`).join('');
