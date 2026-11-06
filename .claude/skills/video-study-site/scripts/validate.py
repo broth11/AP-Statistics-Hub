@@ -79,7 +79,9 @@ def check_section(s, i, repo):
             err(f"{where}: docs/js/explorers/{name}.js does not exist")
     elif t == "desmos":
         for j, st in enumerate(s.get("steps", [])):
-            need(st, ["title", "suppose", "how", "observe", "expected"], f"{where}.steps[{j}]")
+            need(st, ["title", "suppose", "observe", "expected"], f"{where}.steps[{j}]")
+            if not st.get("do") and not st.get("how"):
+                err(f"{where}.steps[{j}]: needs a 'do' list (or the old 'how' sentence)")
         if not s.get("steps"):
             err(f"{where}: no steps")
     elif t == "wording":

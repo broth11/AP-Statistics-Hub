@@ -65,7 +65,7 @@
    "t": 1290,
    "type": "Calculator",
    "title": "Normal distribution in Desmos",
-   "text": "Plus, Inference, Probability Distributions, Normal with mean 0 and SD 1, then Cumulative Probability."
+   "text": "Plus, Inference, Probability Distribution, Normal with mean 0 and SD 1, then Cumulative Probability."
   },
   {
    "t": 1603,
@@ -321,50 +321,72 @@
     {
      "title": "Test statistic by hand",
      "suppose": "we want $z$ for the restaurant: 170 of 250 customers, $p_0=0.60$.",
-     "how": "type (0.68-0.6)/sqrt(0.6*0.4/250) on a new line.",
      "observe": "The value is positive because $\\hat p$ is above $p_0$, and it is beyond 2, so the sample is unusual if $H_0$ is true.",
      "expected": "$z\\approx 2.582$",
-     "seek": 720
+     "seek": 720,
+     "do": [
+      "On a new row type `(0.68-0.6)/sqrt(0.6*0.4/250)`."
+     ]
     },
     {
      "title": "Right-tail p-value",
      "suppose": "we want $P(Z\\ge2.582)$ for $H_a: p>0.60$.",
-     "how": "tap the plus button, choose Inference, then Probability Distributions, then Normal with mean 0 and standard deviation 1. Open Cumulative Probability, choose the right option and enter 2.582.",
      "observe": "Only a sliver of the curve is shaded. Open the dropdown for more decimals.",
      "expected": "p-value $\\approx 0.0049$",
-     "seek": 1290
+     "seek": 1290,
+     "do": [
+      "Press {plus}, then choose {inference}, then [[Probability Distribution]].",
+      "Keep [[Normal distribution]]. Enter 0 for mean and 1 for stdev, then press [[Create Distribution]].",
+      "Open [[Cumulative Probability]], under REGION choose [[Right]] and enter 2.582."
+     ]
     },
     {
      "title": "Left-tail p-value",
      "suppose": "we want the p-value for the light bulbs: 42 of 650 defective, $H_a: p<0.08$.",
-     "how": "find $z$ with (42/650-0.08)/sqrt(0.08*0.92/650), then use Cumulative Probability with the left option.",
      "observe": "The tail is on the left because $H_a$ uses $<$. The video rounds $\\hat p$ to 0.0646 and gets $z=-1.453$; small differences come from rounding.",
      "expected": "$z\\approx -1.446$ and p-value $\\approx 0.0741$",
-     "seek": 1500
+     "seek": 1500,
+     "do": [
+      "On a new row type `(42/650-0.08)/sqrt(0.08*0.92/650)` to get $z$.",
+      "On the standard normal open [[Cumulative Probability]] and, under REGION, choose [[Left]].",
+      "Enter your $z$."
+     ]
     },
     {
      "title": "Two-sided p-value",
      "suppose": "we want the p-value for remote learning: 141 of 300, $H_a: p\\ne0.50$.",
-     "how": "find $z$, use the left option for $P(Z\\le z)$, then multiply that value by 2 on a new line.",
      "observe": "Doubling counts results this far from 0.50 in either direction.",
      "expected": "$z\\approx -1.039$, one tail $\\approx 0.1493$, p-value $\\approx 0.2987$",
-     "seek": 1603
+     "seek": 1603,
+     "do": [
+      "Find $z$ on a new row.",
+      "On the standard normal open [[Cumulative Probability]], choose [[Left]] and enter $z$ to get $P(Z\\le z)$.",
+      "On a new row type that value times 2."
+     ]
     },
     {
      "title": "The whole test in Desmos",
      "suppose": "we want Desmos to do the dog park test: 361 of 465, $H_0: p=0.75$, $H_a: p>0.75$.",
-     "how": "tap the plus button, choose Inference, then the z test for proportions. Enter 361 successes and 465 for the sample size, create the test, choose the hypothesis test, enter 0.75 and choose the right tail.",
      "observe": "Desmos reports $z$ and the p-value without rounding. The $z$ is positive because 361/465 is above 0.75.",
      "expected": "$z\\approx 1.312$ and p-value $\\approx 0.0948$",
-     "seek": 2488
+     "seek": 2488,
+     "do": [
+      "Press {plus}, then choose {inference}, then [[z-test for proportions]].",
+      "Enter 361 for successes and 465 for sample size, then press [[Create Test]].",
+      "Open the [[Significance Test]] tab.",
+      "Enter 0.75 for the null hypothesis p and choose [[Right]] under Tails."
+     ]
     },
     {
      "title": "Report the decision",
      "suppose": "Desmos gives the p-value for part of a free-response question.",
-     "how": "compare it with $\\alpha=0.05$ and write the decision and conclusion in context.",
      "observe": "A bare p-value does not earn credit. Show the comparison and the conclusion.",
      "expected": "Because $0.0948>0.05$, fail to reject $H_0$. There is not convincing evidence that more than 75% of all residents want the dog park.",
-     "seek": 2632
+     "seek": 2632,
+     "do": [
+      "Compare the p-value with $\\alpha=0.05$.",
+      "Write the decision and conclusion in context."
+     ]
     }
    ]
   },
@@ -556,16 +578,16 @@
     "text": "At 42:39 the captions say Desmos gives \"negative 1.312\" for the dog park. The correct value is $z\\approx+1.312$, since 361/465 is above 0.75. The page uses the positive value."
    },
    {
-    "kind": "calculator",
-    "text": "Desmos menu names (Inference, Probability Distributions, z test for proportions) come from the captions and are unconfirmed against the current calculator."
-   },
-   {
     "kind": "values",
     "text": "Light bulbs: the video rounds $\\hat p$ to 0.0646 and gets $z=-1.453$; the page computes from 42/650 and gets $z\\approx-1.446$, p-value $\\approx0.0741$. Confirm 42 defective bulbs on screen."
    },
    {
     "kind": "explorer",
     "text": "New explorer: one-proportion-test. Check the presets and the simulation in class."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds). The z-test steps use z-test for proportions, Create Test, and the Confidence Interval and Significance Test tabs."
    }
   ]
  }

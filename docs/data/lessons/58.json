@@ -315,42 +315,59 @@
     {
      "title": "Find a critical value",
      "suppose": "we want $z^*$ for a 92% confidence interval.",
-     "how": "tap the plus button, choose Inference, then Probability Distributions, then Normal with mean 0 and standard deviation 1. Open Cumulative Probability, switch from area to bounds, choose the inner option and enter 0.92.",
      "observe": "The two bounds are the same size with opposite signs, because the middle 92% is symmetric. Try 0.95 and 0.99 to see $z^*$ grow.",
      "expected": "$z^*\\approx\\pm1.751$ (and $\\pm1.960$ for 95%, $\\pm2.576$ for 99%)",
-     "seek": 496
+     "seek": 496,
+     "do": [
+      "Press {plus}, then choose {inference}, then [[Probability Distribution]].",
+      "Keep [[Normal distribution]]. Enter 0 for mean and 1 for stdev, then press [[Create Distribution]].",
+      "Open [[Cumulative Probability]] and, under COMPUTE, choose [[Bounds]].",
+      "Under REGION choose [[Inner]] and enter 0.92."
+     ]
     },
     {
      "title": "Margin of error by hand",
      "suppose": "we want the margin of error for 156 of 240 students, 92% confidence.",
-     "how": "type 156/240 for $\\hat p$, then 1.751*sqrt(0.65*0.35/240) on a new line.",
      "observe": "This is the amount added and subtracted. Subtract it from 0.65 for the lower bound and add it for the upper bound.",
      "expected": "margin of error $\\approx0.0539$, interval $\\approx(0.5961,\\ 0.7039)$",
-     "seek": 1385
+     "seek": 1385,
+     "do": [
+      "On a new row type `156/240` for $\\hat p$.",
+      "On the next row type `1.751*sqrt(0.65*0.35/240)`."
+     ]
     },
     {
      "title": "The whole interval in Desmos",
      "suppose": "we want Desmos to build the 92% interval for 156 of 240.",
-     "how": "tap the plus button, choose Inference, then the $z$ test for proportions. Enter 156 successes and 240 for the sample size and create the test. Open the confidence interval and change the confidence level to 0.92.",
      "observe": "Desmos shows the interval, the point estimate 0.65 and the standard error. Check that the numbers entered are 156 and 240 before reading the interval.",
      "expected": "$(0.5961,\\ 0.7039)$",
-     "seek": 2047
+     "seek": 2047,
+     "do": [
+      "Press {plus}, then choose {inference}, then [[z-test for proportions]].",
+      "Enter 156 for successes and 240 for sample size, then press [[Create Test]].",
+      "Open the [[Confidence Interval]] tab and change the confidence level to 0.92."
+     ]
     },
     {
      "title": "Work backwards: the margin of error",
      "suppose": "we are given the 90% interval (0.42, 0.54) and want $\\hat p$ and the margin of error.",
-     "how": "type (0.42+0.54)/2 for the midpoint, then (0.54-0.42)/2 for the half-width.",
      "observe": "The point estimate is always the midpoint of the interval and the margin of error is half its width.",
      "expected": "$\\hat p=0.48$ and margin of error $=0.06$",
-     "seek": 2327
+     "seek": 2327,
+     "do": [
+      "On a new row type `(0.42+0.54)/2` for the midpoint.",
+      "On the next row type `(0.54-0.42)/2` for the half-width."
+     ]
     },
     {
      "title": "Work backwards: the sample size",
      "suppose": "we want $n$ for that interval, with $z^*=1.645$.",
-     "how": "type 0.48*0.52/(0.06/1.645)^2 on a new line.",
      "observe": "The result is 187.6. Round up to the next whole number so the margin of error is no larger than 0.06.",
      "expected": "$n\\approx187.6$, so $n=188$",
-     "seek": 2410
+     "seek": 2410,
+     "do": [
+      "On a new row type `0.48*0.52/(0.06/1.645)^2`."
+     ]
     }
    ]
   },
@@ -525,12 +542,12 @@
     "text": "Sample size from the work-backwards problem: the video says about 188 (computed 187.6); the page rounds up to 188 and says to round up."
    },
    {
-    "kind": "calculator",
-    "text": "Desmos menu names (Inference, Probability Distributions, z test for proportions with a confidence interval option) come from the captions and are unconfirmed against the current calculator."
-   },
-   {
     "kind": "explorer",
     "text": "New explorer: ci-capture. Check the presets and that the capture rate settles near the chosen level after several batches."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds). The z-test steps use z-test for proportions, Create Test, and the Confidence Interval and Significance Test tabs."
    }
   ]
  }

@@ -65,7 +65,7 @@
    "t": 989,
    "type": "Calculator",
    "title": "Desmos discrete distribution",
-   "text": "Plus, Inference, Probability Distributions, Discrete. Enter values and weights, then open Summary."
+   "text": "In the video: Plus, Inference, Probability Distribution, Discrete, then Summary. The embedded calculator on this site has no Discrete option, so the Desmos section uses lists."
   },
   {
    "t": 1091,
@@ -115,7 +115,7 @@
    "steps": [
     "Write the distribution as a table of values and probabilities.",
     "Mean: multiply each value by its probability and add the products.",
-    "SD: use the calculator's summary, because the formula takes one row of work for every value.",
+    "SD: use technology, because the formula takes one row of work for every value.",
     "Write the symbols and interpret both numbers in context."
    ],
    "parts": [
@@ -206,39 +206,55 @@
    "tab": "Desmos",
    "kicker": "Guided practice",
    "title": "Desmos walkthrough",
-   "intro": "The calculator starts empty. Work through each task in it yourself, the way you would on the exam, then check what you observe.",
+   "intro": "The calculator starts empty. Its distribution list has no Discrete option, so you will type the values and probabilities as lists. Work through each task yourself, the way you would on the exam, then check what you observe.",
    "steps": [
     {
      "title": "Mean and SD from a table",
      "suppose": "we want the mean and standard deviation of $S$, the number of shirts Grace sells.",
-     "how": "tap the plus button, choose Inference, then Probability Distributions, then Discrete. Enter 0 through 5 as the values and 0.08, 0.15, 0.26, 0.35, 0.10, 0.06 as the weights, then Create distribution and open Summary.",
-     "observe": "The bars rise to 3 and fall away on each side. Summary lists the mean and the standard deviation.",
+     "observe": "Each row shows its value as you type. The mean is 2.42, and the SD sits just below 1.26.",
      "seek": 989,
-     "expected": "$\\mu_S=2.42$ and $\\sigma_S\\approx1.258$."
+     "expected": "$\\mu_S=2.42$ and $\\sigma_S\\approx1.258$.",
+     "do": [
+      "Click an empty row in the expression list and type `S=[0,1,2,3,4,5]`.",
+      "On the next row type `P=[0.08,0.15,0.26,0.35,0.10,0.06]`.",
+      "On a new row type `total(S*P)` for the mean.",
+      "On a new row type `sqrt(total((S-2.42)^2*P))` for the standard deviation."
+     ]
     },
     {
      "title": "Mean and SD from a graph",
      "suppose": "a graph gives $P(0)=0.10$, $P(1)=0.25$, $P(2)=0.30$, and $P(3)=0.35$ for the points $P$ in one play.",
-     "how": "read each bar height as its probability, then build a Discrete distribution with values 0 to 3 and those weights, and open Summary.",
-     "observe": "Check first that the four weights add to 1. Then read the mean and SD from Summary.",
+     "observe": "Check first that the four probabilities add to 1. Then read the mean and SD from the two rows.",
      "seek": 1153,
-     "expected": "$\\mu_P=1.9$ and $\\sigma_P\\approx0.995$."
+     "expected": "$\\mu_P=1.9$ and $\\sigma_P\\approx0.995$.",
+     "do": [
+      "Read each bar height as its probability and check they add to 1.",
+      "On a new row type `X=[0,1,2,3]`, then on the next row `Y=[0.10,0.25,0.30,0.35]`.",
+      "On a new row type `total(X*Y)` for the mean.",
+      "On a new row type `sqrt(total((X-1.9)^2*Y))` for the standard deviation."
+     ]
     },
     {
      "title": "Transform the mean and SD",
      "suppose": "each shirt sells for 28 dollars and we want the mean and SD of the revenue.",
-     "how": "type 2.42*28 and 1.258*28 on new lines, using the values from the first step. Use more decimals of the SD if Summary offers them.",
      "observe": "Compare with the mean and SD if you multiplied each value by 28 in the table. The two answers agree, and the multiplication is much faster.",
      "seek": 1465,
-     "expected": "Mean about $67.76$ dollars, SD about $35.24$ dollars (35.22 if you use the rounded 1.258)."
+     "expected": "Mean about $67.76$ dollars, SD about $35.24$ dollars (35.22 if you use the rounded 1.258).",
+     "do": [
+      "On a new row type `2.42*28` for the mean.",
+      "On a new row type `1.258*28` for the standard deviation. Use more decimals of the SD from the first step if you like."
+     ]
     },
     {
      "title": "Profit after the fee",
      "suppose": "the profit is 28 times the shirts sold, minus an 8 dollar fee.",
-     "how": "type 2.42*28-8 for the mean and 1.258*28 for the SD, as before.",
      "observe": "The fee lowers the mean by 8 and leaves the SD exactly where it was.",
      "seek": 1568,
-     "expected": "Mean about $59.76$ dollars, SD about $35.24$ dollars."
+     "expected": "Mean about $59.76$ dollars, SD about $35.24$ dollars.",
+     "do": [
+      "On a new row type `2.42*28-8` for the mean.",
+      "On a new row type `1.258*28` for the standard deviation, as before."
+     ]
     }
    ]
   },
@@ -402,12 +418,16 @@
     "text": "At about 24:25 the instructor says each shirt cost 20 dollars and that the mean is 2.24 shirts. The scenario uses 28 dollars and the mean is 2.42, as in the transcript's later steps."
    },
    {
-    "kind": "calculator",
-    "text": "Desmos menu names (Inference, Probability Distributions, Discrete, Summary) come from the captions and are unconfirmed."
-   },
-   {
     "kind": "wording",
     "text": "The video says the SD 'could vary by' a number. The page uses the exam-style phrase 'typically varies from the mean by about'."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds)."
+   },
+   {
+    "kind": "calculator",
+    "text": "The video uses a Discrete distribution with a Summary tab (likely Bluebook's Desmos). The embedded calculator lacks it, so lists and total() are used. Values verified in the embedded calculator: mean 2.42, SD 1.2584."
    }
   ]
  }

@@ -186,8 +186,8 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 
 /* Desmos */
 .desmos-intro { margin-top: 8px; font-size: 14px; opacity: 0.85; max-width: 720px; }
-.desmos-wrap { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 24px; align-items: flex-start; }
-.desmos-steps { flex: 1 1 0; min-width: 240px; max-height: calc(100dvh - var(--hh, 100px) - 90px); min-height: 380px; overflow-y: auto; border-top: 2px solid var(--color-divider); }
+.desmos-wrap { --calc-h: clamp(380px, calc(100dvh - var(--hh, 100px) - 230px), 520px); display: flex; flex-wrap: wrap; gap: 32px; margin-top: 24px; align-items: flex-start; }
+.desmos-steps { flex: 1 1 0; min-width: 240px; max-height: var(--calc-h); min-height: 380px; overflow-y: auto; border-top: 2px solid var(--color-divider); }
 .dstep { padding: 16px; border-bottom: 1px solid var(--color-divider); }
 .dstep .row1 { display: flex; gap: 12px; align-items: baseline; }
 .dstep .num { font-weight: 800; color: var(--color-accent-700); min-width: 22px; }
@@ -200,7 +200,7 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 .dstep .go { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
 .dstep .go .btn { font-size: 13px; }
 .desmos-calc-col { flex: 3 1 0; min-width: 360px; position: sticky; top: calc(var(--hh, 100px) + 14px); }
-.desmos-calc { height: calc(100dvh - var(--hh, 100px) - 90px); min-height: 380px; background: #fff; border: 2px solid var(--color-divider); }
+.desmos-calc { height: var(--calc-h); min-height: 380px; background: #fff; border: 2px solid var(--color-divider); }
 .desmos-actions { margin-top: 8px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
 .desmos-actions .btn { font-size: 13px; }
 .desmos-actions .small-note { margin: 0; }
@@ -375,3 +375,11 @@ a.nav-arrow:hover { background: var(--color-accent-100); }
   .um-panel { width: min(300px, calc(100vw - 32px)); }
   .um-sub { position: static; width: auto; max-height: none; border: 0; margin: 0; background: var(--color-surface); }
 }
+
+/* Desmos steps: numbered action rows, real icons, key chips */
+.dsteps { list-style: none; counter-reset: ds; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.dsteps li { counter-increment: ds; display: grid; grid-template-columns: 26px 1fr; font-size: 14px; line-height: 1.6; align-items: baseline; }
+.dsteps li::before { content: counter(ds) ")"; font-weight: 800; color: var(--color-accent-700); }
+.dicon { display: inline-block !important; height: 24px; width: auto; vertical-align: -6px; margin: 0 2px; border: 1px solid var(--color-divider); background: #fff; padding: 2px; border-radius: 3px; }
+.ukey { display: inline-block; font-size: 12.5px; font-weight: 600; line-height: 1.35; padding: 0 7px; margin: 0 1px; border: 1px solid #9a9696; border-radius: 4px; background: #fff; box-shadow: 0 1px 0 #bab6b6; white-space: nowrap; }
+.utype { font-family: ui-monospace, Menlo, monospace; font-size: 12.5px; padding: 1px 5px; background: var(--color-surface); border: 1px solid var(--color-divider); border-radius: 3px; overflow-wrap: anywhere; }

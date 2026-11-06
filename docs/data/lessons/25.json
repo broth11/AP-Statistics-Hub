@@ -384,50 +384,73 @@
     {
      "title": "z-score for a percent below",
      "suppose": "84% of scores are below 78 and we need the z-score.",
-     "how": "tap the plus button, choose Inference, then Probability Distributions, then Normal. Keep mean 0 and SD 1, open Cumulative Probability, select Bounds, choose the left option and enter 0.84.",
      "observe": "The answer is a z-score, not a probability. It is positive because more than half the area is below it.",
      "seek": 146,
-     "expected": "$z\\approx0.994$."
+     "expected": "$z\\approx0.994$.",
+     "do": [
+      "Press {plus}, then choose {inference}, then [[Probability Distribution]].",
+      "Keep [[Normal distribution]]. Enter 0 for mean and 1 for stdev, then press [[Create Distribution]].",
+      "Open [[Cumulative Probability]] and, under COMPUTE, choose [[Bounds]].",
+      "Under REGION choose [[Left]] and enter 0.84."
+     ]
     },
     {
      "title": "z-score for a percent above",
      "suppose": "2.5% of packages are over 18.5 pounds.",
-     "how": "with Bounds selected, choose the right option and enter 0.025.",
      "observe": "The z-score is positive, because only 2.5% of the area is above it.",
      "seek": 313,
-     "expected": "$z\\approx1.960$ and $\\mu\\approx15.56$ pounds."
+     "expected": "$z\\approx1.960$ and $\\mu\\approx15.56$ pounds.",
+     "do": [
+      "With [[Bounds]] chosen, under REGION choose [[Right]].",
+      "Enter 0.025."
+     ]
     },
     {
      "title": "Area for a follow-up",
      "suppose": "the mean is 15.56 and the SD is 1.5, and we want the percent of packages under 15 pounds.",
-     "how": "find $z=\\frac{15-15.56}{1.5}$, switch from Bounds to Area, choose the left option and enter that z-score.",
      "observe": "Area gives a probability when you enter a value. Bounds gives a value when you enter a probability.",
      "seek": 418,
-     "expected": "$z\\approx-0.373$ and the area is about $0.354$."
+     "expected": "$z\\approx-0.373$ and the area is about $0.354$.",
+     "do": [
+      "On a new row type `(15-15.56)/1.5` to get the z-score.",
+      "Under COMPUTE choose [[Area]], and under REGION choose [[Left]].",
+      "Enter that z-score in the box."
+     ]
     },
     {
      "title": "z-score for a small percent",
      "suppose": "3% finish a test in under 58 minutes and the mean is 70.",
-     "how": "with Bounds selected, choose the left option and enter 0.03.",
      "observe": "The z-score is negative, because 3% is far below the center.",
      "seek": 523,
-     "expected": "$z\\approx-1.881$ and $\\sigma\\approx6.38$ minutes."
+     "expected": "$z\\approx-1.881$ and $\\sigma\\approx6.38$ minutes.",
+     "do": [
+      "With [[Bounds]] chosen, under REGION choose [[Left]].",
+      "Enter 0.03."
+     ]
     },
     {
      "title": "Area between two z-scores",
      "suppose": "tires have mean 45,000 and SD about 5,030 miles, and we want the proportion that last between 40,000 and 55,000 miles.",
-     "how": "find the two z-scores, switch to Area, choose the inside option and enter both z-scores.",
      "observe": "Check that the shaded area is mostly the middle of the curve.",
      "seek": 732,
-     "expected": "$z\\approx-0.994$ and $1.988$, with area about $0.816$."
+     "expected": "$z\\approx-0.994$ and $1.988$, with area about $0.816$.",
+     "do": [
+      "On two new rows type `(40000-45000)/5030.18` and `(55000-45000)/5030.18`.",
+      "Under COMPUTE choose [[Area]], and under REGION choose [[Inner]].",
+      "Enter the two z-scores as the lower and upper bounds."
+     ]
     },
     {
      "title": "Two z-scores for two percents",
      "suppose": "6% of commute times are below 20 minutes and 95% are below 42 minutes.",
-     "how": "with Bounds selected on the standard normal, choose the left option and enter 0.06, then enter 0.95.",
      "observe": "The first z-score is negative and the second is positive.",
      "seek": 1149,
-     "expected": "$z_1\\approx-1.555$ and $z_2\\approx1.645$."
+     "expected": "$z_1\\approx-1.555$ and $z_2\\approx1.645$.",
+     "do": [
+      "With [[Bounds]] chosen on the standard normal, under REGION choose [[Left]].",
+      "Enter 0.06 and read the first z-score.",
+      "Change the area to 0.95 and read the second z-score."
+     ]
     }
    ]
   },
@@ -595,12 +618,12 @@
     "text": "In the tire follow-up the captions say 50,000 where the upper bound is 55,000. The page uses 55,000."
    },
    {
-    "kind": "calculator",
-    "text": "Desmos menu names (Bounds, Area, left, right, inside) come from the captions and are unconfirmed."
-   },
-   {
     "kind": "explorer",
     "text": "Uses the new normal-areas explorer. The explorer's mean and SD sliders are whole numbers, so the commute preset is rounded to 31 and 7."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds)."
    }
   ]
  }

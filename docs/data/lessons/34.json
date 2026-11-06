@@ -386,34 +386,47 @@
     {
      "title": "Critical value for 90%",
      "suppose": "we want $z^*$ for 90% confidence.",
-     "how": "tap the plus button, choose Inference, then Probability Distributions, then Normal with mean 0 and standard deviation 1. Open Cumulative Probability, switch from area to bounds, choose the inner option and enter 0.90.",
      "observe": "The bounds are $\\pm$ the same number. Repeat with 0.95 and 0.99 and compare.",
      "expected": "$z^*\\approx1.645$",
-     "seek": 1722
+     "seek": 1722,
+     "do": [
+      "Press {plus}, then choose {inference}, then [[Probability Distribution]].",
+      "Keep [[Normal distribution]]. Enter 0 for mean and 1 for stdev, then press [[Create Distribution]].",
+      "Open [[Cumulative Probability]] and, under COMPUTE, choose [[Bounds]].",
+      "Under REGION choose [[Inner]] and enter 0.90."
+     ]
     },
     {
      "title": "Sample size with no prior information",
      "suppose": "we want $n$ for a margin of error of 0.03 at 95% confidence, with no prior proportion.",
-     "how": "type 0.5*0.5/(0.03/1.96)^2 on a new line.",
      "observe": "The calculator shows 1067.1. A sample of 1,067 would give a margin just above 0.03, so round up.",
      "expected": "$n\\approx1067.1$, so $n=1,068$",
-     "seek": 1474
+     "seek": 1474,
+     "do": [
+      "On a new row type `0.5*0.5/(0.03/1.96)^2`."
+     ]
     },
     {
      "title": "Sample size with a previous study",
      "suppose": "we want $n$ for a margin of error of 0.04 at 90% confidence, given that a previous study found 42%.",
-     "how": "type 0.42*0.58/(0.04/1.645)^2 on a new line.",
      "observe": "The result is 412.0. Compare it with the no-prior answer for the same margin: using 0.5 would need more.",
      "expected": "$n\\approx412.0$, so $n=412$",
-     "seek": 1682
+     "seek": 1682,
+     "do": [
+      "On a new row type `0.42*0.58/(0.04/1.645)^2`."
+     ]
     },
     {
      "title": "The governor's interval",
      "suppose": "we want the 95% interval for 180 of 345 voters, to check the claim that she gets more than 50%.",
-     "how": "tap the plus button, choose Inference, then the $z$ test for proportions. Enter 180 successes and 345 for the sample size, create the test and open the confidence interval.",
      "observe": "Check whether 0.50 is inside the interval. If it is, the interval does not provide convincing evidence for the claim.",
      "expected": "$(0.4690,\\ 0.5744)$, which contains 0.50",
-     "seek": 1065
+     "seek": 1065,
+     "do": [
+      "Press {plus}, then choose {inference}, then [[z-test for proportions]].",
+      "Enter 180 for successes and 345 for sample size, then press [[Create Test]].",
+      "Open the [[Confidence Interval]] tab and read the interval."
+     ]
     }
    ]
   },
@@ -609,12 +622,12 @@
     "text": "Sample size: the video says about 1,068 and 412. The page computes 1067.1 and 412.0 and rounds up. The video says it rounds up \"to make it a little better\"; the page gives the exam reason, that rounding down could leave the margin above the target."
    },
    {
-    "kind": "calculator",
-    "text": "Desmos menu names (Inference, Probability Distributions, z test for proportions with a confidence interval option) are not shown in this video and come from topic 3.3; they are unconfirmed against the current calculator."
-   },
-   {
     "kind": "explorer",
     "text": "Reuses the new ci-capture explorer from lesson 3.3 with different presets."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds). The z-test steps use z-test for proportions, Create Test, and the Confidence Interval and Significance Test tabs."
    }
   ]
  }

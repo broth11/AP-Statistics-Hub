@@ -1,4 +1,6 @@
 // Desmos walkthrough: an empty calculator plus guided steps. No button loads a solution.
+// Each step: suppose, a numbered list `do` (one action per row; `how` is the old single-sentence form), observe.
+// Text may use {plus} {gear} {undo} {inference} (real Desmos icons), [[Label]] (button label) and `typed text`.
 import { esc, tex, fmtTime } from '../util.js';
 
 export function render(sec, ctx) {
@@ -6,7 +8,8 @@ export function render(sec, ctx) {
     <div class="dstep">
       <div class="row1"><span class="num">${i + 1}</span><span class="stitle">${tex(d.title)}</span></div>
       <div class="line"><b>Suppose</b> ${tex(d.suppose)}</div>
-      <div class="line"><b>To do that,</b> ${tex(d.how)}</div>
+      <div class="line"><b>To do that,</b></div>
+      <ol class="dsteps">${(d.do || [d.how]).map((x) => `<li><span class="dtxt">${tex(x)}</span></li>`).join('')}</ol>
       <div class="line"><b>Observe.</b> ${tex(d.observe)}</div>
       <button class="bare reveal" data-reveal="${i}" aria-expanded="false">Show expected result</button>
       <div class="expected" data-expected="${i}" hidden><b>Expected:</b> ${tex(d.expected)}</div>

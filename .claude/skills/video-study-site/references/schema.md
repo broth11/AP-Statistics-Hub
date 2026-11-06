@@ -80,11 +80,14 @@ Only `intro` is required.
 
 ```json
 { "type": "desmos", "intro": "The calculator starts empty. ...", "note": "optional; defaults to site.json calculator.examNote",
-  "steps": [ { "title": "At most", "suppose": "we want $P(X\\le4)$.", "how": "open Cumulative Probability, ...",
+  "steps": [ { "title": "At most", "suppose": "we want $P(X\\le4)$.",
+               "do": ["On the binomial item open [[Cumulative Probability]].", "Under REGION choose [[Left]].", "Enter 4 in the box."],
                "observe": "The dots for 0 through 4 ...", "expected": "$P(X\\le4)\\approx 0.8917$", "seek": 2162 } ] }
 ```
 
-Each step renders as "Suppose ... To do that, ... Observe." with a "Show expected result" toggle and a video link. Write `suppose` and `how` to continue those lead words (lowercase start).
+Each step renders as "Suppose ..." then a numbered list `1)`, `2)` with one action per row, then "Observe.", with a "Show expected result" toggle and a video link. Write `suppose` to continue the lead word (lowercase start). `how` (one sentence) still works but is the old form; use `do`.
+
+In `do` text (and anywhere a string goes through `tex()`): `{plus}`, `{gear}`, `{undo}`, `{inference}` show the real Desmos icons (`docs/img/desmos/`, captured from the embedded calculator); `[[Label]]` shows a button label such as `[[Create Distribution]]`; `` `typed text` `` shows text to type. Use only labels that exist in the embedded calculator. Verified labels (Nov 2026): the + menu is expression, note, table, inference, folder, image; inference opens Probability Distribution (distributions: Normal, t, chi-squared, Uniform, Binomial, Poisson, Geometric; no Discrete), z-test, t-test, z-test for proportions, chi-squared tests; a distribution has Create Distribution, then Cumulative Probability with REGION (Inner, Outer, Left, Right) and, for Normal, COMPUTE (Area, Bounds); z-test for proportions has successes and sample size, Create Test, then Confidence Interval and Significance Test tabs (Tails: Left, Both, Right). The calculator is a fixed height (`--calc-h`).
 
 ## `wording`
 

@@ -77,7 +77,7 @@
    "t": 1942,
    "type": "Visual",
    "title": "Binomial distribution in Desmos",
-   "text": "Inference, Probability Distributions, Binomial. Each dot is $P(X=k)$."
+   "text": "Inference, Probability Distribution, Binomial. Each dot is $P(X=k)$."
   },
   {
    "t": 2046,
@@ -306,58 +306,85 @@
     {
      "title": "Read one probability",
      "suppose": "we want $P(X=6)$ for a group of 20 people when 13% are left-handed.",
-     "how": "tap the plus button, choose Inference, then Probability Distributions, then Binomial. Enter 20 for trials and 0.13 for the probability of success, then Create distribution.",
      "observe": "Each dot is one value of $X$. Tap the dot at 6 to read its probability. The tallest dots are at 2 and 3, and the right side tails off.",
      "seek": 1942,
-     "expected": "$P(X=6)\\approx 0.0266$"
+     "expected": "$P(X=6)\\approx 0.0266$",
+     "do": [
+      "Press {plus}, then choose {inference}, then [[Probability Distribution]].",
+      "Open the distribution list and choose [[Binomial distribution]].",
+      "Enter 20 for trials and 0.13 for success probability, then press [[Create Distribution]].",
+      "Tap the dot at 6 on the graph to read its probability."
+     ]
     },
     {
      "title": "At most",
      "suppose": "we want $P(X\\le4)$.",
-     "how": "on the binomial item, open Cumulative Probability, choose the left option and enter 4.",
      "observe": "The dots for 0 through 4 are highlighted and their total is shown. Compare it with adding the dots one at a time.",
      "seek": 2162,
-     "expected": "$P(X\\le4)\\approx 0.8917$"
+     "expected": "$P(X\\le4)\\approx 0.8917$",
+     "do": [
+      "On the binomial item open [[Cumulative Probability]].",
+      "Under REGION choose [[Left]].",
+      "Enter 4 in the box."
+     ]
     },
     {
      "title": "At least",
      "suppose": "we want $P(X\\ge3)$.",
-     "how": "open Cumulative Probability, choose the right option and enter 3.",
      "observe": "The dots for 3 through 20 are highlighted. Check that the value equals $1-P(X\\le2)$, found with the left option.",
      "seek": 2248,
-     "expected": "$P(X\\ge3)\\approx 0.4920$, and $1-P(X\\le2)$ gives the same value. $P(X\\le2)\\approx 0.5080$."
+     "expected": "$P(X\\ge3)\\approx 0.4920$, and $1-P(X\\le2)$ gives the same value. $P(X\\le2)\\approx 0.5080$.",
+     "do": [
+      "On the binomial item open [[Cumulative Probability]].",
+      "Under REGION choose [[Right]].",
+      "Enter 3 in the box."
+     ]
     },
     {
      "title": "At least one",
      "suppose": "we want $P(X\\ge1)$ and a faster way than adding 20 dots.",
-     "how": "read the dot at 0 for $P(X=0)$, then type 1 minus that value on a new line. Check it against the right option with 1.",
      "observe": "The two values agree. The only outcome left out is zero left-handed people.",
      "seek": 2046,
-     "expected": "$P(X=0)\\approx 0.0617$, so $P(X\\ge1)\\approx 0.9383$."
+     "expected": "$P(X=0)\\approx 0.0617$, so $P(X\\ge1)\\approx 0.9383$.",
+     "do": [
+      "Tap the dot at 0 to read $P(X=0)$.",
+      "On a new row type `1-` followed by that value.",
+      "Check it: open [[Cumulative Probability]], choose [[Right]] and enter 1."
+     ]
     },
     {
      "title": "Between two values",
      "suppose": "we want $P(2\\le X\\le5)$.",
-     "how": "open Cumulative Probability and choose the between option with 2 and 5.",
-     "observe": "Look at which dots are highlighted to see whether the endpoints are included.",
+     "observe": "The box reads $P(2\\le x\\le5)$, so both endpoints are included.",
      "seek": 2162,
-     "expected": "$P(2\\le X\\le5)\\approx 0.7169$ with both endpoints included. If your value differs, check which option you chose."
+     "expected": "$P(2\\le X\\le5)\\approx 0.7169$ with both endpoints included. If your value differs, check which option you chose.",
+     "do": [
+      "On the binomial item open [[Cumulative Probability]].",
+      "Under REGION choose [[Inner]].",
+      "Enter 2 as the lower bound and 5 as the upper bound."
+     ]
     },
     {
      "title": "Mean and standard deviation",
      "suppose": "we want the mean and standard deviation of $X$.",
-     "how": "on a new line type 20*0.13, then type a square root with 20*0.13*0.87 inside it.",
      "observe": "The mean is 2.6 and the standard deviation is about 1.504, matching the video. The mean sits near the tallest dots.",
      "seek": 2296,
-     "expected": "$\\mu=2.6$ and $\\sigma\\approx 1.504$."
+     "expected": "$\\mu=2.6$ and $\\sigma\\approx 1.504$.",
+     "do": [
+      "On a new row type `20*0.13` for the mean.",
+      "On a new row type `sqrt(20*0.13*0.87)` for the standard deviation."
+     ]
     },
     {
      "title": "Report the result",
      "suppose": "Desmos gives a number for part of a free-response question.",
-     "how": "write the event and the context, such as $P(H\\ge3)=0.492$, the probability that at least 3 of 20 people are left-handed.",
      "observe": "A bare decimal does not earn full credit. The notation and the sentence are part of the answer.",
      "seek": 2270,
-     "expected": "$P(H\\ge3)\\approx 0.4920$, written with the event and the context."
+     "expected": "$P(H\\ge3)\\approx 0.4920$, written with the event and the context.",
+     "do": [
+      "Write the event in symbols, such as $P(H\\ge3)=0.492$.",
+      "Add a sentence in context: the probability that at least 3 of 20 people are left-handed."
+     ]
     }
    ]
   },
@@ -524,7 +551,7 @@
   "flags": [
    {
     "kind": "calculator",
-    "text": "Desmos menu names and whether the between option includes both endpoints are unconfirmed."
+    "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds)."
    }
   ]
  }

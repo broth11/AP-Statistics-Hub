@@ -83,7 +83,7 @@
    "t": 1437,
    "type": "Calculator",
    "title": "Normal probabilities in Desmos",
-   "text": "Plus, Inference, Probability Distributions, Normal with mean 0 and SD 1, then Cumulative Probability."
+   "text": "Plus, Inference, Probability Distribution, Normal with mean 0 and SD 1, then Cumulative Probability."
   },
   {
    "t": 1569,
@@ -313,42 +313,63 @@
     {
      "title": "Right-tail probability",
      "suppose": "we want $P(\\hat p>0.30)$ for the streaming service: $p=0.27$, $n=600$.",
-     "how": "find $z$ by typing (0.30-0.27)/sqrt(0.27*0.73/600) on a new line. Then tap the plus button, choose Inference, then Probability Distributions, then Normal with mean 0 and standard deviation 1. Open Cumulative Probability, choose the right option and enter your $z$.",
      "observe": "Only a small sliver on the right is shaded. Open the dropdown for more decimals.",
      "expected": "$z\\approx1.655$ and probability $\\approx0.0489$",
-     "seek": 1437
+     "seek": 1437,
+     "do": [
+      "On a new row type `(0.30-0.27)/sqrt(0.27*0.73/600)` to get $z$.",
+      "Press {plus}, then choose {inference}, then [[Probability Distribution]].",
+      "Keep [[Normal distribution]]. Enter 0 for mean and 1 for stdev, then press [[Create Distribution]].",
+      "Open [[Cumulative Probability]], under REGION choose [[Right]] and enter your $z$."
+     ]
     },
     {
      "title": "Between two values",
      "suppose": "we want the chance that a sample of 1,000 commuters has $\\hat p$ between 0.16 and 0.20, with $p=0.18$.",
-     "how": "find the standard deviation with sqrt(0.18*0.82/1000), then $z=\\pm0.02/\\text{SD}$. In Cumulative Probability choose the inner option and enter the two $z$-scores.",
      "observe": "The shaded area is the large central chunk. The two $z$-scores are the same size with opposite signs because 0.16 and 0.20 are equally far from 0.18.",
      "expected": "$z\\approx\\pm1.646$ and probability $\\approx0.9003$",
-     "seek": 1745
+     "seek": 1745,
+     "do": [
+      "On a new row type `sqrt(0.18*0.82/1000)` for the standard deviation, then find $z=\\pm0.02/\\text{SD}$.",
+      "On the standard normal open [[Cumulative Probability]] and, under REGION, choose [[Inner]].",
+      "Enter the two $z$-scores as the bounds."
+     ]
     },
     {
      "title": "Left-tail probability",
      "suppose": "we want $P(\\hat p\\le0.50)$ for campus housing: $p=0.54$, $n=250$.",
-     "how": "find $z$ for 0.50, then in Cumulative Probability choose the left option and enter it.",
      "observe": "The shaded tail is on the left because \"at most\" points down. Whether you use $<$ or $\\le$ makes no difference for a continuous model.",
      "expected": "$z\\approx-1.269$ and probability $\\approx0.1022$",
-     "seek": 1990
+     "seek": 1990,
+     "do": [
+      "On a new row find $z$ for 0.50.",
+      "On the standard normal open [[Cumulative Probability]] and, under REGION, choose [[Left]].",
+      "Enter your $z$."
+     ]
     },
     {
      "title": "Cutoffs for the most extreme 5%",
      "suppose": "we want the values of $\\hat p$ that bound the most extreme 5% for $p=0.65$, $n=400$.",
-     "how": "in Cumulative Probability switch from area to bounds, choose the inner option and enter 0.95 to get $z^*$. Then type 0.65-1.96*sqrt(0.65*0.35/400) and 0.65+1.96*sqrt(0.65*0.35/400) on new lines.",
      "observe": "The bounds are symmetric because the normal model is. Sample proportions outside the two cutoffs are the unusual ones.",
      "expected": "$z^*\\approx\\pm1.96$, cutoffs $\\approx0.6033$ and $0.6967$",
-     "seek": 2360
+     "seek": 2360,
+     "do": [
+      "On the standard normal open [[Cumulative Probability]] and, under COMPUTE, choose [[Bounds]].",
+      "Under REGION choose [[Inner]] and enter 0.95 to get $z^*$.",
+      "On a new row type `0.65-1.96*sqrt(0.65*0.35/400)`.",
+      "On the next row type `0.65+1.96*sqrt(0.65*0.35/400)`."
+     ]
     },
     {
      "title": "Effect of sample size",
      "suppose": "we want to compare the spread for $n=600$ and $n=2000$ when $p=0.27$.",
-     "how": "type sqrt(0.27*0.73/600) and sqrt(0.27*0.73/2000) on separate lines.",
      "observe": "The center is 0.27 in both cases. Only the standard deviation changes, and the larger sample has the smaller one.",
      "expected": "$\\approx0.0181$ for $n=600$ and $\\approx0.0099$ for $n=2000$",
-     "seek": 1211
+     "seek": 1211,
+     "do": [
+      "On a new row type `sqrt(0.27*0.73/600)`.",
+      "On the next row type `sqrt(0.27*0.73/2000)`."
+     ]
     }
    ]
   },
@@ -538,12 +559,12 @@
     "text": "Commuters between 16% and 20%: the video gets $z=\\pm1.653$ and 0.902; the page computes $z\\approx\\pm1.646$ and 0.9003, so the answer is about 0.900. Confirm the 1.653 on screen."
    },
    {
-    "kind": "calculator",
-    "text": "Desmos menu names (Inference, Probability Distributions, Normal, Cumulative Probability with area and bounds, inner, left, right) come from the captions and are unconfirmed against the current calculator."
-   },
-   {
     "kind": "explorer",
     "text": "New explorer: sampling-distribution. Check the presets and the 1,000-sample simulation in class."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds)."
    }
   ]
  }
