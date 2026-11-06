@@ -280,6 +280,7 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 .ex-actions { display: grid; gap: 8px; flex: none; }
 .ex-actions .btn { font-size: 13px; justify-content: center; text-align: center; width: 100%; }
 .ex-actions .ex-mode { border-color: var(--color-divider); }
+.ex-actions .btn[aria-pressed=true] { background: var(--color-text); color: var(--color-bg); }
 .ex-stat .value.small { font-size: 18px; line-height: 1.35; }
 
 .steps { margin: 0; padding-left: 22px; font-size: 15px; line-height: 1.55; display: flex; flex-direction: column; gap: 6px; }
