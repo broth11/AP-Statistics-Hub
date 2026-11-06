@@ -1,0 +1,619 @@
+{
+ "n": 24,
+ "unit": 2,
+ "topic": "2.11",
+ "title": "The Normal Distribution, Part 1",
+ "videoId": "lOboR7JMBNo",
+ "videoTitle": "AP Statistics Topic 2.11 Part 1 The Normal Distribution",
+ "intro": "After this lesson you can describe continuous random variables and the normal distribution, find areas and probabilities under a normal curve with z-scores and Desmos, and work backward from a percentile to a value.",
+ "moments": [
+  {
+   "t": 43,
+   "type": "Definition",
+   "title": "Continuous random variable",
+   "text": "It can take any value in an interval, and every interval has a probability. Probability is area under a density curve."
+  },
+  {
+   "t": 144,
+   "type": "Key idea",
+   "title": "No probability for one exact value",
+   "text": "You can only find probabilities for intervals, not for a single value such as exactly 100 seconds."
+  },
+  {
+   "t": 206,
+   "type": "Concept",
+   "title": "Density curves",
+   "text": "The total area under the curve is 1. The area over an interval is the probability of that interval."
+  },
+  {
+   "t": 533,
+   "type": "Concept",
+   "title": "The normal distribution",
+   "text": "Many continuous variables, such as lion weight, test scores, and fill amounts, are modeled well by a normal curve."
+  },
+  {
+   "t": 680,
+   "type": "Concept",
+   "title": "Shape of a normal curve",
+   "text": "Continuous, unimodal, symmetric, and bell-shaped."
+  },
+  {
+   "t": 721,
+   "type": "Key idea",
+   "title": "Mean and standard deviation set the curve",
+   "text": "The mean is the center. A smaller SD gives a taller, narrower curve."
+  },
+  {
+   "t": 843,
+   "type": "Worked example",
+   "title": "Lion weights: mean 450, SD 40",
+   "text": "One, two, and three SDs from the mean are 410 and 490, 370 and 530, and 330 and 570."
+  },
+  {
+   "t": 968,
+   "type": "Concept",
+   "title": "Standard normal and z-scores",
+   "text": "The standard normal has mean 0 and SD 1. A z-score says how many SDs a value is from the mean."
+  },
+  {
+   "t": 1134,
+   "type": "Key idea",
+   "title": "Empirical rule",
+   "text": "About 68%, 95%, and 99.7% of values lie within 1, 2, and 3 SDs, for a normal distribution only."
+  },
+  {
+   "t": 1404,
+   "type": "Concept",
+   "title": "Other values need technology",
+   "text": "For a value that is not exactly 1, 2, or 3 SDs away, use the calculator's normal distribution."
+  },
+  {
+   "t": 1465,
+   "type": "Procedure",
+   "title": "Model, z-score, probability statement",
+   "text": "Name the model $N(450,40)$, find the z-score, and write the probability in context before using the calculator."
+  },
+  {
+   "t": 1630,
+   "type": "Calculator",
+   "title": "Desmos normal distribution",
+   "text": "Plus, Inference, Probability Distributions, Normal. Use mean 0 and SD 1 for z-scores, or the problem's mean and SD for values."
+  },
+  {
+   "t": 1780,
+   "type": "Key idea",
+   "title": "Equal to does not matter",
+   "text": "For a continuous variable, a probability with 'greater than' and 'greater than or equal to' are the same."
+  },
+  {
+   "t": 1903,
+   "type": "Worked example",
+   "title": "Between two values",
+   "text": "Between 394 and 534 pounds, which is z-scores of $-1.4$ and $2.1$."
+  },
+  {
+   "t": 1995,
+   "type": "Procedure",
+   "title": "Backward problems: percentiles",
+   "text": "Find the z-score with the given area, then solve the z-score formula for the value."
+  },
+  {
+   "t": 2299,
+   "type": "Worked example",
+   "title": "Middle 60% and extreme 5%",
+   "text": "The middle 60% leaves 20% in each tail. The most extreme 5% is 2.5% in each tail."
+  }
+ ],
+ "sections": [
+  {
+   "id": "option",
+   "type": "decision",
+   "tab": "Which setting?",
+   "kicker": "Decision check",
+   "title": "Which Desmos setting does the question need?",
+   "cards": [
+    {
+     "letter": "F",
+     "name": "Forward",
+     "text": "You know a value or values. You want an area, which is a probability."
+    },
+    {
+     "letter": "B",
+     "name": "Backward",
+     "text": "You know an area or percent. You want the value or z-score that marks it."
+    }
+   ],
+   "columns": [
+    "Question about lion weight $W$, $N(450,40)$",
+    "Direction",
+    "Desmos setting",
+    "Enter"
+   ],
+   "rows": [
+    {
+     "cells": [
+      "More than 462 pounds",
+      "Forward",
+      "Right",
+      "462"
+     ],
+     "seek": 1404
+    },
+    {
+     "cells": [
+      "Less than 335 pounds",
+      "Forward",
+      "Left",
+      "335"
+     ],
+     "seek": 1822
+    },
+    {
+     "cells": [
+      "Between 394 and 534 pounds",
+      "Forward",
+      "Inside",
+      "394 and 534"
+     ],
+     "seek": 1903
+    },
+    {
+     "cells": [
+      "The 90th percentile",
+      "Backward",
+      "Bounds, Left",
+      "0.9"
+     ],
+     "seek": 1995
+    },
+    {
+     "cells": [
+      "The middle 60%",
+      "Backward",
+      "Bounds, Inside",
+      "0.6"
+     ],
+     "seek": 2299
+    },
+    {
+     "cells": [
+      "The most extreme 5%",
+      "Backward",
+      "Bounds, Outside",
+      "0.05"
+     ],
+     "seek": 2425
+    }
+   ],
+   "verdictColumn": 2,
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Normal-model work is only valid when the question says the variable is approximately normal. The video stresses this, and exam answers should state it."
+    }
+   ]
+  },
+  {
+   "id": "forward",
+   "type": "procedure",
+   "tab": "Forward",
+   "kicker": "Procedure",
+   "title": "Value to probability",
+   "intro": "Adult male lion weights $W$ are approximately normal with mean 450 pounds and standard deviation 40 pounds. Find the probability that a lion weighs more than 462 pounds.",
+   "steps": [
+    "State the model: $W$ is approximately $N(450,40)$.",
+    "Find the z-score of the value.",
+    "Write the probability in context and with the z-score.",
+    "Find the area with Desmos and report it with the event."
+   ],
+   "parts": [
+    {
+     "label": "z-score",
+     "tex": [
+      "$z=\\dfrac{462-450}{40}$",
+      "$z=0.3$"
+     ],
+     "text": "462 pounds is 0.3 SDs above the mean."
+    },
+    {
+     "label": "Statement",
+     "tex": [
+      "$P(W>462)$",
+      "$=P(Z>0.3)$"
+     ],
+     "text": "The two statements are equivalent."
+    },
+    {
+     "label": "Area",
+     "tex": "$\\approx0.382$",
+     "text": "Right of 0.3 on the standard normal, or right of 462 with mean 450 and SD 40."
+    }
+   ],
+   "line": "$P(W>462)=P(Z>0.3)\\approx0.382$",
+   "buttons": [
+    {
+     "label": "Watch the setup (24:25)",
+     "seek": 1465
+    },
+    {
+     "label": "Watch Desmos (27:10)",
+     "seek": 1630
+    }
+   ]
+  },
+  {
+   "id": "backward",
+   "type": "procedure",
+   "tab": "Backward",
+   "kicker": "Procedure",
+   "title": "Percentile to value",
+   "intro": "What weight marks the 90th percentile of lion weights? Work backward. Find the z-score with 90% below it, then solve the z-score formula for the weight.",
+   "steps": [
+    "Sketch or say what is known: an area, and which side it is on.",
+    "Use Bounds on the standard normal to find the z-score.",
+    "Solve $z=\\dfrac{x-\\mu}{\\sigma}$ for $x$, or use mean 450 and SD 40 in Desmos.",
+    "State the value in context."
+   ],
+   "parts": [
+    {
+     "label": "Find z",
+     "tex": [
+      "$P(Z<z)=0.90$",
+      "$z\\approx1.282$"
+     ],
+     "text": "Bounds, Left, 0.9."
+    },
+    {
+     "label": "Solve for x",
+     "tex": [
+      "$1.282=\\dfrac{x-450}{40}$",
+      "$x\\approx501.3$"
+     ],
+     "text": "Multiply by 40, then add 450."
+    },
+    {
+     "label": "Middle or extreme",
+     "tex": [
+      "$\\text{Middle }60\\%:\\ z=\\pm0.842$",
+      "$\\text{Extreme }5\\%:\\ z=\\pm1.96$"
+     ],
+     "text": "Split what is left over equally between the two tails."
+    }
+   ],
+   "line": "$x=\\mu+z\\sigma=450+1.282(40)\\approx501.3$ pounds",
+   "buttons": [
+    {
+     "label": "Watch the percentile (33:15)",
+     "seek": 1995
+    },
+    {
+     "label": "Watch middle and extreme (38:19)",
+     "seek": 2299
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "type": "explorer",
+   "explorer": "normal-areas",
+   "tab": "Explorer",
+   "kicker": "Interactive",
+   "title": "Normal areas explorer",
+   "intro": "Pick a question type, then move the values. The shaded area is the probability. In the last mode, set the area and read the value that marks it.",
+   "stories": {
+    "lion": "Adult male lion weights $W$ are approximately normal with mean $\\mu=450$ pounds and standard deviation $\\sigma=40$ pounds."
+   },
+   "range": {
+    "muMin": 400,
+    "muMax": 500,
+    "muStep": 1,
+    "sdMin": 20,
+    "sdMax": 80,
+    "sdStep": 1
+   },
+   "initial": {
+    "mu": 450,
+    "sigma": 40,
+    "mode": "right",
+    "a": 462,
+    "b": 534,
+    "p": 0.9,
+    "story": "lion"
+   },
+   "presets": [
+    {
+     "label": "More than 462",
+     "sub": "$P(W>462)$",
+     "mu": 450,
+     "sigma": 40,
+     "mode": "right",
+     "a": 462,
+     "b": 534,
+     "story": "lion"
+    },
+    {
+     "label": "Less than 335",
+     "sub": "$P(W<335)$",
+     "mu": 450,
+     "sigma": 40,
+     "mode": "left",
+     "a": 335,
+     "b": 534,
+     "story": "lion"
+    },
+    {
+     "label": "Between",
+     "sub": "$P(394<W<534)$",
+     "mu": 450,
+     "sigma": 40,
+     "mode": "between",
+     "a": 394,
+     "b": 534,
+     "story": "lion"
+    },
+    {
+     "label": "90th percentile",
+     "sub": "Area $0.90$",
+     "mu": 450,
+     "sigma": 40,
+     "mode": "inv",
+     "a": 450,
+     "b": 450,
+     "p": 0.9,
+     "story": "lion"
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Work through each task in it yourself, the way you would on the exam, then check what you observe.",
+   "steps": [
+    {
+     "title": "Area to the right",
+     "suppose": "we want the probability that a lion weighs more than 462 pounds, with $W\\sim N(450,40)$.",
+     "how": "tap the plus button, choose Inference, then Probability Distributions, then Normal. Enter mean 450 and standard deviation 40, then Create distribution. Open Cumulative Probability, choose the right option and enter 462.",
+     "observe": "The area above 462 is shaded. Redo it with mean 0 and SD 1 and the z-score 0.3 and you get the same value.",
+     "seek": 1630,
+     "expected": "$P(W>462)\\approx0.382$."
+    },
+    {
+     "title": "Area to the left",
+     "suppose": "we want $P(W<335)$.",
+     "how": "on the same distribution, choose the left option and enter 335.",
+     "observe": "The shaded region is too small to see, which matches a z-score near $-2.9$. Open the decimals box to see more digits.",
+     "seek": 1822,
+     "expected": "$P(W<335)\\approx0.002$ (z = -2.875)."
+    },
+    {
+     "title": "Area between",
+     "suppose": "we want the probability that a lion weighs between 394 and 534 pounds.",
+     "how": "choose the inside option and enter 394 and 534.",
+     "observe": "The shaded region spans from just below 1.5 SDs below the mean to just above 2 SDs above it.",
+     "seek": 1903,
+     "expected": "$P(394<W<534)\\approx0.901$."
+    },
+    {
+     "title": "Percentile with bounds",
+     "suppose": "we want the weight that marks the 90th percentile.",
+     "how": "choose Bounds, choose the left option, and enter 0.9 as the area.",
+     "observe": "The answer is a weight, not a probability. Then repeat with mean 0 and SD 1 to see the z-score alone.",
+     "seek": 2109,
+     "expected": "$z\\approx1.282$ and $x\\approx501.3$ pounds."
+    },
+    {
+     "title": "The middle 60%",
+     "suppose": "we want the two weights that bound the middle 60% of lions.",
+     "how": "with Bounds on, choose the inside option and enter 0.6.",
+     "observe": "There are two answers, one on each side of 450, and the tails hold 20% each.",
+     "seek": 2299,
+     "expected": "About $416.3$ and $483.7$ pounds, with $z=\\pm0.842$."
+    },
+    {
+     "title": "The most extreme 5%",
+     "suppose": "we want the weights that mark the most extreme 5% of lions.",
+     "how": "with Bounds on, choose the outside option and enter 0.05.",
+     "observe": "Desmos splits the 5% into 2.5% in each tail. Check by choosing the left option and 0.025.",
+     "seek": 2554,
+     "expected": "About $371.6$ and $528.4$ pounds, with $z=\\pm1.96$."
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "State the model and the event",
+     "weak": "0.382",
+     "better": "Because lion weights are approximately normal with mean 450 and SD 40, $P(W>462)=P(Z>0.3)\\approx0.382$. About 38.2% of adult male lions weigh more than 462 pounds.",
+     "seek": 1465
+    },
+    {
+     "kind": "Common trap",
+     "title": "Asking for an exact value",
+     "weak": "P(W = 450) is the highest, so it is 0.4.",
+     "better": "A continuous variable has no probability at one exact value. Ask about an interval, such as $P(445<W<455)$.",
+     "seek": 144
+    },
+    {
+     "kind": "Common trap",
+     "title": "Reading a percentile on the wrong side",
+     "weak": "The 90th percentile has 10% below it, so $z=-1.282$.",
+     "better": "The 90th percentile has 90% below it and 10% above it, so $z=+1.282$ and $x\\approx501.3$ pounds.",
+     "seek": 2004
+    },
+    {
+     "kind": "Common trap",
+     "title": "Putting all of the extreme percent in one tail",
+     "weak": "The most extreme 5% is the top 5%, so $z=1.645$.",
+     "better": "Extreme can be very high or very low, so the 5% is split into 2.5% in each tail, $z=\\pm1.96$.",
+     "seek": 2425
+    },
+    {
+     "kind": "Common trap",
+     "title": "Using a normal model when the question does not say it is normal",
+     "weak": "Brushing times are skewed right, but $P(B<100)$ comes from a normal model.",
+     "better": "Normal calculations are valid only when the variable is approximately normal. Say so, or do not use them.",
+     "seek": 1923
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "Which statement about a continuous random variable $X$ is true?",
+     "opts": [
+      "$P(X=5)$ is the height of the curve at 5",
+      "$P(X\\ge5)=P(X>5)$",
+      "$P(X<5)$ is larger than $P(X\\le5)$",
+      "$P(X=5)$ is the largest probability"
+     ],
+     "ok": 1,
+     "why": [
+      "Height of the curve is a density, not a probability.",
+      "A single value has probability 0, so including or excluding it changes nothing.",
+      "They are equal, because the single value 5 has no area.",
+      "Every exact value has probability 0."
+     ],
+     "seek": 1780
+    },
+    {
+     "stem": "Scores are approximately normal with mean 500 and SD 100. By the empirical rule, about what proportion of scores are between 400 and 700?",
+     "opts": [
+      "68%",
+      "95%",
+      "81.5%",
+      "99.7%"
+     ],
+     "ok": 2,
+     "why": [
+      "68% is the share between 400 and 600 only.",
+      "95% is the share between 300 and 700.",
+      "400 is 1 SD below and 700 is 2 SDs above. That is half of 68% plus half of 95%, which is 34% + 47.5% = 81.5%.",
+      "99.7% is the share between 200 and 800."
+     ],
+     "seek": 1320
+    },
+    {
+     "stem": "The fill amount of a juice can is approximately normal with mean 12.0 ounces and SD 0.15 ounces. What is the probability a can has less than 11.8 ounces?",
+     "opts": [
+      "0.909",
+      "0.091",
+      "0.0668",
+      "0.5000"
+     ],
+     "ok": 1,
+     "why": [
+      "That is the probability of more than 11.8 ounces, $P(Z>-1.33)$.",
+      "$z=\\frac{11.8-12.0}{0.15}=-1.33$, and the area to the left is about 0.091.",
+      "That uses $z=-1.5$, which does not come from the problem.",
+      "That treats 11.8 as the mean."
+     ],
+     "seek": 1822
+    },
+    {
+     "stem": "Heights are approximately normal with mean 66 inches and SD 3 inches. Which expression gives the 75th percentile?",
+     "opts": [
+      "$66+0.674(3)$",
+      "$66-0.674(3)$",
+      "$66+-0.674(3)$",
+      "$(0.674-66)/3$"
+     ],
+     "ok": 0,
+     "why": [
+      "The z-score with 75% below it is 0.674. $x=\\mu+z\\sigma\\approx68.0$ inches.",
+      "That would be the 25th percentile.",
+      "That z-score has 25% below it, which is the wrong side.",
+      "That is not the z-score formula solved for $x$."
+     ],
+     "seek": 2004
+    },
+    {
+     "stem": "A value has a z-score of $-1.4$. What does this say?",
+     "opts": [
+      "The value is 1.4 units below the mean",
+      "The value is 1.4 standard deviations below the mean",
+      "The value is 1.4 standard deviations above the mean",
+      "The probability of the value is $-1.4$"
+     ],
+     "ok": 1,
+     "why": [
+      "The units are standard deviations, not the original units.",
+      "The z-score counts standard deviations from the mean. The sign says below.",
+      "A negative sign means below the mean.",
+      "Probabilities are never negative."
+     ],
+     "seek": 968
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "The life of a certain brand of phone battery is approximately normally distributed with a mean of 36 hours and a standard deviation of 4 hours. Let $L$ be the life of a randomly selected battery.",
+   "parts": [
+    "(a) Find the probability that a battery lasts more than 40 hours.",
+    "(b) Find the probability that a battery lasts between 32 and 44 hours.",
+    "(c) The company will replace the 5% of batteries with the shortest lives. Find the life that marks the cutoff for replacement."
+   ],
+   "sample": [
+    "(a) $z=\\frac{40-36}{4}=1$. $P(L>40)=P(Z>1)=0.159$. About 15.9% of batteries last more than 40 hours.",
+    "(b) $z=-1$ and $z=2$. $P(32<L<44)=P(-1<Z<2)=0.819$. About 81.9% of batteries last between 32 and 44 hours.",
+    "(c) The z-score with 5% below it is $-1.645$. $L=36+(-1.645)(4)=29.4$. Batteries that last less than about 29.4 hours are replaced."
+   ],
+   "checklist": [
+    "(a) States that the model is normal, with the z-score or $N(36,4)$",
+    "(a) Correct probability 0.159 in context",
+    "(b) Both z-scores and the between event",
+    "(b) Correct probability 0.819 in context",
+    "(c) Finds the z-score with 5% below it, then solves for the life, 29.4 hours"
+   ]
+  }
+ ],
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Normal values were computed when the page was written.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "caption",
+    "text": "At about 26:20 the captions say greater than 362 pounds. The scenario is 462 pounds, and the instructor corrects it."
+   },
+   {
+    "kind": "caption",
+    "text": "For the most extreme 5%, the instructor first types the wrong bounds and reads z-scores of $-2.241$ and $2.41$, then corrects to $\\pm1.96$. The page uses $\\pm1.96$."
+   },
+   {
+    "kind": "values",
+    "text": "The video says 0.3% outside three SDs is '3%', and rounds the lower cutoff for the extreme 5% to 371. The computed lower cutoff is 371.6."
+   },
+   {
+    "kind": "values",
+    "text": "The video uses the empirical rule to say about 2.5% of lions weigh under 370 pounds. The exact normal area for $z=-2$ is 0.0228."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names (Inference, Probability Distributions, Normal, Cumulative Probability, Bounds, inside and outside) come from the captions and are unconfirmed."
+   },
+   {
+    "kind": "explorer",
+    "text": "New explorer normal-areas, shared with 2.11 Part 2. Presets were checked against computed values."
+   }
+  ]
+ }
+}

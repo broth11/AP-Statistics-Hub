@@ -1,0 +1,607 @@
+{
+ "n": 25,
+ "unit": 2,
+ "topic": "2.11",
+ "title": "The Normal Distribution, Part 2",
+ "videoId": "QoluCX-4xgc",
+ "videoTitle": "AP Statistics Topic 2.11 Part 2 The Normal Distribution",
+ "intro": "After this lesson you can solve for a missing mean or standard deviation of a normal distribution from a given percent, and use the z-score formula and Desmos to find both when two percents are given.",
+ "moments": [
+  {
+   "t": 40,
+   "type": "Overview",
+   "title": "The harder normal problems",
+   "text": "Given some information about the scenario, you solve for the mean, the standard deviation, or both."
+  },
+  {
+   "t": 61,
+   "type": "Worked example",
+   "title": "Quiz scores: missing mean",
+   "text": "The SD is 6 and 84% score below 78. Find the z-score with 84% below it, then solve for $\\mu$."
+  },
+  {
+   "t": 125,
+   "type": "Key idea",
+   "title": "The percent is the link",
+   "text": "Use the standard normal with mean 0 and SD 1 to turn the percent into a z-score, because the real mean is unknown."
+  },
+  {
+   "t": 229,
+   "type": "Procedure",
+   "title": "Solve the z-score formula for the mean",
+   "text": "Multiply by the SD, then solve for $\\mu$. Watch the negative sign on $\\mu$."
+  },
+  {
+   "t": 271,
+   "type": "Worked example",
+   "title": "Package weights: missing mean",
+   "text": "The SD is 1.5 and 2.5% of packages are over 18.5 pounds. The z-score is 1.96 and the mean is about 15.56."
+  },
+  {
+   "t": 397,
+   "type": "Worked example",
+   "title": "Follow-up: percent below 15 pounds",
+   "text": "Only after finding the mean can you find the z-score for 15 and the area, about 0.355."
+  },
+  {
+   "t": 480,
+   "type": "Worked example",
+   "title": "Test time: missing SD",
+   "text": "The mean is 70 and 3% finish in under 58 minutes. The z-score is $-1.881$ and the SD is about 6.38."
+  },
+  {
+   "t": 627,
+   "type": "Key idea",
+   "title": "Only possible because it is normal",
+   "text": "Without a statement that the variable is normally distributed, none of this work is valid."
+  },
+  {
+   "t": 632,
+   "type": "Worked example",
+   "title": "Tire lifetime: missing SD",
+   "text": "The mean is 45,000 miles and 16% last over 50,000. The SD is about 5,030 miles."
+  },
+  {
+   "t": 732,
+   "type": "Worked example",
+   "title": "Follow-up: between 40,000 and 55,000",
+   "text": "Find both z-scores and the area between them, about 0.816."
+  },
+  {
+   "t": 836,
+   "type": "Worked example",
+   "title": "SAT: both unknown",
+   "text": "600 is the 50th percentile and 700 the 84th. The 50th percentile of a normal distribution is the mean."
+  },
+  {
+   "t": 1003,
+   "type": "Procedure",
+   "title": "Two equations, two unknowns",
+   "text": "Put the known mean into the second equation and solve for the SD."
+  },
+  {
+   "t": 1107,
+   "type": "Worked example",
+   "title": "Commute times: both unknown",
+   "text": "6% below 20 minutes and 95% below 42 minutes give two z-scores and two equations."
+  },
+  {
+   "t": 1233,
+   "type": "Procedure",
+   "title": "Solve each equation for the mean",
+   "text": "Set the two expressions for $\\mu$ equal, solve for $\\sigma$, then back-substitute for $\\mu$."
+  },
+  {
+   "t": 1403,
+   "type": "Key idea",
+   "title": "The statistics is the setup",
+   "text": "Most of the work is algebra. The new idea is turning each percent into a z-score."
+  },
+  {
+   "t": 1445,
+   "type": "Worked example",
+   "title": "Follow-up: between 25 and 40 minutes",
+   "text": "With $\\mu$ and $\\sigma$ found, the area between the z-scores is about 0.708."
+  }
+ ],
+ "sections": [
+  {
+   "id": "missing",
+   "type": "decision",
+   "tab": "What is missing?",
+   "kicker": "Decision check",
+   "title": "What is missing, and what is the plan?",
+   "cards": [
+    {
+     "letter": "z",
+     "name": "Percent to z-score",
+     "text": "Every problem starts by turning a given percent into a z-score on the standard normal."
+    },
+    {
+     "letter": "x",
+     "name": "One value, one z",
+     "text": "Put $x$, the z-score, and the known parameter into $z=\\dfrac{x-\\mu}{\\sigma}$ and solve."
+    }
+   ],
+   "columns": [
+    "Problem",
+    "Known",
+    "Missing",
+    "Plan"
+   ],
+   "rows": [
+    {
+     "cells": [
+      "84% score below 78",
+      "$\\sigma=6$",
+      "$\\mu$",
+      "One equation, solve for $\\mu$"
+     ],
+     "seek": 61
+    },
+    {
+     "cells": [
+      "2.5% of packages are over 18.5 lb",
+      "$\\sigma=1.5$",
+      "$\\mu$",
+      "One equation, solve for $\\mu$"
+     ],
+     "seek": 271
+    },
+    {
+     "cells": [
+      "3% finish in under 58 minutes",
+      "$\\mu=70$",
+      "$\\sigma$",
+      "One equation, solve for $\\sigma$"
+     ],
+     "seek": 480
+    },
+    {
+     "cells": [
+      "16% of tires last over 50,000 miles",
+      "$\\mu=45{,}000$",
+      "$\\sigma$",
+      "One equation, solve for $\\sigma$"
+     ],
+     "seek": 632
+    },
+    {
+     "cells": [
+      "600 is the 50th percentile, 700 the 84th",
+      "Neither",
+      "$\\mu$ and $\\sigma$",
+      "Two equations, $\\mu=600$ first"
+     ],
+     "seek": 836
+    },
+    {
+     "cells": [
+      "6% below 20 minutes, 95% below 42 minutes",
+      "Neither",
+      "$\\mu$ and $\\sigma$",
+      "Two equations, solve together"
+     ],
+     "seek": 1107
+    }
+   ],
+   "verdictColumn": 3,
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Every one of these problems depends on the variable being approximately normal. State that before you use a z-score."
+    }
+   ]
+  },
+  {
+   "id": "one",
+   "type": "procedure",
+   "tab": "One unknown",
+   "kicker": "Procedure",
+   "title": "Find a missing mean or standard deviation",
+   "intro": "Quiz scores are approximately normal with $\\sigma=6$. 84% of students score below 78. Find $\\mu$.",
+   "steps": [
+    "Say the variable is approximately normal.",
+    "On the standard normal (mean 0, SD 1), use Bounds to find the z-score for the given percent.",
+    "Substitute $x$, $z$, and the known parameter into $z=\\dfrac{x-\\mu}{\\sigma}$.",
+    "Solve for the missing parameter, then answer any follow-up question with the new mean or SD."
+   ],
+   "parts": [
+    {
+     "label": "z-score",
+     "tex": [
+      "$P(Z<z)=0.84$",
+      "$z\\approx0.994$"
+     ],
+     "text": "Bounds, Left, 0.84."
+    },
+    {
+     "label": "Substitute",
+     "tex": [
+      "$0.994=\\dfrac{78-\\mu}{6}$"
+     ],
+     "text": "The value is 78, the SD is 6."
+    },
+    {
+     "label": "Solve",
+     "tex": [
+      "$\\mu=78-0.994(6)$",
+      "$\\mu\\approx72.04$"
+     ],
+     "text": "Multiply by 6, then subtract. The $-\\mu$ becomes $\\mu$ at the end."
+    }
+   ],
+   "line": "$\\mu\\approx72.04$ points",
+   "buttons": [
+    {
+     "label": "Watch the setup (1:01)",
+     "seek": 61
+    },
+    {
+     "label": "Watch the algebra (3:49)",
+     "seek": 229
+    }
+   ]
+  },
+  {
+   "id": "two",
+   "type": "procedure",
+   "tab": "Two unknowns",
+   "kicker": "Procedure",
+   "title": "Find both the mean and the standard deviation",
+   "intro": "Commute times are approximately normal. 6% of times are below 20 minutes and 95% are below 42 minutes. Write one z-score equation for each percent.",
+   "parts": [
+    {
+     "label": "Two z-scores",
+     "tex": [
+      "$P(Z<z_1)=0.06$",
+      "$z_1\\approx-1.555$",
+      "$P(Z<z_2)=0.95$",
+      "$z_2\\approx1.645$"
+     ],
+     "text": "Bounds, Left, on the standard normal."
+    },
+    {
+     "label": "Two equations",
+     "tex": [
+      "$-1.555=\\dfrac{20-\\mu}{\\sigma}$",
+      "$1.645=\\dfrac{42-\\mu}{\\sigma}$"
+     ],
+     "text": "One for each percent."
+    },
+    {
+     "label": "Solve for the SD",
+     "tex": [
+      "$\\mu=1.555\\sigma+20$",
+      "$\\mu=-1.645\\sigma+42$",
+      "$\\sigma\\approx6.875$"
+     ],
+     "text": "Set the two expressions for $\\mu$ equal."
+    },
+    {
+     "label": "Back-substitute",
+     "tex": [
+      "$\\mu=1.555(6.875)+20$",
+      "$\\mu\\approx30.69$"
+     ],
+     "text": "Use either equation. Both give the same mean."
+    }
+   ],
+   "line": "$\\mu\\approx30.69$ minutes and $\\sigma\\approx6.875$ minutes",
+   "buttons": [
+    {
+     "label": "Watch the setup (18:27)",
+     "seek": 1107
+    },
+    {
+     "label": "Watch the algebra (20:33)",
+     "seek": 1233
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "type": "explorer",
+   "explorer": "normal-areas",
+   "tab": "Explorer",
+   "kicker": "Interactive",
+   "title": "Normal areas explorer",
+   "intro": "Check the facts behind each problem. With the mean and SD fixed, find the area for a value, or choose the area and read the value that marks it.",
+   "stories": {
+    "quiz": "Quiz scores are approximately normal with mean about 72 points and standard deviation 6 points. The explorer uses a whole-number mean of 72.",
+    "commute": "Commute times are approximately normal with mean about 31 minutes and standard deviation about 7 minutes. These are rounded from the video's values."
+   },
+   "range": {
+    "muMin": 20,
+    "muMax": 100,
+    "muStep": 1,
+    "sdMin": 3,
+    "sdMax": 20,
+    "sdStep": 1
+   },
+   "initial": {
+    "mu": 72,
+    "sigma": 6,
+    "mode": "left",
+    "a": 78,
+    "b": 78,
+    "p": 0.84,
+    "story": "quiz"
+   },
+   "presets": [
+    {
+     "label": "Below 78",
+     "sub": "$P(X<78)$",
+     "mu": 72,
+     "sigma": 6,
+     "mode": "left",
+     "a": 78,
+     "b": 78,
+     "story": "quiz"
+    },
+    {
+     "label": "84% below",
+     "sub": "Area $0.84$",
+     "mu": 72,
+     "sigma": 6,
+     "mode": "inv",
+     "a": 72,
+     "b": 72,
+     "p": 0.84,
+     "story": "quiz"
+    },
+    {
+     "label": "Commute between",
+     "sub": "$P(25<X<40)$",
+     "mu": 31,
+     "sigma": 7,
+     "mode": "between",
+     "a": 25,
+     "b": 40,
+     "story": "commute"
+    },
+    {
+     "label": "95% below",
+     "sub": "Area $0.95$",
+     "mu": 31,
+     "sigma": 7,
+     "mode": "inv",
+     "a": 31,
+     "b": 31,
+     "p": 0.95,
+     "story": "commute"
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Work through each task in it yourself, the way you would on the exam, then check what you observe.",
+   "steps": [
+    {
+     "title": "z-score for a percent below",
+     "suppose": "84% of scores are below 78 and we need the z-score.",
+     "how": "tap the plus button, choose Inference, then Probability Distributions, then Normal. Keep mean 0 and SD 1, open Cumulative Probability, select Bounds, choose the left option and enter 0.84.",
+     "observe": "The answer is a z-score, not a probability. It is positive because more than half the area is below it.",
+     "seek": 146,
+     "expected": "$z\\approx0.994$."
+    },
+    {
+     "title": "z-score for a percent above",
+     "suppose": "2.5% of packages are over 18.5 pounds.",
+     "how": "with Bounds selected, choose the right option and enter 0.025.",
+     "observe": "The z-score is positive, because only 2.5% of the area is above it.",
+     "seek": 313,
+     "expected": "$z\\approx1.960$ and $\\mu\\approx15.56$ pounds."
+    },
+    {
+     "title": "Area for a follow-up",
+     "suppose": "the mean is 15.56 and the SD is 1.5, and we want the percent of packages under 15 pounds.",
+     "how": "find $z=\\frac{15-15.56}{1.5}$, switch from Bounds to Area, choose the left option and enter that z-score.",
+     "observe": "Area gives a probability when you enter a value. Bounds gives a value when you enter a probability.",
+     "seek": 418,
+     "expected": "$z\\approx-0.373$ and the area is about $0.354$."
+    },
+    {
+     "title": "z-score for a small percent",
+     "suppose": "3% finish a test in under 58 minutes and the mean is 70.",
+     "how": "with Bounds selected, choose the left option and enter 0.03.",
+     "observe": "The z-score is negative, because 3% is far below the center.",
+     "seek": 523,
+     "expected": "$z\\approx-1.881$ and $\\sigma\\approx6.38$ minutes."
+    },
+    {
+     "title": "Area between two z-scores",
+     "suppose": "tires have mean 45,000 and SD about 5,030 miles, and we want the proportion that last between 40,000 and 55,000 miles.",
+     "how": "find the two z-scores, switch to Area, choose the inside option and enter both z-scores.",
+     "observe": "Check that the shaded area is mostly the middle of the curve.",
+     "seek": 732,
+     "expected": "$z\\approx-0.994$ and $1.988$, with area about $0.816$."
+    },
+    {
+     "title": "Two z-scores for two percents",
+     "suppose": "6% of commute times are below 20 minutes and 95% are below 42 minutes.",
+     "how": "with Bounds selected on the standard normal, choose the left option and enter 0.06, then enter 0.95.",
+     "observe": "The first z-score is negative and the second is positive.",
+     "seek": 1149,
+     "expected": "$z_1\\approx-1.555$ and $z_2\\approx1.645$."
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Using the problem's mean and SD when one is unknown",
+     "weak": "Typed a guessed mean into Desmos to find the area.",
+     "better": "Use the standard normal (mean 0, SD 1) with Bounds to get the z-score from the percent, then solve the z-score formula for the missing parameter.",
+     "seek": 146
+    },
+    {
+     "kind": "Common trap",
+     "title": "Wrong sign on the z-score for a percent above",
+     "weak": "2.5% of packages are over 18.5, so $z=-1.96$.",
+     "better": "2.5% above means 97.5% below, so the z-score is $+1.96$. Use the right option, or the left option with 0.975.",
+     "seek": 313
+    },
+    {
+     "kind": "Common trap",
+     "title": "Losing the negative on $\\mu$",
+     "weak": "$0.994=\\frac{78-\\mu}{6}$ gives $\\mu=78+0.994(6)=83.96$.",
+     "better": "Multiply by 6 to get $5.964=78-\\mu$, so $\\mu=78-5.964=72.04$.",
+     "seek": 229
+    },
+    {
+     "kind": "Exam wording",
+     "title": "State that the model is normal",
+     "weak": "$\\sigma=6.38$.",
+     "better": "Because test times are approximately normal, the 3% below 58 minutes gives $z=-1.881$. Then $\\sigma=\\frac{58-70}{-1.881}\\approx6.38$ minutes.",
+     "seek": 627
+    },
+    {
+     "kind": "Common trap",
+     "title": "Mixing up a z-score with the original value",
+     "weak": "$0.84=\\frac{78-\\mu}{6}$.",
+     "better": "0.84 is the area below 78, not a z-score. The z-score for that area is 0.994, and that goes in the formula.",
+     "seek": 125
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "Exam scores are approximately normal with $\\sigma=10$. 90% of scores are below 82. Which equation can be solved for $\\mu$?",
+     "opts": [
+      "$0.90=\\frac{82-\\mu}{10}$",
+      "$-1.282=\\frac{82-\\mu}{10}$",
+      "$1.282=\\frac{82-\\mu}{10}$",
+      "$1.282=\\frac{\\mu-82}{10}$"
+     ],
+     "ok": 2,
+     "why": [
+      "0.90 is an area, not a z-score.",
+      "The z-score for 90% below is positive.",
+      "The z-score with 90% below is 1.282. It goes in $z=\\frac{x-\\mu}{\\sigma}$ with $x=82$.",
+      "The numerator is reversed, which flips the sign."
+     ],
+     "seek": 229
+    },
+    {
+     "stem": "15% of the values of a normal variable are above $x$. Which z-score goes with $x$?",
+     "opts": [
+      "$1.036$",
+      "$-1.036$",
+      "$0.15$",
+      "$0.85$"
+     ],
+     "ok": 0,
+     "why": [
+      "15% above means 85% below, so $z\\approx1.036$.",
+      "That is the z-score with 15% below.",
+      "0.15 is an area, not a z-score.",
+      "0.85 is an area, not a z-score."
+     ],
+     "seek": 313
+    },
+    {
+     "stem": "The weights of bags are approximately normal with $\\sigma=2$ ounces. 5% of bags weigh less than 40 ounces. What is the mean?",
+     "opts": [
+      "43.29",
+      "43.29",
+      "41.65",
+      "36.71"
+     ],
+     "ok": 1,
+     "why": [
+      "That subtracts $z\\sigma$ with $z=-1.645$, which moves the wrong way.",
+      "$z=-1.645$. $\\mu=40-(-1.645)(2)=43.29$.",
+      "That uses $\\sigma=1$.",
+      "That is the same as the first value with the sign flipped."
+     ],
+     "seek": 229
+    },
+    {
+     "stem": "A normal variable has 50% below 600 and 84% below 700. Which statement is true?",
+     "opts": [
+      "$\\mu=600$ and $\\sigma\\approx100.6$",
+      "$\\mu=650$ and $\\sigma\\approx50$",
+      "$\\mu=700$ and $\\sigma\\approx100.6$",
+      "$\\mu=600$ and $\\sigma=0.994$"
+     ],
+     "ok": 0,
+     "why": [
+      "The 50th percentile is the mean. Then $0.994=\\frac{700-600}{\\sigma}$ gives $\\sigma\\approx100.6$.",
+      "The mean is the 50th percentile, not the midpoint of the two values.",
+      "700 has a z-score of 0.994. It is not the mean.",
+      "0.994 is a z-score, not the SD."
+     ],
+     "seek": 876
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "The waiting time at a clinic is approximately normally distributed with a standard deviation of 8 minutes. 90% of patients wait less than 35 minutes.",
+   "parts": [
+    "(a) Find the mean waiting time.",
+    "(b) Find the proportion of patients who wait less than 20 minutes.",
+    "(c) At a second clinic the waiting time is also approximately normal. 10% of patients wait less than 12 minutes and 75% wait less than 30 minutes. Find the mean and standard deviation."
+   ],
+   "sample": [
+    "(a) The z-score with 90% below it is 1.282. $1.282=\\frac{35-\\mu}{8}$, so $\\mu=35-1.282(8)\\approx24.74$ minutes.",
+    "(b) $z=\\frac{20-24.74}{8}\\approx-0.593$. $P(Z<-0.593)\\approx0.277$. About 27.7% of patients wait less than 20 minutes.",
+    "(c) The z-scores are $z_1=-1.282$ for 10% below and $z_2=0.674$ for 75% below. $-1.282=\\frac{12-\\mu}{\\sigma}$ and $0.674=\\frac{30-\\mu}{\\sigma}$. Subtracting, $1.956\\sigma=18$, so $\\sigma\\approx9.20$ minutes. Then $\\mu=12+1.282(9.20)\\approx23.80$ minutes."
+   ],
+   "checklist": [
+    "(a) Finds the z-score for 90% below, 1.282",
+    "(a) Solves for the mean, about 24.74 minutes, with units",
+    "(b) Finds the z-score for 20 using the new mean",
+    "(b) Probability about 0.277 stated in context",
+    "(c) Two z-scores from the two percents, two equations, and both parameters solved, mean about 23.80 and SD about 9.20"
+   ]
+  }
+ ],
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Values use z-scores rounded to three decimals, as Desmos shows them.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "values",
+    "text": "Values are computed from z-scores rounded to three decimals, as in the video. Unrounded z-scores change the third decimal of results such as $\\mu=72.04$ and $\\sigma=6.380$."
+   },
+   {
+    "kind": "caption",
+    "text": "Several on-screen slips are corrected in the video: $58-70$ first read as $-14$ (it is $-12$), the answer 0.516 read for 0.816, and 0.94 typed for 0.95. The page uses the corrected values."
+   },
+   {
+    "kind": "caption",
+    "text": "In the tire follow-up the captions say 50,000 where the upper bound is 55,000. The page uses 55,000."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names (Bounds, Area, left, right, inside) come from the captions and are unconfirmed."
+   },
+   {
+    "kind": "explorer",
+    "text": "Uses the new normal-areas explorer. The explorer's mean and SD sliders are whole numbers, so the commute preset is rounded to 31 and 7."
+   }
+  ]
+ }
+}

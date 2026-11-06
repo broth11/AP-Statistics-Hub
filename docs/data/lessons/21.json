@@ -1,0 +1,433 @@
+{
+ "n": 21,
+ "unit": 2,
+ "topic": "2.8",
+ "title": "Intro to Random Variables and Probability Distributions",
+ "videoId": "Jnoa_K8UENE",
+ "videoTitle": "AP Statistics Topic 2.8 Intro to Random Variables and Probability Distributions",
+ "intro": "After this lesson you can decide whether a variable is a random variable and whether it is discrete or continuous, and build a probability distribution for a discrete random variable from the rules of probability.",
+ "moments": [
+  {
+   "t": 42,
+   "type": "Definition",
+   "title": "What a random variable is",
+   "text": "A variable whose value is a number that comes from a random process. Name it with a capital letter such as $X$."
+  },
+  {
+   "t": 105,
+   "type": "Concept",
+   "title": "Four examples",
+   "text": "A die roll, the number of races a horse wins, seconds spent brushing teeth, and the height of a random man. Each outcome is a number."
+  },
+  {
+   "t": 207,
+   "type": "Key idea",
+   "title": "Words are not a random variable",
+   "text": "Heads or tails is only a random process. The outcome has to be a number."
+  },
+  {
+   "t": 229,
+   "type": "Definition",
+   "title": "Discrete and continuous",
+   "text": "Discrete outcomes can be listed, usually whole-number counts. Continuous outcomes fill an interval and cannot be listed."
+  },
+  {
+   "t": 331,
+   "type": "Worked check",
+   "title": "Sorting examples",
+   "text": "Counts such as dice, wins, shirts sold, and points are discrete. Measured values such as time and height are continuous."
+  },
+  {
+   "t": 436,
+   "type": "Definition",
+   "title": "Probability distribution",
+   "text": "Lists every possible value of a discrete random variable with its probability. The probabilities add to 1."
+  },
+  {
+   "t": 519,
+   "type": "Concept",
+   "title": "Table, graph, function",
+   "text": "A distribution can be shown as a table, as a bar graph, or as a function. This video uses tables and graphs."
+  },
+  {
+   "t": 728,
+   "type": "Worked example",
+   "title": "Reading a given distribution",
+   "text": "Four or more shirts means adding the probabilities for 4 and 5, which gives 0.16."
+  },
+  {
+   "t": 788,
+   "type": "Worked example",
+   "title": "Horse races with a tree",
+   "text": "Conditional win chances call for a tree diagram. Multiply along each branch."
+  },
+  {
+   "t": 935,
+   "type": "Key idea",
+   "title": "Two branches, one value",
+   "text": "Win then lose, or lose then win, both give one win. Calculate each branch and add them."
+  },
+  {
+   "t": 1040,
+   "type": "Worked example",
+   "title": "Up to three attempts",
+   "text": "A tree with changing probabilities. Two different branches end at three attempts, so they are added."
+  },
+  {
+   "t": 1292,
+   "type": "Worked example",
+   "title": "Total of two plays",
+   "text": "List every pair of plays that gives each total, multiply for each pair, then add the pairs with the same total."
+  },
+  {
+   "t": 1672,
+   "type": "Key idea",
+   "title": "Do not miss a value",
+   "text": "The instructor first forgot a total of 4. The probabilities will not sum to 1 if a value is missing."
+  },
+  {
+   "t": 1734,
+   "type": "Worked example",
+   "title": "Lion cubs surviving",
+   "text": "A conditional tree gives the distribution of how many of two cubs survive."
+  },
+  {
+   "t": 1918,
+   "type": "Worked example",
+   "title": "Difference of two players' scores",
+   "text": "Sasha minus Penny. List every pair of scores that gives each difference, then add their probabilities."
+  },
+  {
+   "t": 2153,
+   "type": "Worked example",
+   "title": "Throws at a carnival game",
+   "text": "The player stops at the first hit or when the money runs out, so four throws has two branches."
+  }
+ ],
+ "sections": [
+  {
+   "id": "kind",
+   "type": "decision",
+   "tab": "What kind of variable?",
+   "kicker": "Decision check",
+   "title": "Random variable? Discrete or continuous?",
+   "cards": [
+    {
+     "letter": "D",
+     "name": "Discrete",
+     "text": "Numerical outcomes you can list, usually whole-number counts."
+    },
+    {
+     "letter": "C",
+     "name": "Continuous",
+     "text": "Measured values. Any number in an interval is possible, so you cannot list them."
+    },
+    {
+     "letter": "N",
+     "name": "Not a random variable",
+     "text": "The outcomes are words, such as heads or tails."
+    }
+   ],
+   "columns": [
+    "Scenario",
+    "Number?",
+    "Can you list the values?",
+    "Type"
+   ],
+   "rows": [
+    {
+     "cells": [
+      "Roll a die and record the number shown",
+      "Yes",
+      "Yes, 1 to 6",
+      "Discrete"
+     ],
+     "seek": 105
+    },
+    {
+     "cells": [
+      "Number of races a horse wins in two races",
+      "Yes",
+      "Yes, 0, 1, 2",
+      "Discrete"
+     ],
+     "seek": 125
+    },
+    {
+     "cells": [
+      "Number of T-shirts sold at a craft show",
+      "Yes",
+      "Yes, whole numbers",
+      "Discrete"
+     ],
+     "seek": 331
+    },
+    {
+     "cells": [
+      "Seconds spent brushing teeth",
+      "Yes",
+      "No, decimals are possible",
+      "Continuous"
+     ],
+     "seek": 372
+    },
+    {
+     "cells": [
+      "Height in inches of a randomly chosen man",
+      "Yes",
+      "No, decimals are possible",
+      "Continuous"
+     ],
+     "seek": 393
+    },
+    {
+     "cells": [
+      "Toss a coin and record heads or tails",
+      "No",
+      "Not applicable",
+      "Not a random variable"
+     ],
+     "seek": 207
+    }
+   ],
+   "verdictColumn": 3,
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Lots of possible values does not make a variable continuous. T-shirts sold could be any whole number up to 54 and is still discrete, because the values can be listed."
+    }
+   ]
+  },
+  {
+   "id": "build",
+   "type": "procedure",
+   "tab": "Build a distribution",
+   "kicker": "Procedure",
+   "title": "Build a probability distribution",
+   "intro": "A horse enters two races. It wins the first race with probability 0.70. If it wins the first, it wins the second with probability 0.85. If it loses the first, it wins the second with probability 0.40. Let $W$ be the number of races it wins.",
+   "steps": [
+    "List every possible value of the variable in numerical order, lowest to highest.",
+    "Find the probability of each value with the rules of probability. Draw a tree when the probabilities are conditional, and multiply along each branch.",
+    "If more than one outcome gives the same value, calculate each outcome and add them.",
+    "Check that the probabilities add to 1, then show only the final table."
+   ],
+   "parts": [
+    {
+     "label": "Both wins",
+     "tex": "$0.70(0.85)=0.595$",
+     "text": "$W=2$. Follow one branch."
+    },
+    {
+     "label": "Both losses",
+     "tex": "$0.30(0.60)=0.18$",
+     "text": "$W=0$. Follow one branch."
+    },
+    {
+     "label": "Exactly one win",
+     "tex": [
+      "$0.70(0.15)=0.105$",
+      "$0.30(0.40)=0.120$"
+     ],
+     "text": "$W=1$. Two branches, so add them to get 0.225."
+    },
+    {
+     "label": "Check",
+     "tex": "$0.18+0.225+0.595=1$",
+     "text": "A total other than 1 means a value or branch is missing."
+    }
+   ],
+   "line": "$P(W=0)=0.18,\\ P(W=1)=0.225,\\ P(W=2)=0.595$",
+   "buttons": [
+    {
+     "label": "Watch the tree (13:08)",
+     "seek": 788
+    },
+    {
+     "label": "Watch the two branches (15:35)",
+     "seek": 935
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Using one branch when several give the same value",
+     "weak": "P(W=1)=0.105",
+     "better": "Win-lose and lose-win both give $W=1$. $P(W=1)=0.70(0.15)+0.30(0.40)=0.225$.",
+     "seek": 935
+    },
+    {
+     "kind": "Common trap",
+     "title": "Leaving out a possible value",
+     "weak": "Two plays of the game give totals of 0, 1, 2, and 3.",
+     "better": "A total of 4 is possible with 2 and 2. List every pair first, then check that the probabilities add to 1.",
+     "seek": 1672
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Define the variable and use it in the statement",
+     "weak": "The probability is 0.595.",
+     "better": "Let $W$ be the number of races the horse wins. $P(W=2)=0.595$.",
+     "seek": 788
+    },
+    {
+     "kind": "Common trap",
+     "title": "Calling a long list of counts continuous",
+     "weak": "T-shirts sold could be anywhere from 0 to 54, so it is continuous.",
+     "better": "The number of T-shirts is a count of whole numbers that can be listed, so it is a discrete random variable.",
+     "seek": 331
+    },
+    {
+     "kind": "Common trap",
+     "title": "Subtracting in the wrong order",
+     "weak": "Penny minus Sasha when asked for Sasha minus Penny.",
+     "better": "Take the difference in the order the question gives. Sasha 10 and Penny 11 give $-1$ for Sasha minus Penny.",
+     "seek": 1960
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "Which is a discrete random variable?",
+     "opts": [
+      "The time in minutes a commute takes",
+      "The weight in pounds of a package",
+      "The temperature at noon",
+      "The number of red lights a driver hits on a route with 6 lights"
+     ],
+     "ok": 3,
+     "why": [
+      "Time is measured and can take any value in an interval, so it is continuous.",
+      "Weight is measured, so it is continuous.",
+      "Temperature is measured, so it is continuous.",
+      "A count of 0 to 6 that can be listed."
+     ],
+     "seek": 229
+    },
+    {
+     "stem": "A discrete random variable $X$ has $P(0)=0.15$, $P(1)=0.35$, $P(2)=k$, and $P(3)=0.20$. What is $k$?",
+     "opts": [
+      "0.70",
+      "0.35",
+      "0.30",
+      "0.65"
+     ],
+     "ok": 2,
+     "why": [
+      "0.70 is the sum of the other three probabilities, not what is left over.",
+      "That would make the total 1.05.",
+      "The probabilities add to 1, so $k=1-0.15-0.35-0.20=0.30$.",
+      "That is $1-0.35$, which ignores two of the other probabilities."
+     ],
+     "seek": 436
+    },
+    {
+     "stem": "A spinner lands on 1 with probability 0.4 and on 2 with probability 0.6. It is spun twice, independently, and $T$ is the total. What is $P(T=3)$?",
+     "opts": [
+      "0.24",
+      "0.48",
+      "0.50",
+      "1.00"
+     ],
+     "ok": 1,
+     "why": [
+      "That is one ordering only, $0.4(0.6)$. A total of 3 can also come from 2 then 1.",
+      "$0.4(0.6)+0.6(0.4)=0.48$. Two orderings, so add.",
+      "That averages the probabilities and has no basis in the rules.",
+      "That is the total of all the probabilities."
+     ],
+     "seek": 1566
+    },
+    {
+     "stem": "A player makes the first shot with probability 0.6. After a make, the next shot is made with probability 0.7. After a miss, it is made with probability 0.5. Let $M$ be the number of makes in two shots. What is $P(M=1)$?",
+     "opts": [
+      "0.38",
+      "0.18",
+      "0.20",
+      "0.50"
+     ],
+     "ok": 0,
+     "why": [
+      "$0.6(0.3)+0.4(0.5)=0.18+0.20=0.38$. Add the make-miss and miss-make branches.",
+      "That is the make-then-miss branch only.",
+      "That is the miss-then-make branch only.",
+      "That ignores the conditional probabilities."
+     ],
+     "seek": 935
+    },
+    {
+     "stem": "A researcher tosses a coin and records heads or tails. Why is the recorded outcome not a random variable?",
+     "opts": [
+      "The coin could land on its edge",
+      "The outcomes are words, not numbers",
+      "The tosses are not independent",
+      "The outcomes cannot be listed"
+     ],
+     "ok": 1,
+     "why": [
+      "Rare outcomes do not matter here. The issue is the type of outcome.",
+      "A random variable needs a numerical outcome. Heads or tails is just a random process.",
+      "Independence is not the issue.",
+      "The two outcomes can be listed easily."
+     ],
+     "seek": 207
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "The probability that it rains on Saturday is 0.30. If it rains on Saturday, the probability that it rains on Sunday is 0.60. If it does not rain on Saturday, the probability that it rains on Sunday is 0.20. Let $R$ be the number of rainy days on the weekend.",
+   "parts": [
+    "(a) State the possible values of $R$ and whether $R$ is discrete or continuous. Explain.",
+    "(b) Create the probability distribution of $R$.",
+    "(c) Find the probability that it rains on at least one day of the weekend."
+   ],
+   "sample": [
+    "(a) $R=0, 1, 2$. $R$ is discrete because it counts days, so the values can be listed.",
+    "(b) $P(R=2)=0.30(0.60)=0.18$. $P(R=0)=0.70(0.80)=0.56$. $P(R=1)=0.30(0.40)+0.70(0.20)=0.12+0.14=0.26$. Table: $R=0$ has 0.56, $R=1$ has 0.26, $R=2$ has 0.18. The probabilities add to 1.",
+    "(c) $P(R\\ge1)=P(R=1)+P(R=2)=0.44$, or $1-P(R=0)=1-0.56=0.44$."
+   ],
+   "checklist": [
+    "(a) Lists 0, 1, 2 and says discrete with a reason",
+    "(b) Uses the tree and multiplies along branches",
+    "(b) Adds the two branches that give $R=1$",
+    "(b) Final table with all three values and probabilities that add to 1",
+    "(c) Adds $P(R=1)$ and $P(R=2)$ or uses the complement, with the event in context"
+   ]
+  }
+ ],
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Probabilities were computed when the page was written.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "caption",
+    "text": "At about 34:30 the captions say 0.07 for one of the three terms that add to 0.40. The terms are 0.02, 0.275, and 0.105, and the next sentence uses 0.02."
+   },
+   {
+    "kind": "values",
+    "text": "The instructor first reads 30% instead of 20% for two points in the points-per-play graph, and first omits a total of 4. Both are corrected on screen. The page uses the corrected values."
+   },
+   {
+    "kind": "timestamps",
+    "text": "The worked examples are timed from the captions. Check the seek links for 1292 through 2153."
+   }
+  ]
+ }
+}

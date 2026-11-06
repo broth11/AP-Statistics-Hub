@@ -1,0 +1,414 @@
+{
+ "n": 22,
+ "unit": 2,
+ "topic": "2.9",
+ "title": "Parameters of Random Variables",
+ "videoId": "T_istd8A-EM",
+ "videoTitle": "AP Statistics Topic 2.9 Parameters of Random Variables",
+ "intro": "After this lesson you can find the mean and standard deviation of a discrete random variable, interpret both in context, and find the mean and standard deviation of a transformed random variable.",
+ "moments": [
+  {
+   "t": 40,
+   "type": "Definition",
+   "title": "A parameter describes a distribution",
+   "text": "A single fixed number that summarizes a population or the probability distribution of a random variable."
+  },
+  {
+   "t": 123,
+   "type": "Definition",
+   "title": "Mean and expected value are the same",
+   "text": "The average value of the random variable after a large number of repetitions."
+  },
+  {
+   "t": 188,
+   "type": "Notation",
+   "title": "$\\mu_X$ and $E(X)$",
+   "text": "Two symbols for the same thing. The parentheses in $E(X)$ do not mean multiplication."
+  },
+  {
+   "t": 250,
+   "type": "Worked example",
+   "title": "Horse wins and teeth brushing",
+   "text": "Long-run averages: 1.415 wins in two races, 135.4 seconds of brushing."
+  },
+  {
+   "t": 352,
+   "type": "Key idea",
+   "title": "The journal picture",
+   "text": "Imagine writing every result in a journal. The mean is the average of all the entries."
+  },
+  {
+   "t": 414,
+   "type": "Formula",
+   "title": "Mean of a discrete variable",
+   "text": "Multiply each value by its probability and add: $\\mu_X=\\sum x_iP(x_i)$."
+  },
+  {
+   "t": 538,
+   "type": "Key idea",
+   "title": "Continuous: no formula",
+   "text": "The mean of a continuous variable is given, and comes from the law of large numbers."
+  },
+  {
+   "t": 622,
+   "type": "Concept",
+   "title": "Standard deviation measures variability",
+   "text": "The outcome tomorrow may be a bit more or less than the mean. The SD says by how much, typically."
+  },
+  {
+   "t": 803,
+   "type": "Formula",
+   "title": "SD of a discrete variable",
+   "text": "$\\sigma_X=\\sqrt{\\sum (x_i-\\mu_X)^2P(x_i)}$. It is on the formula sheet and is rarely done by hand."
+  },
+  {
+   "t": 989,
+   "type": "Calculator",
+   "title": "Desmos discrete distribution",
+   "text": "Plus, Inference, Probability Distributions, Discrete. Enter values and weights, then open Summary."
+  },
+  {
+   "t": 1091,
+   "type": "Exam wording",
+   "title": "Interpret mean and SD",
+   "text": "The mean is the long-run average. The SD is the typical distance from that mean. Use context."
+  },
+  {
+   "t": 1277,
+   "type": "Worked example",
+   "title": "Continuous: hippo and lion weights",
+   "text": "Weight is measured, so the mean and SD are given, not calculated."
+  },
+  {
+   "t": 1359,
+   "type": "Procedure",
+   "title": "Change of units",
+   "text": "Multiply the mean and SD by the conversion factor. 450 lb and 40 lb become 204.5 kg and 18.2 kg."
+  },
+  {
+   "t": 1465,
+   "type": "Worked example",
+   "title": "Shirts to dollars",
+   "text": "At 28 dollars a shirt, the mean and SD are both multiplied by 28."
+  },
+  {
+   "t": 1568,
+   "type": "Worked example",
+   "title": "Profit with an 8 dollar fee",
+   "text": "The mean is multiplied by 28 and has 8 subtracted. The SD is only multiplied."
+  },
+  {
+   "t": 1673,
+   "type": "Key idea",
+   "title": "Adding a constant does not change SD",
+   "text": "Multiplying changes mean and SD. Adding or subtracting a constant changes only the mean."
+  }
+ ],
+ "sections": [
+  {
+   "id": "meansd",
+   "type": "procedure",
+   "tab": "Mean and SD",
+   "kicker": "Procedure",
+   "title": "Mean and standard deviation of a discrete variable",
+   "intro": "Grace sells T-shirts at a craft show. Let $S$ be the number sold in a day, with probabilities 0.08, 0.15, 0.26, 0.35, 0.10, and 0.06 for 0 through 5. The mean is easy by hand. The SD is much faster with technology.",
+   "steps": [
+    "Write the distribution as a table of values and probabilities.",
+    "Mean: multiply each value by its probability and add the products.",
+    "SD: use the calculator's summary, because the formula takes one row of work for every value.",
+    "Write the symbols and interpret both numbers in context."
+   ],
+   "parts": [
+    {
+     "label": "Mean",
+     "tex": [
+      "$\\mu_S=\\sum s\\,P(s)$",
+      "$\\mu_S=2.42$"
+     ],
+     "text": "0(0.08) + 1(0.15) + 2(0.26) + 3(0.35) + 4(0.10) + 5(0.06)."
+    },
+    {
+     "label": "Standard deviation",
+     "tex": [
+      "$\\sigma_S=\\sqrt{\\sum(s-\\mu_S)^2P(s)}$",
+      "$\\sigma_S\\approx1.258$"
+     ],
+     "text": "The video reads this from the calculator summary."
+    },
+    {
+     "label": "Continuous case",
+     "tex": "$\\mu_H,\\ \\sigma_H$ given",
+     "text": "For a measured variable such as hippo weight, the mean and SD are given."
+    }
+   ],
+   "line": "$\\mu_S=2.42\\text{ shirts},\\ \\sigma_S\\approx1.258\\text{ shirts}$",
+   "buttons": [
+    {
+     "label": "Watch the mean formula (6:54)",
+     "seek": 414
+    },
+    {
+     "label": "Watch the SD formula (13:23)",
+     "seek": 803
+    }
+   ]
+  },
+  {
+   "id": "transform",
+   "type": "procedure",
+   "tab": "Transforming",
+   "kicker": "Procedure",
+   "title": "Transform a random variable",
+   "intro": "Grace earns 28 dollars per shirt and pays an 8 dollar fee to sell at the show. Her profit is $28S-8$. Multiplying changes both the mean and the standard deviation. Subtracting the fee changes only the mean.",
+   "parts": [
+    {
+     "label": "Mean",
+     "tex": [
+      "$\\mu_Y=28\\mu_S-8$",
+      "$=28(2.42)-8$",
+      "$=59.76$"
+     ],
+     "text": "Multiply, then subtract. Dollars."
+    },
+    {
+     "label": "Standard deviation",
+     "tex": [
+      "$\\sigma_Y=28\\sigma_S$",
+      "$=28(1.258)$",
+      "$\\approx35.24$"
+     ],
+     "text": "Only the multiplier counts. The 8 dollar fee does not change the spread."
+    },
+    {
+     "label": "Units",
+     "tex": [
+      "$450\\div2.2\\approx204.5$",
+      "$40\\div2.2\\approx18.2$"
+     ],
+     "text": "Lion mean and SD in kilograms. Divide both by the conversion factor."
+    }
+   ],
+   "line": "$\\mu_{aX+b}=a\\mu_X+b$ and $\\sigma_{aX+b}=|a|\\sigma_X$",
+   "buttons": [
+    {
+     "label": "Watch the units (22:39)",
+     "seek": 1359
+    },
+    {
+     "label": "Watch the profit (26:08)",
+     "seek": 1568
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Work through each task in it yourself, the way you would on the exam, then check what you observe.",
+   "steps": [
+    {
+     "title": "Mean and SD from a table",
+     "suppose": "we want the mean and standard deviation of $S$, the number of shirts Grace sells.",
+     "how": "tap the plus button, choose Inference, then Probability Distributions, then Discrete. Enter 0 through 5 as the values and 0.08, 0.15, 0.26, 0.35, 0.10, 0.06 as the weights, then Create distribution and open Summary.",
+     "observe": "The bars rise to 3 and fall away on each side. Summary lists the mean and the standard deviation.",
+     "seek": 989,
+     "expected": "$\\mu_S=2.42$ and $\\sigma_S\\approx1.258$."
+    },
+    {
+     "title": "Mean and SD from a graph",
+     "suppose": "a graph gives $P(0)=0.10$, $P(1)=0.25$, $P(2)=0.30$, and $P(3)=0.35$ for the points $P$ in one play.",
+     "how": "read each bar height as its probability, then build a Discrete distribution with values 0 to 3 and those weights, and open Summary.",
+     "observe": "Check first that the four weights add to 1. Then read the mean and SD from Summary.",
+     "seek": 1153,
+     "expected": "$\\mu_P=1.9$ and $\\sigma_P\\approx0.995$."
+    },
+    {
+     "title": "Transform the mean and SD",
+     "suppose": "each shirt sells for 28 dollars and we want the mean and SD of the revenue.",
+     "how": "type 2.42*28 and 1.258*28 on new lines, using the values from the first step. Use more decimals of the SD if Summary offers them.",
+     "observe": "Compare with the mean and SD if you multiplied each value by 28 in the table. The two answers agree, and the multiplication is much faster.",
+     "seek": 1465,
+     "expected": "Mean about $67.76$ dollars, SD about $35.24$ dollars (35.22 if you use the rounded 1.258)."
+    },
+    {
+     "title": "Profit after the fee",
+     "suppose": "the profit is 28 times the shirts sold, minus an 8 dollar fee.",
+     "how": "type 2.42*28-8 for the mean and 1.258*28 for the SD, as before.",
+     "observe": "The fee lowers the mean by 8 and leaves the SD exactly where it was.",
+     "seek": 1568,
+     "expected": "Mean about $59.76$ dollars, SD about $35.24$ dollars."
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Interpret the mean in context",
+     "weak": "The mean is 2.42.",
+     "better": "In the long run, after many days at craft shows, Grace sells an average of about 2.42 T-shirts per day.",
+     "seek": 1091
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Interpret the standard deviation in context",
+     "weak": "The SD is 1.258.",
+     "better": "The number of T-shirts Grace sells in a day typically varies from the mean of 2.42 by about 1.258 T-shirts.",
+     "seek": 1091
+    },
+    {
+     "kind": "Common trap",
+     "title": "Treating the mean as a prediction for one day",
+     "weak": "Grace will sell exactly 2.42 shirts tomorrow.",
+     "better": "The mean is the long-run average over many days. Any one day is a whole number and varies around it.",
+     "seek": 352
+    },
+    {
+     "kind": "Common trap",
+     "title": "Subtracting a constant from the standard deviation",
+     "weak": "The SD of profit is 35.24 - 8 = 27.24.",
+     "better": "Subtracting the fee changes the mean but not the spread. The SD of profit is still about 35.24 dollars.",
+     "seek": 1673
+    },
+    {
+     "kind": "Common trap",
+     "title": "Using the discrete formulas for a continuous variable",
+     "weak": "Mean of hippo weights = sum of each weight times its probability.",
+     "better": "A continuous variable cannot be listed, so its mean and SD are given, not calculated from a table.",
+     "seek": 538
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A discrete random variable $X$ takes the values 1, 2, 3, and 4 with probabilities 0.1, 0.4, 0.3, and 0.2. What is $\\mu_X$?",
+     "opts": [
+      "2.5",
+      "2.6",
+      "1.0",
+      "0.25"
+     ],
+     "ok": 1,
+     "why": [
+      "2.5 is the average of the four values and ignores the probabilities.",
+      "$1(0.1)+2(0.4)+3(0.3)+4(0.2)=2.6$.",
+      "That is the sum of the probabilities.",
+      "That is the average of the probabilities."
+     ],
+     "seek": 414
+    },
+    {
+     "stem": "The expected number of goals a team scores in a game is 2.4. Which interpretation is best?",
+     "opts": [
+      "The team will score 2.4 goals in its next game",
+      "The team scores exactly 2 or 3 goals in every game",
+      "After many games, the team's goals per game average about 2.4",
+      "In half of its games, the team scores more than 2.4 goals"
+     ],
+     "ok": 2,
+     "why": [
+      "Goals are whole numbers, and the mean says nothing certain about one game.",
+      "The mean does not say every game is 2 or 3.",
+      "The expected value is the long-run average over many repetitions.",
+      "That describes a median, not the mean."
+     ],
+     "seek": 123
+    },
+    {
+     "stem": "A random variable $X$ has $\\mu_X=8.5$ and $\\sigma_X=1.2$. Let $Y=3X-10$. What are $\\mu_Y$ and $\\sigma_Y$?",
+     "opts": [
+      "$\\mu_Y=15.5,\\ \\sigma_Y=-6.4$",
+      "$\\mu_Y=25.5,\\ \\sigma_Y=3.6$",
+      "$\\mu_Y=15.5,\\ \\sigma_Y=3.6$",
+      "$\\mu_Y=15.5,\\ \\sigma_Y=1.2$"
+     ],
+     "ok": 2,
+     "why": [
+      "The constant $-10$ shifts the mean but does not change the SD.",
+      "The mean needs the $-10$ as well.",
+      "The mean is $3(8.5)-10=15.5$. The SD is $3(1.2)=3.6$.",
+      "The SD is multiplied by 3."
+     ],
+     "seek": 1568
+    },
+    {
+     "stem": "Which random variable has a mean and standard deviation that would be given rather than calculated from a table?",
+     "opts": [
+      "The number of heads in three coin flips",
+      "The number of customers in a store in an hour",
+      "The weight in pounds of an adult male lion",
+      "The number of free throws made out of five"
+     ],
+     "ok": 2,
+     "why": [
+      "Counts can be listed in a table.",
+      "A count can be listed in a table.",
+      "Weight is measured, so it is continuous and its mean and SD are given.",
+      "A count out of five can be listed in a table."
+     ],
+     "seek": 1277
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "During the lunch rush at a food truck, the number of orders $X$ placed in one minute has this probability distribution: $P(0)=0.10$, $P(1)=0.20$, $P(2)=0.35$, $P(3)=0.25$, and $P(4)=0.10$. The truck earns 12 dollars on each order and pays 3 dollars per minute in fees. Let $Y=12X-3$ be the truck's profit in dollars for one minute.",
+   "parts": [
+    "(a) Calculate the mean and standard deviation of $X$.",
+    "(b) Interpret the mean in context.",
+    "(c) Find the mean and standard deviation of $Y$ and explain why the standard deviation of $Y$ is not $12\\sigma_X-3$."
+   ],
+   "sample": [
+    "(a) $\\mu_X=0(0.10)+1(0.20)+2(0.35)+3(0.25)+4(0.10)=2.05$ orders. $\\sigma_X=1.117$ orders (from technology).",
+    "(b) After many one-minute periods, the number of orders averages about 2.05 orders per minute.",
+    "(c) $\\mu_Y=12(2.05)-3=21.60$ dollars. $\\sigma_Y=12(1.117)\\approx13.40$ dollars. Subtracting 3 shifts every value by the same amount, so the spread does not change. Only multiplying by 12 changes the spread."
+   ],
+   "checklist": [
+    "(a) Mean calculated with each value times its probability",
+    "(a) SD from technology with units",
+    "(b) Long-run average language, with the variable and units",
+    "(c) Mean transformed with both the multiplier and the constant",
+    "(c) SD multiplied by 12 only, with the reason that adding a constant does not change spread"
+   ]
+  }
+ ],
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Means and standard deviations were computed when the page was written.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "values",
+    "text": "The video gives 0.683 as the standard deviation of the horse's wins, with a mean of 1.415. From the distribution of 0.18, 0.225, and 0.595, the SD is 0.776. The page does not use the video's 0.683."
+   },
+   {
+    "kind": "caption",
+    "text": "At about 24:25 the instructor says each shirt cost 20 dollars and that the mean is 2.24 shirts. The scenario uses 28 dollars and the mean is 2.42, as in the transcript's later steps."
+   },
+   {
+    "kind": "calculator",
+    "text": "Desmos menu names (Inference, Probability Distributions, Discrete, Summary) come from the captions and are unconfirmed."
+   },
+   {
+    "kind": "wording",
+    "text": "The video says the SD 'could vary by' a number. The page uses the exam-style phrase 'typically varies from the mean by about'."
+   }
+  ]
+ }
+}

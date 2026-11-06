@@ -1,0 +1,528 @@
+{
+ "n": 27,
+ "unit": 2,
+ "topic": "2.12",
+ "title": "Sampling Distributions and Central Limit Theorem",
+ "videoId": "ZCnaIQLd-L0",
+ "videoTitle": "AP Statistics Topic 2.12 Sampling Distributions and Central Limit Theorem",
+ "intro": "After this lesson you can tell a parameter from a statistic, say what a sampling distribution is, explain what each dot in a simulation represents, and describe the center and shape of a sampling distribution for a proportion or a mean.",
+ "moments": [
+  {
+   "t": 42,
+   "type": "Definition",
+   "title": "What a sampling distribution is",
+   "text": "The distribution of a statistic over all possible samples of a given size from a population."
+  },
+  {
+   "t": 62,
+   "type": "Definition",
+   "title": "A statistic describes a sample",
+   "text": "The two main statistics are the sample proportion and the sample mean."
+  },
+  {
+   "t": 123,
+   "type": "Worked example",
+   "title": "Texas bike owners: the parameter",
+   "text": "27% of all high school students in Texas own a bike. That is the one fixed population value, $p=0.27$."
+  },
+  {
+   "t": 163,
+   "type": "Worked example",
+   "title": "A sample of 120 gives $\\hat p$",
+   "text": "The sample proportion varies: 25%, about 26%, or 20.8% are all possible, even though $p=0.27$."
+  },
+  {
+   "t": 267,
+   "type": "Key idea",
+   "title": "Sampling distribution of $\\hat p$",
+   "text": "It shows every possible sample proportion from samples of 120 and which values are more likely."
+  },
+  {
+   "t": 327,
+   "type": "Worked example",
+   "title": "Pennsylvania squirrels: the mean",
+   "text": "The true mean weight is $\\mu=565$ g. A random sample of 40 squirrels gives a sample mean $\\bar x$ that varies."
+  },
+  {
+   "t": 518,
+   "type": "Procedure",
+   "title": "Building one by simulation",
+   "text": "Take a sample, record the statistic, repeat many times. The resulting dots approximate the sampling distribution."
+  },
+  {
+   "t": 600,
+   "type": "Concept",
+   "title": "Dots stack up near the parameter",
+   "text": "Sample proportions near 27% are common. Values far from 27% are possible but unlikely."
+  },
+  {
+   "t": 746,
+   "type": "Key idea",
+   "title": "Sampling distributions look normal",
+   "text": "Most samples fall near the true value, with few on the low side and few on the high side."
+  },
+  {
+   "t": 891,
+   "type": "Visual",
+   "title": "Simulation app for proportions",
+   "text": "Set $p=0.27$ and $n=120$ and take 300 samples at a time. The dots pile up near 0.27 in a normal shape."
+  },
+  {
+   "t": 1018,
+   "type": "Visual",
+   "title": "Simulation app for means",
+   "text": "The population of tree diameters is skewed right. Taking many samples of means still gives a normal-looking pile centered at $\\mu$."
+  },
+  {
+   "t": 1121,
+   "type": "Key idea",
+   "title": "Skewed population, normal sampling distribution",
+   "text": "One sample from a skewed population is itself skewed. The distribution of many sample means is not."
+  },
+  {
+   "t": 1184,
+   "type": "Worked example",
+   "title": "What does each dot represent?",
+   "text": "Each dot is the mean of one sample of 50 teenagers. One hundred dots only begin a sampling distribution."
+  },
+  {
+   "t": 1249,
+   "type": "Exam wording",
+   "title": "Describe and justify the shape",
+   "text": "Centered near $\\mu=185$ seconds, few on each side, so approximately normal."
+  },
+  {
+   "t": 1269,
+   "type": "Worked example",
+   "title": "Streaming: $p=0.60$, $n=150$",
+   "text": "Simulating 200 samples gives sample proportions that pile up near 60%, with a few far out."
+  }
+ ],
+ "sections": [
+  {
+   "id": "stat",
+   "type": "decision",
+   "tab": "Parameter or statistic?",
+   "kicker": "Decision check",
+   "title": "Parameter or statistic?",
+   "cards": [
+    {
+     "letter": "P",
+     "name": "Parameter",
+     "text": "Describes a whole population. One fixed value, such as $\\mu$ or $p$."
+    },
+    {
+     "letter": "S",
+     "name": "Statistic",
+     "text": "Describes a sample. It changes from sample to sample, such as $\\bar x$ or $\\hat p$."
+    }
+   ],
+   "columns": [
+    "Scenario",
+    "Describes",
+    "Symbol",
+    "Type"
+   ],
+   "rows": [
+    {
+     "cells": [
+      "27% of all high school students in Texas own a bike",
+      "A population",
+      "$p=0.27$",
+      "Parameter"
+     ],
+     "seek": 123
+    },
+    {
+     "cells": [
+      "In one random sample of 120 students, 25% own a bike",
+      "A sample",
+      "$\\hat p=0.25$",
+      "Statistic"
+     ],
+     "seek": 204
+    },
+    {
+     "cells": [
+      "The mean weight of all squirrels in Pennsylvania is 565 g",
+      "A population",
+      "$\\mu=565$",
+      "Parameter"
+     ],
+     "seek": 327
+    },
+    {
+     "cells": [
+      "The mean weight of 40 sampled squirrels is 558 g",
+      "A sample",
+      "$\\bar x=558$",
+      "Statistic"
+     ],
+     "seek": 683
+    },
+    {
+     "cells": [
+      "60% of all US teenagers use a streaming platform daily",
+      "A population",
+      "$p=0.60$",
+      "Parameter"
+     ],
+     "seek": 1269
+    },
+    {
+     "cells": [
+      "One sample of 50 teenagers has a mean brushing time of 173 seconds",
+      "A sample",
+      "$\\bar x=173$",
+      "Statistic"
+     ],
+     "seek": 1205
+    }
+   ],
+   "verdictColumn": 3,
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video calls a sample proportion and a sample mean continuous random variables. A sample proportion from $n$ people can only take the values $0, 1/n, 2/n, \\dots$. The key fact is that each is a number that varies from sample to sample."
+    }
+   ]
+  },
+  {
+   "id": "describe",
+   "type": "procedure",
+   "tab": "Describe it",
+   "kicker": "Procedure",
+   "title": "Describe a sampling distribution",
+   "intro": "In Texas, 27% of high school students own a bike. Take random samples of 120 students. The statistic is $\\hat p$, the sample proportion. Describe its sampling distribution.",
+   "steps": [
+    "Name the statistic, the sample size, and the parameter.",
+    "Center: the dots stack up around the parameter.",
+    "Shape: approximately normal, with most values near the center and few on each side.",
+    "Check the conditions before you claim a normal shape."
+   ],
+   "parts": [
+    {
+     "label": "Center",
+     "tex": "$p=0.27$",
+     "text": "Samples cluster around the true population value."
+    },
+    {
+     "label": "Shape",
+     "tex": "Approximately normal",
+     "text": "Few samples far above or below the parameter."
+    },
+    {
+     "label": "Large counts",
+     "tex": [
+      "$120(0.27)=32.4$",
+      "$120(0.73)=87.6$"
+     ],
+     "text": "Both at least 10, so a normal shape is reasonable."
+    },
+    {
+     "label": "For a mean",
+     "tex": "$n\\ge30$",
+     "text": "Or the population is approximately normal."
+    }
+   ],
+   "line": "The sampling distribution of $\\hat p$ is centered near 0.27 and approximately normal.",
+   "buttons": [
+    {
+     "label": "Watch the idea (10:00)",
+     "seek": 600
+    },
+    {
+     "label": "Watch the app (14:51)",
+     "seek": 891
+    }
+   ]
+  },
+  {
+   "id": "explorer-p",
+   "type": "explorer",
+   "explorer": "sampling-distribution",
+   "tab": "Explorer: proportions",
+   "kicker": "Interactive",
+   "title": "Sampling distribution of a proportion",
+   "intro": "Take samples and watch the sample proportions pile up around $p$. Change $n$ and see how the pile narrows. This is the same idea as the app in the video at 14:51.",
+   "stories": {
+    "bike": "27% of Texas high school students own a bike. Each sample is $n=120$ students and the statistic is $\\hat p$, the proportion who own a bike.",
+    "stream": "A streaming company says 60% of US teenagers use its platform daily. Each sample is $n=150$ teenagers and the statistic is $\\hat p$.",
+    "small": "The same Texas population, but with a small sample of $n=20$ students each time."
+   },
+   "initial": {
+    "n": 120,
+    "p": 0.27,
+    "story": "bike"
+   },
+   "presets": [
+    {
+     "label": "Texas bikes",
+     "sub": "$n=120,\\ p=0.27$",
+     "n": 120,
+     "p": 0.27,
+     "story": "bike"
+    },
+    {
+     "label": "Streaming",
+     "sub": "$n=150,\\ p=0.60$",
+     "n": 150,
+     "p": 0.6,
+     "story": "stream"
+    },
+    {
+     "label": "Small sample",
+     "sub": "$n=20,\\ p=0.27$",
+     "n": 20,
+     "p": 0.27,
+     "story": "small"
+    }
+   ]
+  },
+  {
+   "id": "explorer-x",
+   "type": "explorer",
+   "explorer": "xbar-clt",
+   "tab": "Explorer: means",
+   "kicker": "Interactive",
+   "title": "Sampling distribution of a mean",
+   "intro": "Pick a population and a sample size, then take samples. The left panel is the population. The right panel is the pile of sample means. Try a skewed population with small and large $n$.",
+   "stories": {
+    "skew": "A skewed-right population, like the tree diameters in the video's app. The population mean is $\\mu=5$ and the SD is $\\sigma=5$.",
+    "uniform": "A uniform population on 0 to 10, so every value is equally likely. The mean is $\\mu=5$.",
+    "bimodal": "A population with two humps, around 2 and around 8. The mean is $\\mu=5$.",
+    "normal": "A normal population with mean $\\mu=5$ and standard deviation $\\sigma=2$."
+   },
+   "initial": {
+    "pop": "skew",
+    "n": 4,
+    "story": "skew"
+   },
+   "presets": [
+    {
+     "label": "Skewed, tiny n",
+     "sub": "$n=4$",
+     "pop": "skew",
+     "n": 4,
+     "story": "skew"
+    },
+    {
+     "label": "Skewed, larger n",
+     "sub": "$n=40$",
+     "pop": "skew",
+     "n": 40,
+     "story": "skew"
+    },
+    {
+     "label": "Two humps",
+     "sub": "$n=30$",
+     "pop": "bimodal",
+     "n": 30,
+     "story": "bimodal"
+    },
+    {
+     "label": "Normal",
+     "sub": "$n=4$",
+     "pop": "normal",
+     "n": 4,
+     "story": "normal"
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Exam wording",
+   "kicker": "Exam wording and traps",
+   "title": "Write it so it earns credit",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Say what each dot represents",
+     "weak": "Each dot is a teenager.",
+     "better": "Each dot is the mean brushing time, in seconds, of one random sample of 50 teenagers.",
+     "seek": 1184
+    },
+    {
+     "kind": "Common trap",
+     "title": "Calling a simulation the sampling distribution",
+     "weak": "The 100 dots are the sampling distribution.",
+     "better": "The 100 dots approximate the sampling distribution. The sampling distribution shows every possible sample mean for samples of size 50.",
+     "seek": 1228
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Describe center and shape and give the reason",
+     "weak": "It is normal.",
+     "better": "The distribution of sample means is centered near $\\mu=185$ seconds, with few samples far above or below it, so it is approximately normal.",
+     "seek": 1249
+    },
+    {
+     "kind": "Common trap",
+     "title": "Mixing up a sample's distribution with the sampling distribution",
+     "weak": "The population is skewed, so the sampling distribution of $\\bar x$ is skewed.",
+     "better": "One sample from a skewed population is skewed, but the distribution of many sample means is approximately normal.",
+     "seek": 1121
+    },
+    {
+     "kind": "Common trap",
+     "title": "Using $p$ for a sample result",
+     "weak": "$p=0.25$ for the 120 sampled students.",
+     "better": "A sample proportion is $\\hat p=0.25$. The parameter $p=0.27$ describes all Texas high school students.",
+     "seek": 204
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "Which of these is a statistic?",
+     "opts": [
+      "The mean height of all students at a school",
+      "The proportion of 500 sampled voters who favor a measure",
+      "The proportion of all voters who favor a measure",
+      "The mean weight of all squirrels in a state"
+     ],
+     "ok": 1,
+     "why": [
+      "A mean of all students is a parameter.",
+      "It describes a sample of 500, so it is a statistic.",
+      "It describes the whole population of voters.",
+      "It describes the whole population of squirrels."
+     ],
+     "seek": 62
+    },
+    {
+     "stem": "Which best describes the sampling distribution of $\\bar x$ for samples of size 40?",
+     "opts": [
+      "The weights of the 40 squirrels in one sample",
+      "The mean of one sample of 40",
+      "The weights of all squirrels in the state",
+      "All possible values of $\\bar x$ from samples of size 40, with how likely each is"
+     ],
+     "ok": 3,
+     "why": [
+      "That is the data in one sample.",
+      "That is one value of the statistic, one dot.",
+      "That is the population distribution.",
+      "A sampling distribution is the distribution of a statistic over all samples of that size."
+     ],
+     "seek": 267
+    },
+    {
+     "stem": "A simulation takes 300 random samples of 120 students from a population where $p=0.27$ and records each $\\hat p$. What does each dot in the dotplot represent?",
+     "opts": [
+      "One student who owns a bike",
+      "The sample proportion from one random sample of 120",
+      "The population proportion",
+      "The number of samples taken"
+     ],
+     "ok": 1,
+     "why": [
+      "Dots are samples, not students.",
+      "Each dot is one value of $\\hat p$.",
+      "The population proportion is one fixed value, not 300 dots.",
+      "The number of samples is 300, not a value of the statistic."
+     ],
+     "seek": 600
+    },
+    {
+     "stem": "A population is skewed right. Many random samples of size 50 are taken and each sample mean is recorded. The distribution of these sample means is most likely",
+     "opts": [
+      "Skewed right, like the population",
+      "Skewed left",
+      "Approximately normal and centered near the population mean",
+      "Uniform"
+     ],
+     "ok": 2,
+     "why": [
+      "One sample may be skewed, but the sample means are not.",
+      "There is no reason for the means to be skewed left.",
+      "Means pile up around $\\mu$, with few on either side.",
+      "Nothing about the means makes them uniform."
+     ],
+     "seek": 1121
+    },
+    {
+     "stem": "A population has $p=0.27$. Random samples of size 120 have a standard deviation of about 0.041 for $\\hat p$. Which sample proportion would be most surprising?",
+     "opts": [
+      "0.25",
+      "0.30",
+      "0.22",
+      "0.45"
+     ],
+     "ok": 3,
+     "why": [
+      "0.25 is close to 0.27.",
+      "0.30 is less than one SD from 0.27.",
+      "0.22 is a little over one SD below.",
+      "0.45 is about 4.4 SDs above the center. Possible but very unlikely."
+     ],
+     "seek": 600
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Write a full response",
+   "prompt": "In a city, 42% of all adults own a pet. A researcher simulates taking 150 random samples, each of 100 adults, and records the proportion in each sample who own a pet. The 150 sample proportions are shown in a dotplot. They are centered near 0.42, are roughly symmetric and bell-shaped, and almost all lie between 0.32 and 0.52.",
+   "parts": [
+    "(a) Explain what each dot in the dotplot represents.",
+    "(b) Is this dotplot the sampling distribution of the sample proportion? Explain.",
+    "(c) Describe the center and shape of the sampling distribution and justify them.",
+    "(d) A new random sample of 100 adults has a sample proportion of 0.62. Is this consistent with the claim that 42% own a pet? Explain."
+   ],
+   "sample": [
+    "(a) Each dot is the proportion of pet owners in one random sample of 100 adults from the city.",
+    "(b) No. It approximates the sampling distribution with 150 samples. The sampling distribution shows the sample proportions from all possible samples of size 100.",
+    "(c) It is centered near 0.42, the population proportion, and is approximately normal. Most sample proportions fall near 0.42 with few much higher or lower. Also $100(0.42)=42$ and $100(0.58)=58$ are both at least 10.",
+    "(d) No. Almost all the simulated sample proportions fall between 0.32 and 0.52, so 0.62 is much farther above 0.42 than any simulated value. A sample proportion of 0.62 would be very unlikely if $p=0.42$, which is evidence against the claim."
+   ],
+   "checklist": [
+    "(a) Says each dot is a sample proportion, from one random sample of 100 adults",
+    "(b) Says no, with the reason that it only approximates the sampling distribution",
+    "(c) Center near 0.42",
+    "(c) Approximately normal, with a reason about where the samples fall or the counts",
+    "(d) Compares 0.62 with the range of simulated values and concludes it is unlikely if $p=0.42$"
+   ]
+  }
+ ],
+ "footer": "Built from the video's auto-generated captions. Practice questions are newly written. Values were computed when the page was written.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "The video says sampling distributions 'will be normal' and defers the conditions to later videos. The page adds the exam conditions as a short list: $np\\ge10$ and $n(1-p)\\ge10$ for $\\hat p$, and $n\\ge30$ or a normal population for $\\bar x$. These are not stated in this video."
+   },
+   {
+    "kind": "placement",
+    "text": "The central limit theorem is named in the introduction, but the video never states it. The 'skewed population, normal sampling distribution' idea is shown only in the simulation app. The page does not add a CLT statement beyond that."
+   },
+   {
+    "kind": "wording",
+    "text": "The video calls $\\hat p$ and $\\bar x$ continuous random variables. $\\hat p$ takes only values $k/n$. The page says only that each is a number that varies from sample to sample."
+   },
+   {
+    "kind": "caption",
+    "text": "On-screen slips: a slide says Ohio for Pennsylvania, a sample size of 4 is later called 40 trees in the app, and 125 lb is said for 125 g. The page uses Pennsylvania, grams, and sample sizes as stated in the scenario."
+   },
+   {
+    "kind": "explorer",
+    "text": "New explorer xbar-clt. The proportion explorer sampling-distribution is reused. Presets and the displayed theory values were checked against computed values."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links for the apps (891 and 1018) are placed from the captions. Check that they land on the app demonstrations."
+   }
+  ]
+ }
+}
