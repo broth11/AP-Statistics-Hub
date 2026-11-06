@@ -233,7 +233,10 @@
     },
     {
      "label": "Shape",
-     "tex": "$600(0.27)=162,\\ 600(0.73)=438$",
+     "tex": [
+      "$600(0.27)=162$",
+      "$600(0.73)=438$"
+     ],
      "text": "Both at least 10, so the model is approximately normal."
     }
    ],

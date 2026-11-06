@@ -1,11 +1,12 @@
 // Procedure / formula section.
+// Each part's `tex` is one line of math, or an array of lines that are stacked on separate rows (one calculation per row).
 import { esc, tex } from '../util.js';
 
 export function render(sec) {
   const parts = (sec.parts || []).map((p) => `
     <div class="part">
       <div class="eyebrow">${esc(p.label)}</div>
-      <div class="big">${tex(p.tex)}</div>
+      <div class="big">${[].concat(p.tex).map((t) => `<div class="calc">${tex(t)}</div>`).join('')}</div>
       <div class="text">${tex(p.text)}</div>
     </div>`).join('');
   const buttons = (sec.buttons || []).map((b) => `<button class="btn btn-secondary" data-seek="${b.seek}">${esc(b.label)}</button>`).join('');

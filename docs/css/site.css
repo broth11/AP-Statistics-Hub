@@ -151,7 +151,8 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 .parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border: 2px solid var(--color-divider); font-size: 15px; }
 .part { padding: 16px; border-right: 1px solid var(--color-divider); }
 .part:last-child { border-right: 0; }
-.part .big { font-size: 22px; font-weight: 800; margin: 4px 0; }
+.part .big { font-size: 17px; font-weight: 800; margin: 4px 0; }
+.part .big .calc + .calc { margin-top: 6px; }
 .part .text { font-size: 13px; opacity: 0.85; }
 .formula-line { font-size: 18px; font-weight: 800; }
 .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }

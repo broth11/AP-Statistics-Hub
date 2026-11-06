@@ -242,8 +242,11 @@
     },
     {
      "label": "Large counts",
-     "tex": "$465(0.75)=348.75\\ge10$ and $465(0.25)=116.25\\ge10$",
-     "text": "Uses $p_0=0.75$, not $\\hat p=0.776$."
+     "tex": [
+      "$465(0.75)=348.75$",
+      "$465(0.25)=116.25$"
+     ],
+     "text": "Both at least 10. Uses $p_0=0.75$, not $\\hat p=0.776$."
     },
     {
      "label": "Hypotheses",
