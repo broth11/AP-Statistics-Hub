@@ -2,7 +2,7 @@
 // Every section module exports render(sec, ctx), optional renderSide(sec, ctx), and mount(el, sec, ctx).
 import './tex-text.js';
 import { esc, tex, fmtTime, getJSON, $, $$ } from './util.js';
-import { renderTopbar } from './shell.js';
+import { renderTopbar, watchTopbar } from './shell.js';
 import { seekVideo } from './video.js';
 import * as decision from './sections/decision.js';
 import * as procedure from './sections/procedure.js';
@@ -148,13 +148,36 @@ async function loadExplorers(L) {
   return out;
 }
 
+// Highlight the section tab for the section being read; the bar follows the scroll.
+function spy(sections) {
+  const tabs = new Map(sections.map((s) => [s.id, document.querySelector(`[data-sec-tab="${s.id}"]`)]));
+  let cur = null;
+  const update = () => {
+    const hh = document.getElementById('topbar').offsetHeight;
+    let id = sections[0].id;
+    for (const s of sections) {
+      const el = document.getElementById('s-' + s.id);
+      if (el && el.getBoundingClientRect().top <= hh + 60) id = s.id;
+    }
+    if (id === cur) return;
+    cur = id;
+    tabs.forEach((t, k) => { if (t) t.classList.toggle('is-current', k === id); });
+    const t = tabs.get(id); if (t && t.scrollIntoView) t.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+}
+
 async function main() {
   const app = document.getElementById('app');
   const bar = document.getElementById('topbar');
   const n = new URLSearchParams(location.search).get('v');
   try {
     const site = await getJSON('data/site.json');
-    bar.innerHTML = renderTopbar({ site });
+    const index = await getJSON('data/lessons.json').then((d) => d.lessons).catch(() => []);
+    bar.innerHTML = renderTopbar({ site, lessons: index });
+    watchTopbar();
     if (!/^\d+$/.test(n || '')) throw new Error('No lesson chosen.');
     const L = await getJSON(`data/lessons/${n}.json`).catch(() => {
       throw new Error('This lesson does not have a study page yet.');
@@ -164,9 +187,10 @@ async function main() {
     const ctx = { site, explorers: await loadExplorers(L), unitLabel: unit ? unit.kicker : 'Unit ' + L.unit };
     document.title = `${L.topic} ${L.title} | ${site.course}`;
     const sections = [{ id: 'video', label: 'Video' }, ...L.sections.map((s) => ({ id: s.id, label: s.tab }))];
-    bar.innerHTML = renderTopbar({ site, activeUnit: L.unit, crumb: `${unit ? unit.tab : 'Unit ' + L.unit} › ${L.topic} ${L.title}`, sections });
+    bar.innerHTML = renderTopbar({ site, lessons: index, activeUnit: L.unit, current: L.n, crumb: `${L.topic} ${L.title}`, sections });
     app.innerHTML = lessonHtml(L, ctx);
     wire(L, ctx);
+    spy(sections);
   } catch (e) {
     app.innerHTML = `<div class="error">${esc(e.message)} <a href="index.html">Back to all lessons</a></div>`;
   }

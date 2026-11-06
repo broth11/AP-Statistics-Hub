@@ -1,7 +1,7 @@
 // Home page: choose a unit, then a lesson. Fits one screen; only the list scrolls.
 import './tex-text.js';
 import { esc, getJSON } from './util.js';
-import { renderTopbar } from './shell.js';
+import { renderTopbar, watchTopbar } from './shell.js';
 
 const STATUS = { live: 'Study page', next: 'Next', draft: 'Draft', transcript: 'Transcript only' };
 
@@ -24,7 +24,8 @@ function lessonRow(l) {
 function render(site, index) {
   const unit = unitFromHash();
   document.title = site.siteTitle;
-  document.getElementById('topbar').innerHTML = renderTopbar({ site, activeUnit: unit });
+  document.getElementById('topbar').innerHTML = renderTopbar({ site, lessons: index.lessons, activeUnit: unit });
+  watchTopbar();
   const u = site.units.find((x) => x.id === unit);
   const pane = u ? `
     <div class="unit-pane">
