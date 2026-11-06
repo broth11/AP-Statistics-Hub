@@ -207,7 +207,7 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 
 /* Exam wording */
 .traps { display: flex; flex-direction: column; }
-.trap { padding: 16px 0; border-bottom: 1px solid var(--color-divider); display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px 16px; }
+.trap { padding: 16px 0; border-bottom: 1px solid var(--color-divider); display: flex; flex-direction: column; gap: 10px; }
 .trap .ttitle { font-weight: 700; font-size: 16px; margin-top: 2px; }
 .trap .pair { font-size: 14px; line-height: 1.5; display: flex; flex-direction: column; gap: 8px; }
 .trap .weak { font-style: italic; }
@@ -301,3 +301,41 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 
 /* A math expression is one object: it never breaks across lines */
 .katex { white-space: nowrap; }
+
+/* Explorer layout: chart and stats at left, controls in a right pane */
+.sec--tight .sec-grid { grid-template-columns: minmax(180px, 0.55fr) 3fr; }
+.explorer { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; flex-direction: unset; }
+.ex-main { display: flex; flex-direction: column; gap: 14px; min-width: 0; min-height: 0; }
+.ex-side { display: flex; flex-direction: column; gap: 16px; min-height: 0; overflow-y: auto; padding: 2px 2px 2px 0; }
+.ex-side .ex-presets { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+.ex-side .ex-presets .btn { white-space: normal; padding: 8px 6px; }
+.ex-side .ex-sliders { grid-template-columns: minmax(0, 1fr) !important; gap: 12px; }
+.ex-side .ex-sliders label { align-items: stretch; text-align: left; gap: 4px; }
+.ex-side .ex-modes { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+.ex-side .ex-modes .ex-mode { padding: 8px 6px; }
+.ex-side .ex-actions { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+.ex-side .ex-actions .btn { padding: 8px 6px; }
+.ex-side > :first-child { margin-top: 0; }
+.ex-chart svg { height: auto; max-height: 100%; margin: auto; }
+@media (max-width: 1100px) { .explorer { grid-template-columns: minmax(0, 1fr) 260px; } }
+@media (max-width: 760px) {
+  .explorer { grid-template-columns: minmax(0, 1fr); height: auto; }
+  .ex-side { overflow: visible; }
+  .ex-chart { min-height: 260px; }
+  .ex-stats.ex-cols-3, .ex-stats.ex-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+/* Weak / Better card (same design as the IB MAI Hub) */
+.trap-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.trap-head .btn { font-size: 13px; flex: none; }
+.misc-card { display: grid; grid-template-columns: 1fr 1fr; background: var(--color-surface); }
+.misc-card > div { padding: 12px 14px; font-size: 15px; line-height: 1.45; }
+.misc-card .eyebrow { display: block; margin-bottom: 4px; opacity: 1; font-weight: 600; }
+.misc-card .weak { border-left: 4px solid var(--color-accent); font-style: normal; }
+.misc-card .weak .eyebrow { color: var(--color-accent-700); }
+.misc-card .better { background: var(--color-neutral-100, #ebe9e9); border-left: 4px solid #2f7d4f; }
+.misc-card .better .eyebrow { color: #2f7d4f; }
+@media (max-width: 760px) { .misc-card { grid-template-columns: 1fr; } }
+.ex-chart svg text { font-size: 13px; }
+.ex-side .ex-presets .btn { font-size: 12px; overflow: hidden; }
+.ex-side .ex-presets .btn .katex { font-size: 0.95em; }

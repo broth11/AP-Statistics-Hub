@@ -7,7 +7,7 @@
 // Section config: intro, stories {key: text}, initial {n, p, story},
 //   presets [{label, sub, n, p, story}], bias (optional): true to show the Random / Biased switch,
 //   biasFactor (optional, default 1.5): how many times more likely a person with the trait is to be picked.
-import { esc, tex } from '../util.js';
+import { esc, tex, VB_H } from '../util.js';
 
 export function renderSide(sec) {
   return `
@@ -40,7 +40,7 @@ export function render(sec) {
         <button class="btn btn-secondary" data-freeze aria-pressed="false">Freeze axes</button>
         <button class="btn btn-secondary" data-clear>Clear</button>
       </div>
-      <div class="ex-chart"><svg viewBox="0 0 640 260" role="img" aria-label="Histogram of simulated sample proportions with the normal model drawn over it" data-chart></svg></div>
+      <div class="ex-chart"><svg viewBox="0 0 640 ${VB_H}" role="img" aria-label="Histogram of simulated sample proportions with the normal model drawn over it" data-chart></svg></div>
       <div class="ex-stats ex-cols-4">
         <div class="ex-stat"><div class="label">${tex('Average of the simulated $\\hat p$')}</div><div class="value" data-mean></div></div>
         <div class="ex-stat"><div class="label">${tex('$\\mu_{\\hat p}=p$')}</div><div class="value accent" data-mu></div></div>
@@ -74,7 +74,7 @@ export function mount(el, sec) {
       lo = Math.max(0, Math.min(lo, mn - sigma)); hi = Math.min(1, Math.max(hi, mx + sigma));
     }
     if (S.frozen) ({ lo, hi } = S.frozen);
-    const X0 = 20, W = 600, base = 210, top = 40;
+    const X0 = 20, W = 600, base = VB_H - 50, top = 40;
     const xs = (v) => X0 + ((v - lo) / (hi - lo)) * W;
     const pdf = (v) => Math.exp(-(((v - S.p) / sigma) ** 2) / 2) / (sigma * Math.sqrt(2 * Math.PI));
     let ymax = S.frozen ? S.frozen.ymax : pdf(S.p) * 1.08;

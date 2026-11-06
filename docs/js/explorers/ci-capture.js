@@ -4,7 +4,7 @@
 // A running tally across all draws shows the capture rate settling near the confidence level.
 // Section config: intro, stories {key: text}, initial {n, p, level, story},
 //   presets [{label, sub, n, p, level, story}]. level is 0.90, 0.95 or 0.99.
-import { esc, tex } from '../util.js';
+import { esc, tex, VB_H } from '../util.js';
 
 const Z = { 0.9: 1.6449, 0.95: 1.96, 0.99: 2.5758 };
 
@@ -34,7 +34,7 @@ export function render(sec) {
         <button class="btn btn-primary" data-draw>Draw 100 intervals</button>
         <button class="btn btn-secondary" data-clear>Clear</button>
       </div>
-      <div class="ex-chart"><svg viewBox="0 0 640 260" role="img" aria-label="One hundred confidence intervals, with the ones that miss the true proportion in red" data-chart></svg></div>
+      <div class="ex-chart"><svg viewBox="0 0 640 ${VB_H}" role="img" aria-label="One hundred confidence intervals, with the ones that miss the true proportion in red" data-chart></svg></div>
       <div class="ex-stats ex-cols-4">
         <div class="ex-stat"><div class="label">${tex('Margin of error, $z^*\\sqrt{p(1-p)/n}$')}</div><div class="value" data-moe></div></div>
         <div class="ex-stat"><div class="label">${tex('Intervals in this batch that caught $p$')}</div><div class="value" data-batch></div></div>
@@ -67,7 +67,7 @@ export function mount(el, sec) {
     // The x-range is fixed by the typical spread so changing the level or n visibly changes the interval widths.
     const half = 3.2 * Math.sqrt((S.p * (1 - S.p)) / S.n) + 0.4 * moe;
     const lo = S.p - half, hi = S.p + half;
-    const X0 = 20, W = 600, top = 34, bot = 236;
+    const X0 = 20, W = 600, top = 34, bot = VB_H - 24;
     const xs = (v) => X0 + ((Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo)) * W;
     let svg = '';
     const rowH = (bot - top) / 100;

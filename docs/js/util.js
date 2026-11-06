@@ -58,3 +58,6 @@ export function normalInv(p) {
   }
   return x;
 }
+
+// Height of the explorer chart's SVG viewBox (width is 640). Explorers place their baseline relative to this.
+export const VB_H = 440;

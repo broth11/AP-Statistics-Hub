@@ -3,7 +3,7 @@
 // p-value tail(s) beyond the observed p-hat, and can simulate samples assuming H0 is true.
 // Section config: intro, stories {key: text}, initial {n, p0, x, alt, alpha, story},
 //   presets [{label, sub, n, p0, x, alt, story}]. alt is 'lt', 'gt' or 'ne'.
-import { esc, tex, normalCdf } from '../util.js';
+import { esc, tex, normalCdf, VB_H } from '../util.js';
 
 const ALTS = [['lt', '$H_a: p<p_0$'], ['gt', '$H_a: p>p_0$'], ['ne', '$H_a: p\\ne p_0$']];
 
@@ -34,7 +34,7 @@ export function render(sec) {
         <button class="ex-mode" data-alpha="0.05" aria-pressed="false">${tex('$\\alpha=0.05$')}</button>
         <button class="ex-mode" data-alpha="0.01" aria-pressed="false">${tex('$\\alpha=0.01$')}</button>
       </div>
-      <div class="ex-chart"><svg viewBox="0 0 640 260" role="img" aria-label="Null distribution of the sample proportion with the p-value shaded" data-chart></svg></div>
+      <div class="ex-chart"><svg viewBox="0 0 640 ${VB_H}" role="img" aria-label="Null distribution of the sample proportion with the p-value shaded" data-chart></svg></div>
       <div class="ex-stats ex-cols-4">
         <div class="ex-stat"><div class="label">${tex('$\\hat p=x/n$')}</div><div class="value" data-ph></div></div>
         <div class="ex-stat"><div class="label">${tex('$z=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$')}</div><div class="value" data-z></div></div>
@@ -63,7 +63,7 @@ export function mount(el, sec) {
     S.x = Math.min(S.x, S.n);
     const { ph, sd, z, pv } = calc();
     let lo = Math.max(0, Math.min(S.p0 - 4.2 * sd, ph - sd)), hi = Math.min(1, Math.max(S.p0 + 4.2 * sd, ph + sd));
-    const X0 = 20, W = 600, base = 210, top = 54;
+    const X0 = 20, W = 600, base = VB_H - 50, top = 54;
     const xs = (v) => X0 + ((v - lo) / (hi - lo)) * W;
     const pdf = (v) => Math.exp(-(((v - S.p0) / sd) ** 2) / 2) / (sd * Math.sqrt(2 * Math.PI));
     const peak = pdf(S.p0);

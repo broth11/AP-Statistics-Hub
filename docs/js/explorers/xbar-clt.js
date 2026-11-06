@@ -4,7 +4,7 @@
 // The population is drawn at left. The normal model N(mu, sigma/sqrt(n)) is drawn over the histogram.
 // Section config: intro, stories {key: text}, initial {pop, n, story},
 //   presets [{label, sub, pop, n, story}]; pop is skew, uniform, bimodal or normal.
-import { esc, tex } from '../util.js';
+import { esc, tex, VB_H } from '../util.js';
 
 const randn = () => { let u = 0, v = 0; while (!u) u = Math.random(); v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
 const npdf = (x, m, s) => Math.exp(-(((x - m) / s) ** 2) / 2) / (s * Math.sqrt(2 * Math.PI));
@@ -43,7 +43,7 @@ export function render(sec) {
         <button class="btn btn-primary" data-many>Take 1,000 samples</button>
         <button class="btn btn-secondary" data-clear>Clear</button>
       </div>
-      <div class="ex-chart"><svg viewBox="0 0 640 260" role="img" aria-label="Population at left and histogram of simulated sample means at right" data-chart></svg></div>
+      <div class="ex-chart"><svg viewBox="0 0 640 ${VB_H}" role="img" aria-label="Population at left and histogram of simulated sample means at right" data-chart></svg></div>
       <div class="ex-stats ex-cols-4">
         <div class="ex-stat"><div class="label">${tex('Simulated average of $\\bar x$')}</div><div class="value" data-mean></div></div>
         <div class="ex-stat"><div class="label">${tex('$\\mu_{\\bar x}=\\mu$')}</div><div class="value accent" data-mu></div></div>
@@ -64,7 +64,7 @@ export function mount(el, sec) {
     const se = P.sd / Math.sqrt(S.n);
     const m = S.sims.length;
     // Population panel (left) and sampling-distribution panel (right).
-    const L0 = 10, LW = 190, R0 = 250, RW = 380, base = 205, top = 38;
+    const L0 = 10, LW = 190, R0 = 250, RW = 380, base = VB_H - 55, top = 38;
     const [plo, phi] = P.range;
     const pxs = (v) => L0 + ((v - plo) / (phi - plo)) * LW;
     let pmax = 0;

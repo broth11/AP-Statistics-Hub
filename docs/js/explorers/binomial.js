@@ -1,7 +1,7 @@
 // Explorer library: binomial distribution.
 // Sliders for n, p, k, an event selector, bars, and the probability, mean and SD.
 // Section config: intro, stories {key: text}, initial {n,p,k,mode,story}, presets [{label, sub, n, p, k, mode, story}].
-import { esc, tex, pmf } from '../util.js';
+import { esc, tex, pmf, VB_H } from '../util.js';
 
 const MODES = [['eq', '$P(X=k)$'], ['le', '$P(X\\le k)$'], ['ge', '$P(X\\ge k)$']];
 
@@ -28,7 +28,7 @@ export function render(sec) {
         <label><span>Value <span data-k-label></span></span><input type="range" min="0" max="40" step="1" data-k></label>
       </div>
       <div class="ex-modes">${modes}</div>
-      <div class="ex-chart"><svg viewBox="0 0 640 260" role="img" aria-label="Binomial probability bars" data-chart></svg></div>
+      <div class="ex-chart"><svg viewBox="0 0 640 ${VB_H}" role="img" aria-label="Binomial probability bars" data-chart></svg></div>
       <div class="ex-stats">
         <div class="ex-stat"><div class="label" data-event></div><div class="value accent" data-prob></div></div>
         <div class="ex-stat"><div class="label">${tex('$\\text{Mean}=np$')}</div><div class="value" data-mean></div></div>
@@ -52,11 +52,11 @@ export function mount(el, sec) {
     const maxv = Math.max(...a);
     const slot = 640 / (n + 1);
     const step = n > 24 ? 3 : n > 14 ? 2 : 1;
-    let svg = '<line x1="0" y1="220" x2="640" y2="220" stroke="#201e1d" stroke-width="2"></line>';
+    let svg = `<line x1="0" y1="${VB_H - 40}" x2="640" y2="${VB_H - 40}" stroke="#201e1d" stroke-width="2"></line>`;
     a.forEach((v, i) => {
-      const h = Math.max(1, (v / maxv) * 190);
-      svg += `<rect x="${i * slot + slot * 0.12}" y="${220 - h}" width="${slot * 0.76}" height="${h}" fill="${inSet(i) ? '#ec3013' : '#bab6b6'}"></rect>`;
-      svg += `<text x="${i * slot + slot / 2}" y="238" text-anchor="middle" font-size="11" fill="#201e1d">${i % step === 0 ? i : ''}</text>`;
+      const h = Math.max(1, (v / maxv) * (VB_H - 70));
+      svg += `<rect x="${i * slot + slot * 0.12}" y="${VB_H - 40 - h}" width="${slot * 0.76}" height="${h}" fill="${inSet(i) ? '#ec3013' : '#bab6b6'}"></rect>`;
+      svg += `<text x="${i * slot + slot / 2}" y="${VB_H - 22}" text-anchor="middle" font-size="11" fill="#201e1d">${i % step === 0 ? i : ''}</text>`;
     });
     q('[data-chart]').innerHTML = svg;
 

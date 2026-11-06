@@ -4,7 +4,7 @@
 // Section config: intro, stories {key: text}, initial {mu, sigma, mode, a, b, p, story},
 //   presets [{label, sub, mu, sigma, mode, a, b, p, story}], range {muMin, muMax, muStep, sdMin, sdMax, sdStep}.
 //   mode is left, right, between or inv. a and b are values of X, p is the area to the left for inv.
-import { esc, tex, normalCdf, normalInv } from '../util.js';
+import { esc, tex, normalCdf, normalInv, VB_H } from '../util.js';
 
 const MODES = [['left', '$P(X<a)$'], ['right', '$P(X>a)$'], ['between', '$P(a<X<b)$'], ['inv', 'Area $\\to$ value']];
 
@@ -33,7 +33,7 @@ export function render(sec) {
         <label data-p-wrap><span>Area to the left <span data-p-label></span></span><input type="range" min="0.01" max="0.99" step="0.01" data-p></label>
       </div>
       <div class="ex-modes ex-cols-4">${modes}</div>
-      <div class="ex-chart"><svg viewBox="0 0 640 260" role="img" aria-label="Normal curve with the chosen area shaded" data-chart></svg></div>
+      <div class="ex-chart"><svg viewBox="0 0 640 ${VB_H}" role="img" aria-label="Normal curve with the chosen area shaded" data-chart></svg></div>
       <div class="ex-stats ex-cols-3">
         <div class="ex-stat"><div class="label" data-z-label></div><div class="value" data-z></div></div>
         <div class="ex-stat"><div class="label" data-event></div><div class="value accent" data-prob></div></div>
@@ -84,7 +84,7 @@ export function mount(el, sec) {
       zLab = '$z=\\dfrac{x-\\mu}{\\sigma}$';
       xLab = 'Value $x$';
     }
-    const X0 = 20, W = 600, base = 210, top = 30;
+    const X0 = 20, W = 600, base = VB_H - 50, top = 30;
     const xs = (v) => X0 + ((v - lo) / (hi - lo)) * W;
     const ymax = pdf(mu) * 1.1;
     const ys = (v) => base - (pdf(v) / ymax) * (base - top);

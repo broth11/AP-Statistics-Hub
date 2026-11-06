@@ -39,7 +39,7 @@ Start the file with a comment block that says what it shows and lists the sectio
 
 ## Layout rules (from the teacher)
 
-- The explorer fits one screen with no scrolling; the chart takes the leftover space. Use the `.explorer` flex column, `flex: none` rows, and `.ex-chart { flex: 1 }` with an SVG `viewBox="0 0 640 260"`.
+- The explorer fits one screen with no scrolling. Render, in order: `.ex-presets`, `.ex-sliders`, optional `.ex-modes` and `.ex-actions`, `.ex-chart`, `.ex-stats`. The page regroups them: chart and stats at left, controls in a right pane. Use an SVG `viewBox="0 0 640 ${VB_H}"` (`VB_H` from `util.js`) and set the baseline from `VB_H`. `random-assignment` still uses a 260-high viewBox.
 - Controls sit in equal-width columns, centered, stretched to full width: `.ex-presets`, `.ex-sliders`, `.ex-modes`, `.ex-actions`, `.ex-stats`, with `.ex-cols-2/3/4` to set the count.
 - Preset buttons show a name on row 1 and the values on row 2 (`<span>Name</span>` then `tex(sub)`), and values never split across rows.
 - Every explorer has a short story under its title in the side column: who, how many, and what is being measured.
