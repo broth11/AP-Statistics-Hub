@@ -64,6 +64,8 @@ Cards and rows are both optional, but one is required. A "Video" column is added
   "buttons": [ { "label": "Watch the formula (26:56)", "seek": 1616 } ] }
 ```
 
+A part's `tex` is one line of math, or an array of lines shown on separate rows. Use an array whenever a box holds two calculations (for example both large-counts checks: `["$600(0.27)=162$", "$600(0.73)=438$"]`) and never join them with a comma or "and". Boxes are narrow, about a quarter of the page width at most, so keep each row short: put words such as "both at least 10" in the part's `text`, not in the math. The math in a box renders at 17px.
+
 Only `intro` is required.
 
 ## `explorer`
