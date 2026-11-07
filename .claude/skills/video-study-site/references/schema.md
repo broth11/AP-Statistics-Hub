@@ -55,16 +55,41 @@ Cards and rows are both optional, but one is required. A "Video" column is added
 
 ## `procedure`
 
+> **Transition (7 Nov 2026):** this schema replaces the old `parts` boxes. Until `docs/js/sections/procedure.js` renders `questions`, the site still shows the old layout. The migration is described in `procedure-migration-handoff.md`; remove this note when it lands.
+
+A procedure section is a set of **worked questions** (layout "compact split", chosen Nov 2026). The side column shows the section title and the questions as `Q1)`, `Q2)`, ... each with its objective. Clicking one shows it on the right: a header row `Q1) objective`, then the question text and the key formula side by side, then the numbered steps, then the answer in context, then the video buttons.
+
+Each step is one row: the working on the left, and the step instruction (bold) with its note on the right, separated by a thin vertical rule. The working column is as wide as the widest working in that question, capped at 55% of the content width. Below about 560px the row stacks: instruction and note first, working underneath.
+
 ```json
-{ "type": "procedure",
-  "intro": "Text above the steps.",
-  "steps": ["Optional numbered steps ..."],
-  "parts": [ { "label": "Combinations", "tex": "$\\binom{8}{3}=56$", "text": "..." } ],
-  "line": "$P(X=x)=\\binom{n}{x}p^x(1-p)^{n-x}$",
-  "buttons": [ { "label": "Watch the formula (26:56)", "seek": 1616 } ] }
+{ "type": "procedure", "id": "method", "tab": "Method", "kicker": "Procedure",
+  "title": "Calculate probabilities with dice and marbles",
+  "intro": "Optional. One sentence above the questions.",
+  "questions": [
+    { "obj": "Find the probability that two dice sum to 7",
+      "q": "Two fair six-sided dice are rolled. Find the probability that the sum is 7.",
+      "formula": ["$P(E)=\\dfrac{\\text{outcomes in }E}{\\text{outcomes in the sample space}}$"],
+      "steps": [
+        { "t": "Decide what the equally likely outcomes are and how many there are.",
+          "work": { "tex": ["$6\\times6=36$"],
+                    "text": "36 is the total number of ordered pairs from the two dice (Die 1, Die 2)." } },
+        { "t": "Divide, then answer in context.",
+          "work": { "tex": ["$P(\\text{sum is }7)=\\dfrac{6}{36}$", "$\\approx0.167$"] } }
+      ],
+      "answer": "The probability that the two dice sum to 7 is about 0.167.",
+      "seek": 658 } ],
+  "buttons": [ { "label": "Watch the complement rule (6:46)", "seek": 406 } ] }
 ```
 
-A part's `tex` is one line of math, or an array of lines shown on separate rows. Use an array whenever a box holds two calculations (for example both large-counts checks: `["$600(0.27)=162$", "$600(0.73)=438$"]`) and never join them with a comma or "and". Boxes are narrow, about a quarter of the page width at most, so keep each row short: put words such as "both at least 10" in the part's `text`, not in the math. The math in a box renders at 17px.
+Required: `title`, `questions` (at least one). Each question needs `obj`, `q`, `steps` (at least one), and `answer`. Each step needs `t`; `work` is optional and holds `tex`, `text`, or both. A step with no `tex` (naming a test, defining a parameter, describing an assignment method) puts its text across the whole row.
+
+- `obj` is plain text (no math): the objective as an imperative, starting with a verb, about 60 characters at most. It appears in the side list and the header row.
+- `q` is the full question a student would be handed, with every number needed. Worked questions may reuse the video's scenarios.
+- `formula` is optional: up to two lines in general form, shown above step 1 as "Key formula". Leave it out when no formula drives the working.
+- `work.tex` is an array, one calculation per line, rendered as one aligned block split at the first `=`, `\\approx`, or `\\neq`. Write `$lhs = rhs$` and start continuation lines with `=` or `\\approx`. The math renders at 16px, one step above the 15px body.
+- `work.text` is one or two complete sentences saying what the numbers mean.
+- `seek` is optional and adds a "Watch this example" link to that question.
+- `parts`, string `steps`, and `line` are the retired box layout. Do not write them.
 
 Only `intro` is required.
 
