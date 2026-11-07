@@ -222,39 +222,140 @@
    "tab": "Setup",
    "kicker": "Procedure",
    "title": "Set up a test with PHANTOM",
-   "intro": "The first four PHANTOM steps set up the test. None of them uses the sample proportion. The last three steps (test statistic, p-value, conclusion) come in topics 3.6 and 3.7.",
-   "steps": [
-    "Parameter: define $p$ with the population and the response variable.",
-    "Hypotheses: $H_0: p=p_0$ and $H_a$ with $<$, $>$ or $\\ne$, using the same number.",
-    "Assumptions: random sample, $n$ at most 10% of the population, and $np_0\\ge10$, $n(1-p_0)\\ge10$.",
-    "Name the test: one-sample $z$ test for a population proportion. Steps 1 and 4 fit in one sentence."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Parameter and name",
-     "tex": "$p=$ proportion of all Oakville residents who favor the dog park",
-     "text": "One-sample $z$ test for $p$."
-    },
-    {
-     "label": "Random and 10%",
-     "tex": "465 random, less than 10% of residents",
-     "text": "Assume the city has more than 4,650 residents when the size is not given."
-    },
-    {
-     "label": "Large counts",
-     "tex": [
-      "$465(0.75)=348.75$",
-      "$465(0.25)=116.25$"
+     "obj": "Set up a one-sample z test for a claim of more than a value",
+     "q": "The Oakville City Council will build a dog park only if there is evidence that more than 75% of residents want it. A random sample of 465 registered voters is selected, and 361 say they want the dog park. Set up the test.",
+     "formula": [
+      "$H_0:p=p_0$",
+      "$H_a:p>p_0$ or $p<p_0$ or $p\\neq p_0$"
      ],
-     "text": "Both at least 10. Uses $p_0=0.75$, not $\\hat p=0.776$."
+     "steps": [
+      {
+       "t": "Parameter and Name: define $p$ and name the test.",
+       "work": {
+        "text": "This is a one-sample $z$ test for $p$, where $p$ is the proportion of all Oakville residents who want the dog park."
+       }
+      },
+      {
+       "t": "Hypotheses: write $H_0$ and $H_a$ with the same number.",
+       "work": {
+        "tex": [
+         "$H_0:p=0.75$",
+         "$H_a:p>0.75$"
+        ],
+        "text": "The council wants evidence of more than 75%, so the alternative is the upper tail. The hypotheses use $p$, not $\\hat p$."
+       }
+      },
+      {
+       "t": "Assumptions: check randomization and the 10% condition.",
+       "work": {
+        "text": "The sample is random. Assume Oakville has more than 4,650 residents, so 465 is less than 10% of all residents."
+       }
+      },
+      {
+       "t": "Assumptions: check the large counts using $p_0$, never $\\hat p$.",
+       "work": {
+        "tex": [
+         "$465(0.75)=348.75$",
+         "$465(0.25)=116.25$"
+        ],
+        "text": "Both counts are at least 10, so the sampling distribution under the null is approximately normal."
+       }
+      }
+     ],
+     "answer": "A one-sample $z$ test for $p$, the proportion of all Oakville residents who want the dog park, with $H_0:p=0.75$ and $H_a:p>0.75$. The sample is random, 465 is less than 10% of all residents, and $465(0.75)=348.75$ and $465(0.25)=116.25$ are both at least 10.",
+     "seek": 1510
     },
     {
-     "label": "Hypotheses",
-     "tex": "$H_0: p=0.75$ and $H_a: p>0.75$",
-     "text": "The council wants evidence of more than 75%."
+     "obj": "Set up a one-sample z test for a claim of fewer than a value",
+     "q": "A company claims that fewer than 8% of its light bulbs are defective. In a random sample of 650 bulbs, 42 are defective. Set up a test of the claim.",
+     "formula": [
+      "$H_0:p=p_0$",
+      "$H_a:p>p_0$ or $p<p_0$ or $p\\neq p_0$"
+     ],
+     "steps": [
+      {
+       "t": "Parameter and Name: define $p$ and name the test.",
+       "work": {
+        "text": "This is a one-sample $z$ test for $p$, where $p$ is the proportion of all the company's light bulbs that are defective."
+       }
+      },
+      {
+       "t": "Hypotheses: write $H_0$ and $H_a$ with the same number.",
+       "work": {
+        "tex": [
+         "$H_0:p=0.08$",
+         "$H_a:p<0.08$"
+        ],
+        "text": "The claim is \"fewer than 8%\", so the alternative is the lower tail."
+       }
+      },
+      {
+       "t": "Assumptions: check randomization and the 10% condition.",
+       "work": {
+        "text": "The sample is random. Assume the company makes more than 6,500 bulbs, so 650 is less than 10% of all bulbs."
+       }
+      },
+      {
+       "t": "Assumptions: check the large counts using $p_0$, never $\\hat p$.",
+       "work": {
+        "tex": [
+         "$650(0.08)=52$",
+         "$650(0.92)=598$"
+        ],
+        "text": "Both counts are at least 10, so the sampling distribution under the null is approximately normal."
+       }
+      }
+     ],
+     "answer": "A one-sample $z$ test for $p$, the proportion of all the company's light bulbs that are defective, with $H_0:p=0.08$ and $H_a:p<0.08$. The sample is random, 650 is less than 10% of all bulbs, and $650(0.08)=52$ and $650(0.92)=598$ are both at least 10.",
+     "seek": 328
+    },
+    {
+     "obj": "Set up a one-sample z test for a two-sided claim",
+     "q": "A school board thinks that the proportion of parents who support remote learning is different from 50%. In a random sample of 300 parents, 141 support it. Set up the test.",
+     "formula": [
+      "$H_0:p=p_0$",
+      "$H_a:p>p_0$ or $p<p_0$ or $p\\neq p_0$"
+     ],
+     "steps": [
+      {
+       "t": "Parameter and Name: define $p$ and name the test.",
+       "work": {
+        "text": "This is a one-sample $z$ test for $p$, where $p$ is the proportion of all parents in the district who support remote learning."
+       }
+      },
+      {
+       "t": "Hypotheses: write $H_0$ and $H_a$ with the same number.",
+       "work": {
+        "tex": [
+         "$H_0:p=0.50$",
+         "$H_a:p\\neq0.50$"
+        ],
+        "text": "The board thinks the proportion is different from 50%, so the alternative is two-sided."
+       }
+      },
+      {
+       "t": "Assumptions: check randomization and the 10% condition.",
+       "work": {
+        "text": "The sample is random. Assume the district has more than 3,000 parents, so 300 is less than 10% of all parents."
+       }
+      },
+      {
+       "t": "Assumptions: check the large counts using $p_0$, never $\\hat p$.",
+       "work": {
+        "tex": [
+         "$300(0.5)=150$",
+         "$300(0.5)=150$"
+        ],
+        "text": "Both counts are at least 10, so the sampling distribution under the null is approximately normal."
+       }
+      }
+     ],
+     "answer": "A one-sample $z$ test for $p$, the proportion of all parents in the district who support remote learning, with $H_0:p=0.50$ and $H_a:p\\neq0.50$. The sample is random, 300 is less than 10% of all parents, and $300(0.50)=150$ and $300(0.50)=150$ are both at least 10.",
+     "seek": 420
     }
    ],
-   "line": "$\\text{Setup uses }p_0\\text{ and the claim, never }\\hat p$",
    "buttons": [
     {
      "label": "Watch PHANTOM (9:21)",
@@ -504,6 +605,10 @@
    {
     "kind": "explorer",
     "text": "Reuses the one-proportion-test explorer from lesson 3.6 and 3.7 with a new introduction that points to the tails. The $z$ and p-value readouts are visible but not the focus."
+   },
+   {
+    "kind": "placement",
+    "text": "Procedure section rewritten as three worked questions (dog park, light bulbs, remote learning) covering the four PHANTOM setup steps. The population sizes (more than 4,650, 6,500 and 3,000) are assumed, because the video does not give them; each question says so."
    }
   ]
  }

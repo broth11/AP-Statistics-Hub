@@ -147,16 +147,7 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 .table .btn-ghost { font-size: 13px; }
 .callout { background: var(--color-surface); padding: 16px; font-size: 14px; line-height: 1.5; }
 
-/* Procedure */
-.parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border: 2px solid var(--color-divider); font-size: 15px; }
-.part { padding: 16px; border-right: 1px solid var(--color-divider); }
-.part:last-child { border-right: 0; }
-.part .big { font-size: 16px; font-weight: 700; margin: 6px 0; }
-.part .big .katex { font-size: 1em; }
-.part .big .calc + .calc { margin-top: 6px; }
-.part .text { font-size: 13px; opacity: 0.85; }
-.formula-line { font-size: 17px; font-weight: 700; }
-.formula-line .katex { font-size: 1.05em; }
+/* Procedure: shared bits */
 .btn-row { display: flex; gap: 8px; flex-wrap: wrap; }
 .prose { font-size: 15px; line-height: 1.55; }
 
@@ -321,7 +312,6 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 .ex-actions .btn[aria-pressed=true] { background: var(--color-text); color: var(--color-bg); }
 .ex-stat .value.small { font-size: 18px; line-height: 1.35; }
 
-.steps { margin: 0; padding-left: 22px; font-size: 15px; line-height: 1.55; display: flex; flex-direction: column; gap: 6px; }
 
 .table th .katex { text-transform: none; letter-spacing: 0; font-size: 1.1em; }
 @media (max-width: 760px) {

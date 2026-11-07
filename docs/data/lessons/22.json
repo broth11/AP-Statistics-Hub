@@ -111,37 +111,92 @@
    "tab": "Mean and SD",
    "kicker": "Procedure",
    "title": "Mean and standard deviation of a discrete variable",
-   "intro": "Grace sells T-shirts at a craft show. Let $S$ be the number sold in a day, with probabilities 0.08, 0.15, 0.26, 0.35, 0.10, and 0.06 for 0 through 5. The mean is easy by hand. The SD is much faster with technology.",
-   "steps": [
-    "Write the distribution as a table of values and probabilities.",
-    "Mean: multiply each value by its probability and add the products.",
-    "SD: use technology, because the formula takes one row of work for every value.",
-    "Write the symbols and interpret both numbers in context."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Mean",
-     "tex": [
-      "$\\mu_S=\\sum s\\,P(s)$",
-      "$\\mu_S=2.42$"
+     "obj": "Find and interpret the mean and standard deviation of a discrete variable",
+     "q": "Grace sells T-shirts at a craft show. Let $S$ be the number sold in a day, with $P(S=0)$ through $P(S=5)$ equal to 0.08, 0.15, 0.26, 0.35, 0.10, and 0.06. Find the mean and standard deviation of $S$ and interpret them.",
+     "formula": [
+      "$\\mu_X=\\sum x_i\\,P(x_i)$",
+      "$\\sigma_X=\\sqrt{\\sum(x_i-\\mu_X)^2P(x_i)}$"
      ],
-     "text": "0(0.08) + 1(0.15) + 2(0.26) + 3(0.35) + 4(0.10) + 5(0.06)."
+     "steps": [
+      {
+       "t": "Write the distribution as a table of values and probabilities.",
+       "work": {
+        "tex": [
+         "$S=0,\\ 1,\\ 2,\\ 3,\\ 4,\\ 5$"
+        ],
+        "text": "$S$ is discrete because Grace counts whole shirts, and the six probabilities add to 1."
+       }
+      },
+      {
+       "t": "Mean: multiply each value by its probability and add the products.",
+       "work": {
+        "tex": [
+         "$\\mu_S=0(0.08)+1(0.15)+2(0.26)$",
+         "$\\qquad+3(0.35)+4(0.10)+5(0.06)$",
+         "$=2.42$"
+        ],
+        "text": "The mean is easy to find by hand."
+       }
+      },
+      {
+       "t": "Standard deviation: use technology, because the formula needs one row of work for every value.",
+       "work": {
+        "tex": [
+         "$\\sigma_S=\\sqrt{\\sum(s-\\mu_S)^2P(s)}$",
+         "$\\approx1.258$"
+        ],
+        "text": "A calculator's summary statistics for a discrete distribution give this directly."
+       }
+      },
+      {
+       "t": "Write the symbols and interpret both numbers in context.",
+       "work": {
+        "text": "The mean is the long-run average and the standard deviation describes how much a day's sales vary from it."
+       }
+      }
+     ],
+     "answer": "Over many days, Grace sells an average of 2.42 shirts per day, and the number sold in a day typically varies from that mean by about 1.258 shirts.",
+     "seek": 908
     },
     {
-     "label": "Standard deviation",
-     "tex": [
-      "$\\sigma_S=\\sqrt{\\sum(s-\\mu_S)^2P(s)}$",
-      "$\\sigma_S\\approx1.258$"
+     "obj": "Find the mean of a variable from a distribution you built",
+     "q": "A horse enters two races, and $W$ is the number of races it wins, with $P(W=0)=0.18$, $P(W=1)=0.225$, and $P(W=2)=0.595$. Find the mean number of wins.",
+     "formula": [
+      "$\\mu_X=\\sum x_i\\,P(x_i)$"
      ],
-     "text": "The video reads this from the calculator summary."
-    },
-    {
-     "label": "Continuous case",
-     "tex": "$\\mu_H,\\ \\sigma_H$ given",
-     "text": "For a measured variable such as hippo weight, the mean and SD are given."
+     "steps": [
+      {
+       "t": "Write the distribution as a table of values and probabilities.",
+       "work": {
+        "tex": [
+         "$W=0,\\ 1,\\ 2$"
+        ],
+        "text": "The three probabilities add to 1."
+       }
+      },
+      {
+       "t": "Mean: multiply each value by its probability and add the products.",
+       "work": {
+        "tex": [
+         "$\\mu_W=0(0.18)+1(0.225)+2(0.595)$",
+         "$=1.415$"
+        ],
+        "text": "This is the expected value of $W$."
+       }
+      },
+      {
+       "t": "Interpret the mean in context.",
+       "work": {
+        "text": "The horse will not win 1.415 races in any one weekend. This is the long-run average."
+       }
+      }
+     ],
+     "answer": "Over many pairs of races, the horse wins an average of 1.415 races per pair.",
+     "seek": 686
     }
    ],
-   "line": "$\\mu_S=2.42\\text{ shirts},\\ \\sigma_S\\approx1.258\\text{ shirts}$",
    "buttons": [
     {
      "label": "Watch the mean formula (6:54)",
@@ -159,36 +214,135 @@
    "tab": "Transforming",
    "kicker": "Procedure",
    "title": "Transform a random variable",
-   "intro": "Grace earns 28 dollars per shirt and pays an 8 dollar fee to sell at the show. Her profit is $28S-8$. Multiplying changes both the mean and the standard deviation. Subtracting the fee changes only the mean.",
-   "parts": [
+   "questions": [
     {
-     "label": "Mean",
-     "tex": [
-      "$\\mu_Y=28\\mu_S-8$",
-      "$=28(2.42)-8$",
-      "$=59.76$"
+     "obj": "Transform a random variable by multiplying",
+     "q": "Grace sells her shirts for 28 dollars each. The mean and standard deviation of the number of shirts $S$ sold in a day are 2.42 and 1.258. Find the mean and standard deviation of her daily revenue $R=28S$.",
+     "formula": [
+      "$\\mu_{aX+b}=a\\mu_X+b$",
+      "$\\sigma_{aX+b}=|a|\\,\\sigma_X$"
      ],
-     "text": "Multiply, then subtract. Dollars."
+     "steps": [
+      {
+       "t": "Write the transformation.",
+       "work": {
+        "tex": [
+         "$R=28S$"
+        ],
+        "text": "Revenue is 28 dollars times the number of shirts."
+       }
+      },
+      {
+       "t": "Multiply the mean.",
+       "work": {
+        "tex": [
+         "$\\mu_R=28\\mu_S$",
+         "$=28(2.42)$",
+         "$=67.76$"
+        ],
+        "text": "Multiplying by a constant multiplies the mean by that constant."
+       }
+      },
+      {
+       "t": "Multiply the standard deviation.",
+       "work": {
+        "tex": [
+         "$\\sigma_R=28\\sigma_S$",
+         "$=28(1.258)$",
+         "$\\approx35.22$"
+        ],
+        "text": "Multiplying by a constant also multiplies the standard deviation."
+       }
+      }
+     ],
+     "answer": "Grace's daily revenue has a mean of 67.76 dollars and a standard deviation of about 35.22 dollars.",
+     "seek": 1465
     },
     {
-     "label": "Standard deviation",
-     "tex": [
-      "$\\sigma_Y=28\\sigma_S$",
-      "$=28(1.258)$",
-      "$\\approx35.24$"
+     "obj": "Transform a random variable by multiplying and subtracting",
+     "q": "Grace pays a one-time fee of 8 dollars to sell at the craft show, so her profit is $Y=28S-8$. With $\\mu_S=2.42$ and $\\sigma_S=1.258$, find the mean and standard deviation of her profit.",
+     "formula": [
+      "$\\mu_{aX+b}=a\\mu_X+b$",
+      "$\\sigma_{aX+b}=|a|\\,\\sigma_X$"
      ],
-     "text": "Only the multiplier counts. The 8 dollar fee does not change the spread."
+     "steps": [
+      {
+       "t": "Write the transformation.",
+       "work": {
+        "tex": [
+         "$Y=28S-8$"
+        ],
+        "text": "Multiply by 28, then subtract the fee."
+       }
+      },
+      {
+       "t": "Mean: multiply, then subtract.",
+       "work": {
+        "tex": [
+         "$\\mu_Y=28\\mu_S-8$",
+         "$=28(2.42)-8$",
+         "$=59.76$"
+        ],
+        "text": "Multiplying and subtracting both change the mean."
+       }
+      },
+      {
+       "t": "Standard deviation: only the multiplier counts.",
+       "work": {
+        "tex": [
+         "$\\sigma_Y=28\\sigma_S$",
+         "$=28(1.258)$",
+         "$\\approx35.22$"
+        ],
+        "text": "Subtracting a constant does not change spread, so the 8 dollar fee does not appear."
+       }
+      }
+     ],
+     "answer": "Grace's daily profit has a mean of 59.76 dollars and a standard deviation of about 35.22 dollars.",
+     "seek": 1568
     },
     {
-     "label": "Units",
-     "tex": [
-      "$450\\div2.2\\approx204.5$",
-      "$40\\div2.2\\approx18.2$"
+     "obj": "Convert units of a random variable",
+     "q": "The weight of a lion has mean 450 pounds and standard deviation 40 pounds. One kilogram is 2.2 pounds. Find the mean and standard deviation in kilograms.",
+     "formula": [
+      "$\\mu_{aX+b}=a\\mu_X+b$",
+      "$\\sigma_{aX}=|a|\\,\\sigma_X$"
      ],
-     "text": "Lion mean and SD in kilograms. Divide both by the conversion factor."
+     "steps": [
+      {
+       "t": "Write the conversion as a multiplication.",
+       "work": {
+        "tex": [
+         "$\\text{kilograms}=\\dfrac{\\text{pounds}}{2.2}$"
+        ],
+        "text": "Dividing by 2.2 is multiplying by $1/2.2$."
+       }
+      },
+      {
+       "t": "Convert the mean.",
+       "work": {
+        "tex": [
+         "$\\mu=\\dfrac{450}{2.2}$",
+         "$\\approx204.5$"
+        ],
+        "text": "Pounds cancel and kilograms remain."
+       }
+      },
+      {
+       "t": "Convert the standard deviation.",
+       "work": {
+        "tex": [
+         "$\\sigma=\\dfrac{40}{2.2}$",
+         "$\\approx18.2$"
+        ],
+        "text": "The standard deviation is multiplied by the same conversion factor."
+       }
+      }
+     ],
+     "answer": "The lion weight has a mean of about 204.5 kilograms and a standard deviation of about 18.2 kilograms.",
+     "seek": 1364
     }
    ],
-   "line": "$\\mu_{aX+b}=a\\mu_X+b$ and $\\sigma_{aX+b}=|a|\\sigma_X$",
    "buttons": [
     {
      "label": "Watch the units (22:39)",
@@ -428,6 +582,14 @@
    {
     "kind": "calculator",
     "text": "The video uses a Discrete distribution with a Summary tab (likely Bluebook's Desmos). The embedded calculator lacks it, so lists and total() are used. Values verified in the embedded calculator: mean 2.42, SD 1.2584."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as two worked questions. The video finds the standard deviation with a calculator; the page does not include calculator steps. Both values are computed in code."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions: revenue, profit, and units. The old page showed 28(1.258) as about 35.24. That is correct only for the unrounded standard deviation 1.2584; with the displayed 1.258 the product is 35.22, which is what the video says, so the page now shows 35.22 and gives 1.258 as the stated value."
    }
   ]
  }

@@ -55,8 +55,6 @@ Cards and rows are both optional, but one is required. A "Video" column is added
 
 ## `procedure`
 
-> **Transition (7 Nov 2026):** this schema replaces the old `parts` boxes. Until `docs/js/sections/procedure.js` renders `questions`, the site still shows the old layout. The migration is described in `procedure-migration-handoff.md`; remove this note when it lands.
-
 A procedure section is a set of **worked questions** (layout "compact split", chosen Nov 2026). The side column shows the section title and the questions as `Q1)`, `Q2)`, ... each with its objective. Clicking one shows it on the right: a header row `Q1) objective`, then the question text and the key formula side by side, then the numbered steps, then the answer in context, then the video buttons.
 
 Each step is one row: the working on the left, and the step instruction (bold) with its note on the right, separated by a thin vertical rule. The working column is as wide as the widest working in that question, capped at 55% of the content width. Below about 560px the row stacks: instruction and note first, working underneath.

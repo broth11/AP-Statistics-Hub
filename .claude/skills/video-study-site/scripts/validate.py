@@ -73,11 +73,10 @@ def check_section(s, i, repo):
         # Worked questions (compact split). `parts`, string `steps` and `line` are the retired box layout.
         for k in ("parts", "line"):
             if k in s:
-                warn(f"{where}: '{k}' is the retired procedure layout; write worked questions")
+                err(f"{where}: '{k}' is the retired procedure layout; write worked questions")
         if any(isinstance(x, str) for x in s.get("steps", [])):
-            warn(f"{where}: string 'steps' is the retired procedure layout; write worked questions")
-        # Until every lesson is migrated, a section that still has legacy `parts` is allowed (with the warning above).
-        need(s, ["title"] if "parts" in s else ["title", "questions"], where)
+            err(f"{where}: string 'steps' is the retired procedure layout; write worked questions")
+        need(s, ["title", "questions"], where)
         for j, q in enumerate(s.get("questions", [])):
             w = f"{where}.questions[{j}]"
             need(q, ["obj", "q", "steps", "answer"], w)

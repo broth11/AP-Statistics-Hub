@@ -218,28 +218,83 @@
    "tab": "Random assignment",
    "kicker": "Procedure",
    "title": "Describe random assignment so it earns credit",
-   "intro": "AP questions often ask how you would randomly assign treatments. Use the method from the video for 100 subjects and three groups:",
-   "steps": [
-    "Give each subject a unique number from 1 to 100.",
-    "Use a random number generator to pick numbers from 1 to 100. Ignore repeats and numbers outside 1 to 100.",
-    "The subjects with the first 33 numbers picked get treatment 1 (50 mg). The next 33 get treatment 2 (100 mg).",
-    "The remaining 34 subjects get treatment 3 (placebo)."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Label",
-     "tex": "1 to 100",
-     "text": "Every subject gets their own number."
+     "obj": "Describe random assignment of subjects to three treatments",
+     "q": "An experiment tests 50 mg of vitamin D, 100 mg of vitamin D, and a placebo on 100 subjects. Describe how to randomly assign the subjects to the three treatments.",
+     "steps": [
+      {
+       "t": "Label: give each subject a unique number.",
+       "work": {
+        "tex": [
+         "$1\\text{ to }100$"
+        ],
+        "text": "Every one of the 100 subjects gets their own number from 1 to 100."
+       }
+      },
+      {
+       "t": "Randomize: say what you generate numbers with and how you handle repeats.",
+       "work": {
+        "text": "Use a random number generator to pick numbers from 1 to 100. Ignore repeated numbers, because a subject cannot go into two groups, and ignore numbers outside 1 to 100."
+       }
+      },
+      {
+       "t": "Assign: say which selected numbers go to which treatment.",
+       "work": {
+        "tex": [
+         "$33+33+34=100$"
+        ],
+        "text": "The subjects with the first 33 numbers selected get 50 mg, the subjects with the next 33 numbers get 100 mg, and the remaining 34 subjects get the placebo."
+       }
+      }
+     ],
+     "answer": "Number the subjects from 1 to 100. Use a random number generator to select numbers from 1 to 100, ignoring repeats and numbers outside that range. The subjects with the first 33 numbers get 50 mg, the next 33 get 100 mg, and the remaining 34 get the placebo.",
+     "seek": 1265
     },
     {
-     "label": "Randomize",
-     "tex": "RNG",
-     "text": "Say what you randomize with and how you handle repeats."
-    },
-    {
-     "label": "Assign",
-     "tex": "33, 33, 34",
-     "text": "Say which numbers go to which treatment."
+     "obj": "Describe random assignment within blocks",
+     "q": "The 300 subjects in the vitamin D experiment are 50 young, 120 middle-aged, and 130 older. Age may affect blood pressure, so the researcher blocks by age. Describe how to randomly assign each block to the three treatments.",
+     "steps": [
+      {
+       "t": "Block: form one group for each age category.",
+       "work": {
+        "tex": [
+         "$50+120+130=300$"
+        ],
+        "text": "The blocks are chosen by age, not by chance. Each block is a group of similar subjects."
+       }
+      },
+      {
+       "t": "Label: within each block, give each subject a unique number.",
+       "work": {
+        "tex": [
+         "$1\\text{ to }50$",
+         "$1\\text{ to }120$",
+         "$1\\text{ to }130$"
+        ],
+        "text": "Number the young block from 1 to 50, the middle-aged block from 1 to 120, and the older block from 1 to 130."
+       }
+      },
+      {
+       "t": "Randomize: in each block, use a random number generator and ignore repeats and numbers outside the block.",
+       "work": {
+        "text": "Run a separate random assignment inside every block."
+       }
+      },
+      {
+       "t": "Assign: split each block as evenly as possible among the three treatments.",
+       "work": {
+        "tex": [
+         "$50=17+17+16$",
+         "$120=40+40+40$",
+         "$130=43+43+44$"
+        ],
+        "text": "Each treatment then gets about the same number of young, middle-aged, and older subjects."
+       }
+      }
+     ],
+     "answer": "Form three blocks by age: 50 young, 120 middle-aged, and 130 older subjects. Within each block, number the subjects, use a random number generator to select numbers (ignoring repeats and numbers outside the block), and assign the first third to 50 mg, the next third to 100 mg, and the rest to the placebo, using 17, 17, 16 for the young block, 40, 40, 40 for the middle-aged block, and 43, 43, 44 for the older block.",
+     "seek": 2172
     }
    ],
    "buttons": [
@@ -496,6 +551,10 @@
    {
     "kind": "explorer",
     "text": "New explorer: random-assignment. Check that the default study (30 subjects) and the presets read well in class."
+   },
+   {
+    "kind": "placement",
+    "text": "Procedure section rewritten as two worked questions. Q2 (random assignment within age blocks) uses the block-design example at 36:00 that the old section pointed to with a button."
    }
   ]
  }

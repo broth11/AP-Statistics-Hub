@@ -1,7 +1,6 @@
 // Procedure section: worked questions (compact split layout).
 // A section holds `questions`; each has an objective, the question, an optional key formula, numbered steps
 // (working on the left, instruction and note on the right) and the answer in context.
-// Sections that still use the retired `parts` boxes fall back to oldRender until every lesson is migrated.
 import { esc, tex, fmtTime } from '../util.js';
 
 // Stack several lines of math as one aligned block: each line is split at its first top-level "=", "\\approx"
@@ -46,30 +45,11 @@ function panel(q, i) {
 
 // The question list in the side column, under the section title.
 export function renderSide(sec) {
-  if (!sec.questions) return '';
   return `<ol class="qlist">${sec.questions.map((q, i) => `<li><button type="button" class="qbtn" data-q="${i}" aria-expanded="${i === 0}"><span class="qn">Q${i + 1})</span><span>${esc(q.obj)}</span></button></li>`).join('')}</ol>`;
-}
-
-// Retired layout: a grid of boxes. Removed once every lesson has `questions`.
-function oldRender(sec) {
-  const parts = (sec.parts || []).map((p) => `
-    <div class="part">
-      <div class="eyebrow">${esc(p.label)}</div>
-      <div class="big">${Array.isArray(p.tex) && p.tex.length > 1 ? `<div class="calc">${tex(aligned(p.tex))}</div>` : [].concat(p.tex).map((t) => `<div class="calc">${tex(t)}</div>`).join('')}</div>
-      <div class="text">${tex(p.text)}</div>
-    </div>`).join('');
-  const buttons = (sec.buttons || []).map((b) => `<button class="btn btn-secondary" data-seek="${b.seek}">${esc(b.label)}</button>`).join('');
-  return `
-    <div class="prose">${tex(sec.intro)}</div>
-    ${(sec.steps || []).length ? `<ol class="steps">${sec.steps.map((t) => `<li>${tex(t)}</li>`).join('')}</ol>` : ''}
-    ${parts ? `<div class="parts">${parts}</div>` : ''}
-    ${sec.line ? `<div class="formula-line">${tex(sec.line)}</div>` : ''}
-    ${buttons ? `<div class="btn-row">${buttons}</div>` : ''}`;
 }
 
 // Every question is rendered up front (first one visible) so the math is laid out once and switching is instant.
 export function render(sec) {
-  if (!sec.questions) return oldRender(sec);
   const buttons = (sec.buttons || []).map((b) => `<button class="btn btn-secondary" data-seek="${b.seek}">${esc(b.label)}</button>`).join('');
   return `
     ${sec.intro ? `<div class="prose">${tex(sec.intro)}</div>` : ''}
@@ -78,7 +58,6 @@ export function render(sec) {
 }
 
 export function mount(el, sec) {
-  if (!sec.questions) return {};
   const btns = [...el.closest('section').querySelectorAll('.qbtn')];
   const panels = [...el.querySelectorAll('.qpanel')];
   btns.forEach((b) => b.addEventListener('click', () => {

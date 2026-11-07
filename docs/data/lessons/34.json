@@ -280,37 +280,123 @@
    "tab": "Sample size",
    "kicker": "Procedure",
    "title": "Choose a sample size for a target margin of error",
-   "intro": "Researchers often start with the margin of error they want and solve for $n$. Solve $\\text{ME}=z^*\\sqrt{\\hat p(1-\\hat p)/n}$ for $n$.",
-   "steps": [
-    "Write down the margin of error ME you want.",
-    "Find $z^*$ for the confidence level.",
-    "Choose $\\hat p$ before sampling: use a proportion from a previous study if the problem gives one, otherwise use 0.5.",
-    "Compute $n=\\hat p(1-\\hat p)\\left(\\dfrac{z^*}{\\text{ME}}\\right)^2$.",
-    "Round up to the next whole number."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "No prior information",
-     "tex": "$\\hat p=0.5$",
-     "text": "Gives the largest $n$, so the margin of error is guaranteed."
+     "obj": "Choose a sample size when there is no prior information",
+     "q": "A polling organization wants to estimate the proportion of registered voters in a state who support a proposed tax increase. It wants a margin of error of at most 0.03 at the 95% confidence level. Estimate the sample size needed.",
+     "formula": [
+      "$n=\\hat p(1-\\hat p)\\left(\\dfrac{z^*}{ME}\\right)^2$"
+     ],
+     "steps": [
+      {
+       "t": "Write down the margin of error you want.",
+       "work": {
+        "tex": [
+         "$ME=0.03$"
+        ],
+        "text": "The organization wants a margin of error of at most 0.03."
+       }
+      },
+      {
+       "t": "Find $z^*$ for the confidence level.",
+       "work": {
+        "tex": [
+         "$z^*=1.96$"
+        ],
+        "text": "1.96 is the critical value for the middle 95% of the standard normal distribution."
+       }
+      },
+      {
+       "t": "Choose $\\hat p$ before sampling.",
+       "work": {
+        "tex": [
+         "$\\hat p=0.5$"
+        ],
+        "text": "There is no previous study, so use 0.5. It gives the largest $n$, so the margin of error is guaranteed."
+       }
+      },
+      {
+       "t": "Substitute into the formula for $n$.",
+       "work": {
+        "tex": [
+         "$n=0.5(0.5)\\left(\\dfrac{1.96}{0.03}\\right)^2$",
+         "$\\approx1067.1$"
+        ],
+        "text": "This formula comes from solving the margin of error formula for $n$."
+       }
+      },
+      {
+       "t": "Round up to the next whole number.",
+       "work": {
+        "tex": [
+         "$n=1{,}068$"
+        ],
+        "text": "Always round up, so the margin of error is no larger than 0.03."
+       }
+      }
+     ],
+     "answer": "The organization needs a sample of at least 1,068 registered voters to estimate the proportion with a margin of error of at most 0.03 at the 95% confidence level.",
+     "seek": 1470
     },
     {
-     "label": "Prior study",
-     "tex": "$\\hat p=0.42$",
-     "text": "Use the earlier proportion when the problem gives it."
-    },
-    {
-     "label": "Tax poll",
-     "tex": "$n=0.5(0.5)\\left(\\dfrac{1.96}{0.03}\\right)^2\\approx1067.1$",
-     "text": "Round up to 1,068."
-    },
-    {
-     "label": "Self-checkout",
-     "tex": "$n=0.42(0.58)\\left(\\dfrac{1.645}{0.04}\\right)^2\\approx412.0$",
-     "text": "Round up to 412."
+     "obj": "Choose a sample size using a proportion from a previous study",
+     "q": "In a previous study, 42% of customers at a grocery store said that they regularly use the self-checkout. The store plans a new survey to estimate the proportion who regularly use it, with a margin of error of no more than 0.04 at the 90% confidence level. Estimate the sample size needed.",
+     "formula": [
+      "$n=\\hat p(1-\\hat p)\\left(\\dfrac{z^*}{ME}\\right)^2$"
+     ],
+     "steps": [
+      {
+       "t": "Write down the margin of error you want.",
+       "work": {
+        "tex": [
+         "$ME=0.04$"
+        ],
+        "text": "The store wants a margin of error of no more than 0.04."
+       }
+      },
+      {
+       "t": "Find $z^*$ for the confidence level.",
+       "work": {
+        "tex": [
+         "$z^*=1.645$"
+        ],
+        "text": "1.645 is the critical value for the middle 90% of the standard normal distribution."
+       }
+      },
+      {
+       "t": "Choose $\\hat p$ before sampling.",
+       "work": {
+        "tex": [
+         "$\\hat p=0.42$",
+         "$1-\\hat p=0.58$"
+        ],
+        "text": "A previous study gave 42%, so use it instead of 0.5."
+       }
+      },
+      {
+       "t": "Substitute into the formula for $n$.",
+       "work": {
+        "tex": [
+         "$n=0.42(0.58)\\left(\\dfrac{1.645}{0.04}\\right)^2$",
+         "$\\approx412.0$"
+        ],
+        "text": "The previous proportion makes the required sample smaller than the one from using 0.5."
+       }
+      },
+      {
+       "t": "Round up to the next whole number.",
+       "work": {
+        "tex": [
+         "$n=412$"
+        ],
+        "text": "Always round up."
+       }
+      }
+     ],
+     "answer": "The store needs a sample of at least 412 customers to estimate the proportion who regularly use the self-checkout with a margin of error of at most 0.04 at the 90% confidence level.",
+     "seek": 1667
     }
    ],
-   "line": "$n=\\hat p(1-\\hat p)\\left(\\dfrac{z^*}{\\text{ME}}\\right)^2\\;\\Rightarrow\\;n\\approx1067.1\\text{, so }n=1,068$",
    "buttons": [
     {
      "label": "Watch solving for n (20:47)",
@@ -628,6 +714,10 @@
    {
     "kind": "calculator",
     "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds). The z-test steps use z-test for proportions, Create Test, and the Confidence Interval and Significance Test tabs."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as two worked questions. The tax poll gives n of about 1067.1 (rounded up to 1,068). The self-checkout calculation gives 411.99, so the page rounds up to 412; check this against the video if the unrounded value matters."
    }
   ]
  }

@@ -207,25 +207,158 @@
    "tab": "Formula",
    "kicker": "Procedure",
    "title": "Where the formula comes from",
-   "intro": "McKenzie makes 78% of her free throws and shoots 8. Each specific sequence with 3 makes and 5 misses has probability $0.78^3 \\cdot 0.22^5$. The number of different sequences is $\\binom{8}{3}$.",
-   "parts": [
+   "questions": [
     {
-     "label": "Combinations",
-     "tex": "$\\binom{8}{3}=56$",
-     "text": "Ways to place 3 makes among 8 shots. Desmos: nCr(8,3)."
+     "obj": "Find the probability of no successes in a binomial setting",
+     "q": "McKenzie makes 78% of her free throws and shoots 8. Assume the shots are independent. Find the probability that she makes none of them.",
+     "formula": [
+      "$P(X=x)=\\dbinom{n}{x}\\,p^x(1-p)^{n-x}$"
+     ],
+     "steps": [
+      {
+       "t": "Check that the setting is binomial and name $n$ and $p$.",
+       "work": {
+        "tex": [
+         "$n=8$",
+         "$p=0.78$"
+        ],
+        "text": "Each shot is a make or a miss, the shots are independent, there is a fixed number of shots, and the probability of a make is the same each time."
+       }
+      },
+      {
+       "t": "Find the probability of one specific sequence with the required number of successes.",
+       "work": {
+        "tex": [
+         "$0.78^0(0.22)^8$",
+         "$\\approx0.00000549$"
+        ],
+        "text": "Missing all eight shots has no successes, so the success factor is $0.78^0=1$, and each of the eight misses has probability $1-0.78=0.22$."
+       }
+      },
+      {
+       "t": "Count the sequences with that many successes.",
+       "work": {
+        "tex": [
+         "$\\dbinom{8}{0}=1$"
+        ],
+        "text": "There is only one way to miss every shot."
+       }
+      },
+      {
+       "t": "Multiply the count by the probability of one sequence.",
+       "work": {
+        "tex": [
+         "$P(X=0)=1\\cdot0.78^0(0.22)^8$",
+         "$\\approx0.00000549$"
+        ],
+        "text": "The probability is very small, which makes sense for a 78% shooter."
+       }
+      }
+     ],
+     "answer": "The probability that McKenzie makes none of her 8 free throws is about 0.00000549.",
+     "seek": 826
     },
     {
-     "label": "Successes",
-     "tex": "$p^x=0.78^3$",
-     "text": "One factor of p for each success."
+     "obj": "Find the probability of a given number of successes",
+     "q": "McKenzie makes 78% of her free throws and shoots 8. Find the probability that she makes exactly 3 of them.",
+     "formula": [
+      "$P(X=x)=\\dbinom{n}{x}\\,p^x(1-p)^{n-x}$"
+     ],
+     "steps": [
+      {
+       "t": "Check that the setting is binomial and name $n$, $p$, and $x$.",
+       "work": {
+        "tex": [
+         "$n=8$",
+         "$p=0.78$",
+         "$x=3$"
+        ],
+        "text": "Make or miss, independent shots, a fixed number of shots, and the same probability each time."
+       }
+      },
+      {
+       "t": "Find the probability of one specific sequence with 3 makes and 5 misses.",
+       "work": {
+        "tex": [
+         "$0.78^3(0.22)^5$"
+        ],
+        "text": "Each make contributes a factor of 0.78 and each miss a factor of $1-0.78=0.22$, and $n-x=5$."
+       }
+      },
+      {
+       "t": "Count the sequences with that many successes.",
+       "work": {
+        "tex": [
+         "$\\dbinom{8}{3}=56$"
+        ],
+        "text": "There are 56 ways to place 3 makes among the 8 shots."
+       }
+      },
+      {
+       "t": "Multiply the count by the probability of one sequence.",
+       "work": {
+        "tex": [
+         "$P(X=3)=56\\,(0.78)^3(0.22)^5$",
+         "$\\approx0.0137$"
+        ],
+        "text": "The 56 sequences are different, but each has the same probability."
+       }
+      }
+     ],
+     "answer": "The probability that McKenzie makes exactly 3 of her 8 free throws is about 0.0137.",
+     "seek": 1616
     },
     {
-     "label": "Failures",
-     "tex": "$(1-p)^{n-x}=0.22^5$",
-     "text": "n − x = 5 failures."
+     "obj": "Use the binomial formula in a new setting",
+     "q": "Worldwide, 13% of people are left-handed. In a random group of 20 people, let $H$ be the number who are left-handed. Find the probability that exactly 6 are left-handed.",
+     "formula": [
+      "$P(X=x)=\\dbinom{n}{x}\\,p^x(1-p)^{n-x}$"
+     ],
+     "steps": [
+      {
+       "t": "Check that the setting is binomial and name $n$, $p$, and $x$.",
+       "work": {
+        "tex": [
+         "$n=20$",
+         "$p=0.13$",
+         "$x=6$"
+        ],
+        "text": "Left-handed or not, independent people, a fixed group of 20, and the same 13% each time. A random group of 20 is far less than 10% of all people."
+       }
+      },
+      {
+       "t": "Find the probability of one specific sequence with 6 successes.",
+       "work": {
+        "tex": [
+         "$0.13^6(0.87)^{14}$"
+        ],
+        "text": "Six left-handed people each contribute 0.13 and the other 14 people each contribute $1-0.13=0.87$."
+       }
+      },
+      {
+       "t": "Count the sequences with that many successes.",
+       "work": {
+        "tex": [
+         "$\\dbinom{20}{6}=38760$"
+        ],
+        "text": "This is the number of ways to choose which 6 of the 20 people are left-handed."
+       }
+      },
+      {
+       "t": "Multiply the count by the probability of one sequence.",
+       "work": {
+        "tex": [
+         "$P(H=6)=38760(0.13)^6(0.87)^{14}$",
+         "$\\approx0.0266$"
+        ],
+        "text": "Technology can find $\\dbinom{20}{6}$ and the powers for you, but you need to know why the formula looks this way."
+       }
+      }
+     ],
+     "answer": "The probability that exactly 6 of the 20 people are left-handed is about 0.0266.",
+     "seek": 1832
     }
    ],
-   "line": "$P(X=x)=\\binom{n}{x}\\,p^x(1-p)^{n-x}\\;\\Rightarrow\\;P(X=3)=0.0137$",
    "buttons": [
     {
      "label": "Watch the derivation (13:13)",
@@ -552,6 +685,10 @@
    {
     "kind": "calculator",
     "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds)."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions. The old page showed the McKenzie P(X=3) example; two more worked questions from the video were added (P(X=0) and the left-handed example). All values computed in code. The video gives 0.22^8 as 0.0000549, but it is 0.00000549, so the page shows 0.00000549."
    }
   ]
  }

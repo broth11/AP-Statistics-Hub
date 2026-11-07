@@ -193,39 +193,81 @@
    "tab": "Describe it",
    "kicker": "Procedure",
    "title": "Describe a sampling distribution",
-   "intro": "In Texas, 27% of high school students own a bike. Take random samples of 120 students. The statistic is $\\hat p$, the sample proportion. Describe its sampling distribution.",
-   "steps": [
-    "Name the statistic, the sample size, and the parameter.",
-    "Center: the dots stack up around the parameter.",
-    "Shape: approximately normal, with most values near the center and few on each side.",
-    "Check the conditions before you claim a normal shape."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Center",
-     "tex": "$p=0.27$",
-     "text": "Samples cluster around the true population value."
-    },
-    {
-     "label": "Shape",
-     "tex": "Approximately normal",
-     "text": "Few samples far above or below the parameter."
-    },
-    {
-     "label": "Large counts",
-     "tex": [
-      "$120(0.27)=32.4$",
-      "$120(0.73)=87.6$"
+     "obj": "Describe the sampling distribution of a sample proportion",
+     "q": "27% of all Texas high school students own a bike. Random samples of 120 Texas high school students are taken, and the sample proportion $\\hat p$ who own a bike is recorded each time. Describe the sampling distribution of $\\hat p$.",
+     "steps": [
+      {
+       "t": "Name the statistic, the sample size, and the parameter.",
+       "work": {
+        "tex": [
+         "$p=0.27$",
+         "$n=120$"
+        ],
+        "text": "The statistic is the sample proportion $\\hat p$ of students who own a bike, and the parameter is the proportion $p$ of all Texas high school students who own a bike."
+       }
+      },
+      {
+       "t": "Center: the sample proportions stack up around the parameter.",
+       "work": {
+        "tex": [
+         "$\\mu_{\\hat p}=p=0.27$"
+        ],
+        "text": "Samples are random, so their proportions vary around the true proportion rather than missing it in one direction."
+       }
+      },
+      {
+       "t": "Shape: check the conditions for a normal shape.",
+       "work": {
+        "tex": [
+         "$120(0.27)=32.4$",
+         "$120(0.73)=87.6$"
+        ],
+        "text": "Both counts are at least 10, so the shape is approximately normal, with most sample proportions near 0.27 and few far above or below."
+       }
+      }
      ],
-     "text": "Both at least 10, so a normal shape is reasonable."
+     "answer": "The sampling distribution of $\\hat p$ is centered at 0.27 and is approximately normal, because the expected counts of 32.4 and 87.6 are both at least 10. Sample proportions near 0.27 are the most likely, and values far from 0.27 are unlikely.",
+     "seek": 240
     },
     {
-     "label": "For a mean",
-     "tex": "$n\\ge30$",
-     "text": "Or the population is approximately normal."
+     "obj": "Describe the sampling distribution of a sample mean",
+     "q": "The mean weight of all squirrels in a state is 565 grams. Random samples of 40 squirrels are taken, and the sample mean weight $\\bar x$ is recorded each time. Describe the sampling distribution of $\\bar x$.",
+     "steps": [
+      {
+       "t": "Name the statistic, the sample size, and the parameter.",
+       "work": {
+        "tex": [
+         "$\\mu=565$",
+         "$n=40$"
+        ],
+        "text": "The statistic is the sample mean weight $\\bar x$, and the parameter is the mean weight $\\mu$ of all squirrels in the state."
+       }
+      },
+      {
+       "t": "Center: the sample means stack up around the parameter.",
+       "work": {
+        "tex": [
+         "$\\mu_{\\bar x}=\\mu=565$"
+        ],
+        "text": "Sample means a little above or below 565 are common, and means far from 565 are unlikely."
+       }
+      },
+      {
+       "t": "Shape: check the sample size or the shape of the population.",
+       "work": {
+        "tex": [
+         "$n=40\\geq30$"
+        ],
+        "text": "The sample size is at least 30, so the sampling distribution of $\\bar x$ is approximately normal by the central limit theorem, even if the population is not normal."
+       }
+      }
+     ],
+     "answer": "The sampling distribution of $\\bar x$ is centered at 565 grams and is approximately normal, because the sample size of 40 is at least 30. Sample means near 565 grams are the most likely.",
+     "seek": 333
     }
    ],
-   "line": "The sampling distribution of $\\hat p$ is centered near 0.27 and approximately normal.",
    "buttons": [
     {
      "label": "Watch the idea (10:00)",
@@ -522,6 +564,10 @@
    {
     "kind": "timestamps",
     "text": "Seek links for the apps (891 and 1018) are placed from the captions. Check that they land on the app demonstrations."
+   },
+   {
+    "kind": "placement",
+    "text": "Procedure section rewritten as two worked questions: the bike example for a proportion and the squirrel example for a mean. The squirrel sample size (40) and mean (565 g) are from the video; its spread is not given, so the question describes center and shape only."
    }
   ]
  }

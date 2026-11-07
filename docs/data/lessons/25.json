@@ -199,39 +199,100 @@
    "tab": "One unknown",
    "kicker": "Procedure",
    "title": "Find a missing mean or standard deviation",
-   "intro": "Quiz scores are approximately normal with $\\sigma=6$. 84% of students score below 78. Find $\\mu$.",
-   "steps": [
-    "Say the variable is approximately normal.",
-    "On the standard normal (mean 0, SD 1), use Bounds to find the z-score for the given percent.",
-    "Substitute $x$, $z$, and the known parameter into $z=\\dfrac{x-\\mu}{\\sigma}$.",
-    "Solve for the missing parameter, then answer any follow-up question with the new mean or SD."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "z-score",
-     "tex": [
-      "$P(Z<z)=0.84$",
-      "$z\\approx0.994$"
+     "obj": "Find a missing mean from a percentile",
+     "q": "Quiz scores are approximately normal with standard deviation 6. 84% of the scores are below 78. Find the mean score.",
+     "formula": [
+      "$z=\\dfrac{x-\\mu}{\\sigma}$"
      ],
-     "text": "Bounds, Left, 0.84."
+     "steps": [
+      {
+       "t": "Say that the variable is approximately normal and name what is unknown.",
+       "work": {
+        "text": "The mean $\\mu$ is unknown and the standard deviation is 6."
+       }
+      },
+      {
+       "t": "Find the $z$-score for the given percent on the standard normal.",
+       "work": {
+        "tex": [
+         "$P(Z<z)=0.84$",
+         "$z\\approx0.994$"
+        ],
+        "text": "0.994 is the $z$-score with 84% of the standard normal to its left. The standard normal is used because $\\mu$ is unknown."
+       }
+      },
+      {
+       "t": "Substitute $x$, $z$, and the known standard deviation into the formula.",
+       "work": {
+        "tex": [
+         "$0.994=\\dfrac{78-\\mu}{6}$"
+        ],
+        "text": "The value is 78 and the standard deviation is 6."
+       }
+      },
+      {
+       "t": "Solve for the missing mean.",
+       "work": {
+        "tex": [
+         "$\\mu=78-0.994(6)$",
+         "$\\approx72.04$"
+        ],
+        "text": "Multiply both sides by 6, then rearrange so that $\\mu$ is on its own."
+       }
+      }
+     ],
+     "answer": "The mean quiz score is about 72.04 points.",
+     "seek": 101
     },
     {
-     "label": "Substitute",
-     "tex": [
-      "$0.994=\\dfrac{78-\\mu}{6}$"
+     "obj": "Find a missing mean from a tail area",
+     "q": "The weights of packages shipped by a company are approximately normal with standard deviation 1.5 pounds. 2.5% of packages weigh more than 18.5 pounds. Find the mean weight.",
+     "formula": [
+      "$z=\\dfrac{x-\\mu}{\\sigma}$"
      ],
-     "text": "The value is 78, the SD is 6."
-    },
-    {
-     "label": "Solve",
-     "tex": [
-      "$\\mu=78-0.994(6)$",
-      "$\\mu\\approx72.04$"
+     "steps": [
+      {
+       "t": "Say that the variable is approximately normal and name what is unknown.",
+       "work": {
+        "text": "The mean $\\mu$ is unknown and the standard deviation is 1.5 pounds."
+       }
+      },
+      {
+       "t": "Find the $z$-score for the given percent on the standard normal.",
+       "work": {
+        "tex": [
+         "$P(Z>z)=0.025$",
+         "$z\\approx1.96$"
+        ],
+        "text": "1.96 is the $z$-score with 2.5% above it, which is 97.5% to its left."
+       }
+      },
+      {
+       "t": "Substitute $x$, $z$, and the known standard deviation into the formula.",
+       "work": {
+        "tex": [
+         "$1.96=\\dfrac{18.5-\\mu}{1.5}$"
+        ],
+        "text": "The value is 18.5 pounds and the standard deviation is 1.5 pounds."
+       }
+      },
+      {
+       "t": "Solve for the missing mean.",
+       "work": {
+        "tex": [
+         "$\\mu=18.5-1.96(1.5)$",
+         "$=15.56$"
+        ],
+        "text": "Multiply both sides by 1.5, then rearrange so that $\\mu$ is on its own."
+       }
+      }
      ],
-     "text": "Multiply by 6, then subtract. The $-\\mu$ becomes $\\mu$ at the end."
+     "answer": "The mean weight of the packages is 15.56 pounds.",
+     "seek": 252
     }
    ],
-   "line": "$\\mu\\approx72.04$ points",
    "buttons": [
     {
      "label": "Watch the setup (1:01)",
@@ -249,45 +310,63 @@
    "tab": "Two unknowns",
    "kicker": "Procedure",
    "title": "Find both the mean and the standard deviation",
-   "intro": "Commute times are approximately normal. 6% of times are below 20 minutes and 95% are below 42 minutes. Write one z-score equation for each percent.",
-   "parts": [
+   "questions": [
     {
-     "label": "Two z-scores",
-     "tex": [
-      "$P(Z<z_1)=0.06$",
-      "$z_1\\approx-1.555$",
-      "$P(Z<z_2)=0.95$",
-      "$z_2\\approx1.645$"
+     "obj": "Find both the mean and the standard deviation",
+     "q": "Commute times are approximately normal. 6% of times are below 20 minutes and 95% are below 42 minutes. Find the mean and the standard deviation of the commute times.",
+     "formula": [
+      "$z=\\dfrac{x-\\mu}{\\sigma}$"
      ],
-     "text": "Bounds, Left, on the standard normal."
-    },
-    {
-     "label": "Two equations",
-     "tex": [
-      "$-1.555=\\dfrac{20-\\mu}{\\sigma}$",
-      "$1.645=\\dfrac{42-\\mu}{\\sigma}$"
+     "steps": [
+      {
+       "t": "Find both $z$-scores on the standard normal.",
+       "work": {
+        "tex": [
+         "$P(Z<z_1)=0.06$",
+         "$z_1\\approx-1.555$",
+         "$P(Z<z_2)=0.95$",
+         "$z_2\\approx1.645$"
+        ],
+        "text": "$-1.555$ is the $z$-score with 6% to its left, and 1.645 is the $z$-score with 95% to its left."
+       }
+      },
+      {
+       "t": "Write one $z$-score equation for each percent.",
+       "work": {
+        "tex": [
+         "$-1.555=\\dfrac{20-\\mu}{\\sigma}$",
+         "$1.645=\\dfrac{42-\\mu}{\\sigma}$"
+        ],
+        "text": "Each percent gives one equation, so there are two equations in two unknowns."
+       }
+      },
+      {
+       "t": "Solve each equation for $\\mu$, then set the two expressions equal.",
+       "work": {
+        "tex": [
+         "$\\mu=1.555\\sigma+20$",
+         "$\\mu=-1.645\\sigma+42$",
+         "$3.2\\sigma=22$",
+         "$\\sigma\\approx6.875$"
+        ],
+        "text": "Both expressions equal $\\mu$, so setting them equal leaves an equation in $\\sigma$ alone."
+       }
+      },
+      {
+       "t": "Back-substitute into either equation.",
+       "work": {
+        "tex": [
+         "$\\mu=1.555(6.875)+20$",
+         "$\\approx30.69$"
+        ],
+        "text": "Either equation gives the same mean."
+       }
+      }
      ],
-     "text": "One for each percent."
-    },
-    {
-     "label": "Solve for the SD",
-     "tex": [
-      "$\\mu=1.555\\sigma+20$",
-      "$\\mu=-1.645\\sigma+42$",
-      "$\\sigma\\approx6.875$"
-     ],
-     "text": "Set the two expressions for $\\mu$ equal."
-    },
-    {
-     "label": "Back-substitute",
-     "tex": [
-      "$\\mu=1.555(6.875)+20$",
-      "$\\mu\\approx30.69$"
-     ],
-     "text": "Use either equation. Both give the same mean."
+     "answer": "The mean commute time is about 30.69 minutes, and the standard deviation is about 6.875 minutes.",
+     "seek": 1107
     }
    ],
-   "line": "$\\mu\\approx30.69$ minutes and $\\sigma\\approx6.875$ minutes",
    "buttons": [
     {
      "label": "Watch the setup (18:27)",
@@ -624,6 +703,14 @@
    {
     "kind": "calculator",
     "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds)."
+   },
+   {
+    "kind": "placement",
+    "text": "Procedure section rewritten as two worked questions: the quiz example and the package-weight example from the video (standard deviation 1.5 pounds, 2.5% above 18.5 pounds). Calculator steps are not included."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as one worked question. The line 3.2 sigma = 22 is added between the two expressions for mu and the value of sigma. z-scores are used to three decimals as in the video."
    }
   ]
  }

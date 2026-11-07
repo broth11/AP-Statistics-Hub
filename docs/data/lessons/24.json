@@ -199,37 +199,58 @@
    "tab": "Forward",
    "kicker": "Procedure",
    "title": "Value to probability",
-   "intro": "Adult male lion weights $W$ are approximately normal with mean 450 pounds and standard deviation 40 pounds. Find the probability that a lion weighs more than 462 pounds.",
-   "steps": [
-    "State the model: $W$ is approximately $N(450,40)$.",
-    "Find the z-score of the value.",
-    "Write the probability in context and with the z-score.",
-    "Find the area with Desmos and report it with the event."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "z-score",
-     "tex": [
-      "$z=\\dfrac{462-450}{40}$",
-      "$z=0.3$"
+     "obj": "Find a probability from a value of a normal variable",
+     "q": "Adult male lion weights $W$ are approximately normal with mean 450 pounds and standard deviation 40 pounds. Find the probability that a randomly chosen lion weighs more than 462 pounds.",
+     "formula": [
+      "$z=\\dfrac{x-\\mu}{\\sigma}$"
      ],
-     "text": "462 pounds is 0.3 SDs above the mean."
-    },
-    {
-     "label": "Statement",
-     "tex": [
-      "$P(W>462)$",
-      "$=P(Z>0.3)$"
+     "steps": [
+      {
+       "t": "State the model.",
+       "work": {
+        "tex": [
+         "$W\\sim N(450,\\ 40)$"
+        ],
+        "text": "The weight is approximately normal with mean 450 pounds and standard deviation 40 pounds."
+       }
+      },
+      {
+       "t": "Find the $z$-score of the value.",
+       "work": {
+        "tex": [
+         "$z=\\dfrac{462-450}{40}$",
+         "$=0.3$"
+        ],
+        "text": "A lion that weighs 462 pounds is 0.3 standard deviations above the mean."
+       }
+      },
+      {
+       "t": "Write the probability in context and with the $z$-score.",
+       "work": {
+        "tex": [
+         "$P(W>462)$",
+         "$=P(Z>0.3)$"
+        ],
+        "text": "The two statements are equivalent, one in pounds and one in standard deviations."
+       }
+      },
+      {
+       "t": "Find the area to the right with technology and report it with the event.",
+       "work": {
+        "tex": [
+         "$P(Z>0.3)$",
+         "$\\approx0.382$"
+        ],
+        "text": "A normal probability function gives the area to the right of 0.3 on the standard normal."
+       }
+      }
      ],
-     "text": "The two statements are equivalent."
-    },
-    {
-     "label": "Area",
-     "tex": "$\\approx0.382$",
-     "text": "Right of 0.3 on the standard normal, or right of 462 with mean 450 and SD 40."
+     "answer": "The probability that a randomly chosen adult male lion weighs more than 462 pounds is about 0.382.",
+     "seek": 1469
     }
    ],
-   "line": "$P(W>462)=P(Z>0.3)\\approx0.382$",
    "buttons": [
     {
      "label": "Watch the setup (24:25)",
@@ -247,40 +268,147 @@
    "tab": "Backward",
    "kicker": "Procedure",
    "title": "Percentile to value",
-   "intro": "What weight marks the 90th percentile of lion weights? Work backward. Find the z-score with 90% below it, then solve the z-score formula for the weight.",
-   "steps": [
-    "Sketch or say what is known: an area, and which side it is on.",
-    "Use Bounds on the standard normal to find the z-score.",
-    "Solve $z=\\dfrac{x-\\mu}{\\sigma}$ for $x$, or use mean 450 and SD 40 in Desmos.",
-    "State the value in context."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Find z",
-     "tex": [
-      "$P(Z<z)=0.90$",
-      "$z\\approx1.282$"
+     "obj": "Find a percentile of a normal variable",
+     "q": "Adult male lion weights are approximately normal with mean 450 pounds and standard deviation 40 pounds. What weight marks the 90th percentile?",
+     "formula": [
+      "$z=\\dfrac{x-\\mu}{\\sigma}$",
+      "$x=\\mu+z\\sigma$"
      ],
-     "text": "Bounds, Left, 0.9."
+     "steps": [
+      {
+       "t": "State what is known: an area, and which side it is on.",
+       "work": {
+        "tex": [
+         "$P(Z<z)=0.90$"
+        ],
+        "text": "The 90th percentile has 90% of the weights below it."
+       }
+      },
+      {
+       "t": "Find the $z$-score with that area on the standard normal.",
+       "work": {
+        "tex": [
+         "$z\\approx1.2816$"
+        ],
+        "text": "This is an inverse normal calculation: the $z$-score with 0.90 to its left."
+       }
+      },
+      {
+       "t": "Substitute into the $z$-score formula and solve for $x$.",
+       "work": {
+        "tex": [
+         "$1.2816=\\dfrac{x-450}{40}$",
+         "$x=450+1.2816(40)$",
+         "$\\approx501.26$"
+        ],
+        "text": "Multiply both sides by 40, then add 450."
+       }
+      },
+      {
+       "t": "State the value in context.",
+       "work": {
+        "text": "About 90% of adult male lions weigh less than this value."
+       }
+      }
+     ],
+     "answer": "The 90th percentile of adult male lion weights is about 501.26 pounds.",
+     "seek": 2004
     },
     {
-     "label": "Solve for x",
-     "tex": [
-      "$1.282=\\dfrac{x-450}{40}$",
-      "$x\\approx501.3$"
+     "obj": "Find the interval that holds the middle of a normal distribution",
+     "q": "Adult male lion weights are approximately normal with mean 450 pounds and standard deviation 40 pounds. Find the two weights that mark the middle 60% of lions.",
+     "formula": [
+      "$z=\\dfrac{x-\\mu}{\\sigma}$",
+      "$x=\\mu+z\\sigma$"
      ],
-     "text": "Multiply by 40, then add 450."
+     "steps": [
+      {
+       "t": "Split what is left over equally between the two tails.",
+       "work": {
+        "tex": [
+         "$\\dfrac{100\\%-60\\%}{2}=20\\%$"
+        ],
+        "text": "There is 20% below the lower weight and 20% above the upper weight."
+       }
+      },
+      {
+       "t": "Find the $z$-score with 80% of the area to its left.",
+       "work": {
+        "tex": [
+         "$z\\approx0.8416$"
+        ],
+        "text": "The middle 60% runs from $-z$ to $z$."
+       }
+      },
+      {
+       "t": "Solve for both weights.",
+       "work": {
+        "tex": [
+         "$x=450\\pm0.8416(40)$",
+         "$\\approx416.3\\ \\text{and}\\ 483.7$"
+        ],
+        "text": "Use the $z$-score formula with each of $-z$ and $z$."
+       }
+      },
+      {
+       "t": "State the interval in context.",
+       "work": {
+        "text": "The two weights are the boundaries of the middle 60% of lion weights."
+       }
+      }
+     ],
+     "answer": "The middle 60% of adult male lion weights runs from about 416.3 pounds to about 483.7 pounds.",
+     "seek": 2283
     },
     {
-     "label": "Middle or extreme",
-     "tex": [
-      "$\\text{Middle }60\\%:\\ z=\\pm0.842$",
-      "$\\text{Extreme }5\\%:\\ z=\\pm1.96$"
+     "obj": "Find the weights that mark the most extreme part of a normal distribution",
+     "q": "Adult male lion weights are approximately normal with mean 450 pounds and standard deviation 40 pounds. Find the weights that mark the most extreme 5% of lions.",
+     "formula": [
+      "$z=\\dfrac{x-\\mu}{\\sigma}$",
+      "$x=\\mu+z\\sigma$"
      ],
-     "text": "Split what is left over equally between the two tails."
+     "steps": [
+      {
+       "t": "Split the extreme area equally between the two tails.",
+       "work": {
+        "tex": [
+         "$\\dfrac{5\\%}{2}=2.5\\%$"
+        ],
+        "text": "There is 2.5% below the lower weight and 2.5% above the upper weight."
+       }
+      },
+      {
+       "t": "Find the $z$-score with 97.5% of the area to its left.",
+       "work": {
+        "tex": [
+         "$z\\approx1.96$"
+        ],
+        "text": "The extreme 5% lies below $-z$ and above $z$."
+       }
+      },
+      {
+       "t": "Solve for both weights.",
+       "work": {
+        "tex": [
+         "$x=450\\pm1.96(40)$",
+         "$\\approx371.6\\ \\text{and}\\ 528.4$"
+        ],
+        "text": "Use the $z$-score formula with each of $-z$ and $z$."
+       }
+      },
+      {
+       "t": "State the values in context.",
+       "work": {
+        "text": "The most extreme 5% of lions weigh less than the lower value or more than the upper value."
+       }
+      }
+     ],
+     "answer": "The most extreme 5% of adult male lion weights are below about 371.6 pounds or above about 528.4 pounds.",
+     "seek": 2394
     }
    ],
-   "line": "$x=\\mu+z\\sigma=450+1.282(40)\\approx501.3$ pounds",
    "buttons": [
     {
      "label": "Watch the percentile (33:15)",
@@ -634,6 +762,14 @@
    {
     "kind": "calculator",
     "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds)."
+   },
+   {
+    "kind": "placement",
+    "text": "Procedure section rewritten as one worked question, the lion example in the video. Calculator steps are not included. The value is computed in code."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions. The 90th percentile is shown as 501.26 pounds using the unrounded z-score (1.2816), as in the video (501.262); the old page showed 501.3 from z rounded to 1.282."
    }
   ]
  }

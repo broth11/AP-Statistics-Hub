@@ -8,7 +8,7 @@ Needs Python Playwright with Chromium. Checks, with every section expanded:
   - no page errors and no error box
   - no math expression split across lines
   - procedure: every worked question, opened in turn, has working that fits its column and a height that fits one
-    laptop screen below the sticky header; at 390px the step rows stack. (Legacy boxes: math must fit its box.)
+    laptop screen below the sticky header; at 390px the step rows stack.
   - every <tex-text> rendered: no raw $ left, no .katex-error, and no raw LaTeX (\\hat, \\frac, ...) in visible text
   - explorer: fits a 1440x900 screen, and the result values in its stat row share one top edge
   - title card: title and intro each span the full width
@@ -89,10 +89,6 @@ async def check(repo, nums, shots):
                 broken = await pg.evaluate("""[...document.querySelectorAll('.katex-html')].filter(k => k.getClientRects().length > 1).map(k => k.textContent.slice(0, 40))""")
                 if broken:
                     bad.append(f"math split across lines: {broken[:3]}")
-                over = await pg.evaluate("""[...document.querySelectorAll('.parts .part')].flatMap(p => { const r = p.getBoundingClientRect(); const lim = r.right - 16;
-                    return [...p.querySelectorAll('.big .katex')].filter(k => k.getBoundingClientRect().right > lim + 1).map(k => (k.querySelector('annotation') || k).textContent.slice(0, 50)); })""")
-                if over:
-                    bad.append(f"math runs past its box (split it into rows, one calculation per row): {over[:3]}")
                 # Worked questions: open each in turn. Working must fit its column, and the whole question
                 # (header to buttons) must fit one laptop screen below the sticky header.
                 hh = await pg.evaluate("parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hh')) || 100")
@@ -148,9 +144,9 @@ async def check(repo, nums, shots):
                         return m.top < t.bottom - 1; }).length""")
                 if side:
                     bad.append(f"{side} step rows do not stack at 390px")
-                sw2 = await pg.evaluate("document.documentElement.scrollWidth")
-                if sw2 > 391:
-                    bad.append(f"horizontal scroll at 390px with sections open (page is {sw2}px wide)")
+                spill = await pg.evaluate("""[...document.querySelectorAll('.qpanel:not([hidden])')].filter(p => p.scrollWidth > p.clientWidth + 1 || p.getBoundingClientRect().right > 391).length""")
+                if spill:
+                    bad.append(f"{spill} worked question(s) are wider than the screen at 390px")
             await pg.set_viewport_size({"width": 1440, "height": 900})
             bad += [f"page error: {e}" for e in errs]
             print(f"{n}: " + ("ok" if not bad else "PROBLEMS"))

@@ -209,37 +209,66 @@
    "tab": "Procedure",
    "kicker": "Procedure",
    "title": "Build and report an interval with PANIC",
-   "intro": "Every confidence interval question follows five steps. The first and third can be done in one sentence.",
-   "steps": [
-    "Parameter: define $p$ with the population and the response variable.",
-    "Appropriateness: random, at most 10% of the population, and at least 10 successes and 10 failures.",
-    "Name: one-sample $z$ interval for a population proportion.",
-    "Interval: $\\hat p\\pm z^*\\sqrt{\\hat p(1-\\hat p)/n}$, or use the calculator.",
-    "Conclusion: confidence level, interval, and parameter in context."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Point estimate",
-     "tex": "$\\hat p=\\dfrac{91}{380}\\approx0.239$",
-     "text": "The center of the interval."
-    },
-    {
-     "label": "Critical value",
-     "tex": "$z^*=1.96$",
-     "text": "Middle 95% of the standard normal distribution."
-    },
-    {
-     "label": "Standard error",
-     "tex": "$\\sqrt{\\dfrac{0.239(1-0.239)}{380}}\\approx0.0219$",
-     "text": "Uses $\\hat p$ because $p$ is unknown."
-    },
-    {
-     "label": "Margin of error",
-     "tex": "$1.96(0.0219)\\approx0.0429$",
-     "text": "How far to go up and down."
+     "obj": "Build and report a one-sample z interval with PANIC",
+     "q": "A random sample of 380 teenagers in Ohio finds that 91 are in the marching band. Construct and interpret a 95% confidence interval for the proportion of all Ohio teenagers who are in the marching band.",
+     "formula": [
+      "$\\hat p\\pm z^*\\sqrt{\\dfrac{\\hat p(1-\\hat p)}{n}}$"
+     ],
+     "steps": [
+      {
+       "t": "Parameter and Name: define $p$ and name the interval.",
+       "work": {
+        "text": "This is a one-sample $z$ interval for $p$, where $p$ is the proportion of all Ohio teenagers who are in the marching band."
+       }
+      },
+      {
+       "t": "Assumptions: check random, 10%, and at least 10 successes and failures.",
+       "work": {
+        "tex": [
+         "$91\\geq10$",
+         "$289\\geq10$"
+        ],
+        "text": "The sample is random. Assume Ohio has more than 3,800 teenagers, so 380 is less than 10% of them. Both counts are at least 10."
+       }
+      },
+      {
+       "t": "Interval: find the point estimate, the critical value, and the standard error.",
+       "work": {
+        "tex": [
+         "$\\hat p=\\dfrac{91}{380}$",
+         "$\\approx0.2395$",
+         "$z^*=1.96$",
+         "$SE=\\sqrt{\\dfrac{0.2395(1-0.2395)}{380}}$",
+         "$\\approx0.0219$"
+        ],
+        "text": "The standard error uses $\\hat p$, because $p$ is unknown. $z^*=1.96$ is the critical value for the middle 95% of the standard normal distribution."
+       }
+      },
+      {
+       "t": "Interval: find the margin of error and the interval.",
+       "work": {
+        "tex": [
+         "$ME=1.96(0.0219)$",
+         "$\\approx0.0429$",
+         "$0.2395\\pm0.0429$",
+         "$=(0.1966,\\ 0.2824)$"
+        ],
+        "text": "The margin of error is how far to go above and below the point estimate."
+       }
+      },
+      {
+       "t": "Conclusion: state the confidence level, the interval, and the parameter in context.",
+       "work": {
+        "text": "Use the exact interval endpoints and name the population and the variable."
+       }
+      }
+     ],
+     "answer": "I am 95% confident that the proportion of all Ohio teenagers who are in the marching band is between 0.1966 and 0.2824.",
+     "seek": 1457
     }
    ],
-   "line": "$0.239\\pm0.0429\\;\\Rightarrow\\;(0.1966,\\ 0.2824)$",
    "buttons": [
     {
      "label": "Watch PANIC (27:11)",
@@ -548,6 +577,10 @@
    {
     "kind": "calculator",
     "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds). The z-test steps use z-test for proportions, Create Test, and the Confidence Interval and Significance Test tabs."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as one worked question, the marching band example from the video. The point estimate is shown to four digits (0.2395) so the displayed arithmetic gives the displayed interval; the old page showed 0.239. The population size (more than 3,800 teenagers) is assumed, because the video does not give it."
    }
   ]
  }

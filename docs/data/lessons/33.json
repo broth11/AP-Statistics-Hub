@@ -213,34 +213,148 @@
    "tab": "Procedure",
    "kicker": "Procedure",
    "title": "Describe the sampling distribution of $\\hat p$",
-   "intro": "Six items earn the credit: center, spread and shape, each with its condition. You need only $p$ and $n$, not a sample.",
-   "steps": [
-    "Center: $\\mu_{\\hat p}=p$. Condition: the samples are random.",
-    "Spread: $\\sigma_{\\hat p}=\\sqrt{p(1-p)/n}$. Condition: $n$ is at most 10% of the population, which you assume when the population size is unknown.",
-    "Shape: approximately normal. Condition: $np\\ge10$ and $n(1-p)\\ge10$, computed with $p$.",
-    "To find a probability, convert $\\hat p$ to $z=\\dfrac{\\hat p-p}{\\sigma_{\\hat p}}$ and use the standard normal distribution."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Center",
-     "tex": "$\\mu_{\\hat p}=0.27$",
-     "text": "The streaming service reports $p=0.27$."
-    },
-    {
-     "label": "Spread",
-     "tex": "$\\sqrt{\\dfrac{0.27(0.73)}{600}}\\approx0.0181$",
-     "text": "How far sample proportions typically sit from 0.27."
-    },
-    {
-     "label": "Shape",
-     "tex": [
-      "$600(0.27)=162$",
-      "$600(0.73)=438$"
+     "obj": "Describe the sampling distribution of a sample proportion with its conditions",
+     "q": "A streaming service says that 27% of its subscribers watch at least one documentary per week. A random sample of 600 subscribers is selected. Describe the sampling distribution of the sample proportion $\\hat p$ of subscribers who watch at least one documentary per week.",
+     "formula": [
+      "$\\mu_{\\hat p}=p$",
+      "$\\sigma_{\\hat p}=\\sqrt{\\dfrac{p(1-p)}{n}}$"
      ],
-     "text": "Both at least 10, so the model is approximately normal."
+     "steps": [
+      {
+       "t": "Name the statistic and the parameter.",
+       "work": {
+        "tex": [
+         "$p=0.27$",
+         "$n=600$"
+        ],
+        "text": "The statistic is the sample proportion $\\hat p$, and the parameter is the proportion $p$ of all subscribers who watch at least one documentary per week."
+       }
+      },
+      {
+       "t": "Center: the mean is the parameter. Condition: the sample is random.",
+       "work": {
+        "tex": [
+         "$\\mu_{\\hat p}=0.27$"
+        ],
+        "text": "The mean is 0.27 because the sample is random."
+       }
+      },
+      {
+       "t": "Spread: use the formula. Condition: $n$ is at most 10% of the population.",
+       "work": {
+        "tex": [
+         "$\\sigma_{\\hat p}=\\sqrt{\\dfrac{0.27(0.73)}{600}}$",
+         "$\\approx0.0181$"
+        ],
+        "text": "The sample of 600 is assumed to be less than 10% of all subscribers, because the service has a very large number of subscribers."
+       }
+      },
+      {
+       "t": "Shape: check the large counts using $p$. Condition: both counts are at least 10.",
+       "work": {
+        "tex": [
+         "$600(0.27)=162$",
+         "$600(0.73)=438$"
+        ],
+        "text": "Both counts are at least 10, so the sampling distribution is approximately normal."
+       }
+      }
+     ],
+     "answer": "The sampling distribution of $\\hat p$ is approximately normal with mean 0.27 and standard deviation about 0.0181. The sample is random, 600 is less than 10% of all subscribers, and both $600(0.27)=162$ and $600(0.73)=438$ are at least 10.",
+     "seek": 915
+    },
+    {
+     "obj": "Find a probability for a sample proportion",
+     "q": "A streaming service says that 27% of its subscribers watch at least one documentary per week. A random sample of 600 subscribers is selected. Find the probability that the sample proportion who watch at least one documentary per week is greater than 0.30.",
+     "formula": [
+      "$z=\\dfrac{\\hat p-\\mu_{\\hat p}}{\\sigma_{\\hat p}}$"
+     ],
+     "steps": [
+      {
+       "t": "Name the model for the sampling distribution.",
+       "work": {
+        "tex": [
+         "$\\hat p\\sim N(0.27,\\ 0.01812)$"
+        ],
+        "text": "The sampling distribution is approximately normal with mean 0.27 and standard deviation 0.01813, as the conditions were checked."
+       }
+      },
+      {
+       "t": "Write the probability for the event.",
+       "work": {
+        "tex": [
+         "$P(\\hat p>0.30)$"
+        ],
+        "text": "The question asks about sample proportions above 0.30."
+       }
+      },
+      {
+       "t": "Find the $z$-score of 0.30.",
+       "work": {
+        "tex": [
+         "$z=\\dfrac{0.30-0.27}{0.01812}$",
+         "$\\approx1.655$"
+        ],
+        "text": "The sample proportion of 0.30 is about 1.65 standard deviations above the mean."
+       }
+      },
+      {
+       "t": "Find the area to the right of the $z$-score.",
+       "work": {
+        "tex": [
+         "$P(Z>1.655)$",
+         "$\\approx0.0489$"
+        ],
+        "text": "A normal probability function gives the area above the $z$-score."
+       }
+      }
+     ],
+     "answer": "The probability that the sample proportion is greater than 0.30 is about 0.049.",
+     "seek": 1337
+    },
+    {
+     "obj": "Compare the spread for a larger sample",
+     "q": "Using the same streaming service, with $p=0.27$, compare the standard deviation of the sampling distribution of $\\hat p$ for samples of size 600 with the standard deviation for samples of size 2,000.",
+     "formula": [
+      "$\\sigma_{\\hat p}=\\sqrt{\\dfrac{p(1-p)}{n}}$"
+     ],
+     "steps": [
+      {
+       "t": "Write the standard deviation for the first sample size.",
+       "work": {
+        "tex": [
+         "$\\sigma_{\\hat p}=\\sqrt{\\dfrac{0.27(0.73)}{600}}$",
+         "$\\approx0.0181$"
+        ],
+        "text": "This is the standard deviation for samples of 600."
+       }
+      },
+      {
+       "t": "Write the standard deviation for the larger sample size.",
+       "work": {
+        "tex": [
+         "$\\sigma_{\\hat p}=\\sqrt{\\dfrac{0.27(0.73)}{2000}}$",
+         "$\\approx0.00993$"
+        ],
+        "text": "The only change is that $n$ is now 2,000."
+       }
+      },
+      {
+       "t": "Compare the two values.",
+       "work": {
+        "tex": [
+         "$0.00993<0.01812$"
+        ],
+        "text": "Dividing by a larger $n$ gives a smaller standard deviation."
+       }
+      }
+     ],
+     "answer": "The standard deviation is about 0.00993 for samples of 2,000, which is smaller than about 0.0181 for samples of 600. Larger samples vary less, so their sample proportions tend to be closer to 0.27.",
+     "seek": 1234
     }
    ],
-   "line": "$z=\\dfrac{0.30-0.27}{0.0181}\\approx1.655\\;\\Rightarrow\\;P(\\hat p>0.30)\\approx0.0489$",
    "buttons": [
     {
      "label": "Watch the three characteristics (5:55)",
@@ -565,6 +679,10 @@
    {
     "kind": "calculator",
     "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds)."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions. The video reports z = 1.657 for P(p-hat > 0.30) from the rounded standard deviation 0.0181. The page shows the standard deviation to five digits, giving z = 1.655 and a probability of 0.0489."
    }
   ]
  }

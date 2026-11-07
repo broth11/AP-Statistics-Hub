@@ -210,34 +210,206 @@
    "tab": "Test statistic",
    "kicker": "Procedure",
    "title": "Carry out the test",
-   "intro": "A full test follows the PHANTOM steps from the video. This lesson adds the last three.",
-   "steps": [
-    "Parameter: define $p$ in context.",
-    "Hypotheses: $H_0: p=p_0$ and $H_a$ with $<$, $>$ or $\\ne$.",
-    "Assess conditions: random, 10%, and large counts using $np_0\\ge10$ and $n(1-p_0)\\ge10$.",
-    "Name the test: one-sample $z$ test for $p$.",
-    "Test statistic: $z=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$.",
-    "Obtain the p-value from the standard normal distribution, in the direction of $H_a$.",
-    "Make a decision by comparing the p-value with $\\alpha$, then conclude in context."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Center",
-     "tex": "$p_0=0.60$",
-     "text": "The null distribution assumes $H_0$ is true."
+     "obj": "Carry out a one-sided z test for a proportion",
+     "q": "A restaurant chain claims that more than 60% of its customers order takeout rather than dine in. In a random sample of 250 customers, 170 ordered takeout. Do the data provide convincing evidence for the claim? Use $\\alpha=0.05$.",
+     "formula": [
+      "$z=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$"
+     ],
+     "steps": [
+      {
+       "t": "Parameter and Name: define $p$ and name the test.",
+       "work": {
+        "text": "This is a one-sample $z$ test for $p$, where $p$ is the proportion of all customers of the restaurant chain who order takeout."
+       }
+      },
+      {
+       "t": "Hypotheses: write $H_0$ and $H_a$ in the direction asked.",
+       "work": {
+        "tex": [
+         "$H_0:p=0.60$",
+         "$H_a:p>0.60$"
+        ],
+        "text": "The claim is \"more than 60%\", so the alternative is the upper tail."
+       }
+      },
+      {
+       "t": "Assumptions: check randomization, the 10% condition, and the large counts using $p_0$.",
+       "work": {
+        "tex": [
+         "$250(0.6)=150$",
+         "$250(0.4)=100$"
+        ],
+        "text": "The sample is random. Assume the chain has more than 2,500 customers, so 250 is less than 10% of them. Both counts are at least 10."
+       }
+      },
+      {
+       "t": "Test statistic: standardize the sample proportion using $p_0$.",
+       "work": {
+        "tex": [
+         "$z=\\dfrac{0.6800-0.6}{0.03098}$",
+         "$\\approx2.582$"
+        ],
+        "text": "The sample proportion is 0.6800, and the standard deviation uses $p_0$, not $\\hat p$."
+       }
+      },
+      {
+       "t": "p-value: find the area in the direction of $H_a$.",
+       "work": {
+        "tex": [
+         "$\\text{p-value}=P(Z>2.582)$",
+         "$\\approx0.0049$"
+        ],
+        "text": "Only the upper tail counts because the alternative is $p>0.60$."
+       }
+      },
+      {
+       "t": "Conclusion: compare the p-value with $\\alpha$ and answer in context.",
+       "work": {
+        "tex": [
+         "$0.0049<0.05$"
+        ],
+        "text": "The p-value is less than $\\alpha=0.05$, so we reject $H_0$."
+       }
+      }
+     ],
+     "answer": "The p-value of 0.0049 is less than 0.05, so we reject $H_0$. There is convincing evidence that the proportion of all customers of the restaurant chain who order takeout is greater than 0.60.",
+     "seek": 111
     },
     {
-     "label": "Standard deviation",
-     "tex": "$\\sqrt{\\dfrac{0.60(0.40)}{250}}$",
-     "text": "Built from $p_0$, not from $\\hat p$."
+     "obj": "Carry out a lower-tail z test for a proportion",
+     "q": "A company claims that fewer than 8% of its light bulbs are defective. In a random sample of 650 bulbs, 42 are defective. Do the data provide convincing evidence for the claim? Use $\\alpha=0.05$.",
+     "formula": [
+      "$z=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$"
+     ],
+     "steps": [
+      {
+       "t": "Parameter and Name: define $p$ and name the test.",
+       "work": {
+        "text": "This is a one-sample $z$ test for $p$, where $p$ is the proportion of all the company's light bulbs that are defective."
+       }
+      },
+      {
+       "t": "Hypotheses: write $H_0$ and $H_a$ in the direction asked.",
+       "work": {
+        "tex": [
+         "$H_0:p=0.08$",
+         "$H_a:p<0.08$"
+        ],
+        "text": "The claim is \"fewer than 8%\", so the alternative is the lower tail."
+       }
+      },
+      {
+       "t": "Assumptions: check randomization, the 10% condition, and the large counts using $p_0$.",
+       "work": {
+        "tex": [
+         "$650(0.08)=52$",
+         "$650(0.92)=598$"
+        ],
+        "text": "The sample is random. Assume the company makes more than 6,500 bulbs, so 650 is less than 10% of them. Both counts are at least 10."
+       }
+      },
+      {
+       "t": "Test statistic: standardize the sample proportion using $p_0$.",
+       "work": {
+        "tex": [
+         "$z=\\dfrac{0.0646-0.08}{0.01064}$",
+         "$\\approx-1.446$"
+        ],
+        "text": "The sample proportion is 0.0646, and the standard deviation uses $p_0$, not $\\hat p$."
+       }
+      },
+      {
+       "t": "p-value: find the area in the direction of $H_a$.",
+       "work": {
+        "tex": [
+         "$\\text{p-value}=P(Z<-1.446)$",
+         "$\\approx0.0741$"
+        ],
+        "text": "Only the lower tail counts because the alternative is $p<0.08$."
+       }
+      },
+      {
+       "t": "Conclusion: compare the p-value with $\\alpha$ and answer in context.",
+       "work": {
+        "tex": [
+         "$0.0741>0.05$"
+        ],
+        "text": "The p-value is greater than $\\alpha=0.05$, so we fail to reject $H_0$."
+       }
+      }
+     ],
+     "answer": "The p-value of 0.0741 is greater than 0.05, so we fail to reject $H_0$. There is not convincing evidence that the proportion of all the company's light bulbs that are defective is less than 0.08.",
+     "seek": 881
     },
     {
-     "label": "Observed",
-     "tex": "$\\hat p=\\dfrac{170}{250}=0.68$",
-     "text": "The sample result we are judging."
+     "obj": "Find the test statistic and p-value for a lake example",
+     "q": "A state agency claims that 35% of the state's lakes meet high water quality standards. An environmental group believes the proportion is lower. In a random sample of 200 lakes, 56 meet the standard. Do the data provide convincing evidence that the proportion is lower than 0.35? Use $\\alpha=0.05$.",
+     "formula": [
+      "$z=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$"
+     ],
+     "steps": [
+      {
+       "t": "Parameter and Name: define $p$ and name the test.",
+       "work": {
+        "text": "This is a one-sample $z$ test for $p$, where $p$ is the proportion of all lakes in the state that meet high water quality standards."
+       }
+      },
+      {
+       "t": "Hypotheses: write $H_0$ and $H_a$ in the direction asked.",
+       "work": {
+        "tex": [
+         "$H_0:p=0.35$",
+         "$H_a:p<0.35$"
+        ],
+        "text": "The group believes the proportion is lower, so the alternative is the lower tail."
+       }
+      },
+      {
+       "t": "Assumptions: check randomization, the 10% condition, and the large counts using $p_0$.",
+       "work": {
+        "tex": [
+         "$200(0.35)=70$",
+         "$200(0.65)=130$"
+        ],
+        "text": "The sample is random. Assume the state has more than 2,000 lakes, so 200 is less than 10% of them. Both counts are at least 10."
+       }
+      },
+      {
+       "t": "Test statistic: standardize the sample proportion using $p_0$.",
+       "work": {
+        "tex": [
+         "$z=\\dfrac{0.2800-0.35}{0.03373}$",
+         "$\\approx-2.075$"
+        ],
+        "text": "The sample proportion is 0.2800, and the standard deviation uses $p_0$, not $\\hat p$."
+       }
+      },
+      {
+       "t": "p-value: find the area in the direction of $H_a$.",
+       "work": {
+        "tex": [
+         "$\\text{p-value}=P(Z<-2.075)$",
+         "$\\approx0.0190$"
+        ],
+        "text": "Only the lower tail counts because the alternative is $p<0.35$."
+       }
+      },
+      {
+       "t": "Conclusion: compare the p-value with $\\alpha$ and answer in context.",
+       "work": {
+        "tex": [
+         "$0.0190<0.05$"
+        ],
+        "text": "The p-value is less than $\\alpha=0.05$, so we reject $H_0$."
+       }
+      }
+     ],
+     "answer": "The p-value of 0.0190 is less than 0.05, so we reject $H_0$. There is convincing evidence that the proportion of all lakes in the state that meet high water quality standards is less than 0.35.",
+     "seek": 2768
     }
    ],
-   "line": "$z=\\dfrac{0.68-0.60}{\\sqrt{0.60(0.40)/250}}\\approx 2.58\\;\\Rightarrow\\;\\text{p-value}=P(Z\\ge2.58)\\approx 0.0049$",
    "buttons": [
     {
      "label": "Watch PHANTOM (6:51)",
@@ -588,6 +760,14 @@
    {
     "kind": "calculator",
     "text": "Desmos menu names and labels were checked against the embedded Desmos calculator in November 2026. Steps use the labels on screen: inference, Probability Distribution, Create Distribution, Cumulative Probability with REGION (Inner, Outer, Left, Right) and COMPUTE (Area, Bounds). The z-test steps use z-test for proportions, Create Test, and the Confidence Interval and Significance Test tabs."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions with the full seven PHANTOM steps. The video reads the bulb z-score as about -1.45 or -1.43 and the restaurant z-score as 2.58; recomputed: bulbs -1.446 (p 0.0741), restaurant 2.582 (p 0.0049)."
+   },
+   {
+    "kind": "placement",
+    "text": "The lake example is the multiple-choice example at 46:08. Its sample size, population assumption and conclusion are computed here, since the video asks only for the test statistic. Population sizes assumed in each question are not given in the video."
    }
   ]
  }

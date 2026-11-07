@@ -204,39 +204,113 @@
    "tab": "Build a distribution",
    "kicker": "Procedure",
    "title": "Build a probability distribution",
-   "intro": "A horse enters two races. It wins the first race with probability 0.70. If it wins the first, it wins the second with probability 0.85. If it loses the first, it wins the second with probability 0.40. Let $W$ be the number of races it wins.",
-   "steps": [
-    "List every possible value of the variable in numerical order, lowest to highest.",
-    "Find the probability of each value with the rules of probability. Draw a tree when the probabilities are conditional, and multiply along each branch.",
-    "If more than one outcome gives the same value, calculate each outcome and add them.",
-    "Check that the probabilities add to 1, then show only the final table."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Both wins",
-     "tex": "$0.70(0.85)=0.595$",
-     "text": "$W=2$. Follow one branch."
-    },
-    {
-     "label": "Both losses",
-     "tex": "$0.30(0.60)=0.18$",
-     "text": "$W=0$. Follow one branch."
-    },
-    {
-     "label": "Exactly one win",
-     "tex": [
-      "$0.70(0.15)=0.105$",
-      "$0.30(0.40)=0.120$"
+     "obj": "Build a probability distribution from conditional probabilities",
+     "q": "A horse enters two races. It wins the first race with probability 0.70. If it wins the first race, it wins the second with probability 0.85. If it loses the first race, it wins the second with probability 0.40. Let $W$ be the number of races the horse wins. Build the probability distribution of $W$.",
+     "formula": [
+      "$P(A\\cap B)=P(A)\\,P(B\\mid A)$"
      ],
-     "text": "$W=1$. Two branches, so add them to get 0.225."
+     "steps": [
+      {
+       "t": "List every possible value of the variable in order, lowest to highest.",
+       "work": {
+        "tex": [
+         "$W=0,\\ 1,\\ 2$"
+        ],
+        "text": "The horse can win none, one, or both of the races."
+       }
+      },
+      {
+       "t": "Draw a tree and find the probability of each branch that gives one value.",
+       "work": {
+        "tex": [
+         "$P(W=2)=0.70(0.85)$",
+         "$=0.595$",
+         "$P(W=0)=0.30(0.60)$",
+         "$=0.180$"
+        ],
+        "text": "Winning both races and losing both races each follow a single branch. Multiply along the branch with the general multiplication rule."
+       }
+      },
+      {
+       "t": "When more than one branch gives the same value, calculate each and add.",
+       "work": {
+        "tex": [
+         "$0.70(0.15)=0.105$",
+         "$0.30(0.40)=0.120$",
+         "$P(W=1)=0.105+0.120$",
+         "$=0.225$"
+        ],
+        "text": "Win then lose and lose then win are different branches, but both give exactly one win."
+       }
+      },
+      {
+       "t": "Check that the probabilities add to 1, then show only the final table.",
+       "work": {
+        "tex": [
+         "$0.18+0.225+0.595=1$"
+        ],
+        "text": "A total other than 1 means a value or branch is missing."
+       }
+      }
+     ],
+     "answer": "The distribution of $W$ is $P(W=0)=0.18$, $P(W=1)=0.225$, and $P(W=2)=0.595$.",
+     "seek": 781
     },
     {
-     "label": "Check",
-     "tex": "$0.18+0.225+0.595=1$",
-     "text": "A total other than 1 means a value or branch is missing."
+     "obj": "Build a distribution when two branches give the same value",
+     "q": "A student has up to three attempts at a test question. The probability of a correct answer is 0.50 on the first attempt, 0.70 on the second attempt, and 0.90 on the third attempt, and the student stops after a correct answer or after three attempts. Let $A$ be the number of attempts used. Build the probability distribution of $A$.",
+     "formula": [
+      "$P(A\\cap B)=P(A)\\,P(B\\mid A)$"
+     ],
+     "steps": [
+      {
+       "t": "List every possible value of the variable in order, lowest to highest.",
+       "work": {
+        "tex": [
+         "$A=1,\\ 2,\\ 3$"
+        ],
+        "text": "At least one attempt is always used, and no more than three are allowed."
+       }
+      },
+      {
+       "t": "Draw a tree and find the probability of each branch that gives one value.",
+       "work": {
+        "tex": [
+         "$P(A=1)=0.50$",
+         "$P(A=2)=0.50(0.70)$",
+         "$=0.35$"
+        ],
+        "text": "One attempt means a correct answer immediately. Two attempts means wrong, then correct."
+       }
+      },
+      {
+       "t": "When more than one branch gives the same value, calculate each and add.",
+       "work": {
+        "tex": [
+         "$0.50(0.30)(0.90)=0.135$",
+         "$0.50(0.30)(0.10)=0.015$",
+         "$P(A=3)=0.135+0.015$",
+         "$=0.15$"
+        ],
+        "text": "Wrong, wrong, right and wrong, wrong, wrong both use three attempts, so both branches count."
+       }
+      },
+      {
+       "t": "Check that the probabilities add to 1, then show only the final table.",
+       "work": {
+        "tex": [
+         "$0.50+0.35+0.15=1$"
+        ],
+        "text": "The probabilities add to 1, so no value or branch is missing."
+       }
+      }
+     ],
+     "answer": "The distribution of $A$ is $P(A=1)=0.50$, $P(A=2)=0.35$, and $P(A=3)=0.15$.",
+     "seek": 1048
     }
    ],
-   "line": "$P(W=0)=0.18,\\ P(W=1)=0.225,\\ P(W=2)=0.595$",
    "buttons": [
     {
      "label": "Watch the tree (13:08)",
@@ -259,7 +333,7 @@
      "kind": "Common trap",
      "title": "Using one branch when several give the same value",
      "weak": "P(W=1)=0.105",
-     "better": "Win-lose and lose-win both give $W=1$. $P(W=1)=0.70(0.15)+0.30(0.40)=0.225$.",
+     "better": "Win-lose and lose-win both give $W=1$, so add them: $P(W=1)=0.105+0.120$, which is $0.225$.",
      "seek": 935
     },
     {
@@ -427,6 +501,10 @@
    {
     "kind": "timestamps",
     "text": "The worked examples are timed from the captions. Check the seek links for 1292 through 2153."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as two worked questions, one per example in the video. Q2 uses the three-attempt example, with the 0.90 on the third attempt read from the narration."
    }
   ]
  }

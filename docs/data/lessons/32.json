@@ -248,30 +248,139 @@
    "tab": "Procedure",
    "kicker": "Procedure",
    "title": "Check an estimator and find a point estimate",
-   "intro": "To decide whether an estimator is unbiased, look at many estimates, never just one. A single sample can miss by chance.",
-   "steps": [
-    "Identify the parameter you are estimating, with the population and variable in context.",
-    "Look at many sample estimates of that parameter.",
-    "Find the average of the estimates. Close to the parameter means unbiased. Consistently high or low means biased."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Sample proportion",
-     "tex": "$\\hat p=\\dfrac{150}{200}=0.75$",
-     "text": "Point estimate of $p$, the proportion of all students who support later start times."
+     "obj": "Decide whether an estimator looks unbiased from many estimates",
+     "q": "70% of all kids brush their teeth every night. Method A produced the sample proportions 71%, 68%, 72%, 67%, 70%, and 73% from six samples. Method B produced 43%, 32%, 48%, 31%, and 29% from five samples. Does each method look like an unbiased estimator of the proportion?",
+     "steps": [
+      {
+       "t": "Identify the parameter, with the population and variable in context.",
+       "work": {
+        "tex": [
+         "$p=0.70$"
+        ],
+        "text": "$p$ is the proportion of all kids who brush their teeth every night."
+       }
+      },
+      {
+       "t": "Look at many estimates, never just one.",
+       "work": {
+        "text": "One sample can miss the parameter by chance, so judge each method from all of its estimates."
+       }
+      },
+      {
+       "t": "Find the average of the estimates for each method.",
+       "work": {
+        "tex": [
+         "$\\dfrac{71+68+72+67+70+73}{6}=\\dfrac{421}{6}$",
+         "$\\approx70.2$",
+         "$\\dfrac{43+32+48+31+29}{5}=\\dfrac{183}{5}$",
+         "$=36.6$"
+        ],
+        "text": "The average for Method A is very close to 70. The average for Method B is far below 70."
+       }
+      },
+      {
+       "t": "Compare each average with the parameter and conclude.",
+       "work": {
+        "text": "An average close to the parameter means the estimator looks unbiased. Consistently high or low estimates mean it is biased."
+       }
+      }
+     ],
+     "answer": "Method A looks unbiased, because its estimates average about 70.2%, close to the parameter of 70%. Method B looks biased, because its estimates average 36.6%, consistently far below 70%.",
+     "seek": 246
     },
     {
-     "label": "Sample mean",
-     "tex": "$\\bar x=\\dfrac{82+90+88+94+86}{5}=88$",
-     "text": "Point estimate of $\\mu$, the mean score of all students."
+     "obj": "Find a point estimate of a population proportion",
+     "q": "A random sample of 200 students finds that 150 support later school start times. Find a point estimate of the proportion of all students who support later start times.",
+     "steps": [
+      {
+       "t": "Identify the parameter, with the population and variable in context.",
+       "work": {
+        "text": "The parameter is $p$, the proportion of all students who support later school start times."
+       }
+      },
+      {
+       "t": "Compute the sample statistic.",
+       "work": {
+        "tex": [
+         "$\\hat p=\\dfrac{150}{200}$",
+         "$=0.750$"
+        ],
+        "text": "Out of 200 students, 150 support later start times."
+       }
+      },
+      {
+       "t": "State the statistic as a point estimate of the parameter.",
+       "work": {
+        "text": "The sample statistic is used as a point estimate that points toward the value of the population parameter."
+       }
+      }
+     ],
+     "answer": "The sample proportion of 0.75 is a point estimate of the proportion of all students who support later school start times.",
+     "seek": 530
     },
     {
-     "label": "Another proportion",
-     "tex": "$\\hat p=\\dfrac{315}{500}=0.63$",
-     "text": "Point estimate of the proportion of all voters who support the school levy."
+     "obj": "Find a point estimate of a population mean",
+     "q": "The test scores of a random sample of five students are 82, 90, 88, 94, and 86. Find a point estimate of the mean test score of all students.",
+     "steps": [
+      {
+       "t": "Identify the parameter, with the population and variable in context.",
+       "work": {
+        "text": "The parameter is $\\mu$, the mean test score of all students."
+       }
+      },
+      {
+       "t": "Compute the sample statistic.",
+       "work": {
+        "tex": [
+         "$\\bar x=\\dfrac{82+90+88+94+86}{5}$",
+         "$=88$"
+        ],
+        "text": "The five scores add to 440."
+       }
+      },
+      {
+       "t": "State the statistic as a point estimate of the parameter.",
+       "work": {
+        "text": "The sample mean is used as a point estimate of the mean score of all students."
+       }
+      }
+     ],
+     "answer": "The sample mean of 88 is a point estimate of the mean test score of all students.",
+     "seek": 568
+    },
+    {
+     "obj": "Find another point estimate of a population proportion",
+     "q": "A random sample of 500 voters finds that 315 support a proposed school levy. Find a point estimate of the proportion of all voters who support the levy.",
+     "steps": [
+      {
+       "t": "Identify the parameter, with the population and variable in context.",
+       "work": {
+        "text": "The parameter is $p$, the proportion of all voters who support the school levy."
+       }
+      },
+      {
+       "t": "Compute the sample statistic.",
+       "work": {
+        "tex": [
+         "$\\hat p=\\dfrac{315}{500}$",
+         "$=0.630$"
+        ],
+        "text": "Out of 500 voters, 315 support the levy."
+       }
+      },
+      {
+       "t": "State the statistic as a point estimate of the parameter.",
+       "work": {
+        "text": "The sample statistic is used as a point estimate that points toward the value of the population parameter."
+       }
+      }
+     ],
+     "answer": "The sample proportion of 0.63 is a point estimate of the proportion of all voters who support the school levy.",
+     "seek": 769
     }
    ],
-   "line": "$\\text{average of many estimates}\\approx\\text{parameter}\\;\\Rightarrow\\;\\text{unbiased estimator}$",
    "buttons": [
     {
      "label": "Watch the three steps (4:09)",
@@ -507,6 +616,10 @@
    {
     "kind": "placement",
     "text": "No calculator section: the video uses no calculator for 3.1."
+   },
+   {
+    "kind": "placement",
+    "text": "Procedure section rewritten as four worked questions: the bias check from the teeth-brushing example (the video reads out both lists of estimates) and the three point-estimate examples."
    }
   ]
  }
