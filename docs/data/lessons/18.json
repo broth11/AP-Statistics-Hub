@@ -183,7 +183,10 @@
     },
     {
      "label": "Joint",
-     "tex": "$P(R\\cap D)=5/85=0.059$",
+     "tex": [
+      "$P(R\\cap D)=5/85$",
+      "$=0.059$"
+     ],
      "text": "Not zero."
     },
     {
@@ -193,7 +196,10 @@
     },
     {
      "label": "Joint from coffee",
-     "tex": "$P(F\\cap H)=28/150=0.187$",
+     "tex": [
+      "$P(F\\cap H)=28/150$",
+      "$=0.187$"
+     ],
      "text": "Female and hot coffee."
     }
    ],

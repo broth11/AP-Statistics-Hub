@@ -209,7 +209,10 @@
     },
     {
      "label": "Reverse",
-     "tex": "$P(B\\mid D)=0.040/0.064=0.625$",
+     "tex": [
+      "$P(B\\mid D)=0.040/0.064$",
+      "$=0.625$"
+     ],
      "text": "Joint over total."
     },
     {
@@ -222,8 +225,11 @@
     },
     {
      "label": "Positive",
-     "tex": "$P(D\\mid +)=0.0095/0.0887=0.107$",
-     "text": "Few have the disease, so most positives are false."
+     "tex": [
+      "$P=0.0095/0.0887$",
+      "$=0.107$"
+     ],
+     "text": "$P(\\text{disease}\\mid\\text{positive})$. Few have the disease, so most positives are false."
     }
    ],
    "line": "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}\\qquad P(A\\cap B)=P(A)\\,P(B\\mid A)$",

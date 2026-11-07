@@ -7,6 +7,7 @@
 Needs Python Playwright with Chromium. Checks, with every section expanded:
   - no page errors and no error box
   - no math expression split across lines
+  - no procedure-box math wider than its box (the 4-box row is about 330px of content)
   - every <tex-text> rendered: no raw $ left, no .katex-error, and no raw LaTeX (\\hat, \\frac, ...) in visible text
   - explorer: fits a 1440x900 screen, and the result values in its stat row share one top edge
   - title card: title and intro each span the full width
@@ -87,6 +88,10 @@ async def check(repo, nums, shots):
                 broken = await pg.evaluate("""[...document.querySelectorAll('.katex-html')].filter(k => k.getClientRects().length > 1).map(k => k.textContent.slice(0, 40))""")
                 if broken:
                     bad.append(f"math split across lines: {broken[:3]}")
+                over = await pg.evaluate("""[...document.querySelectorAll('.parts .part')].flatMap(p => { const r = p.getBoundingClientRect(); const lim = r.right - 16;
+                    return [...p.querySelectorAll('.big .katex')].filter(k => k.getBoundingClientRect().right > lim + 1).map(k => (k.querySelector('annotation') || k).textContent.slice(0, 50)); })""")
+                if over:
+                    bad.append(f"math runs past its box (split it into rows, one calculation per row): {over[:3]}")
                 if await pg.locator("#s-explorer").count():
                     box = await pg.locator("#s-explorer .explorer").bounding_box()
                     if box and box["height"] > 900 - 140:

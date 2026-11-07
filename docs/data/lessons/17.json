@@ -196,22 +196,34 @@
    "parts": [
     {
      "label": "Sum of 7",
-     "tex": "$P=6/36=0.167$",
+     "tex": [
+      "$P=6/36$",
+      "$=0.167$"
+     ],
      "text": "Six ordered pairs."
     },
     {
      "label": "Sum of 12",
-     "tex": "$P=1/36=0.0278$",
+     "tex": [
+      "$P=1/36$",
+      "$=0.0278$"
+     ],
      "text": "One pair: 6 and 6."
     },
     {
      "label": "At most 5",
-     "tex": "$P=10/36=0.278$",
+     "tex": [
+      "$P=10/36$",
+      "$=0.278$"
+     ],
      "text": "Sums 2, 3, 4 and 5."
     },
     {
      "label": "Complement",
-     "tex": "$P(\\text{not red})=1-5/15=0.667$",
+     "tex": [
+      "$P(\\text{not red})=1-5/15$",
+      "$=0.667$"
+     ],
      "text": "Marble jar example."
     }
    ],

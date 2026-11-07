@@ -191,7 +191,10 @@
    "parts": [
     {
      "label": "Coin",
-     "tex": "$1=\\text{head},\\ 2=\\text{tail}$",
+     "tex": [
+      "$1=\\text{head}$",
+      "$2=\\text{tail}$"
+     ],
      "text": "Five numbers per trial, repeats allowed."
     },
     {

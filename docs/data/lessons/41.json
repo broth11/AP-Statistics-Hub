@@ -226,7 +226,10 @@
    "parts": [
     {
      "label": "Combined",
-     "tex": "$\\hat p_c=\\dfrac{96+88}{210+240}=0.409$",
+     "tex": [
+      "$\\hat p_c=\\dfrac{96+88}{210+240}$",
+      "$=0.409$"
+     ],
      "text": "Brand A example."
     },
     {
@@ -236,7 +239,10 @@
     },
     {
      "label": "Test statistic",
-     "tex": "$z=0.0905/0.0465=1.948$",
+     "tex": [
+      "$z=0.0905/0.0465$",
+      "$=1.948$"
+     ],
      "text": "Younger minus older."
     },
     {

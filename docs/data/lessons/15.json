@@ -201,7 +201,10 @@
    "parts": [
     {
      "label": "Baseline",
-     "tex": "$P(\\text{tardy})=64/188=0.340$",
+     "tex": [
+      "$P(\\text{tardy})=64/188$",
+      "$=0.340$"
+     ],
      "text": "All students."
     },
     {

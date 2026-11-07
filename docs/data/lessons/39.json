@@ -217,12 +217,18 @@
     },
     {
      "label": "z score",
-     "tex": "$z=\\dfrac{0.10-0.07}{0.0532}=0.564$",
+     "tex": [
+      "$z=\\dfrac{0.10-0.07}{0.0532}$",
+      "$=0.564$"
+     ],
      "text": "For a difference of 0.10."
     },
     {
      "label": "Area right",
-     "tex": "$P(\\hat p_1-\\hat p_2>0.10)=0.286$",
+     "tex": [
+      "$P(\\hat p_1-\\hat p_2>0.10)$",
+      "$=0.286$"
+     ],
      "text": "About 28.6% of sample differences."
     }
    ],
