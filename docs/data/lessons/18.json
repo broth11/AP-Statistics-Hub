@@ -1,0 +1,379 @@
+{
+ "n": 18,
+ "unit": 2,
+ "topic": "2.5",
+ "title": "Mutually Exclusive Events",
+ "videoId": "bCJ5o5cHi6A",
+ "videoTitle": "AP Statistics Topic 2.5 Mutually Exclusive Events",
+ "intro": "After this lesson you can find a joint probability from a two-way table, write it with the intersection symbol, and use $P(A\\cap B)$ to decide whether two events are mutually exclusive.",
+ "moments": [
+  {
+   "t": 56,
+   "type": "Definition",
+   "title": "Joint probability",
+   "text": "The probability that events $A$ and $B$ both occur. It is the probability of the intersection of $A$ and $B$."
+  },
+  {
+   "t": 80,
+   "type": "Concept",
+   "title": "Intersection symbol",
+   "text": "$P(A\\cap B)$ is read \"the probability of $A$ and $B$\". You may write the word \"and\" instead."
+  },
+  {
+   "t": 113,
+   "type": "Definition",
+   "title": "Mutually exclusive (disjoint)",
+   "text": "Events that cannot occur at the same time. Then $P(A\\cap B)=0$."
+  },
+  {
+   "t": 168,
+   "type": "Worked example",
+   "title": "Robotics and drama clubs",
+   "text": "85 students: 30 in robotics, 45 in drama, 15 in neither. Are the clubs mutually exclusive?"
+  },
+  {
+   "t": 223,
+   "type": "Procedure",
+   "title": "Fill a two-way table from totals",
+   "text": "Place the known numbers, then use row and column sums to find the missing cells."
+  },
+  {
+   "t": 390,
+   "type": "Key idea",
+   "title": "A single overlap is enough",
+   "text": "Five students are in both clubs, so the events are not mutually exclusive."
+  },
+  {
+   "t": 446,
+   "type": "Worked example",
+   "title": "Book or recess",
+   "text": "Students had to pick one option, so choosing both is impossible and the events are mutually exclusive."
+  },
+  {
+   "t": 556,
+   "type": "Worked example",
+   "title": "Coffee order by gender",
+   "text": "150 customers: 70 male and 80 female, with hot or iced coffee."
+  },
+  {
+   "t": 612,
+   "type": "Key idea",
+   "title": "Not mutually exclusive pairs",
+   "text": "Male and iced coffee overlap in 22 customers. Female and hot coffee overlap in 28."
+  },
+  {
+   "t": 668,
+   "type": "Worked example",
+   "title": "Joint probability from the table",
+   "text": "$P(\\text{female}\\cap\\text{hot})=28/150\\approx0.187$."
+  },
+  {
+   "t": 725,
+   "type": "Exam wording",
+   "title": "Naming mutually exclusive events",
+   "text": "Grades 9 and 12, or two different favorite sports, cannot both happen to the same student."
+  },
+  {
+   "t": 781,
+   "type": "Worked example",
+   "title": "Football and 11th grade",
+   "text": "23 of 200 students are both, so the joint probability is $23/200=0.115$."
+  }
+ ],
+ "sections": [
+  {
+   "id": "me",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Are the events mutually exclusive?",
+   "cards": [
+    {
+     "letter": "✓",
+     "name": "Mutually exclusive",
+     "text": "No outcome is in both events, so $P(A\\cap B)=0$."
+    },
+    {
+     "letter": "✕",
+     "name": "Not mutually exclusive",
+     "text": "At least one outcome is in both events, so $P(A\\cap B)>0$."
+    }
+   ],
+   "columns": [
+    "Events",
+    "Overlap",
+    "Mutually exclusive?"
+   ],
+   "verdictColumn": 2,
+   "rows": [
+    {
+     "cells": [
+      "Robotics club and drama club (85 students)",
+      "5 in both",
+      "No"
+     ],
+     "seek": 390
+    },
+    {
+     "cells": [
+      "Choosing the book and choosing recess (pick one)",
+      "0 in both",
+      "Yes"
+     ],
+     "seek": 501
+    },
+    {
+     "cells": [
+      "Male and iced coffee",
+      "22 in both",
+      "No"
+     ],
+     "seek": 612
+    },
+    {
+     "cells": [
+      "Female and hot coffee",
+      "28 in both",
+      "No"
+     ],
+     "seek": 612
+    },
+    {
+     "cells": [
+      "Male and female",
+      "0 in both",
+      "Yes"
+     ],
+     "seek": 556
+    },
+    {
+     "cells": [
+      "Ninth grader and twelfth grader",
+      "0 in both",
+      "Yes"
+     ],
+     "seek": 725
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Mutually exclusive events cannot happen together. This is different from independent events, which topic 2.7 covers. Do not use the two words as if they mean the same thing."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "Find the overlap and decide",
+   "intro": "Put the totals in a two-way table, solve for the \"both\" cell, and check whether it is 0.",
+   "steps": [
+    "Draw a two-way table with $A$, not $A$, $B$ and not $B$.",
+    "Enter the totals and the \"neither\" count. Complete the rest with row and column sums.",
+    "Read the \"both\" cell. It is the joint probability numerator.",
+    "If the \"both\" cell is 0, the events are mutually exclusive. Otherwise they are not."
+   ],
+   "parts": [
+    {
+     "label": "Both clubs",
+     "tex": "$30+45+15-85=5$",
+     "text": "Students in both clubs."
+    },
+    {
+     "label": "Joint",
+     "tex": "$P(R\\cap D)=5/85=0.059$",
+     "text": "Not zero."
+    },
+    {
+     "label": "Conclusion",
+     "tex": "$P(R\\cap D)\\ne0$",
+     "text": "Not mutually exclusive."
+    },
+    {
+     "label": "Joint from coffee",
+     "tex": "$P(F\\cap H)=28/150=0.187$",
+     "text": "Female and hot coffee."
+    }
+   ],
+   "line": "$A,B\\text{ mutually exclusive}\\iff P(A\\cap B)=0$",
+   "buttons": [
+    {
+     "label": "Watch the club table (3:43)",
+     "seek": 223
+    },
+    {
+     "label": "Watch the coffee example (9:16)",
+     "seek": 556
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Justify with the joint probability",
+     "weak": "The clubs are not mutually exclusive.",
+     "better": "There are 5 students in both clubs, so $P(R\\cap D)=5/85\\neq0$. The events can occur at the same time, so they are not mutually exclusive.",
+     "seek": 390
+    },
+    {
+     "kind": "Common trap",
+     "title": "Adding the clubs and ignoring the overlap",
+     "weak": "30 + 45 = 75 students are in a club.",
+     "better": "Five students are in both clubs, so 75 counts them twice. Only 70 students are in at least one club.",
+     "seek": 335
+    },
+    {
+     "kind": "Common trap",
+     "title": "Confusing mutually exclusive with independent",
+     "weak": "The events have nothing to do with each other, so they are mutually exclusive.",
+     "better": "Mutually exclusive means the events cannot occur together, so $P(A\\cap B)=0$. Independence is a different idea.",
+     "seek": 113
+    },
+    {
+     "kind": "Common trap",
+     "title": "Joint probability using the wrong denominator",
+     "weak": "$P(\\text{female}\\cap\\text{hot})=28/80$.",
+     "better": "A joint probability divides by the table total: $28/150\\approx0.187$. Dividing by 80 gives a conditional proportion.",
+     "seek": 668
+    },
+    {
+     "kind": "Common trap",
+     "title": "Giving a pair that overlaps",
+     "weak": "Male and iced coffee are mutually exclusive events.",
+     "better": "Male and iced coffee overlap in 22 customers. Two mutually exclusive events are male and female.",
+     "seek": 612
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "Of 120 students, 48 are in choir, 36 are in band and 12 are in both. What is $P(\\text{choir}\\cap\\text{band})$?",
+     "opts": [
+      "$12/120$",
+      "$12/48$",
+      "$84/120$",
+      "$0$"
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. The joint probability divides the \"both\" count by the total of 120.",
+      "This divides by the choir total, so it is a conditional proportion.",
+      "This adds the two clubs without removing the overlap.",
+      "Zero would mean no student is in both clubs."
+     ],
+     "seek": 668
+    },
+    {
+     "stem": "Which pair of events is mutually exclusive when one card is drawn from a standard deck?",
+     "opts": [
+      "A heart and a king",
+      "A red card and a queen",
+      "A club and a diamond",
+      "A face card and a spade"
+     ],
+     "ok": 2,
+     "why": [
+      "The king of hearts is both.",
+      "The queen of hearts is both.",
+      "Correct. No card is both a club and a diamond.",
+      "The king of spades is both."
+     ],
+     "seek": 725
+    },
+    {
+     "stem": "Events $A$ and $B$ satisfy $P(A\\cap B)=0.08$. Which conclusion is correct?",
+     "opts": [
+      "They are independent.",
+      "They are complements.",
+      "They are mutually exclusive.",
+      "They cannot be mutually exclusive."
+     ],
+     "ok": 3,
+     "why": [
+      "The joint probability alone does not decide independence.",
+      "Complements have a joint probability of 0.",
+      "Mutually exclusive events have a joint probability of 0.",
+      "Correct. A positive joint probability means they can occur together."
+     ],
+     "seek": 113
+    },
+    {
+     "stem": "In a class of 30 students, 18 take French, 14 take Spanish and 6 take neither. How many take both?",
+     "opts": [
+      "2",
+      "8",
+      "14",
+      "0"
+     ],
+     "ok": 1,
+     "why": [
+      "If 2 took both, only $18+14-2=30$ students would take a language, but 6 take neither.",
+      "Correct. 24 students take a language, so both is $18+14-24=8$.",
+      "14 is the number taking Spanish, not the overlap.",
+      "Zero would mean the languages are mutually exclusive, but then $18+14=32$ would exceed 24."
+     ],
+     "seek": 223
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A school has 120 students. Of these, 48 play an instrument, 36 play a sport and 12 do both. The rest do neither.",
+   "parts": [
+    "(a) Complete a two-way table.",
+    "(b) Find $P(\\text{instrument}\\cap\\text{sport})$.",
+    "(c) Are playing an instrument and playing a sport mutually exclusive? Justify.",
+    "(d) Give one pair of mutually exclusive events from this school."
+   ],
+   "sample": [
+    "(a) Instrument and sport: 12. Instrument only: 36. Sport only: 24. Neither: 48. Totals: instrument 48, sport 36, grand total 120.",
+    "(b) $12/120=0.10$.",
+    "(c) No. Twelve students do both, so $P(\\text{instrument}\\cap\\text{sport})\\neq0$ and the events can occur together.",
+    "(d) For example, a student in Grade 9 and a student in Grade 12 (nobody is in both grades), or \"plays a sport\" and \"plays no sport\"."
+   ],
+   "checklist": [
+    "(a) Table cells and totals correct",
+    "(b) 12/120 with the table total",
+    "(c) Uses the nonzero joint probability",
+    "(c) Concludes not mutually exclusive",
+    "(d) Valid pair with no overlap"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topic 2.5.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "values",
+    "text": "Club table from the video: both=5 is derived from 30, 45, 15 and 85, not stated aloud in full in the captions."
+   },
+   {
+    "kind": "caption",
+    "text": "The video text says \"events\" instead of \"mutually exclusive events\" in one prompt (the speaker notes the typo)."
+   },
+   {
+    "kind": "wording",
+    "text": "The page uses CED notation $P(A\\cap B)$ and the phrase \"can occur at the same time\"."
+   }
+  ]
+ }
+}

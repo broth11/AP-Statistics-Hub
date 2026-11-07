@@ -1,0 +1,397 @@
+{
+ "n": 17,
+ "unit": 2,
+ "topic": "2.4",
+ "title": "Introduction to Probability",
+ "videoId": "Hqbdo84oOsw",
+ "videoTitle": "AP Statistics Topic 2.4 Introduction to Probability",
+ "intro": "After this lesson you can list a sample space, find a probability from equally likely outcomes, use the complement rule, and avoid common errors with two-dice sums and the words \"likely\" and \"unlikely\".",
+ "moments": [
+  {
+   "t": 100,
+   "type": "Definition",
+   "title": "Sample space",
+   "text": "The set of all possible nonoverlapping outcomes. Its probability is 1."
+  },
+  {
+   "t": 151,
+   "type": "Formula",
+   "title": "Equally likely outcomes",
+   "text": "$P(E)$ is the number of outcomes in $E$ divided by the number of outcomes in the sample space."
+  },
+  {
+   "t": 202,
+   "type": "Concept",
+   "title": "$P(E)$ notation",
+   "text": "$P(E)$ means the probability of event $E$. It is not multiplication."
+  },
+  {
+   "t": 252,
+   "type": "Key idea",
+   "title": "Probability is between 0 and 1",
+   "text": "Inclusive of 0 and 1. A probability cannot be negative or exceed 1."
+  },
+  {
+   "t": 304,
+   "type": "Key idea",
+   "title": "Likely and unlikely are not at 50%",
+   "text": "A 45% chance is not unlikely. Unlikely usually means well below 5%."
+  },
+  {
+   "t": 356,
+   "type": "Definition",
+   "title": "Complement of an event",
+   "text": "The probability that $E$ does not happen. Written $E^C$, $E^\\prime$ or \"not $E$\"."
+  },
+  {
+   "t": 406,
+   "type": "Formula",
+   "title": "Complement rule",
+   "text": "$P(E^C)=1-P(E)$."
+  },
+  {
+   "t": 457,
+   "type": "Worked example",
+   "title": "One die",
+   "text": "Six equally likely outcomes. $P(2)=1/6$, $P(\\text{not }2)=5/6$ and $P(\\text{odd})=1/2$."
+  },
+  {
+   "t": 608,
+   "type": "Key idea",
+   "title": "Probability is a long-run statement",
+   "text": "Ten rolls need not give exactly five odd numbers. The probability describes the long run."
+  },
+  {
+   "t": 658,
+   "type": "Worked example",
+   "title": "Two dice, sample space of 36",
+   "text": "There are $6\\times6=36$ equally likely ordered outcomes."
+  },
+  {
+   "t": 808,
+   "type": "Key idea",
+   "title": "Sums are not equally likely",
+   "text": "The 36 ordered pairs are equally likely, but the sums 2 to 12 are not."
+  },
+  {
+   "t": 958,
+   "type": "Worked example",
+   "title": "Sum of seven",
+   "text": "Six of 36 pairs give a sum of 7, so $P=6/36=1/6$."
+  },
+  {
+   "t": 1058,
+   "type": "Worked example",
+   "title": "Sum of at most five",
+   "text": "\"At most five\" means 5 or less. Ten of 36 outcomes qualify."
+  },
+  {
+   "t": 1160,
+   "type": "Worked example",
+   "title": "Grade and eye color table",
+   "text": "Out of 850 students, 220 are in grade 10, 110 have green eyes, and 45 are seniors with blue eyes."
+  },
+  {
+   "t": 1363,
+   "type": "Worked example",
+   "title": "Marbles in a jar",
+   "text": "5 red, 7 green and 3 yellow. The colors are not equally likely, but the 15 marbles are."
+  }
+ ],
+ "sections": [
+  {
+   "id": "equally",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Can I use favorable over total?",
+   "cards": [
+    {
+     "letter": "✓",
+     "name": "Equally likely",
+     "text": "Each listed outcome has the same chance, so count favorable outcomes over total outcomes."
+    },
+    {
+     "letter": "✕",
+     "name": "Not equally likely",
+     "text": "List the equally likely outcomes underneath, such as the 36 dice pairs, then count."
+    }
+   ],
+   "columns": [
+    "Listed outcomes",
+    "Equally likely?",
+    "What to do"
+   ],
+   "verdictColumn": 1,
+   "rows": [
+    {
+     "cells": [
+      "Faces 1 to 6 on a fair die",
+      "Yes",
+      "$P=\\text{favorable}/6$"
+     ],
+     "seek": 457
+    },
+    {
+     "cells": [
+      "Sums 2 to 12 of two dice",
+      "No",
+      "Count in the 36 ordered pairs"
+     ],
+     "seek": 808
+    },
+    {
+     "cells": [
+      "Colors red, green, yellow in a jar of 5, 7 and 3",
+      "No",
+      "Count marbles: red is $5/15$"
+     ],
+     "seek": 1363
+    },
+    {
+     "cells": [
+      "The 15 individual marbles",
+      "Yes",
+      "Use 15 as the total"
+     ],
+     "seek": 1363
+    },
+    {
+     "cells": [
+      "Rain or no rain tomorrow",
+      "No",
+      "Cannot say 1/2 without a reason"
+     ],
+     "seek": 252
+    },
+    {
+     "cells": [
+      "A student chosen at random from 850",
+      "Yes",
+      "Total is 850"
+     ],
+     "seek": 1160
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video says the answer to \"unlikely\" has no 50% cutoff. Use the numbers: a 28% event is not rare, and an event is called unlikely only when its probability is quite small."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "Calculate a probability and its complement",
+   "intro": "List outcomes that are equally likely, count the favorable ones, then use the complement when \"not\" is easier.",
+   "steps": [
+    "Write the event in $P(\\ )$ notation.",
+    "Decide what the equally likely outcomes are and how many there are.",
+    "Count the outcomes in the event. Read words such as at most carefully.",
+    "Divide, then answer in context. Use $1-P(E)$ for \"not $E$\"."
+   ],
+   "parts": [
+    {
+     "label": "Sum of 7",
+     "tex": "$P=6/36=0.167$",
+     "text": "Six ordered pairs."
+    },
+    {
+     "label": "Sum of 12",
+     "tex": "$P=1/36=0.0278$",
+     "text": "One pair: 6 and 6."
+    },
+    {
+     "label": "At most 5",
+     "tex": "$P=10/36=0.278$",
+     "text": "Sums 2, 3, 4 and 5."
+    },
+    {
+     "label": "Complement",
+     "tex": "$P(\\text{not red})=1-5/15=0.667$",
+     "text": "Marble jar example."
+    }
+   ],
+   "line": "$P(E)=\\dfrac{\\text{outcomes in }E}{\\text{outcomes in the sample space}}$",
+   "buttons": [
+    {
+     "label": "Watch the two-dice sample space (10:58)",
+     "seek": 658
+    },
+    {
+     "label": "Watch the complement rule (6:46)",
+     "seek": 406
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Treating dice sums as equally likely",
+     "weak": "The sums 2 to 12 are 11 outcomes, so each has probability $1/11$.",
+     "better": "The 36 ordered pairs are equally likely. A sum of 7 has 6 pairs, so $P=6/36$, while a sum of 12 has 1 pair, so $P=1/36$.",
+     "seek": 808
+    },
+    {
+     "kind": "Common trap",
+     "title": "Treating colors as equally likely",
+     "weak": "There are three colors, so $P(\\text{red})=1/3$.",
+     "better": "There are 15 equally likely marbles and 5 are red, so $P(\\text{red})=5/15=1/3$. The answer is only 1/3 because 5 of 15 is 1/3.",
+     "seek": 1363
+    },
+    {
+     "kind": "Exam wording",
+     "title": "At most means less than or equal",
+     "weak": "At most 5 means the sums 2, 3 and 4.",
+     "better": "At most 5 means 5 or less: sums of 2, 3, 4 and 5, which is 10 of 36 outcomes.",
+     "seek": 1058
+    },
+    {
+     "kind": "Common trap",
+     "title": "Probability read as a short-run promise",
+     "weak": "The probability of an odd number is 1/2, so ten rolls give exactly five odd numbers.",
+     "better": "The probability 1/2 describes the long-run relative frequency. Ten rolls may give any number of odd results.",
+     "seek": 608
+    },
+    {
+     "kind": "Common trap",
+     "title": "Using 50% as the cutoff for unlikely",
+     "weak": "A 40% chance is unlikely because it is below one half.",
+     "better": "A 40% chance is not unlikely. Describe an event as unlikely only when its probability is close to 0.",
+     "seek": 304
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A bag contains 8 blue, 7 white and 5 black tiles, all the same size. One tile is chosen at random. What is $P(\\text{not white})$?",
+     "opts": [
+      "$13/20$",
+      "$8/20$",
+      "$1/3$",
+      "$7/20$"
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. $1-7/20=13/20$, which is also $(8+5)/20$.",
+      "This is $P(\\text{blue})$ only.",
+      "Treating the three colors as equally likely is the mistake.",
+      "This is $P(\\text{white})$."
+     ],
+     "seek": 406
+    },
+    {
+     "stem": "Two fair dice are rolled. Which sum is most likely?",
+     "opts": [
+      "All sums are equally likely",
+      "2",
+      "7",
+      "12"
+     ],
+     "ok": 2,
+     "why": [
+      "Equal likelihood holds for the 36 pairs, not for the sums.",
+      "Only the pair 1 and 1 gives a sum of 2.",
+      "Correct. Six of the 36 ordered pairs give a sum of 7.",
+      "Only the pair 6 and 6 gives a sum of 12."
+     ],
+     "seek": 808
+    },
+    {
+     "stem": "Which value could be a probability?",
+     "opts": [
+      "$110\\%$",
+      "$-0.2$",
+      "$1.4$",
+      "$0.0$"
+     ],
+     "ok": 3,
+     "why": [
+      "110% is greater than 1.",
+      "A probability cannot be negative.",
+      "A probability cannot exceed 1.",
+      "Correct. 0 is allowed and means the event is impossible."
+     ],
+     "seek": 252
+    },
+    {
+     "stem": "The probability of rain tomorrow is 0.10. Which statement is correct?",
+     "opts": [
+      "The probability of no rain is 0.90.",
+      "It will not rain tomorrow.",
+      "It will rain on 1 of the next 10 days.",
+      "No rain is unlikely."
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. The complement of rain has probability $1-0.10$.",
+      "A probability of 0.10 does not guarantee that it will not rain.",
+      "Probability describes long-run frequencies, not a guaranteed pattern in the next 10 days.",
+      "No rain has probability 0.90, which is likely."
+     ],
+     "seek": 406
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A student rolls two fair six-sided dice and records the larger of the two numbers (if they match, that number).",
+   "parts": [
+    "(a) List the sample space of equally likely outcomes and state how many there are.",
+    "(b) Find $P(\\text{larger number is 6})$.",
+    "(c) Find the probability that the larger number is not 6.",
+    "(d) Explain why 11 equally likely outcomes would be the wrong sample space for the larger number."
+   ],
+   "sample": [
+    "(a) The 36 ordered pairs (first die, second die) are equally likely.",
+    "(b) 11 pairs contain at least one 6, so $P=0.306$.",
+    "(c) $1-11/36=25/36=0.694$.",
+    "(d) The larger number takes values 1 to 6, which are not equally likely. For example, the larger number is 1 in only one pair but 6 in eleven pairs."
+   ],
+   "checklist": [
+    "(a) Uses 36 ordered pairs",
+    "(b) Counts 11 pairs with a six",
+    "(b) $11/36$",
+    "(c) Complement rule used",
+    "(d) Explains outcomes are not equally likely"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topic 2.4.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "The video says an event is \"unlikely\" below 5% or 1%. The CED gives no cutoff; the page avoids a fixed number and says to call an event unlikely only when its probability is near 0."
+   },
+   {
+    "kind": "caption",
+    "text": "Captions garble some counts in the grade and eye-color table; page uses 850 total, 220 tenth graders, 110 green eyes and 45 blue-eyed seniors as stated in the narration."
+   },
+   {
+    "kind": "values",
+    "text": "Dice-sum counts computed by enumeration in code."
+   }
+  ]
+ }
+}

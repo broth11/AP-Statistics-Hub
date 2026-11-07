@@ -1,0 +1,400 @@
+{
+ "n": 20,
+ "unit": 2,
+ "topic": "2.7",
+ "title": "Independent Events and Unions of Events",
+ "videoId": "_28pty9vVEc",
+ "videoTitle": "AP Statistics Topic 2.7 Independent Events and Unions of Events",
+ "intro": "After this lesson you can test whether two events are independent, use $P(A\\cap B)=P(A)P(B)$ only when they are, and find the probability of a union with $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$.",
+ "moments": [
+  {
+   "t": 60,
+   "type": "Definition",
+   "title": "Independent events",
+   "text": "Knowing that one event occurred does not change the probability of the other."
+  },
+  {
+   "t": 121,
+   "type": "Formula",
+   "title": "Conditions that show independence",
+   "text": "$P(A\\mid B)=P(A)$ or $P(B\\mid A)=P(B)$. Any one of these checks is enough."
+  },
+  {
+   "t": 244,
+   "type": "Key idea",
+   "title": "Compare matching events",
+   "text": "Whatever event is in the condition on the left must be the event you compare against on the right."
+  },
+  {
+   "t": 304,
+   "type": "Formula",
+   "title": "Multiplication rule for independent events",
+   "text": "$P(A\\cap B)=P(A)\\,P(B)$, valid only when the events are independent."
+  },
+  {
+   "t": 424,
+   "type": "Worked example",
+   "title": "Female and hot coffee",
+   "text": "$P(\\text{hot})=63/150=0.42$ but $P(\\text{hot}\\mid\\text{female})=28/80=0.35$. Not independent."
+  },
+  {
+   "t": 547,
+   "type": "Key idea",
+   "title": "Not independent means associated",
+   "text": "Being female changed the chance of ordering hot coffee, so the variables are associated."
+  },
+  {
+   "t": 608,
+   "type": "Worked example",
+   "title": "Turkey and ham",
+   "text": "$P(\\text{turkey})=0.72$ but $P(\\text{turkey}\\mid\\text{ham})=0.04/0.21\\approx0.19$. Not independent."
+  },
+  {
+   "t": 851,
+   "type": "Worked example",
+   "title": "Income and age table",
+   "text": "$P(\\text{over }50\\text{K})=96/207\\approx0.464$ compared with $35/89\\approx0.393$ for ages 31 to 45."
+  },
+  {
+   "t": 973,
+   "type": "Definition",
+   "title": "Union of events",
+   "text": "$P(A\\cup B)$ is the probability of $A$ or $B$ or both."
+  },
+  {
+   "t": 1096,
+   "type": "Formula",
+   "title": "Addition rule",
+   "text": "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$. The subtraction stops the overlap being counted twice."
+  },
+  {
+   "t": 1279,
+   "type": "Key idea",
+   "title": "Neither is the complement of the union",
+   "text": "$P(\\text{neither})=1-P(A\\cup B)$."
+  },
+  {
+   "t": 1341,
+   "type": "Worked example",
+   "title": "Female or iced coffee",
+   "text": "$(80+58-36)/150=0.68$."
+  },
+  {
+   "t": 1464,
+   "type": "Exam question",
+   "title": "Mixed questions on $E$ and $D$",
+   "text": "Mutually exclusive, union, conditional and independent checks from $P(E)=0.27$, $P(D)=0.51$, $P(E\\cap D)=0.07$."
+  },
+  {
+   "t": 1708,
+   "type": "Worked example",
+   "title": "Solve for $P(B)$",
+   "text": "Substitute into the addition rule. Use 0 for the joint if mutually exclusive, or $P(A)P(B)$ if independent."
+  },
+  {
+   "t": 2378,
+   "type": "Exam wording",
+   "title": "Justify non-independence",
+   "text": "Compare $P(\\text{science}\\mid\\text{math})=0.40$ to $P(\\text{science})=0.25$."
+  }
+ ],
+ "sections": [
+  {
+   "id": "test",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Independent or not?",
+   "cards": [
+    {
+     "letter": "I",
+     "name": "Independent",
+     "text": "$P(A\\mid B)=P(A)$, or equivalently $P(A\\cap B)=P(A)P(B)$."
+    },
+    {
+     "letter": "D",
+     "name": "Not independent",
+     "text": "The conditional probability differs from the overall probability."
+    }
+   ],
+   "columns": [
+    "Events",
+    "Compare",
+    "Independent?"
+   ],
+   "verdictColumn": 2,
+   "rows": [
+    {
+     "cells": [
+      "Hot coffee and female",
+      "$P(\\text{hot})=0.42$ vs $P(\\text{hot}\\mid F)=0.35$",
+      "No"
+     ],
+     "seek": 486
+    },
+    {
+     "cells": [
+      "Turkey and ham",
+      "$P(T)=0.72$ vs $P(T\\mid H)=0.19$",
+      "No"
+     ],
+     "seek": 731
+    },
+    {
+     "cells": [
+      "Income over 50,000 dollars and age 31 to 45",
+      "$0.464$ vs $0.393$",
+      "No"
+     ],
+     "seek": 911
+    },
+    {
+     "cells": [
+      "Science club and math club",
+      "$0.25$ vs $0.40$",
+      "No"
+     ],
+     "seek": 2378
+    },
+    {
+     "cells": [
+      "Spanish and music (practice survey)",
+      "$P(S)=0.40$ vs $P(S\\mid M)=0.40$",
+      "Yes"
+     ],
+     "seek": 121
+    },
+    {
+     "cells": [
+      "Two flips of a fair coin",
+      "$P(H_2)=0.5$ vs $P(H_2\\mid H_1)=0.5$",
+      "Yes"
+     ],
+     "seek": 60
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Independence is not the same as mutually exclusive. Mutually exclusive events with positive probabilities are never independent, because one occurring makes the other impossible."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "Test independence, then find a union",
+   "intro": "Pick one matching pair of probabilities, compute the conditional probability, and compare it to the overall probability. Then use the addition rule for \"or\".",
+   "steps": [
+    "Write $P(A)$ from the table or the problem.",
+    "Write $P(A\\mid B)=P(A\\cap B)/P(B)$.",
+    "If they match, the events are independent. If they differ, they are not, and the variables are associated.",
+    "For a union, add $P(A)$ and $P(B)$, then subtract $P(A\\cap B)$."
+   ],
+   "parts": [
+    {
+     "label": "Compare",
+     "tex": [
+      "$P(E)=0.27$",
+      "$P(E\\mid D)=0.137$"
+     ],
+     "text": "Not equal, so not independent."
+    },
+    {
+     "label": "Union",
+     "tex": "$0.27+0.51-0.07=0.71$",
+     "text": "$P(E\\cup D)$."
+    },
+    {
+     "label": "Solve for B",
+     "tex": [
+      "$0.62=0.25+x-0.07$",
+      "$x=0.44$"
+     ],
+     "text": "General case."
+    },
+    {
+     "label": "Independent B",
+     "tex": "$0.62=0.25+x-0.25x$",
+     "text": "Gives $x\\approx0.493$."
+    }
+   ],
+   "line": "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$",
+   "buttons": [
+    {
+     "label": "Watch the independence test (2:01)",
+     "seek": 121
+    },
+    {
+     "label": "Watch the addition rule (18:16)",
+     "seek": 1096
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Justify non-independence with two numbers",
+     "weak": "Science and math are not independent.",
+     "better": "$P(\\text{science})=0.25$ but $P(\\text{science}\\mid\\text{math})=0.12/0.30=0.40$. The probabilities differ, so the events are not independent.",
+     "seek": 2378
+    },
+    {
+     "kind": "Common trap",
+     "title": "Multiplying without independence",
+     "weak": "$P(A\\cap B)=0.25\\times0.44=0.11$ for any events.",
+     "better": "Multiplication is allowed only when the events are independent. Otherwise use $P(A)\\,P(B\\mid A)$.",
+     "seek": 304
+    },
+    {
+     "kind": "Common trap",
+     "title": "Forgetting to subtract the overlap",
+     "weak": "$P(F\\cup\\text{iced})=80/150+58/150=0.92$.",
+     "better": "36 customers are counted twice. Subtract the overlap: $(80+58-36)/150=0.68$.",
+     "seek": 1157
+    },
+    {
+     "kind": "Common trap",
+     "title": "Mutually exclusive confused with independent",
+     "weak": "The events are mutually exclusive, so they are independent.",
+     "better": "If $P(A\\cap B)=0$ and both probabilities are positive, then $P(A\\cap B)\\ne P(A)P(B)$, so the events are not independent.",
+     "seek": 2075
+    },
+    {
+     "kind": "Common trap",
+     "title": "Mismatched comparison",
+     "weak": "Compare $P(A\\mid B)$ to $P(B)$.",
+     "better": "Compare $P(A\\mid B)$ to $P(A)$, or $P(B\\mid A)$ to $P(B)$. The event before the bar must match the event on the other side.",
+     "seek": 244
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "Events $A$ and $B$ are independent with $P(A)=0.5$ and $P(B)=0.2$. What is $P(A\\cup B)$?",
+     "opts": [
+      "0.60",
+      "0.70",
+      "0.10",
+      "0.30"
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. $0.5+0.2-(0.5)(0.2)=0.60$.",
+      "This adds the probabilities without subtracting the overlap.",
+      "This is $P(A\\cap B)$.",
+      "Subtracting the probabilities is not a rule for the union."
+     ],
+     "seek": 1096
+    },
+    {
+     "stem": "For events $A$ and $B$, $P(A)=0.40$, $P(B)=0.30$ and $P(A\\cap B)=0.12$. Which statement is correct?",
+     "opts": [
+      "$P(A\\cup B)=0.70$",
+      "$A$ and $B$ are mutually exclusive.",
+      "$A$ and $B$ are independent.",
+      "$A$ and $B$ are not independent because $P(A\\mid B)\\ne P(A)$."
+     ],
+     "ok": 2,
+     "why": [
+      "The union is $0.40+0.30-0.12=0.58$.",
+      "The joint probability is not 0.",
+      "Correct. $P(A)P(B)=0.12=P(A\\cap B)$, so $P(A\\mid B)=0.12/0.30=0.40=P(A)$.",
+      "The conditional probability equals $P(A)$, so the events are independent."
+     ],
+     "seek": 304
+    },
+    {
+     "stem": "If $A$ and $B$ are mutually exclusive, $P(A)=0.30$ and $P(A\\cup B)=0.55$, what is $P(B)$?",
+     "opts": [
+      "0.85",
+      "0.30",
+      "0.45",
+      "0.25"
+     ],
+     "ok": 3,
+     "why": [
+      "This adds $P(A)$ and $P(A\\cup B)$.",
+      "This repeats $P(A)$.",
+      "This does not use the addition rule.",
+      "Correct. The joint is 0, so $0.55=0.30+P(B)$."
+     ],
+     "seek": 1829
+    },
+    {
+     "stem": "In a school, 40% of students play a sport and 30% are in a club. 12% do both. What is the probability a student plays a sport or is in a club?",
+     "opts": [
+      "0.70",
+      "0.58",
+      "0.12",
+      "0.88"
+     ],
+     "ok": 1,
+     "why": [
+      "This double counts the 12% overlap.",
+      "Correct. $0.40+0.30-0.12=0.58$.",
+      "This is the probability of doing both.",
+      "This is $1-0.12$."
+     ],
+     "seek": 2197
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A survey of 200 students asked whether they take Spanish and whether they play in the school band. The counts were: both 30, Spanish only 50, band only 45, neither 75.",
+   "parts": [
+    "(a) Find the probability that a randomly selected student takes Spanish or plays in the band.",
+    "(b) Find $P(\\text{Spanish}\\mid\\text{band})$.",
+    "(c) Are taking Spanish and playing in the band independent? Justify.",
+    "(d) Another pair of events $E$ and $F$ has $P(E)=0.40$, $P(F)=0.25$ and $P(E\\cup F)=0.55$. Find $P(E\\cap F)$."
+   ],
+   "sample": [
+    "(a) $(30+50+45)/200=0.625$, or $0.40+0.375-0.15$.",
+    "(b) $30/75=0.40$.",
+    "(c) Yes. $P(\\text{Spanish})=80/200=0.40$ and $P(\\text{Spanish}\\mid\\text{band})=0.40$. The probabilities are equal, so the events are independent.",
+    "(d) $0.55=0.40+0.25-P(E\\cap F)$, so $P(E\\cap F)=0.10$."
+   ],
+   "checklist": [
+    "(a) Addition rule or total of three cells",
+    "(a) Value 0.625",
+    "(b) 30/75",
+    "(c) Compares 0.40 with 0.40",
+    "(c) Concludes independent",
+    "(d) Correct joint probability 0.10"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topic 2.7.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "caption",
+    "text": "The video notes it typed the intersection symbol where union was meant on the addition-rule slide; the page uses the correct symbols."
+   },
+   {
+    "kind": "values",
+    "text": "Values reconstructed from narration: coffee table (63 hot, 28 female hot, 36 female iced, 58 iced). Practice values computed in code."
+   }
+  ]
+ }
+}

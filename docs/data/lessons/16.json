@@ -1,0 +1,396 @@
+{
+ "n": 16,
+ "unit": 2,
+ "topic": "2.3",
+ "title": "Estimating Probabilities Using Simulation",
+ "videoId": "ulQnBgp3wBI",
+ "videoTitle": "AP Statistics Topic 2.3 Estimating Probabilities Using Simulation",
+ "intro": "After this lesson you can define random process, outcome and event, explain probability as long-run relative frequency, state the law of large numbers, and design and carry out a simulation to estimate a probability.",
+ "moments": [
+  {
+   "t": 51,
+   "type": "Definition",
+   "title": "Random process",
+   "text": "A process whose results are determined by chance. You know the possible outcomes but not which will occur."
+  },
+  {
+   "t": 91,
+   "type": "Definition",
+   "title": "Outcome and event",
+   "text": "An outcome is the result of one trial. An event is a collection of outcomes, such as an odd number on a die."
+  },
+  {
+   "t": 228,
+   "type": "Definition",
+   "title": "Probability",
+   "text": "The long-run relative frequency of an outcome or event over a large number of trials."
+  },
+  {
+   "t": 319,
+   "type": "Definition",
+   "title": "Simulation",
+   "text": "A model of a random process that uses chance numbers in place of the real trials."
+  },
+  {
+   "t": 364,
+   "type": "Worked example",
+   "title": "At least three heads in five tosses",
+   "text": "Let 1 be a head and 2 a tail. Generate five numbers per trial and count the ones."
+  },
+  {
+   "t": 455,
+   "type": "Procedure",
+   "title": "Five simulation steps",
+   "text": "Assign numbers, generate them, count what you need, define a success, then repeat many trials."
+  },
+  {
+   "t": 592,
+   "type": "Key idea",
+   "title": "Repeats allowed for independent trials",
+   "text": "Coin tosses do not remember each other, so the same number may appear again."
+  },
+  {
+   "t": 682,
+   "type": "Formula",
+   "title": "Estimate from trials",
+   "text": "Estimated probability is the number of successful trials divided by the number of trials."
+  },
+  {
+   "t": 729,
+   "type": "Principle",
+   "title": "Law of large numbers",
+   "text": "For independent trials, the long-run relative frequency gets closer and closer to a single value as trials increase."
+  },
+  {
+   "t": 866,
+   "type": "Worked example",
+   "title": "Eight stores chosen from 800",
+   "text": "Numbers 001 to 500 are US stores, 501 to 800 are European. Pick eight with no repeats and count US numbers."
+  },
+  {
+   "t": 1004,
+   "type": "Key idea",
+   "title": "No repeats when sampling without replacement",
+   "text": "A store cannot be chosen twice, so the simulation must not repeat a number in one trial."
+  },
+  {
+   "t": 1186,
+   "type": "Worked example",
+   "title": "A 72% free-throw shooter",
+   "text": "Use 00 to 71 for a make and 72 to 99 for a miss. Generate ten numbers per trial and count makes."
+  },
+  {
+   "t": 1324,
+   "type": "Key idea",
+   "title": "Match the number range to the probability",
+   "text": "A 72% chance needs 72 of 100 two-digit numbers assigned to a make."
+  },
+  {
+   "t": 1462,
+   "type": "Exam wording",
+   "title": "Five parts of a simulation design",
+   "text": "Say which numbers are used, whether repeats are allowed, how many to pick, what to count, and what is a success."
+  }
+ ],
+ "sections": [
+  {
+   "id": "repeats",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Can numbers repeat in one trial?",
+   "cards": [
+    {
+     "letter": "Y",
+     "name": "Repeats allowed",
+     "text": "Each selection is independent, like a coin toss or a free throw."
+    },
+    {
+     "letter": "N",
+     "name": "No repeats",
+     "text": "Items are chosen from a fixed group and cannot be chosen twice."
+    }
+   ],
+   "columns": [
+    "Situation",
+    "Repeats?",
+    "Why"
+   ],
+   "verdictColumn": 1,
+   "rows": [
+    {
+     "cells": [
+      "Toss a coin five times",
+      "Yes",
+      "Each toss is independent."
+     ],
+     "seek": 592
+    },
+    {
+     "cells": [
+      "Choose 8 of 800 stores",
+      "No",
+      "A store cannot be chosen twice."
+     ],
+     "seek": 1004
+    },
+    {
+     "cells": [
+      "A shooter takes 10 free throws",
+      "Yes",
+      "Each shot is independent."
+     ],
+     "seek": 1279
+    },
+    {
+     "cells": [
+      "Choose 3 students from a class of 20 for a team",
+      "No",
+      "The same student cannot be chosen twice."
+     ],
+     "seek": 959
+    },
+    {
+     "cells": [
+      "Roll a die four times",
+      "Yes",
+      "Each roll is independent."
+     ],
+     "seek": 136
+    },
+    {
+     "cells": [
+      "Draw 5 cards from a deck without replacement",
+      "No",
+      "A card cannot be drawn twice."
+     ],
+     "seek": 1004
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Ask whether the same person, item or number could occur twice in a real trial. If not, turn repeats off."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "Design and run a simulation",
+   "intro": "Every simulation answer on the exam needs the same five parts. Write them in order and use the problem to fill each one.",
+   "steps": [
+    "Assignment: say which numbers represent each outcome, with the proportions matching the probabilities.",
+    "Generation: say how many numbers per trial and whether repeats are allowed.",
+    "Count: say what you count in each trial.",
+    "Success: say what count makes a trial a success.",
+    "Repeat for many trials, then estimate with successes divided by trials."
+   ],
+   "parts": [
+    {
+     "label": "Coin",
+     "tex": "$1=\\text{head},\\ 2=\\text{tail}$",
+     "text": "Five numbers per trial, repeats allowed."
+    },
+    {
+     "label": "Shooter",
+     "tex": "$00\\text{ to }71=\\text{make}$",
+     "text": "72 of 100 numbers give a 72% chance."
+    },
+    {
+     "label": "Estimate",
+     "tex": "$\\hat P=\\dfrac{\\text{successes}}{\\text{trials}}$",
+     "text": "Use many trials, not five."
+    },
+    {
+     "label": "Exact value",
+     "tex": [
+      "$P(\\text{3+ heads})=0.500$",
+      "$P(\\text{8+ makes})\\approx0.438$"
+     ],
+     "text": "Computed in code to compare with simulated estimates."
+    }
+   ],
+   "line": "$\\text{Estimate}=\\dfrac{\\text{number of successful trials}}{\\text{number of trials}}$",
+   "buttons": [
+    {
+     "label": "Watch the five steps (7:35)",
+     "seek": 455
+    },
+    {
+     "label": "Watch the free-throw design (20:26)",
+     "seek": 1232
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Stopping after a few trials",
+     "weak": "In five trials we got 1 success, so the probability is 20%.",
+     "better": "Five trials is far too few. The estimate is the proportion of successes over a large number of trials, and it gets closer to the true probability as trials increase.",
+     "seek": 1424
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Incomplete simulation design",
+     "weak": "Use a random number generator to simulate the free throws.",
+     "better": "Let 00 to 71 be a make and 72 to 99 a miss. Generate 10 numbers per trial with repeats allowed. Count the makes. A trial is a success if there are 8 or more makes. Run many trials and divide the number of successes by the number of trials.",
+     "seek": 1462
+    },
+    {
+     "kind": "Common trap",
+     "title": "Repeats allowed when choosing stores",
+     "weak": "Generate 8 numbers from 1 to 800, repeats allowed.",
+     "better": "Generate 8 different numbers from 1 to 800, ignoring repeats, because a store cannot be chosen twice.",
+     "seek": 1004
+    },
+    {
+     "kind": "Common trap",
+     "title": "Numbers that do not match the probability",
+     "weak": "Use 1 to 72 for a make and 1 to 28 for a miss.",
+     "better": "The numbers must not overlap. Use 01 to 72 for a make and 73 to 100 for a miss, so that 72% of the numbers represent a make.",
+     "seek": 1279
+    },
+    {
+     "kind": "Common trap",
+     "title": "Probability from a short run",
+     "weak": "A fair coin must give exactly 50 heads in 100 tosses.",
+     "better": "The probability 0.5 describes the long-run relative frequency. A hundred tosses will usually be close to 50 heads but need not give exactly 50.",
+     "seek": 819
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A spinner lands on blue with probability 0.30. Which assignment of digits 0 to 9 correctly simulates one spin?",
+     "opts": [
+      "0, 1, 2 are blue; 3 to 9 are not blue",
+      "0, 1, 2, 3 are blue; 4 to 9 are not blue",
+      "1 to 3 are blue; 3 to 9 are not blue",
+      "Only the digit 3 is blue"
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. Three of ten digits give a probability of 0.30.",
+      "Four of ten digits give 0.40.",
+      "The digit 3 appears in both groups, so the assignment overlaps.",
+      "One digit gives 0.10."
+     ],
+     "seek": 455
+    },
+    {
+     "stem": "A simulation estimates the probability of at least two sixes in four dice rolls. After 20 trials the estimate is 0.10. Which action would most improve the estimate?",
+     "opts": [
+      "Use a different random number table",
+      "Run many more trials",
+      "Change the definition of success",
+      "Remove repeats from each trial"
+     ],
+     "ok": 1,
+     "why": [
+      "The table does not fix a small sample of trials.",
+      "Correct. By the law of large numbers, more trials bring the relative frequency closer to the true probability.",
+      "Success is already defined by the problem.",
+      "Repeats are correct for die rolls, which are independent."
+     ],
+     "seek": 729
+    },
+    {
+     "stem": "A club of 30 members has 12 seniors. A simulation picks 4 members at random for a committee and counts seniors. Which design is correct?",
+     "opts": [
+      "Digits 0 to 9 are seniors; generate 4 numbers",
+      "Digits 01 to 12 are seniors; generate 4 numbers from 01 to 30 with repeats allowed",
+      "Digits 01 to 12 are seniors; generate 4 different numbers from 01 to 30",
+      "Digits 1 to 4 are seniors; generate 12 numbers"
+     ],
+     "ok": 2,
+     "why": [
+      "This does not represent 12 of 30.",
+      "Repeats must not be allowed because a member cannot serve twice.",
+      "Correct. Twelve of 30 numbers are seniors and the 4 numbers must be different.",
+      "The numbers do not match the 12 seniors in 30 members."
+     ],
+     "seek": 959
+    },
+    {
+     "stem": "Which statement best describes the probability of an event?",
+     "opts": [
+      "Whether the event is likely to happen next",
+      "The number of outcomes in the event",
+      "The proportion of times it occurs in the first 10 trials",
+      "The long-run relative frequency of the event over many trials"
+     ],
+     "ok": 3,
+     "why": [
+      "Probability does not predict a single next outcome.",
+      "A count of outcomes alone does not give a probability.",
+      "A short run can differ a lot from the true probability.",
+      "Correct. Probability is the relative frequency over a large number of trials."
+     ],
+     "seek": 228
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A basketball player makes 65% of her free throws. The coach wants to estimate the probability that she makes at least 5 of 6 consecutive free throws.",
+   "parts": [
+    "(a) Describe how to use two-digit random numbers 00 to 99 to simulate one trial.",
+    "(b) State what counts as a successful trial.",
+    "(c) In 200 trials, 62 were successes. Estimate the probability and state whether this estimate is exact.",
+    "(d) A teammate estimates from 8 trials. Explain why 200 trials is better."
+   ],
+   "sample": [
+    "(a) Let 00 to 64 represent a make (65 numbers) and 65 to 99 a miss. Generate 6 numbers per trial, with repeats allowed because the shots are independent. Count the numbers in 00 to 64.",
+    "(b) A trial is a success if at least 5 of the 6 numbers are from 00 to 64.",
+    "(c) $62/200=0.31$. This is an estimate based on the trials, not the exact probability.",
+    "(d) By the law of large numbers, the relative frequency over more trials is closer to the true probability, so 200 trials gives a more reliable estimate than 8."
+   ],
+   "checklist": [
+    "(a) 65 of 100 numbers assigned to a make",
+    "(a) 6 numbers per trial, repeats allowed",
+    "(b) Success defined as at least 5 makes",
+    "(c) Estimate 62/200 = 0.31",
+    "(c) Notes it is an estimate",
+    "(d) Cites more trials or the law of large numbers"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topic 2.3.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "The video mixes \"repeats\" and \"duplicates\" and uses 0 to 99 and 1 to 100 interchangeably. The page keeps both numbering systems but requires non-overlapping ranges."
+   },
+   {
+    "kind": "caption",
+    "text": "Captions garble the video demo results; the stated simulated counts (2 of 7, 1 of 5) are used only as illustrations of small-trial estimates."
+   },
+   {
+    "kind": "values",
+    "text": "Exact values computed in code: P(3+ heads of 5)=0.500; P(8 US stores of 8)=0.0228; P(8+ makes of 10 at 0.72)=0.438; P(5+ of 6 at 0.65)=0.319."
+   }
+  ]
+ }
+}

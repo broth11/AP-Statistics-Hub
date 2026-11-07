@@ -1,0 +1,405 @@
+{
+ "n": 19,
+ "unit": 2,
+ "topic": "2.6",
+ "title": "Conditional Probability",
+ "videoId": "vBNIYkaZ9h8",
+ "videoTitle": "AP Statistics Topic 2.6 Conditional Probability",
+ "intro": "After this lesson you can recognize a conditional probability, write it with the vertical bar, compute it from a table or with $P(A\\mid B)=P(A\\cap B)/P(B)$, and use the general multiplication rule and tree diagrams.",
+ "moments": [
+  {
+   "t": 60,
+   "type": "Definition",
+   "title": "Conditional probability",
+   "text": "The probability that $A$ occurs given that $B$ has occurred, written $P(A\\mid B)$."
+  },
+  {
+   "t": 242,
+   "type": "Concept",
+   "title": "Condition goes after the bar",
+   "text": "In words the condition can sit anywhere. In notation it always follows the vertical bar."
+  },
+  {
+   "t": 303,
+   "type": "Worked example",
+   "title": "Home-team fans and food",
+   "text": "Marginal, joint and conditional questions from the same two-way table of 250 people."
+  },
+  {
+   "t": 424,
+   "type": "Formula",
+   "title": "Conditional probability formula",
+   "text": "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}$. The condition goes on the bottom."
+  },
+  {
+   "t": 544,
+   "type": "Key idea",
+   "title": "The formula matches the table",
+   "text": "Dividing $120/250$ by $160/250$ cancels the 250s and gives $120/160$."
+  },
+  {
+   "t": 605,
+   "type": "Worked example",
+   "title": "Turkey and ham at Thanksgiving",
+   "text": "72% have turkey, 21% ham and 11% neither. Fill a table to get $P(\\text{ham}\\mid\\text{turkey})$."
+  },
+  {
+   "t": 908,
+   "type": "Exam wording",
+   "title": "Spot conditional statements in words",
+   "text": "\"If ... then the probability that\" and \"given that\" both signal a condition."
+  },
+  {
+   "t": 1031,
+   "type": "Formula",
+   "title": "General multiplication rule",
+   "text": "$P(A\\cap B)=P(A)\\cdot P(B\\mid A)$."
+  },
+  {
+   "t": 1211,
+   "type": "Worked example",
+   "title": "Two green marbles",
+   "text": "$\\frac{4}{20}\\cdot\\frac{3}{19}$, because the condition removes one green marble."
+  },
+  {
+   "t": 1331,
+   "type": "Worked example",
+   "title": "Netflix and Disney Plus table",
+   "text": "Restrict to the 180 Netflix subscribers, then count those who also have Disney Plus."
+  },
+  {
+   "t": 1578,
+   "type": "Procedure",
+   "title": "Tree diagrams",
+   "text": "Branches show conditional probabilities. The end of each path is a joint probability."
+  },
+  {
+   "t": 1759,
+   "type": "Worked example",
+   "title": "Defective light bulbs",
+   "text": "Add the two paths that end in \"defective\": $0.6(0.04)+0.4(0.10)=0.064$."
+  },
+  {
+   "t": 1880,
+   "type": "Worked example",
+   "title": "Which machine, given defective?",
+   "text": "$P(B\\mid\\text{def})=0.04/0.064=0.625$."
+  },
+  {
+   "t": 2001,
+   "type": "Worked example",
+   "title": "Disease and test result",
+   "text": "With a rare disease, $P(\\text{disease}\\mid\\text{positive})\\approx0.107$ even though the test is 95% sensitive."
+  },
+  {
+   "t": 2306,
+   "type": "Worked example",
+   "title": "Math and science clubs",
+   "text": "30%, 25% and 12% in both give $P(\\text{science}\\mid\\text{math})=0.40$."
+  }
+ ],
+ "sections": [
+  {
+   "id": "read",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Which probability is being asked?",
+   "cards": [
+    {
+     "letter": "M",
+     "name": "Marginal",
+     "text": "One event. Use the table total as the denominator."
+    },
+    {
+     "letter": "J",
+     "name": "Joint",
+     "text": "\"A and B\". Use $P(A)\\cdot P(B\\mid A)$ or a cell over the table total."
+    },
+    {
+     "letter": "C",
+     "name": "Conditional",
+     "text": "\"Given\", \"if\", \"of those\". Divide by the probability or count of the condition."
+    }
+   ],
+   "columns": [
+    "Question",
+    "Type",
+    "Setup"
+   ],
+   "verdictColumn": 1,
+   "rows": [
+    {
+     "cells": [
+      "What is the probability a fan purchased food?",
+      "Marginal",
+      "$160/250$"
+     ],
+     "seek": 303
+    },
+    {
+     "cells": [
+      "What is the probability a fan roots for the home team and buys food?",
+      "Joint",
+      "$120/250$"
+     ],
+     "seek": 303
+    },
+    {
+     "cells": [
+      "Given that a fan bought food, what is the probability the fan roots for the home team?",
+      "Conditional",
+      "$120/160$"
+     ],
+     "seek": 363
+    },
+    {
+     "cells": [
+      "If a person has turkey, what is the probability of ham?",
+      "Conditional",
+      "$P(H\\cap T)/P(T)$"
+     ],
+     "seek": 665
+    },
+    {
+     "cells": [
+      "A bulb is from machine B and is defective",
+      "Joint",
+      "$0.4\\times0.10$"
+     ],
+     "seek": 1820
+    },
+    {
+     "cells": [
+      "A bulb is defective. What is the probability it came from machine B?",
+      "Conditional",
+      "$0.04/0.064$"
+     ],
+     "seek": 1880
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video names the denominators in words. On the exam, write the probability statement, such as $P(\\text{B}\\mid\\text{defective})$, before you substitute numbers."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "Use a tree diagram",
+   "intro": "Start with the first split, add the conditional probabilities on each second branch, multiply along a path for a joint probability, and add paths for a total.",
+   "steps": [
+    "Draw the first split and label each branch with its probability.",
+    "On each branch, draw the second split with conditional probabilities.",
+    "Multiply along a path for a joint probability with the general multiplication rule.",
+    "Add the paths that match the event to get its total, then divide to reverse the condition."
+   ],
+   "parts": [
+    {
+     "label": "Defective",
+     "tex": [
+      "$0.6(0.04)=0.024$",
+      "$0.4(0.10)=0.040$"
+     ],
+     "text": "Add the paths: 0.064."
+    },
+    {
+     "label": "Reverse",
+     "tex": "$P(B\\mid D)=0.040/0.064=0.625$",
+     "text": "Joint over total."
+    },
+    {
+     "label": "Disease",
+     "tex": [
+      "$0.01(0.95)=0.0095$",
+      "$0.99(0.08)=0.0792$"
+     ],
+     "text": "Total positive: 0.0887."
+    },
+    {
+     "label": "Positive",
+     "tex": "$P(D\\mid +)=0.0095/0.0887=0.107$",
+     "text": "Few have the disease, so most positives are false."
+    }
+   ],
+   "line": "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}\\qquad P(A\\cap B)=P(A)\\,P(B\\mid A)$",
+   "buttons": [
+    {
+     "label": "Watch tree diagrams (26:18)",
+     "seek": 1578
+    },
+    {
+     "label": "Watch the disease example (33:21)",
+     "seek": 2001
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Adding conditional probabilities",
+     "weak": "$P(\\text{defective})=0.04+0.10=0.14$.",
+     "better": "Multiply each conditional probability by the probability of its branch, then add: $0.6(0.04)+0.4(0.10)=0.064$.",
+     "seek": 1820
+    },
+    {
+     "kind": "Common trap",
+     "title": "Reversing the condition",
+     "weak": "$P(\\text{positive}\\mid\\text{disease})=0.95$, so a positive test means a 95% chance of disease.",
+     "better": "$P(\\text{disease}\\mid\\text{positive})=0.0095/0.0887\\approx0.107$. The two conditional probabilities are different.",
+     "seek": 2246
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Show the probability statement",
+     "weak": "0.625",
+     "better": "$P(\\text{machine B}\\mid\\text{defective})=\\dfrac{0.4(0.10)}{0.064}=0.625$. About 62.5% of defective bulbs come from machine B.",
+     "seek": 1940
+    },
+    {
+     "kind": "Common trap",
+     "title": "Forgetting the changed denominator",
+     "weak": "$P(\\text{green and green})=\\frac{4}{20}\\cdot\\frac{4}{20}$.",
+     "better": "After one green marble is removed, $P(\\text{green}\\mid\\text{green first})=3/19$, so the product is $\\frac{4}{20}\\cdot\\frac{3}{19}\\approx0.032$.",
+     "seek": 1271
+    },
+    {
+     "kind": "Common trap",
+     "title": "Interpreting a conditional probability",
+     "weak": "25% of students are in science club, so a math club member has a 25% chance.",
+     "better": "$P(\\text{science}\\mid\\text{math})=0.12/0.30=0.40$. Knowing a student is in math club raises the chance to 40%, above the overall 25%.",
+     "seek": 2549
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "Among 200 students, 80 own a bike and 50 own a skateboard; 30 own both. What is $P(\\text{skateboard}\\mid\\text{bike})$?",
+     "opts": [
+      "$30/200$",
+      "$30/80$",
+      "$30/50$",
+      "$50/200$"
+     ],
+     "ok": 1,
+     "why": [
+      "This is the joint probability $P(\\text{bike}\\cap\\text{skateboard})$.",
+      "Correct. Divide the joint count by the bike owners: $30/80=0.375$.",
+      "This is $P(\\text{bike}\\mid\\text{skateboard})$, with the condition reversed.",
+      "This is the marginal probability of owning a skateboard."
+     ],
+     "seek": 424
+    },
+    {
+     "stem": "A box has 5 red and 7 blue pens. Two are drawn without replacement. What is the probability that both are red?",
+     "opts": [
+      "$\\frac{5}{12}+\\frac{4}{11}$",
+      "$\\frac{5}{12}\\cdot\\frac{7}{11}$",
+      "$\\frac{5}{12}\\cdot\\frac{5}{12}$",
+      "$\\frac{5}{12}\\cdot\\frac{4}{11}$"
+     ],
+     "ok": 3,
+     "why": [
+      "Probabilities of consecutive events are multiplied, not added.",
+      "This is the probability of red then blue.",
+      "This treats the draws as independent with replacement.",
+      "Correct. $P(\\text{red}_1)\\,P(\\text{red}_2\\mid\\text{red}_1)=\\frac{5}{12}\\cdot\\frac{4}{11}\\approx0.152$."
+     ],
+     "seek": 1211
+    },
+    {
+     "stem": "On a team, 60% of players are guards and 40% are forwards. A guard makes 50% of free throws; a forward makes 70%. What is $P(\\text{a random player makes a free throw})$?",
+     "opts": [
+      "1.20",
+      "0.60",
+      "0.58",
+      "0.50"
+     ],
+     "ok": 2,
+     "why": [
+      "Adding 0.5 and 0.7 does not weight by group size.",
+      "This is the probability a player is a guard.",
+      "Correct. $0.6(0.5)+0.4(0.7)=0.30+0.28=0.58$.",
+      "This uses only the guards free throw percentage."
+     ],
+     "seek": 1759
+    },
+    {
+     "stem": "Which statement represents $P(A\\mid B)$?",
+     "opts": [
+      "The probability that $A$ and $B$ both occur",
+      "The probability that $A$ occurs given that $B$ has occurred",
+      "The probability that $B$ occurs given that $A$ has occurred",
+      "The probability that $A$ or $B$ occurs"
+     ],
+     "ok": 1,
+     "why": [
+      "This is the joint probability.",
+      "Correct. The event after the vertical bar is the condition.",
+      "This reverses the condition.",
+      "This is the union."
+     ],
+     "seek": 242
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A website records that 55% of visitors use a mobile device and 45% use a desktop. Of mobile visitors, 8% make a purchase. Of desktop visitors, 14% make a purchase.",
+   "parts": [
+    "(a) Draw a tree diagram, or describe it, labeling each branch.",
+    "(b) Find the probability that a randomly chosen visitor makes a purchase.",
+    "(c) A visitor made a purchase. Find the probability that the visitor used a mobile device.",
+    "(d) Is a desktop visitor more likely to purchase than a randomly chosen visitor? Justify."
+   ],
+   "sample": [
+    "(a) First branches: mobile 0.55, desktop 0.45. From mobile: purchase 0.08, no purchase 0.92. From desktop: purchase 0.14, no purchase 0.86.",
+    "(b) $0.55(0.08)+0.45(0.14)=0.044+0.063=0.107$.",
+    "(c) $P(\\text{mobile}\\mid\\text{purchase})=\\dfrac{0.55(0.08)}{0.107}=0.411$.",
+    "(d) Yes. $P(\\text{purchase}\\mid\\text{desktop})=0.14$, which is greater than the overall 0.107."
+   ],
+   "checklist": [
+    "(a) Correct branches and conditional probabilities",
+    "(b) Adds both purchase paths",
+    "(b) Value 0.107",
+    "(c) Uses joint over total",
+    "(c) Value 0.411",
+    "(d) Compares 0.14 to the overall purchase rate"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topic 2.6.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "caption",
+    "text": "The video self-corrects the turkey and ham table on screen. The page uses the stated values (72%, 21%, 11% neither), which give 4% for both and about 5.6% for ham given turkey."
+   },
+   {
+    "kind": "values",
+    "text": "All tree and table values computed in code. Original FRQ: P(purchase)=0.107, P(mobile|purchase)=0.411."
+   }
+  ]
+ }
+}

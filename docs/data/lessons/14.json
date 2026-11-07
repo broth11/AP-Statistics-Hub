@@ -1,0 +1,392 @@
+{
+ "n": 14,
+ "unit": 2,
+ "topic": "2.1",
+ "title": "Tabular and Graphical Representations for Two Categorical Variables",
+ "videoId": "9evOZ-G1g5g",
+ "videoTitle": "AP Statistics Topic 2.1 Tabular and Graphical Representations for Two Categorical Variables",
+ "intro": "After this lesson you can read a two-way table, turn counts into relative frequencies, choose among side-by-side, segmented and mosaic graphs, and decide from a graph whether two categorical variables are associated.",
+ "moments": [
+  {
+   "t": 70,
+   "type": "Definition",
+   "title": "Two-way (contingency) table",
+   "text": "Summarizes two categorical variables. Cells hold counts (frequencies) or proportions (relative frequencies)."
+  },
+  {
+   "t": 93,
+   "type": "Worked example",
+   "title": "Getting to school and tardiness",
+   "text": "188 students were asked how they get to school and whether they were tardy. Row and column totals sit on the edges."
+  },
+  {
+   "t": 204,
+   "type": "Formula",
+   "title": "Relative frequency",
+   "text": "Divide a cell count by the grand total. For example, $5/86\\approx0.058$."
+  },
+  {
+   "t": 258,
+   "type": "Concept",
+   "title": "Three graphs for two variables",
+   "text": "Side-by-side bar charts, segmented bar charts and mosaic plots."
+  },
+  {
+   "t": 290,
+   "type": "Visual",
+   "title": "Side-by-side bar chart",
+   "text": "One bar per group within each category, which makes quick comparisons of counts easy."
+  },
+  {
+   "t": 336,
+   "type": "Visual",
+   "title": "Segmented bar chart",
+   "text": "Each bar is one group and is split by the other variable. Every bar totals 100%."
+  },
+  {
+   "t": 414,
+   "type": "Key idea",
+   "title": "Either variable can be the bars",
+   "text": "Switching which variable forms the bars answers a different question, so pick the one the question asks about."
+  },
+  {
+   "t": 464,
+   "type": "Visual",
+   "title": "Mosaic plot",
+   "text": "A segmented bar chart where bar width shows how large each group is."
+  },
+  {
+   "t": 593,
+   "type": "Key idea",
+   "title": "Wide bar, bigger count",
+   "text": "A smaller proportion in a much larger group can still be a larger count."
+  },
+  {
+   "t": 670,
+   "type": "Definition",
+   "title": "Association",
+   "text": "The distribution of one variable differs across the levels of the other. No association means the variables are independent."
+  },
+  {
+   "t": 771,
+   "type": "Worked example",
+   "title": "Gender and chocolate",
+   "text": "6 of 75 males and 54 of 125 females like chocolate, about 8% against 43.2%. The proportions differ, so there is an association."
+  },
+  {
+   "t": 900,
+   "type": "Worked example",
+   "title": "Gender and Skittles",
+   "text": "About 26% of males and of females like Skittles. Equal proportions suggest no association."
+  },
+  {
+   "t": 1028,
+   "type": "Worked example",
+   "title": "School fundraiser water bottles",
+   "text": "Elementary: 60%, 30%, 10%. Middle school: equal thirds, with three times as many bottles sold."
+  },
+  {
+   "t": 1210,
+   "type": "Exam question",
+   "title": "Proportion or count?",
+   "text": "A larger proportion of small bottles at the elementary school does not mean more small bottles sold there."
+  },
+  {
+   "t": 1312,
+   "type": "Exam wording",
+   "title": "Say there is an association",
+   "text": "Name both variables and compare the proportions in context."
+  }
+ ],
+ "sections": [
+  {
+   "id": "which",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Which display fits?",
+   "cards": [
+    {
+     "letter": "T",
+     "name": "Two-way table",
+     "text": "Exact counts or relative frequencies for every combination, with totals."
+    },
+    {
+     "letter": "S",
+     "name": "Segmented bar",
+     "text": "Compare the distribution of one variable across the groups of the other. Each bar totals 100%."
+    },
+    {
+     "letter": "M",
+     "name": "Mosaic plot",
+     "text": "Same comparison, with bar width showing group size so counts are not hidden."
+    }
+   ],
+   "columns": [
+    "Goal",
+    "Best display",
+    "Why"
+   ],
+   "verdictColumn": 1,
+   "rows": [
+    {
+     "cells": [
+      "Find how many students were tardy and walked",
+      "Two-way table",
+      "The cell gives the count directly."
+     ],
+     "seek": 102
+    },
+    {
+     "cells": [
+      "Compare the share who like chocolate for males and for females",
+      "Segmented bar chart",
+      "Each bar is one gender, so shares line up."
+     ],
+     "seek": 771
+    },
+    {
+     "cells": [
+      "Compare hair color counts for males and females side by side",
+      "Side-by-side bar chart",
+      "Bars show counts for each color."
+     ],
+     "seek": 290
+    },
+    {
+     "cells": [
+      "Compare size mix and total bottles sold at two schools",
+      "Mosaic plot",
+      "Width shows total bottles sold at each school."
+     ],
+     "seek": 464
+    },
+    {
+     "cells": [
+      "Decide whether the share liking Skittles differs by gender",
+      "Segmented bar chart",
+      "Equal segment heights point to no association."
+     ],
+     "seek": 927
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "A graph of proportions compares shares. To compare totals you need counts or a mosaic plot with its widths."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "From a two-way table to a verdict on association",
+   "intro": "Work row by row, because the question asks you to compare groups. Use the group total, not the grand total, as the denominator.",
+   "steps": [
+    "Pick the explanatory variable, the one whose groups you compare. Each group is one bar.",
+    "Divide each cell in a group by that group total.",
+    "Draw segments that sum to 100% for each bar, then compare segment sizes.",
+    "If the proportions are clearly different, say there is an association. If they match, say no association."
+   ],
+   "parts": [
+    {
+     "label": "Male yes",
+     "tex": "$6/75=0.08$",
+     "text": "Males who like chocolate."
+    },
+    {
+     "label": "Female yes",
+     "tex": "$54/125=0.432$",
+     "text": "Females who like chocolate."
+    },
+    {
+     "label": "Compare",
+     "tex": [
+      "$8\\%$ vs $43.2\\%$"
+     ],
+     "text": "Clearly different, so gender and liking chocolate are associated."
+    },
+    {
+     "label": "Grand total",
+     "tex": "$75+125=200$",
+     "text": "Use only for overall shares, not for group comparisons."
+    }
+   ],
+   "line": "$\\text{Association}\\iff\\text{distributions differ across groups}$",
+   "buttons": [
+    {
+     "label": "Watch the chocolate example (12:51)",
+     "seek": 771
+    },
+    {
+     "label": "Watch the Skittles example (15:00)",
+     "seek": 900
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Naming the variables only",
+     "weak": "There is an association.",
+     "better": "There is an association between gender and whether a person likes chocolate. A larger proportion of females (about 43.2%) than males (8%) like chocolate.",
+     "seek": 1312
+    },
+    {
+     "kind": "Common trap",
+     "title": "Comparing counts when groups differ in size",
+     "weak": "More females like chocolate, so females like it more.",
+     "better": "The groups have different sizes, so compare proportions: $54/125=0.432$ for females and $6/75=0.08$ for males.",
+     "seek": 771
+    },
+    {
+     "kind": "Common trap",
+     "title": "Proportion mistaken for count",
+     "weak": "The elementary school sold more small bottles because its small segment is taller.",
+     "better": "A larger proportion of the elementary school sales were small, but the middle school sold three times as many bottles, so it could still have sold more small bottles.",
+     "seek": 1210
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Claiming no association",
+     "weak": "The bars are not the same height, so no association.",
+     "better": "The proportions who like Skittles are about equal for males and females (about 26%), so there is no evidence of an association between gender and liking Skittles.",
+     "seek": 927
+    },
+    {
+     "kind": "Common trap",
+     "title": "Causal language",
+     "weak": "Being female makes a person like chocolate.",
+     "better": "Gender and liking chocolate are associated in this sample. Association does not show that one variable causes the other.",
+     "seek": 875
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A two-way table shows 40 students in Band, of whom 30 prefer online tests, and 40 in Chess, of whom 12 prefer online tests. What proportion of Band students prefer online tests?",
+     "opts": [
+      "$30/80$",
+      "$30/40$",
+      "$30/42$",
+      "$30/120$"
+     ],
+     "ok": 1,
+     "why": [
+      "This divides by the total of both clubs, but the question asks about Band students only.",
+      "Correct. Divide by the Band group total of 40, so $30/40=0.75$.",
+      "42 is the total number preferring online tests, which is a column total, not the Band total.",
+      "This is not a total in the table."
+     ],
+     "seek": 93
+    },
+    {
+     "stem": "Which graph is best for showing both the proportion of each bottle size and how many bottles each school sold?",
+     "opts": [
+      "Segmented bar chart",
+      "Side-by-side bar chart of proportions",
+      "Mosaic plot",
+      "Two-way table of row percentages"
+     ],
+     "ok": 2,
+     "why": [
+      "Segments show proportions but every bar has the same width, so total sales are hidden.",
+      "Bars of proportions hide group size in the same way.",
+      "Correct. Bar width shows group size and segments show the distribution.",
+      "Row percentages hide the number of bottles."
+     ],
+     "seek": 464
+    },
+    {
+     "stem": "In a segmented bar chart, 62% of Group X and 62% of Group Y chose Option 1. What is the best conclusion?",
+     "opts": [
+      "The groups are associated because Option 1 is the most popular.",
+      "There is no evidence of an association between group and choice.",
+      "Group X is larger than Group Y.",
+      "Option 1 causes the groups to be similar."
+     ],
+     "ok": 1,
+     "why": [
+      "Popularity of an option does not show association. Association needs different distributions.",
+      "Correct. Equal proportions across groups suggest no association.",
+      "Segment height shows proportions, not group sizes.",
+      "Similarity of proportions cannot show causation."
+     ],
+     "seek": 927
+    },
+    {
+     "stem": "In a mosaic plot, School B is three times as wide as School A, and 20% of each school sold small bottles. Which statement is correct?",
+     "opts": [
+      "The same number of small bottles sold at each school.",
+      "School A sold more small bottles.",
+      "School B sold about three times as many small bottles.",
+      "There is an association between school and bottle size."
+     ],
+     "ok": 2,
+     "why": [
+      "The proportions match but the totals do not.",
+      "School A is the narrower bar, so it sold fewer bottles overall.",
+      "Correct. The same proportion of a total three times as large gives three times the count.",
+      "The proportions are equal, so the distributions match and there is no association."
+     ],
+     "seek": 593
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A library surveyed 160 patrons. Of 90 who visit mainly on weekdays, 54 borrowed a digital book last month. Of 70 who visit mainly on weekends, 21 borrowed a digital book.",
+   "parts": [
+    "(a) Complete a two-way table with row and column totals.",
+    "(b) Calculate the proportion of weekday patrons and of weekend patrons who borrowed a digital book.",
+    "(c) Describe a segmented bar chart that shows these results and state whether the data suggest an association between visiting time and borrowing a digital book.",
+    "(d) A mosaic plot of the same data would make one additional piece of information visible. State it."
+   ],
+   "sample": [
+    "(a) Weekday: 54 yes, 36 no, total 90. Weekend: 21 yes, 49 no, total 70. Column totals: 75 yes, 85 no, grand total 160.",
+    "(b) Weekday: $54/90=0.60$. Weekend: $21/70=0.30$.",
+    "(c) One bar for weekday patrons and one for weekend patrons, each split into yes and no. The yes segment is 60% for weekday and 30% for weekend. The proportions differ, so there is an association between visiting time and borrowing a digital book.",
+    "(d) The width of each bar would show that more patrons visit on weekdays (90) than on weekends (70)."
+   ],
+   "checklist": [
+    "(a) Both rows and all totals correct",
+    "(b) Denominators are the row totals",
+    "(c) Compares the two proportions in context",
+    "(c) Concludes association from different proportions",
+    "(d) Identifies group size (bar width)"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topic 2.1.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "The video says an association means one variable \"impacts\" the other. The page uses CED-style wording: the distribution of one variable differs across levels of the other, and association is not causation."
+   },
+   {
+    "kind": "values",
+    "text": "Practice and MCQ numbers are original and computed in code. Chocolate counts (6/75, 54/125) are read from the video narration."
+   }
+  ]
+ }
+}
