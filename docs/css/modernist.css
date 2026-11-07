@@ -1,34 +1,34 @@
 /* Modernist — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Manrope:wght@400;600;700&display=swap');
 
 :root {
-  --color-bg: #f3f2f2;
-  --color-surface: #eae9e9;
-  --color-text: #201e1d;
-  --color-accent: #ec3013;
+  --color-bg: #f1faf6;
+  --color-surface: #dff3ea;
+  --color-text: #16352a;
+  --color-accent: #13a37f;
   --color-accent-2: #e15b47;
-  --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
+  --color-divider: color-mix(in srgb,#16352a 40%,transparent);
 
   /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
      same step of any role matches the others in visual value. */
-  --color-neutral-100: #f8f4f4;
+  --color-neutral-100: color-mix(in oklch,#16352a 5%,#f1faf6);
   --color-neutral-200: #eae7e7;
-  --color-neutral-300: #d7d3d3;
+  --color-neutral-300: color-mix(in oklch,#16352a 16%,#f1faf6);
   --color-neutral-400: #bab6b6;
   --color-neutral-500: #9b9797;
   --color-neutral-600: #7d7979;
-  --color-neutral-700: #605d5d;
+  --color-neutral-700: color-mix(in oklch,#16352a 72%,#f1faf6);
   --color-neutral-800: #444141;
   --color-neutral-900: #2d2b2b;
 
-  --color-accent-100: #fff2ef;
+  --color-accent-100: color-mix(in oklch,#13a37f 10%,white);
   --color-accent-200: #ffe0d9;
   --color-accent-300: #ffc4b8;
   --color-accent-400: #ff9783;
   --color-accent-500: #ff563c;
-  --color-accent-600: #dd2b0f;
-  --color-accent-700: #ae1800;
-  --color-accent-800: #7c1405;
+  --color-accent-600: color-mix(in oklch,#13a37f 85%,black);
+  --color-accent-700: color-mix(in oklch,#13a37f 66%,black);
+  --color-accent-800: color-mix(in oklch,#13a37f 48%,black);
   --color-accent-900: #4d170e;
 
   --color-accent-2-100: #fff2ef;
@@ -41,9 +41,9 @@
   --color-accent-2-800: #71261b;
   --color-accent-2-900: #471d16;
 
-  --font-heading: "Archivo", system-ui, sans-serif;
-  --font-heading-weight: 800;
-  --font-body: "Archivo", system-ui, sans-serif;
+  --font-heading: "Outfit",system-ui,sans-serif;
+  --font-heading-weight: 600;
+  --font-body: "Manrope",system-ui,sans-serif;
 
   --space-1: 4.0px;
   --space-2: 8.0px;
@@ -53,8 +53,8 @@
   --space-8: 32.0px;
 
   --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
 
   /* Elevation — derived from the ground: soft ink-tinted shadows on a
      light theme, a hairline edge + ambient darkness on a dark one. */
