@@ -373,20 +373,22 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 .units-menu { position: relative; }
 .units-btn { cursor: pointer; font: inherit; font-size: 14px; font-weight: 700; padding: 6px 14px; border: 1px solid var(--color-divider); background: var(--color-bg); color: var(--color-text); }
 .units-btn:hover, .units-btn[aria-expanded=true] { background: var(--color-text); color: var(--color-bg); }
-.um-panel { position: absolute; left: 0; top: calc(100% + 6px); z-index: 40; width: 300px; background: var(--color-bg); border: 2px solid var(--color-text); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
+.um-panel { position: absolute; left: 0; top: calc(100% + 6px); z-index: 40; width: 410px; max-width: calc(100vw - 16px); background: var(--color-bg); border: 2px solid var(--color-text); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
 .um-search { box-sizing: border-box; width: calc(100% - 16px); margin: 8px; font: inherit; font-size: 13px; padding: 7px 10px; border: 1px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); }
 .um-units { list-style: none; margin: 0; padding: 0; }
 .um-unit { position: relative; border-top: 1px solid var(--color-divider); }
 .um-unit-link { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 9px 14px; text-decoration: none !important; color: var(--color-text); font-size: 14px; }
-.um-unit-link i { display: block; font-style: normal; font-size: 12px; opacity: .7; margin-top: 1px; }
+.um-unit-link > span:first-child { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.um-unit-link b { flex: none; min-width: 52px; }
+.um-unit-link i { font-style: normal; font-size: 12px; opacity: .7; }
 .um-caret { font-size: 20px; opacity: .6; }
 .um-unit:hover > .um-unit-link, .um-unit.is-open > .um-unit-link { background: var(--color-accent-100); }
 .um-unit.is-active > .um-unit-link b::after { content: ' \25CF'; color: var(--color-accent); font-size: 10px; }
-.um-sub { display: none; position: absolute; left: 100%; top: -1px; width: 380px; max-height: calc(100dvh - var(--hh, 100px)); overflow-y: auto; background: var(--color-bg); border: 2px solid var(--color-text); margin-left: -2px; }
+.um-sub { display: none; position: absolute; left: 100%; top: -1px; width: max-content; max-width: min(640px, calc(100vw - 440px)); max-height: calc(100dvh - var(--hh, 100px)); overflow-y: auto; background: var(--color-bg); border: 2px solid var(--color-text); margin-left: -2px; }
 .um-unit:hover > .um-sub, .um-unit.is-open > .um-sub, .um-unit:focus-within > .um-sub { display: block; }
-.um-lesson { display: block; padding: 8px 14px; font-size: 13px; line-height: 1.35; text-decoration: none !important; color: var(--color-text); border-bottom: 1px solid var(--color-divider); }
+.um-lesson { display: flex; gap: 10px; white-space: nowrap; padding: 8px 14px; font-size: 13px; line-height: 1.35; text-decoration: none !important; color: var(--color-text); border-bottom: 1px solid var(--color-divider); }
 a.um-lesson:hover { background: var(--color-accent-100); }
-.um-lesson b { display: inline-block; min-width: 40px; }
+.um-lesson b { flex: none; min-width: 40px; }
 .um-lesson.is-off { opacity: .45; }
 .um-lesson[aria-current=page] { border-left: 4px solid var(--color-accent); font-weight: 700; }
 .um-results { max-height: 60dvh; overflow-y: auto; border-top: 1px solid var(--color-divider); }
@@ -410,3 +412,4 @@ a.nav-arrow:hover { background: var(--color-accent-100); }
 .dicon { display: inline-block !important; height: 24px; width: auto; vertical-align: -6px; margin: 0 2px; border: 1px solid var(--color-divider); background: #fff; padding: 2px; border-radius: 3px; }
 .ukey { display: inline-block; font-size: 12.5px; font-weight: 600; line-height: 1.35; padding: 0 7px; margin: 0 1px; border: 1px solid #9a9696; border-radius: 4px; background: #fff; box-shadow: 0 1px 0 #bab6b6; white-space: nowrap; }
 .utype { font-family: ui-monospace, Menlo, monospace; font-size: 12.5px; padding: 1px 5px; background: var(--color-surface); border: 1px solid var(--color-divider); border-radius: 3px; overflow-wrap: anywhere; }
+.um-results .um-lesson { white-space: normal; }
