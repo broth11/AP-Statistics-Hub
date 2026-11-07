@@ -1,0 +1,406 @@
+{
+ "n": 40,
+ "unit": 3,
+ "topic": "3.10 & 3.11",
+ "title": "Confidence Interval for the Difference of Population Proportions",
+ "videoId": "ALAB8wJFCXw",
+ "videoTitle": "AP Statistics Topics 3.10 and 3.11 Confidence Interval for the Difference of Population Proportions",
+ "intro": "After this lesson you can name and set up a two-sample $z$ interval for $p_1-p_2$, verify its conditions, compute the interval, interpret it and the confidence level in context, and decide whether it supports a claim about a difference.",
+ "moments": [
+  {
+   "t": 70,
+   "type": "Overview",
+   "title": "Estimating a difference of proportions",
+   "text": "A confidence interval based on two samples estimates $p_1-p_2$, using a two-sample $z$ interval."
+  },
+  {
+   "t": 140,
+   "type": "Worked example",
+   "title": "Registered voters in two states",
+   "text": "The parameter is a difference, estimated with one sample proportion from each state."
+  },
+  {
+   "t": 270,
+   "type": "Procedure",
+   "title": "PANIC",
+   "text": "Parameter, Assumptions, Name, Interval, Conclusion."
+  },
+  {
+   "t": 352,
+   "type": "Exam wording",
+   "title": "Name and parameter in one sentence",
+   "text": "\"A two-sample $z$ interval for $p_1-p_2$, the difference between the proportion of ... and the proportion of ...\""
+  },
+  {
+   "t": 423,
+   "type": "Procedure",
+   "title": "Three conditions",
+   "text": "Randomization, 10% for each sample (random sampling only), and at least 10 successes and failures in each sample."
+  },
+  {
+   "t": 493,
+   "type": "Key idea",
+   "title": "No 10% check for experiments",
+   "text": "In a randomized experiment, the 10% condition does not apply."
+  },
+  {
+   "t": 563,
+   "type": "Formula",
+   "title": "The interval",
+   "text": "$(\\hat p_1-\\hat p_2)\\pm z^*\\sqrt{\\dfrac{\\hat p_1(1-\\hat p_1)}{n_1}+\\dfrac{\\hat p_2(1-\\hat p_2)}{n_2}}$."
+  },
+  {
+   "t": 774,
+   "type": "Key idea",
+   "title": "Critical value from the confidence level",
+   "text": "$z^*=1.960$ for 95% and $2.326$ for 98%."
+  },
+  {
+   "t": 774,
+   "type": "Definition",
+   "title": "Interpreting the confidence level",
+   "text": "In repeated random sampling, about $C\\%$ of intervals capture the true difference."
+  },
+  {
+   "t": 985,
+   "type": "Exam wording",
+   "title": "Conclusion with endpoints in context",
+   "text": "\"I am 95% confident that the difference between the proportion of ... and the proportion of ... is between ... and ...\""
+  },
+  {
+   "t": 1055,
+   "type": "Worked example",
+   "title": "Florida minus Kentucky",
+   "text": "$228/300=0.76$ and $202/250=0.808$. The difference is -0.048."
+  },
+  {
+   "t": 1268,
+   "type": "Key idea",
+   "title": "Standard error, not standard deviation",
+   "text": "The formula uses sample proportions, so it estimates the standard deviation."
+  },
+  {
+   "t": 1478,
+   "type": "Exam wording",
+   "title": "Interpret a negative endpoint",
+   "text": "The interval (-0.1167, 0.0207) means Florida could be about 11.7 points lower or 2.1 points higher."
+  },
+  {
+   "t": 1549,
+   "type": "Key idea",
+   "title": "Zero in the interval",
+   "text": "If 0 is in the interval, there is no convincing evidence of a difference."
+  },
+  {
+   "t": 1689,
+   "type": "Worked example",
+   "title": "New and old migraine medication",
+   "text": "A 98% interval from 114/200 and 82/200 is (0.0452, 0.2748)."
+  },
+  {
+   "t": 2040,
+   "type": "Exam question",
+   "title": "Does the interval justify the claim?",
+   "text": "An all-positive interval for new minus old supports a higher proportion for the new drug."
+  }
+ ],
+ "sections": [
+  {
+   "id": "claim",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "What does the interval say?",
+   "cards": [
+    {
+     "letter": "+",
+     "name": "All positive",
+     "text": "Convincing evidence that the first proportion is larger."
+    },
+    {
+     "letter": "−",
+     "name": "All negative",
+     "text": "Convincing evidence that the first proportion is smaller."
+    },
+    {
+     "letter": "0",
+     "name": "Contains 0",
+     "text": "No convincing evidence of a difference."
+    }
+   ],
+   "columns": [
+    "Interval for $p_1-p_2$",
+    "Conclusion"
+   ],
+   "verdictColumn": 1,
+   "rows": [
+    {
+     "cells": [
+      "(-0.117, 0.021) Florida minus Kentucky",
+      "Contains 0: no convincing evidence of a difference"
+     ],
+     "seek": 1549
+    },
+    {
+     "cells": [
+      "(0.045, 0.275) new minus old",
+      "All positive: new has the higher proportion"
+     ],
+     "seek": 2040
+    },
+    {
+     "cells": [
+      "$(-0.09,-0.03)$",
+      "All negative: first proportion is smaller"
+     ],
+     "seek": 1478
+    },
+    {
+     "cells": [
+      "$(-0.02,0.10)$",
+      "Contains 0: no convincing evidence"
+     ],
+     "seek": 2110
+    },
+    {
+     "cells": [
+      "(0.074, 0.233) A minus B",
+      "All positive: A is higher"
+     ],
+     "seek": 2182
+    },
+    {
+     "cells": [
+      "(-0.137, 0.077)",
+      "Contains 0: no convincing evidence"
+     ],
+     "seek": 1619
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Every value in the interval is a plausible value. Do not say \"mostly negative so probably negative\". Say whether 0 is plausible."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "PANIC for a two-sample z interval",
+   "intro": "Five steps. The name and the parameter fit in one sentence. Never skip the three conditions for both samples.",
+   "steps": [
+    "Parameter and Name: \"A two-sample $z$ interval for $p_1-p_2$, the difference between the proportion of ... in ... and ...\".",
+    "Assumptions: random samples (or random assignment), each sample at most 10% of its population (not for experiments), at least 10 successes and 10 failures in each sample.",
+    "Interval: point estimate $\\pm\\,z^*\\times SE$.",
+    "Conclusion: \"I am $C\\%$ confident that the difference between ... is between $a$ and $b$.\""
+   ],
+   "parts": [
+    {
+     "label": "Estimate",
+     "tex": "$0.76-0.808=-0.048$",
+     "text": "Florida minus Kentucky."
+    },
+    {
+     "label": "Standard error",
+     "tex": "$SE\\approx0.0351$",
+     "text": "Match each proportion with its own sample size."
+    },
+    {
+     "label": "Margin of error",
+     "tex": "$1.960(0.0351)\\approx0.0687$",
+     "text": "95% confidence."
+    },
+    {
+     "label": "Interval",
+     "tex": "$(-0.1167,\\ 0.0207)$",
+     "text": "Contains 0."
+    }
+   ],
+   "line": "$(\\hat p_1-\\hat p_2)\\pm z^*\\sqrt{\\dfrac{\\hat p_1(1-\\hat p_1)}{n_1}+\\dfrac{\\hat p_2(1-\\hat p_2)}{n_2}}$",
+   "buttons": [
+    {
+     "label": "Watch PANIC (4:30)",
+     "seek": 270
+    },
+    {
+     "label": "Watch the Florida example (17:35)",
+     "seek": 1055
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Conclusion with the endpoints and the order",
+     "weak": "We are 95% confident the states are different.",
+     "better": "I am 95% confident that the difference between the proportion of Florida adults registered to vote and the proportion of Kentucky adults registered to vote is between -0.1167 and 0.0207.",
+     "seek": 985
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Interpreting the confidence level",
+     "weak": "There is a 95% chance the true difference is in this interval.",
+     "better": "In repeated random sampling with the same sample sizes from the same populations, about 95% of intervals created this way will capture the true difference in proportions.",
+     "seek": 774
+    },
+    {
+     "kind": "Common trap",
+     "title": "Using the 10% condition in an experiment",
+     "weak": "400 is less than 10% of all migraine sufferers.",
+     "better": "The patients were randomly assigned, not randomly sampled, so the 10% condition does not apply. Check random assignment instead.",
+     "seek": 493
+    },
+    {
+     "kind": "Common trap",
+     "title": "Mismatching proportions and sample sizes",
+     "weak": "$\\sqrt{\\frac{0.76(0.24)}{250}+\\frac{0.808(0.192)}{300}}$",
+     "better": "Pair each proportion with its own sample size: $\\sqrt{\\frac{0.76(0.24)}{300}+\\frac{0.808(0.192)}{250}}$.",
+     "seek": 1268
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Zero in the interval",
+     "weak": "There is mostly negative values, so Florida is lower.",
+     "better": "The interval contains 0, so 0 is a plausible value for the difference. There is not convincing evidence that the proportions differ.",
+     "seek": 1549
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A 90% confidence interval for $p_A-p_B$ is (0.074, 0.233). Which conclusion is justified?",
+     "opts": [
+      "There is convincing evidence that $p_A>p_B$.",
+      "There is convincing evidence that $p_B>p_A$.",
+      "There is no convincing evidence of a difference.",
+      "The difference is exactly 0.153."
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. The whole interval is positive, so 0 is not plausible and $p_A$ is larger.",
+      "The interval is positive, so $A$ minus $B$ is positive.",
+      "The interval does not contain 0.",
+      "The center 0.153 is only the estimate; the interval gives a range."
+     ],
+     "seek": 2040
+    },
+    {
+     "stem": "Which condition is NOT required for a two-sample $z$ interval from a randomized experiment?",
+     "opts": [
+      "Each group is at most 10% of a population",
+      "Random assignment",
+      "At least 10 successes in each group",
+      "At least 10 failures in each group"
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. There is no population sampled, so the 10% condition does not apply.",
+      "Random assignment is required.",
+      "This is the large-counts condition.",
+      "This is the large-counts condition."
+     ],
+     "seek": 493
+    },
+    {
+     "stem": "A 95% confidence interval for $p_1-p_2$ is (-0.137, 0.077). Which statement is correct?",
+     "opts": [
+      "The interval proves $p_1=p_2$",
+      "$p_1<p_2$ with 95% probability",
+      "The interval contains 0, so 0 is a plausible difference",
+      "The sample proportions are equal"
+     ],
+     "ok": 2,
+     "why": [
+      "A confidence interval cannot prove equality.",
+      "A negative lower endpoint does not show the difference is negative.",
+      "Correct. Zero is inside the interval.",
+      "The sample proportions differ by 0.030."
+     ],
+     "seek": 1549
+    },
+    {
+     "stem": "Which is the best interpretation of \"95% confidence\" for a two-sample interval?",
+     "opts": [
+      "The true difference is in the interval 95% of the time",
+      "There is a 95% chance the sample is random",
+      "95% of the sample differences are inside the interval",
+      "About 95% of intervals from repeated random samples capture the true difference in proportions"
+     ],
+     "ok": 3,
+     "why": [
+      "The true difference is fixed. The interval is what varies.",
+      "Randomness is a condition, not something the confidence level measures.",
+      "The interval describes a population parameter, not the sample differences.",
+      "Correct. The confidence level describes the method over repeated random sampling."
+     ],
+     "seek": 774
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A principal wants to compare the proportion of students who walk to school at two campuses. A random sample of 200 students at campus A included 118 walkers, and an independent random sample of 220 students at campus B included 96 walkers. Assume each campus has more than 2,200 students.",
+   "parts": [
+    "(a) State the name of the procedure and define the parameter.",
+    "(b) Verify the conditions for a 90% confidence interval.",
+    "(c) Calculate the interval.",
+    "(d) Interpret the interval in context and say whether it supports the claim that a higher proportion of campus A students walk."
+   ],
+   "sample": [
+    "(a) A two-sample $z$ interval for $p_A-p_B$, where $p_A$ is the proportion of all students at campus A who walk and $p_B$ is the proportion of all students at campus B who walk.",
+    "(b) The samples are random and independent. 200 and 220 are under 10% of the campuses. Campus A: 118 walkers and 82 non-walkers. Campus B: 96 walkers and 124 non-walkers. All are at least 10.",
+    "(c) $\\hat p_A=0.59$, $\\hat p_B=0.436$. Estimate $=0.154$, $z^*=1.645$, $SE=0.0482$. Interval: (0.074, 0.233).",
+    "(d) I am 90% confident that the proportion of campus A students who walk is between 7.4 and 23.3 percentage points higher than at campus B. The interval is entirely positive, so it supports the claim."
+   ],
+   "checklist": [
+    "(a) Two-sample z interval and difference defined in context",
+    "(b) Random, independent, 10%, and four counts",
+    "(c) Estimate 0.154 and z* 1.645",
+    "(c) Interval correct",
+    "(d) Interpretation with endpoints in context",
+    "(d) Uses the interval to decide the claim"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topics 3.10 and 3.11.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "caption",
+    "text": "The video speaks the observed difference as -0.0408 and the upper endpoint as 2.7% more. Recomputed: difference -0.048, interval (-0.1167, 0.0207), so the upper endpoint is about 2.1% more. The page uses the recomputed values."
+   },
+   {
+    "kind": "wording",
+    "text": "The video uses PANIC (Parameter, Assumptions, Name, Interval, Conclusion). The page keeps it for continuity with PHANTOM on earlier pages."
+   },
+   {
+    "kind": "values",
+    "text": "Migraine 98% interval recomputed: (0.0452, 0.2748); matches the video's upper endpoint 0.2748."
+   },
+   {
+    "kind": "calculator",
+    "text": "The video shows Desmos for critical values and the interval. No calculator section is included by request."
+   }
+  ]
+ }
+}

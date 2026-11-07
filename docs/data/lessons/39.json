@@ -1,0 +1,414 @@
+{
+ "n": 39,
+ "unit": 3,
+ "topic": "3.9",
+ "title": "Sampling Distributions for the Difference Between Sample Proportions",
+ "videoId": "mARGkehrWO8",
+ "videoTitle": "AP Statistics Topic 3.9 Sampling Distributions for the Difference Between Sample Proportions",
+ "intro": "After this lesson you can describe the sampling distribution of $\\hat p_1-\\hat p_2$: its mean, standard deviation and shape, check the conditions for two independent samples, and find probabilities with a $z$ score.",
+ "moments": [
+  {
+   "t": 61,
+   "type": "Definition",
+   "title": "Sampling distribution",
+   "text": "A model of all possible values of a statistic from samples of size $n$ from the same population."
+  },
+  {
+   "t": 121,
+   "type": "Concept",
+   "title": "Two populations, one categorical variable",
+   "text": "Take one sample from each population and look at $\\hat p_1-\\hat p_2$."
+  },
+  {
+   "t": 243,
+   "type": "Key idea",
+   "title": "The sign of the difference",
+   "text": "Positive means the sample from population 1 had the larger proportion. Negative means population 2 did."
+  },
+  {
+   "t": 423,
+   "type": "Concept",
+   "title": "What the model needs",
+   "text": "The two population proportions and the two sample sizes."
+  },
+  {
+   "t": 484,
+   "type": "Formula",
+   "title": "Mean",
+   "text": "$\\mu_{\\hat p_1-\\hat p_2}=p_1-p_2$, the true difference."
+  },
+  {
+   "t": 544,
+   "type": "Key idea",
+   "title": "Random samples for the center",
+   "text": "Without random samples the center is not trustworthy."
+  },
+  {
+   "t": 605,
+   "type": "Formula",
+   "title": "Standard deviation",
+   "text": "$\\sigma_{\\hat p_1-\\hat p_2}=\\sqrt{\\dfrac{p_1(1-p_1)}{n_1}+\\dfrac{p_2(1-p_2)}{n_2}}$. It is on the formula sheet."
+  },
+  {
+   "t": 665,
+   "type": "Procedure",
+   "title": "Check independence twice",
+   "text": "Each sample is at most 10% of its own population."
+  },
+  {
+   "t": 700,
+   "type": "Procedure",
+   "title": "Check normality for both samples",
+   "text": "Expected successes and failures are each at least 10 in both samples."
+  },
+  {
+   "t": 786,
+   "type": "Visual",
+   "title": "Normal model centered at the true difference",
+   "text": "Most sample differences sit near the true difference."
+  },
+  {
+   "t": 907,
+   "type": "Worked example",
+   "title": "Adults and teenagers on Netflix",
+   "text": "62% of adults and 55% of teens, with $n_1=200$ and $n_2=150$."
+  },
+  {
+   "t": 1028,
+   "type": "Worked example",
+   "title": "Mean and standard deviation",
+   "text": "Mean 0.07 and standard deviation 0.0532."
+  },
+  {
+   "t": 1212,
+   "type": "Worked example",
+   "title": "Difference above 10 percentage points",
+   "text": "$z=\\dfrac{0.10-0.07}{0.0532}=0.564$, so the probability is about 0.286."
+  },
+  {
+   "t": 1395,
+   "type": "Key idea",
+   "title": "At least equals more than",
+   "text": "A normal model gives a single value probability 0, so $\\ge$ and $>$ give the same answer."
+  },
+  {
+   "t": 1455,
+   "type": "Worked example",
+   "title": "Urban and rural vaccine willingness",
+   "text": "78% of 250 urban and 70% of 300 rural residents. The mean is 0.08."
+  },
+  {
+   "t": 1759,
+   "type": "Worked example",
+   "title": "Rural sample larger",
+   "text": "The event is $\\hat p_U-\\hat p_R<0$. $z=-2.149$ and the probability is about 0.0158."
+  }
+ ],
+ "sections": [
+  {
+   "id": "cond",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Can I use the normal model?",
+   "cards": [
+    {
+     "letter": "R",
+     "name": "Random",
+     "text": "Two independent random samples, one from each population."
+    },
+    {
+     "letter": "10",
+     "name": "10%",
+     "text": "Each sample is at most 10% of its population."
+    },
+    {
+     "letter": "L",
+     "name": "Large counts",
+     "text": "$n_1p_1$, $n_1(1-p_1)$, $n_2p_2$ and $n_2(1-p_2)$ are all at least 10."
+    }
+   ],
+   "columns": [
+    "Situation",
+    "Counts",
+    "Normal model?"
+   ],
+   "verdictColumn": 2,
+   "rows": [
+    {
+     "cells": [
+      "Netflix: adults 62% (200), teens 55% (150)",
+      "124, 76, 82.5, 67.5",
+      "Yes"
+     ],
+     "seek": 1028
+    },
+    {
+     "cells": [
+      "Vaccine: urban 78% (250), rural 70% (300)",
+      "195, 55, 210, 90",
+      "Yes"
+     ],
+     "seek": 1576
+    },
+    {
+     "cells": [
+      "One sample of 40 with $p_1=0.10$",
+      "4, 36",
+      "No: fewer than 10 expected successes"
+     ],
+     "seek": 726
+    },
+    {
+     "cells": [
+      "Samples of 50 and 60 with $p=0.50$ in both",
+      "25, 25, 30, 30",
+      "Yes"
+     ],
+     "seek": 726
+    },
+    {
+     "cells": [
+      "Two samples of 400 from towns of 3,000",
+      "400 is over 10% of 3,000",
+      "No: 10% condition fails"
+     ],
+     "seek": 665
+    },
+    {
+     "cells": [
+      "A sample of students chosen from friends",
+      "Not random",
+      "No: randomization fails"
+     ],
+     "seek": 544
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video checks the counts with the population proportions. For this sampling distribution the proportions $p_1$ and $p_2$ are given. Later, when they are unknown, you use sample counts or a pooled proportion."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "Describe the model and find a probability",
+   "intro": "Name the statistic with a direction, check the conditions for both samples, then find center, spread and shape. A $z$ score and a normal probability finish the job.",
+   "steps": [
+    "State the difference, for example $\\hat p_A-\\hat p_T$, so you know which sign means which sample.",
+    "Check randomization, the 10% condition for each sample, and large counts for each sample.",
+    "Mean $=p_1-p_2$. Standard deviation from the formula.",
+    "Shape is approximately normal. Standardize: $z=(x-\\mu)/\\sigma$, then find the area."
+   ],
+   "parts": [
+    {
+     "label": "Mean",
+     "tex": "$0.62-0.55=0.07$",
+     "text": "Netflix example."
+    },
+    {
+     "label": "Spread",
+     "tex": "$\\sigma\\approx0.0532$",
+     "text": "From the formula."
+    },
+    {
+     "label": "z score",
+     "tex": "$z=\\dfrac{0.10-0.07}{0.0532}=0.564$",
+     "text": "For a difference of 0.10."
+    },
+    {
+     "label": "Area right",
+     "tex": "$P(\\hat p_1-\\hat p_2>0.10)=0.286$",
+     "text": "About 28.6% of sample differences."
+    }
+   ],
+   "line": "$\\mu=p_1-p_2\\qquad\\sigma=\\sqrt{\\dfrac{p_1(1-p_1)}{n_1}+\\dfrac{p_2(1-p_2)}{n_2}}$",
+   "buttons": [
+    {
+     "label": "Watch the model (8:04)",
+     "seek": 484
+    },
+    {
+     "label": "Watch the Netflix probability (20:12)",
+     "seek": 1212
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Describe the sampling distribution fully",
+     "weak": "It is normal with mean 0.07.",
+     "better": "The sampling distribution of $\\hat p_A-\\hat p_T$ is approximately normal with mean 0.07 and standard deviation about 0.0532, because both samples are random, each is under 10% of its population, and all expected counts are at least 10.",
+     "seek": 967
+    },
+    {
+     "kind": "Common trap",
+     "title": "Checking conditions for one sample only",
+     "weak": "200 is less than 10% of all adults, so independence is met.",
+     "better": "Check both samples: 200 adults is under 10% of all adults and 150 teens is under 10% of all teens.",
+     "seek": 967
+    },
+    {
+     "kind": "Common trap",
+     "title": "Subtracting the standard deviations",
+     "weak": "$\\sigma=\\sqrt{0.0016}-\\sqrt{0.0016}$",
+     "better": "Add the variances under one square root, even though the means are subtracted. Variability from each sample adds.",
+     "seek": 605
+    },
+    {
+     "kind": "Common trap",
+     "title": "Sign errors in the direction",
+     "weak": "The rural sample is bigger, so we want $\\hat p_U-\\hat p_R>0$.",
+     "better": "A larger rural proportion makes $\\hat p_U-\\hat p_R$ negative, so the event is $\\hat p_U-\\hat p_R<0$.",
+     "seek": 1759
+    },
+    {
+     "kind": "Common trap",
+     "title": "Probability statement missing",
+     "weak": "0.286",
+     "better": "$P(\\hat p_A-\\hat p_T>0.10)\\approx0.286$. About 28.6% of all possible differences in sample proportions exceed 10 percentage points.",
+     "seek": 1395
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "Population 1 has $p_1=0.40$ and population 2 has $p_2=0.30$. Independent random samples have $n_1=100$ and $n_2=150$. What is the mean of the sampling distribution of $\\hat p_1-\\hat p_2$?",
+     "opts": [
+      "0.10",
+      "0.35",
+      "0.70",
+      "0.12"
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. The mean is the true difference, $0.40-0.30=0.10$.",
+      "This is the average of the two proportions.",
+      "This is the sum.",
+      "The mean does not depend on the sample sizes."
+     ],
+     "seek": 484
+    },
+    {
+     "stem": "Using the same populations and samples, which expression gives the standard deviation?",
+     "opts": [
+      "$\\frac{0.4(0.6)}{100}+\\frac{0.3(0.7)}{150}$",
+      "$\\sqrt{\\frac{0.4(0.6)}{100}-\\frac{0.3(0.7)}{150}}$",
+      "$\\sqrt{\\frac{0.4(0.6)}{100}+\\frac{0.3(0.7)}{150}}$",
+      "$\\sqrt{\\frac{0.4(0.6)}{100}}+\\sqrt{\\frac{0.3(0.7)}{150}}$"
+     ],
+     "ok": 2,
+     "why": [
+      "This is the variance because the square root is missing.",
+      "Variances add, so the sign is plus.",
+      "Correct. This is about 0.0616.",
+      "Adding standard deviations is not correct."
+     ],
+     "seek": 605
+    },
+    {
+     "stem": "Which condition must be checked for both samples when finding the sampling distribution of $\\hat p_1-\\hat p_2$?",
+     "opts": [
+      "The samples come from the same population",
+      "Each sample is less than or equal to 10% of its population",
+      "The two samples have the same size",
+      "The two population proportions are equal"
+     ],
+     "ok": 1,
+     "why": [
+      "The samples come from two different populations.",
+      "Correct. Check the 10% condition separately for each sample.",
+      "The sample sizes do not have to match.",
+      "If they were equal the true difference would be 0, which is not required."
+     ],
+     "seek": 665
+    },
+    {
+     "stem": "In the Netflix example, $\\mu=0.07$ and $\\sigma=0.0532$. Which expression gives the $z$ score for a difference of 0.10?",
+     "opts": [
+      "$(0.07-0.10)/0.0532$",
+      "$0.10/0.0532$",
+      "$(0.10+0.07)/0.0532$",
+      "$(0.10-0.07)/0.0532$"
+     ],
+     "ok": 3,
+     "why": [
+      "This reverses the order of subtraction, giving the wrong sign.",
+      "This forgets to subtract the mean.",
+      "Adding the mean is not standardizing.",
+      "Correct. Standardize with $(x-\\mu)/\\sigma$."
+     ],
+     "seek": 1273
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "In one district, 30% of students at School A and 24% of students at School B use public transport. A random sample of 180 students from School A and an independent random sample of 160 from School B are taken. Let $\\hat p_A-\\hat p_B$ be the difference in sample proportions.",
+   "parts": [
+    "(a) Verify that the normal model is appropriate. Assume each school has more than 1,800 students.",
+    "(b) Calculate the mean and standard deviation of the sampling distribution of $\\hat p_A-\\hat p_B$.",
+    "(c) Find the probability that the sample proportion for School A exceeds the sample proportion for School B by at least 0.10.",
+    "(d) Interpret the probability in context."
+   ],
+   "sample": [
+    "(a) Both samples are random and independent. 180 and 160 are under 10% of each school. Expected counts: School A, 54 and 126; School B, 38.4 and 121.6. All are at least 10, so the distribution is approximately normal.",
+    "(b) Mean $=0.30-0.24=0.06$. SD $=\\sqrt{0.30(0.70)/180+0.24(0.76)/160}\\approx0.0480$.",
+    "(c) $z=(0.10-0.06)/0.0480\\approx0.83$, so $P\\approx0.202$.",
+    "(d) About 20.2% of all possible pairs of samples would give an A proportion at least 0.10 above the B proportion."
+   ],
+   "checklist": [
+    "(a) Random and independent samples",
+    "(a) 10% condition for both samples",
+    "(a) Expected counts all at least 10",
+    "(b) Mean 0.06",
+    "(b) SD about 0.0480 using the formula",
+    "(c) z score and probability",
+    "(d) Interpretation in context"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topic 3.9.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "The video checks normality using the population proportions. The CED condition is stated for sample counts; the page uses the population proportions because they are given, and notes how that changes later."
+   },
+   {
+    "kind": "values",
+    "text": "The video rounds the standard deviation to 0.0372 and reports z = -2.151 and P = 0.0157. Unrounded, z = -2.149 and P = 0.0158; the page uses the unrounded values."
+   },
+   {
+    "kind": "values",
+    "text": "Computed: Netflix mean 0.07, SD 0.0532, z 0.564, P 0.286. Vaccine mean 0.08, SD 0.0372, z -2.149, P 0.0158. FRQ: SD 0.0480, z 0.83, P 0.202."
+   },
+   {
+    "kind": "calculator",
+    "text": "The video uses Desmos for the normal probabilities. No calculator section is included on this page by request."
+   }
+  ]
+ }
+}

@@ -1,0 +1,434 @@
+{
+ "n": 41,
+ "unit": 3,
+ "topic": "3.12 & 3.13",
+ "title": "Conducting a Test for the Difference Between Two Population Proportions",
+ "videoId": "OFwjXRV6Kz4",
+ "videoTitle": "AP Statistics Topics 3.12 and 3.13 Conducting a Test for the Difference Between Two Population Proportions",
+ "intro": "After this lesson you can name the two-sample $z$ test, state hypotheses about $p_1-p_2$, check conditions with the combined proportion, compute the $z$ statistic and p-value, and write a conclusion in context.",
+ "moments": [
+  {
+   "t": 75,
+   "type": "Concept",
+   "title": "When a test is needed",
+   "text": "A claim about two population proportions plus the words \"is there evidence\"."
+  },
+  {
+   "t": 150,
+   "type": "Worked example",
+   "title": "Three situations",
+   "text": "Two age groups and brand A, reminder emails and on-time assignments, exercise and stress."
+  },
+  {
+   "t": 302,
+   "type": "Concept",
+   "title": "Compare with a difference",
+   "text": "Samples vary, so a 9% difference in samples is only evidence, not proof."
+  },
+  {
+   "t": 378,
+   "type": "Visual",
+   "title": "Sampling distribution centered at zero",
+   "text": "Built assuming no difference between the population proportions."
+  },
+  {
+   "t": 679,
+   "type": "Procedure",
+   "title": "Name and parameter together",
+   "text": "\"A two-sample $z$ test for $p_1-p_2$.\" Then define $p_1$ and $p_2$ in context."
+  },
+  {
+   "t": 754,
+   "type": "Key idea",
+   "title": "Hypotheses use $p$, not $\\hat p$",
+   "text": "They describe the populations, not the samples."
+  },
+  {
+   "t": 775,
+   "type": "Definition",
+   "title": "Hypotheses",
+   "text": "$H_0: p_1=p_2$ (or $p_1-p_2=0$). $H_a$ is $<$, $>$ or $\\ne$."
+  },
+  {
+   "t": 906,
+   "type": "Procedure",
+   "title": "Conditions",
+   "text": "Random sampling or random assignment, 10% for each sample (sampling only), and large counts."
+  },
+  {
+   "t": 981,
+   "type": "Key idea",
+   "title": "Use the combined proportion",
+   "text": "$\\hat p_c=\\dfrac{x_1+x_2}{n_1+n_2}$, because $H_0$ says the proportions are equal."
+  },
+  {
+   "t": 1056,
+   "type": "Procedure",
+   "title": "Large counts with $\\hat p_c$",
+   "text": "Check $n_1\\hat p_c$, $n_1(1-\\hat p_c)$, $n_2\\hat p_c$ and $n_2(1-\\hat p_c)$ are at least 10."
+  },
+  {
+   "t": 1357,
+   "type": "Formula",
+   "title": "Test statistic",
+   "text": "$z=\\dfrac{\\hat p_1-\\hat p_2}{\\sqrt{\\hat p_c(1-\\hat p_c)\\left(\\frac1{n_1}+\\frac1{n_2}\\right)}}$."
+  },
+  {
+   "t": 1433,
+   "type": "Definition",
+   "title": "p-value",
+   "text": "The probability of a test statistic as extreme or more extreme than observed, assuming $H_0$ is true."
+  },
+  {
+   "t": 1508,
+   "type": "Key idea",
+   "title": "Two-sided tests double the tail",
+   "text": "Use both tails when $H_a$ is $p_1\\ne p_2$."
+  },
+  {
+   "t": 1585,
+   "type": "Procedure",
+   "title": "Compare p-value to $\\alpha$",
+   "text": "Then conclude about the alternative in context, with careful wording."
+  },
+  {
+   "t": 1661,
+   "type": "Exam wording",
+   "title": "Say \"evidence\", never \"proved\"",
+   "text": "Never say the null is true or false."
+  },
+  {
+   "t": 1680,
+   "type": "Worked example",
+   "title": "Younger and older customers, brand A",
+   "text": "96/210 against 88/240: $z=1.948$, p-value $0.0515$. Fail to reject at 0.05."
+  },
+  {
+   "t": 2415,
+   "type": "Worked example",
+   "title": "Reminder emails experiment",
+   "text": "146/175 against 126/175: $z=2.569$, p-value $0.0051$. Reject $H_0$."
+  },
+  {
+   "t": 2490,
+   "type": "Key idea",
+   "title": "Experiments use random assignment",
+   "text": "Do not check the 10% condition for a randomized experiment."
+  }
+ ],
+ "sections": [
+  {
+   "id": "setup",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Hypotheses for a difference",
+   "cards": [
+    {
+     "letter": "=",
+     "name": "Different",
+     "text": "\"Is there a difference?\" gives $H_a: p_1\\ne p_2$ and a two-sided test."
+    },
+    {
+     "letter": ">",
+     "name": "First is greater",
+     "text": "$H_a: p_1>p_2$ (upper tail)."
+    },
+    {
+     "letter": "<",
+     "name": "First is less",
+     "text": "$H_a: p_1<p_2$ (lower tail)."
+    }
+   ],
+   "columns": [
+    "Claim",
+    "$H_0$",
+    "$H_a$",
+    "p-value"
+   ],
+   "verdictColumn": 2,
+   "rows": [
+    {
+     "cells": [
+      "Younger and older customers differ in preferring brand A",
+      "$p_Y=p_O$",
+      "$p_Y\\ne p_O$",
+      "Double the tail"
+     ],
+     "seek": 775
+    },
+    {
+     "cells": [
+      "Reminder emails raise the on-time proportion",
+      "$p_E=p_N$",
+      "$p_E>p_N$",
+      "Right tail"
+     ],
+     "seek": 2490
+    },
+    {
+     "cells": [
+      "Adults who exercise report high stress less often",
+      "$p_E=p_N$",
+      "$p_E<p_N$",
+      "Left tail"
+     ],
+     "seek": 225
+    },
+    {
+     "cells": [
+      "A new teaching method improves pass rate (new minus old)",
+      "$p_N=p_O$",
+      "$p_N>p_O$",
+      "Right tail"
+     ],
+     "seek": 775
+    },
+    {
+     "cells": [
+      "A policy changes support (after minus before, independent samples)",
+      "$p_A=p_B$",
+      "$p_A\\ne p_B$",
+      "Double the tail"
+     ],
+     "seek": 831
+    },
+    {
+     "cells": [
+      "Region 1 has a lower rate than region 2",
+      "$p_1=p_2$",
+      "$p_1<p_2$",
+      "Left tail"
+     ],
+     "seek": 775
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The null hypothesis always says there is no difference. The alternative follows the direction in the question, with the proportions defined in context before you use them."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "Carry out a two-sample z test",
+   "intro": "Set up with PHANTOM, then use the combined proportion for the conditions and the standard error.",
+   "steps": [
+    "Parameter and Name: \"A two-sample $z$ test for $p_1-p_2$.\" Define $p_1$ and $p_2$.",
+    "Hypotheses: $H_0: p_1=p_2$ against $H_a$ in the direction asked.",
+    "Assumptions: random sampling or random assignment, 10% for sampling only, and large counts using $\\hat p_c$.",
+    "Test statistic and p-value, then compare the p-value to $\\alpha$ and conclude in context."
+   ],
+   "parts": [
+    {
+     "label": "Combined",
+     "tex": "$\\hat p_c=\\dfrac{96+88}{210+240}=0.409$",
+     "text": "Brand A example."
+    },
+    {
+     "label": "Standard error",
+     "tex": "$SE\\approx0.0465$",
+     "text": "Uses $\\hat p_c$."
+    },
+    {
+     "label": "Test statistic",
+     "tex": "$z=0.0905/0.0465=1.948$",
+     "text": "Younger minus older."
+    },
+    {
+     "label": "Two-sided p-value",
+     "tex": "$2P(Z>1.948)=0.0515$",
+     "text": "Greater than 0.05."
+    }
+   ],
+   "line": "$z=\\dfrac{\\hat p_1-\\hat p_2}{\\sqrt{\\hat p_c(1-\\hat p_c)\\left(\\frac{1}{n_1}+\\frac{1}{n_2}\\right)}}$",
+   "buttons": [
+    {
+     "label": "Watch the combined proportion (16:21)",
+     "seek": 981
+    },
+    {
+     "label": "Watch the brand A example (28:00)",
+     "seek": 1680
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Conclusion about the alternative, in context",
+     "weak": "We reject the null because the p-value is small.",
+     "better": "The p-value of 0.0051 is less than $\\alpha=0.05$, so we reject $H_0$. There is convincing evidence that the proportion of students similar to those in the study who submit assignments on time is greater when they receive reminder emails than when they do not.",
+     "seek": 2795
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Failing to reject is not accepting the null",
+     "weak": "There is no difference between younger and older customers.",
+     "better": "The p-value of 0.0515 is greater than 0.05, so we fail to reject $H_0$. There is not convincing evidence of a difference between the proportion of younger customers and the proportion of older customers who prefer brand A.",
+     "seek": 2264
+    },
+    {
+     "kind": "Common trap",
+     "title": "Hats in the hypotheses",
+     "weak": "$H_0: \\hat p_1=\\hat p_2$",
+     "better": "$H_0: p_1=p_2$, with $p_1$ and $p_2$ defined as the population proportions in context.",
+     "seek": 754
+    },
+    {
+     "kind": "Common trap",
+     "title": "Checking counts with separate proportions",
+     "weak": "Both samples have at least 10 successes and failures using $\\hat p_1$ and $\\hat p_2$.",
+     "better": "Because $H_0$ says the proportions are equal, check counts with the combined proportion, for example $210(0.409)$ and $210(1-0.409)$.",
+     "seek": 1056
+    },
+    {
+     "kind": "Common trap",
+     "title": "Forgetting to double the tail",
+     "weak": "For $H_a: p_1\\ne p_2$ the p-value is the one-tail area.",
+     "better": "For a two-sided alternative, double the one-tail area, or ask the calculator for both tails.",
+     "seek": 1508
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A randomized experiment assigns 120 volunteers to an app and 130 to a paper log. Which condition is NOT checked for a two-sample $z$ test?",
+     "opts": [
+      "Independence of the two groups through the design",
+      "Random assignment",
+      "The 10% condition",
+      "Large counts using the combined proportion"
+     ],
+     "ok": 2,
+     "why": [
+      "Random assignment makes the groups independent.",
+      "Random assignment is required.",
+      "Correct. There is no random sample from a population, so the 10% condition is not checked.",
+      "Large counts are checked."
+     ],
+     "seek": 2490
+    },
+    {
+     "stem": "In group 1, 54 of 120 succeed. In group 2, 38 of 130 succeed. What is $\\hat p_c$?",
+     "opts": [
+      "0.368",
+      "0.371",
+      "0.158",
+      "0.450"
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. $\\hat p_c=(54+38)/(120+130)=92/250$.",
+      "This averages the two proportions, ignoring the different sample sizes.",
+      "This is the difference of the sample proportions.",
+      "This is $\\hat p_1$ only."
+     ],
+     "seek": 981
+    },
+    {
+     "stem": "For $H_a: p_1\\ne p_2$ with $z=1.80$, what is the p-value?",
+     "opts": [
+      "$P(Z<1.80)=0.964$",
+      "$1-0.036=0.964$",
+      "$P(Z>1.80)=0.036$",
+      "$2P(Z>1.80)=0.072$"
+     ],
+     "ok": 3,
+     "why": [
+      "This is not a tail area.",
+      "This is not the p-value.",
+      "This is the one-sided area.",
+      "Correct. A two-sided alternative doubles the tail area."
+     ],
+     "seek": 1508
+    },
+    {
+     "stem": "A two-sample test gives p-value 0.031 at $\\alpha=0.05$. Which conclusion is best?",
+     "opts": [
+      "There is convincing evidence that the population proportions differ.",
+      "The null hypothesis is proved false.",
+      "There is a 3.1% chance the null is true.",
+      "The two proportions are equal."
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. The p-value is below 0.05, so reject $H_0$ and conclude in context about the alternative.",
+      "A test never proves the null false.",
+      "The p-value is a probability computed assuming $H_0$ is true.",
+      "A p-value this small does not support equality."
+     ],
+     "seek": 1585
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A researcher randomly assigned 120 volunteers to use a walking app and 130 volunteers to keep a paper log. After a month, 54 of the app users and 38 of the paper-log users met their step goal. Do the data provide convincing evidence that the proportion who meet the goal is greater with the app? Use $\\alpha=0.05$.",
+   "parts": [
+    "(a) State the name of the test and the hypotheses with the parameters defined.",
+    "(b) Check the conditions.",
+    "(c) Calculate the test statistic and p-value.",
+    "(d) State a conclusion in context."
+   ],
+   "sample": [
+    "(a) A two-sample $z$ test for $p_A-p_L$, where $p_A$ is the proportion of volunteers like these who would meet their step goal using the app and $p_L$ is the proportion using the paper log. $H_0: p_A=p_L$; $H_a: p_A>p_L$.",
+    "(b) Random assignment. $\\hat p_c=92/250=0.368$. $120(0.368)=44.2$, $120(0.632)=75.8$, $130(0.368)=47.8$, $130(0.632)=82.2$. All are at least 10.",
+    "(c) $z=2.583$ and the p-value is $0.0049$.",
+    "(d) The p-value $0.0049$ is less than 0.05, so we reject $H_0$. There is convincing evidence that the proportion of volunteers like these who meet their step goal is greater with the app than with the paper log."
+   ],
+   "checklist": [
+    "(a) Two-sample z test, parameters defined in context",
+    "(a) $H_0$ and $H_a$ correct",
+    "(b) Random assignment",
+    "(b) Four counts with the combined proportion",
+    "(c) $z\\approx2.58$",
+    "(c) p-value about 0.005",
+    "(d) Compares p-value to alpha",
+    "(d) Conclusion about $H_a$ in context"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topics 3.12 and 3.13.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "values",
+    "text": "The video gives z = 1.935 for the brand A example and z = 2.562 for the emails. Recomputed: brand A z = 1.948 (two-sided p 0.0515); emails z = 2.569 (p 0.0051). The page uses recomputed values; the conclusions are unchanged."
+   },
+   {
+    "kind": "caption",
+    "text": "The email group counts (146/175 and 126/175) are reconstructed from the stated 83.4%, 72% and 272 total successes."
+   },
+   {
+    "kind": "wording",
+    "text": "The video accepts large-counts checks with the separate sample proportions for the AP exam. The page uses the combined proportion, as the CED conditions and the video both recommend."
+   },
+   {
+    "kind": "calculator",
+    "text": "The video shows Desmos for the z statistic and p-value. No calculator section is included by request."
+   }
+  ]
+ }
+}

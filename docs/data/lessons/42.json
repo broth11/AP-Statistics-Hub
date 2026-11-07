@@ -1,0 +1,403 @@
+{
+ "n": 42,
+ "unit": 3,
+ "topic": "3.14",
+ "title": "Setting Up a Chi-Square Test for Homogeneity or Independence",
+ "videoId": "C-G5yul7gxw",
+ "videoTitle": "AP Statistics Topic 3.14 Setting Up a Chi-Square Test for Homogeneity or Independence",
+ "intro": "After this lesson you can decide between a chi-square test for independence and for homogeneity, write the hypotheses in context, check the three conditions including expected counts, and name the test.",
+ "moments": [
+  {
+   "t": 81,
+   "type": "Concept",
+   "title": "When to use chi-square",
+   "text": "Categorical variables only, shown as counts in a two-way table. Observed counts are compared with expected counts."
+  },
+  {
+   "t": 161,
+   "type": "Definition",
+   "title": "Test for independence",
+   "text": "One sample from one population, two categorical variables. Is there an association?"
+  },
+  {
+   "t": 241,
+   "type": "Definition",
+   "title": "Test for homogeneity",
+   "text": "Two or more populations or groups, one categorical variable. Are the distributions the same?"
+  },
+  {
+   "t": 321,
+   "type": "Worked example",
+   "title": "Grade level and favorite subject",
+   "text": "One sample of students, two variables measured on each student. Independence."
+  },
+  {
+   "t": 402,
+   "type": "Worked example",
+   "title": "Public, private and charter schools",
+   "text": "Separate samples from three school types, one variable. Homogeneity."
+  },
+  {
+   "t": 483,
+   "type": "Worked example",
+   "title": "Homework format and grade level",
+   "text": "A two-way table of counts for one sample. Independence."
+  },
+  {
+   "t": 563,
+   "type": "Key idea",
+   "title": "Observed against expected",
+   "text": "The test compares observed counts with the counts expected if there were no association."
+  },
+  {
+   "t": 725,
+   "type": "Worked example",
+   "title": "Pets in three cities",
+   "text": "Three samples, one question. Homogeneity."
+  },
+  {
+   "t": 885,
+   "type": "Worked example",
+   "title": "Gym members: age and workout type",
+   "text": "One random sample, two variables. Independence."
+  },
+  {
+   "t": 966,
+   "type": "Procedure",
+   "title": "Seven steps",
+   "text": "Name, parameter, hypotheses, conditions, test statistic, p-value, conclusion. This topic covers the first four."
+  },
+  {
+   "t": 1046,
+   "type": "Exam wording",
+   "title": "Define the premise in context",
+   "text": "Name the population and the categorical variables, or the populations and the one variable."
+  },
+  {
+   "t": 1126,
+   "type": "Definition",
+   "title": "Independence hypotheses",
+   "text": "$H_0$: no association between the variables in the population. $H_a$: there is an association."
+  },
+  {
+   "t": 1166,
+   "type": "Definition",
+   "title": "Homogeneity hypotheses",
+   "text": "$H_0$: the distribution is the same across the populations. $H_a$: the distributions differ."
+  },
+  {
+   "t": 1206,
+   "type": "Procedure",
+   "title": "Randomization condition",
+   "text": "Independence needs a random sample. Homogeneity needs independent random samples or a randomized experiment."
+  },
+  {
+   "t": 1287,
+   "type": "Key idea",
+   "title": "Expected counts condition",
+   "text": "Every expected count is at least 5. Check expected counts, not observed counts."
+  },
+  {
+   "t": 1287,
+   "type": "Formula",
+   "title": "Expected count",
+   "text": "$\\dfrac{(\\text{row total})(\\text{column total})}{\\text{grand total}}$."
+  },
+  {
+   "t": 1930,
+   "type": "Key idea",
+   "title": "Typical mistakes",
+   "text": "Mixing up independence and homogeneity, using generic hypotheses, and skipping the conditions."
+  }
+ ],
+ "sections": [
+  {
+   "id": "which",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Independence or homogeneity?",
+   "cards": [
+    {
+     "letter": "I",
+     "name": "Independence",
+     "text": "One sample from one population. Two categorical variables. Question: are they associated?"
+    },
+    {
+     "letter": "H",
+     "name": "Homogeneity",
+     "text": "Separate samples from two or more populations (or treatment groups). One categorical variable. Question: are the distributions the same?"
+    }
+   ],
+   "columns": [
+    "Scenario",
+    "Test"
+   ],
+   "verdictColumn": 1,
+   "rows": [
+    {
+     "cells": [
+      "One sample of students, each asked grade level and favorite subject",
+      "Independence"
+     ],
+     "seek": 321
+    },
+    {
+     "cells": [
+      "Samples from public, private and charter schools, each asked favorite subject",
+      "Homogeneity"
+     ],
+     "seek": 402
+    },
+    {
+     "cells": [
+      "Pet owners sampled in each of three cities, each asked the type of pet",
+      "Homogeneity"
+     ],
+     "seek": 725
+    },
+    {
+     "cells": [
+      "One random sample of gym members asked age group and workout type",
+      "Independence"
+     ],
+     "seek": 885
+    },
+    {
+     "cells": [
+      "Volunteers randomly assigned to three diets, then classified as improved or not",
+      "Homogeneity"
+     ],
+     "seek": 1206
+    },
+    {
+     "cells": [
+      "A random sample of adults asked favorite color and favorite cereal",
+      "Independence"
+     ],
+     "seek": 161
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Decide from how the data were collected, not from the question wording. Separate samples or treatment groups mean homogeneity; one sample with two variables means independence."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "Set up a chi-square test",
+   "intro": "The first four of the seven steps are setup. Use context in every sentence; a generic sentence earns no credit.",
+   "steps": [
+    "Name the test and the parameter: \"chi-square test for independence between ... and ... for all ...\", or \"chi-square test for homogeneity of the distribution of ... across ...\".",
+    "Hypotheses: independence uses association language, homogeneity uses same-distribution language.",
+    "Conditions: random sample (or independent random samples, or randomized experiment); 10% when sampling; all expected counts at least 5.",
+    "Compute each expected count as $(\\text{row total})(\\text{column total})/\\text{grand total}$."
+   ],
+   "parts": [
+    {
+     "label": "Cardio, under 30",
+     "tex": "$\\dfrac{70\\cdot70}{200}=24.5$",
+     "text": "Gym members example."
+    },
+    {
+     "label": "Weights, over 50",
+     "tex": "$\\dfrac{40\\cdot60}{200}=12.0$",
+     "text": "The smallest expected count."
+    },
+    {
+     "label": "Smallest expected",
+     "tex": "$12.0\\ge5$",
+     "text": "The expected counts condition is met."
+    },
+    {
+     "label": "CED fact",
+     "tex": "$\\chi^2\\ge0$",
+     "text": "Chi-square distributions are skewed right; the skew lessens as degrees of freedom increase."
+    }
+   ],
+   "line": "$E=\\dfrac{(\\text{row total})(\\text{column total})}{\\text{grand total}}$",
+   "buttons": [
+    {
+     "label": "Watch the seven steps (16:06)",
+     "seek": 966
+    },
+    {
+     "label": "Watch the expected counts condition (21:27)",
+     "seek": 1287
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Independence hypotheses in context",
+     "weak": "$H_0$: the variables are independent. $H_a$: they are not.",
+     "better": "$H_0$: there is no association between age group and preferred workout type for all members of the gym. $H_a$: there is an association between age group and preferred workout type for all members of the gym.",
+     "seek": 1850
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Homogeneity hypotheses in context",
+     "weak": "$H_0$: the schools are the same.",
+     "better": "$H_0$: the distribution of favorite subject is the same for public, private and charter school students in the state. $H_a$: the distribution of favorite subject is different for at least one type of school.",
+     "seek": 1607
+    },
+    {
+     "kind": "Common trap",
+     "title": "Checking observed counts instead of expected",
+     "weak": "Every count in the table is at least 5, so the condition is met.",
+     "better": "Compute the expected counts from the totals and check that every expected count is at least 5.",
+     "seek": 1447
+    },
+    {
+     "kind": "Common trap",
+     "title": "Using homogeneity language for one sample",
+     "weak": "Test whether the distribution of workout type is the same across age groups, from one sample of members.",
+     "better": "There is one random sample with two variables, so this is a test for independence: is there an association between age group and workout type?",
+     "seek": 885
+    },
+    {
+     "kind": "Common trap",
+     "title": "Writing parameters with sample symbols",
+     "weak": "$H_0: \\hat p_1=\\hat p_2=\\hat p_3$",
+     "better": "Hypotheses refer to the population or populations, in words in context, not to sample statistics.",
+     "seek": 1126
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A librarian randomly selects 100 students in each of Grades 9, 10 and 11 and asks each whether they prefer print or e-books. Which test is appropriate?",
+     "opts": [
+      "Chi-square test for independence",
+      "Chi-square test for homogeneity",
+      "Two-sample $z$ test for proportions",
+      "One-sample $z$ test"
+     ],
+     "ok": 1,
+     "why": [
+      "There are three separate samples, not one sample with two variables.",
+      "Correct. Independent samples from three populations and one categorical variable: homogeneity.",
+      "More than two groups require chi-square, not a two-sample $z$ test.",
+      "There is more than one sample."
+     ],
+     "seek": 402
+    },
+    {
+     "stem": "Which pair of hypotheses is correct for a chi-square test for independence on library data: one random sample of 300 students, classified by grade and by print or e-book preference?",
+     "opts": [
+      "$H_0$: $\\hat p_9=\\hat p_{10}$",
+      "$H_0$: the distribution of format is the same in all grades; $H_a$: it differs",
+      "$H_0$: grade and format are not associated; $H_a$: they are associated",
+      "$H_0$: $p_9=p_{10}=p_{11}$; $H_a$: not all equal"
+     ],
+     "ok": 2,
+     "why": [
+      "Hypotheses are never about sample statistics.",
+      "This is homogeneity wording.",
+      "Correct. Independence hypotheses are about association between two variables in one population.",
+      "This is a hypothesis about proportions, not association in a two-way table."
+     ],
+     "seek": 1126
+    },
+    {
+     "stem": "A table has row totals 60, 60, 60 and column totals 90 and 90 with a grand total of 180. What is the expected count for the cell in row 1, column 1?",
+     "opts": [
+      "0.3",
+      "150",
+      "30.0",
+      "30.0"
+     ],
+     "ok": 3,
+     "why": [
+      "This is the row proportion, not a count.",
+      "Adding the totals does not give an expected count.",
+      "Dividing a column total by the number of rows ignores the row total.",
+      "Correct. $(60)(90)/180=30.0$."
+     ],
+     "seek": 1287
+    },
+    {
+     "stem": "Which is part of the conditions for a chi-square test for independence?",
+     "opts": [
+      "The sample is random.",
+      "Every observed count is at least 5.",
+      "The two samples have equal sizes.",
+      "The population is normally distributed."
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. A random sample is the randomization condition.",
+      "The condition is about expected counts, not observed counts.",
+      "Equal sample sizes are not required.",
+      "Chi-square tests are for categorical data; there is no normality condition."
+     ],
+     "seek": 1206
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A health department randomly selected 50 patients at Clinic A, 50 at Clinic B and 40 at Clinic C, and recorded whether each improved or stayed the same after a flu program. The counts (improved, stayed the same) were: Clinic A 34 and 16, Clinic B 27 and 23, Clinic C 19 and 21.",
+   "parts": [
+    "(a) Which chi-square test is appropriate? Justify.",
+    "(b) State the hypotheses in context.",
+    "(c) Calculate the expected counts.",
+    "(d) Verify the conditions."
+   ],
+   "sample": [
+    "(a) Chi-square test for homogeneity, because there are separate samples from three clinics and one categorical variable.",
+    "(b) $H_0$: the distribution of outcome (improved or stayed the same) is the same for all patients at the three clinics. $H_a$: the distribution of outcome differs for at least one clinic.",
+    "(c) Row totals 50, 50, 40; column totals 80, 60; total 140. Improved: A 28.6, B 28.6, C 22.9. Stayed the same: A 21.4, B 21.4, C 17.1.",
+    "(d) Independent random samples. Each sample is less than 10% of the patients at its clinic. All expected counts are at least 5 (the smallest is 17.1)."
+   ],
+   "checklist": [
+    "(a) Homogeneity with reason",
+    "(b) Null: same distribution across the clinics, in context",
+    "(b) Alternative: distribution differs",
+    "(c) Row total times column total over grand total",
+    "(c) All six expected counts correct",
+    "(d) Randomization, 10% and expected counts"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topic 3.14.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "The CED expected-counts condition says \"greater than 5\"; the video says \"five or greater\". The page says \"at least 5\", which matches common AP scoring."
+   },
+   {
+    "kind": "wording",
+    "text": "The CED description of chi-square distributions (nonnegative, skewed right, skew lessens with degrees of freedom) is not covered in the video. It appears once in the Method section without a video link."
+   },
+   {
+    "kind": "values",
+    "text": "All tables on this page are original. Expected counts are computed in code."
+   }
+  ]
+ }
+}

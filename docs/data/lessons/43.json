@@ -1,0 +1,429 @@
+{
+ "n": 43,
+ "unit": 3,
+ "topic": "3.15",
+ "title": "Carrying Out a Chi-Square Test for Homogeneity or Independence",
+ "videoId": "5Sm9cSKPcM0",
+ "videoTitle": "AP Statistics Topic 3.15 Carrying Out a Chi-Square Test for Homogeneity or Independence",
+ "intro": "After this lesson you can calculate expected counts, the chi-square statistic and its degrees of freedom, find a p-value from a chi-square distribution, interpret it, and write a conclusion in context.",
+ "moments": [
+  {
+   "t": 81,
+   "type": "Procedure",
+   "title": "Seven steps",
+   "text": "Name, parameter, hypotheses, conditions, test statistic, p-value, conclusion. This topic carries out the last three."
+  },
+  {
+   "t": 162,
+   "type": "Concept",
+   "title": "Hypotheses by test type",
+   "text": "Independence: no association in the population. Homogeneity: the same distribution across the populations."
+  },
+  {
+   "t": 242,
+   "type": "Procedure",
+   "title": "Check the 10% condition for each sample",
+   "text": "Do it once per sample. Skip it for a randomized experiment."
+  },
+  {
+   "t": 290,
+   "type": "Key idea",
+   "title": "Expected counts at least 5",
+   "text": "Check expected counts, not observed counts."
+  },
+  {
+   "t": 323,
+   "type": "Formula",
+   "title": "Expected count",
+   "text": "$\\dfrac{(\\text{row total})(\\text{column total})}{\\text{table total}}$ for each cell inside the table."
+  },
+  {
+   "t": 403,
+   "type": "Formula",
+   "title": "Chi-square statistic",
+   "text": "$\\chi^2=\\sum\\dfrac{(O-E)^2}{E}$ over every cell, excluding the totals."
+  },
+  {
+   "t": 483,
+   "type": "Formula",
+   "title": "Degrees of freedom",
+   "text": "$(\\text{rows}-1)(\\text{columns}-1)$, not counting the totals."
+  },
+  {
+   "t": 563,
+   "type": "Concept",
+   "title": "Large $\\chi^2$ means observed counts far from expected",
+   "text": "A larger statistic gives a smaller p-value."
+  },
+  {
+   "t": 643,
+   "type": "Definition",
+   "title": "p-value for chi-square",
+   "text": "The probability of a statistic this large or larger, assuming $H_0$ is true. The test is always in the right tail."
+  },
+  {
+   "t": 803,
+   "type": "Worked example",
+   "title": "Moderate statistic, large p-value",
+   "text": "$\\chi^2=1.258$ with 5 degrees of freedom gives a very large p-value."
+  },
+  {
+   "t": 883,
+   "type": "Worked example",
+   "title": "Large statistic, small p-value",
+   "text": "$\\chi^2=13.567$ with 2 degrees of freedom gives p about 0.0011."
+  },
+  {
+   "t": 964,
+   "type": "Exam wording",
+   "title": "Conclusion in context",
+   "text": "Compare the p-value to $\\alpha$, decide, and answer the investigative question about the population or populations."
+  },
+  {
+   "t": 1126,
+   "type": "Worked example",
+   "title": "Gym members: age and workout type",
+   "text": "One random sample, two variables: independence. $\\chi^2=15.223$, 4 degrees of freedom, p about 0.0043."
+  },
+  {
+   "t": 1288,
+   "type": "Key idea",
+   "title": "What the expected counts mean",
+   "text": "They show what the table would look like if there were no association."
+  },
+  {
+   "t": 1531,
+   "type": "Exam wording",
+   "title": "Why a small p-value is evidence of association",
+   "text": "The observed table would be very unlikely if there were no association."
+  },
+  {
+   "t": 1771,
+   "type": "Worked example",
+   "title": "Pet ownership in three cities",
+   "text": "Three samples (90, 80 and 80), one variable: homogeneity."
+  },
+  {
+   "t": 1932,
+   "type": "Exam question",
+   "title": "Expected count by hand",
+   "text": "A multiple-choice question may ask how many in a group would own a cat if the distribution were the same."
+  }
+ ],
+ "sections": [
+  {
+   "id": "choose",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "What does the p-value tell you?",
+   "cards": [
+    {
+     "letter": "R",
+     "name": "Reject $H_0$",
+     "text": "p-value $\\le\\alpha$. Convincing evidence of an association (independence) or a difference in distributions (homogeneity)."
+    },
+    {
+     "letter": "F",
+     "name": "Fail to reject",
+     "text": "p-value $>\\alpha$. Not convincing evidence. Never say the null is true."
+    }
+   ],
+   "columns": [
+    "Statistic",
+    "Degrees of freedom",
+    "p-value",
+    "Decision at $\\alpha=0.05$"
+   ],
+   "verdictColumn": 3,
+   "rows": [
+    {
+     "cells": [
+      "$\\chi^2=15.223$",
+      "4",
+      "0.0043",
+      "Reject $H_0$"
+     ],
+     "seek": 1450
+    },
+    {
+     "cells": [
+      "$\\chi^2=13.567$",
+      "2",
+      "0.0011",
+      "Reject $H_0$"
+     ],
+     "seek": 883
+    },
+    {
+     "cells": [
+      "$\\chi^2=1.258$",
+      "5",
+      "0.94",
+      "Fail to reject $H_0$"
+     ],
+     "seek": 803
+    },
+    {
+     "cells": [
+      "$\\chi^2=4.883$",
+      "2",
+      "0.087",
+      "Fail to reject $H_0$"
+     ],
+     "seek": 964
+    },
+    {
+     "cells": [
+      "$\\chi^2=16.565$",
+      "4",
+      "0.0023",
+      "Reject $H_0$"
+     ],
+     "seek": 1450
+    },
+    {
+     "cells": [
+      "$\\chi^2=6.51$",
+      "2",
+      "0.039",
+      "Reject $H_0$"
+     ],
+     "seek": 883
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video reads the p-value for $\\chi^2=13.567$ with 2 degrees of freedom as 0.0001. The correct value is about 0.0011. Either way the decision is the same."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "Compute the statistic and p-value",
+   "intro": "Work cell by cell, add the contributions, then use the right tail of the chi-square distribution with the correct degrees of freedom.",
+   "steps": [
+    "Expected count for each cell: row total times column total over the grand total.",
+    "Contribution for each cell: $(O-E)^2/E$. Do not include the totals.",
+    "Add the contributions to get $\\chi^2$, and find $df=(r-1)(c-1)$.",
+    "The p-value is the area to the right of $\\chi^2$. Compare to $\\alpha$ and conclude in context."
+   ],
+   "parts": [
+    {
+     "label": "Expected",
+     "tex": "$\\dfrac{70\\cdot70}{200}=24.5$",
+     "text": "Under 30 and cardio."
+    },
+    {
+     "label": "Contribution",
+     "tex": "$\\dfrac{(30-24.5)^2}{24.5}=1.235$",
+     "text": "One cell."
+    },
+    {
+     "label": "Statistic",
+     "tex": [
+      "$\\chi^2=16.565$",
+      "$df=(3-1)(3-1)=4$"
+     ],
+     "text": "Gym members example (original counts)."
+    },
+    {
+     "label": "p-value",
+     "tex": "$P(\\chi^2>16.565)=0.0023$",
+     "text": "Right tail only."
+    }
+   ],
+   "line": "$\\chi^2=\\sum\\dfrac{(O-E)^2}{E}\\qquad df=(r-1)(c-1)$",
+   "buttons": [
+    {
+     "label": "Watch the formulas (6:43)",
+     "seek": 403
+    },
+    {
+     "label": "Watch the gym example (18:46)",
+     "seek": 1126
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Conclusion for independence",
+     "weak": "We reject the null because the p-value is small.",
+     "better": "Because the p-value of 0.0023 is less than $\\alpha=0.05$, we reject $H_0$. There is convincing evidence of an association between age group and preferred workout type for all members of the gym.",
+     "seek": 1531
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Conclusion for homogeneity",
+     "weak": "The cities are different.",
+     "better": "Because the p-value of 0.087 is greater than 0.05, we fail to reject $H_0$. There is not convincing evidence that the distribution of commute type differs between the two cities for all commuters.",
+     "seek": 2173
+    },
+    {
+     "kind": "Common trap",
+     "title": "Including the totals",
+     "weak": "Add a contribution for every row and column total.",
+     "better": "Use only the cells inside the table. The totals are not observed counts for a category pair.",
+     "seek": 403
+    },
+    {
+     "kind": "Common trap",
+     "title": "Wrong degrees of freedom",
+     "weak": "$df=n-1$ for the sample size.",
+     "better": "$df=(\\text{rows}-1)(\\text{columns}-1)$, counting categories only.",
+     "seek": 483
+    },
+    {
+     "kind": "Common trap",
+     "title": "Using both tails",
+     "weak": "Double the area for a two-sided test.",
+     "better": "A chi-square test is always in the right tail. Large values of $\\chi^2$ give evidence for the alternative.",
+     "seek": 643
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A two-way table has 4 rows and 3 columns of categories. How many degrees of freedom does the chi-square test have?",
+     "opts": [
+      "5",
+      "6",
+      "7",
+      "12"
+     ],
+     "ok": 1,
+     "why": [
+      "This is $4+3-2$, not $(r-1)(c-1)$.",
+      "Correct. $(4-1)(3-1)=6$.",
+      "This is $4+3$.",
+      "This is the number of cells."
+     ],
+     "seek": 483
+    },
+    {
+     "stem": "A chi-square test has $\\chi^2=4.883$ with 2 degrees of freedom, and the p-value is 0.087. At $\\alpha=0.05$, which conclusion is correct?",
+     "opts": [
+      "Reject $H_0$; the p-value is above 0.05.",
+      "Reject $H_0$; there is evidence of an association.",
+      "Fail to reject $H_0$; there is not convincing evidence of an association.",
+      "Accept $H_0$; there is no association."
+     ],
+     "ok": 2,
+     "why": [
+      "Reject only when the p-value is at most $\\alpha$.",
+      "The p-value is greater than 0.05.",
+      "Correct. The p-value is greater than $\\alpha$, so fail to reject $H_0$.",
+      "A test never proves the null hypothesis."
+     ],
+     "seek": 964
+    },
+    {
+     "stem": "In a chi-square test of homogeneity, 90 residents of City A were asked their pet type (cat, dog or other). The total number of cat owners across the three cities is 100 out of 250 pet owners. If the distribution were the same in all cities, about how many of the 90 City A pet owners would own a cat?",
+     "opts": [
+      "36",
+      "40",
+      "30",
+      "25"
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. $90\\times100/250=36$.",
+      "This is 100 out of 250 applied to 100 people.",
+      "This uses a rate of 1/3 for each pet type.",
+      "This is not related to the table totals."
+     ],
+     "seek": 1932
+    },
+    {
+     "stem": "Which statement is the correct interpretation of the p-value in a chi-square test?",
+     "opts": [
+      "The probability that the alternative hypothesis is true",
+      "The proportion of cells with large expected counts",
+      "The probability that the null hypothesis is true",
+      "The probability of getting a chi-square statistic this large or larger, assuming the null hypothesis is true"
+     ],
+     "ok": 3,
+     "why": [
+      "The p-value does not give the probability of the alternative.",
+      "The p-value is not about expected counts.",
+      "The p-value is calculated assuming $H_0$ is true; it is not the probability of $H_0$.",
+      "Correct. This is the definition, in the direction of the alternative (the right tail)."
+     ],
+     "seek": 643
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A transport survey took independent random samples of 100 commuters in City A and 100 commuters in City B. Each commuter reported bike, bus or car. City A: 45 bike, 30 bus, 25 car. City B: 30 bike, 40 bus, 30 car. Is there convincing evidence at $\\alpha=0.05$ that the distribution of commute type is different in the two cities?",
+   "parts": [
+    "(a) State the test and the hypotheses.",
+    "(b) Verify the conditions, including the expected counts.",
+    "(c) Calculate the test statistic, degrees of freedom and p-value.",
+    "(d) State a conclusion in context."
+   ],
+   "sample": [
+    "(a) A chi-square test for homogeneity. $H_0$: the distribution of commute type is the same for commuters in City A and City B. $H_a$: the distribution of commute type is different.",
+    "(b) Independent random samples of 100 commuters each (under 10% of each city). Expected counts: bike 37.5 and 37.5, bus 35 and 35, car 27.5 and 27.5. All are at least 5.",
+    "(c) $\\chi^2=4.883$, $df=(2-1)(3-1)=2$, p-value $=0.087$.",
+    "(d) The p-value 0.087 is greater than 0.05, so we fail to reject $H_0$. There is not convincing evidence that the distribution of commute type differs between City A and City B."
+   ],
+   "checklist": [
+    "(a) Homogeneity and hypotheses in context",
+    "(b) Random and independent samples",
+    "(b) All six expected counts at least 5",
+    "(c) $\\chi^2\\approx4.88$",
+    "(c) $df=2$ and p-value about 0.087",
+    "(d) Compares the p-value to alpha",
+    "(d) Conclusion in context without claiming no difference"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topic 3.15.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "values",
+    "text": "The video states $\\chi^2=13.567$ with 2 degrees of freedom has p = 0.0001. Recomputed: p = 0.0011. The decision is unchanged."
+   },
+   {
+    "kind": "caption",
+    "text": "The table for the gym example is not read out in full in the captions; the page uses the video's statistic (15.223, 4 df, p = 0.00426) only in the decision table and moments, and original counts elsewhere."
+   },
+   {
+    "kind": "wording",
+    "text": "The video says expected counts must be \"greater than or equal to five\"; the CED says \"greater than 5\". The page uses \"at least 5\"."
+   },
+   {
+    "kind": "calculator",
+    "text": "The video uses Desmos for the p-value and test. No calculator section is included by request."
+   },
+   {
+    "kind": "values",
+    "text": "Original gym table: chi-square 16.565, df 4, p 0.0023. Commute table: chi-square 4.883, df 2, p 0.0870."
+   }
+  ]
+ }
+}

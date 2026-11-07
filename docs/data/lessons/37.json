@@ -1,0 +1,416 @@
+{
+ "n": 37,
+ "unit": 3,
+ "topic": "3.8",
+ "title": "Potential Errors When Performing Tests",
+ "videoId": "LCA7nDSr22E",
+ "videoTitle": "AP Statistics Topic 3.8 Potential Errors When Performing Tests",
+ "intro": "After this lesson you can describe Type I and Type II errors in context with their consequences, state their probabilities, define power, and explain what increases the power of a test.",
+ "moments": [
+  {
+   "t": 60,
+   "type": "Concept",
+   "title": "A correct test can still reach a wrong conclusion",
+   "text": "The error is not in the work. The sample evidence can point to the wrong decision about the population."
+  },
+  {
+   "t": 120,
+   "type": "Worked example",
+   "title": "Defective chairs",
+   "text": "A company tests $H_0: p=0.04$ against $H_a: p>0.04$ with 300 chairs at the 5% level."
+  },
+  {
+   "t": 181,
+   "type": "Key idea",
+   "title": "Reject $H_0$ can mean a Type I error",
+   "text": "With a p-value of 0.023, the test rejects $H_0$. If $H_0$ is actually true, that is a Type I error."
+  },
+  {
+   "t": 241,
+   "type": "Definition",
+   "title": "Type I error",
+   "text": "There is convincing evidence for $H_a$, but $H_a$ is not true."
+  },
+  {
+   "t": 303,
+   "type": "Exam wording",
+   "title": "Consequence of a Type I error",
+   "text": "The company stops production and pays for repairs it does not need."
+  },
+  {
+   "t": 365,
+   "type": "Key idea",
+   "title": "Fail to reject can mean a Type II error",
+   "text": "With a p-value of 0.068, the test fails to reject $H_0$. If $H_a$ is actually true, that is a Type II error."
+  },
+  {
+   "t": 426,
+   "type": "Definition",
+   "title": "Type II error",
+   "text": "There is not convincing evidence for $H_a$, but $H_a$ is true."
+  },
+  {
+   "t": 487,
+   "type": "Exam wording",
+   "title": "Consequence of a Type II error",
+   "text": "The company keeps producing too many defective chairs."
+  },
+  {
+   "t": 547,
+   "type": "Definition",
+   "title": "Power",
+   "text": "The probability of correctly rejecting a false null hypothesis."
+  },
+  {
+   "t": 607,
+   "type": "Formula",
+   "title": "$P(\\text{Type I})=\\alpha$",
+   "text": "The significance level is the probability of a Type I error."
+  },
+  {
+   "t": 668,
+   "type": "Formula",
+   "title": "$P(\\text{Type II})=1-\\text{power}$",
+   "text": "Called $\\beta$ in the video. Power and the Type II error probability add to 1."
+  },
+  {
+   "t": 729,
+   "type": "Key idea",
+   "title": "Raise $\\alpha$ to raise power",
+   "text": "A larger rejection region makes rejection easier, but the Type I error probability rises too."
+  },
+  {
+   "t": 849,
+   "type": "Key idea",
+   "title": "Increase the sample size",
+   "text": "A larger $n$ lowers the standard error, so true differences stand out."
+  },
+  {
+   "t": 970,
+   "type": "Key idea",
+   "title": "Larger true difference, more power",
+   "text": "A true proportion of 18% is far easier to detect than 5.3% when the claim is 4%."
+  },
+  {
+   "t": 1093,
+   "type": "Worked example",
+   "title": "After-school tutoring",
+   "text": "$H_0: p=0.70$ against $H_a: p<0.70$. Describe both errors and their consequences."
+  },
+  {
+   "t": 1456,
+   "type": "Exam question",
+   "title": "Always include the consequence",
+   "text": "Name the error, state what is true, state the conclusion reached, then the consequence."
+  }
+ ],
+ "sections": [
+  {
+   "id": "error",
+   "type": "decision",
+   "tab": "Decision",
+   "kicker": "Decision check",
+   "title": "Which error is possible?",
+   "cards": [
+    {
+     "letter": "I",
+     "name": "Type I",
+     "text": "You reject $H_0$. Possible error: $H_0$ was actually true."
+    },
+    {
+     "letter": "II",
+     "name": "Type II",
+     "text": "You fail to reject $H_0$. Possible error: $H_a$ was actually true."
+    },
+    {
+     "letter": "✓",
+     "name": "No error",
+     "text": "The conclusion matches the truth. Rejecting a false $H_0$ is power."
+    }
+   ],
+   "columns": [
+    "Decision",
+    "Truth",
+    "Result"
+   ],
+   "verdictColumn": 2,
+   "rows": [
+    {
+     "cells": [
+      "Reject $H_0$ (small p-value)",
+      "$H_0$ is true",
+      "Type I error"
+     ],
+     "seek": 241
+    },
+    {
+     "cells": [
+      "Reject $H_0$ (small p-value)",
+      "$H_a$ is true",
+      "Correct decision (power)"
+     ],
+     "seek": 547
+    },
+    {
+     "cells": [
+      "Fail to reject $H_0$ (large p-value)",
+      "$H_a$ is true",
+      "Type II error"
+     ],
+     "seek": 426
+    },
+    {
+     "cells": [
+      "Fail to reject $H_0$ (large p-value)",
+      "$H_0$ is true",
+      "Correct decision"
+     ],
+     "seek": 365
+    },
+    {
+     "cells": [
+      "p-value 0.023, $\\alpha=0.05$",
+      "Unknown",
+      "Could be Type I"
+     ],
+     "seek": 181
+    },
+    {
+     "cells": [
+      "p-value 0.068, $\\alpha=0.05$",
+      "Unknown",
+      "Could be Type II"
+     ],
+     "seek": 365
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "You can never know whether you made an error. Say \"might\" when linking a conclusion to an error, and describe the error as what would be true, not as something you know happened."
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "type": "procedure",
+   "tab": "Method",
+   "kicker": "Procedure",
+   "title": "Describe an error and raise power",
+   "intro": "Write each error in four short parts so nothing is missed, then pick the change that raises power.",
+   "steps": [
+    "What is actually true? ($H_0$ for Type I, $H_a$ for Type II.)",
+    "What does the test conclude? (Reject $H_0$ for Type I, fail to reject for Type II.)",
+    "Say it in context, naming the population and the parameter.",
+    "State the consequence of acting on the wrong conclusion."
+   ],
+   "parts": [
+    {
+     "label": "Type I",
+     "tex": "$P=\\alpha$",
+     "text": "Set before the data are collected."
+    },
+    {
+     "label": "Type II",
+     "tex": "$P=1-\\text{power}$",
+     "text": "Falls as power rises."
+    },
+    {
+     "label": "Larger sample",
+     "tex": [
+      "$n=300:\\ 0.33$",
+      "$n=1000:\\ 0.65$"
+     ],
+     "text": "Approximate power when $p=0.053$, $H_0: p=0.04$, $\\alpha=0.05$."
+    },
+    {
+     "label": "Larger alpha",
+     "tex": [
+      "$\\alpha=0.05:\\ 0.33$",
+      "$\\alpha=0.10:\\ 0.45$"
+     ],
+     "text": "Same setting with $n=300$. Type I risk rises too."
+    }
+   ],
+   "line": "$\\text{Power}\\uparrow\\text{ as }\\alpha\\uparrow,\\ n\\uparrow,\\ |p-p_0|\\uparrow$",
+   "buttons": [
+    {
+     "label": "Watch the three ways to raise power (12:09)",
+     "seek": 729
+    },
+    {
+     "label": "Watch the tutoring errors (18:13)",
+     "seek": 1093
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording",
+   "kicker": "Exam wording and traps",
+   "title": "Common traps",
+   "traps": [
+    {
+     "kind": "Exam wording",
+     "title": "Type I error in context with a consequence",
+     "weak": "A Type I error is rejecting a true null hypothesis.",
+     "better": "A Type I error: the true proportion of students who improve is 0.70 or more, but the test finds convincing evidence that it is below 0.70. The principal cuts a program that works.",
+     "seek": 1213
+    },
+    {
+     "kind": "Exam wording",
+     "title": "Type II error in context with a consequence",
+     "weak": "A Type II error is failing to reject the null when it is false.",
+     "better": "A Type II error: the true proportion who improve is below 0.70, but the test does not find convincing evidence of this. The school keeps a program that is not working well enough.",
+     "seek": 1274
+    },
+    {
+     "kind": "Common trap",
+     "title": "Calling an error a calculation mistake",
+     "weak": "A Type I error means the statistician made a math mistake.",
+     "better": "A Type I or Type II error is a wrong conclusion that can happen even when all the work is correct, because samples vary.",
+     "seek": 60
+    },
+    {
+     "kind": "Common trap",
+     "title": "Saying alpha is the chance the null is true",
+     "weak": "$\\alpha=0.05$ means a 5% chance that $H_0$ is true.",
+     "better": "$\\alpha=0.05$ is the probability of rejecting $H_0$ when $H_0$ is true, that is, the Type I error probability.",
+     "seek": 607
+    },
+    {
+     "kind": "Common trap",
+     "title": "Raising alpha with no cost",
+     "weak": "Raising $\\alpha$ to 0.10 only helps because power rises.",
+     "better": "Raising $\\alpha$ raises power but also raises the probability of a Type I error.",
+     "seek": 789
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Multiple choice",
+   "questions": [
+    {
+     "stem": "A test of $H_0: p=0.30$ against $H_a: p>0.30$ gives a p-value of 0.012 at $\\alpha=0.05$. Which error is possible?",
+     "opts": [
+      "Type I only",
+      "Type II only",
+      "Both Type I and Type II",
+      "Neither"
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. The test rejects $H_0$, so the only possible error is a Type I error.",
+      "A Type II error requires failing to reject $H_0$.",
+      "Only one decision was made, so only one error is possible.",
+      "Any decision from a sample could be wrong."
+     ],
+     "seek": 181
+    },
+    {
+     "stem": "Which change would increase the power of a test of one proportion, with everything else fixed?",
+     "opts": [
+      "Choose a null value closer to the true proportion",
+      "Decrease the sample size",
+      "Decrease the significance level",
+      "Increase the sample size"
+     ],
+     "ok": 3,
+     "why": [
+      "A true value closer to $p_0$ is harder to detect and lowers power.",
+      "A smaller sample raises the standard error and lowers power.",
+      "A smaller $\\alpha$ shrinks the rejection region and lowers power.",
+      "Correct. A larger sample lowers the standard error and raises power."
+     ],
+     "seek": 849
+    },
+    {
+     "stem": "A test has power 0.82. What is the probability of a Type II error for the same alternative?",
+     "opts": [
+      "0.18",
+      "0.82",
+      "0.95",
+      "0.05"
+     ],
+     "ok": 0,
+     "why": [
+      "Correct. $P(\\text{Type II})=1-0.82=0.18$.",
+      "This is the power itself.",
+      "This is $1-\\alpha$ for a 5% level.",
+      "0.05 would be a typical $\\alpha$, not related to power."
+     ],
+     "seek": 668
+    },
+    {
+     "stem": "A town tests $H_0: p=0.50$ against $H_a: p<0.50$ for support of a new bus route. Which is a Type II error in context?",
+     "opts": [
+      "Concluding support is above 50% when it is below 50%",
+      "Concluding support is below 50% when it is actually 50% or more",
+      "Concluding there is not enough evidence that support is below 50% when it actually is below 50%",
+      "Concluding support is exactly 50% when it is 50%"
+     ],
+     "ok": 2,
+     "why": [
+      "The alternative is a lower tail, so this is not the opposite error.",
+      "This describes a Type I error.",
+      "Correct. A Type II error fails to reject a false $H_0$.",
+      "This describes a correct decision."
+     ],
+     "seek": 1274
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Free response",
+   "title": "Free-response practice",
+   "prompt": "A city claims that at most 20% of its buses run late. A rider group suspects it is more than 20% and tests $H_0: p=0.20$ against $H_a: p>0.20$ at $\\alpha=0.05$ using a random sample of buses.",
+   "parts": [
+    "(a) Describe a Type I error in context and give a consequence.",
+    "(b) Describe a Type II error in context and give a consequence.",
+    "(c) What is the probability of a Type I error?",
+    "(d) The group wants a test with more power. Give two changes and state one drawback of one of them."
+   ],
+   "sample": [
+    "(a) The true proportion of late buses is 0.20 (or less), but the test finds convincing evidence that it is more than 0.20. The city spends money to fix a problem that does not exist.",
+    "(b) The true proportion of late buses is greater than 0.20, but the test does not find convincing evidence of this. The city does nothing and riders keep facing late buses.",
+    "(c) $P(\\text{Type I})=\\alpha=0.05$.",
+    "(d) Take a larger sample, or increase $\\alpha$. Increasing $\\alpha$ raises the probability of a Type I error."
+   ],
+   "checklist": [
+    "(a) States the truth and the conclusion in context",
+    "(a) Gives a consequence",
+    "(b) States the truth and the conclusion in context",
+    "(b) Gives a consequence",
+    "(c) 0.05",
+    "(d) Two valid changes",
+    "(d) Names the drawback of a larger alpha"
+   ]
+  }
+ ],
+ "footer": "Status: built from auto-generated captions and the AP Statistics CED, topic 3.8.",
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "wording",
+    "text": "The video says students will never be asked to calculate beta. The CED lists the probability of a Type II error as 1 minus power, which the page states."
+   },
+   {
+    "kind": "values",
+    "text": "Power values in the Method section are approximate (normal approximation) and computed in code; they are not from the video."
+   },
+   {
+    "kind": "caption",
+    "text": "Sample proportion for the chair example is not read aloud clearly; only the p-values 0.023 and 0.068 are used."
+   }
+  ]
+ }
+}
