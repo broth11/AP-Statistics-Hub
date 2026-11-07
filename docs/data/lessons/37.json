@@ -197,42 +197,130 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Describe an error and raise power",
-   "intro": "Write each error in four short parts so nothing is missed, then pick the change that raises power.",
-   "steps": [
-    "What is actually true? ($H_0$ for Type I, $H_a$ for Type II.)",
-    "What does the test conclude? (Reject $H_0$ for Type I, fail to reject for Type II.)",
-    "Say it in context, naming the population and the parameter.",
-    "State the consequence of acting on the wrong conclusion."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Type I",
-     "tex": "$P=\\alpha$",
-     "text": "Set before the data are collected."
-    },
-    {
-     "label": "Type II",
-     "tex": "$P=1-\\text{power}$",
-     "text": "Falls as power rises."
-    },
-    {
-     "label": "Larger sample",
-     "tex": [
-      "$n=300:\\ 0.33$",
-      "$n=1000:\\ 0.65$"
+     "obj": "Describe Type I and Type II errors in context",
+     "q": "A company thinks more than 4% of its chairs are defective. It tests whether the proportion is greater than 0.04 using a sample of 300 chairs. Describe a Type I error and a Type II error in context and state a consequence of each.",
+     "steps": [
+      {
+       "t": "State the hypotheses in context.",
+       "work": {
+        "tex": [
+         "$H_0:p=0.04$",
+         "$H_a:p>0.04$"
+        ],
+        "text": "Here $p$ is the proportion of all chairs the company produces that are defective."
+       }
+      },
+      {
+       "t": "Type I error: say what is true and what the test concludes.",
+       "work": {
+        "text": "The true proportion of defective chairs is 0.04 or less, but the test finds convincing evidence that it is more than 0.04. The null hypothesis is true, and the test rejects it."
+       }
+      },
+      {
+       "t": "Type II error: say what is true and what the test concludes.",
+       "work": {
+        "text": "The true proportion of defective chairs is more than 0.04, but the test does not find convincing evidence of this. The alternative hypothesis is true, and the test fails to reject the null."
+       }
+      },
+      {
+       "t": "State a consequence of each error.",
+       "work": {
+        "text": "After a Type I error the company stops production and pays for repairs it does not need. After a Type II error it keeps producing too many defective chairs."
+       }
+      }
      ],
-     "text": "Approximate power when $p=0.053$, $H_0: p=0.04$, $\\alpha=0.05$."
+     "answer": "Type I: the true proportion of defective chairs is 0.04 or less, but the test finds convincing evidence that it is more than 0.04, so the company wastes time and money fixing a problem that does not exist. Type II: the true proportion is more than 0.04, but the test does not find convincing evidence of it, so the company keeps making too many defective chairs.",
+     "seek": 241
     },
     {
-     "label": "Larger alpha",
-     "tex": [
-      "$\\alpha=0.05:\\ 0.33$",
-      "$\\alpha=0.10:\\ 0.45$"
+     "obj": "Describe both errors when the alternative is a lower tail",
+     "q": "An administrator thinks fewer than 70% of students in an after-school tutoring program improve their math grade. If the proportion is lower, he will cut the program. He tests whether the proportion is less than 0.70. Describe a Type I error and a Type II error in context and state a consequence of each.",
+     "steps": [
+      {
+       "t": "State the hypotheses in context.",
+       "work": {
+        "tex": [
+         "$H_0:p=0.70$",
+         "$H_a:p<0.70$"
+        ],
+        "text": "Here $p$ is the proportion of students in the program who improve their math grade."
+       }
+      },
+      {
+       "t": "Type I error: say what is true and what the test concludes.",
+       "work": {
+        "text": "The true proportion who improve is 0.70 or more, but the test finds convincing evidence that it is less than 0.70."
+       }
+      },
+      {
+       "t": "Type II error: say what is true and what the test concludes.",
+       "work": {
+        "text": "The true proportion who improve is less than 0.70, but the test does not find convincing evidence of this."
+       }
+      },
+      {
+       "t": "State a consequence of each error.",
+       "work": {
+        "text": "After a Type I error the administrator cuts a program that works. After a Type II error he keeps a program that is not working well enough."
+       }
+      }
      ],
-     "text": "Same setting with $n=300$. Type I risk rises too."
+     "answer": "Type I: the true proportion who improve is 0.70 or more, but the test finds convincing evidence that it is less than 0.70, so the administrator cuts a program that works. Type II: the true proportion is less than 0.70, but the test does not find convincing evidence of it, so the program that is not working well enough is kept.",
+     "seek": 1093
+    },
+    {
+     "obj": "Explain how to increase the power of a test",
+     "q": "For the chair test of $H_0:p=0.04$ against $H_a:p>0.04$ at $\\alpha=0.05$ with $n=300$, the true proportion is 0.053. Describe three ways to increase power and give a drawback of one of them.",
+     "formula": [
+      "$P(\\text{Type II})=1-\\text{power}$"
+     ],
+     "steps": [
+      {
+       "t": "Increase the sample size.",
+       "work": {
+        "tex": [
+         "$n=300:\\ \\text{power}\\approx0.33$",
+         "$n=1000:\\ \\text{power}\\approx0.65$"
+        ],
+        "text": "A larger sample lowers the standard error, so a small true difference is easier to see."
+       }
+      },
+      {
+       "t": "Increase the significance level.",
+       "work": {
+        "tex": [
+         "$\\alpha=0.05:\\ \\text{power}\\approx0.33$",
+         "$\\alpha=0.10:\\ \\text{power}\\approx0.45$"
+        ],
+        "text": "A larger rejection region makes rejection easier when the alternative is true."
+       }
+      },
+      {
+       "t": "Note that a true value farther from $p_0$ gives more power.",
+       "work": {
+        "tex": [
+         "$p=0.053:\\ \\text{power}\\approx0.33$",
+         "$p=0.18:\\ \\text{power}\\approx1.00$"
+        ],
+        "text": "You cannot choose the truth, but a true proportion of 0.18 is much easier to detect than 0.053."
+       }
+      },
+      {
+       "t": "State the drawback of raising $\\alpha$.",
+       "work": {
+        "tex": [
+         "$P(\\text{Type I})=\\alpha$"
+        ],
+        "text": "Raising $\\alpha$ raises the probability of a Type I error as well as power."
+       }
+      }
+     ],
+     "answer": "Power increases with a larger sample size, a larger significance level, or a true value farther from the null value. Raising the significance level also raises the probability of a Type I error.",
+     "seek": 729
     }
    ],
-   "line": "$\\text{Power}\\uparrow\\text{ as }\\alpha\\uparrow,\\ n\\uparrow,\\ |p-p_0|\\uparrow$",
    "buttons": [
     {
      "label": "Watch the three ways to raise power (12:09)",
@@ -410,6 +498,10 @@
    {
     "kind": "caption",
     "text": "Sample proportion for the chair example is not read aloud clearly; only the p-values 0.023 and 0.068 are used."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions. The power values in Q3 are normal approximations computed in code for the chair example (null 0.04); the video states the three ways but gives no values."
    }
   ]
  }

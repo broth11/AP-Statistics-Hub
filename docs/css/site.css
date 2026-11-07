@@ -141,7 +141,7 @@ a.lesson-row.is-live:hover { background: color-mix(in srgb, var(--color-text) 6%
 .bits-card .letter { font-family: var(--font-heading); font-weight: 800; font-size: 40px; color: var(--color-accent-700); }
 .bits-card .name { font-weight: 700; }
 .bits-card .text { font-size: 13px; opacity: 0.85; margin-top: 4px; }
-.table-wrap { overflow-x: auto; }
+.table-wrap { overflow-x: auto; position: relative; } /* positioned so KaTeX's hidden MathML text is clipped too */
 .table-wrap .table { min-width: 560px; }
 .table .verdict { font-weight: 700; }
 .table .btn-ghost { font-size: 13px; }

@@ -183,38 +183,134 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "From a two-way table to a verdict on association",
-   "intro": "Work row by row, because the question asks you to compare groups. Use the group total, not the grand total, as the denominator.",
-   "steps": [
-    "Pick the explanatory variable, the one whose groups you compare. Each group is one bar.",
-    "Divide each cell in a group by that group total.",
-    "Draw segments that sum to 100% for each bar, then compare segment sizes.",
-    "If the proportions are clearly different, say there is an association. If they match, say no association."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Male yes",
-     "tex": "$6/75=0.08$",
-     "text": "Males who like chocolate."
-    },
-    {
-     "label": "Female yes",
-     "tex": "$54/125=0.432$",
-     "text": "Females who like chocolate."
-    },
-    {
-     "label": "Compare",
-     "tex": [
-      "$8\\%$ vs $43.2\\%$"
+     "obj": "Decide whether two variables are associated from a two-way table",
+     "q": "In a sample of 200 people, 6 of the 75 males and 54 of the 125 females like chocolate. Is there an association between gender and liking chocolate?",
+     "formula": [
+      "$P(A\\mid B)=\\dfrac{\\text{cell count}}{\\text{group total}}$"
      ],
-     "text": "Clearly different, so gender and liking chocolate are associated."
+     "steps": [
+      {
+       "t": "Choose the variable whose groups you compare and make each group a bar.",
+       "work": {
+        "text": "Gender is the explanatory variable, so there is one bar for males and one for females."
+       }
+      },
+      {
+       "t": "Divide each cell in a group by that group total.",
+       "work": {
+        "tex": [
+         "$P(\\text{likes}\\mid\\text{male})=\\dfrac{6}{75}$",
+         "$=0.08$",
+         "$P(\\text{likes}\\mid\\text{female})=\\dfrac{54}{125}$",
+         "$=0.432$"
+        ],
+        "text": "The denominator is the size of the group, not the 200 people in the whole table."
+       }
+      },
+      {
+       "t": "Compare the segments of the bars.",
+       "work": {
+        "tex": [
+         "$0.08\\neq0.432$"
+        ],
+        "text": "About 8% of the males and 43.2% of the females like chocolate, so the segments are clearly different."
+       }
+      },
+      {
+       "t": "Write the conclusion in context.",
+       "work": {
+        "text": "Name both variables and compare the two proportions."
+       }
+      }
+     ],
+     "answer": "There is an association between gender and liking chocolate. In this sample, about 43.2% of females like chocolate, compared with 8% of males.",
+     "seek": 771
     },
     {
-     "label": "Grand total",
-     "tex": "$75+125=200$",
-     "text": "Use only for overall shares, not for group comparisons."
+     "obj": "Read a segmented bar chart for no association",
+     "q": "A segmented bar chart of 200 people shows that about 26% of the males and about 26% of the females like Skittles. Is there an association between gender and liking Skittles?",
+     "steps": [
+      {
+       "t": "Choose the variable whose groups you compare and make each group a bar.",
+       "work": {
+        "text": "Gender is the explanatory variable, so there is one bar for males and one for females."
+       }
+      },
+      {
+       "t": "Read the proportion in the segment you are comparing for each bar.",
+       "work": {
+        "tex": [
+         "$P(\\text{likes}\\mid\\text{male})\\approx0.26$",
+         "$P(\\text{likes}\\mid\\text{female})\\approx0.26$"
+        ],
+        "text": "These are the heights of the \"likes Skittles\" segment, read from the graph."
+       }
+      },
+      {
+       "t": "Compare the segments of the bars.",
+       "work": {
+        "tex": [
+         "$0.26\\approx0.26$"
+        ],
+        "text": "Both segments are the same size, so knowing a person's gender does not change the proportion who like Skittles."
+       }
+      },
+      {
+       "t": "Write the conclusion in context.",
+       "work": {
+        "text": "Say that there is no association and give the matching proportions."
+       }
+      }
+     ],
+     "answer": "There is no evidence of an association between gender and liking Skittles. About 26% of males and about 26% of females like Skittles.",
+     "seek": 900
+    },
+    {
+     "obj": "Compare two distributions and avoid the count trap",
+     "q": "An elementary school sold bottles in the proportions 60% small, 30% medium, and 10% large. A middle school sold three times as many bottles in total, with equal proportions of the three sizes. Is there an association between school and bottle size? Can we say the elementary school sold more small bottles?",
+     "steps": [
+      {
+       "t": "Write the distribution of the variable for each group.",
+       "work": {
+        "tex": [
+         "$\\text{Elementary}=0.60,\\ 0.30,\\ 0.10$",
+         "$\\text{Middle}\\approx0.333,\\ 0.333,\\ 0.333$"
+        ],
+        "text": "The proportions in the bars are the relative frequencies of each size within a school."
+       }
+      },
+      {
+       "t": "Compare the distributions.",
+       "work": {
+        "tex": [
+         "$0.60\\neq0.333$"
+        ],
+        "text": "The proportion of small bottles is much larger at the elementary school, so the distributions differ."
+       }
+      },
+      {
+       "t": "Pick a total for one school to compare counts.",
+       "work": {
+        "tex": [
+         "$\\text{Elementary: }100(0.60)=60$",
+         "$\\text{Middle: }300\\left(\\tfrac{1}{3}\\right)=100$"
+        ],
+        "text": "Suppose the elementary school sold 100 bottles. The middle school then sold 300, and the width of its bar shows that."
+       }
+      },
+      {
+       "t": "Answer both questions in context.",
+       "work": {
+        "text": "A larger proportion is not the same as a larger count."
+       }
+      }
+     ],
+     "answer": "Yes, there is an association between school and bottle size: a larger proportion of elementary school bottles were small. No, we cannot say the elementary school sold more small bottles, because the middle school sold three times as many bottles in total (for example, 100 small bottles there against 60 at the elementary school).",
+     "seek": 1210
     }
    ],
-   "line": "$\\text{Association}\\iff\\text{distributions differ across groups}$",
    "buttons": [
     {
      "label": "Watch the chocolate example (12:51)",
@@ -386,6 +482,10 @@
    {
     "kind": "values",
     "text": "Practice and MCQ numbers are original and computed in code. Chocolate counts (6/75, 54/125) are read from the video narration."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions. The Skittles chart is described by its 26% segments because the video gives no counts. The bottle counts (100 and 300) are the example numbers the video uses."
    }
   ]
  }

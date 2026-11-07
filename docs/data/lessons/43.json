@@ -205,39 +205,132 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Compute the statistic and p-value",
-   "intro": "Work cell by cell, add the contributions, then use the right tail of the chi-square distribution with the correct degrees of freedom.",
-   "steps": [
-    "Expected count for each cell: row total times column total over the grand total.",
-    "Contribution for each cell: $(O-E)^2/E$. Do not include the totals.",
-    "Add the contributions to get $\\chi^2$, and find $df=(r-1)(c-1)$.",
-    "The p-value is the area to the right of $\\chi^2$. Compare to $\\alpha$ and conclude in context."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Expected",
-     "tex": "$\\dfrac{70\\cdot70}{200}=24.5$",
-     "text": "Under 30 and cardio."
-    },
-    {
-     "label": "Contribution",
-     "tex": "$\\dfrac{(30-24.5)^2}{24.5}=1.235$",
-     "text": "One cell."
-    },
-    {
-     "label": "Statistic",
-     "tex": [
-      "$\\chi^2=16.565$",
-      "$df=4$"
+     "obj": "Carry out a chi-square test for independence",
+     "q": "A gym surveyed a random sample of 200 members. Each member reported an age group and a preferred workout type, giving a 3 by 3 table of counts. Row totals: 70, 90, 40. Column totals: 70, 60, 70. The cell for under 30 and cardio is 30. Do the data provide convincing evidence of an association between age group and preferred workout type for all members of the gym? Use $\\alpha=0.05$.",
+     "steps": [
+      {
+       "t": "Expected counts: find the expected count for each cell.",
+       "work": {
+        "tex": [
+         "$E=\\dfrac{70\\cdot70}{200}$",
+         "$=24.5$"
+        ],
+        "text": "The expected count is what the cell would hold if the null hypothesis were true. Repeat for every cell inside the table, not the totals."
+       }
+      },
+      {
+       "t": "Chi-square contributions: find $(O-E)^2/E$ for each cell.",
+       "work": {
+        "tex": [
+         "$\\dfrac{(30-24.5)^2}{24.5}$",
+         "$\\approx1.235$"
+        ],
+        "text": "This is the contribution of the same cell. Repeat for every cell."
+       }
+      },
+      {
+       "t": "Test statistic: add the contributions and find the degrees of freedom.",
+       "work": {
+        "tex": [
+         "$\\chi^2\\approx16.565$",
+         "$df=(3-1)(3-1)$",
+         "$=4$"
+        ],
+        "text": "The statistic adds nine contributions, one for each cell inside the table."
+       }
+      },
+      {
+       "t": "p-value: find the area to the right of the statistic.",
+       "work": {
+        "tex": [
+         "$P(\\chi^2>16.565)$",
+         "$\\approx0.0023$"
+        ],
+        "text": "A chi-square test uses only the right tail of the distribution with this many degrees of freedom."
+       }
+      },
+      {
+       "t": "Conclusion: compare the p-value with $\\alpha$ and answer in context.",
+       "work": {
+        "tex": [
+         "$0.0023<0.05$"
+        ],
+        "text": "The p-value is less than $\\alpha$, so we reject $H_0$."
+       }
+      }
      ],
-     "text": "Gym members example (original counts). $df=(3-1)(3-1)$."
+     "answer": "The p-value of 0.0023 is less than 0.05, so we reject $H_0$. There is convincing evidence of an association between age group and preferred workout type for all members of the gym.",
+     "formula": [
+      "$\\chi^2=\\sum\\dfrac{(O-E)^2}{E}$",
+      "$df=(\\text{rows}-1)(\\text{columns}-1)$"
+     ],
+     "seek": 1126
     },
     {
-     "label": "p-value",
-     "tex": "$P(\\chi^2>16.565)=0.0023$",
-     "text": "Right tail only."
+     "obj": "Carry out a chi-square test for homogeneity",
+     "q": "Random samples of 90 pet owners from City A, 80 from City B, and 80 from City C were asked whether they own a cat, a dog, or another pet. Row totals: 90, 80, 80. Column totals: 75, 95, 80. City C has 25 cat owners. Do the data provide convincing evidence that the distribution of pet type is different across the three cities? Use $\\alpha=0.05$.",
+     "formula": [
+      "$\\chi^2=\\sum\\dfrac{(O-E)^2}{E}$",
+      "$df=(\\text{rows}-1)(\\text{columns}-1)$"
+     ],
+     "steps": [
+      {
+       "t": "Expected counts: find the expected count for each cell.",
+       "work": {
+        "tex": [
+         "$E=\\dfrac{80\\cdot75}{250}$",
+         "$=24.0$"
+        ],
+        "text": "The expected count is what the cell would hold if the null hypothesis were true. Repeat for every cell inside the table, not the totals."
+       }
+      },
+      {
+       "t": "Chi-square contributions: find $(O-E)^2/E$ for each cell.",
+       "work": {
+        "tex": [
+         "$\\dfrac{(25-24.0)^2}{24.0}$",
+         "$\\approx0.042$"
+        ],
+        "text": "This is the contribution of the same cell. Repeat for every cell."
+       }
+      },
+      {
+       "t": "Test statistic: add the contributions and find the degrees of freedom.",
+       "work": {
+        "tex": [
+         "$\\chi^2\\approx24.872$",
+         "$df=(3-1)(3-1)$",
+         "$=4$"
+        ],
+        "text": "The statistic adds nine contributions, one for each cell inside the table."
+       }
+      },
+      {
+       "t": "p-value: find the area to the right of the statistic.",
+       "work": {
+        "tex": [
+         "$P(\\chi^2>24.872)$",
+         "$\\approx0.00005$"
+        ],
+        "text": "A chi-square test uses only the right tail of the distribution with this many degrees of freedom."
+       }
+      },
+      {
+       "t": "Conclusion: compare the p-value with $\\alpha$ and answer in context.",
+       "work": {
+        "tex": [
+         "$0.00005<0.05$"
+        ],
+        "text": "The p-value is less than $\\alpha$, so we reject $H_0$."
+       }
+      }
+     ],
+     "answer": "The p-value of 0.00005 is less than 0.05, so we reject $H_0$. There is convincing evidence that the distribution of pet type is different for at least one of the three cities for all pet owners.",
+     "seek": 1771
     }
    ],
-   "line": "$\\chi^2=\\sum\\dfrac{(O-E)^2}{E}\\qquad df=(r-1)(c-1)$",
    "buttons": [
     {
      "label": "Watch the formulas (6:43)",
@@ -423,6 +516,10 @@
    {
     "kind": "values",
     "text": "Original gym table: chi-square 16.565, df 4, p 0.0023. Commute table: chi-square 4.883, df 2, p 0.0870."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as two worked questions. The video does not read out the gym or pet tables in full, so the observed counts are illustrative; the questions give the totals and one cell, and the statistics are computed in code from the full tables (gym 16.565, pets 24.872). The video reports 15.223 for its gym table."
    }
   ]
  }

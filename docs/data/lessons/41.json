@@ -216,42 +216,150 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Carry out a two-sample z test",
-   "intro": "Set up with PHANTOM, then use the combined proportion for the conditions and the standard error.",
-   "steps": [
-    "Parameter and Name: \"A two-sample $z$ test for $p_1-p_2$.\" Define $p_1$ and $p_2$.",
-    "Hypotheses: $H_0: p_1=p_2$ against $H_a$ in the direction asked.",
-    "Assumptions: random sampling or random assignment, 10% for sampling only, and large counts using $\\hat p_c$.",
-    "Test statistic and p-value, then compare the p-value to $\\alpha$ and conclude in context."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Combined",
-     "tex": [
-      "$\\hat p_c=\\dfrac{96+88}{210+240}$",
-      "$=0.409$"
+     "obj": "Carry out a two-sided two-sample z test",
+     "q": "96 of 210 randomly selected younger customers and 88 of 240 randomly selected older customers prefer brand A. Do the data provide convincing evidence of a difference between the proportion of younger customers and the proportion of older customers who prefer brand A? Use $\\alpha=0.05$.",
+     "formula": [
+      "$\\hat p_c=\\dfrac{x_1+x_2}{n_1+n_2}$",
+      "$z=\\dfrac{\\hat p_1-\\hat p_2}{\\sqrt{\\hat p_c(1-\\hat p_c)\\left(\\frac{1}{n_1}+\\frac{1}{n_2}\\right)}}$"
      ],
-     "text": "Brand A example."
-    },
-    {
-     "label": "Standard error",
-     "tex": "$SE\\approx0.0465$",
-     "text": "Uses $\\hat p_c$."
-    },
-    {
-     "label": "Test statistic",
-     "tex": [
-      "$z=0.0905/0.0465$",
-      "$=1.948$"
+     "steps": [
+      {
+       "t": "Parameter and Name: name the test and define the parameters.",
+       "work": {
+        "text": "This is a two-sample $z$ test for $p_Y-p_O$, where $p_Y$ is the proportion of all younger customers who prefer brand A and $p_O$ is the proportion of all older customers who prefer brand A."
+       }
+      },
+      {
+       "t": "Hypotheses: write $H_0$ and $H_a$ in the direction asked.",
+       "work": {
+        "tex": [
+         "$H_0:p_Y=p_O$",
+         "$H_a:p_Y\\neq p_O$"
+        ],
+        "text": "The question asks about a difference, so the alternative is two-sided."
+       }
+      },
+      {
+       "t": "Assumptions: check the samples, the 10% condition, and the counts using $\\hat p_c$.",
+       "work": {
+        "tex": [
+         "$\\hat p_c=\\dfrac{184}{450}$",
+         "$\\approx0.409$",
+         "$210(0.409)\\approx85.9$",
+         "$210(0.591)\\approx124.1$",
+         "$240(0.409)\\approx98.1$",
+         "$240(0.591)\\approx141.9$"
+        ],
+        "text": "Both samples are random, and each is less than 10% of its population. The four expected counts are all at least 10, using the combined proportion."
+       }
+      },
+      {
+       "t": "Test statistic: divide the difference in sample proportions by the standard error.",
+       "work": {
+        "tex": [
+         "$z=\\dfrac{0.09048}{0.04645}$",
+         "$\\approx1.948$"
+        ],
+        "text": "The difference is younger minus older, and the standard error uses $\\hat p_c$."
+       }
+      },
+      {
+       "t": "p-value: find the area beyond the test statistic and double it.",
+       "work": {
+        "tex": [
+         "$\\text{p-value}=2P(Z>1.948)$",
+         "$\\approx0.0515$"
+        ],
+        "text": "The area is doubled because the test is two-sided."
+       }
+      },
+      {
+       "t": "Conclusion: compare the p-value with $\\alpha$ and answer in context.",
+       "work": {
+        "tex": [
+         "$0.0515>0.05$"
+        ],
+        "text": "The p-value is greater than $\\alpha$, so we fail to reject $H_0$."
+       }
+      }
      ],
-     "text": "Younger minus older."
+     "answer": "The p-value of 0.0515 is greater than 0.05, so we fail to reject $H_0$. There is not convincing evidence of a difference between the proportion of younger customers and the proportion of older customers who prefer brand A.",
+     "seek": 1680
     },
     {
-     "label": "Two-sided p-value",
-     "tex": "$2P(Z>1.948)=0.0515$",
-     "text": "Greater than 0.05."
+     "obj": "Carry out a one-sided two-sample z test for an experiment",
+     "q": "A professor randomly assigned 350 students to two groups of 175. In the group that got reminder emails, 146 students turned in their homework on time. In the group that did not, 126 did. Do the data provide convincing evidence that reminder emails increase the proportion of students who turn in homework on time? Use $\\alpha=0.05$.",
+     "formula": [
+      "$\\hat p_c=\\dfrac{x_1+x_2}{n_1+n_2}$",
+      "$z=\\dfrac{\\hat p_1-\\hat p_2}{\\sqrt{\\hat p_c(1-\\hat p_c)\\left(\\frac{1}{n_1}+\\frac{1}{n_2}\\right)}}$"
+     ],
+     "steps": [
+      {
+       "t": "Parameter and Name: name the test and define the parameters.",
+       "work": {
+        "text": "This is a two-sample $z$ test for $p_E-p_N$, where $p_E$ is the proportion of students like these who would turn in homework on time with reminder emails and $p_N$ is the proportion without them."
+       }
+      },
+      {
+       "t": "Hypotheses: write $H_0$ and $H_a$ in the direction asked.",
+       "work": {
+        "tex": [
+         "$H_0:p_E=p_N$",
+         "$H_a:p_E>p_N$"
+        ],
+        "text": "The professor wants evidence that emails increase the proportion, so the alternative is one-sided."
+       }
+      },
+      {
+       "t": "Assumptions: check random assignment and the counts using $\\hat p_c$.",
+       "work": {
+        "tex": [
+         "$\\hat p_c=\\dfrac{272}{350}$",
+         "$\\approx0.777$",
+         "$175(0.777)\\approx136.0$",
+         "$175(0.223)\\approx39.0$",
+         "$175(0.777)\\approx136.0$",
+         "$175(0.223)\\approx39.0$"
+        ],
+        "text": "The students were randomly assigned, so the 10% condition is not checked. The four expected counts are all at least 10, using the combined proportion."
+       }
+      },
+      {
+       "t": "Test statistic: divide the difference in sample proportions by the standard error.",
+       "work": {
+        "tex": [
+         "$z=\\dfrac{0.11429}{0.04449}$",
+         "$\\approx2.569$"
+        ],
+        "text": "The difference is email group minus no-email group, matching the order in $H_a$."
+       }
+      },
+      {
+       "t": "p-value: find the area beyond the test statistic.",
+       "work": {
+        "tex": [
+         "$\\text{p-value}=P(Z>2.569)$",
+         "$\\approx0.0051$"
+        ],
+        "text": "Only the upper tail counts because the test is one-sided."
+       }
+      },
+      {
+       "t": "Conclusion: compare the p-value with $\\alpha$ and answer in context.",
+       "work": {
+        "tex": [
+         "$0.0051<0.05$"
+        ],
+        "text": "The p-value is less than $\\alpha$, so we reject $H_0$."
+       }
+      }
+     ],
+     "answer": "The p-value of 0.0051 is less than 0.05, so we reject $H_0$. There is convincing evidence that the proportion of students like these who turn in homework on time is greater with reminder emails than without them.",
+     "seek": 2415
     }
    ],
-   "line": "$z=\\dfrac{\\hat p_1-\\hat p_2}{\\sqrt{\\hat p_c(1-\\hat p_c)\\left(\\frac{1}{n_1}+\\frac{1}{n_2}\\right)}}$",
    "buttons": [
     {
      "label": "Watch the combined proportion (16:21)",
@@ -434,6 +542,14 @@
    {
     "kind": "calculator",
     "text": "The video shows Desmos for the z statistic and p-value. No calculator section is included by request."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as two worked questions. Q2 is the video's emails experiment, so the walking-app question stays in the free-response section. Rounded values use an approximately-equal sign. The z-statistic is shown from the unrounded difference and standard error (1.948 for brand A, 2.569 for emails); the video reports 1.935 and 2.562."
+   },
+   {
+    "kind": "values",
+    "text": "Email group counts (146 of 175 and 126 of 175) are reconstructed from the video's 83.4%, 72% and 272 total successes."
    }
   ]
  }

@@ -191,48 +191,176 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Use a tree diagram",
-   "intro": "Start with the first split, add the conditional probabilities on each second branch, multiply along a path for a joint probability, and add paths for a total.",
-   "steps": [
-    "Draw the first split and label each branch with its probability.",
-    "On each branch, draw the second split with conditional probabilities.",
-    "Multiply along a path for a joint probability with the general multiplication rule.",
-    "Add the paths that match the event to get its total, then divide to reverse the condition."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Defective",
-     "tex": [
-      "$0.6(0.04)=0.024$",
-      "$0.4(0.10)=0.040$"
+     "obj": "Use a tree diagram to find a total and reverse the condition",
+     "q": "60% of light bulbs come from machine A and 40% from machine B. 4% of machine A bulbs are defective, and 10% of machine B bulbs are defective. Find the probability that a randomly selected bulb is defective. Given that a bulb is defective, find the probability that it came from machine B.",
+     "formula": [
+      "$P(A\\cap B)=P(A)\\,P(B\\mid A)$",
+      "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}$"
      ],
-     "text": "Add the paths: 0.064."
+     "steps": [
+      {
+       "t": "Draw the first split and label each branch with its probability.",
+       "work": {
+        "tex": [
+         "$P(A)=0.6$",
+         "$P(B)=0.4$"
+        ],
+        "text": "Each bulb comes from exactly one machine."
+       }
+      },
+      {
+       "t": "Add the conditional probability on each second branch.",
+       "work": {
+        "tex": [
+         "$P(D\\mid A)=0.04$",
+         "$P(D\\mid B)=0.10$"
+        ],
+        "text": "These are conditional probabilities because each depends on the machine."
+       }
+      },
+      {
+       "t": "Multiply along each path that ends in the event.",
+       "work": {
+        "tex": [
+         "$P(A\\cap D)=0.6(0.04)$",
+         "$=0.024$",
+         "$P(B\\cap D)=0.4(0.10)$",
+         "$=0.040$"
+        ],
+        "text": "The end of each path is a joint probability, found with the general multiplication rule."
+       }
+      },
+      {
+       "t": "Add the paths to get the total probability.",
+       "work": {
+        "tex": [
+         "$P(D)=0.024+0.040$",
+         "$=0.064$"
+        ],
+        "text": "Adding the two conditional probabilities 0.04 and 0.10 would be wrong. Each is weighted by its branch."
+       }
+      },
+      {
+       "t": "To reverse the condition, divide the joint probability by the total.",
+       "work": {
+        "tex": [
+         "$P(B\\mid D)=\\dfrac{0.040}{0.064}$",
+         "$=0.625$"
+        ],
+        "text": "The condition is now \"defective\", so the total probability of defective is the denominator."
+       }
+      }
+     ],
+     "answer": "The probability that a randomly selected bulb is defective is 0.064. Given that a bulb is defective, the probability that it came from machine B is 0.625.",
+     "seek": 1578
     },
     {
-     "label": "Reverse",
-     "tex": [
-      "$P(B\\mid D)=0.040/0.064$",
-      "$=0.625$"
+     "obj": "Reverse a conditional probability for a disease test",
+     "q": "1% of people have a disease. A person with the disease tests positive 95% of the time, and a person without it tests positive 8% of the time. Find the probability that a randomly selected person tests positive. Given a positive test, find the probability that the person has the disease.",
+     "formula": [
+      "$P(A\\cap B)=P(A)\\,P(B\\mid A)$",
+      "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}$"
      ],
-     "text": "Joint over total."
+     "steps": [
+      {
+       "t": "Draw the first split and label each branch with its probability.",
+       "work": {
+        "tex": [
+         "$P(D)=0.01$",
+         "$P(\\text{no }D)=0.99$"
+        ],
+        "text": "The complement rule gives 0.99 for a person without the disease."
+       }
+      },
+      {
+       "t": "Add the conditional probability of a positive test on each branch.",
+       "work": {
+        "tex": [
+         "$P(+\\mid D)=0.95$",
+         "$P(+\\mid\\text{no }D)=0.08$"
+        ],
+        "text": "These are the test results given the disease status."
+       }
+      },
+      {
+       "t": "Multiply along each path that ends in a positive test.",
+       "work": {
+        "tex": [
+         "$P(D\\cap+)=0.01(0.95)$",
+         "$=0.0095$",
+         "$P(\\text{no }D\\cap+)=0.99(0.08)$",
+         "$=0.0792$"
+        ],
+        "text": "One path is a true positive and the other is a false positive."
+       }
+      },
+      {
+       "t": "Add the paths to get the total probability of a positive test.",
+       "work": {
+        "tex": [
+         "$P(+)=0.0095+0.0792$",
+         "$=0.0887$"
+        ],
+        "text": "Both kinds of positive result count."
+       }
+      },
+      {
+       "t": "To reverse the condition, divide the joint probability by the total.",
+       "work": {
+        "tex": [
+         "$P(D\\mid+)=\\dfrac{0.0095}{0.0887}$",
+         "$\\approx0.107$"
+        ],
+        "text": "The condition is now \"positive test\", so the total probability of a positive test is the denominator."
+       }
+      }
+     ],
+     "answer": "The probability that a randomly selected person tests positive is 0.0887. Given a positive test, the probability that the person has the disease is about 0.107, because few people have the disease and most positive results come from people who do not.",
+     "seek": 2001
     },
     {
-     "label": "Disease",
-     "tex": [
-      "$0.01(0.95)=0.0095$",
-      "$0.99(0.08)=0.0792$"
+     "obj": "Use the general multiplication rule without replacement",
+     "q": "A jar holds 20 marbles, and 4 of them are green. Two marbles are drawn without replacement. Find the probability that both are green.",
+     "formula": [
+      "$P(A\\cap B)=P(A)\\,P(B\\mid A)$"
      ],
-     "text": "Total positive: 0.0887."
-    },
-    {
-     "label": "Positive",
-     "tex": [
-      "$P=0.0095/0.0887$",
-      "$=0.107$"
+     "steps": [
+      {
+       "t": "Find the probability of the first event.",
+       "work": {
+        "tex": [
+         "$P(G_1)=\\dfrac{4}{20}$",
+         "$=0.200$"
+        ],
+        "text": "Four of the 20 marbles are green."
+       }
+      },
+      {
+       "t": "Find the conditional probability of the second event, given the first.",
+       "work": {
+        "tex": [
+         "$P(G_2\\mid G_1)=\\dfrac{3}{19}$"
+        ],
+        "text": "After one green marble is removed, 3 green marbles remain among 19 marbles."
+       }
+      },
+      {
+       "t": "Multiply with the general multiplication rule.",
+       "work": {
+        "tex": [
+         "$P(G_1\\cap G_2)=\\dfrac{4}{20}\\cdot\\dfrac{3}{19}$",
+         "$\\approx0.0316$"
+        ],
+        "text": "The second probability depends on the first draw, so it is not 4/20 again."
+       }
+      }
      ],
-     "text": "$P(\\text{disease}\\mid\\text{positive})$. Few have the disease, so most positives are false."
+     "answer": "The probability that both marbles drawn are green is about 0.0316.",
+     "seek": 1211
     }
    ],
-   "line": "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}\\qquad P(A\\cap B)=P(A)\\,P(B\\mid A)$",
    "buttons": [
     {
      "label": "Watch tree diagrams (26:18)",
@@ -262,14 +390,14 @@
      "kind": "Common trap",
      "title": "Reversing the condition",
      "weak": "$P(\\text{positive}\\mid\\text{disease})=0.95$, so a positive test means a 95% chance of disease.",
-     "better": "$P(\\text{disease}\\mid\\text{positive})=0.0095/0.0887\\approx0.107$. The two conditional probabilities are different.",
+     "better": "$P(\\text{disease}\\mid\\text{positive})\\approx0.107$, which is $0.0095$ divided by $0.0887$. The two conditional probabilities are different.",
      "seek": 2246
     },
     {
      "kind": "Exam wording",
      "title": "Show the probability statement",
      "weak": "0.625",
-     "better": "$P(\\text{machine B}\\mid\\text{defective})=\\dfrac{0.4(0.10)}{0.064}=0.625$. About 62.5% of defective bulbs come from machine B.",
+     "better": "$P(\\text{B}\\mid\\text{defective})=0.625$, found as $0.040/0.064$. About 62.5% of defective bulbs come from machine B.",
      "seek": 1940
     },
     {
@@ -330,7 +458,7 @@
      "seek": 1211
     },
     {
-     "stem": "On a team, 60% of players are guards and 40% are forwards. A guard makes 50% of free throws; a forward makes 70%. What is $P(\\text{a random player makes a free throw})$?",
+     "stem": "On a team, 60% of players are guards and 40% are forwards. A guard makes 50% of free throws; a forward makes 70%. What is the probability that a randomly chosen player makes a free throw?",
      "opts": [
       "1.20",
       "0.60",
@@ -405,6 +533,10 @@
    {
     "kind": "values",
     "text": "All tree and table values computed in code. Original FRQ: P(purchase)=0.107, P(mobile|purchase)=0.411."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions. All tree and product values computed in code. The marble question uses the jar from the video (20 marbles, 4 green)."
    }
   ]
  }

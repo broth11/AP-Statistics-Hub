@@ -191,39 +191,156 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Justify an association claim",
-   "intro": "Start with a baseline, then add a condition and see whether the proportion changes. If it does, the variables are associated.",
-   "steps": [
-    "Find the marginal proportion for the outcome. This is the baseline.",
-    "Find the outcome proportion within each group, with the group total as the denominator.",
-    "Compare each conditional proportion to the baseline and to each other.",
-    "Write the conclusion in context: say there is an association, quote the numbers, and describe the direction."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Baseline",
-     "tex": [
-      "$P(\\text{tardy})=64/188$",
-      "$=0.340$"
+     "obj": "Justify an association claim with conditional proportions",
+     "q": "A survey of 188 students recorded how they get to school and whether they were tardy. By bus: 35 students, 9 tardy. By parent: 29 students, 8 tardy. Driving themselves: 90 students, 41 tardy. Walking: 34 students, 6 tardy. Is there an association between how a student gets to school and being tardy?",
+     "formula": [
+      "$P(A\\mid B)=\\dfrac{\\text{cell count}}{\\text{total for }B}$"
      ],
-     "text": "All students."
+     "steps": [
+      {
+       "t": "Find the baseline: the marginal proportion for the outcome.",
+       "work": {
+        "tex": [
+         "$P(\\text{tardy})=\\dfrac{64}{188}$",
+         "$\\approx0.340$"
+        ],
+        "text": "Of all 188 students, 64 were tardy. This is the proportion with no condition added."
+       }
+      },
+      {
+       "t": "Add a condition and divide by the size of that group.",
+       "work": {
+        "tex": [
+         "$P(\\text{tardy}\\mid\\text{bus})=\\dfrac{9}{35}$",
+         "$\\approx0.257$"
+        ],
+        "text": "Only the 35 bus riders count, so 35 is the denominator."
+       }
+      },
+      {
+       "t": "Do the same for another group.",
+       "work": {
+        "tex": [
+         "$P(\\text{tardy}\\mid\\text{self})=\\dfrac{41}{90}$",
+         "$\\approx0.456$"
+        ],
+        "text": "Of the 90 students who drive themselves, 41 were tardy."
+       }
+      },
+      {
+       "t": "Compare each conditional proportion with the baseline.",
+       "work": {
+        "tex": [
+         "$0.257<0.340<0.456$"
+        ],
+        "text": "Adding a condition changed the proportion, which is what association means."
+       }
+      },
+      {
+       "t": "Write the conclusion in context.",
+       "work": {
+        "text": "Answer the question, give the baseline, then the conditional proportions and their direction."
+       }
+      }
+     ],
+     "answer": "There is an association between how students get to school and being tardy. Overall, about 34.0% of the students were tardy, but only about 25.7% of bus riders were tardy, while about 45.6% of students who drive themselves were tardy.",
+     "seek": 1018
     },
     {
-     "label": "Bus riders",
-     "tex": "$P(\\text{tardy}\\mid\\text{bus})=0.257$",
-     "text": "Lower than baseline."
+     "obj": "Find an expected count when there is no association",
+     "q": "In the same survey, about 34.0% of all 188 students were tardy. If getting to school and being tardy were not associated, about how many of the 90 students who drive themselves would be tardy?",
+     "steps": [
+      {
+       "t": "Find the baseline proportion for the outcome.",
+       "work": {
+        "tex": [
+         "$P(\\text{tardy})=\\dfrac{64}{188}$",
+         "$\\approx0.340$"
+        ],
+        "text": "With no association, every group would have this same proportion tardy."
+       }
+      },
+      {
+       "t": "Apply the baseline proportion to the size of the group.",
+       "work": {
+        "tex": [
+         "$90(0.340)\\approx30.6$"
+        ],
+        "text": "This is 34.0% of the 90 students who drive themselves."
+       }
+      },
+      {
+       "t": "Round to a whole number of students.",
+       "work": {
+        "tex": [
+         "$\\approx31$"
+        ],
+        "text": "A count of students must be a whole number."
+       }
+      }
+     ],
+     "answer": "If there were no association, about 31 of the 90 students who drive themselves would be tardy. The observed count of 41 is higher, which agrees with an association.",
+     "seek": 1307
     },
     {
-     "label": "Self-drivers",
-     "tex": "$P(\\text{tardy}\\mid\\text{self})=0.456$",
-     "text": "Higher than baseline."
-    },
-    {
-     "label": "No association",
-     "tex": "$90\\cdot0.340\\approx31$",
-     "text": "Expected tardy self-drivers if the rate stayed the same."
+     "obj": "Compare conditional proportions in a second table",
+     "q": "Of 162 adults, 108 wear a fitness tracker. Of the 84 adults with high fitness, 51 wear one, and of the 27 adults with low fitness, 21 wear one. Is there an association between wearing a fitness tracker and fitness level?",
+     "formula": [
+      "$P(A\\mid B)=\\dfrac{\\text{cell count}}{\\text{total for }B}$"
+     ],
+     "steps": [
+      {
+       "t": "Find the baseline: the marginal proportion for the outcome.",
+       "work": {
+        "tex": [
+         "$P(\\text{tracker})=\\dfrac{108}{162}$",
+         "$\\approx0.667$"
+        ],
+        "text": "Of all 162 adults, 108 wear a tracker."
+       }
+      },
+      {
+       "t": "Add the first condition and divide by the size of that group.",
+       "work": {
+        "tex": [
+         "$P(\\text{tracker}\\mid\\text{high})=\\dfrac{51}{84}$",
+         "$\\approx0.607$"
+        ],
+        "text": "The condition sets the denominator: 84 adults have high fitness."
+       }
+      },
+      {
+       "t": "Add the second condition and divide by the size of that group.",
+       "work": {
+        "tex": [
+         "$P(\\text{tracker}\\mid\\text{low})=\\dfrac{21}{27}$",
+         "$\\approx0.778$"
+        ],
+        "text": "There are 27 adults with low fitness."
+       }
+      },
+      {
+       "t": "Compare with the baseline.",
+       "work": {
+        "tex": [
+         "$0.607<0.667<0.778$"
+        ],
+        "text": "The proportion changes with fitness level."
+       }
+      },
+      {
+       "t": "Write the conclusion in context.",
+       "work": {
+        "text": "Quote the baseline and both conditional proportions."
+       }
+      }
+     ],
+     "answer": "There is an association between wearing a fitness tracker and fitness level. About 66.7% of all adults wear a tracker, but only about 60.7% of adults with high fitness do, compared with about 77.8% of adults with low fitness.",
+     "seek": 1840
     }
    ],
-   "line": "$P(A\\mid B)=\\dfrac{\\text{cell}}{\\text{total for }B}$",
    "buttons": [
     {
      "label": "Watch the association argument (16:58)",
@@ -400,6 +517,10 @@
    {
     "kind": "values",
     "text": "MCQ and FRQ tables are original. Proportions are computed in code."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions. The transport table cell counts used (bus 9 of 35, parent 8 of 29, self 41 of 90, walk 6 of 34) are checked against the totals 188, 64 and 124."
    }
   ]
  }

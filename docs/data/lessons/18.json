@@ -168,42 +168,149 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Find the overlap and decide",
-   "intro": "Put the totals in a two-way table, solve for the \"both\" cell, and check whether it is 0.",
-   "steps": [
-    "Draw a two-way table with $A$, not $A$, $B$ and not $B$.",
-    "Enter the totals and the \"neither\" count. Complete the rest with row and column sums.",
-    "Read the \"both\" cell. It is the joint probability numerator.",
-    "If the \"both\" cell is 0, the events are mutually exclusive. Otherwise they are not."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Both clubs",
-     "tex": "$30+45+15-85=5$",
-     "text": "Students in both clubs."
-    },
-    {
-     "label": "Joint",
-     "tex": [
-      "$P(R\\cap D)=5/85$",
-      "$=0.059$"
+     "obj": "Decide from a two-way table whether two clubs overlap",
+     "q": "A teacher has 85 students. Of these, 30 are in robotics club, 45 are in drama club, and 15 are in neither club. Are being in robotics club and being in drama club mutually exclusive?",
+     "formula": [
+      "$A,B\\text{ mutually exclusive}\\iff P(A\\cap B)=0$"
      ],
-     "text": "Not zero."
-    },
-    {
-     "label": "Conclusion",
-     "tex": "$P(R\\cap D)\\ne0$",
-     "text": "Not mutually exclusive."
-    },
-    {
-     "label": "Joint from coffee",
-     "tex": [
-      "$P(F\\cap H)=28/150$",
-      "$=0.187$"
+     "steps": [
+      {
+       "t": "Put the totals and the \"neither\" count into a two-way table.",
+       "work": {
+        "text": "The row total for robotics is 30, the column total for drama is 45, the \"neither\" cell is 15, and the table total is 85."
+       }
+      },
+      {
+       "t": "Find how many students are in at least one club.",
+       "work": {
+        "tex": [
+         "$85-15=70$"
+        ],
+        "text": "Everyone who is not in the \"neither\" cell is in robotics, drama, or both."
+       }
+      },
+      {
+       "t": "Find the overlap by adding the two clubs and subtracting the students in at least one.",
+       "work": {
+        "tex": [
+         "$30+45-70=5$"
+        ],
+        "text": "Adding the two club totals counts the students in both clubs twice. The extra count is the overlap."
+       }
+      },
+      {
+       "t": "Write the joint probability.",
+       "work": {
+        "tex": [
+         "$P(R\\cap D)=\\dfrac{5}{85}$",
+         "$\\approx0.059$"
+        ],
+        "text": "The joint probability divides the \"both\" cell by the table total."
+       }
+      },
+      {
+       "t": "Decide: the events are mutually exclusive only if the joint probability is 0.",
+       "work": {
+        "tex": [
+         "$P(R\\cap D)\\neq0$"
+        ],
+        "text": "Five students are in both clubs, so the events can occur at the same time."
+       }
+      }
      ],
-     "text": "Female and hot coffee."
+     "answer": "Robotics club and drama club are not mutually exclusive. Five of the 85 students are in both clubs, so $P(R\\cap D)$ is not 0.",
+     "seek": 223
+    },
+    {
+     "obj": "Decide when students could pick only one option",
+     "q": "60 students each chose to read a book or go to recess, but could not do both. 43 chose recess and 17 chose the book. Are choosing the book and choosing recess mutually exclusive?",
+     "formula": [
+      "$A,B\\text{ mutually exclusive}\\iff P(A\\cap B)=0$"
+     ],
+     "steps": [
+      {
+       "t": "Put the totals into a two-way table.",
+       "work": {
+        "text": "The recess total is 43, the book total is 17, and the table total is 60."
+       }
+      },
+      {
+       "t": "Use the rule of the situation to fill the \"both\" cell.",
+       "work": {
+        "tex": [
+         "$\\text{both}=0$"
+        ],
+        "text": "Each student could choose only one option, so no student is in both cells."
+       }
+      },
+      {
+       "t": "Write the joint probability.",
+       "work": {
+        "tex": [
+         "$P(\\text{book}\\cap\\text{recess})=\\dfrac{0}{60}$",
+         "$=0$"
+        ],
+        "text": "The joint probability divides the \"both\" cell by the table total."
+       }
+      },
+      {
+       "t": "Decide: the events are mutually exclusive only if the joint probability is 0.",
+       "work": {
+        "text": "The joint probability is 0, so the events cannot occur at the same time."
+       }
+      }
+     ],
+     "answer": "Choosing the book and choosing recess are mutually exclusive. No student chose both, so $P(\\text{book}\\cap\\text{recess})=0$.",
+     "seek": 446
+    },
+    {
+     "obj": "Find a joint probability and test a pair of events",
+     "q": "150 customers ordered coffee: 70 were male and 80 were female. 22 of the males ordered iced coffee, and 28 of the females ordered hot coffee. Find the probability that a randomly selected customer is female and ordered hot coffee. Are being female and ordering hot coffee mutually exclusive?",
+     "formula": [
+      "$A,B\\text{ mutually exclusive}\\iff P(A\\cap B)=0$"
+     ],
+     "steps": [
+      {
+       "t": "Find the cell where both events occur.",
+       "work": {
+        "tex": [
+         "$\\text{female and hot}=28$"
+        ],
+        "text": "The cell for female and hot coffee is given: 28 customers."
+       }
+      },
+      {
+       "t": "Divide by the table total.",
+       "work": {
+        "tex": [
+         "$P(F\\cap H)=\\dfrac{28}{150}$",
+         "$\\approx0.187$"
+        ],
+        "text": "A joint probability uses all 150 customers as the denominator."
+       }
+      },
+      {
+       "t": "Decide: the events are mutually exclusive only if the joint probability is 0.",
+       "work": {
+        "tex": [
+         "$P(F\\cap H)\\neq0$"
+        ],
+        "text": "Twenty-eight customers are both female and ordered hot coffee, so the events can happen together."
+       }
+      },
+      {
+       "t": "Name a pair of mutually exclusive events to check your understanding.",
+       "work": {
+        "text": "Male and female cannot both be true of one customer, so those events are mutually exclusive."
+       }
+      }
+     ],
+     "answer": "The probability that a customer is female and ordered hot coffee is about 0.187. Being female and ordering hot coffee are not mutually exclusive, because 28 customers are both.",
+     "seek": 612
     }
    ],
-   "line": "$A,B\\text{ mutually exclusive}\\iff P(A\\cap B)=0$",
    "buttons": [
     {
      "label": "Watch the club table (3:43)",
@@ -379,6 +486,10 @@
    {
     "kind": "wording",
     "text": "The page uses CED notation $P(A\\cap B)$ and the phrase \"can occur at the same time\"."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions. The video gives the club overlap only through its table; the 5 students in both clubs is computed from 30, 45, 15 and 85."
    }
   ]
  }

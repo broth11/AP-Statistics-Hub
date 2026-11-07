@@ -197,42 +197,154 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Describe the model and find a probability",
-   "intro": "Name the statistic with a direction, check the conditions for both samples, then find center, spread and shape. A $z$ score and a normal probability finish the job.",
-   "steps": [
-    "State the difference, for example $\\hat p_A-\\hat p_T$, so you know which sign means which sample.",
-    "Check randomization, the 10% condition for each sample, and large counts for each sample.",
-    "Mean $=p_1-p_2$. Standard deviation from the formula.",
-    "Shape is approximately normal. Standardize: $z=(x-\\mu)/\\sigma$, then find the area."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Mean",
-     "tex": "$0.62-0.55=0.07$",
-     "text": "Netflix example."
-    },
-    {
-     "label": "Spread",
-     "tex": "$\\sigma\\approx0.0532$",
-     "text": "From the formula."
-    },
-    {
-     "label": "z score",
-     "tex": [
-      "$z=\\dfrac{0.10-0.07}{0.0532}$",
-      "$=0.564$"
+     "obj": "Find a probability for a difference in sample proportions",
+     "q": "62% of all adults and 55% of all teens prefer Netflix. A random sample of 200 adults and an independent random sample of 150 teens are taken. Find the probability that the sample proportion for adults exceeds the sample proportion for teens by more than 0.10.",
+     "formula": [
+      "$\\mu_{\\hat p_1-\\hat p_2}=p_1-p_2$",
+      "$\\sigma_{\\hat p_1-\\hat p_2}=\\sqrt{\\dfrac{p_1(1-p_1)}{n_1}+\\dfrac{p_2(1-p_2)}{n_2}}$"
      ],
-     "text": "For a difference of 0.10."
+     "steps": [
+      {
+       "t": "Name the statistic with its direction.",
+       "work": {
+        "tex": [
+         "$\\hat p_A-\\hat p_T$"
+        ],
+        "text": "A positive difference means the adult sample has the larger proportion."
+       }
+      },
+      {
+       "t": "Check randomization, the 10% condition for each sample, and the counts.",
+       "work": {
+        "tex": [
+         "$200(0.62)=124$",
+         "$200(0.38)=76$",
+         "$150(0.55)=82.5$",
+         "$150(0.45)=67.5$"
+        ],
+        "text": "Both samples are random, 200 is less than 10% of all adults, and 150 is less than 10% of all teens. All four counts are at least 10, so the model is approximately normal."
+       }
+      },
+      {
+       "t": "Find the mean of the sampling distribution.",
+       "work": {
+        "tex": [
+         "$\\mu=0.62-0.55$",
+         "$=0.07$"
+        ],
+        "text": "The mean is the true difference in the population proportions."
+       }
+      },
+      {
+       "t": "Find the standard deviation.",
+       "work": {
+        "tex": [
+         "$\\sigma=\\sqrt{\\dfrac{0.62(0.38)}{200}+\\dfrac{0.55(0.45)}{150}}$",
+         "$\\approx0.0532$"
+        ],
+        "text": "The two variances are added, even though the proportions are subtracted."
+       }
+      },
+      {
+       "t": "Standardize the difference you are asked about.",
+       "work": {
+        "tex": [
+         "$z=\\dfrac{0.10-0.07}{0.0532}$",
+         "$\\approx0.564$"
+        ],
+        "text": "A difference of 0.10 is a little more than half a standard deviation above the mean."
+       }
+      },
+      {
+       "t": "Find the area in the direction of the question.",
+       "work": {
+        "tex": [
+         "$P(\\hat p_A-\\hat p_T>0.10)=P(Z>0.564)$",
+         "$\\approx0.286$"
+        ],
+        "text": "The normal model gives 0 for a single value, so \"more than\" and \"at least\" give the same answer."
+       }
+      }
+     ],
+     "answer": "The probability that the adult sample proportion exceeds the teen sample proportion by more than 0.10 is about 0.286.",
+     "seek": 907
     },
     {
-     "label": "Area right",
-     "tex": [
-      "$P(\\hat p_1-\\hat p_2>0.10)$",
-      "$=0.286$"
+     "obj": "Find a probability for a difference that is negative",
+     "q": "78% of all urban residents and 70% of all rural residents are willing to get a new vaccine. A random sample of 250 urban residents and an independent random sample of 300 rural residents are taken. Find the probability that the sample proportion for rural residents is larger than the sample proportion for urban residents.",
+     "formula": [
+      "$\\mu_{\\hat p_1-\\hat p_2}=p_1-p_2$",
+      "$\\sigma_{\\hat p_1-\\hat p_2}=\\sqrt{\\dfrac{p_1(1-p_1)}{n_1}+\\dfrac{p_2(1-p_2)}{n_2}}$"
      ],
-     "text": "About 28.6% of sample differences."
+     "steps": [
+      {
+       "t": "Name the statistic and write the event as a difference.",
+       "work": {
+        "tex": [
+         "$\\hat p_U-\\hat p_R<0$"
+        ],
+        "text": "The rural proportion is larger exactly when urban minus rural is negative."
+       }
+      },
+      {
+       "t": "Check randomization, the 10% condition for each sample, and the counts.",
+       "work": {
+        "tex": [
+         "$250(0.78)=195$",
+         "$250(0.22)=55$",
+         "$300(0.70)=210$",
+         "$300(0.30)=90$"
+        ],
+        "text": "Both samples are random and each is less than 10% of its population. All four counts are at least 10."
+       }
+      },
+      {
+       "t": "Find the mean of the sampling distribution.",
+       "work": {
+        "tex": [
+         "$\\mu=0.78-0.70$",
+         "$=0.08$"
+        ],
+        "text": "Urban residents are expected to be more willing by 8 percentage points."
+       }
+      },
+      {
+       "t": "Find the standard deviation.",
+       "work": {
+        "tex": [
+         "$\\sigma=\\sqrt{\\dfrac{0.78(0.22)}{250}+\\dfrac{0.70(0.30)}{300}}$",
+         "$\\approx0.03723$"
+        ],
+        "text": "Pair each proportion with its own sample size."
+       }
+      },
+      {
+       "t": "Standardize a difference of 0.",
+       "work": {
+        "tex": [
+         "$z=\\dfrac{0-0.08}{0.03723}$",
+         "$\\approx-2.149$"
+        ],
+        "text": "A difference of 0 is about two standard deviations below the mean."
+       }
+      },
+      {
+       "t": "Find the area to the left.",
+       "work": {
+        "tex": [
+         "$P(Z<-2.149)$",
+         "$\\approx0.0158$"
+        ],
+        "text": "Only negative differences count, so the area is on the left."
+       }
+      }
+     ],
+     "answer": "The probability that the rural sample proportion is larger than the urban sample proportion is about 0.016.",
+     "seek": 1759
     }
    ],
-   "line": "$\\mu=p_1-p_2\\qquad\\sigma=\\sqrt{\\dfrac{p_1(1-p_1)}{n_1}+\\dfrac{p_2(1-p_2)}{n_2}}$",
    "buttons": [
     {
      "label": "Watch the model (8:04)",
@@ -414,6 +526,10 @@
    {
     "kind": "calculator",
     "text": "The video uses Desmos for the normal probabilities. No calculator section is included on this page by request."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as two worked questions. The video rounds the vaccine standard deviation to 0.0372 and reports z = -2.151, P = 0.0157; unrounded values 0.03723, -2.149 and 0.0158 are shown."
    }
   ]
  }

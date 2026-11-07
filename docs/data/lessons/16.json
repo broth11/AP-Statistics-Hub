@@ -180,43 +180,161 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Design and run a simulation",
-   "intro": "Every simulation answer on the exam needs the same five parts. Write them in order and use the problem to fill each one.",
-   "steps": [
-    "Assignment: say which numbers represent each outcome, with the proportions matching the probabilities.",
-    "Generation: say how many numbers per trial and whether repeats are allowed.",
-    "Count: say what you count in each trial.",
-    "Success: say what count makes a trial a success.",
-    "Repeat for many trials, then estimate with successes divided by trials."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Coin",
-     "tex": [
-      "$1=\\text{head}$",
-      "$2=\\text{tail}$"
+     "obj": "Design a simulation for five coin tosses",
+     "q": "Design a simulation to estimate the probability that at least three of five tosses of a fair coin are heads.",
+     "formula": [
+      "$\\text{estimate}=\\dfrac{\\text{successful trials}}{\\text{number of trials}}$"
      ],
-     "text": "Five numbers per trial, repeats allowed."
-    },
-    {
-     "label": "Shooter",
-     "tex": "$00\\text{ to }71=\\text{make}$",
-     "text": "72 of 100 numbers give a 72% chance."
-    },
-    {
-     "label": "Estimate",
-     "tex": "$\\hat P=\\dfrac{\\text{successes}}{\\text{trials}}$",
-     "text": "Use many trials, not five."
-    },
-    {
-     "label": "Exact value",
-     "tex": [
-      "$P(\\text{3+ heads})=0.500$",
-      "$P(\\text{8+ makes})\\approx0.438$"
+     "steps": [
+      {
+       "t": "Assign numbers to the outcomes so their proportions match the probabilities.",
+       "work": {
+        "tex": [
+         "$1=\\text{head}$",
+         "$2=\\text{tail}$"
+        ],
+        "text": "Two numbers for two equally likely outcomes. Any two numbers would do."
+       }
+      },
+      {
+       "t": "Say how many numbers to generate per trial and whether repeats are allowed.",
+       "work": {
+        "text": "Generate 5 numbers from 1 to 2 for each trial. Repeats are allowed because each toss is independent of the others."
+       }
+      },
+      {
+       "t": "Say what to count in each trial.",
+       "work": {
+        "text": "Count how many of the 5 numbers are 1s, because a 1 represents a head."
+       }
+      },
+      {
+       "t": "Define a successful trial.",
+       "work": {
+        "tex": [
+         "$\\text{heads}\\geq3$"
+        ],
+        "text": "At least three heads means three, four, or five heads."
+       }
+      },
+      {
+       "t": "Repeat for many trials, then estimate the probability.",
+       "work": {
+        "tex": [
+         "$\\text{estimate}=\\dfrac{\\text{successful trials}}{\\text{number of trials}}$"
+        ],
+        "text": "Many trials are needed because the true probability only shows itself in the long run. A handful of trials, such as 2 successes in 7, is not enough."
+       }
+      }
      ],
-     "text": "Computed in code to compare with simulated estimates."
+     "answer": "Let 1 be a head and 2 a tail. Generate 5 numbers from 1 to 2 with repeats allowed. Count the 1s. A trial is a success if there are at least three 1s. Repeat for many trials and divide the number of successes by the number of trials to estimate the probability.",
+     "seek": 364
+    },
+    {
+     "obj": "Design a simulation without repeats for eight stores",
+     "q": "A company has 800 stores: 500 in the US and 300 in Europe. Eight stores are chosen at random. Design a simulation to estimate the probability that all eight are in the US.",
+     "formula": [
+      "$\\text{estimate}=\\dfrac{\\text{successful trials}}{\\text{number of trials}}$"
+     ],
+     "steps": [
+      {
+       "t": "Assign numbers to the outcomes so their proportions match the probabilities.",
+       "work": {
+        "tex": [
+         "$001\\text{ to }500=\\text{US}$",
+         "$501\\text{ to }800=\\text{Europe}$"
+        ],
+        "text": "Each store gets its own number. 500 of the 800 numbers represent US stores."
+       }
+      },
+      {
+       "t": "Say how many numbers to generate per trial and whether repeats are allowed.",
+       "work": {
+        "text": "Generate 8 different numbers from 1 to 800 for each trial. Repeats are not allowed because a store cannot be chosen twice."
+       }
+      },
+      {
+       "t": "Say what to count in each trial.",
+       "work": {
+        "text": "Count how many of the 8 numbers are from 001 to 500."
+       }
+      },
+      {
+       "t": "Define a successful trial.",
+       "work": {
+        "tex": [
+         "$\\text{US stores}=8$"
+        ],
+        "text": "All eight stores must be in the US, so all eight numbers must be 500 or less."
+       }
+      },
+      {
+       "t": "Repeat for many trials, then estimate the probability.",
+       "work": {
+        "tex": [
+         "$\\text{estimate}=\\dfrac{\\text{successful trials}}{\\text{number of trials}}$"
+        ],
+        "text": "Ten trials with no successes would not show that the probability is 0. Run many more trials."
+       }
+      }
+     ],
+     "answer": "Let 001 to 500 be the US stores and 501 to 800 the European stores. Generate 8 different numbers from 1 to 800 with no repeats. Count the numbers from 001 to 500. A trial is a success if all 8 are from 001 to 500. Repeat for many trials and divide the number of successes by the number of trials.",
+     "seek": 866
+    },
+    {
+     "obj": "Design a simulation for a percentage-based probability",
+     "q": "McKenzie makes 72% of her free throws. Design a simulation to estimate the probability that she makes at least 8 of 10 shots.",
+     "formula": [
+      "$\\text{estimate}=\\dfrac{\\text{successful trials}}{\\text{number of trials}}$"
+     ],
+     "steps": [
+      {
+       "t": "Assign numbers to the outcomes so their proportions match the probabilities.",
+       "work": {
+        "tex": [
+         "$00\\text{ to }71=\\text{make}$",
+         "$72\\text{ to }99=\\text{miss}$"
+        ],
+        "text": "72 of the 100 two-digit numbers give a 72% chance of a make. The ranges must not overlap."
+       }
+      },
+      {
+       "t": "Say how many numbers to generate per trial and whether repeats are allowed.",
+       "work": {
+        "text": "Generate 10 numbers from 00 to 99 for each trial. Repeats are allowed because each shot is independent."
+       }
+      },
+      {
+       "t": "Say what to count in each trial.",
+       "work": {
+        "text": "Count how many of the 10 numbers are from 00 to 71."
+       }
+      },
+      {
+       "t": "Define a successful trial.",
+       "work": {
+        "tex": [
+         "$\\text{makes}\\geq8$"
+        ],
+        "text": "At least 8 makes means eight, nine, or ten."
+       }
+      },
+      {
+       "t": "Repeat for many trials, then estimate the probability.",
+       "work": {
+        "tex": [
+         "$\\text{estimate}=\\dfrac{\\text{successful trials}}{\\text{number of trials}}$"
+        ],
+        "text": "Five trials with one success is only 20%. That is far too few to estimate the probability well."
+       }
+      }
+     ],
+     "answer": "Let 00 to 71 be a make and 72 to 99 a miss. Generate 10 numbers from 00 to 99 with repeats allowed. Count the numbers from 00 to 71. A trial is a success if there are at least 8. Repeat for many trials and divide the number of successes by the number of trials.",
+     "seek": 1186
     }
    ],
-   "line": "$\\text{Estimate}=\\dfrac{\\text{number of successful trials}}{\\text{number of trials}}$",
    "buttons": [
     {
      "label": "Watch the five steps (7:35)",
@@ -393,6 +511,10 @@
    {
     "kind": "values",
     "text": "Exact values computed in code: P(3+ heads of 5)=0.500; P(8 US stores of 8)=0.0228; P(8+ makes of 10 at 0.72)=0.438; P(5+ of 6 at 0.65)=0.319."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions, one per example in the video. The questions describe the design only; the video's small demonstration results are mentioned in the step notes as warnings about too few trials."
    }
   ]
  }

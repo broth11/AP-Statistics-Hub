@@ -186,42 +186,153 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Test independence, then find a union",
-   "intro": "Pick one matching pair of probabilities, compute the conditional probability, and compare it to the overall probability. Then use the addition rule for \"or\".",
-   "steps": [
-    "Write $P(A)$ from the table or the problem.",
-    "Write $P(A\\mid B)=P(A\\cap B)/P(B)$.",
-    "If they match, the events are independent. If they differ, they are not, and the variables are associated.",
-    "For a union, add $P(A)$ and $P(B)$, then subtract $P(A\\cap B)$."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Compare",
-     "tex": [
-      "$P(E)=0.27$",
-      "$P(E\\mid D)=0.137$"
+     "obj": "Test whether two events are independent from a table",
+     "q": "Of 150 customers, 63 ordered hot coffee. Of the 80 female customers, 28 ordered hot coffee. Are being female and ordering hot coffee independent?",
+     "formula": [
+      "$P(A\\mid B)=P(A)\\ \\Longleftrightarrow\\ A,B\\text{ independent}$"
      ],
-     "text": "Not equal, so not independent."
-    },
-    {
-     "label": "Union",
-     "tex": "$0.27+0.51-0.07=0.71$",
-     "text": "$P(E\\cup D)$."
-    },
-    {
-     "label": "Solve for B",
-     "tex": [
-      "$0.62=0.25+x-0.07$",
-      "$x=0.44$"
+     "steps": [
+      {
+       "t": "Find the probability of the event with no condition.",
+       "work": {
+        "tex": [
+         "$P(\\text{hot})=\\dfrac{63}{150}$",
+         "$=0.420$"
+        ],
+        "text": "This is the baseline: 63 of the 150 customers ordered hot coffee."
+       }
+      },
+      {
+       "t": "Add the condition and divide by the size of that group.",
+       "work": {
+        "tex": [
+         "$P(\\text{hot}\\mid\\text{female})=\\dfrac{28}{80}$",
+         "$=0.350$"
+        ],
+        "text": "Only the 80 females count, so 80 is the denominator."
+       }
+      },
+      {
+       "t": "Compare the two probabilities. Match the event before the bar with the event on the other side.",
+       "work": {
+        "tex": [
+         "$0.35\\neq0.42$"
+        ],
+        "text": "Independent events have $P(A\\mid B)=P(A)$. Here the conditional probability is different."
+       }
+      },
+      {
+       "t": "Write the conclusion in context.",
+       "work": {
+        "text": "Say whether knowing the condition changed the probability."
+       }
+      }
      ],
-     "text": "General case."
+     "answer": "Being female and ordering hot coffee are not independent. The probability of ordering hot coffee is 0.42 overall but only 0.35 for females, so being female changes the probability.",
+     "seek": 424
     },
     {
-     "label": "Independent B",
-     "tex": "$0.62=0.25+x-0.25x$",
-     "text": "Gives $x\\approx0.493$."
+     "obj": "Find the probability of a union with the addition rule",
+     "q": "Of 150 customers, 80 are female, 58 ordered iced coffee, and 36 are female and ordered iced coffee. Find the probability that a randomly selected customer is female or ordered iced coffee.",
+     "formula": [
+      "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$"
+     ],
+     "steps": [
+      {
+       "t": "Write the union event with \"or\" meaning one, the other, or both.",
+       "work": {
+        "tex": [
+         "$P(F\\cup I)$"
+        ],
+        "text": "\"Or\" includes customers who are in both groups."
+       }
+      },
+      {
+       "t": "Add the two probabilities.",
+       "work": {
+        "tex": [
+         "$P(F)+P(I)=\\dfrac{80}{150}+\\dfrac{58}{150}$"
+        ],
+        "text": "The 36 customers who are both were counted in each of the two totals."
+       }
+      },
+      {
+       "t": "Subtract the overlap so it is not counted twice.",
+       "work": {
+        "tex": [
+         "$P(F\\cap I)=\\dfrac{36}{150}$"
+        ],
+        "text": "The overlap deserves to be counted once, not twice."
+       }
+      },
+      {
+       "t": "Combine and compute.",
+       "work": {
+        "tex": [
+         "$P(F\\cup I)=\\dfrac{80+58-36}{150}$",
+         "$=\\dfrac{102}{150}$",
+         "$=0.68$"
+        ],
+        "text": "Fifty-eight iced coffee drinkers and 80 females, less the 36 who are both, gives 102 customers."
+       }
+      }
+     ],
+     "answer": "The probability that a randomly selected customer is female or ordered iced coffee is 0.68.",
+     "seek": 1341
+    },
+    {
+     "obj": "Solve for a missing probability when the events are independent",
+     "q": "$P(A)=0.25$ and $P(A\\cup B)=0.62$. The events $A$ and $B$ are independent. Find $P(B)$.",
+     "formula": [
+      "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$",
+      "$P(A\\cap B)=P(A)\\,P(B)\\text{ if independent}$"
+     ],
+     "steps": [
+      {
+       "t": "Write the addition rule.",
+       "work": {
+        "tex": [
+         "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$"
+        ],
+        "text": "The rule links the three probabilities you are given or asked for."
+       }
+      },
+      {
+       "t": "Let $x=P(B)$ and use independence to replace the joint probability.",
+       "work": {
+        "tex": [
+         "$P(A\\cap B)=P(A)\\,P(B)$",
+         "$=0.25x$"
+        ],
+        "text": "Multiplying is allowed because the problem says the events are independent."
+       }
+      },
+      {
+       "t": "Substitute everything you know.",
+       "work": {
+        "tex": [
+         "$0.62=0.25+x-0.25x$"
+        ],
+        "text": "Only $x$ is unknown."
+       }
+      },
+      {
+       "t": "Combine like terms and solve.",
+       "work": {
+        "tex": [
+         "$0.37=0.75x$",
+         "$x\\approx0.4933$"
+        ],
+        "text": "Subtract 0.25 from both sides, then divide by 0.75."
+       }
+      }
+     ],
+     "answer": "$P(B)\\approx0.493$.",
+     "seek": 1952
     }
    ],
-   "line": "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$",
    "buttons": [
     {
      "label": "Watch the independence test (2:01)",
@@ -394,6 +505,10 @@
    {
     "kind": "values",
     "text": "Values reconstructed from narration: coffee table (63 hot, 28 female hot, 36 female iced, 58 iced). Practice values computed in code."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as three worked questions. Q3 uses the video's independent-events example and solves it by algebra; all values computed in code."
    }
   ]
  }

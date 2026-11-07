@@ -190,36 +190,124 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "PANIC for a two-sample z interval",
-   "intro": "Five steps. The name and the parameter fit in one sentence. Never skip the three conditions for both samples.",
-   "steps": [
-    "Parameter and Name: \"A two-sample $z$ interval for $p_1-p_2$, the difference between the proportion of ... in ... and ...\".",
-    "Assumptions: random samples (or random assignment), each sample at most 10% of its population (not for experiments), at least 10 successes and 10 failures in each sample.",
-    "Interval: point estimate $\\pm\\,z^*\\times SE$.",
-    "Conclusion: \"I am $C\\%$ confident that the difference between ... is between $a$ and $b$.\""
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Estimate",
-     "tex": "$0.76-0.808=-0.048$",
-     "text": "Florida minus Kentucky."
+     "obj": "Construct and use a two-sample interval from random samples",
+     "q": "A random sample of 300 Florida adults included 228 who are registered to vote. A random sample of 250 Kentucky adults included 202 who are registered. Construct a 95% confidence interval for the difference between the proportion of Florida adults and the proportion of Kentucky adults who are registered to vote. Is there convincing evidence of a difference?",
+     "formula": [
+      "$(\\hat p_1-\\hat p_2)\\pm z^*\\sqrt{\\dfrac{\\hat p_1(1-\\hat p_1)}{n_1}+\\dfrac{\\hat p_2(1-\\hat p_2)}{n_2}}$"
+     ],
+     "steps": [
+      {
+       "t": "Parameter and Name: name the procedure and define the difference.",
+       "work": {
+        "text": "This is a two-sample $z$ interval for $p_F-p_K$, where $p_F$ is the proportion of all Florida adults who are registered to vote and $p_K$ is the proportion of all Kentucky adults who are registered to vote."
+       }
+      },
+      {
+       "t": "Assumptions: check random samples, the 10% condition for each sample, and the counts.",
+       "work": {
+        "tex": [
+         "$228\\geq10,\\ 72\\geq10$",
+         "$202\\geq10,\\ 48\\geq10$"
+        ],
+        "text": "Both samples are random. 300 is less than 10% of Florida adults and 250 is less than 10% of Kentucky adults. Each sample has at least 10 successes and 10 failures."
+       }
+      },
+      {
+       "t": "Interval: find the point estimate and the standard error.",
+       "work": {
+        "tex": [
+         "$\\hat p_F-\\hat p_K=0.76-0.808$",
+         "$=-0.048$",
+         "$SE=\\sqrt{\\dfrac{0.76(0.24)}{300}+\\dfrac{0.808(0.192)}{250}}$",
+         "$\\approx0.03505$"
+        ],
+        "text": "Line up the Florida proportion with the Florida sample size and the Kentucky proportion with the Kentucky sample size."
+       }
+      },
+      {
+       "t": "Interval: find the margin of error and the interval.",
+       "work": {
+        "tex": [
+         "$z^*=1.960$",
+         "$ME=1.960(0.03505)$",
+         "$\\approx0.0687$",
+         "$-0.048\\pm0.0687$",
+         "$=(-0.1167,\\ 0.0207)$"
+        ],
+        "text": "The critical value for 95% confidence is 1.960."
+       }
+      },
+      {
+       "t": "Conclusion: state the interval in context and say what it shows about 0.",
+       "work": {
+        "text": "The interval contains 0, so 0 is a plausible value for the difference."
+       }
+      }
+     ],
+     "answer": "I am 95% confident that the difference between the proportion of Florida adults who are registered to vote and the proportion of Kentucky adults who are registered to vote is between -0.1167 and 0.0207. Because the interval contains 0, there is not convincing evidence of a difference.",
+     "seek": 1055
     },
     {
-     "label": "Standard error",
-     "tex": "$SE\\approx0.0351$",
-     "text": "Match each proportion with its own sample size."
-    },
-    {
-     "label": "Margin of error",
-     "tex": "$1.960(0.0351)\\approx0.0687$",
-     "text": "95% confidence."
-    },
-    {
-     "label": "Interval",
-     "tex": "$(-0.1167,\\ 0.0207)$",
-     "text": "Contains 0."
+     "obj": "Construct and use a two-sample interval from an experiment",
+     "q": "400 volunteers were randomly assigned to a new or an old migraine medication, 200 to each. Relief within an hour came to 114 of the new-medication group and 82 of the old-medication group. Construct a 98% confidence interval for the difference between the proportions who get relief. The company claims the new drug is better. Does the interval support the claim?",
+     "formula": [
+      "$(\\hat p_1-\\hat p_2)\\pm z^*\\sqrt{\\dfrac{\\hat p_1(1-\\hat p_1)}{n_1}+\\dfrac{\\hat p_2(1-\\hat p_2)}{n_2}}$"
+     ],
+     "steps": [
+      {
+       "t": "Parameter and Name: name the procedure and define the difference.",
+       "work": {
+        "text": "This is a two-sample $z$ interval for $p_N-p_O$, where $p_N$ is the proportion of similar patients who would get relief within an hour with the new medication and $p_O$ is the proportion with the old medication."
+       }
+      },
+      {
+       "t": "Assumptions: check random assignment and the counts.",
+       "work": {
+        "tex": [
+         "$114\\geq10,\\ 86\\geq10$",
+         "$82\\geq10,\\ 118\\geq10$"
+        ],
+        "text": "The patients were randomly assigned, so the 10% condition is not checked. Each group has at least 10 successes and 10 failures."
+       }
+      },
+      {
+       "t": "Interval: find the point estimate and the standard error.",
+       "work": {
+        "tex": [
+         "$\\hat p_N-\\hat p_O=0.57-0.41$",
+         "$=0.16$",
+         "$SE=\\sqrt{\\dfrac{0.57(0.43)}{200}+\\dfrac{0.41(0.59)}{200}}$",
+         "$\\approx0.04935$"
+        ],
+        "text": "Line up each proportion with its own sample size."
+       }
+      },
+      {
+       "t": "Interval: find the margin of error and the interval.",
+       "work": {
+        "tex": [
+         "$z^*=2.326$",
+         "$ME=2.326(0.04935)$",
+         "$\\approx0.1148$",
+         "$0.16\\pm0.1148$",
+         "$=(0.0452,\\ 0.2748)$"
+        ],
+        "text": "The critical value for 98% confidence is 2.326."
+       }
+      },
+      {
+       "t": "Conclusion: state the interval in context and decide about the claim.",
+       "work": {
+        "text": "The interval is entirely positive, so new minus old is positive for every plausible value."
+       }
+      }
+     ],
+     "answer": "I am 98% confident that the proportion of similar patients who get relief within an hour with the new medication is between 4.5 and 27.5 percentage points higher than with the old medication. Because the entire interval is positive, the interval supports the claim.",
+     "seek": 1689
     }
    ],
-   "line": "$(\\hat p_1-\\hat p_2)\\pm z^*\\sqrt{\\dfrac{\\hat p_1(1-\\hat p_1)}{n_1}+\\dfrac{\\hat p_2(1-\\hat p_2)}{n_2}}$",
    "buttons": [
     {
      "label": "Watch PANIC (4:30)",
@@ -400,6 +488,14 @@
    {
     "kind": "calculator",
     "text": "The video shows Desmos for critical values and the interval. No calculator section is included by request."
+   },
+   {
+    "kind": "caption",
+    "text": "The video speaks the observed difference as -0.0408 and the upper endpoint as 2.7% more. Recomputed from 228/300 and 202/250: difference -0.048 and interval (-0.1167, 0.0207)."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as two worked questions in the PANIC order. Both questions use the video's examples; all values computed in code."
    }
   ]
  }

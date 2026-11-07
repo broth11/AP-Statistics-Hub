@@ -191,36 +191,92 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Set up a chi-square test",
-   "intro": "The first four of the seven steps are setup. Use context in every sentence; a generic sentence earns no credit.",
-   "steps": [
-    "Name the test and the parameter: \"chi-square test for independence between ... and ... for all ...\", or \"chi-square test for homogeneity of the distribution of ... across ...\".",
-    "Hypotheses: independence uses association language, homogeneity uses same-distribution language.",
-    "Conditions: random sample (or independent random samples, or randomized experiment); 10% when sampling; all expected counts at least 5.",
-    "Compute each expected count as $(\\text{row total})(\\text{column total})/\\text{grand total}$."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Cardio, under 30",
-     "tex": "$\\dfrac{70\\cdot70}{200}=24.5$",
-     "text": "Gym members example."
+     "obj": "Set up a chi-square test for independence",
+     "q": "A gym surveyed a random sample of 200 members and recorded each member's age group (under 30, 30 to 50, over 50) and preferred workout type (cardio, weights, group classes). The row totals are 70, 90, and 40, and the column totals are 70, 60, and 70. Set up a test of whether age group and preferred workout type are associated.",
+     "formula": [
+      "$E=\\dfrac{(\\text{row total})(\\text{column total})}{\\text{grand total}}$"
+     ],
+     "steps": [
+      {
+       "t": "Name the test and the parameter in context.",
+       "work": {
+        "text": "This is a chi-square test for independence between age group and preferred workout type for all members of the gym. One random sample was classified by two categorical variables."
+       }
+      },
+      {
+       "t": "Hypotheses: write $H_0$ and $H_a$ in context.",
+       "work": {
+        "text": "$H_0$: there is no association between age group and preferred workout type for all members of the gym. $H_a$: there is an association between them."
+       }
+      },
+      {
+       "t": "Assumptions: check randomization and the 10% condition.",
+       "work": {
+        "tex": [
+         "$200<10\\%\\text{ of all members}$"
+        ],
+        "text": "The sample is random, and 200 members are less than 10% of all members of a gym."
+       }
+      },
+      {
+       "t": "Assumptions: check that every expected count is at least 5, starting with the smallest.",
+       "work": {
+        "tex": [
+         "$E=\\dfrac{40\\cdot60}{200}$",
+         "$=12.0$"
+        ],
+        "text": "Expected counts, not observed counts, must be at least 5. This is the smallest of the nine, so all nine are at least 5."
+       }
+      }
+     ],
+     "answer": "A chi-square test for independence is appropriate. $H_0$: there is no association between age group and preferred workout type for all members of the gym. $H_a$: there is an association between them. The sample is random, 200 is less than 10% of all members, and every expected count is at least 5.",
+     "seek": 885
     },
     {
-     "label": "Weights, over 50",
-     "tex": "$\\dfrac{40\\cdot60}{200}=12.0$",
-     "text": "The smallest expected count."
-    },
-    {
-     "label": "Smallest expected",
-     "tex": "$12.0\\ge5$",
-     "text": "The expected counts condition is met."
-    },
-    {
-     "label": "CED fact",
-     "tex": "$\\chi^2\\ge0$",
-     "text": "Chi-square distributions are skewed right; the skew lessens as degrees of freedom increase."
+     "obj": "Set up a chi-square test for homogeneity",
+     "q": "Researchers took a random sample of pet owners from each of three cities: 90 from City A, 80 from City B, and 80 from City C. Each owner reported owning a cat, a dog, or another pet. The column totals are 75 cat owners, 95 dog owners, and 80 owners of another pet. Set up a test of whether the distribution of pet type is the same in all three cities.",
+     "formula": [
+      "$E=\\dfrac{(\\text{row total})(\\text{column total})}{\\text{grand total}}$"
+     ],
+     "steps": [
+      {
+       "t": "Name the test and the parameter in context.",
+       "work": {
+        "text": "This is a chi-square test for homogeneity of the distribution of pet type across the three cities for all pet owners in those cities. There are three separate samples and one categorical variable."
+       }
+      },
+      {
+       "t": "Hypotheses: write $H_0$ and $H_a$ in context.",
+       "work": {
+        "text": "$H_0$: the distribution of pet type is the same across the three cities for all pet owners. $H_a$: the distribution of pet type is different for at least one city."
+       }
+      },
+      {
+       "t": "Assumptions: check randomization and the 10% condition for each sample.",
+       "work": {
+        "tex": [
+         "$90,\\ 80,\\ 80<10\\%$"
+        ],
+        "text": "Each city's sample is random, and each is less than 10% of the pet owners in its city. Check the condition three times."
+       }
+      },
+      {
+       "t": "Assumptions: check that every expected count is at least 5, starting with the smallest.",
+       "work": {
+        "tex": [
+         "$E=\\dfrac{80\\cdot75}{250}$",
+         "$=24.0$"
+        ],
+        "text": "Expected counts, not observed counts, must be at least 5. This is the smallest of the nine, so all nine are at least 5."
+       }
+      }
+     ],
+     "answer": "A chi-square test for homogeneity is appropriate. $H_0$: the distribution of pet type is the same across the three cities for all pet owners. $H_a$: the distribution is different. The samples are random, each is less than 10% of its city's pet owners, and every expected count is at least 5.",
+     "seek": 1527
     }
    ],
-   "line": "$E=\\dfrac{(\\text{row total})(\\text{column total})}{\\text{grand total}}$",
    "buttons": [
     {
      "label": "Watch the seven steps (16:06)",
@@ -397,6 +453,10 @@
    {
     "kind": "values",
     "text": "All tables on this page are original. Expected counts are computed in code."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as two worked questions. The video does not read out the full tables for the gym and pet examples (only the totals and a few cells). The counts in both questions are illustrative and consistent with the totals the video gives (200 members; 90, 80 and 80 pet owners; 25 cat owners in City C). The smallest expected counts are computed in code."
    }
   ]
  }
