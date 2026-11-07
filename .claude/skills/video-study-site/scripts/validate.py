@@ -70,7 +70,34 @@ def check_section(s, i, repo):
         if not s.get("cards") and not s.get("rows"):
             err(f"{where}: needs cards or rows")
     elif t == "procedure":
-        need(s, ["intro"], where)
+        # Worked questions (compact split). `parts`, string `steps` and `line` are the retired box layout.
+        for k in ("parts", "line"):
+            if k in s:
+                warn(f"{where}: '{k}' is the retired procedure layout; write worked questions")
+        if any(isinstance(x, str) for x in s.get("steps", [])):
+            warn(f"{where}: string 'steps' is the retired procedure layout; write worked questions")
+        # Until every lesson is migrated, a section that still has legacy `parts` is allowed (with the warning above).
+        need(s, ["title"] if "parts" in s else ["title", "questions"], where)
+        for j, q in enumerate(s.get("questions", [])):
+            w = f"{where}.questions[{j}]"
+            need(q, ["obj", "q", "steps", "answer"], w)
+            steps = q.get("steps", [])
+            for m, st in enumerate(steps):
+                ws = f"{w}.steps[{m}]"
+                if not isinstance(st, dict):
+                    err(f"{ws}: a step is an object with 't' and optional 'work'")
+                    continue
+                need(st, ["t"], ws)
+                wk = st.get("work")
+                if wk is not None:
+                    if not isinstance(wk, dict) or not (wk.get("tex") or wk.get("text")):
+                        err(f"{ws}.work: needs 'tex' (a list of lines) and/or 'text'")
+                    elif "tex" in wk and not (isinstance(wk["tex"], list) and all(isinstance(x, str) for x in wk["tex"])):
+                        err(f"{ws}.work.tex: must be a list of strings, one calculation per line")
+            if steps and not 3 <= len(steps) <= 6:
+                warn(f"{w}: {len(steps)} steps (aim for 3 to 6)")
+            if len(q.get("formula", [])) > 2:
+                warn(f"{w}: more than two key formula lines")
     elif t == "explorer":
         name = s.get("explorer", "")
         if not re.fullmatch(r"[a-z0-9-]+", name or ""):
@@ -165,7 +192,7 @@ def main():
     for p, v in seeks(L):
         if v < 0 or (end is not None and v > end + 15):
             err(f"{p} = {v}s is outside the video (ends {end}s)")
-    plain = re.compile(r"(\.tab|\.kicker|\.type|\.letter|\.label|\.kind|^videoTitle)$")
+    plain = re.compile(r"(\.tab|\.kicker|\.type|\.letter|\.label|\.kind|\.obj|^videoTitle)$")
     for p, sv in strings(L):
         if sv.count("$") % 2:
             err(f"{p}: unbalanced $ math delimiters")

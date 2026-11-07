@@ -7,7 +7,8 @@
 Needs Python Playwright with Chromium. Checks, with every section expanded:
   - no page errors and no error box
   - no math expression split across lines
-  - no procedure-box math wider than its box (the 4-box row is about 330px of content)
+  - procedure: every worked question, opened in turn, has working that fits its column and a height that fits one
+    laptop screen below the sticky header; at 390px the step rows stack. (Legacy boxes: math must fit its box.)
   - every <tex-text> rendered: no raw $ left, no .katex-error, and no raw LaTeX (\\hat, \\frac, ...) in visible text
   - explorer: fits a 1440x900 screen, and the result values in its stat row share one top edge
   - title card: title and intro each span the full width
@@ -92,6 +93,33 @@ async def check(repo, nums, shots):
                     return [...p.querySelectorAll('.big .katex')].filter(k => k.getBoundingClientRect().right > lim + 1).map(k => (k.querySelector('annotation') || k).textContent.slice(0, 50)); })""")
                 if over:
                     bad.append(f"math runs past its box (split it into rows, one calculation per row): {over[:3]}")
+                # Worked questions: open each in turn. Working must fit its column, and the whole question
+                # (header to buttons) must fit one laptop screen below the sticky header.
+                hh = await pg.evaluate("parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hh')) || 100")
+                nq = await pg.locator(".qlist .qbtn").count()
+                tall, wide = [], []
+                for i in range(nq):
+                    btn = pg.locator(".qlist .qbtn").nth(i)
+                    await btn.click()
+                    await pg.wait_for_timeout(120)
+                    r = await btn.evaluate("""el => { const sec = el.closest('section'); const p = sec.querySelector('.qpanel:not([hidden])');
+                        const q = Number(el.dataset.q) + 1;
+                        const over = [...p.querySelectorAll('.smath')].filter(m => m.scrollWidth > m.clientWidth + 2).length;
+                        return { id: sec.id.replace(/^s-/, ''), q, over, h: Math.round(p.getBoundingClientRect().height) }; }""")
+                    if r["over"]:
+                        wide.append(f"{r['id']} Q{r['q']}")
+                    if r["h"] > 900 - hh:
+                        tall.append(f"{r['id']} Q{r['q']} is {r['h']}px (limit {round(900 - hh)}px)")
+                    if shots:
+                        await pg.locator(".qpanel:not([hidden])").nth(0).scroll_into_view_if_needed()
+                        await btn.evaluate("el => el.closest('section').querySelector('.qpanel:not([hidden])').scrollIntoView({block: 'start'})")
+                        await pg.evaluate("window.scrollBy(0, -(parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--hh')) || 100) - 10)")
+                        await pg.wait_for_timeout(150)
+                        await pg.screenshot(path=str(Path(shots) / f"q-{n}-{r['id']}-{r['q']}.png"))
+                if wide:
+                    bad.append(f"working wider than its column (split the line): {wide[:4]}")
+                if tall:
+                    bad.append(f"question taller than one screen (tighten notes or split): {tall[:4]}")
                 if await pg.locator("#s-explorer").count():
                     box = await pg.locator("#s-explorer .explorer").bounding_box()
                     if box and box["height"] > 900 - 140:
@@ -112,6 +140,17 @@ async def check(repo, nums, shots):
             sw = await pg.evaluate("document.documentElement.scrollWidth")
             if sw > 391:
                 bad.append(f"horizontal scroll at 390px (page is {sw}px wide)")
+            if await pg.locator("[data-toggle-all]").count() and await pg.locator(".error").count() == 0:
+                await pg.click("[data-toggle-all]")
+                await pg.wait_for_timeout(800)
+                side = await pg.evaluate("""[...document.querySelectorAll('.sstep')].filter(r => r.offsetParent && r.querySelector('.smath'))
+                    .filter(r => { const m = r.querySelector('.smath').getBoundingClientRect(), t = r.querySelector('.stxt').getBoundingClientRect();
+                        return m.top < t.bottom - 1; }).length""")
+                if side:
+                    bad.append(f"{side} step rows do not stack at 390px")
+                sw2 = await pg.evaluate("document.documentElement.scrollWidth")
+                if sw2 > 391:
+                    bad.append(f"horizontal scroll at 390px with sections open (page is {sw2}px wide)")
             await pg.set_viewport_size({"width": 1440, "height": 900})
             bad += [f"page error: {e}" for e in errs]
             print(f"{n}: " + ("ok" if not bad else "PROBLEMS"))

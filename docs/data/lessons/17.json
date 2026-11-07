@@ -186,48 +186,201 @@
    "tab": "Method",
    "kicker": "Procedure",
    "title": "Calculate a probability and its complement",
-   "intro": "List outcomes that are equally likely, count the favorable ones, then use the complement when \"not\" is easier.",
-   "steps": [
-    "Write the event in $P(\\ )$ notation.",
-    "Decide what the equally likely outcomes are and how many there are.",
-    "Count the outcomes in the event. Read words such as at most carefully.",
-    "Divide, then answer in context. Use $1-P(E)$ for \"not $E$\"."
-   ],
-   "parts": [
+   "questions": [
     {
-     "label": "Sum of 7",
-     "tex": [
-      "$P=6/36$",
-      "$=0.167$"
+     "obj": "Find the probability that two dice sum to 7",
+     "q": "Two fair six-sided dice are rolled. Find the probability that the sum is 7.",
+     "formula": [
+      "$P(E)=\\dfrac{\\text{outcomes in }E}{\\text{outcomes in the sample space}}$"
      ],
-     "text": "Six ordered pairs."
+     "steps": [
+      {
+       "t": "Write the event in $P(\\ )$ notation.",
+       "work": {
+        "tex": [
+         "$P(\\text{sum is }7)$"
+        ],
+        "text": "The event $E$ is that the two dice add to 7."
+       }
+      },
+      {
+       "t": "Decide what the equally likely outcomes are and how many there are.",
+       "work": {
+        "tex": [
+         "$6\\times6=36$"
+        ],
+        "text": "36 is the total number of ordered pairs from the two dice (Die 1, Die 2)."
+       }
+      },
+      {
+       "t": "Count the outcomes in the event.",
+       "work": {
+        "tex": [
+         "$\\text{outcomes in }E=6$"
+        ],
+        "text": "Six ordered pairs add to 7: (1, 6), (2, 5), (3, 4), (4, 3), (5, 2), and (6, 1)."
+       }
+      },
+      {
+       "t": "Divide, then answer in context.",
+       "work": {
+        "tex": [
+         "$P(\\text{sum is }7)=\\dfrac{6}{36}$",
+         "$\\approx0.167$"
+        ],
+        "text": "Six of the 36 equally likely outcomes are in the event."
+       }
+      }
+     ],
+     "answer": "The probability that the two dice sum to 7 is about 0.167.",
+     "seek": 944
     },
     {
-     "label": "Sum of 12",
-     "tex": [
-      "$P=1/36$",
-      "$=0.0278$"
+     "obj": "Find the probability that two dice sum to 12",
+     "q": "Two fair six-sided dice are rolled. Find the probability that the sum is 12.",
+     "formula": [
+      "$P(E)=\\dfrac{\\text{outcomes in }E}{\\text{outcomes in the sample space}}$"
      ],
-     "text": "One pair: 6 and 6."
+     "steps": [
+      {
+       "t": "Write the event in $P(\\ )$ notation.",
+       "work": {
+        "tex": [
+         "$P(\\text{sum is }12)$"
+        ],
+        "text": "The event $E$ is that the two dice add to 12."
+       }
+      },
+      {
+       "t": "Decide what the equally likely outcomes are and how many there are.",
+       "work": {
+        "tex": [
+         "$6\\times6=36$"
+        ],
+        "text": "36 is the total number of ordered pairs from the two dice (Die 1, Die 2)."
+       }
+      },
+      {
+       "t": "Count the outcomes in the event.",
+       "work": {
+        "tex": [
+         "$\\text{outcomes in }E=1$"
+        ],
+        "text": "Only one ordered pair, (6, 6), adds to 12."
+       }
+      },
+      {
+       "t": "Divide, then answer in context.",
+       "work": {
+        "tex": [
+         "$P(\\text{sum is }12)=\\dfrac{1}{36}$",
+         "$\\approx0.0278$"
+        ],
+        "text": "One of the 36 equally likely outcomes is in the event."
+       }
+      }
+     ],
+     "answer": "The probability that the two dice sum to 12 is about 0.0278.",
+     "seek": 1006
     },
     {
-     "label": "At most 5",
-     "tex": [
-      "$P=10/36$",
-      "$=0.278$"
+     "obj": "Find the probability that two dice sum to at most 5",
+     "q": "Two fair six-sided dice are rolled. Find the probability that the sum is at most 5.",
+     "formula": [
+      "$P(E)=\\dfrac{\\text{outcomes in }E}{\\text{outcomes in the sample space}}$"
      ],
-     "text": "Sums 2, 3, 4 and 5."
+     "steps": [
+      {
+       "t": "Write the event in $P(\\ )$ notation. Read \"at most\" carefully.",
+       "work": {
+        "tex": [
+         "$P(\\text{sum}\\le5)$"
+        ],
+        "text": "\"At most 5\" means a sum of 2, 3, 4, or 5. A sum of 5 is included."
+       }
+      },
+      {
+       "t": "Decide what the equally likely outcomes are and how many there are.",
+       "work": {
+        "tex": [
+         "$6\\times6=36$"
+        ],
+        "text": "36 is the total number of ordered pairs from the two dice (Die 1, Die 2)."
+       }
+      },
+      {
+       "t": "Count the outcomes in the event.",
+       "work": {
+        "tex": [
+         "$\\text{outcomes in }E=1+2+3+4$",
+         "$=10$"
+        ],
+        "text": "One pair sums to 2, two pairs sum to 3, three pairs sum to 4, and four pairs sum to 5."
+       }
+      },
+      {
+       "t": "Divide, then answer in context.",
+       "work": {
+        "tex": [
+         "$P(\\text{sum}\\le5)=\\dfrac{10}{36}$",
+         "$\\approx0.278$"
+        ],
+        "text": "Ten of the 36 equally likely outcomes are in the event."
+       }
+      }
+     ],
+     "answer": "The probability that the two dice sum to at most 5 is about 0.278.",
+     "seek": 1078
     },
     {
-     "label": "Complement",
-     "tex": [
-      "$P(\\text{not red})=1-5/15$",
-      "$=0.667$"
+     "obj": "Use the complement rule for \"not red\"",
+     "q": "A jar holds 15 marbles, and 5 of them are red. One marble is drawn at random. Find the probability that it is not red.",
+     "formula": [
+      "$P(\\text{not }E)=1-P(E)$"
      ],
-     "text": "Marble jar example."
+     "steps": [
+      {
+       "t": "Write the event in $P(\\ )$ notation.",
+       "work": {
+        "tex": [
+         "$P(\\text{not red})$"
+        ],
+        "text": "It is easier to count the red marbles and subtract than to count every other color."
+       }
+      },
+      {
+       "t": "Decide what the equally likely outcomes are and how many there are.",
+       "work": {
+        "tex": [
+         "$\\text{sample space}=15$"
+        ],
+        "text": "Each of the 15 marbles is equally likely to be drawn."
+       }
+      },
+      {
+       "t": "Find the probability of the event you are not asked about.",
+       "work": {
+        "tex": [
+         "$P(\\text{red})=\\dfrac{5}{15}$"
+        ],
+        "text": "Five of the 15 marbles are red."
+       }
+      },
+      {
+       "t": "Subtract from 1, then answer in context.",
+       "work": {
+        "tex": [
+         "$P(\\text{not red})=1-\\dfrac{5}{15}$",
+         "$\\approx0.667$"
+        ],
+        "text": "Subtracting from 1 gives the probability that the marble is not red."
+       }
+      }
+     ],
+     "answer": "The probability that the marble drawn is not red is about 0.667.",
+     "seek": 1350
     }
    ],
-   "line": "$P(E)=\\dfrac{\\text{outcomes in }E}{\\text{outcomes in the sample space}}$",
    "buttons": [
     {
      "label": "Watch the two-dice sample space (10:58)",
@@ -403,6 +556,14 @@
    {
     "kind": "values",
     "text": "Dice-sum counts computed by enumeration in code."
+   },
+   {
+    "kind": "wording",
+    "text": "The marble jar (3 yellow, 5 red, 7 green, 15 in all) is read from the transcript at 22:30. Question seek times: 15:44 (sum of 7), 16:46 (sum of 12), 17:58 (at most 5), 22:30 (marbles)."
+   },
+   {
+    "kind": "values",
+    "text": "Procedure section rewritten as four worked questions. Rounded results now use an approximately-equal sign instead of = (for example 6/36 is about 0.167). Values computed in code."
    }
   ]
  }
