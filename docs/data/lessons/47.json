@@ -1,0 +1,390 @@
+{
+ "n": 47,
+ "unit": 4,
+ "topic": "4.4 & 4.5",
+ "title": "Paired t-Test for a Mean Difference",
+ "videoId": "H5PilVptRxk",
+ "videoTitle": "AP Statistics Topic 4.4 & 4.5 Paired t-Test for a Mean Difference",
+ "intro": "Set up and carry out a one-sample t-test on paired differences, interpret the p-value, and justify a conclusion in context.",
+ "moments": [
+  {
+   "t": 66,
+   "type": "Key idea",
+   "title": "A question about a mean",
+   "text": "A test compares a sample result with a hypothesized population value."
+  },
+  {
+   "t": 704,
+   "type": "Key idea",
+   "title": "Define the parameter",
+   "text": "Name the population, response variable, and any subtraction order."
+  },
+  {
+   "t": 715,
+   "type": "Key idea",
+   "title": "Verify conditions",
+   "text": "Check the design and the distribution of the appropriate observations."
+  },
+  {
+   "t": 830,
+   "type": "Key idea",
+   "title": "State population hypotheses",
+   "text": "The null states equality; choose the alternative from the question."
+  },
+  {
+   "t": 969,
+   "type": "Key idea",
+   "title": "A t statistic",
+   "text": "Measure distance from the null in estimated standard-error units."
+  },
+  {
+   "t": 1020,
+   "type": "Key idea",
+   "title": "Calculate standard error",
+   "text": "Use sample variability to standardize the observed difference."
+  },
+  {
+   "t": 1045,
+   "type": "Key idea",
+   "title": "Make a decision",
+   "text": "Compare the p-value with the significance level and conclude in context."
+  },
+  {
+   "t": 1049,
+   "type": "Key idea",
+   "title": "Choose the correct tail",
+   "text": "The alternative determines which outcomes count as more extreme."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Parameter",
+     "text": "Define the population mean before-minus-after reaction time before writing hypotheses."
+    },
+    {
+     "letter": "2",
+     "name": "Select the method",
+     "text": "One-sample t-test on paired differences. Use paired differences for matched observations; use two-sample methods for independent groups."
+    },
+    {
+     "letter": "3",
+     "name": "Conditions",
+     "text": "Check the actual design. For small paired samples inspect differences, not the two separate measurement distributions."
+    },
+    {
+     "letter": "4",
+     "name": "Tail",
+     "text": "Choose less than, greater than, or two-sided from the investigative question before looking at the result."
+    },
+    {
+     "letter": "5",
+     "name": "Conclusion",
+     "text": "Compare p with alpha, then state the strength of evidence about the population alternative in context."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Carry out a t hypothesis test",
+     "q": "The video gives 10 paired reaction times in milliseconds, with before-minus-after mean 4.9 and sample SD of differences 5.820. Test whether the mean difference is positive at 1%. Assume the pairs were randomly sampled from at least 100 eligible people, and the differences have no strong skewness or outliers.",
+     "steps": [
+      {
+       "t": "Define the parameter, method, and hypotheses.",
+       "work": {
+        "text": "Use a one-sample t-test on paired differences for the population mean before-minus-after reaction time.",
+        "tex": [
+         "$H_0:\\mu_d=0$",
+         "$H_a:\\mu_d>0$"
+        ]
+       }
+      },
+      {
+       "t": "Check the conditions.",
+       "work": {
+        "text": "The pairs are randomly sampled, the population contains at least ten times as many eligible people, and the differences are assumed free of strong skewness and outliers."
+       }
+      },
+      {
+       "t": "Calculate the standard error and test statistic.",
+       "work": {
+        "text": "Use the unrounded standard error.",
+        "tex": [
+         "$SE\\approx1.840446$",
+         "$t=(4.9-0)/SE\\approx2.662399$"
+        ]
+       }
+      },
+      {
+       "t": "Find the p-value using the correct tail.",
+       "work": {
+        "text": "The alternative determines the tail; degrees of freedom come from the relevant t method.",
+        "tex": [
+         "$df\\approx9.0000$",
+         "$p\\approx0.012972$"
+        ]
+       }
+      },
+      {
+       "t": "Compare with the significance level and conclude.",
+       "work": {
+        "text": "0.012972 > 0.01; fail to reject the null hypothesis."
+       }
+      }
+     ],
+     "answer": "There is not convincing evidence at the 1% level that the population mean before-minus-after reaction time is greater than 0 milliseconds.",
+     "seek": 1151,
+     "formula": [
+      "$t=\\dfrac{\\text{estimate}-\\text{null value}}{SE}$"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Calculator practice",
+   "title": "Calculate the t statistic and p-value",
+   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "steps": [
+    {
+     "title": "Standardize",
+     "suppose": "we want the t statistic for the worked example.",
+     "do": [
+      "Enter `s=1.840445598218`.",
+      "Enter `u=(4.9-0)/s`."
+     ],
+     "observe": "Here s is the standard error, not an individual-observation SD.",
+     "expected": "$t\\approx2.662399$",
+     "seek": 1020
+    },
+    {
+     "title": "Find the tail area",
+     "suppose": "we want the p-value for the stated alternative.",
+     "do": [
+      "Enter `v=9.000000000000`.",
+      "Enter `1-tdist(v).cdf(u)`."
+     ],
+     "observe": "A two-sided p-value includes both tails. Do not double a result already calculated for both tails.",
+     "expected": "$p\\approx0.012972$",
+     "seek": 1045
+    },
+    {
+     "title": "Compare with alpha",
+     "suppose": "we use significance level 0.01.",
+     "do": [
+      "Compare the displayed p-value with the stated significance level."
+     ],
+     "observe": "A small p-value is evidence against the null, not the probability the null is true.",
+     "expected": "Fail to reject $H_0$.",
+     "seek": 1049
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Sample hypotheses",
+     "weak": "The null states that the observed sample mean equals a value.",
+     "better": "Hypotheses concern population parameters. The sample statistic supplies evidence.",
+     "seek": 715
+    },
+    {
+     "kind": "Common trap",
+     "title": "A p-value is not the probability of the null",
+     "weak": "The p-value is the chance the null is true.",
+     "better": "Assuming the null and conditions, it is the probability of a result at least as extreme in the alternative direction.",
+     "seek": 1045
+    },
+    {
+     "kind": "Common trap",
+     "title": "Failure to reject proves equality",
+     "weak": "A large p-value proves no difference.",
+     "better": "It means there is insufficient evidence for the specified alternative at the chosen significance level.",
+     "seek": 1049
+    },
+    {
+     "kind": "Common trap",
+     "title": "Pairing and independence",
+     "weak": "Two measurements on the same person are independent samples.",
+     "better": "Analyze within-person differences as one sample; the number of pairs is the sample size.",
+     "seek": 830
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Use unrounded statistics to calculate the p-value. The two-sided probability is twice the appropriate one-tail area for the symmetric t distribution. A tiny p-value is not the probability of an exact observed sample."
+    },
+    {
+     "label": "Wording check.",
+     "text": "The narration alternates seconds and milliseconds and later corrects itself. This page uses milliseconds consistently. The displayed summary values give t≈2.662 and p≈0.0130; the caption value 2.622 is inconsistent with those inputs."
+    },
+    {
+     "label": "Wording check.",
+     "text": "The video does not supply a usable graph of the ten differences in the narration. The worked question explicitly assumes the small-sample shape condition; it cannot be verified from summary statistics alone."
+    },
+    {
+     "label": "Wording check.",
+     "text": "A before/after sequence alone cannot isolate a coffee effect from practice or time effects. A statistically significant change would not by itself establish that coffee caused it."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "A one-sample mean test has sample mean 46, null mean 50, sample SD 8, and n=16. What is t?",
+     "opts": [
+      "−0.5",
+      "2",
+      "−2",
+      "−8"
+     ],
+     "ok": 2,
+     "why": [
+      "This omits the square-root sample-size adjustment.",
+      "The sign is negative.",
+      "SE=8/4=2 and t=(46−50)/2=−2.",
+      "This is not the standardized difference."
+     ],
+     "seek": 1020
+    },
+    {
+     "stem": "A two-sided test reports p=0.03 and alpha=0.05. Which conclusion follows?",
+     "opts": [
+      "Reject the null in favor of evidence of a difference",
+      "Accept equality as certain",
+      "The null has probability 0.03",
+      "Fail to reject because p is positive"
+     ],
+     "ok": 0,
+     "why": [
+      "The p-value is below alpha.",
+      "The result supplies evidence against equality.",
+      "A p-value conditions on the null; it does not assign its probability.",
+      "Compare with alpha, not zero."
+     ],
+     "seek": 1049
+    },
+    {
+     "stem": "Twenty people are measured before and after training. What is the sample size and reference df for a paired t-test?",
+     "opts": [
+      "40 and 39",
+      "20 and 38",
+      "40 and 20",
+      "20 and 19"
+     ],
+     "ok": 3,
+     "why": [
+      "There are 20 pairs, not 40 independent units.",
+      "A one-sample t procedure on differences uses n−1.",
+      "Neither value is appropriate.",
+      "Twenty differences give df=19."
+     ],
+     "seek": 830
+    },
+    {
+     "stem": "An independent two-sample t-test uses which standard error?",
+     "opts": [
+      "$s_1-s_2$",
+      "$\\sqrt{s_1^2/n_1+s_2^2/n_2}$",
+      "$s_1+s_2$",
+      "$\\sqrt{(s_1^2-s_2^2)/(n_1+n_2)}$"
+     ],
+     "ok": 1,
+     "why": [
+      "SDs are not subtracted.",
+      "Independent variance contributions add.",
+      "SDs are not simply added.",
+      "Variance contributions add, and each is divided by its own sample size."
+     ],
+     "seek": 969
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "Sixteen machines are randomly sampled from 400. Each runs a task using old and new software in randomized order. For old-minus-new task time, the differences have mean 2 seconds and SD 4 seconds, with no strong skewness or outliers.",
+   "parts": [
+    "(a) Define the parameter, hypotheses, and procedure to test whether the new software is faster.",
+    "(b) Check conditions and calculate the statistic and one-sided p-value.",
+    "(c) Conclude at 5% significance and explain the role of pairing."
+   ],
+   "sample": [
+    "(a) Let μd be the population mean old-minus-new time. Test H₀: μd=0 against Hₐ: μd>0 with a one-sample t-test on paired differences.",
+    "(b) The pairs are randomly selected, 16≤0.10(400), and the differences show no strong skewness or outliers. SE=4/√16=1, t=2, df=15, and p≈0.0320.",
+    "(c) Because 0.0320<0.05, reject H₀. There is convincing evidence the population mean old-minus-new time is positive. Pairing compares the same machines and accounts for dependence within each pair."
+   ],
+   "checklist": [
+    "Defines the signed population mean difference.",
+    "States the correct alternative and paired method.",
+    "Checks conditions for the differences.",
+    "Calculates SE, t, df, and upper-tail p-value.",
+    "Concludes in context and explains pairing."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "Use unrounded statistics to calculate the p-value. The two-sided probability is twice the appropriate one-tail area for the symmetric t distribution. A tiny p-value is not the probability of an exact observed sample."
+   },
+   {
+    "kind": "wording",
+    "text": "The narration alternates seconds and milliseconds and later corrects itself. This page uses milliseconds consistently. The displayed summary values give t≈2.662 and p≈0.0130; the caption value 2.622 is inconsistent with those inputs."
+   },
+   {
+    "kind": "wording",
+    "text": "The video does not supply a usable graph of the ten differences in the narration. The worked question explicitly assumes the small-sample shape condition; it cannot be verified from summary statistics alone."
+   },
+   {
+    "kind": "wording",
+    "text": "A before/after sequence alone cannot isolate a coffee effect from practice or time effects. A statistically significant change would not by itself establish that coffee caused it."
+   }
+  ]
+ }
+}

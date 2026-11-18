@@ -11,6 +11,8 @@ tex-text { display: inline; }
 a { color: var(--color-accent-700); }
 a:hover { color: var(--color-accent); }
 button { font-family: inherit; }
+/* Keep question labels such as (c) literal: Manrope otherwise ligates them to ©. */
+tex-text { font-variant-ligatures: none; }
 [hidden] { display: none !important; }
 
 /* Bare button used for text-like controls */
@@ -72,6 +74,14 @@ button { font-family: inherit; }
 .home-intro .lede { font-size: 15px; line-height: 1.5; max-width: 460px; }
 .home-intro .pilot { font-size: 12px; opacity: 0.7; max-width: 460px; }
 .home-list { display: flex; flex-direction: column; min-height: 0; border-left: 2px solid var(--color-divider); padding: 24px 0 24px 32px; box-sizing: border-box; }
+.home-units { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; flex: none; margin-bottom: 20px; }
+.home-unit-btn { cursor: pointer; font: inherit; font-size: 13px; min-width: 0; min-height: 38px; padding: 8px 4px; white-space: nowrap; border: 1px solid var(--color-divider); background: var(--color-bg); color: var(--color-text); }
+.home-unit-btn:hover { background: var(--color-accent-100); }
+.home-unit-btn.is-active { background: var(--color-text); color: var(--color-bg); }
+.home-unit-btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.home-lessons { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.home-reviews { flex: none; align-self: flex-start; margin-top: 12px; font-size: 12px; }
+@media (max-width: 420px) { .home-units { gap: 4px; } .home-unit-btn { font-size: 12px; padding-inline: 2px; } }
 .home-prompt { font-family: var(--font-heading); font-weight: 800; font-size: 18px; letter-spacing: -0.01em; }
 .unit-pane { display: flex; flex-direction: column; min-height: 0; flex: 1; }
 .unit-head { flex: none; padding-bottom: 12px; border-bottom: 2px solid var(--color-divider); }

@@ -1,0 +1,382 @@
+{
+ "n": 44,
+ "unit": 4,
+ "topic": "4.1",
+ "title": "Sampling Distributions for Sample Means",
+ "videoId": "yK_9xhlOVGY",
+ "videoTitle": "AP Statistics Topic 4.1 Sampling Distributions for Sample Means",
+ "intro": "Describe the center, spread, and shape of sample-mean distributions and calculate probabilities about averages.",
+ "moments": [
+  {
+   "t": 60,
+   "type": "Key idea",
+   "title": "What varies",
+   "text": "The distribution describes sample means over repeated samples of a fixed size."
+  },
+  {
+   "t": 388,
+   "type": "Key idea",
+   "title": "Unbiased means",
+   "text": "The center of the sampling distribution equals the population mean."
+  },
+  {
+   "t": 495,
+   "type": "Key idea",
+   "title": "Spread of sample means",
+   "text": "Independent observations give a sampling SD equal to the population SD divided by the square root of sample size."
+  },
+  {
+   "t": 623,
+   "type": "Key idea",
+   "title": "Larger samples",
+   "text": "Larger samples produce less variable sample means."
+  },
+  {
+   "t": 930,
+   "type": "Key idea",
+   "title": "Normal populations",
+   "text": "Means from a normal population have a normal distribution at any sample size."
+  },
+  {
+   "t": 975,
+   "type": "Key idea",
+   "title": "Central limit theorem",
+   "text": "Large samples can make sample means approximately normal, even for a nonnormal population."
+  },
+  {
+   "t": 1090,
+   "type": "Key idea",
+   "title": "University study times",
+   "text": "Keep the population SD separate from the SD of sample means."
+  },
+  {
+   "t": 1405,
+   "type": "Key idea",
+   "title": "Probability for an average",
+   "text": "Standardize using the sampling SD, not the population SD."
+  },
+  {
+   "t": 1559,
+   "type": "Key idea",
+   "title": "A percentile of sample means",
+   "text": "Find a cutoff on the distribution of sample means."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Randomness and independence",
+     "text": "Use a random sample. For sampling without replacement, check the sample is no more than 10% of the population."
+    },
+    {
+     "letter": "2",
+     "name": "Center and spread",
+     "text": "$\\mu_{\\bar x}=\\mu$ and $\\sigma_{\\bar x}=\\sigma/\\sqrt n$ for independent observations."
+    },
+    {
+     "letter": "3",
+     "name": "Shape",
+     "text": "A normal population gives normal means; for nonnormal populations, large samples support an approximation. Extreme skewness may require much more than 30."
+    },
+    {
+     "letter": "4",
+     "name": "What is the event?",
+     "text": "A statement about an average concerns the sample-mean distribution, not an individual observation."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Find a probability for a sample mean",
+     "q": "The video models university study times as normal with mean 42 minutes and SD 8 minutes. For a random sample of nine students, find the probability the sample mean exceeds 45 minutes. Assume at least 90 students in the population.",
+     "steps": [
+      {
+       "t": "Describe the sampling distribution.",
+       "work": {
+        "text": "The population is normal, the sample is random, and the stated population size supports the 10% condition.",
+        "tex": [
+         "$\\mu_{\\bar x}=42$",
+         "$\\sigma_{\\bar x}=8/\\sqrt9\\approx2.666667$"
+        ]
+       }
+      },
+      {
+       "t": "Standardize the sample-mean boundary.",
+       "work": {
+        "text": "Use the sampling SD, not 8.",
+        "tex": [
+         "$z=(45-42)/(8/\\sqrt9)=1.125$"
+        ]
+       }
+      },
+      {
+       "t": "Find the upper-tail probability.",
+       "work": {
+        "text": "The event concerns a mean from nine students.",
+        "tex": [
+         "$P(\\bar X>45)\\approx0.1303$"
+        ]
+       }
+      }
+     ],
+     "answer": "About 13.03% of random samples of nine students would have a mean study time above 45 minutes.",
+     "seek": 1405,
+     "formula": [
+      "$z=\\dfrac{\\bar x-\\mu}{\\sigma/\\sqrt n}$"
+     ]
+    },
+    {
+     "obj": "Find an upper percentile for sample means",
+     "q": "For the same university model and sample size nine, find the cutoff for the top 1% of sample means.",
+     "steps": [
+      {
+       "t": "Identify the cumulative probability.",
+       "work": {
+        "text": "The upper 1% starts at cumulative probability 0.99."
+       }
+      },
+      {
+       "t": "Find the normal cutoff.",
+       "work": {
+        "text": "Use the mean 42 and sampling SD 8 divided by 3.",
+        "tex": [
+         "$c=42+(2.326348)(8/3)$",
+         "$\\approx48.204$"
+        ]
+       }
+      },
+      {
+       "t": "State what exceeds the cutoff.",
+       "work": {
+        "text": "The cutoff describes averages of nine study times, not individual study times."
+       }
+      }
+     ],
+     "answer": "About 1% of sample means exceed 48.204 minutes.",
+     "seek": 1559
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Calculator practice",
+   "title": "Normal probabilities for averages",
+   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "steps": [
+    {
+     "title": "Set the sampling SD",
+     "suppose": "we want a probability for the mean of nine study times.",
+     "do": [
+      "Enter `s=8/sqrt(9)`.",
+      "Enter `normaldist(42,s)`."
+     ],
+     "observe": "The distribution uses the SD of averages.",
+     "expected": "$\\sigma_{\\bar x}\\approx2.666667$",
+     "seek": 495
+    },
+    {
+     "title": "Find an upper tail",
+     "suppose": "we want the probability the mean exceeds 45.",
+     "do": [
+      "Enter `1-normaldist(42,s).cdf(45)`."
+     ],
+     "observe": "The complement leaves the right tail.",
+     "expected": "$P(\\bar X>45)\\approx0.1303$",
+     "seek": 1405
+    },
+    {
+     "title": "Find the upper one-percent cutoff",
+     "suppose": "we want the 99th percentile of the means.",
+     "do": [
+      "Enter `normaldist(42,s).inversecdf(0.99)`."
+     ],
+     "observe": "Only 1% of sample means lie above this value.",
+     "expected": "$c\\approx48.204$ minutes.",
+     "seek": 1559
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "SD of individuals versus averages",
+     "weak": "The sampling SD is 8 minutes.",
+     "better": "For nine independent students, $\\sigma_{\\bar x}=8/\\sqrt9$ minutes.",
+     "seek": 495
+    },
+    {
+     "kind": "Common trap",
+     "title": "The population changes shape",
+     "weak": "The CLT makes the population normal.",
+     "better": "The CLT describes the sampling distribution of a mean; it does not change the population.",
+     "seek": 975
+    },
+    {
+     "kind": "Common trap",
+     "title": "A universal sample-size rule",
+     "weak": "Thirty observations guarantee a normal approximation.",
+     "better": "Extreme skewness or influential observations may require a substantially larger sample.",
+     "seek": 975
+    },
+    {
+     "kind": "Common trap",
+     "title": "What a probability refers to",
+     "weak": "13% of individuals study more than 45 minutes.",
+     "better": "This calculation concerns averages of nine students, not individual students.",
+     "seek": 1405
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The CLT supplies an approximation, not a guarantee at a particular sample size. The university example explicitly assumes at least 90 students to justify sampling independence."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "A population has mean 80 and SD 12. For independent samples of size 36, what are the mean and SD of the sample mean?",
+     "opts": [
+      "80 and 12",
+      "80 and 2",
+      "80 and 0.333",
+      "2 and 80"
+     ],
+     "ok": 1,
+     "why": [
+      "12 describes individuals.",
+      "The mean stays 80 and the SD is 12/6=2.",
+      "Dividing by n rather than its square root is incorrect.",
+      "Center and spread have been reversed."
+     ],
+     "seek": 495
+    },
+    {
+     "stem": "Which change halves the SD of a sample mean?",
+     "opts": [
+      "Double the sample size",
+      "Halve the sample size",
+      "Quadruple the sample size",
+      "Add 4 to the sample size"
+     ],
+     "ok": 2,
+     "why": [
+      "The SD is divided by the square root of 2.",
+      "This increases variability.",
+      "The square root of the sample size doubles.",
+      "An additive change has no fixed proportional effect."
+     ],
+     "seek": 623
+    },
+    {
+     "stem": "A population is normal. Independent random samples of size 8 are drawn. The sample-mean distribution is:",
+     "opts": [
+      "Normal",
+      "Necessarily uniform",
+      "The same spread as individuals",
+      "Not normal because n is below 30"
+     ],
+     "ok": 0,
+     "why": [
+      "Normality of the population suffices here.",
+      "Uniformity does not follow.",
+      "Its SD is reduced by the square root of 8.",
+      "The 30 guideline is unnecessary for a normal population."
+     ],
+     "seek": 930
+    },
+    {
+     "stem": "What does a 0.04 probability that a sample mean exceeds 90 describe?",
+     "opts": [
+      "4% of individuals exceed 90",
+      "The mean is 90",
+      "4% of the population is sampled",
+      "4% of repeated samples of the specified size have means above 90"
+     ],
+     "ok": 3,
+     "why": [
+      "Individuals are not the sampling units of this distribution.",
+      "An event probability is not a mean.",
+      "This probability is not a sampling fraction.",
+      "It describes the repeated-sampling event."
+     ],
+     "seek": 60
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "Parcel masses are normally distributed with mean 500 g and SD 40 g. A random sample of 25 is selected without replacement from 10,000 parcels.",
+   "parts": [
+    "(a) Describe the sampling distribution of the mean and justify conditions.",
+    "(b) Calculate the probability the sample mean exceeds 516 g.",
+    "(c) Describe the effect of increasing the sample size to 100."
+   ],
+   "sample": [
+    "(a) The sample is random and 25 is no more than 10% of 10,000. The population is normal, so the sample mean is normal with mean 500 g and SD 40/√25=8 g.",
+    "(b) The standardized boundary is (516−500)/8=2, so the probability is about 0.0228.",
+    "(c) The center remains 500 g and the sampling SD becomes 40/√100=4 g. Means become less variable, while the population distribution stays the same."
+   ],
+   "checklist": [
+    "Checks randomness and the sampling fraction.",
+    "Justifies normality from the population.",
+    "Gives mean 500 and sampling SD 8 g.",
+    "Standardizes correctly and finds the upper tail.",
+    "Explains unchanged center and reduced sampling variability."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "The CLT supplies an approximation, not a guarantee at a particular sample size. The university example explicitly assumes at least 90 students to justify sampling independence."
+   }
+  ]
+ }
+}

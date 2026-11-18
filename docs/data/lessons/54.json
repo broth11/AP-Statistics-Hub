@@ -1,0 +1,320 @@
+{
+ "n": 54,
+ "unit": 5,
+ "topic": "5.4",
+ "title": "Residuals",
+ "videoId": "xQUMK9v4UbI",
+ "videoTitle": "AP Statistics Topic 5.4 Residuals",
+ "intro": "Calculate and interpret residuals and use residual patterns to assess a linear model.",
+ "moments": [
+  {
+   "t": 151,
+   "type": "Key idea",
+   "title": "Prediction errors",
+   "text": "A residual measures observed response minus predicted response."
+  },
+  {
+   "t": 162,
+   "type": "Key idea",
+   "title": "Keep the subtraction order",
+   "text": "Subtract the model prediction from the actual response."
+  },
+  {
+   "t": 338,
+   "type": "Key idea",
+   "title": "Positive residuals",
+   "text": "A positive residual means the model underpredicted the observed response."
+  },
+  {
+   "t": 415,
+   "type": "Key idea",
+   "title": "Negative residuals",
+   "text": "A negative residual means the model overpredicted."
+  },
+  {
+   "t": 1001,
+   "type": "Key idea",
+   "title": "Plot residuals",
+   "text": "Compare residuals with x or with predicted responses."
+  },
+  {
+   "t": 1419,
+   "type": "Key idea",
+   "title": "A useful linear model",
+   "text": "Look for residuals without a systematic pattern around zero."
+  },
+  {
+   "t": 1597,
+   "type": "Key idea",
+   "title": "Curvature",
+   "text": "Systematic curvature suggests the straight-line form misses part of the association."
+  },
+  {
+   "t": 1938,
+   "type": "Key idea",
+   "title": "Voltage example",
+   "text": "Calculate and interpret an error in the response units."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Residual",
+     "text": "$e=y-\\hat y$. It is a vertical prediction error in response units."
+    },
+    {
+     "letter": "2",
+     "name": "Sign",
+     "text": "Positive means observed above predicted, so the model underpredicted; negative means overpredicted."
+    },
+    {
+     "letter": "3",
+     "name": "Residual plots",
+     "text": "Plot residuals against x or fitted responses and look for systematic patterns."
+    },
+    {
+     "letter": "4",
+     "name": "Model assessment",
+     "text": "Random-looking scatter around zero supports a linear form. Curvature suggests the form is inappropriate; changing spread also deserves attention."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Calculate and interpret a residual",
+     "q": "The video uses $\\hat y=4.70+2.14x$ for voltage in volts from wind speed x in meters per second. At x=15, observed voltage is 36.9 V. Find the residual.",
+     "steps": [
+      {
+       "t": "Calculate the fitted response.",
+       "work": {
+        "text": "Use the observed wind speed.",
+        "tex": [
+         "$\\hat y=4.70+2.14(15)=36.80$"
+        ]
+       }
+      },
+      {
+       "t": "Subtract predicted from observed.",
+       "work": {
+        "text": "Keep both values in volts.",
+        "tex": [
+         "$e=36.9-36.80\\approx0.10$"
+        ]
+       }
+      },
+      {
+       "t": "Interpret the sign and magnitude.",
+       "work": {
+        "text": "The observation is above the model by this amount."
+       }
+      }
+     ],
+     "answer": "The actual voltage is 0.10 V higher than predicted; the model underpredicts this observation.",
+     "seek": 1938
+    },
+    {
+     "obj": "Recover an observation from its residual",
+     "q": "Supplementary example: a delivery-time model predicts 35 minutes for an order. Its residual is −4 minutes. Find the actual delivery time.",
+     "steps": [
+      {
+       "t": "Write the residual relationship.",
+       "work": {
+        "text": "Use residual = observed − predicted.",
+        "tex": [
+         "$e=y-\\hat y$"
+        ]
+       }
+      },
+      {
+       "t": "Solve for the observed response.",
+       "work": {
+        "text": "Add the residual to the prediction.",
+        "tex": [
+         "$y=\\hat y+e=35-4=31$"
+        ]
+       }
+      },
+      {
+       "t": "Interpret the error.",
+       "work": {
+        "text": "The actual time is lower than the prediction, so the model overpredicts by 4 minutes."
+       }
+      }
+     ],
+     "answer": "The actual delivery took 31 minutes."
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Reverse subtraction",
+     "weak": "A residual is predicted minus actual.",
+     "better": "Use observed minus predicted.",
+     "seek": 162
+    },
+    {
+     "kind": "Common trap",
+     "title": "Sign reversal",
+     "weak": "A positive residual means the prediction was too high.",
+     "better": "A positive residual means the observation was higher than predicted, so the prediction was too low.",
+     "seek": 338
+    },
+    {
+     "kind": "Common trap",
+     "title": "Units",
+     "weak": "A residual is measured in x units.",
+     "better": "It is a difference of response values, so use response units.",
+     "seek": 151
+    },
+    {
+     "kind": "Common trap",
+     "title": "Curvature ignored",
+     "weak": "A large correlation makes a curved residual plot acceptable.",
+     "better": "Curvature suggests the straight-line model is not capturing the association adequately.",
+     "seek": 1597
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "Observed response is 52 and predicted response is 47. The residual is:",
+     "opts": [
+      "−5",
+      "5",
+      "47",
+      "99"
+     ],
+     "ok": 1,
+     "why": [
+      "The subtraction order is reversed.",
+      "52−47=5.",
+      "47 is the prediction.",
+      "Adding values is not a residual."
+     ],
+     "seek": 162
+    },
+    {
+     "stem": "A residual of −6 kg means:",
+     "opts": [
+      "The observation is 6 kg above predicted",
+      "The prediction is too low",
+      "The prediction is 6 kg above the observation",
+      "The input is negative"
+     ],
+     "ok": 2,
+     "why": [
+      "A negative residual puts the observation below predicted.",
+      "The model overpredicts.",
+      "Observed minus predicted is −6.",
+      "A residual does not determine the sign of x."
+     ],
+     "seek": 415
+    },
+    {
+     "stem": "A clear U-shaped residual pattern suggests:",
+     "opts": [
+      "A linear model misses systematic curvature",
+      "The model is automatically perfect",
+      "Correlation must be exactly zero",
+      "The observations are independent"
+     ],
+     "ok": 0,
+     "why": [
+      "The errors are systematic rather than random around zero.",
+      "A pattern indicates missed structure.",
+      "Residual curvature does not fix a specific correlation.",
+      "Independence concerns the data-collection process."
+     ],
+     "seek": 1597
+    },
+    {
+     "stem": "A fitted value is 20 and the residual is 3. What is the observed response?",
+     "opts": [
+      "17",
+      "3",
+      "60",
+      "23"
+     ],
+     "ok": 3,
+     "why": [
+      "This subtracts instead of adding the residual.",
+      "3 is the error only.",
+      "Multiplication is not appropriate.",
+      "Observed = predicted + residual =23."
+     ],
+     "seek": 162
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A model predicts cooling time in minutes as $\\hat y=10+2x$, where x is batch mass in kilograms. A 6-kg batch actually takes 25 minutes to cool. A residual plot for all batches shows an upward curve.",
+   "parts": [
+    "(a) Calculate and interpret this batch's residual.",
+    "(b) For another batch the prediction is 30 minutes and the residual is −3. Find and interpret its observed time.",
+    "(c) Assess the suitability of the linear model using the residual plot."
+   ],
+   "sample": [
+    "(a) The prediction is 10+2(6)=22 minutes. The residual is 25−22=3 minutes: the actual cooling time is 3 minutes longer than predicted, so the model underpredicts.",
+    "(b) Observed time is 30+(−3)=27 minutes. The model overpredicts cooling time by 3 minutes.",
+    "(c) The upward curve indicates a systematic pattern in the errors, so a straight-line model does not adequately capture the relationship. Investigate a more suitable form rather than relying only on a correlation value."
+   ],
+   "checklist": [
+    "Calculates the first prediction.",
+    "Computes the residual with correct subtraction.",
+    "Interprets sign and magnitude in minutes.",
+    "Recovers 27 minutes and identifies overprediction.",
+    "Uses residual curvature to question linear form."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   }
+  ]
+ }
+}

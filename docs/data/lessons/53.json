@@ -1,0 +1,326 @@
+{
+ "n": 53,
+ "unit": 5,
+ "topic": "5.3",
+ "title": "Linear Regression Models",
+ "videoId": "6_z73MwBzis",
+ "videoTitle": "AP Statistics Topic 5.3 Linear Regression Models",
+ "intro": "Use a linear model to predict responses, distinguish predictions from observations, and recognize extrapolation.",
+ "moments": [
+  {
+   "t": 72,
+   "type": "Key idea",
+   "title": "When a line is appropriate",
+   "text": "Fit a linear model to an approximately linear association."
+  },
+  {
+   "t": 183,
+   "type": "Key idea",
+   "title": "Slope and intercept",
+   "text": "The equation gives a predicted response for any chosen x."
+  },
+  {
+   "t": 251,
+   "type": "Key idea",
+   "title": "Predicted response",
+   "text": "Use y-hat to distinguish a model prediction from an observed response."
+  },
+  {
+   "t": 329,
+   "type": "Key idea",
+   "title": "Model coefficients",
+   "text": "Technology can calculate fitted coefficients from paired data."
+  },
+  {
+   "t": 449,
+   "type": "Key idea",
+   "title": "Prediction direction",
+   "text": "A regression of y on x is designed to predict y from x."
+  },
+  {
+   "t": 509,
+   "type": "Key idea",
+   "title": "Salary prediction",
+   "text": "Substitute years of experience into the model."
+  },
+  {
+   "t": 642,
+   "type": "Key idea",
+   "title": "Study-time prediction",
+   "text": "Keep response units in the final prediction."
+  },
+  {
+   "t": 799,
+   "type": "Key idea",
+   "title": "Extrapolation",
+   "text": "Predictions beyond the observed x range can be unreliable."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Model notation",
+     "text": "$\\hat y=a+bx$ predicts the response from x."
+    },
+    {
+     "letter": "2",
+     "name": "Input and output",
+     "text": "Substitute an explanatory value and report the predicted response with units."
+    },
+    {
+     "letter": "3",
+     "name": "Direction matters",
+     "text": "A regression of y on x cannot generally be inverted to give the regression prediction of x from y."
+    },
+    {
+     "letter": "4",
+     "name": "Prediction range",
+     "text": "Prefer predictions within the observed explanatory range and do not treat a fitted value as a guaranteed outcome."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Predict salary from experience",
+     "q": "The video gives $\\hat y=29059+2601.25x$, where x is years of experience and the numerical salary predictions are in dollars. Predict salary at nine years.",
+     "steps": [
+      {
+       "t": "Identify the input.",
+       "work": {
+        "text": "Use nine years for x, not for the predicted response."
+       }
+      },
+      {
+       "t": "Substitute into the model.",
+       "work": {
+        "text": "Multiply before adding.",
+        "tex": [
+         "$\\hat y=29059+2601.25(9)$",
+         "$=52470.25$"
+        ]
+       }
+      },
+      {
+       "t": "Report a prediction in context.",
+       "work": {
+        "text": "The result is a fitted salary, not a promise about any employee."
+       }
+      }
+     ],
+     "answer": "The model predicts an annual salary of 52,470.25 dollars at nine years of experience.",
+     "seek": 509
+    },
+    {
+     "obj": "Predict an exam score",
+     "q": "The video gives $\\hat y=49.52+3.98x$, with study time x in hours and predicted exam score in points. Predict the score at 6.2 hours.",
+     "steps": [
+      {
+       "t": "Match the input units.",
+       "work": {
+        "text": "Use 6.2 hours as x."
+       }
+      },
+      {
+       "t": "Calculate the fitted response.",
+       "work": {
+        "text": "Use the supplied coefficients.",
+        "tex": [
+         "$\\hat y=49.52+3.98(6.2)$",
+         "$=74.196$"
+        ]
+       }
+      },
+      {
+       "t": "State what the fitted response means.",
+       "work": {
+        "text": "Use predicted exam score and points in the answer."
+       }
+      }
+     ],
+     "answer": "The model predicts 74.196 exam points for a student who studies 6.2 hours.",
+     "seek": 637
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Prediction versus observation",
+     "weak": "Every student studying 6.2 hours scores 74.196.",
+     "better": "The fitted response is a prediction; actual scores vary around the model.",
+     "seek": 637
+    },
+    {
+     "kind": "Common trap",
+     "title": "Reversing the regression",
+     "weak": "Solve the equation for x to get the regression prediction of x.",
+     "better": "Predicting x from y generally requires fitting a different regression with their roles reversed.",
+     "seek": 449
+    },
+    {
+     "kind": "Common trap",
+     "title": "Extrapolation",
+     "weak": "A line is reliable for any input.",
+     "better": "The relationship may change beyond the x range used to fit the model.",
+     "seek": 799
+    },
+    {
+     "kind": "Common trap",
+     "title": "Wrong substitution",
+     "weak": "Put the response value into x.",
+     "better": "x is the explanatory input; the equation produces a predicted response.",
+     "seek": 183
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The salary narration mentions a thousands-of-dollars axis but uses dollar-scale coefficients and predictions. The worked question explicitly uses dollars consistently."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "A model is $\\hat y=12+3x$. What is the prediction at x=4?",
+     "opts": [
+      "15",
+      "19",
+      "24",
+      "48"
+     ],
+     "ok": 2,
+     "why": [
+      "This adds the slope only once.",
+      "This adds x rather than multiplying it by the slope.",
+      "12+3(4)=24.",
+      "This multiplies terms incorrectly."
+     ],
+     "seek": 183
+    },
+    {
+     "stem": "A model built from observations with x from 10 to 30 is used at x=80. This is:",
+     "opts": [
+      "Extrapolation",
+      "A residual",
+      "Guaranteed interpolation",
+      "A confidence interval"
+     ],
+     "ok": 0,
+     "why": [
+      "80 lies beyond the observed range.",
+      "A residual compares actual and predicted responses.",
+      "80 is outside the range.",
+      "A single fitted value is not an interval."
+     ],
+     "seek": 799
+    },
+    {
+     "stem": "Which notation identifies a fitted response?",
+     "opts": [
+      "$x$",
+      "$y$",
+      "$r$",
+      "$\\hat y$"
+     ],
+     "ok": 3,
+     "why": [
+      "x is the explanatory input.",
+      "y usually denotes an observed response.",
+      "r is correlation.",
+      "The hat identifies a model prediction."
+     ],
+     "seek": 183
+    },
+    {
+     "stem": "Why is solving a fitted y-on-x equation for x not generally an x-on-y regression prediction?",
+     "opts": [
+      "Algebra cannot solve linear equations",
+      "The two fits minimize different response residuals",
+      "Correlation changes sign when variables are swapped",
+      "Every line has the same slope"
+     ],
+     "ok": 1,
+     "why": [
+      "The issue is statistical purpose, not algebraic ability.",
+      "The regression fitting criterion depends on which variable is the response.",
+      "Swapping variables leaves correlation unchanged.",
+      "Slopes depend on the fitted relation and units."
+     ],
+     "seek": 449
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A model for bicycle repair cost is $\\hat y=18+12x$, where x is repair time in hours and y is cost in dollars. It was fitted using jobs lasting 0.5–4 hours.",
+   "parts": [
+    "(a) Predict the cost of a 2.5-hour job.",
+    "(b) Interpret the prediction and explain why it is not an observed bill.",
+    "(c) Assess using this model for a 12-hour job or to predict repair time from a known bill."
+   ],
+   "sample": [
+    "(a) The prediction is 18+12(2.5)=48 dollars.",
+    "(b) For a repair lasting 2.5 hours, the model predicts a cost of 48 dollars. The actual bill may differ; the equation supplies a fitted response, not the recorded charge.",
+    "(c) A 12-hour job is outside the fitted range and requires extrapolation, which may be unreliable. Predicting time from a bill requires a regression designed for that direction; simply inverting this fitted equation is not generally equivalent."
+   ],
+   "checklist": [
+    "Substitutes 2.5 into the explanatory input.",
+    "Calculates 48 dollars.",
+    "Describes a predicted, not guaranteed, cost.",
+    "Identifies extrapolation at 12 hours.",
+    "Explains the direction of regression prediction."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "The salary narration mentions a thousands-of-dollars axis but uses dollar-scale coefficients and predictions. The worked question explicitly uses dollars consistently."
+   }
+  ]
+ }
+}

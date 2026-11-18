@@ -1,0 +1,308 @@
+{
+ "n": 51,
+ "unit": 5,
+ "topic": "5.1",
+ "title": "Graphical Representations Between Two Quantitative Variables",
+ "videoId": "mXj6JktK3Wc",
+ "videoTitle": "AP Statistics Topic 5.1 Graphical Representations Between Two Quantitative Variables",
+ "intro": "Construct scatterplots, identify explanatory and response variables, and describe form, direction, strength, and unusual features in context.",
+ "moments": [
+  {
+   "t": 119,
+   "type": "Key idea",
+   "title": "Paired measurements",
+   "text": "Each point represents two numerical measurements on the same observational unit."
+  },
+  {
+   "t": 151,
+   "type": "Key idea",
+   "title": "Plot ordered pairs",
+   "text": "Place each observation at its corresponding x and y values."
+  },
+  {
+   "t": 267,
+   "type": "Key idea",
+   "title": "Choose the axes",
+   "text": "Put the explanatory variable on x and the response variable on y."
+  },
+  {
+   "t": 339,
+   "type": "Key idea",
+   "title": "Age and vocabulary",
+   "text": "Use age to explain or predict vocabulary size."
+  },
+  {
+   "t": 451,
+   "type": "Key idea",
+   "title": "Association is not causation",
+   "text": "A scatterplot alone cannot establish a causal effect."
+  },
+  {
+   "t": 644,
+   "type": "Key idea",
+   "title": "Direction",
+   "text": "Describe whether responses tend to increase or decrease as x increases."
+  },
+  {
+   "t": 850,
+   "type": "Key idea",
+   "title": "Strength",
+   "text": "Judge how closely points follow the general pattern."
+  },
+  {
+   "t": 966,
+   "type": "Key idea",
+   "title": "Unusual features",
+   "text": "Look for clusters and points that do not fit the overall association."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Two quantitative variables",
+     "text": "Record both measurements on the same units; avoid losing the pairing."
+    },
+    {
+     "letter": "2",
+     "name": "Axes",
+     "text": "Use the proposed explanatory variable on x and response variable on y, with units and equal-interval scales."
+    },
+    {
+     "letter": "3",
+     "name": "Description",
+     "text": "State form, direction, strength, and unusual features in context."
+    },
+    {
+     "letter": "4",
+     "name": "Claims",
+     "text": "Use tends to rather than claiming every point obeys the pattern. A scatterplot alone does not establish causality."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Construct a scatterplot from paired measurements",
+     "q": "The video describes toddler age in months and spoken vocabulary size. Two recorded pairs are (20, 95) and (48, 1780). Explain how to place these observations.",
+     "steps": [
+      {
+       "t": "Choose and label the axes.",
+       "work": {
+        "text": "Use age in months horizontally and vocabulary size in words vertically."
+       }
+      },
+      {
+       "t": "Plot each intact pair.",
+       "work": {
+        "text": "Place the 20-month-old at 95 words and the 48-month-old at 1780 words. Do not sort the two lists separately."
+       }
+      },
+      {
+       "t": "Represent observations as separate points.",
+       "work": {
+        "text": "Do not connect toddlers with line segments. The two supplied points alone cannot establish the form or strength of the full 14-toddler relationship."
+       }
+      }
+     ],
+     "answer": "Each point represents one toddler, retaining that toddler's age and vocabulary measurements.",
+     "seek": 339
+    },
+    {
+     "obj": "Describe an association in context",
+     "q": "Supplementary example: a scatterplot of roof area in square meters versus installation cost has points close to an upward straight pattern, with one unusually high-cost project.",
+     "steps": [
+      {
+       "t": "Identify the direction in context.",
+       "work": {
+        "text": "Larger roofs tend to have higher installation costs."
+       }
+      },
+      {
+       "t": "State form and strength.",
+       "work": {
+        "text": "The main pattern is approximately linear and strong because most points lie close to a straight trend."
+       }
+      },
+      {
+       "t": "Identify the unusual feature.",
+       "work": {
+        "text": "One project has unusually high cost relative to others of similar roof area."
+       }
+      }
+     ],
+     "answer": "There is a strong, positive, approximately linear association between roof area and installation cost, with one unusually high-cost project."
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Unpaired columns",
+     "weak": "Sort each variable separately before plotting.",
+     "better": "Keep each observational unit's measurements together as an ordered pair.",
+     "seek": 119
+    },
+    {
+     "kind": "Common trap",
+     "title": "Connecting observations",
+     "weak": "Join every dot to its neighbor.",
+     "better": "A scatterplot displays separate paired observations; connecting them can imply an unprovided sequence.",
+     "seek": 151
+    },
+    {
+     "kind": "Common trap",
+     "title": "Cause from direction",
+     "weak": "A positive association proves that x causes y to rise.",
+     "better": "A positive association means larger x values tend to accompany larger y values; causality needs design evidence.",
+     "seek": 451
+    },
+    {
+     "kind": "Common trap",
+     "title": "Incomplete description",
+     "weak": "The graph goes up.",
+     "better": "Name a positive association in context and describe form, strength, and unusual features.",
+     "seek": 644
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "A study uses parcel mass to predict handling time. Which axes are appropriate?",
+     "opts": [
+      "Time on x; mass on y",
+      "Mass on x; time on y",
+      "Two unrelated mass lists",
+      "Category labels on both axes"
+     ],
+     "ok": 1,
+     "why": [
+      "This reverses the proposed explanatory role.",
+      "Mass is explanatory and handling time is the response.",
+      "A scatterplot needs paired measurements of two variables.",
+      "Both variables here are quantitative."
+     ],
+     "seek": 267
+    },
+    {
+     "stem": "A plot has points tightly clustered around a downward straight trend. Which description fits?",
+     "opts": [
+      "Strong positive nonlinear",
+      "Weak negative linear",
+      "Strong negative linear",
+      "No association"
+     ],
+     "ok": 2,
+     "why": [
+      "The trend is downward and approximately straight.",
+      "The points are tight, so the association is strong.",
+      "Tight, downward, straight captures strength, direction, and form.",
+      "There is a clear pattern."
+     ],
+     "seek": 644
+    },
+    {
+     "stem": "Which action destroys the information needed for a scatterplot?",
+     "opts": [
+      "Sorting x and y independently",
+      "Labeling the axes",
+      "Using a common numerical scale on each axis",
+      "Keeping each pair in one row"
+     ],
+     "ok": 0,
+     "why": [
+      "The original pairings would be lost.",
+      "Labels help interpretation.",
+      "Each axis needs a sensible equal-interval scale.",
+      "Rows preserve pairing."
+     ],
+     "seek": 119
+    },
+    {
+     "stem": "Which conclusion can a scatterplot alone support?",
+     "opts": [
+      "The exact cause of every response",
+      "Every future response value",
+      "An experimental treatment effect",
+      "A description of the observed association"
+     ],
+     "ok": 3,
+     "why": [
+      "Causal explanations are not determined by a plot.",
+      "A plot does not guarantee future responses.",
+      "An effect needs the study design and analysis.",
+      "The form and direction can be described from the data."
+     ],
+     "seek": 451
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "For five gardens, recorded pairs of daily sunlight in hours and harvested mass in kilograms are (2, 3), (3, 4), (4, 6), (5, 7), and (6, 8).",
+   "parts": [
+    "(a) Specify how to construct the scatterplot and identify its observational units.",
+    "(b) Describe the observed association in context.",
+    "(c) Assess the claim that an extra hour of sunlight must cause a larger harvest."
+   ],
+   "sample": [
+    "(a) Each garden is a unit. Plot sunlight on the x-axis and harvested mass on the y-axis with labeled units and numerical scales, preserving the five pairs.",
+    "(b) Gardens with more sunlight tend to have greater harvested mass. The five points follow a strong, positive, approximately linear pattern without a clearly isolated point.",
+    "(c) The observational pairs alone do not show causation. Other variables such as soil quality could be related to both sunlight exposure and harvest. The observed pattern also does not guarantee every future garden's result."
+   ],
+   "checklist": [
+    "Identifies gardens as units.",
+    "Specifies axes, units, and preserved pairs.",
+    "Describes direction in context.",
+    "Describes form, strength, and unusual features cautiously.",
+    "Distinguishes association from causation."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   }
+  ]
+ }
+}

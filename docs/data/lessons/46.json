@@ -1,0 +1,366 @@
+{
+ "n": 46,
+ "unit": 4,
+ "topic": "4.4 & 4.5",
+ "title": "Setting Up and Carrying Out a Test for a Population Mean",
+ "videoId": "96MVLC9vj70",
+ "videoTitle": "AP Statistics Topic 4.4 & 4.5 Setting Up and Carrying Out a Test for a Population Mean",
+ "intro": "Set up and carry out a one-sample t-test, interpret the p-value, and justify a conclusion in context.",
+ "moments": [
+  {
+   "t": 65,
+   "type": "Key idea",
+   "title": "A question about a mean",
+   "text": "A test compares a sample result with a hypothesized population value."
+  },
+  {
+   "t": 596,
+   "type": "Key idea",
+   "title": "Define the parameter",
+   "text": "Name the population, response variable, and any subtraction order."
+  },
+  {
+   "t": 617,
+   "type": "Key idea",
+   "title": "Verify conditions",
+   "text": "Check the design and the distribution of the appropriate observations."
+  },
+  {
+   "t": 663,
+   "type": "Key idea",
+   "title": "State population hypotheses",
+   "text": "The null states equality; choose the alternative from the question."
+  },
+  {
+   "t": 969,
+   "type": "Key idea",
+   "title": "A t statistic",
+   "text": "Measure distance from the null in estimated standard-error units."
+  },
+  {
+   "t": 991,
+   "type": "Key idea",
+   "title": "Calculate standard error",
+   "text": "Use sample variability to standardize the observed difference."
+  },
+  {
+   "t": 1140,
+   "type": "Key idea",
+   "title": "Choose the correct tail",
+   "text": "The alternative determines which outcomes count as more extreme."
+  },
+  {
+   "t": 1422,
+   "type": "Key idea",
+   "title": "Make a decision",
+   "text": "Compare the p-value with the significance level and conclude in context."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Parameter",
+     "text": "Define the population mean sodium content of this brand of soup before writing hypotheses."
+    },
+    {
+     "letter": "2",
+     "name": "Select the method",
+     "text": "One-sample t-test. Use paired differences for matched observations; use two-sample methods for independent groups."
+    },
+    {
+     "letter": "3",
+     "name": "Conditions",
+     "text": "Check the actual design. For small paired samples inspect differences, not the two separate measurement distributions."
+    },
+    {
+     "letter": "4",
+     "name": "Tail",
+     "text": "Choose less than, greater than, or two-sided from the investigative question before looking at the result."
+    },
+    {
+     "letter": "5",
+     "name": "Conclusion",
+     "text": "Compare p with alpha, then state the strength of evidence about the population alternative in context."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Carry out a t hypothesis test",
+     "q": "The video selects 12 cans randomly: sample mean sodium 780 mg and sample SD 25 mg. The population is normally distributed. Test whether the population mean is below 800 mg at 5%. Assume at least 120 cans in the population.",
+     "steps": [
+      {
+       "t": "Define the parameter, method, and hypotheses.",
+       "work": {
+        "text": "Use a one-sample t-test for the population mean sodium content of this brand of soup.",
+        "tex": [
+         "$H_0:\\mu=800$",
+         "$H_a:\\mu<800$"
+        ]
+       }
+      },
+      {
+       "t": "Check the conditions.",
+       "work": {
+        "text": "The sample is random, the population is normal, and the assumed population contains at least ten times the sample size."
+       }
+      },
+      {
+       "t": "Calculate the standard error and test statistic.",
+       "work": {
+        "text": "Use the unrounded standard error.",
+        "tex": [
+         "$SE\\approx7.216878$",
+         "$t=(780-800)/SE\\approx-2.771281$"
+        ]
+       }
+      },
+      {
+       "t": "Find the p-value using the correct tail.",
+       "work": {
+        "text": "The alternative determines the tail; degrees of freedom come from the relevant t method.",
+        "tex": [
+         "$df\\approx11.0000$",
+         "$p\\approx0.009093$"
+        ]
+       }
+      },
+      {
+       "t": "Compare with the significance level and conclude.",
+       "work": {
+        "text": "0.009093 ≤ 0.05; reject the null hypothesis."
+       }
+      }
+     ],
+     "answer": "There is convincing evidence at the 5% level that the population mean sodium content of this brand of soup is less than 800 mg.",
+     "seek": 1635,
+     "formula": [
+      "$t=\\dfrac{\\text{estimate}-\\text{null value}}{SE}$"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Calculator practice",
+   "title": "Calculate the t statistic and p-value",
+   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "steps": [
+    {
+     "title": "Standardize",
+     "suppose": "we want the t statistic for the worked example.",
+     "do": [
+      "Enter `s=7.216878364870`.",
+      "Enter `u=(780-800)/s`."
+     ],
+     "observe": "Here s is the standard error, not an individual-observation SD.",
+     "expected": "$t\\approx-2.771281$",
+     "seek": 991
+    },
+    {
+     "title": "Find the tail area",
+     "suppose": "we want the p-value for the stated alternative.",
+     "do": [
+      "Enter `v=11.000000000000`.",
+      "Enter `tdist(v).cdf(u)`."
+     ],
+     "observe": "A two-sided p-value includes both tails. Do not double a result already calculated for both tails.",
+     "expected": "$p\\approx0.009093$",
+     "seek": 1140
+    },
+    {
+     "title": "Compare with alpha",
+     "suppose": "we use significance level 0.05.",
+     "do": [
+      "Compare the displayed p-value with the stated significance level."
+     ],
+     "observe": "A small p-value is evidence against the null, not the probability the null is true.",
+     "expected": "Reject $H_0$.",
+     "seek": 1422
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Sample hypotheses",
+     "weak": "The null states that the observed sample mean equals a value.",
+     "better": "Hypotheses concern population parameters. The sample statistic supplies evidence.",
+     "seek": 617
+    },
+    {
+     "kind": "Common trap",
+     "title": "A p-value is not the probability of the null",
+     "weak": "The p-value is the chance the null is true.",
+     "better": "Assuming the null and conditions, it is the probability of a result at least as extreme in the alternative direction.",
+     "seek": 1140
+    },
+    {
+     "kind": "Common trap",
+     "title": "Failure to reject proves equality",
+     "weak": "A large p-value proves no difference.",
+     "better": "It means there is insufficient evidence for the specified alternative at the chosen significance level.",
+     "seek": 1422
+    },
+    {
+     "kind": "Common trap",
+     "title": "Pairing and independence",
+     "weak": "Two measurements on the same person are independent samples.",
+     "better": "Analyze within-person differences as one sample; the number of pairs is the sample size.",
+     "seek": 663
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Use unrounded statistics to calculate the p-value. The two-sided probability is twice the appropriate one-tail area for the symmetric t distribution. A tiny p-value is not the probability of an exact observed sample."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "A one-sample mean test has sample mean 46, null mean 50, sample SD 8, and n=16. What is t?",
+     "opts": [
+      "−0.5",
+      "2",
+      "−2",
+      "−8"
+     ],
+     "ok": 2,
+     "why": [
+      "This omits the square-root sample-size adjustment.",
+      "The sign is negative.",
+      "SE=8/4=2 and t=(46−50)/2=−2.",
+      "This is not the standardized difference."
+     ],
+     "seek": 991
+    },
+    {
+     "stem": "A two-sided test reports p=0.03 and alpha=0.05. Which conclusion follows?",
+     "opts": [
+      "Reject the null in favor of evidence of a difference",
+      "Accept equality as certain",
+      "The null has probability 0.03",
+      "Fail to reject because p is positive"
+     ],
+     "ok": 0,
+     "why": [
+      "The p-value is below alpha.",
+      "The result supplies evidence against equality.",
+      "A p-value conditions on the null; it does not assign its probability.",
+      "Compare with alpha, not zero."
+     ],
+     "seek": 1422
+    },
+    {
+     "stem": "Twenty people are measured before and after training. What is the sample size and reference df for a paired t-test?",
+     "opts": [
+      "40 and 39",
+      "20 and 38",
+      "40 and 20",
+      "20 and 19"
+     ],
+     "ok": 3,
+     "why": [
+      "There are 20 pairs, not 40 independent units.",
+      "A one-sample t procedure on differences uses n−1.",
+      "Neither value is appropriate.",
+      "Twenty differences give df=19."
+     ],
+     "seek": 663
+    },
+    {
+     "stem": "An independent two-sample t-test uses which standard error?",
+     "opts": [
+      "$s_1-s_2$",
+      "$\\sqrt{s_1^2/n_1+s_2^2/n_2}$",
+      "$s_1+s_2$",
+      "$\\sqrt{(s_1^2-s_2^2)/(n_1+n_2)}$"
+     ],
+     "ok": 1,
+     "why": [
+      "SDs are not subtracted.",
+      "Independent variance contributions add.",
+      "SDs are not simply added.",
+      "Variance contributions add, and each is divided by its own sample size."
+     ],
+     "seek": 969
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A random sample of 25 packages from 2,000 has mean mass 19 kg and SD 4 kg. The population mass distribution is approximately normal. Test whether the population mean is below 20 kg at the 5% level.",
+   "parts": [
+    "(a) State the parameter, hypotheses, method, and conditions.",
+    "(b) Calculate the test statistic and p-value.",
+    "(c) Conclude in context and explain what the p-value assumes."
+   ],
+   "sample": [
+    "(a) Let μ be the population mean mass. Test H₀: μ=20 against Hₐ: μ<20 with a one-sample t-test. Random sampling, 25≤0.10(2000), and the approximately normal population justify the procedure.",
+    "(b) SE=4/√25=0.8 kg, t=(19−20)/0.8=−1.25, df=24, and p≈0.1117.",
+    "(c) Since 0.1117>0.05, fail to reject H₀. There is insufficient evidence the population mean mass is below 20 kg. The p-value assumes the population mean is 20 kg and the model conditions hold."
+   ],
+   "checklist": [
+    "Defines a population mean in context.",
+    "States a lower-tail alternative and one-sample t-test.",
+    "Checks all relevant conditions.",
+    "Finds t=−1.25 and the lower-tail p-value.",
+    "Fails to reject with an accurate contextual interpretation."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "Use unrounded statistics to calculate the p-value. The two-sided probability is twice the appropriate one-tail area for the symmetric t distribution. A tiny p-value is not the probability of an exact observed sample."
+   }
+  ]
+ }
+}
