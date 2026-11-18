@@ -1,0 +1,309 @@
+{
+ "n": 10,
+ "unit": 1,
+ "topic": "1.10",
+ "title": "The Investigative Question and Data Collection",
+ "videoId": "IYWYyduwffw",
+ "videoTitle": "AP Statistics Topic 1.10 The Investigative Question and Data Collection",
+ "intro": "Identify study designs and variables, frame investigative questions, and distinguish population generalization from causal conclusions.",
+ "moments": [
+  {
+   "t": 73,
+   "type": "Key idea",
+   "title": "Investigative questions",
+   "text": "Specify the population, variables, and purpose of the study."
+  },
+  {
+   "t": 159,
+   "type": "Key idea",
+   "title": "Estimate or test a claim",
+   "text": "A question determines the analysis needed."
+  },
+  {
+   "t": 259,
+   "type": "Key idea",
+   "title": "A census",
+   "text": "Collect information from every unit in the population."
+  },
+  {
+   "t": 389,
+   "type": "Key idea",
+   "title": "Random samples",
+   "text": "A random selection mechanism supports population generalization."
+  },
+  {
+   "t": 480,
+   "type": "Key idea",
+   "title": "Experiments",
+   "text": "Researchers impose treatments on experimental units."
+  },
+  {
+   "t": 729,
+   "type": "Key idea",
+   "title": "Fertilizer example",
+   "text": "Identify plots, fertilizer treatments, and measured growth."
+  },
+  {
+   "t": 809,
+   "type": "Key idea",
+   "title": "Observational studies",
+   "text": "Record variables without imposing treatments."
+  },
+  {
+   "t": 847,
+   "type": "Key idea",
+   "title": "Prospective and retrospective",
+   "text": "Distinguish following units forward from examining past records."
+  },
+  {
+   "t": 928,
+   "type": "Key idea",
+   "title": "Confounding",
+   "text": "An associated third variable can provide an alternative explanation."
+  },
+  {
+   "t": 1836,
+   "type": "Key idea",
+   "title": "Scope of conclusions",
+   "text": "Random selection and random assignment answer different questions."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Census or sample?",
+     "text": "A census seeks data from every population member; a sample observes a subset."
+    },
+    {
+     "letter": "2",
+     "name": "Experiment or observational study?",
+     "text": "An experiment imposes treatments. An observational study records existing conditions."
+    },
+    {
+     "letter": "3",
+     "name": "Random selection",
+     "text": "Supports generalizing to the population from which the sample was drawn."
+    },
+    {
+     "letter": "4",
+     "name": "Random assignment",
+     "text": "Supports a causal comparison of treatments in a well-designed experiment."
+    },
+    {
+     "letter": "5",
+     "name": "Question components",
+     "text": "Specify variables, an estimation or testing goal, and the population or causal comparison."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Identify the components of an experiment",
+     "q": "The video proposes 30 equally sized grass plots, assigned fertilizer A, fertilizer B, or no fertilizer. The plots are watered and growth is recorded. Identify units, factor, treatments, and response.",
+     "steps": [
+      {
+       "t": "Identify what receives a treatment.",
+       "work": {
+        "text": "Each grass plot is an experimental unit."
+       }
+      },
+      {
+       "t": "Identify the factor and its levels.",
+       "work": {
+        "text": "The factor is fertilizer treatment. Its levels are A, B, and no fertilizer."
+       }
+      },
+      {
+       "t": "Identify the measured outcome.",
+       "work": {
+        "text": "The response is grass growth, measured consistently after treatment."
+       }
+      }
+     ],
+     "answer": "There are three treatments. Watering all plots consistently controls a condition; it is not an extra treatment factor here.",
+     "seek": 730
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Random selection versus assignment",
+     "weak": "Random assignment makes the volunteers representative of everyone.",
+     "better": "Random assignment supports treatment comparison; random selection supports population generalization.",
+     "seek": 1836
+    },
+    {
+     "kind": "Common trap",
+     "title": "Association versus cause",
+     "weak": "Students who sleep longer score higher, so sleep caused the difference.",
+     "better": "An observational association may have alternative explanations involving variables related to both sleep and scores.",
+     "seek": 928
+    },
+    {
+     "kind": "Common trap",
+     "title": "Confounding without a connection",
+     "weak": "Any other variable is a confounder.",
+     "better": "A plausible confounding variable must be associated with both the explanatory and response variables.",
+     "seek": 928
+    },
+    {
+     "kind": "Common trap",
+     "title": "A vague investigative question",
+     "weak": "Does it work?",
+     "better": "Does the treatment increase mean growth compared with no treatment for the specified population of plants?",
+     "seek": 73
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "A random sample uses a chance mechanism; equal individual selection probabilities alone do not define an SRS. Nonrandom samples still provide descriptive information, but population generalization requires caution."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "A researcher asks adults about existing exercise habits and records current blood pressure without assigning exercise. The study is:",
+     "opts": [
+      "An experiment",
+      "A census necessarily",
+      "An observational study",
+      "Random assignment"
+     ],
+     "ok": 2,
+     "why": [
+      "No exercise treatment is imposed.",
+      "The description does not include all adults in a defined population.",
+      "The researcher records existing conditions.",
+      "No treatment assignment occurs."
+     ],
+     "seek": 809
+    },
+    {
+     "stem": "Researchers recruit volunteers, then randomly assign two revision methods. What does random assignment primarily support?",
+     "opts": [
+      "A causal comparison of the methods",
+      "Generalization to every student",
+      "A census of schools",
+      "Identical outcomes in both groups"
+     ],
+     "ok": 0,
+     "why": [
+      "Random assignment helps separate treatment effects from pre-existing differences.",
+      "Volunteers are not a random sample of every student.",
+      "A census observes the whole population.",
+      "Responses still vary."
+     ],
+     "seek": 1836
+    },
+    {
+     "stem": "A study selects people today and examines their medical records from the past five years. It is:",
+     "opts": [
+      "Prospective",
+      "Retrospective",
+      "An experiment",
+      "Necessarily a census"
+     ],
+     "ok": 1,
+     "why": [
+      "A prospective study follows units into the future.",
+      "Past records are examined after selecting units now.",
+      "No treatment is assigned.",
+      "The size and scope do not imply a census."
+     ],
+     "seek": 865
+    },
+    {
+     "stem": "A study compares screen time and headaches. Which explanation describes a plausible confounder?",
+     "opts": [
+      "A random record number",
+      "Any measured variable",
+      "The sample size alone",
+      "Workload, if it is related to both screen time and headaches"
+     ],
+     "ok": 3,
+     "why": [
+      "An arbitrary ID is not an alternative explanation.",
+      "Both relationships must be plausible.",
+      "Sample size is not a third variable on the people.",
+      "Workload could account for part of the observed association."
+     ],
+     "seek": 928
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A university wants to know whether a new reminder system increases the proportion of students returning library books on time. It randomly samples students from its current enrollment list and randomly assigns sampled students to receive reminders or usual service.",
+   "parts": [
+    "(a) State an investigative question with population, response, and direction.",
+    "(b) Identify the units, explanatory variable, treatments, and response variable.",
+    "(c) Explain the roles of the two random processes."
+   ],
+   "sample": [
+    "(a) For currently enrolled university students, does the new reminder system increase the proportion of library returns made on time compared with usual service?",
+    "(b) Students are the experimental units. The explanatory variable is reminder condition, with treatments new reminders and usual service. The response records whether each student's specified return is on time; the measurement plan should specify one comparable return per student.",
+    "(c) Random selection supports generalizing to currently enrolled university students. Random assignment supports a causal comparison of reminders with usual service, assuming the experiment is implemented appropriately."
+   ],
+   "checklist": [
+    "Names the target population.",
+    "Specifies an increase and a measurable response.",
+    "Identifies students as experimental units.",
+    "Names both treatments and the response.",
+    "Distinguishes selection from assignment."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.10, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "A random sample uses a chance mechanism; equal individual selection probabilities alone do not define an SRS. Nonrandom samples still provide descriptive information, but population generalization requires caution."
+   }
+  ]
+ }
+}

@@ -1,0 +1,329 @@
+{
+ "n": 11,
+ "unit": 1,
+ "topic": "1.11",
+ "title": "Random Sampling",
+ "videoId": "NeudfIXPyuc",
+ "videoTitle": "AP Statistics Topic 1.11 Random Sampling",
+ "intro": "Recognize and justify random sampling methods, specify an implementable selection process, and distinguish strata from clusters.",
+ "moments": [
+  {
+   "t": 94,
+   "type": "Key idea",
+   "title": "With and without replacement",
+   "text": "Replacement determines whether a unit can be selected again."
+  },
+  {
+   "t": 205,
+   "type": "Key idea",
+   "title": "Simple random sample",
+   "text": "Every possible sample of the specified size has equal probability."
+  },
+  {
+   "t": 224,
+   "type": "Key idea",
+   "title": "Why equal individual chances are insufficient",
+   "text": "An SRS requires equal chances for entire samples."
+  },
+  {
+   "t": 386,
+   "type": "Key idea",
+   "title": "Implement random selection",
+   "text": "Label units, generate random labels, and state the stopping rule."
+  },
+  {
+   "t": 502,
+   "type": "Key idea",
+   "title": "Stratified random sampling",
+   "text": "Take a random sample within every stratum."
+  },
+  {
+   "t": 700,
+   "type": "Key idea",
+   "title": "Choose useful strata",
+   "text": "A stratifying characteristic should relate to the outcome."
+  },
+  {
+   "t": 700,
+   "type": "Key idea",
+   "title": "Justify the choice",
+   "text": "Match the design to the population, question, and practical constraints."
+  },
+  {
+   "t": 920,
+   "type": "Key idea",
+   "title": "Cluster sampling",
+   "text": "Select clusters randomly and observe all units in selected clusters."
+  },
+  {
+   "t": 1217,
+   "type": "Key idea",
+   "title": "Systematic sampling",
+   "text": "Use a random start and a fixed interval."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "SRS",
+     "text": "Every group of the target size has the same chance of selection."
+    },
+    {
+     "letter": "2",
+     "name": "Stratified",
+     "text": "Divide by a relevant characteristic, then sample some units from every stratum."
+    },
+    {
+     "letter": "3",
+     "name": "Cluster",
+     "text": "Randomly select some clusters, then observe every unit within those clusters."
+    },
+    {
+     "letter": "4",
+     "name": "Systematic",
+     "text": "Choose a random starting position, then take every kth unit."
+    },
+    {
+     "letter": "5",
+     "name": "Replacement",
+     "text": "Specify whether repeats are possible; without replacement, select distinct units."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Describe an implementable simple random sample",
+     "q": "The video wants an SRS of 40 students from Valley City High School. Explain a process using the school's complete enrollment list.",
+     "steps": [
+      {
+       "t": "Assign distinct labels to all eligible students.",
+       "work": {
+        "text": "Number every student on the complete list once, using equal-length labels if using a random-digit table."
+       }
+      },
+      {
+       "t": "Select labels with a random mechanism.",
+       "work": {
+        "text": "Use a generator that selects labels uniformly. For sampling without replacement, ignore repeated labels and any labels outside the list."
+       }
+      },
+      {
+       "t": "State when selection stops and who is included.",
+       "work": {
+        "text": "Stop after 40 distinct valid labels and include the corresponding students."
+       }
+      }
+     ],
+     "answer": "This procedure makes every set of 40 students equally likely, assuming the list is complete and the generator is fair.",
+     "seek": 386
+    },
+    {
+     "obj": "Distinguish stratification from clustering",
+     "q": "The video proposes sampling students by grade level, taking a random sample of 10 freshmen, 10 sophomores, 10 juniors, and 10 seniors. Identify and justify the design.",
+     "steps": [
+      {
+       "t": "Identify how groups are formed.",
+       "work": {
+        "text": "Each grade is a nonoverlapping stratum."
+       }
+      },
+      {
+       "t": "Identify the random selection within groups.",
+       "work": {
+        "text": "Take an SRS of 10 students from each grade and combine the selected students."
+       }
+      },
+      {
+       "t": "Connect the grouping to the question.",
+       "work": {
+        "text": "If opinions differ by grade, this guarantees each grade is represented and can improve precision compared with an unstratified sample."
+       }
+      }
+     ],
+     "answer": "This is stratified random sampling, not cluster sampling: some students are selected from every grade.",
+     "seek": 670
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Equal individual chances",
+     "weak": "Equal chances for each person prove an SRS.",
+     "better": "Every possible sample of the requested size must have equal probability.",
+     "seek": 205
+    },
+    {
+     "kind": "Common trap",
+     "title": "Strata versus clusters",
+     "weak": "Sampling everyone from two selected classes is stratified.",
+     "better": "It is cluster sampling when classes are randomly selected and everyone in those classes is included.",
+     "seek": 920
+    },
+    {
+     "kind": "Common trap",
+     "title": "Systematic start",
+     "weak": "Take every tenth person, starting with the first.",
+     "better": "Choose the start randomly among the first ten positions, then take every tenth person.",
+     "seek": 1217
+    },
+    {
+     "kind": "Common trap",
+     "title": "Guaranteed representation",
+     "weak": "Random sampling guarantees the sample matches the population.",
+     "better": "Random sampling reduces selection bias, but chance imbalances remain possible.",
+     "seek": 700
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The video occasionally describes systematic sampling as using a random interval. The design uses a fixed periodic interval after a random start. Stratifying guarantees inclusion from the chosen strata, not perfect representation on every characteristic."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "An office samples 12 employees randomly from each department. What method is used?",
+     "opts": [
+      "Stratified random sampling",
+      "Cluster sampling",
+      "Systematic sampling",
+      "Convenience sampling"
+     ],
+     "ok": 0,
+     "why": [
+      "Some employees are selected randomly from every department.",
+      "Cluster sampling would select departments and include everyone in them.",
+      "No fixed interval is described.",
+      "Chance selection within departments is specified."
+     ],
+     "seek": 502
+    },
+    {
+     "stem": "A city randomly selects five blocks and interviews every household on those blocks. What is the design?",
+     "opts": [
+      "SRS of households",
+      "Stratified sample",
+      "Cluster sample",
+      "Voluntary response sample"
+     ],
+     "ok": 2,
+     "why": [
+      "Households are selected together by blocks, so not every household sample is possible.",
+      "It does not sample some households from every block.",
+      "Blocks are randomly selected and all their households are included.",
+      "Households are selected by the design, not an open invitation."
+     ],
+     "seek": 920
+    },
+    {
+     "stem": "Choose a start uniformly from 1 through 20, then select every twentieth record. This is:",
+     "opts": [
+      "A census",
+      "Systematic random sampling",
+      "A stratified sample",
+      "Necessarily an SRS"
+     ],
+     "ok": 1,
+     "why": [
+      "Only a subset of records is selected.",
+      "There is a random start and fixed interval.",
+      "No within-stratum selection occurs.",
+      "Many possible groups of records cannot be selected."
+     ],
+     "seek": 1217
+    },
+    {
+     "stem": "Which is the strongest reason to stratify a student opinion survey by grade?",
+     "opts": [
+      "To remove all sampling variation",
+      "To avoid using chance",
+      "To make every response identical",
+      "Opinions may differ by grade and every grade should be represented"
+     ],
+     "ok": 3,
+     "why": [
+      "Variation remains within and between samples.",
+      "Random selection is used within strata.",
+      "A sampling design does not force opinions to agree.",
+      "Relevant strata ensure coverage of groups and may improve precision."
+     ],
+     "seek": 700
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A college has a complete list of 2,400 students, including 600 in each of four years. It wants a sample of 120 students to study access to course advising.",
+   "parts": [
+    "(a) Describe an SRS of 120 without replacement.",
+    "(b) Describe a stratified random alternative by year and justify it.",
+    "(c) A proposal instead selects three mixed-year tutorial groups randomly and surveys all their students. Identify the method and one possible advantage."
+   ],
+   "sample": [
+    "(a) Label students 0001 through 2400. Select labels uniformly at random, ignoring repeats, until 120 distinct valid labels are obtained. Survey those students.",
+    "(b) Take an SRS of 30 students within each year using the four complete year lists, then combine them. Access to advising may differ by year; stratifying ensures every year is represented.",
+    "(c) This is cluster sampling. It may be easier to contact students together in selected tutorial groups, reducing collection costs. Mixed-year groups may resemble the wider population, although representativeness is not guaranteed."
+   ],
+   "checklist": [
+    "Uses the complete list and unique labels.",
+    "Specifies uniform chance selection, no repeats, and a stopping rule.",
+    "Selects randomly within every year.",
+    "Justifies strata in the context of advising.",
+    "Identifies clustering and a practical advantage."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.11, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "The video occasionally describes systematic sampling as using a random interval. The design uses a fixed periodic interval after a random start. Stratifying guarantees inclusion from the chosen strata, not perfect representation on every characteristic."
+   }
+  ]
+ }
+}

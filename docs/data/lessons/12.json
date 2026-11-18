@@ -1,0 +1,335 @@
+{
+ "n": 12,
+ "unit": 1,
+ "topic": "1.12",
+ "title": "Potential Problems with Sampling",
+ "videoId": "zU6WVOy2FxY",
+ "videoTitle": "AP Statistics Topic 1.12 Potential Problems with Sampling",
+ "intro": "Distinguish sources of bias, explain how they affect an estimate, and propose improvements matched to the sampling problem.",
+ "moments": [
+  {
+   "t": 48,
+   "type": "Key idea",
+   "title": "Systematic error",
+   "text": "Bias is a tendency to miss the parameter in a consistent direction."
+  },
+  {
+   "t": 124,
+   "type": "Key idea",
+   "title": "Random versus nonrandom selection",
+   "text": "Selection procedures affect the credibility of population estimates."
+  },
+  {
+   "t": 222,
+   "type": "Key idea",
+   "title": "Voluntary response",
+   "text": "People with strong opinions may choose to participate."
+  },
+  {
+   "t": 304,
+   "type": "Key idea",
+   "title": "Convenience samples",
+   "text": "Easy-to-reach individuals may differ from the population."
+  },
+  {
+   "t": 387,
+   "type": "Key idea",
+   "title": "Undercoverage",
+   "text": "Some groups have no chance or less chance of inclusion."
+  },
+  {
+   "t": 499,
+   "type": "Key idea",
+   "title": "Nonresponse",
+   "text": "Selected individuals may fail to respond."
+  },
+  {
+   "t": 670,
+   "type": "Key idea",
+   "title": "Response bias",
+   "text": "Answers may be systematically inaccurate."
+  },
+  {
+   "t": 735,
+   "type": "Key idea",
+   "title": "Leading questions",
+   "text": "Question wording can influence responses."
+  },
+  {
+   "t": 859,
+   "type": "Key idea",
+   "title": "Interviewer effects",
+   "text": "Social pressure can change reported answers."
+  },
+  {
+   "t": 976,
+   "type": "Key idea",
+   "title": "Diagnose the mechanism",
+   "text": "Explain who differs, how, and why that matters."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Undercoverage",
+     "text": "A group is absent or less likely to appear in the sampling frame or selection process."
+    },
+    {
+     "letter": "2",
+     "name": "Nonresponse",
+     "text": "People selected for the sample do not provide responses."
+    },
+    {
+     "letter": "3",
+     "name": "Response bias",
+     "text": "Obtained answers systematically misstate the true values."
+    },
+    {
+     "letter": "4",
+     "name": "Voluntary or convenience selection",
+     "text": "Participation depends on self-selection or ease of contact rather than a chance procedure."
+    },
+    {
+     "letter": "5",
+     "name": "Explain direction",
+     "text": "Connect the mechanism to overestimation or underestimation only when the context supports a direction."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Diagnose nonresponse in a survey",
+     "q": "In the video, a school sends a survey to a random sample of parents, but only 30% respond. Parents with strong opinions may be more likely to reply. Identify the concern and suggest an improvement.",
+     "steps": [
+      {
+       "t": "Locate where the process loses information.",
+       "work": {
+        "text": "Parents were selected randomly, but many selected parents did not respond."
+       }
+      },
+      {
+       "t": "Explain the possible connection to the outcome.",
+       "work": {
+        "text": "If respondents have different opinions from nonrespondents, the results can systematically misrepresent the selected parent population."
+       }
+      },
+      {
+       "t": "Propose a matched improvement.",
+       "work": {
+        "text": "Follow up with selected nonrespondents through accessible contact methods and review differences in response rates."
+       }
+      }
+     ],
+     "answer": "The concern is potential nonresponse bias. The direction cannot be determined merely from the 30% response rate.",
+     "seek": 500
+    },
+    {
+     "obj": "Explain response bias and improve wording",
+     "q": "The video describes students being asked about cheating with an authority figure present. Explain a potential bias and an improvement.",
+     "steps": [
+      {
+       "t": "Identify the inaccurate response mechanism.",
+       "work": {
+        "text": "Students may hide cheating because they fear consequences or embarrassment."
+       }
+      },
+      {
+       "t": "State the likely direction.",
+       "work": {
+        "text": "The reported proportion who cheated could underestimate the true proportion."
+       }
+      },
+      {
+       "t": "Change the measurement process.",
+       "work": {
+        "text": "Use a genuinely anonymous survey with neutral wording and clear privacy protections."
+       }
+      }
+     ],
+     "answer": "This is potential response bias: participants answer, but their answers may systematically underreport cheating.",
+     "seek": 900
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Nonresponse versus voluntary response",
+     "weak": "Any survey with missing replies is a voluntary response sample.",
+     "better": "If individuals were selected first and then some did not reply, consider nonresponse. An open invitation with self-selection is voluntary response.",
+     "seek": 500
+    },
+    {
+     "kind": "Common trap",
+     "title": "More data fix bias",
+     "weak": "A huge convenience sample cannot be biased.",
+     "better": "Increasing sample size does not repair a systematically unrepresentative selection process.",
+     "seek": 304
+    },
+    {
+     "kind": "Common trap",
+     "title": "Direction without evidence",
+     "weak": "Undercoverage always makes the estimate too low.",
+     "better": "Direction depends on how excluded individuals differ on the measured variable.",
+     "seek": 388
+    },
+    {
+     "kind": "Common trap",
+     "title": "Random means problem-free",
+     "weak": "A random sample cannot have biased results.",
+     "better": "Undercoverage, nonresponse, and inaccurate responses can still affect a study.",
+     "seek": 125
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Bias is a property of a procedure's systematic tendency. A single sample can differ from its population through chance alone. A low response rate indicates a risk of nonresponse bias, but does not by itself establish its size or direction."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "A survey randomly selects 400 residents, but many selected residents cannot be reached. What is the primary concern?",
+     "opts": [
+      "Voluntary response from an open poll",
+      "Nonresponse",
+      "Random assignment",
+      "Only natural sampling variation"
+     ],
+     "ok": 1,
+     "why": [
+      "The residents were selected before contact.",
+      "Selected individuals fail to supply responses.",
+      "There are no imposed treatments.",
+      "Systematic respondent differences may add bias."
+     ],
+     "seek": 500
+    },
+    {
+     "stem": "A town uses an online list that excludes residents without internet accounts. Which concern is most direct?",
+     "opts": [
+      "Response bias",
+      "A treatment effect",
+      "Undercoverage",
+      "Stratification"
+     ],
+     "ok": 2,
+     "why": [
+      "This concern occurs before answers are obtained.",
+      "No treatment is assigned.",
+      "Some residents are missing from the sampling frame.",
+      "Stratification requires random sampling within all strata."
+     ],
+     "seek": 388
+    },
+    {
+     "stem": "Which change best addresses fear-driven underreporting of rule-breaking?",
+     "opts": [
+      "Ask more people publicly",
+      "Use a more accusatory question",
+      "Survey only people who volunteer",
+      "Use anonymous responses and neutral wording"
+     ],
+     "ok": 3,
+     "why": [
+      "Public pressure can remain at any sample size.",
+      "Accusatory wording can intensify inaccurate answers.",
+      "Self-selection can introduce another bias.",
+      "Privacy and neutral wording address the response mechanism."
+     ],
+     "seek": 860
+    },
+    {
+     "stem": "A transit poll interviews only express-service riders. These riders are more satisfied than local-service riders. What is the likely effect on estimated satisfaction among all riders?",
+     "opts": [
+      "Overestimation",
+      "Underestimation",
+      "No bias because respondents are riders",
+      "Direction is determined by sample size alone"
+     ],
+     "ok": 0,
+     "why": [
+      "Undercovering less satisfied local riders can push the estimate upward.",
+      "Omitting the less satisfied group pushes in the other direction.",
+      "The target includes local-service riders too.",
+      "The selection mechanism and satisfaction differences determine the likely direction."
+     ],
+     "seek": 388
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A city wants the proportion of all residents satisfied with public parks. It posts an open poll on a parks-enthusiast group's website. The poll begins, “Our wonderful parks deserve support; are you satisfied with them?”",
+   "parts": [
+    "(a) Identify two distinct sources of potential bias and explain their mechanisms.",
+    "(b) Give a plausible direction for the estimated satisfaction, stating the assumption needed.",
+    "(c) Propose a sampling and questionnaire improvement."
+   ],
+   "sample": [
+    "(a) The open poll has voluntary response: people choose themselves rather than being randomly selected. The favorable introduction may create response bias by encouraging positive answers. The website can also undercover residents who do not visit it.",
+    "(b) The estimate may be too high if parks enthusiasts are more satisfied than other residents and the positive wording encourages favorable responses. This direction depends on those assumptions, not solely on the fact that the poll is online.",
+    "(c) Select a random sample from a frame covering city residents, provide accessible ways to reply, follow up with nonrespondents, and ask a neutral question such as “How satisfied or dissatisfied are you with the city's public parks?”"
+   ],
+   "checklist": [
+    "Names voluntary response and explains self-selection.",
+    "Names wording-related response bias and explains its mechanism.",
+    "States a plausible direction with contextual assumptions.",
+    "Proposes a population-covering random selection method.",
+    "Improves wording and response accessibility."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.12, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "Bias is a property of a procedure's systematic tendency. A single sample can differ from its population through chance alone. A low response rate indicates a risk of nonresponse bias, but does not by itself establish its size or direction."
+   }
+  ]
+ }
+}
