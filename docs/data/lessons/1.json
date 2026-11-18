@@ -1,0 +1,294 @@
+{
+ "n": 1,
+ "unit": 1,
+ "topic": "1.1",
+ "title": "What Can We Learn From Data",
+ "videoId": "qd2j0SM8Q1k",
+ "videoTitle": "AP Statistics Topic 1.1 What Can We Learn From Data",
+ "intro": "Identify the population, sample, data, and investigative question, and explain why sample results do not determine population values exactly.",
+ "moments": [
+  {
+   "t": 60,
+   "type": "Key idea",
+   "title": "Start with a study",
+   "text": "Collect data to answer a question about a population."
+  },
+  {
+   "t": 113,
+   "type": "Key idea",
+   "title": "A question with a purpose",
+   "text": "Choose the question before examining the results."
+  },
+  {
+   "t": 153,
+   "type": "Key idea",
+   "title": "Answer in context",
+   "text": "Name the people or items and the characteristic being studied."
+  },
+  {
+   "t": 221,
+   "type": "Key idea",
+   "title": "Questions determine the data",
+   "text": "A question about ownership requires an ownership response from each student."
+  },
+  {
+   "t": 354,
+   "type": "Key idea",
+   "title": "Datum and data set",
+   "text": "A datum describes one item; a data set collects observations."
+  },
+  {
+   "t": 464,
+   "type": "Key idea",
+   "title": "Population and sample",
+   "text": "The population is the group of interest; the sample is the subset studied."
+  },
+  {
+   "t": 556,
+   "type": "Key idea",
+   "title": "Statistical inference",
+   "text": "Use sample information to estimate or judge a population characteristic."
+  },
+  {
+   "t": 717,
+   "type": "Key idea",
+   "title": "Identify the study components",
+   "text": "Separate all college students from the students actually surveyed."
+  },
+  {
+   "t": 789,
+   "type": "Key idea",
+   "title": "Breakfast study",
+   "text": "Record breakfast information for the selected students."
+  },
+  {
+   "t": 878,
+   "type": "Key idea",
+   "title": "Compare race times",
+   "text": "Connect the drink received and the recorded race time to the question."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Population",
+     "text": "Name all items or individuals the question concerns."
+    },
+    {
+     "letter": "2",
+     "name": "Sample",
+     "text": "Name the subset from which data were collected."
+    },
+    {
+     "letter": "3",
+     "name": "Investigative question",
+     "text": "State the population, variable, and purpose so data could answer it."
+    },
+    {
+     "letter": "4",
+     "name": "Inference",
+     "text": "A sample supports an estimate, with uncertainty about the population."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Identify the components of a study",
+     "q": "David randomly selects 230 students at his large college. Of these, 141 report owning a vehicle. Identify the population, sample, data, and investigative question.",
+     "steps": [
+      {
+       "t": "Identify the population.",
+       "work": {
+        "text": "The question concerns all students at David's college."
+       }
+      },
+      {
+       "t": "Identify the observed sample and data.",
+       "work": {
+        "text": "The sample is the 230 selected students. Each reports whether they own a vehicle."
+       }
+      },
+      {
+       "t": "State the investigative question.",
+       "work": {
+        "text": "What proportion of all students at this college own a vehicle?"
+       }
+      }
+     ],
+     "answer": "The 141 ownership responses summarize the sample; they are not the population or the sample itself.",
+     "seek": 717
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Population versus respondents",
+     "weak": "The population is the 230 students.",
+     "better": "The population is all students at the college; the 230 selected students form the sample.",
+     "seek": 717
+    },
+    {
+     "kind": "Common trap",
+     "title": "A datum versus a summary",
+     "weak": "The data are just 141.",
+     "better": "Each student reports whether they own a vehicle; 141 is the count reporting yes.",
+     "seek": 717
+    },
+    {
+     "kind": "Common trap",
+     "title": "A question that can be answered",
+     "weak": "Are students successful?",
+     "better": "Define the population and a measurable outcome, such as the proportion of students who complete a course.",
+     "seek": 113
+    },
+    {
+     "kind": "Common trap",
+     "title": "Sample certainty",
+     "weak": "The population must have exactly the sample percentage.",
+     "better": "A sample percentage estimates a population percentage and may differ from it.",
+     "seek": 557
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "A library asks 80 randomly selected members how many books they borrowed last month. It wants information about all current members. What is the population?",
+     "opts": [
+      "The 80 members",
+      "All current library members",
+      "All books borrowed",
+      "The number of books per member"
+     ],
+     "ok": 1,
+     "why": [
+      "These members form the sample.",
+      "The question concerns all current members.",
+      "Books are not the group of people of interest.",
+      "This is the variable measured."
+     ],
+     "seek": 464
+    },
+    {
+     "stem": "Which question specifies collectable data and a clear population?",
+     "opts": [
+      "Is travel good?",
+      "Which town is nicest?",
+      "What is the median daily travel time of students at Oak School?",
+      "Why is everything late?"
+     ],
+     "ok": 2,
+     "why": [
+      "Good is not defined.",
+      "Nicest needs a measurable criterion.",
+      "Travel time can be measured for students at the named school.",
+      "Neither a population nor a measurable variable is specified."
+     ],
+     "seek": 113
+    },
+    {
+     "stem": "A researcher records each sampled lamp's operating lifetime. Which is one datum?",
+     "opts": [
+      "The life of one lamp: 940 hours",
+      "All lamps the factory produces",
+      "The 40 sampled lamps",
+      "The entire collection of lifetimes"
+     ],
+     "ok": 0,
+     "why": [
+      "This is one recorded measurement.",
+      "This describes a population.",
+      "This describes the sample.",
+      "This is a data set."
+     ],
+     "seek": 355
+    },
+    {
+     "stem": "Why study a sample of parcels rather than all parcels shipped in a year?",
+     "opts": [
+      "A sample removes all uncertainty",
+      "Every sample has the population mean",
+      "A population cannot be defined",
+      "Measuring every parcel may be too costly"
+     ],
+     "ok": 3,
+     "why": [
+      "Uncertainty remains.",
+      "Sample means vary.",
+      "The full group can be defined.",
+      "Practical limits can make collecting all population data difficult."
+     ],
+     "seek": 93
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A transport office randomly selects 120 students from the current enrollment list at Pine School and records each student's travel time to school.",
+   "parts": [
+    "(a) Identify the population and sample.",
+    "(b) State an investigative question about mean travel time.",
+    "(c) Describe the data needed and why the sample mean may differ from the population mean."
+   ],
+   "sample": [
+    "(a) The population is all currently enrolled Pine School students. The sample is the 120 selected students.",
+    "(b) What is the mean travel time to school for all currently enrolled Pine School students?",
+    "(c) Record travel time in minutes for each selected student, using a consistent definition of the journey. A different sample may contain students with different journey times, so its mean need not equal the population mean."
+   ],
+   "checklist": [
+    "Names all currently enrolled students as the population.",
+    "Identifies the 120 selected students as the sample.",
+    "Asks about a mean for the specified population.",
+    "Identifies travel time and units.",
+    "Explains sample-to-sample variation."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.1, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   }
+  ]
+ }
+}

@@ -1,0 +1,318 @@
+{
+ "n": 5,
+ "unit": 1,
+ "topic": "1.5",
+ "title": "Graphical Representations for One Quantitative Variable",
+ "videoId": "M_vngDYhh1w",
+ "videoTitle": "AP Statistics Topic 1.5 Graphical Representations for One Quantitative Variable",
+ "intro": "Construct and read dotplots, stem-and-leaf plots, and histograms while preserving quantitative order and checking bin boundaries.",
+ "moments": [
+  {
+   "t": 58,
+   "type": "Key idea",
+   "title": "Quantitative displays",
+   "text": "The numerical axis preserves the ordering of values."
+  },
+  {
+   "t": 101,
+   "type": "Key idea",
+   "title": "Dotplots",
+   "text": "Stack observations at their recorded values."
+  },
+  {
+   "t": 320,
+   "type": "Key idea",
+   "title": "Stem-and-leaf plots",
+   "text": "Split values into ordered stems and leaves, with a key."
+  },
+  {
+   "t": 478,
+   "type": "Key idea",
+   "title": "Histograms",
+   "text": "Group observations into adjacent intervals."
+  },
+  {
+   "t": 575,
+   "type": "Key idea",
+   "title": "Bin boundaries",
+   "text": "The video includes a bin's left endpoint and excludes its right endpoint."
+  },
+  {
+   "t": 680,
+   "type": "Key idea",
+   "title": "Relative frequency histograms",
+   "text": "Heights may show proportions rather than counts."
+  },
+  {
+   "t": 809,
+   "type": "Key idea",
+   "title": "Lost detail",
+   "text": "A histogram does not reveal each exact value within a bin."
+  },
+  {
+   "t": 1081,
+   "type": "Key idea",
+   "title": "Back-to-back stems",
+   "text": "Read the shared stem and the leaf key on both sides."
+  },
+  {
+   "t": 1470,
+   "type": "Key idea",
+   "title": "Read counts or proportions",
+   "text": "Check whether the question asks how many or what fraction."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Dotplot",
+     "text": "Use for individual values when stacking dots remains readable."
+    },
+    {
+     "letter": "2",
+     "name": "Stem-and-leaf plot",
+     "text": "Retain digits and include a key that specifies units."
+    },
+    {
+     "letter": "3",
+     "name": "Histogram",
+     "text": "Choose nonoverlapping bins and a frequency or relative frequency scale."
+    },
+    {
+     "letter": "4",
+     "name": "Boundary rule",
+     "text": "Use the stated endpoint convention; changing bins changes the appearance."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Allocate values to histogram bins",
+     "q": "The tree-height histogram uses intervals 100 up to 150 feet and 150 up to 200 feet, including the left endpoint only. Where does a tree exactly 150 feet tall belong?",
+     "steps": [
+      {
+       "t": "Read the endpoint convention.",
+       "work": {
+        "text": "Each bin includes its left endpoint and excludes its right endpoint."
+       }
+      },
+      {
+       "t": "Write the two intervals.",
+       "work": {
+        "text": "The first bin stops before 150.",
+        "tex": [
+         "$100\\le x<150$",
+         "$150\\le x<200$"
+        ]
+       }
+      },
+      {
+       "t": "Place the value once.",
+       "work": {
+        "text": "150 satisfies the second interval only."
+       }
+      }
+     ],
+     "answer": "The 150-foot tree belongs in the 150 up to 200 foot bin.",
+     "seek": 575
+    },
+    {
+     "obj": "Construct a dotplot from recorded values",
+     "q": "Supplementary example: delivery times are 12, 14, 14, 18, 21, 23, 27, and 31 minutes. Describe the dotplot.",
+     "steps": [
+      {
+       "t": "Draw a labeled numerical axis.",
+       "work": {
+        "text": "Use an equal-interval axis covering 12 through 31 minutes."
+       }
+      },
+      {
+       "t": "Place one dot for every observation.",
+       "work": {
+        "text": "Place one dot at 12, two stacked dots at 14, and one at each of 18, 21, 23, 27, and 31."
+       }
+      },
+      {
+       "t": "Check the number of observations.",
+       "work": {
+        "text": "There should be eight dots in total, including both observations at 14."
+       }
+      }
+     ],
+     "answer": "The dotplot retains the individual times and their repetitions.",
+     "seek": 100
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "An empty bin",
+     "weak": "An empty bin means a missing category label.",
+     "better": "An empty histogram bin means no observed values fell in that interval.",
+     "seek": 640
+    },
+    {
+     "kind": "Common trap",
+     "title": "Exact values from bins",
+     "weak": "Every value in a 10–20 bin equals 15.",
+     "better": "The bin gives a range, not the individual values.",
+     "seek": 811
+    },
+    {
+     "kind": "Common trap",
+     "title": "Stems without a key",
+     "weak": "A leaf 4 after stem 2 must mean 24.",
+     "better": "Read the key; it might represent 24, 2.4, or another scale.",
+     "seek": 320
+    },
+    {
+     "kind": "Common trap",
+     "title": "Changing appearance",
+     "weak": "A different bin width changes the recorded data.",
+     "better": "It changes the grouping and visible shape, not the observations.",
+     "seek": 738
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "A histogram uses bins [0,5), [5,10), and [10,15). Where is an observation of 10 placed?",
+     "opts": [
+      "[0,5)",
+      "[5,10)",
+      "In both adjacent bins",
+      "[10,15)"
+     ],
+     "ok": 3,
+     "why": [
+      "10 is outside this interval.",
+      "The right endpoint is excluded.",
+      "Each value belongs to exactly one bin.",
+      "10 is the included left endpoint."
+     ],
+     "seek": 575
+    },
+    {
+     "stem": "Which display usually preserves exact recorded values?",
+     "opts": [
+      "A frequency histogram",
+      "A stem-and-leaf plot with a key",
+      "A relative frequency histogram",
+      "A pie chart of grouped intervals"
+     ],
+     "ok": 1,
+     "why": [
+      "A bin hides within-bin detail.",
+      "The digits and key recover the recorded values.",
+      "Relative frequencies do not restore within-bin values.",
+      "Grouped intervals hide exact values."
+     ],
+     "seek": 320
+    },
+    {
+     "stem": "A histogram has 8, 15, and 7 observations in three bins. What fraction is in the middle bin?",
+     "opts": [
+      "0.15",
+      "0.30",
+      "0.50",
+      "15"
+     ],
+     "ok": 2,
+     "why": [
+      "15 is not out of 100.",
+      "30 is the total, not a proportion.",
+      "15 of 30 observations lie in the middle bin.",
+      "15 is a count."
+     ],
+     "seek": 681
+    },
+    {
+     "stem": "What can happen when histogram bin widths change?",
+     "opts": [
+      "The apparent number of peaks can change",
+      "The sample size must change",
+      "The variable becomes categorical",
+      "Each original value changes"
+     ],
+     "ok": 0,
+     "why": [
+      "Grouping can reveal or hide peaks.",
+      "The same observations remain.",
+      "The underlying variable remains quantitative.",
+      "The recorded data stay the same."
+     ],
+     "seek": 738
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "Eight delivery times, in minutes, are 12, 14, 14, 18, 21, 23, 27, and 31.",
+   "parts": [
+    "(a) Give a stem-and-leaf plot using tens as stems, including a key.",
+    "(b) Give histogram counts for [10,20), [20,30), and [30,40).",
+    "(c) Find the proportion below 20 minutes and explain what detail the histogram loses."
+   ],
+   "sample": [
+    "(a) 1 | 2 4 4 8; 2 | 1 3 7; 3 | 1. Key: 1 | 2 represents 12 minutes.",
+    "(b) The three bin counts are 4, 3, and 1.",
+    "(c) 4/8=0.50, so 50% of deliveries took less than 20 minutes. The histogram does not retain exact times or show that 14 occurs twice."
+   ],
+   "checklist": [
+    "Orders stems and leaves.",
+    "Retains repeated values.",
+    "Provides a correct key with units.",
+    "Gives bin counts 4, 3, 1.",
+    "Finds 50% and explains the loss of exact values."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.5, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   }
+  ]
+ }
+}

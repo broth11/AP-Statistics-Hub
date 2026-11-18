@@ -1,0 +1,296 @@
+{
+ "n": 8,
+ "unit": 1,
+ "topic": "1.8",
+ "title": "Graphical Representations of Summary Statistics",
+ "videoId": "Lg9m6zUW8mo",
+ "videoTitle": "AP Statistics Topic 1.8 Graphical Representations of Summary Statistics",
+ "intro": "Construct and interpret boxplots, distinguish whiskers from extremes, and reason cautiously about mean, median, and skewness.",
+ "moments": [
+  {
+   "t": 74,
+   "type": "Key idea",
+   "title": "Five-number summary",
+   "text": "Identify minimum, first quartile, median, third quartile, and maximum."
+  },
+  {
+   "t": 99,
+   "type": "Key idea",
+   "title": "The box",
+   "text": "The box spans the middle half of observations."
+  },
+  {
+   "t": 139,
+   "type": "Key idea",
+   "title": "Whiskers and outliers",
+   "text": "Modified boxplots separate outliers from whisker endpoints."
+  },
+  {
+   "t": 204,
+   "type": "Key idea",
+   "title": "Unequal widths",
+   "text": "A wider section means more spread, not necessarily more observations."
+  },
+  {
+   "t": 263,
+   "type": "Key idea",
+   "title": "Mean and median",
+   "text": "Symmetric distributions usually have similar means and medians."
+  },
+  {
+   "t": 282,
+   "type": "Key idea",
+   "title": "Skew and the mean",
+   "text": "The mean is usually pulled toward the longer tail."
+  },
+  {
+   "t": 315,
+   "type": "Key idea",
+   "title": "Limits of a boxplot",
+   "text": "A boxplot does not show individual peaks or gaps."
+  },
+  {
+   "t": 407,
+   "type": "Key idea",
+   "title": "Compare five-number summaries",
+   "text": "Use distances between quartiles and extremes as evidence."
+  },
+  {
+   "t": 526,
+   "type": "Key idea",
+   "title": "Read an approximate summary",
+   "text": "Read positions from the scale rather than assuming the diagram is exact."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Box",
+     "text": "Runs from the first to third quartile, with a line at the median."
+    },
+    {
+     "letter": "2",
+     "name": "Modified whiskers",
+     "text": "End at the most extreme observed nonoutliers, not at the fences."
+    },
+    {
+     "letter": "3",
+     "name": "Outlying observations",
+     "text": "Plot them separately and include them when identifying the true minimum or maximum."
+    },
+    {
+     "letter": "4",
+     "name": "Shape limits",
+     "text": "Boxplots suggest asymmetry, but cannot establish peaks, gaps, or an exact mean."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Use a five-number summary to assess asymmetry",
+     "q": "The video's first data set has minimum 8, first quartile 12, median 15, third quartile 36, and maximum 51. Explain what its spacing suggests.",
+     "steps": [
+      {
+       "t": "Compare the sides of the box.",
+       "work": {
+        "text": "The lower half of the box is much shorter.",
+        "tex": [
+         "$15-12=3$",
+         "$36-15=21$"
+        ]
+       }
+      },
+      {
+       "t": "Compare the outer sections.",
+       "work": {
+        "text": "The upper outer section is also longer.",
+        "tex": [
+         "$12-8=4$",
+         "$51-36=15$"
+        ]
+       }
+      },
+      {
+       "t": "State a cautious conclusion.",
+       "work": {
+        "text": "The upper values are more spread out, suggesting right skew. A five-number summary does not determine the exact mean."
+       }
+      }
+     ],
+     "answer": "The spacing suggests right skew, for which the mean is usually greater than the median. The exact mean is unknown.",
+     "seek": 407
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Whisker at the fence",
+     "weak": "The upper whisker ends at the upper fence.",
+     "better": "It ends at the largest observed value that is not an outlier.",
+     "seek": 140
+    },
+    {
+     "kind": "Common trap",
+     "title": "Box width versus count",
+     "weak": "The longer half of the box contains more observations.",
+     "better": "Both halves represent approximately a quarter of the observations; length indicates spread.",
+     "seek": 204
+    },
+    {
+     "kind": "Common trap",
+     "title": "Missing peaks",
+     "weak": "This boxplot proves the distribution is unimodal.",
+     "better": "Boxplots do not reveal the number of peaks.",
+     "seek": 315
+    },
+    {
+     "kind": "Common trap",
+     "title": "An exact mean",
+     "weak": "The mean is the median line.",
+     "better": "The median line gives the median; the exact mean is not generally shown.",
+     "seek": 264
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "A modified boxplot has an upper fence of 40, largest nonoutlier 37, and an observation at 50. Where is the upper whisker?",
+     "opts": [
+      "40",
+      "37",
+      "50",
+      "The median"
+     ],
+     "ok": 1,
+     "why": [
+      "A fence is a cutoff, not necessarily an observation.",
+      "The whisker ends at the largest observed nonoutlier.",
+      "50 is plotted separately as an outlier.",
+      "The median lies inside the box."
+     ],
+     "seek": 140
+    },
+    {
+     "stem": "Which feature cannot generally be determined from a boxplot?",
+     "opts": [
+      "Median",
+      "IQR",
+      "Outlier locations when marked",
+      "Number of modes"
+     ],
+     "ok": 3,
+     "why": [
+      "The median is the line in the box.",
+      "Subtract the box endpoints.",
+      "Marked points show outlier locations.",
+      "Many different patterns of peaks can share a boxplot."
+     ],
+     "seek": 315
+    },
+    {
+     "stem": "A box spans from 14 to 26 minutes. What is the IQR?",
+     "opts": [
+      "12 minutes",
+      "20 minutes",
+      "26 minutes",
+      "40 minutes"
+     ],
+     "ok": 0,
+     "why": [
+      "26−14=12.",
+      "20 is the midpoint, not the IQR.",
+      "26 is the third quartile.",
+      "Adding endpoints does not give the IQR."
+     ],
+     "seek": 99
+    },
+    {
+     "stem": "For a strongly right-skewed distribution, which relationship is generally expected?",
+     "opts": [
+      "Mean less than median",
+      "Mean always equal to maximum",
+      "Mean greater than median",
+      "Median less than minimum"
+     ],
+     "ok": 2,
+     "why": [
+      "A long low tail would tend to pull the mean down.",
+      "The mean need not be an extreme.",
+      "The high tail generally pulls the mean above the median.",
+      "The median lies within the data range."
+     ],
+     "seek": 282
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A sample of delivery distances has minimum 2 km, first quartile 5 km, median 7 km, third quartile 9 km, and maximum 20 km. The next largest observation is 14 km.",
+   "parts": [
+    "(a) Calculate IQR fences and specify how to draw a modified boxplot.",
+    "(b) Explain what the box represents and why its two halves can have different lengths.",
+    "(c) Describe one limitation when using this boxplot to discuss distribution shape."
+   ],
+   "sample": [
+    "(a) IQR=9−5=4 km. The fences are −1 and 15 km. Draw a box from 5 to 9, a median line at 7, whiskers at 2 and 14, and a separate point at 20 km.",
+    "(b) The box represents approximately the middle 50% of delivery distances. Its two halves each represent roughly a quarter of observations, but values can be more spread out in one half.",
+    "(c) A boxplot cannot show the number of modes or gaps and cannot determine the exact mean. A longer high side suggests asymmetry but does not reconstruct the full distribution."
+   ],
+   "checklist": [
+    "Calculates IQR and both fences.",
+    "Identifies 20 as an outlier.",
+    "Places whiskers at 2 and 14 rather than at fences.",
+    "Explains the middle 50% and spacing.",
+    "States a genuine boxplot limitation."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.8, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   }
+  ]
+ }
+}

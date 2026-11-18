@@ -1,0 +1,304 @@
+{
+ "n": 2,
+ "unit": 1,
+ "topic": "1.2",
+ "title": "Variables",
+ "videoId": "FkRh2d0107Y",
+ "videoTitle": "AP Statistics Topic 1.2 Variables",
+ "intro": "Distinguish observational units from variables, classify categorical and quantitative data, and separate statistics from parameters.",
+ "moments": [
+  {
+   "t": 70,
+   "type": "Key idea",
+   "title": "Observational units",
+   "text": "The unit is the individual item from which information is recorded."
+  },
+  {
+   "t": 115,
+   "type": "Key idea",
+   "title": "Variables",
+   "text": "A variable can differ across observational units."
+  },
+  {
+   "t": 196,
+   "type": "Key idea",
+   "title": "Categorical variables",
+   "text": "Values identify groups or categories."
+  },
+  {
+   "t": 346,
+   "type": "Key idea",
+   "title": "Quantitative variables",
+   "text": "Values measure or count a quantity."
+  },
+  {
+   "t": 470,
+   "type": "Key idea",
+   "title": "Discrete values",
+   "text": "A discrete variable has countable possible values."
+  },
+  {
+   "t": 561,
+   "type": "Key idea",
+   "title": "Continuous values",
+   "text": "A continuous variable can take any value in an interval."
+  },
+  {
+   "t": 682,
+   "type": "Key idea",
+   "title": "Population parameters",
+   "text": "A numerical population summary is a parameter."
+  },
+  {
+   "t": 832,
+   "type": "Key idea",
+   "title": "Sample statistics",
+   "text": "A numerical sample summary is a statistic."
+  },
+  {
+   "t": 1009,
+   "type": "Key idea",
+   "title": "Samples vary",
+   "text": "Different samples can produce different statistics."
+  },
+  {
+   "t": 1195,
+   "type": "Key idea",
+   "title": "Classify breakfast responses",
+   "text": "A yes-or-no response is categorical."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Unit or variable?",
+     "text": "The unit is what is observed. The variable is what is recorded about it."
+    },
+    {
+     "letter": "2",
+     "name": "Label or quantity?",
+     "text": "Numerical category codes are still labels; arithmetic on them is not meaningful."
+    },
+    {
+     "letter": "3",
+     "name": "Discrete or continuous?",
+     "text": "Counts have countable possibilities; idealized measurements vary continuously."
+    },
+    {
+     "letter": "4",
+     "name": "Parameter or statistic?",
+     "text": "Check whether the summary describes the whole population or a sample."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Classify measurements on objects",
+     "q": "For each mug, record material, capacity in milliliters, and number of printed logos. Identify the unit and classify each variable.",
+     "steps": [
+      {
+       "t": "Name the observational unit.",
+       "work": {
+        "text": "Each mug is one observational unit."
+       }
+      },
+      {
+       "t": "Separate labels from quantities.",
+       "work": {
+        "text": "Material is categorical. Capacity and number of logos are quantitative."
+       }
+      },
+      {
+       "t": "Classify each quantitative variable.",
+       "work": {
+        "text": "Capacity is continuous; the number of logos is discrete."
+       }
+      }
+     ],
+     "answer": "A numerical-looking value is quantitative only when it represents a meaningful measured or counted quantity.",
+     "seek": 1480
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Numerical labels",
+     "weak": "A postcode is quantitative because it uses digits.",
+     "better": "A postcode labels a location and is categorical.",
+     "seek": 196
+    },
+    {
+     "kind": "Common trap",
+     "title": "Count versus measurement",
+     "weak": "Recorded height is discrete because we round it.",
+     "better": "Height is modeled as continuous even when recorded to a fixed precision.",
+     "seek": 561
+    },
+    {
+     "kind": "Common trap",
+     "title": "Unit versus variable",
+     "weak": "The observational unit is the number of logos.",
+     "better": "The mug is the unit; its number of logos is a variable.",
+     "seek": 70
+    },
+    {
+     "kind": "Common trap",
+     "title": "Population versus sample",
+     "weak": "A mean is always a parameter.",
+     "better": "A mean is a parameter for a population and a statistic for a sample.",
+     "seek": 681
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Category names can be numerical codes. Classify the meaning of a variable rather than deciding from whether its values look like words or numbers. A discrete variable need not have only finitely many possible values."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "A warehouse records parcel ID, mass, and number of items for each parcel. Which is categorical?",
+     "opts": [
+      "Mass",
+      "Number of items",
+      "Parcel ID",
+      "Mean mass"
+     ],
+     "ok": 2,
+     "why": [
+      "Mass measures a quantity.",
+      "The item count is quantitative and discrete.",
+      "The ID is a label, even if it is numeric.",
+      "A mean summarizes a quantitative variable."
+     ],
+     "seek": 196
+    },
+    {
+     "stem": "Which variable is quantitative and discrete?",
+     "opts": [
+      "Number of unread messages",
+      "Time needed to read a message",
+      "Message language",
+      "Account code"
+     ],
+     "ok": 0,
+     "why": [
+      "A count has countable possible values.",
+      "Time is continuous.",
+      "Language is categorical.",
+      "A code labels an account."
+     ],
+     "seek": 471
+    },
+    {
+     "stem": "The mean mass of all 600 parcels shipped today is known. This number is a:",
+     "opts": [
+      "Variable",
+      "Parameter",
+      "Sample",
+      "Statistic"
+     ],
+     "ok": 1,
+     "why": [
+      "Mass is the variable; the mean is a summary.",
+      "It summarizes the entire population of today's parcels.",
+      "A sample is a collection of units.",
+      "A statistic summarizes a sample."
+     ],
+     "seek": 681
+    },
+    {
+     "stem": "Why might two random samples of customers have different mean waiting times?",
+     "opts": [
+      "One mean must be a parameter",
+      "Waiting time is categorical",
+      "Random sampling guarantees identical means",
+      "The selected customers can differ"
+     ],
+     "ok": 3,
+     "why": [
+      "Both means are sample statistics.",
+      "Waiting time is quantitative.",
+      "Random samples need not give identical results.",
+      "Different customers have different waiting times."
+     ],
+     "seek": 1010
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A wildlife center samples 45 rescued birds from its full register. For each bird it records an identification code, wing length, and number of previous admissions. The sample mean wing length is 24 cm.",
+   "parts": [
+    "(a) Identify the observational unit and classify the three variables.",
+    "(b) Is 24 cm a parameter or statistic? Explain.",
+    "(c) Identify the corresponding population parameter and explain why another sample could give a different result."
+   ],
+   "sample": [
+    "(a) One rescued bird is the unit. The identification code is categorical; wing length is continuous quantitative; the number of previous admissions is discrete quantitative.",
+    "(b) 24 cm is a statistic because it summarizes the 45 sampled birds.",
+    "(c) The parameter is the mean wing length of all birds in the full register. Another sample can contain different birds with different wing lengths."
+   ],
+   "checklist": [
+    "Identifies one bird as the unit.",
+    "Classifies the identification code as categorical.",
+    "Distinguishes continuous length from discrete count.",
+    "Calls 24 cm a sample statistic with a reason.",
+    "Names the population mean and explains variation."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.2, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "Category names can be numerical codes. Classify the meaning of a variable rather than deciding from whether its values look like words or numbers. A discrete variable need not have only finitely many possible values."
+   }
+  ]
+ }
+}

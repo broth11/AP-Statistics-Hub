@@ -1,0 +1,449 @@
+{
+ "n": 7,
+ "unit": 1,
+ "topic": "1.7",
+ "title": "Summary Statistics for One Quantitative Variable",
+ "videoId": "SwZZOEganjk",
+ "videoTitle": "AP Statistics Topic 1.7 Summary Statistics for One Quantitative Variable",
+ "intro": "Calculate and interpret center, position, spread, transformations, and potential outliers, then choose appropriate summaries.",
+ "moments": [
+  {
+   "t": 199,
+   "type": "Key idea",
+   "title": "Mean notation",
+   "text": "Distinguish the sample mean from the population mean."
+  },
+  {
+   "t": 291,
+   "type": "Key idea",
+   "title": "Calculate a mean",
+   "text": "Sum the values and divide by their number."
+  },
+  {
+   "t": 599,
+   "type": "Key idea",
+   "title": "Find the median",
+   "text": "Order the observations before finding the middle."
+  },
+  {
+   "t": 981,
+   "type": "Key idea",
+   "title": "Quartiles",
+   "text": "Quartiles mark positions within the ordered data."
+  },
+  {
+   "t": 1347,
+   "type": "Key idea",
+   "title": "Percentiles",
+   "text": "Percentiles describe relative position in an ordered data set."
+  },
+  {
+   "t": 1501,
+   "type": "Key idea",
+   "title": "Range and IQR",
+   "text": "Range uses the extremes; IQR describes the middle half."
+  },
+  {
+   "t": 1630,
+   "type": "Key idea",
+   "title": "Standard deviation",
+   "text": "Standard deviation measures typical distance from the mean."
+  },
+  {
+   "t": 1906,
+   "type": "Key idea",
+   "title": "Potential outliers",
+   "text": "Use the stated fence or standard-deviation rule."
+  },
+  {
+   "t": 2042,
+   "type": "Key idea",
+   "title": "Calculator summaries",
+   "text": "Enter data, then calculate mean, median, SD, and quartiles."
+  },
+  {
+   "t": 2616,
+   "type": "Key idea",
+   "title": "Gas mileage example",
+   "text": "Calculate IQR fences and compare observed values with them."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Symmetric, no major outliers",
+     "text": "Mean and standard deviation describe center and spread."
+    },
+    {
+     "letter": "2",
+     "name": "Skewed or outlying values",
+     "text": "Median and IQR resist extreme observations."
+    },
+    {
+     "letter": "3",
+     "name": "Linear transformations",
+     "text": "Adding a constant shifts center; multiplying scales center and spread. Spread uses the absolute multiplier."
+    },
+    {
+     "letter": "4",
+     "name": "Outlier rule",
+     "text": "Use the requested rule. IQR fences and a two-SD criterion need not identify the same observations."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Find IQR fences and assess an extreme value",
+     "q": "The video's 53-car sample has first quartile 17.88 mpg, third quartile 30.66 mpg, minimum 12 mpg, and maximum 55 mpg. Use IQR fences to assess the extremes.",
+     "steps": [
+      {
+       "t": "Calculate the interquartile range.",
+       "work": {
+        "text": "Subtract the first quartile from the third.",
+        "tex": [
+         "$IQR=30.66-17.88=12.78$"
+        ]
+       }
+      },
+      {
+       "t": "Calculate the lower and upper fences.",
+       "work": {
+        "text": "Use 1.5 times the IQR.",
+        "tex": [
+         "$17.88-1.5(12.78)=-1.29$",
+         "$30.66+1.5(12.78)=49.83$"
+        ]
+       }
+      },
+      {
+       "t": "Compare observations with the fences.",
+       "work": {
+        "text": "12 exceeds the lower fence, while 55 exceeds the upper fence. The summary alone does not reveal every high value."
+       }
+      }
+     ],
+     "answer": "55 mpg is a potential high outlier, and no observation is below the lower fence. Other high outliers require more detailed data.",
+     "seek": 2616,
+     "formula": [
+      "$IQR=Q_3-Q_1$",
+      "$Q_1-1.5IQR,\\quad Q_3+1.5IQR$"
+     ]
+    },
+    {
+     "obj": "Calculate summaries from a small data set",
+     "q": "Supplementary example: five package masses are 2, 3, 4, 5, and 6 kg. Find the mean, median, and sample standard deviation.",
+     "steps": [
+      {
+       "t": "Calculate the mean and identify the middle.",
+       "work": {
+        "text": "The masses are already ordered. The middle value is 4 kg.",
+        "tex": [
+         "$\\bar x=(2+3+4+5+6)/5=4$"
+        ]
+       }
+      },
+      {
+       "t": "Sum squared deviations from the mean.",
+       "work": {
+        "text": "The deviations are −2, −1, 0, 1, and 2 kg.",
+        "tex": [
+         "$\\sum(x_i-\\bar x)^2=10$"
+        ]
+       }
+      },
+      {
+       "t": "Divide by one less than the sample size and take a square root.",
+       "work": {
+        "text": "Use the sample standard-deviation formula.",
+        "tex": [
+         "$s=\\sqrt{10/4}\\approx1.581$"
+        ]
+       }
+      }
+     ],
+     "answer": "The mean and median are 4 kg, and package masses typically differ from the sample mean by about 1.581 kg.",
+     "seek": 1630,
+     "formula": [
+      "$s=\\sqrt{\\dfrac{\\sum(x_i-\\bar x)^2}{n-1}}$"
+     ]
+    },
+    {
+     "obj": "Calculate a median and quartiles",
+     "q": "Supplementary example: ordered times are 2, 4, 5, 7, 9, 11, 13, and 17 minutes. Use medians of the lower and upper halves for quartiles.",
+     "steps": [
+      {
+       "t": "Find the middle two values.",
+       "work": {
+        "text": "There are eight values, so average positions four and five.",
+        "tex": [
+         "$\\text{Median}=(7+9)/2=8$"
+        ]
+       }
+      },
+      {
+       "t": "Find the median of each half.",
+       "work": {
+        "text": "The lower half is 2, 4, 5, 7; the upper half is 9, 11, 13, 17.",
+        "tex": [
+         "$Q_1=(4+5)/2=4.5$",
+         "$Q_3=(11+13)/2=12$"
+        ]
+       }
+      },
+      {
+       "t": "Subtract quartiles to measure the middle-half spread.",
+       "work": {
+        "text": "Keep minutes as the unit.",
+        "tex": [
+         "$IQR=12-4.5=7.5$"
+        ]
+       }
+      }
+     ],
+     "answer": "The median is 8 minutes, and the middle half spans from 4.5 to 12 minutes.",
+     "seek": 982
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Calculator practice",
+   "title": "Calculate summaries from a list",
+   "intro": "Use the empty calculator to enter the supplementary package-mass data. These commands follow the video; the data are new.",
+   "steps": [
+    {
+     "title": "Enter the data",
+     "suppose": "we want summaries for package masses 2, 3, 4, 5, and 6 kg.",
+     "do": [
+      "On an empty expression line, enter `W=[2,3,4,5,6]`.",
+      "Check each entry against the data before continuing."
+     ],
+     "observe": "W stores all five observations. The capital letter is the same in every command.",
+     "expected": "$n=5$",
+     "seek": 2042
+    },
+    {
+     "title": "Find center",
+     "suppose": "we want the mean and median.",
+     "do": [
+      "On a new line type `mean(W)`.",
+      "On another line type `median(W)`."
+     ],
+     "observe": "The functions summarize the list without replacing the original observations.",
+     "expected": "$\\bar x=4$, median $=4$ kg.",
+     "seek": 2116
+    },
+    {
+     "title": "Find sample spread",
+     "suppose": "we want the sample standard deviation.",
+     "do": [
+      "On a new line type `stdev(W)`."
+     ],
+     "observe": "Use the sample SD; it uses one fewer than the number of observations in the denominator.",
+     "expected": "$s=\\sqrt{2.5}\\approx1.581$ kg.",
+     "seek": 2145
+    },
+    {
+     "title": "Find quartiles",
+     "suppose": "we want the endpoints of the middle half.",
+     "do": [
+      "On separate lines enter `quartile(W,1)` and `quartile(W,3)`."
+     ],
+     "observe": "Quartile conventions can differ across tools for small samples. Report the calculator convention used here.",
+     "expected": "$Q_1=2.5$, $Q_3=5.5$, and $IQR=3$ kg.",
+     "seek": 2156
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Median position",
+     "weak": "For 29 values, the median is 15.",
+     "better": "The median is the 15th ordered value, not necessarily the number 15.",
+     "seek": 656
+    },
+    {
+     "kind": "Common trap",
+     "title": "Standard deviation units",
+     "weak": "The standard deviation is 1.581 square kilograms.",
+     "better": "Standard deviation has the original units, kilograms; variance has squared units.",
+     "seek": 1630
+    },
+    {
+     "kind": "Common trap",
+     "title": "Shifting spread",
+     "weak": "Adding 10 to every value increases the SD by 10.",
+     "better": "Adding a constant leaves SD, IQR, and range unchanged.",
+     "seek": 1630
+    },
+    {
+     "kind": "Common trap",
+     "title": "Resistant does not mean fixed",
+     "weak": "The median never changes when data change.",
+     "better": "The median is resistant to extreme values, but it can change when the central ordered values change.",
+     "seek": 770
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The two-standard-deviation rule is an alternative flagging rule, not a guarantee that a fixed percentage of all distributions lies within two SDs. The small package example supplies new data because the video's full raw data are shown on screen rather than read in the captions."
+    },
+    {
+     "label": "Alternative rule.",
+     "text": "If the task specifies the two-SD rule, flag observations below $\\bar x-2s$ or above $\\bar x+2s$. This can identify different potential outliers from the IQR rule."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "A data set is 3, 4, 5, 6, 22. Which summaries best describe typical center and spread in the presence of the high value?",
+     "opts": [
+      "Mean and range",
+      "Mean and SD",
+      "Median and IQR",
+      "Maximum and sample size"
+     ],
+     "ok": 2,
+     "why": [
+      "Both are sensitive to the high value.",
+      "Both can be strongly affected by the high value.",
+      "Both are resistant to an extreme high observation.",
+      "Neither pair supplies a conventional center and spread."
+     ],
+     "seek": 1870
+    },
+    {
+     "stem": "A set of lengths has mean 12 cm and SD 3 cm. Convert every length to millimeters. What are the new mean and SD?",
+     "opts": [
+      "120 and 30 mm",
+      "120 and 3 mm",
+      "12 and 30 mm",
+      "120 and 300 mm"
+     ],
+     "ok": 0,
+     "why": [
+      "Multiplication by 10 scales both mean and SD by 10.",
+      "The SD must also scale.",
+      "The mean must scale.",
+      "SD scales by 10, not by 100."
+     ],
+     "seek": 1630
+    },
+    {
+     "stem": "A data set has first quartile 10 and third quartile 18. What is its upper IQR fence?",
+     "opts": [
+      "20",
+      "26",
+      "28",
+      "30"
+     ],
+     "ok": 3,
+     "why": [
+      "This does not add 1.5 IQR to Q3.",
+      "26 adds one IQR.",
+      "This is not Q3+1.5 IQR.",
+      "IQR is 8, so the upper fence is 18+12=30."
+     ],
+     "seek": 1906
+    },
+    {
+     "stem": "A 90th percentile value is 42 minutes. Which interpretation matches the course convention?",
+     "opts": [
+      "90% of values equal 42",
+      "Approximately 90% are at or below 42 minutes",
+      "42% of values are below 90 minutes",
+      "The mean is 42 minutes"
+     ],
+     "ok": 1,
+     "why": [
+      "A percentile concerns cumulative position, not equality.",
+      "Percentiles locate observations within the ordered data.",
+      "The number and percentage have been reversed.",
+      "A percentile does not determine the mean."
+     ],
+     "seek": 1347
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "For a sample of workshop completion times, the mean is 30 minutes, SD is 6 minutes, and the five-number summary is 18, 24, 28, 32, 60 minutes.",
+   "parts": [
+    "(a) Calculate the range, IQR, and IQR fences; assess 60 minutes.",
+    "(b) Choose resistant summaries and explain why they are appropriate.",
+    "(c) Every recorded time is multiplied by 2 and then increased by 5. Find the transformed median and SD."
+   ],
+   "sample": [
+    "(a) Range=60−18=42 minutes; IQR=32−24=8 minutes. Fences are 24−12=12 and 32+12=44 minutes. 60 minutes is a potential high outlier.",
+    "(b) The median of 28 minutes and IQR of 8 minutes are resistant and are appropriate given the high outlier.",
+    "(c) The transformed median is 2(28)+5=61 minutes. The transformed SD is 2(6)=12 minutes; adding 5 does not change spread."
+   ],
+   "checklist": [
+    "Calculates range and IQR.",
+    "Calculates both fences and assesses 60.",
+    "Selects median and IQR.",
+    "Explains resistance to the high outlier.",
+    "Transforms center and spread correctly."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.7, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "The two-standard-deviation rule is an alternative flagging rule, not a guarantee that a fixed percentage of all distributions lies within two SDs. The small package example supplies new data because the video's full raw data are shown on screen rather than read in the captions."
+   },
+   {
+    "kind": "alignment",
+    "text": "Linear transformations are a CED supplement. The video link attached to the transformation checks reviews standard deviation rather than demonstrating a transformation. Calculator commands use a new five-value list rather than reconstructing the video table."
+   }
+  ]
+ }
+}
