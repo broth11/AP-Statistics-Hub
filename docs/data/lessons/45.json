@@ -189,41 +189,53 @@
    "id": "desmos",
    "type": "desmos",
    "tab": "Desmos",
-   "kicker": "Calculator practice",
-   "title": "Calculate a t confidence interval",
-   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Use the menus and controls below to carry out each task yourself, then reveal the expected result.",
    "steps": [
     {
-     "title": "Find the standard error",
-     "suppose": "we want the interval for the worked example.",
+     "title": "Enter the one-sample summary",
+     "suppose": "we want a 90% interval for the population mean commute time.",
      "do": [
-      "Enter `s=sqrt(7.4^2/35)`.",
-      "Enter `v=34.000000000000`."
+      "Press {plus}, then choose {inference}.",
+      "Under [[Inference for Quantitative Data]], choose [[t-test]].",
+      "Choose the [[Stats]] tab.",
+      "Under [[SAMPLE 1]], enter 35 for [[sample size]].",
+      "Enter 28 for [[mean]].",
+      "Enter 7.4 for [[stdev]].",
+      "Press [[Create Test]]."
      ],
-     "observe": "Here v is the degrees of freedom; use the Welch value from the worked calculation for independent samples.",
-     "expected": "$SE\\approx1.250828$, $df\\approx34.0000$.",
-     "seek": 1071
-    },
-    {
-     "title": "Find the central critical value",
-     "suppose": "we want 90% confidence.",
-     "do": [
-      "Enter `c=tdist(v).inversecdf(0.95)`."
-     ],
-     "observe": "The upper cumulative probability leaves half of the excluded area in each tail.",
-     "expected": "$t^*\\approx1.690924$",
-     "seek": 1482
-    },
-    {
-     "title": "Find the endpoints",
-     "suppose": "we want the lower and upper endpoints.",
-     "do": [
-      "Enter `28-c*s`. ",
-      "Enter `28+c*s`."
-     ],
-     "observe": "Retain the unrounded calculator values.",
-     "expected": "$(25.8849,\\ 30.1151)$ minutes.",
+     "observe": "The t-test tool provides confidence intervals as well as tests. Enter the sample SD 7.4, not the standard error.",
+     "expected": "$n=35$, $\\bar x=28$, $s=7.4$.",
      "seek": 1902
+    },
+    {
+     "title": "Build the whole interval",
+     "suppose": "we want Desmos to calculate the endpoints.",
+     "do": [
+      "On the test item, open [[Confidence Interval]].",
+      "Change [[Confidence level]] from 0.95 to 0.90.",
+      "Open the three-dot output menu at the right of the interval graphic to view numerical outputs.",
+      "Read [[Lower bound]], [[Upper bound]], [[Point estimate]], and [[Standard error]]."
+     ],
+     "observe": "The interval estimates the population mean. Its midpoint is 28 minutes; the standard error is about 1.25083 minutes.",
+     "expected": "90% interval $\\approx(25.8849,\\ 30.1151)$ minutes.",
+     "seek": 1902
+    },
+    {
+     "title": "Find the t critical value separately",
+     "suppose": "we want the critical value for 90% confidence with 34 degrees of freedom.",
+     "do": [
+      "Press {plus}, then choose {inference}, then [[Probability Distribution]].",
+      "Open the distribution selector and choose [[t-distribution]].",
+      "Enter 34 for [[degrees of freedom]]. Keep shift 0 and scale 1, then press [[Create Distribution]].",
+      "Open [[Cumulative Probability]].",
+      "Under COMPUTE choose [[Bounds]]; under REGION choose [[Inner]].",
+      "Enter 0.90 for the central probability."
+     ],
+     "observe": "The bounds are symmetric. Use the positive bound as t-star. This is a separate distribution item; the interval tool already calculated the interval for you.",
+     "expected": "$t^*\\approx1.690924$; bounds $\\approx\\pm1.690924$.",
+     "seek": 1657
     }
    ]
   },
@@ -395,6 +407,10 @@
    {
     "kind": "values",
     "text": "Worked-example summary values come from the narration. Population-size assumptions are explicitly supplied to make the 10% condition reviewable. All interval values are recomputed from unrounded inputs."
+   },
+   {
+    "kind": "calculator",
+    "text": "Revised to menu-guided instructions with the existing Desmos button icons. The inference, t-test Stats, sample 2, Confidence Interval, Significance Test, distribution, table, regression, and statistics-function controls were inspected in the embedded calculator."
    }
   ]
  }

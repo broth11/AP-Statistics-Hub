@@ -143,27 +143,35 @@
    "id": "desmos",
    "type": "desmos",
    "tab": "Desmos",
-   "kicker": "Calculator practice",
-   "title": "Calculate a probability for a difference",
-   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Use the menus and controls below to carry out each task yourself, then reveal the expected result.",
    "steps": [
     {
-     "title": "Combine sampling variability",
-     "suppose": "we want the SD of A minus B.",
+     "title": "Create a model for the difference",
+     "suppose": "we want a distribution for mean A minus mean B.",
      "do": [
-      "Enter `s=sqrt(10^2/50+12^2/70)`."
+      "Press {plus}, then choose {inference}, then [[Probability Distribution]].",
+      "Choose [[Normal distribution]].",
+      "Enter 5 for [[mean]], because 34−29=5.",
+      "Select [[stdev]]. On the keypad, use the [[√]] key to start a square root.",
+      "Inside the square root, enter `10^2/50+12^2/70`.",
+      "Check that the entire sum is under the square root, then press [[Create Distribution]]."
      ],
-     "observe": "The plus sign combines independent variance contributions.",
-     "expected": "$\\sigma_D\\approx2.014235$",
-     "seek": 724
+     "observe": "The stdev field should show $\\sqrt{10^2/50+12^2/70}$. Independent variance contributions add, even though the statistic is a difference.",
+     "expected": "$\\mu_D=5$, $\\sigma_D\\approx2.014235$ minutes.",
+     "seek": 1372
     },
     {
-     "title": "Find the probability",
-     "suppose": "we want the first sample mean to be smaller.",
+     "title": "Find which sample mean is smaller",
+     "suppose": "we want the probability that mean A is below mean B.",
      "do": [
-      "Enter `normaldist(5,s).cdf(0)`."
+      "Open [[Cumulative Probability]].",
+      "Under COMPUTE choose [[Area]].",
+      "Under REGION choose [[Left]].",
+      "Enter 0 for the upper bound."
      ],
-     "observe": "The event is a negative A-minus-B difference.",
+     "observe": "A negative A-minus-B difference means the first sample mean is smaller.",
      "expected": "$P(D<0)\\approx0.0065$",
      "seek": 1630
     }
@@ -324,6 +332,10 @@
    {
     "kind": "placement",
     "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "calculator",
+    "text": "Revised to menu-guided instructions with the existing Desmos button icons. The inference, t-test Stats, sample 2, Confidence Interval, Significance Test, distribution, table, regression, and statistics-function controls were inspected in the embedded calculator."
    }
   ]
  }

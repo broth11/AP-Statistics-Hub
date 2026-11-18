@@ -158,41 +158,50 @@
    "id": "desmos",
    "type": "desmos",
    "tab": "Desmos",
-   "kicker": "Calculator practice",
-   "title": "Calculate the t statistic and p-value",
-   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Use the menus and controls below to carry out each task yourself, then reveal the expected result.",
    "steps": [
     {
-     "title": "Standardize",
-     "suppose": "we want the t statistic for the worked example.",
+     "title": "Enter the sample information",
+     "suppose": "we want to test a claim about the population mean difference.",
      "do": [
-      "Enter `s=1.840445598218`.",
-      "Enter `u=(4.9-0)/s`."
+      "Press {plus}, then choose {inference}.",
+      "Under [[Inference for Quantitative Data]], choose [[t-test]].",
+      "Choose the [[Stats]] tab.",
+      "Under [[SAMPLE 1]], enter 10 for [[sample size]].",
+      "Enter 4.9 for [[mean]].",
+      "Enter 5.82 for [[stdev]].",
+      "Press [[Create Test]]."
      ],
-     "observe": "Here s is the standard error, not an individual-observation SD.",
-     "expected": "$t\\approx2.662399$",
-     "seek": 1020
+     "observe": "Enter the mean and SD of the within-person differences as one sample. Ten pairs give ten differences; do not add a second sample.",
+     "expected": "$t\\approx2.662399$ after the null and tail are set.",
+     "seek": 1151
     },
     {
-     "title": "Find the tail area",
+     "title": "Set the null and alternative",
      "suppose": "we want the p-value for the stated alternative.",
      "do": [
-      "Enter `v=9.000000000000`.",
-      "Enter `1-tdist(v).cdf(u)`."
+      "On the test item, open [[Significance Test]].",
+      "Under [[Null hypothesis]], enter 0 in the hypothesis field.",
+      "Under [[Tails]], select [[Right]].",
+      "Read the displayed t statistic, df, and p-value.",
+      "For more digits, open the three-dot output menu beside the test results."
      ],
-     "observe": "A two-sided p-value includes both tails. Do not double a result already calculated for both tails.",
-     "expected": "$p\\approx0.012972$",
-     "seek": 1045
+     "observe": "Right corresponds to a positive before-minus-after mean difference.",
+     "expected": "$t\\approx2.662399$, $p\\approx0.012972$.",
+     "seek": 1151
     },
     {
-     "title": "Compare with alpha",
+     "title": "Make the decision",
      "suppose": "we use significance level 0.01.",
      "do": [
-      "Compare the displayed p-value with the stated significance level."
+      "Compare the displayed p-value with 0.01.",
+      "Write the decision and the conclusion about the population in context."
      ],
-     "observe": "A small p-value is evidence against the null, not the probability the null is true.",
+     "observe": "The significance level is used for your decision. The p-value is calculated assuming the null hypothesis, not as a probability that the null is true.",
      "expected": "Fail to reject $H_0$.",
-     "seek": 1049
+     "seek": 1151
     }
    ]
   },
@@ -384,6 +393,10 @@
    {
     "kind": "wording",
     "text": "A before/after sequence alone cannot isolate a coffee effect from practice or time effects. A statistically significant change would not by itself establish that coffee caused it."
+   },
+   {
+    "kind": "calculator",
+    "text": "Revised to menu-guided instructions with the existing Desmos button icons. The inference, t-test Stats, sample 2, Confidence Interval, Significance Test, distribution, table, regression, and statistics-function controls were inspected in the embedded calculator."
    }
   ]
  }

@@ -169,41 +169,45 @@
    "id": "desmos",
    "type": "desmos",
    "tab": "Desmos",
-   "kicker": "Calculator practice",
-   "title": "Fit a least-squares line",
-   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Use the menus and controls below to carry out each task yourself, then reveal the expected result.",
    "steps": [
     {
      "title": "Enter paired data",
-     "suppose": "we want a fitted line for supplementary paired measurements.",
+     "suppose": "we want a fitted line for the supplementary measurements.",
      "do": [
-      "Enter `X=[5,7,12,16,20]`.",
-      "Enter `Y=[16.5,18.9,19.1,21.6,25.7]`.",
-      "Enter `(X,Y)` and inspect the scatterplot."
+      "Press {plus}, then choose [[table]].",
+      "Enter 5, 7, 12, 16, and 20 down the first column.",
+      "Enter 16.5, 18.9, 19.1, 21.6, and 25.7 down the second column in the matching rows.",
+      "Check that each row contains one original pair."
      ],
-     "observe": "The data come from the earlier correlation example; check that a straight-line pattern is reasonable.",
+     "observe": "Use the same paired observations as the correlation example. Inspect the scatterplot for an approximately linear pattern.",
      "expected": "$n=5$ observations.",
      "seek": 268
     },
     {
-     "title": "Fit the response on the input",
-     "suppose": "we want a least-squares regression of Y on X.",
+     "title": "Fit the line through the table menu",
+     "suppose": "we want the least-squares prediction of the second column from the first.",
      "do": [
-      "Enter `Y~a+bX`, using a tilde rather than an equals sign."
+      "On the table item, press [[Add Regression]] (the small line-and-points button).",
+      "Open the model selector if necessary and choose [[Linear Regression]].",
+      "Read the fitted equation under [[EQUATION]]."
      ],
-     "observe": "The regression estimates the intercept a and slope b from the paired observations.",
-     "expected": "$a\\approx13.970390$, $b\\approx0.532468$.",
+     "observe": "The coefficient of the first-column variable is the slope; the constant term is the intercept. You do not need to type a regression equation using a tilde.",
+     "expected": "$\\hat y\\approx13.970390+0.532468x$.",
      "seek": 268
     },
     {
-     "title": "Calculate explained variation",
+     "title": "Read explained variation",
      "suppose": "we want correlation and its square.",
      "do": [
-      "Enter `corr(X,Y)`.",
-      "Enter `corr(X,Y)^2`."
+      "Under [[STATISTICS]], read r and R-squared.",
+      "Connect the sign of r to the fitted slope.",
+      "Express R-squared as a percentage when interpreting explained variation."
      ],
-     "observe": "The squared value describes variation in Y explained by its linear relationship with X.",
-     "expected": "$r\\approx0.947139$, $r^2\\approx0.897073$.",
+     "observe": "R-squared describes the proportion of variation in the response explained by its linear relationship with the explanatory variable.",
+     "expected": "$r\\approx0.947139$, $r^2\\approx0.897073$ (about 89.7%).",
      "seek": 1207
     }
    ]
@@ -372,6 +376,10 @@
    {
     "kind": "wording",
     "text": "The CED includes calculating regression coefficients with technology. This page retains a calculator walkthrough even though parts of the video emphasize being given the equation."
+   },
+   {
+    "kind": "calculator",
+    "text": "Revised to menu-guided instructions with the existing Desmos button icons. The inference, t-test Stats, sample 2, Confidence Interval, Significance Test, distribution, table, regression, and statistics-function controls were inspected in the embedded calculator."
    }
   ]
  }

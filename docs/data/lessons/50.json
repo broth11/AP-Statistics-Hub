@@ -158,41 +158,54 @@
    "id": "desmos",
    "type": "desmos",
    "tab": "Desmos",
-   "kicker": "Calculator practice",
-   "title": "Calculate the t statistic and p-value",
-   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Use the menus and controls below to carry out each task yourself, then reveal the expected result.",
    "steps": [
     {
-     "title": "Standardize",
-     "suppose": "we want the t statistic for the worked example.",
+     "title": "Enter the sample information",
+     "suppose": "we want to test a claim about the population mean difference.",
      "do": [
-      "Enter `s=22.588099128130`.",
-      "Enter `u=(70-0)/s`."
+      "Press {plus}, then choose {inference}.",
+      "Under [[Inference for Quantitative Data]], choose [[t-test]].",
+      "Choose the [[Stats]] tab.",
+      "Under [[SAMPLE 1]], enter 45 for [[sample size]].",
+      "Enter 1120 for [[mean]].",
+      "Enter 100 for [[stdev]].",
+      "Press {plus} beside [[SAMPLE 2 (optional)]].",
+      "Under [[SAMPLE 2]], enter 50 for [[sample size]].",
+      "Enter 1050 for [[mean]].",
+      "Enter 120 for [[stdev]].",
+      "Press [[Create Test]]."
      ],
-     "observe": "Here s is the standard error, not an individual-observation SD.",
-     "expected": "$t\\approx3.098977$",
-     "seek": 1195
+     "observe": "Check the order: sample 1 is the first population in the subtraction.",
+     "expected": "$t\\approx3.098977$ after the null and tail are set.",
+     "seek": 1670
     },
     {
-     "title": "Find the tail area",
+     "title": "Set the null and alternative",
      "suppose": "we want the p-value for the stated alternative.",
      "do": [
-      "Enter `v=92.476135476611`.",
-      "Enter `2*tdist(v).cdf(-abs(u))`."
+      "On the test item, open [[Significance Test]].",
+      "Under [[Null hypothesis]], enter 0 in the hypothesis field.",
+      "Under [[Tails]], select [[Both]].",
+      "Read the displayed t statistic, df, and p-value.",
+      "For more digits, open the three-dot output menu beside the test results."
      ],
-     "observe": "A two-sided p-value includes both tails. Do not double a result already calculated for both tails.",
-     "expected": "$p\\approx0.002573$",
-     "seek": 1272
+     "observe": "Both includes both directions of a difference; do not double the displayed p-value again.",
+     "expected": "$t\\approx3.098977$, $p\\approx0.002573$.",
+     "seek": 1670
     },
     {
-     "title": "Compare with alpha",
+     "title": "Make the decision",
      "suppose": "we use significance level 0.05.",
      "do": [
-      "Compare the displayed p-value with the stated significance level."
+      "Compare the displayed p-value with 0.05.",
+      "Write the decision and the conclusion about the population in context."
      ],
-     "observe": "A small p-value is evidence against the null, not the probability the null is true.",
+     "observe": "The significance level is used for your decision. The p-value is calculated assuming the null hypothesis, not as a probability that the null is true.",
      "expected": "Reject $H_0$.",
-     "seek": 1562
+     "seek": 1670
     }
    ]
   },
@@ -368,6 +381,10 @@
    {
     "kind": "wording",
     "text": "Welch degrees of freedom are used. Adding n₁−1 and n₂−1 is not the general unpooled two-sample formula; the video describes that shortcut as good enough, but this page calculates the appropriate reference distribution."
+   },
+   {
+    "kind": "calculator",
+    "text": "Revised to menu-guided instructions with the existing Desmos button icons. The inference, t-test Stats, sample 2, Confidence Interval, Significance Test, distribution, table, regression, and statistics-function controls were inspected in the embedded calculator."
    }
   ]
  }
