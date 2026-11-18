@@ -1,0 +1,378 @@
+{
+ "n": 55,
+ "unit": 5,
+ "topic": "5.5",
+ "title": "Least-Squares Regression",
+ "videoId": "zuNF4mS2BhI",
+ "videoTitle": "AP Statistics Topic 5.5 Least-Squares Regression",
+ "intro": "Fit least-squares lines, interpret slope and intercept, and explain the coefficient of determination in context.",
+ "moments": [
+  {
+   "t": 268,
+   "type": "Key idea",
+   "title": "Fit with technology",
+   "text": "Enter paired data and calculate the least-squares line."
+  },
+  {
+   "t": 519,
+   "type": "Key idea",
+   "title": "Least squares",
+   "text": "The fitted line minimizes the sum of squared vertical residuals."
+  },
+  {
+   "t": 747,
+   "type": "Key idea",
+   "title": "A point on the fitted line",
+   "text": "With an intercept, the least-squares line passes through the pair of sample means."
+  },
+  {
+   "t": 846,
+   "type": "Key idea",
+   "title": "Interpret slope",
+   "text": "Describe a predicted response change for each one-unit increase in x."
+  },
+  {
+   "t": 1008,
+   "type": "Key idea",
+   "title": "Interpret intercept",
+   "text": "The intercept predicts the response at x=0 and may lack practical meaning."
+  },
+  {
+   "t": 1207,
+   "type": "Key idea",
+   "title": "Coefficient of determination",
+   "text": "The squared correlation measures the proportion of response variation explained by the linear relationship."
+  },
+  {
+   "t": 1461,
+   "type": "Key idea",
+   "title": "Fuel-efficiency example",
+   "text": "Interpret a negative slope in the original units."
+  },
+  {
+   "t": 1757,
+   "type": "Key idea",
+   "title": "Recover the sign of r",
+   "text": "Take the square root of r squared and choose the sign from the slope."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Least squares",
+     "text": "Minimize the sum of squared vertical residuals; the signed residual sum alone is not a measure of fit."
+    },
+    {
+     "letter": "2",
+     "name": "Slope",
+     "text": "For each one-unit increase in x, the predicted response changes by b response units."
+    },
+    {
+     "letter": "3",
+     "name": "Intercept",
+     "text": "The fitted response at x=0 may require extrapolation or be meaningless in context."
+    },
+    {
+     "letter": "4",
+     "name": "Explained variation",
+     "text": "$r^2$ is the proportion of variation in the response explained by its linear relationship with the explanatory variable."
+    },
+    {
+     "letter": "5",
+     "name": "Mean point",
+     "text": "A fitted least-squares line with an intercept passes through $(\\bar x,\\bar y)$."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Interpret slope and explained variation",
+     "q": "The video models fuel efficiency in mpg from vehicle speed in mph, with slope −0.24 mpg per mph and $r^2=0.898$. Interpret the slope and explained variation, then find the correlation.",
+     "steps": [
+      {
+       "t": "Interpret the slope as a predicted rate of change.",
+       "work": {
+        "text": "For each additional 1 mph of speed, predicted fuel efficiency decreases by 0.24 mpg within the modeled range."
+       }
+      },
+      {
+       "t": "Interpret explained response variation.",
+       "work": {
+        "text": "89.8% of the variation in fuel efficiency is explained by the linear relationship with speed."
+       }
+      },
+      {
+       "t": "Recover the signed correlation.",
+       "work": {
+        "text": "Use the negative slope to choose the negative square root.",
+        "tex": [
+         "$r=-\\sqrt{0.898}\\approx-0.947629$"
+        ]
+       }
+      }
+     ],
+     "answer": "The linear association is negative, with correlation about -0.9476; 89.8% explained variation does not mean 89.8% of predictions are correct.",
+     "seek": 1461
+    },
+    {
+     "obj": "Fit a line and check its mean point",
+     "q": "Supplementary paired data: X=(5,7,12,16,20), Y=(16.5,18.9,19.1,21.6,25.7). Fit Y on X using least squares and identify the mean point.",
+     "steps": [
+      {
+       "t": "Fit the line using technology.",
+       "work": {
+        "text": "Keep the observations paired and include an intercept.",
+        "tex": [
+         "$\\hat y\\approx13.970390+0.532468x$"
+        ]
+       }
+      },
+      {
+       "t": "Find the sample means.",
+       "work": {
+        "text": "Average the two lists separately while preserving their role in the regression.",
+        "tex": [
+         "$\\bar x=12.0$",
+         "$\\bar y=20.36$"
+        ]
+       }
+      },
+      {
+       "t": "Check the fitted line at the mean input.",
+       "work": {
+        "text": "The unrounded fitted coefficients produce the mean response.",
+        "tex": [
+         "$\\hat y(12)=20.36$"
+        ]
+       }
+      }
+     ],
+     "answer": "The fitted line passes through (12, 20.36), the pair of sample means."
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Calculator practice",
+   "title": "Fit a least-squares line",
+   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "steps": [
+    {
+     "title": "Enter paired data",
+     "suppose": "we want a fitted line for supplementary paired measurements.",
+     "do": [
+      "Enter `X=[5,7,12,16,20]`.",
+      "Enter `Y=[16.5,18.9,19.1,21.6,25.7]`.",
+      "Enter `(X,Y)` and inspect the scatterplot."
+     ],
+     "observe": "The data come from the earlier correlation example; check that a straight-line pattern is reasonable.",
+     "expected": "$n=5$ observations.",
+     "seek": 268
+    },
+    {
+     "title": "Fit the response on the input",
+     "suppose": "we want a least-squares regression of Y on X.",
+     "do": [
+      "Enter `Y~a+bX`, using a tilde rather than an equals sign."
+     ],
+     "observe": "The regression estimates the intercept a and slope b from the paired observations.",
+     "expected": "$a\\approx13.970390$, $b\\approx0.532468$.",
+     "seek": 268
+    },
+    {
+     "title": "Calculate explained variation",
+     "suppose": "we want correlation and its square.",
+     "do": [
+      "Enter `corr(X,Y)`.",
+      "Enter `corr(X,Y)^2`."
+     ],
+     "observe": "The squared value describes variation in Y explained by its linear relationship with X.",
+     "expected": "$r\\approx0.947139$, $r^2\\approx0.897073$.",
+     "seek": 1207
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Slope without prediction",
+     "weak": "Every extra unit of x changes the actual y by exactly b.",
+     "better": "Interpret b as the change in predicted response for a one-unit increase in x.",
+     "seek": 846
+    },
+    {
+     "kind": "Common trap",
+     "title": "Explained variation versus accuracy",
+     "weak": "An r-squared of 0.898 means 89.8% of predictions are correct.",
+     "better": "It means 89.8% of the observed variation in the response is explained by the linear relationship.",
+     "seek": 1207
+    },
+    {
+     "kind": "Common trap",
+     "title": "Lost correlation sign",
+     "weak": "The correlation is always the positive square root of r-squared.",
+     "better": "Choose the sign that matches the slope.",
+     "seek": 1757
+    },
+    {
+     "kind": "Common trap",
+     "title": "Intercept always meaningful",
+     "weak": "The intercept always describes a realistic observation.",
+     "better": "It predicts y at x=0, which may fall outside the fitted range or be implausible.",
+     "seek": 1008
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The CED includes calculating regression coefficients with technology. This page retains a calculator walkthrough even though parts of the video emphasize being given the equation."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "For a linear regression with slope negative and r-squared 0.64, r is:",
+     "opts": [
+      "0.8",
+      "−0.8",
+      "−0.64",
+      "0.64"
+     ],
+     "ok": 1,
+     "why": [
+      "The sign must match the negative slope.",
+      "The magnitude is √0.64=0.8 with negative sign.",
+      "r is not r-squared.",
+      "This has both the wrong sign and magnitude."
+     ],
+     "seek": 1757
+    },
+    {
+     "stem": "A model predicts mass from length and has r-squared 0.72. Which is the correct interpretation?",
+     "opts": [
+      "72% of lengths are correct",
+      "Length causes 72% of mass",
+      "72% of variation in mass is explained by its linear relationship with length",
+      "72% of masses lie on the fitted line"
+     ],
+     "ok": 2,
+     "why": [
+      "This is not an accuracy rate for explanatory values.",
+      "r-squared does not establish causation.",
+      "It describes explained variation in the response.",
+      "Explained variation is not the fraction exactly on the line."
+     ],
+     "seek": 1207
+    },
+    {
+     "stem": "Which quantity does least squares minimize?",
+     "opts": [
+      "The sum of squared vertical residuals",
+      "The sum of x values",
+      "The number of positive residuals",
+      "The signed sum of residuals alone"
+     ],
+     "ok": 0,
+     "why": [
+      "This is the least-squares criterion.",
+      "The input values do not change during fitting.",
+      "Balancing signs is not the fitting criterion.",
+      "Cancellation of signs can hide large errors."
+     ],
+     "seek": 519
+    },
+    {
+     "stem": "A least-squares line with an intercept is fitted to data with mean x=10 and mean y=35. Which point is on it?",
+     "opts": [
+      "(35,10)",
+      "(0,35)",
+      "(10,0)",
+      "(10,35)"
+     ],
+     "ok": 3,
+     "why": [
+      "This reverses the coordinates.",
+      "The mean y need not be the intercept.",
+      "The response at mean x is mean y.",
+      "The fitted line passes through the pair of sample means."
+     ],
+     "seek": 747
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A least-squares model predicts energy use in kWh from floor area in square meters: $\\hat y=40+2.5x$, with $r^2=0.81$. The observed areas run from 20 to 150 square meters.",
+   "parts": [
+    "(a) Interpret the slope and intercept, including any limitation on the intercept.",
+    "(b) Interpret r-squared and find the signed correlation.",
+    "(c) Predict energy use at 80 square meters and explain the least-squares fitting criterion."
+   ],
+   "sample": [
+    "(a) For each additional square meter, predicted energy use increases by 2.5 kWh. The intercept predicts 40 kWh at zero area, but zero is outside the observed range and does not describe a realistic room here.",
+    "(b) 81% of the variation in energy use is explained by its linear relationship with floor area. The positive slope gives r=+√0.81=0.9.",
+    "(c) The prediction is 40+2.5(80)=240 kWh. The fitted line minimizes the sum of squared vertical differences between observed energy use and model predictions."
+   ],
+   "checklist": [
+    "Interprets slope as a predicted rate with units.",
+    "Interprets the intercept and its contextual limitation.",
+    "Explains variation in the response rather than a prediction-accuracy rate.",
+    "Finds the positive correlation 0.9.",
+    "Calculates 240 kWh and describes the least-squares criterion."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "The CED includes calculating regression coefficients with technology. This page retains a calculator walkthrough even though parts of the video emphasize being given the equation."
+   }
+  ]
+ }
+}

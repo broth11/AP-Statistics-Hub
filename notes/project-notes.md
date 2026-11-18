@@ -4,7 +4,7 @@ Moved to Claude on 2026-11-05 from a previous project. The old copy is read-only
 
 ## Status (18 Nov 2026)
 
-All indexed CED Unit 1–3 videos now have study pages: 38 pages, including twelve new Unit 1 pages. No new explorers were added. See `unit-1-completion-2026-11-18.md` for scope, checks, sources, and review limits. The sections below retain historical notes and may describe earlier states.
+All 50 indexed CED Unit 1–5 videos now have study pages. Twelve new Unit 4–5 pages complete the core course; eight review/FRQ strategy videos remain unbuilt. No new explorers were added. The shared text style also preserves literal multipart labels such as (c). See `unit-1-completion-2026-11-18.md` and `units-4-5-completion-2026-11-18.md` for scope, checks, sources, and review limits. The sections below retain historical notes and may describe earlier states.
 
 ## Historical status (5 Nov 2026)
 

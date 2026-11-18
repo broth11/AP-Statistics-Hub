@@ -1,0 +1,346 @@
+{
+ "n": 52,
+ "unit": 5,
+ "topic": "5.2",
+ "title": "Correlation",
+ "videoId": "0elQQfV_JTQ",
+ "videoTitle": "AP Statistics Topic 5.2 Correlation",
+ "intro": "Interpret correlation, recognize its limits, and calculate it without confusing association with causation.",
+ "moments": [
+  {
+   "t": 90,
+   "type": "Key idea",
+   "title": "What correlation measures",
+   "text": "Correlation summarizes direction and strength of a linear association."
+  },
+  {
+   "t": 221,
+   "type": "Key idea",
+   "title": "Unit-free",
+   "text": "Correlation has no measurement units."
+  },
+  {
+   "t": 294,
+   "type": "Key idea",
+   "title": "The range of r",
+   "text": "Correlation lies between −1 and 1."
+  },
+  {
+   "t": 416,
+   "type": "Key idea",
+   "title": "Zero correlation",
+   "text": "Zero correlation does not rule out a nonlinear association."
+  },
+  {
+   "t": 768,
+   "type": "Key idea",
+   "title": "Correlation and causality",
+   "text": "An association alone cannot establish a causal effect."
+  },
+  {
+   "t": 924,
+   "type": "Key idea",
+   "title": "Unusual points",
+   "text": "Adding or removing a point can change correlation."
+  },
+  {
+   "t": 1068,
+   "type": "Key idea",
+   "title": "Calculate correlation",
+   "text": "Keep the two lists paired and inspect the scatterplot before interpreting r."
+  },
+  {
+   "t": 1162,
+   "type": "Key idea",
+   "title": "Check the output",
+   "text": "Interpret a calculated correlation in the context of the data."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Direction and strength",
+     "text": "The sign of $r$ gives direction; $|r|$ describes linear strength."
+    },
+    {
+     "letter": "2",
+     "name": "Range and units",
+     "text": "$-1\\le r\\le1$. Correlation is unit-free."
+    },
+    {
+     "letter": "3",
+     "name": "Inspect first",
+     "text": "Curvature and unusual points can make a single correlation misleading, even if its magnitude is large."
+    },
+    {
+     "letter": "4",
+     "name": "What it cannot establish",
+     "text": "Correlation does not establish causality or summarize arbitrary nonlinear relationships. Swapping x and y leaves r unchanged."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Interpret a correlation from paired data",
+     "q": "The video enters X values 5, 7, 12, 16, 20 and corresponding Y values 16.5, 18.9, 19.1, 21.6, 25.7. Calculate and interpret the correlation.",
+     "steps": [
+      {
+       "t": "Preserve the five ordered pairs.",
+       "work": {
+        "text": "Each X value is matched to the Y value in the same position. Inspect their scatterplot for a roughly linear pattern."
+       }
+      },
+      {
+       "t": "Calculate correlation using technology.",
+       "work": {
+        "text": "Use the paired lists, not independently sorted columns.",
+        "tex": [
+         "$r\\approx0.947139$"
+        ]
+       }
+      },
+      {
+       "t": "Interpret direction and linear strength.",
+       "work": {
+        "text": "The positive sign indicates Y tends to increase as X increases. The magnitude near 1 indicates a strong linear association for these data."
+       }
+      }
+     ],
+     "answer": "The five observations have a strong positive linear association. The coefficient alone does not show causality or guarantee model suitability.",
+     "seek": 1068
+    },
+    {
+     "obj": "Compare linear strength",
+     "q": "Supplementary example: one data set has correlation −0.88 and another has correlation 0.62. Compare their linear strength and direction.",
+     "steps": [
+      {
+       "t": "Identify the directions.",
+       "work": {
+        "text": "The first association is negative and the second positive."
+       }
+      },
+      {
+       "t": "Compare absolute magnitudes.",
+       "work": {
+        "text": "Linear strength depends on distance from zero.",
+        "tex": [
+         "$|-0.88|=0.88>0.62$"
+        ]
+       }
+      },
+      {
+       "t": "Separate strength from direction.",
+       "work": {
+        "text": "The negative sign does not make an association weaker."
+       }
+      }
+     ],
+     "answer": "The −0.88 association is the stronger linear association; its response tends to decrease as the explanatory variable increases."
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Calculator practice",
+   "title": "Calculate and interpret correlation",
+   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "steps": [
+    {
+     "title": "Enter paired lists",
+     "suppose": "we use the video's five paired observations.",
+     "do": [
+      "Enter `X=[5,7,12,16,20]`.",
+      "Enter `Y=[16.5,18.9,19.1,21.6,25.7]`.",
+      "Enter `(X,Y)` to display the scatterplot."
+     ],
+     "observe": "Equal positions in the lists must refer to the same observation. Adjust the viewing window to see the points.",
+     "expected": "$n=5$ paired observations.",
+     "seek": 1068
+    },
+    {
+     "title": "Calculate the coefficient",
+     "suppose": "we want the linear correlation.",
+     "do": [
+      "Enter `corr(X,Y)`."
+     ],
+     "observe": "The positive value describes a strong linear association for these five observations. The scatterplot still matters.",
+     "expected": "$r\\approx0.947139$",
+     "seek": 1162
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "A negative number is weaker",
+     "weak": "−0.9 is weaker than 0.4.",
+     "better": "The magnitude 0.9 indicates the stronger linear association; the sign gives direction.",
+     "seek": 90
+    },
+    {
+     "kind": "Common trap",
+     "title": "Zero means unrelated",
+     "weak": "A zero correlation proves there is no relationship.",
+     "better": "A strong curved relationship can have correlation near zero.",
+     "seek": 416
+    },
+    {
+     "kind": "Common trap",
+     "title": "Units on correlation",
+     "weak": "The correlation is 0.8 kilograms.",
+     "better": "Correlation is unit-free.",
+     "seek": 221
+    },
+    {
+     "kind": "Common trap",
+     "title": "Correlation proves a cause",
+     "weak": "A high correlation proves changing x causes y to change.",
+     "better": "Confounding and study design must be considered; correlation alone is not causal evidence.",
+     "seek": 768
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "Which coefficient describes the strongest linear association?",
+     "opts": [
+      "0.55",
+      "−0.94",
+      "0.80",
+      "−0.20"
+     ],
+     "ok": 1,
+     "why": [
+      "Its magnitude is below 0.94.",
+      "Its absolute value is largest.",
+      "0.80 is less than 0.94.",
+      "Its absolute value is small."
+     ],
+     "seek": 90
+    },
+    {
+     "stem": "Converting both variables from meters to centimeters has what effect on correlation?",
+     "opts": [
+      "It multiplies r by 100",
+      "It divides r by 100",
+      "It leaves r unchanged",
+      "It makes r positive"
+     ],
+     "ok": 2,
+     "why": [
+      "Positive changes of units do not scale r.",
+      "Correlation is standardized.",
+      "Positive unit conversions preserve direction and linear strength.",
+      "A negative association stays negative."
+     ],
+     "seek": 221
+    },
+    {
+     "stem": "A curved U-shaped scatterplot has r near zero. Which is correct?",
+     "opts": [
+      "There may still be a strong nonlinear association",
+      "There is necessarily no association",
+      "The coefficient must be greater than 1",
+      "A straight-line model must be appropriate"
+     ],
+     "ok": 0,
+     "why": [
+      "r measures linear association, not all patterns.",
+      "Curvature can remain strong despite zero linear correlation.",
+      "Correlation stays in [−1,1].",
+      "Curvature argues against a straight-line model."
+     ],
+     "seek": 416
+    },
+    {
+     "stem": "Which is possible?",
+     "opts": [
+      "A correlation of 1.3",
+      "A correlation of −2",
+      "A correlation with units of seconds",
+      "A correlation unchanged after swapping the variables"
+     ],
+     "ok": 3,
+     "why": [
+      "It exceeds 1.",
+      "It is below −1.",
+      "Correlation is unit-free.",
+      "Correlation is symmetric in the two quantitative variables."
+     ],
+     "seek": 294
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A study of storage batteries reports a correlation of −0.84 between age in months and run time in hours. Its scatterplot is approximately linear with no isolated points.",
+   "parts": [
+    "(a) Interpret the direction and strength in context.",
+    "(b) Explain the effect on r of converting age to years and run time to minutes.",
+    "(c) Assess the claim that r proves battery age is the only cause of lower run time."
+   ],
+   "sample": [
+    "(a) Older batteries tend to have shorter run times, with a strong negative linear association.",
+    "(b) Both changes are positive changes of units, so r remains −0.84.",
+    "(c) The correlation alone cannot establish causality, much less show age is the only cause. Other factors, such as usage history, may be related to both age and run time."
+   ],
+   "checklist": [
+    "States a negative direction in context.",
+    "Describes linear strength using the magnitude.",
+    "Recognizes correlation is unit-free.",
+    "Explains invariance under positive unit conversions.",
+    "Rejects the unsupported causal and sole-cause claims."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   }
+  ]
+ }
+}

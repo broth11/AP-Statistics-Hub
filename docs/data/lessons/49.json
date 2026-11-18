@@ -187,8 +187,8 @@
      "title": "Find the endpoints",
      "suppose": "we want the lower and upper endpoints.",
      "do": [
-      "Enter `8.299999999999997-c*s`. ",
-      "Enter `8.299999999999997+c*s`."
+      "Enter `8.3-c*s`. ",
+      "Enter `8.3+c*s`."
      ],
      "observe": "Retain the unrounded calculator values.",
      "expected": "$(2.2447,\\ 14.3553)$ minutes.",
