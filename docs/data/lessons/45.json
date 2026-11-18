@@ -1,0 +1,401 @@
+{
+ "n": 45,
+ "unit": 4,
+ "topic": "4.2 & 4.3",
+ "title": "Constructing a Confidence Interval for a Population Mean",
+ "videoId": "nfZdWugblmo",
+ "videoTitle": "AP Statistics Topic 4.2 & 4.3 Constructing a Confidence Interval for a Population Mean",
+ "intro": "Construct and interpret one-sample and paired t intervals, assess claims, and explain confidence and precision.",
+ "moments": [
+  {
+   "t": 72,
+   "type": "Key idea",
+   "title": "Estimate a population quantity",
+   "text": "An interval estimates a population mean or difference of means."
+  },
+  {
+   "t": 883,
+   "type": "Key idea",
+   "title": "Estimate variability",
+   "text": "Use sample SDs when population SDs are unknown."
+  },
+  {
+   "t": 1071,
+   "type": "Key idea",
+   "title": "Degrees of freedom",
+   "text": "The t reference distribution depends on degrees of freedom."
+  },
+  {
+   "t": 1345,
+   "type": "Key idea",
+   "title": "Standard error",
+   "text": "Estimate the variability of the relevant sample statistic."
+  },
+  {
+   "t": 1482,
+   "type": "Key idea",
+   "title": "Check conditions",
+   "text": "Justify randomization, independence, and sample-distribution requirements."
+  },
+  {
+   "t": 1657,
+   "type": "Key idea",
+   "title": "A t critical value",
+   "text": "Match the confidence level and degrees of freedom to the t distribution."
+  },
+  {
+   "t": 1801,
+   "type": "Key idea",
+   "title": "Interpret in context",
+   "text": "Explain confidence as a repeated-sampling capture rate."
+  },
+  {
+   "t": 2195,
+   "type": "Key idea",
+   "title": "Assess a claim",
+   "text": "Compare the entire interval with the proposed population value."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Parameter and order",
+     "text": "Estimate $\\mu$, the population mean commute time of company employees."
+    },
+    {
+     "letter": "2",
+     "name": "t distributions",
+     "text": "They are symmetric with heavier tails than the standard normal; as degrees of freedom increase, they approach standard normal."
+    },
+    {
+     "letter": "3",
+     "name": "Conditions",
+     "text": "Use random data. Check sampling fractions where relevant, independence between groups, and normality or adequate sample sizes."
+    },
+    {
+     "letter": "4",
+     "name": "Interpretation",
+     "text": "Confidence refers to the method's long-run capture rate. A computed interval estimates a fixed parameter."
+    },
+    {
+     "letter": "5",
+     "name": "Width",
+     "text": "Higher confidence increases width; larger samples tend to reduce standard error and width, holding other features similar."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Construct and interpret a t interval",
+     "q": "The video selects 35 employees randomly, with mean commute time 28 minutes and sample SD 7.4 minutes. Construct a 90% interval for the population mean. Assume the company has at least 350 employees.",
+     "steps": [
+      {
+       "t": "Define the parameter and name the procedure.",
+       "work": {
+        "text": "Estimate $\\mu$, the population mean commute time of company employees, using a one-sample t-interval."
+       }
+      },
+      {
+       "t": "Verify the conditions.",
+       "work": {
+        "text": "The sample is random. The assumed population size is at least 350, satisfying the 10% condition. The sample size is at least 30."
+       }
+      },
+      {
+       "t": "Calculate the point estimate and standard error.",
+       "work": {
+        "text": "Use the sample SD to estimate variability.",
+        "tex": [
+         "$\\text{estimate}=28.000$",
+         "$SE\\approx1.250828$"
+        ]
+       }
+      },
+      {
+       "t": "Find the critical value and margin of error.",
+       "work": {
+        "text": "Use one less than the sample size for degrees of freedom.",
+        "tex": [
+         "$df\\approx34.0000,\\quad t^*\\approx1.690924$",
+         "$ME=t^*SE\\approx2.1151$"
+        ]
+       }
+      },
+      {
+       "t": "Construct and interpret the interval.",
+       "work": {
+        "text": "The endpoints estimate the population parameter, not individual values.",
+        "tex": [
+         "$(25.8849,\\ 30.1151)$"
+        ]
+       }
+      }
+     ],
+     "answer": "We are 90% confident that the population mean commute time of company employees is between 25.885 and 30.115 minutes.",
+     "seek": 1902,
+     "formula": [
+      "$\\bar x\\pm t^*s/\\sqrt n$"
+     ]
+    },
+    {
+     "obj": "Construct an interval for paired differences",
+     "q": "Supplementary CED example: 16 randomly selected machines each complete the same task with old and new software in randomized order. Define a difference as old minus new time. The differences have mean 2.5 minutes and SD 3 minutes, with no strong skewness or outliers. Assume more than 160 eligible machines.",
+     "steps": [
+      {
+       "t": "Define the parameter and procedure.",
+       "work": {
+        "text": "Estimate the population mean old-minus-new task time using a one-sample t-interval for paired differences."
+       }
+      },
+      {
+       "t": "Check the differences and compute standard error.",
+       "work": {
+        "text": "Pairs are randomly selected, the sampling fraction is under 10%, and the differences have no strong skewness or outliers.",
+        "tex": [
+         "$SE=3/\\sqrt{16}=0.75$"
+        ]
+       }
+      },
+      {
+       "t": "Construct and interpret the interval.",
+       "work": {
+        "text": "Use 15 degrees of freedom.",
+        "tex": [
+         "$2.5\\pm(2.131450)(0.75)$",
+         "$=(0.901,\\ 4.099)$"
+        ]
+       }
+      }
+     ],
+     "answer": "We are 95% confident that the population mean task time is 0.901 to 4.099 minutes shorter with the new software."
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Calculator practice",
+   "title": "Calculate a t confidence interval",
+   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "steps": [
+    {
+     "title": "Find the standard error",
+     "suppose": "we want the interval for the worked example.",
+     "do": [
+      "Enter `s=sqrt(7.4^2/35)`.",
+      "Enter `v=34.000000000000`."
+     ],
+     "observe": "Here v is the degrees of freedom; use the Welch value from the worked calculation for independent samples.",
+     "expected": "$SE\\approx1.250828$, $df\\approx34.0000$.",
+     "seek": 1071
+    },
+    {
+     "title": "Find the central critical value",
+     "suppose": "we want 90% confidence.",
+     "do": [
+      "Enter `c=tdist(v).inversecdf(0.95)`."
+     ],
+     "observe": "The upper cumulative probability leaves half of the excluded area in each tail.",
+     "expected": "$t^*\\approx1.690924$",
+     "seek": 1482
+    },
+    {
+     "title": "Find the endpoints",
+     "suppose": "we want the lower and upper endpoints.",
+     "do": [
+      "Enter `28-c*s`. ",
+      "Enter `28+c*s`."
+     ],
+     "observe": "Retain the unrounded calculator values.",
+     "expected": "$(25.8849,\\ 30.1151)$ minutes.",
+     "seek": 1902
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Individuals versus means",
+     "weak": "95% of individual values lie inside the interval.",
+     "better": "The interval estimates a population mean or difference of means, not the spread of individual values.",
+     "seek": 1801
+    },
+    {
+     "kind": "Common trap",
+     "title": "Fixed parameter",
+     "weak": "There is a 95% probability that the fixed parameter is in this computed interval.",
+     "better": "We are 95% confident that the interval captures the parameter; the method captures it in about 95% of repeated samples.",
+     "seek": 1801
+    },
+    {
+     "kind": "Common trap",
+     "title": "An interval containing zero",
+     "weak": "An interval containing zero proves the means are equal.",
+     "better": "For a difference, zero remaining plausible means the interval does not establish a nonzero population difference.",
+     "seek": 2195
+    },
+    {
+     "kind": "Common trap",
+     "title": "More confidence, narrower interval",
+     "weak": "Increasing confidence narrows the interval.",
+     "better": "For the same data, higher confidence requires a larger critical value and a wider interval.",
+     "seek": 1482
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The CED permits a small-sample t procedure when the relevant sample distribution is free of strong skewness and outliers; for matched pairs inspect the differences. A confidence interval does not make all parameter values equally likely."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "An interval for a population mean is (18, 24) minutes. What is its margin of error?",
+     "opts": [
+      "6 minutes",
+      "21 minutes",
+      "3 minutes",
+      "18 minutes"
+     ],
+     "ok": 2,
+     "why": [
+      "6 is the full width.",
+      "21 is the midpoint.",
+      "The half-width is (24−18)/2=3.",
+      "18 is the lower endpoint."
+     ],
+     "seek": 1657
+    },
+    {
+     "stem": "For the same sample, changing confidence from 90% to 99% will:",
+     "opts": [
+      "Increase interval width",
+      "Decrease interval width",
+      "Leave the critical value unchanged",
+      "Change the sample mean"
+     ],
+     "ok": 0,
+     "why": [
+      "A higher critical value increases the margin of error.",
+      "Greater confidence requires a wider interval.",
+      "The critical value increases.",
+      "The observed sample mean does not change."
+     ],
+     "seek": 1482
+    },
+    {
+     "stem": "A confidence interval for mean A minus mean B is (−1.2, 4.8). Which conclusion is justified?",
+     "opts": [
+      "A is certainly higher",
+      "B is certainly higher",
+      "The means must be equal",
+      "The interval does not establish a nonzero population difference"
+     ],
+     "ok": 3,
+     "why": [
+      "Both positive and negative differences remain plausible.",
+      "Both signs remain plausible.",
+      "Containing zero does not prove equality.",
+      "Zero is included, so a nonzero difference is not established by this interval."
+     ],
+     "seek": 2195
+    },
+    {
+     "stem": "For a matched-pairs interval with 16 pairs, the standard error uses:",
+     "opts": [
+      "32 as n and both original SDs",
+      "The SD of the 16 differences divided by 4",
+      "The two original SDs subtracted",
+      "A standard normal critical value automatically"
+     ],
+     "ok": 1,
+     "why": [
+      "There are 16 independent differences, not 32 independent measurements.",
+      "Use the sample of differences: s_d/√16.",
+      "The SD of differences depends on pairing, not subtraction of SDs.",
+      "With an unknown population SD, a t method is appropriate."
+     ],
+     "seek": 1345
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A random sample of 36 maintenance jobs from a population of 2,000 has mean completion time 54 minutes and sample SD 9 minutes.",
+   "parts": [
+    "(a) Define the parameter and check conditions for a 95% interval.",
+    "(b) Construct the interval.",
+    "(c) Interpret the interval and explain what 95% confidence means."
+   ],
+   "sample": [
+    "(a) The parameter is the population mean completion time for these maintenance jobs. Use a one-sample t-interval. The sample is random, 36≤0.10(2000), and n≥30.",
+    "(b) SE=9/√36=1.5 minutes, df=35, and the 95% interval is (50.955, 57.045) minutes.",
+    "(c) We are 95% confident that the population mean completion time is between 50.955 and 57.045 minutes. In repeated random samples of 36, about 95% of intervals built this way capture the fixed population mean."
+   ],
+   "checklist": [
+    "Defines the population mean in context.",
+    "Checks randomness, sampling fraction, and sample size.",
+    "Computes SE and uses df=35.",
+    "Gives correct interval endpoints.",
+    "Interprets both the interval and the long-run confidence level."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "The CED permits a small-sample t procedure when the relevant sample distribution is free of strong skewness and outliers; for matched pairs inspect the differences. A confidence interval does not make all parameter values equally likely."
+   },
+   {
+    "kind": "values",
+    "text": "Worked-example summary values come from the narration. Population-size assumptions are explicitly supplied to make the 10% condition reviewable. All interval values are recomputed from unrounded inputs."
+   }
+  ]
+ }
+}
