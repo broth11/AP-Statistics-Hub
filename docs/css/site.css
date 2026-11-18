@@ -11,6 +11,8 @@ tex-text { display: inline; }
 a { color: var(--color-accent-700); }
 a:hover { color: var(--color-accent); }
 button { font-family: inherit; }
+/* Keep question labels such as (c) literal: Manrope otherwise ligates them to ©. */
+tex-text { font-variant-ligatures: none; }
 [hidden] { display: none !important; }
 
 /* Bare button used for text-like controls */
