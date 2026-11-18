@@ -1,0 +1,304 @@
+{
+ "n": 6,
+ "unit": 1,
+ "topic": "1.6",
+ "title": "Descriptions for One Quantitative Variable Distributions",
+ "videoId": "l78Z7DIBFYs",
+ "videoTitle": "AP Statistics Topic 1.6 Descriptions for One Quantitative Variable Distributions",
+ "intro": "Describe shape, center, spread, and unusual features in context, and justify claims with visible evidence.",
+ "moments": [
+  {
+   "t": 74,
+   "type": "Key idea",
+   "title": "A complete description",
+   "text": "Include shape, center, spread, and unusual features in context."
+  },
+  {
+   "t": 153,
+   "type": "Key idea",
+   "title": "Symmetry",
+   "text": "The two halves are approximately mirror images."
+  },
+  {
+   "t": 250,
+   "type": "Key idea",
+   "title": "Right skew",
+   "text": "The longer tail points toward higher values."
+  },
+  {
+   "t": 344,
+   "type": "Key idea",
+   "title": "Left skew",
+   "text": "The longer tail points toward lower values."
+  },
+  {
+   "t": 404,
+   "type": "Key idea",
+   "title": "Uniformity",
+   "text": "Similar frequencies across intervals indicate an approximately uniform distribution."
+  },
+  {
+   "t": 471,
+   "type": "Key idea",
+   "title": "Peaks",
+   "text": "Distinguish one main peak from two prominent peaks."
+  },
+  {
+   "t": 589,
+   "type": "Key idea",
+   "title": "Gaps and clusters",
+   "text": "Look for empty regions and concentrations of observations."
+  },
+  {
+   "t": 750,
+   "type": "Key idea",
+   "title": "Center",
+   "text": "Give a typical value with the variable's units."
+  },
+  {
+   "t": 866,
+   "type": "Key idea",
+   "title": "Spread",
+   "text": "Describe how far the values extend."
+  },
+  {
+   "t": 1079,
+   "type": "Key idea",
+   "title": "Write in context",
+   "text": "Use full sentences about the measured variable."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Shape",
+     "text": "Name tail direction, symmetry, and prominent peaks when visible."
+    },
+    {
+     "letter": "2",
+     "name": "Center",
+     "text": "Give an approximate typical value with units."
+    },
+    {
+     "letter": "3",
+     "name": "Spread",
+     "text": "State a numerical range or another supported description of variability."
+    },
+    {
+     "letter": "4",
+     "name": "Unusual features",
+     "text": "Mention apparent outliers, gaps, or clusters without inventing exact values."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Describe a right-skewed distribution",
+     "q": "In the video's grocery-spending example, most purchases are under 100 dollars, with values extending from about 0 to 500 dollars. Describe its center, spread, and unusual features without inventing unavailable values.",
+     "steps": [
+      {
+       "t": "Describe the overall shape.",
+       "work": {
+        "text": "Most purchases are low and the tail extends toward larger spending amounts, so the distribution is right-skewed."
+       }
+      },
+      {
+       "t": "State only supported numerical features.",
+       "work": {
+        "text": "Values extend from about 0 to 500 dollars, with most below 100 dollars. These facts do not determine an exact median."
+       }
+      },
+      {
+       "t": "Describe unusual features cautiously.",
+       "work": {
+        "text": "The highest spending amounts may be potential outliers relative to the main cluster; a formal rule would require more information."
+       }
+      }
+     ],
+     "answer": "Grocery spending is right-skewed, with most purchases below 100 dollars and an overall extent of about 0 to 500 dollars. A precise center cannot be recovered from these facts alone.",
+     "seek": 1370
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Tail direction",
+     "weak": "It is right-skewed because most values are on the right.",
+     "better": "Right skew means the longer tail extends toward larger values.",
+     "seek": 250
+    },
+    {
+     "kind": "Common trap",
+     "title": "No context",
+     "weak": "The center is 20.",
+     "better": "The typical waiting time is about 20 minutes.",
+     "seek": 750
+    },
+    {
+     "kind": "Common trap",
+     "title": "Spread versus center",
+     "weak": "The spread is around 40.",
+     "better": "Specify the measure: for example, values extend from about 10 to 50 minutes.",
+     "seek": 866
+    },
+    {
+     "kind": "Common trap",
+     "title": "Automatic deletion",
+     "weak": "An isolated point must be an error.",
+     "better": "It is a potential outlier; investigate it before deciding whether it is erroneous.",
+     "seek": 660
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "A standard-deviation coverage percentage requires additional distributional information. Shape descriptions alone do not justify assuming normality."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "Most queue times are 2–6 minutes, with a few as long as 30 minutes. Which shape is most plausible?",
+     "opts": [
+      "Right-skewed",
+      "Left-skewed",
+      "Uniform",
+      "Perfectly symmetric"
+     ],
+     "ok": 0,
+     "why": [
+      "The tail extends toward the larger times.",
+      "A left tail would extend toward smaller values.",
+      "The observations are concentrated near 2–6.",
+      "The stated long high tail is not symmetric."
+     ],
+     "seek": 250
+    },
+    {
+     "stem": "Which is a description in context?",
+     "opts": [
+      "Skewed with a center",
+      "Tall and wide",
+      "A graph with many bars",
+      "Commute times are right-skewed, typically around 25 minutes, ranging from 5 to 90 minutes"
+     ],
+     "ok": 3,
+     "why": [
+      "Neither units nor the variable are supplied.",
+      "This describes appearance vaguely.",
+      "Bar count is not a distribution description.",
+      "It identifies shape, center, spread, and context."
+     ],
+     "seek": 1080
+    },
+    {
+     "stem": "Two prominent separated peaks suggest a distribution is:",
+     "opts": [
+      "Uniform",
+      "Bimodal",
+      "Necessarily symmetric",
+      "Necessarily normal"
+     ],
+     "ok": 1,
+     "why": [
+      "Uniform distributions have no prominent peaks.",
+      "Bimodal means two prominent peaks.",
+      "Two peaks can have unequal shapes.",
+      "A normal distribution is unimodal."
+     ],
+     "seek": 472
+    },
+    {
+     "stem": "What is a gap in a distribution?",
+     "opts": [
+      "A low mean",
+      "The largest value",
+      "An interval between observed values containing no observations",
+      "A difference between mean and median"
+     ],
+     "ok": 2,
+     "why": [
+      "A mean describes center.",
+      "A maximum is one endpoint.",
+      "A gap is an empty region between observations.",
+      "That difference is not a gap."
+     ],
+     "seek": 589
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A dotplot of 40 repair times has one main cluster from 10 to 25 minutes, a typical time near 18 minutes, no observations from 26 to 44 minutes, and two observations at 45 and 48 minutes.",
+   "parts": [
+    "(a) Describe the distribution in context.",
+    "(b) Explain which features support your description of shape and unusual values.",
+    "(c) Explain why the exact mean cannot be recovered from this description."
+   ],
+   "sample": [
+    "(a) Repair times have one main cluster around 10–25 minutes and a right tail extending to 48 minutes. A typical time is about 18 minutes, and values range from 10 to 48 minutes. There is a gap from 26 to 44 minutes and two unusually high times at 45 and 48 minutes.",
+    "(b) The high values extend the distribution to the right of the main cluster; their separation by a gap makes them potential outliers.",
+    "(c) The exact times and multiplicities within the main cluster are not given, so their sum and therefore the exact mean are unknown."
+   ],
+   "checklist": [
+    "Names repair times and minutes.",
+    "Describes the main cluster and right tail.",
+    "Reports a typical value and overall extent.",
+    "Identifies the gap and potential outliers.",
+    "Explains why the exact mean is unavailable."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.6, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "A standard-deviation coverage percentage requires additional distributional information. Shape descriptions alone do not justify assuming normality."
+   }
+  ]
+ }
+}
