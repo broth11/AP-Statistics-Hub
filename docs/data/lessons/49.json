@@ -1,0 +1,378 @@
+{
+ "n": 49,
+ "unit": 4,
+ "topic": "4.7 & 4.8",
+ "title": "Constructing an Interval for the Difference Between Two Population Means",
+ "videoId": "_Uni0u_KyTA",
+ "videoTitle": "AP Statistics Topic 4.7 & 4.8 Constructing an Interval for the Difference Between Two Population Means",
+ "intro": "Construct and interpret two-sample t intervals, assess claims, and explain confidence and precision.",
+ "moments": [
+  {
+   "t": 72,
+   "type": "Key idea",
+   "title": "Estimate a population quantity",
+   "text": "An interval estimates a population mean or difference of means."
+  },
+  {
+   "t": 846,
+   "type": "Key idea",
+   "title": "A t critical value",
+   "text": "Match the central confidence level to the appropriate t distribution."
+  },
+  {
+   "t": 871,
+   "type": "Key idea",
+   "title": "Estimate variability",
+   "text": "Use sample SDs when population SDs are unknown."
+  },
+  {
+   "t": 1001,
+   "type": "Key idea",
+   "title": "Degrees of freedom",
+   "text": "The t reference distribution depends on degrees of freedom."
+  },
+  {
+   "t": 1289,
+   "type": "Key idea",
+   "title": "Standard error",
+   "text": "Estimate the variability of the relevant sample statistic."
+  },
+  {
+   "t": 1569,
+   "type": "Key idea",
+   "title": "Check conditions",
+   "text": "Justify randomization, independence, and sample-distribution requirements."
+  },
+  {
+   "t": 1945,
+   "type": "Key idea",
+   "title": "Interpret in context",
+   "text": "Keep the subtraction order in the interval interpretation."
+  },
+  {
+   "t": 2117,
+   "type": "Key idea",
+   "title": "Assess a difference",
+   "text": "An interval spanning zero does not establish a nonzero difference."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Parameter and order",
+     "text": "Estimate $\\mu_1-\\mu_2$, the population mean nightly homework time at school A minus that at school B."
+    },
+    {
+     "letter": "2",
+     "name": "t distributions",
+     "text": "They are symmetric with heavier tails than the standard normal; as degrees of freedom increase, they approach standard normal."
+    },
+    {
+     "letter": "3",
+     "name": "Conditions",
+     "text": "Use random data. Check sampling fractions where relevant, independence between groups, and normality or adequate sample sizes."
+    },
+    {
+     "letter": "4",
+     "name": "Interpretation",
+     "text": "Confidence refers to the method's long-run capture rate. A computed interval estimates a fixed parameter."
+    },
+    {
+     "letter": "5",
+     "name": "Width",
+     "text": "Higher confidence increases width; larger samples tend to reduce standard error and width, holding other features similar."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Construct and interpret a t interval",
+     "q": "The video gives independent random samples: school A has 35 students, mean 62.4 minutes, and SD 15.2 minutes; school B has 38, mean 54.1, and SD 13.8. Construct a 92% interval for mean A minus mean B. Assume each school has at least 500 students.",
+     "steps": [
+      {
+       "t": "Define the parameter and name the procedure.",
+       "work": {
+        "text": "Estimate $\\mu_1-\\mu_2$, the population mean nightly homework time at school A minus that at school B, using a two-sample t-interval."
+       }
+      },
+      {
+       "t": "Verify the conditions.",
+       "work": {
+        "text": "The two samples are independent and random. Their sizes are at most 10% of each respective population, as assumed in the question. Both sample sizes are at least 30."
+       }
+      },
+      {
+       "t": "Calculate the point estimate and standard error.",
+       "work": {
+        "text": "Use the stated subtraction order.",
+        "tex": [
+         "$\\text{estimate}=8.300$",
+         "$SE\\approx3.407744$"
+        ]
+       }
+      },
+      {
+       "t": "Find the critical value and margin of error.",
+       "work": {
+        "text": "Use Welch degrees of freedom from technology.",
+        "tex": [
+         "$df\\approx68.7887,\\quad t^*\\approx1.776935$",
+         "$ME=t^*SE\\approx6.0553$"
+        ]
+       }
+      },
+      {
+       "t": "Construct and interpret the interval.",
+       "work": {
+        "text": "The endpoints estimate the population parameter, not individual values.",
+        "tex": [
+         "$(2.2447,\\ 14.3553)$"
+        ]
+       }
+      }
+     ],
+     "answer": "We are 92% confident that the population mean nightly homework time at school A minus that at school B is between 2.245 and 14.355 minutes.",
+     "seek": 2187,
+     "formula": [
+      "$(\\bar x_1-\\bar x_2)\\pm t^*SE$",
+      "$SE=\\sqrt{s_1^2/n_1+s_2^2/n_2}$"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Calculator practice",
+   "title": "Calculate a t confidence interval",
+   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "steps": [
+    {
+     "title": "Find the standard error",
+     "suppose": "we want the interval for the worked example.",
+     "do": [
+      "Enter `s=sqrt(15.2^2/35+13.8^2/38)`.",
+      "Enter `v=68.788673847556`."
+     ],
+     "observe": "Here v is the degrees of freedom; use the Welch value from the worked calculation for independent samples.",
+     "expected": "$SE\\approx3.407744$, $df\\approx68.7887$.",
+     "seek": 871
+    },
+    {
+     "title": "Find the central critical value",
+     "suppose": "we want 92% confidence.",
+     "do": [
+      "Enter `c=tdist(v).inversecdf(0.96)`."
+     ],
+     "observe": "The upper cumulative probability leaves half of the excluded area in each tail.",
+     "expected": "$t^*\\approx1.776935$",
+     "seek": 1289
+    },
+    {
+     "title": "Find the endpoints",
+     "suppose": "we want the lower and upper endpoints.",
+     "do": [
+      "Enter `8.299999999999997-c*s`. ",
+      "Enter `8.299999999999997+c*s`."
+     ],
+     "observe": "Retain the unrounded calculator values.",
+     "expected": "$(2.2447,\\ 14.3553)$ minutes.",
+     "seek": 2187
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Individuals versus means",
+     "weak": "95% of individual values lie inside the interval.",
+     "better": "The interval estimates a population mean or difference of means, not the spread of individual values.",
+     "seek": 1945
+    },
+    {
+     "kind": "Common trap",
+     "title": "Fixed parameter",
+     "weak": "There is a 95% probability that the fixed parameter is in this computed interval.",
+     "better": "We are 95% confident that the interval captures the parameter; the method captures it in about 95% of repeated samples.",
+     "seek": 1945
+    },
+    {
+     "kind": "Common trap",
+     "title": "An interval containing zero",
+     "weak": "An interval containing zero proves the means are equal.",
+     "better": "For a difference, zero remaining plausible means the interval does not establish a nonzero population difference.",
+     "seek": 2117
+    },
+    {
+     "kind": "Common trap",
+     "title": "More confidence, narrower interval",
+     "weak": "Increasing confidence narrows the interval.",
+     "better": "For the same data, higher confidence requires a larger critical value and a wider interval.",
+     "seek": 1289
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "The CED permits a small-sample t procedure when the relevant sample distribution is free of strong skewness and outliers; for matched pairs inspect the differences. A confidence interval does not make all parameter values equally likely."
+    },
+    {
+     "label": "Wording check.",
+     "text": "Welch degrees of freedom are calculated from both sample variances and sizes. A pooled degrees-of-freedom formula is not used without an equal-variance model."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "An interval for a population mean is (18, 24) minutes. What is its margin of error?",
+     "opts": [
+      "6 minutes",
+      "21 minutes",
+      "3 minutes",
+      "18 minutes"
+     ],
+     "ok": 2,
+     "why": [
+      "6 is the full width.",
+      "21 is the midpoint.",
+      "The half-width is (24−18)/2=3.",
+      "18 is the lower endpoint."
+     ],
+     "seek": 1569
+    },
+    {
+     "stem": "For the same sample, changing confidence from 90% to 99% will:",
+     "opts": [
+      "Increase interval width",
+      "Decrease interval width",
+      "Leave the critical value unchanged",
+      "Change the sample mean"
+     ],
+     "ok": 0,
+     "why": [
+      "A higher critical value increases the margin of error.",
+      "Greater confidence requires a wider interval.",
+      "The critical value increases.",
+      "The observed sample mean does not change."
+     ],
+     "seek": 1289
+    },
+    {
+     "stem": "A confidence interval for mean A minus mean B is (−1.2, 4.8). Which conclusion is justified?",
+     "opts": [
+      "A is certainly higher",
+      "B is certainly higher",
+      "The means must be equal",
+      "The interval does not establish a nonzero population difference"
+     ],
+     "ok": 3,
+     "why": [
+      "Both positive and negative differences remain plausible.",
+      "Both signs remain plausible.",
+      "Containing zero does not prove equality.",
+      "Zero is included, so a nonzero difference is not established by this interval."
+     ],
+     "seek": 2117
+    },
+    {
+     "stem": "For a matched-pairs interval with 16 pairs, the standard error uses:",
+     "opts": [
+      "32 as n and both original SDs",
+      "The SD of the 16 differences divided by 4",
+      "The two original SDs subtracted",
+      "A standard normal critical value automatically"
+     ],
+     "ok": 1,
+     "why": [
+      "There are 16 independent differences, not 32 independent measurements.",
+      "Use the sample of differences: s_d/√16.",
+      "The SD of differences depends on pairing, not subtraction of SDs.",
+      "With an unknown population SD, a t method is appropriate."
+     ],
+     "seek": 1001
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "Independent random samples from two large service centers have mean waiting times 24 and 20 minutes, SDs 8 and 6 minutes, and sample sizes 40 and 35. Each center serves more than 1,000 customers.",
+   "parts": [
+    "(a) Define the parameter, select the procedure, and check conditions.",
+    "(b) Construct a 95% interval.",
+    "(c) Interpret the interval and assess whether it establishes a higher population mean at the first center."
+   ],
+   "sample": [
+    "(a) Let μ₁−μ₂ be the first center's population mean wait minus the second's. Use a two-sample t-interval. The random samples are independent, each sample is under 10% of its population, and both sizes exceed 30.",
+    "(b) The estimate is 4 minutes, SE≈1.62129, Welch df≈71.409, and the interval is (0.768, 7.232) minutes.",
+    "(c) We are 95% confident that the first population mean wait is between 0.768 and 7.232 minutes greater. Both endpoints are positive, supporting a higher population mean at the first center."
+   ],
+   "checklist": [
+    "Defines the subtraction order and populations.",
+    "Names a two-sample t-interval and checks conditions.",
+    "Computes the SE and appropriate t critical value.",
+    "Gives both interval endpoints.",
+    "Interprets the difference and uses the positive interval to justify the claim."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "The CED permits a small-sample t procedure when the relevant sample distribution is free of strong skewness and outliers; for matched pairs inspect the differences. A confidence interval does not make all parameter values equally likely."
+   },
+   {
+    "kind": "wording",
+    "text": "Welch degrees of freedom are calculated from both sample variances and sizes. A pooled degrees-of-freedom formula is not used without an equal-variance model."
+   },
+   {
+    "kind": "values",
+    "text": "Worked-example summary values come from the narration. Population-size assumptions are explicitly supplied to make the 10% condition reviewable. All interval values are recomputed from unrounded inputs."
+   }
+  ]
+ }
+}

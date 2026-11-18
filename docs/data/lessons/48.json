@@ -1,0 +1,330 @@
+{
+ "n": 48,
+ "unit": 4,
+ "topic": "4.6",
+ "title": "Sampling Distributions for the Difference Between Two Sample Means",
+ "videoId": "LWv4LwDplN8",
+ "videoTitle": "AP Statistics Topic 4.6 Sampling Distributions for the Difference Between Two Sample Means",
+ "intro": "Describe the sampling distribution of a difference of independent means and interpret probabilities with a consistent subtraction order.",
+ "moments": [
+  {
+   "t": 84,
+   "type": "Key idea",
+   "title": "Define the order",
+   "text": "Keep population 1 minus population 2 throughout the analysis."
+  },
+  {
+   "t": 201,
+   "type": "Key idea",
+   "title": "Center of differences",
+   "text": "The center is the difference of population means."
+  },
+  {
+   "t": 494,
+   "type": "Key idea",
+   "title": "Add variance contributions",
+   "text": "Independent variability combines by adding variances, even for a difference."
+  },
+  {
+   "t": 724,
+   "type": "Key idea",
+   "title": "Sampling independence",
+   "text": "Check each sampling fraction against its own population."
+  },
+  {
+   "t": 757,
+   "type": "Key idea",
+   "title": "Shape of the difference",
+   "text": "Both mean distributions must support the normal model."
+  },
+  {
+   "t": 897,
+   "type": "Key idea",
+   "title": "Independent groups",
+   "text": "Two-sample formulas require independence between groups."
+  },
+  {
+   "t": 1372,
+   "type": "Key idea",
+   "title": "Commute times",
+   "text": "Compare average commutes in two metropolitan areas."
+  },
+  {
+   "t": 1630,
+   "type": "Key idea",
+   "title": "Which average is larger?",
+   "text": "A difference below zero means the first sample mean is smaller."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Order",
+     "text": "Define A minus B; a positive difference means A is larger."
+    },
+    {
+     "letter": "2",
+     "name": "Center",
+     "text": "$\\mu_{\\bar x_A-\\bar x_B}=\\mu_A-\\mu_B$."
+    },
+    {
+     "letter": "3",
+     "name": "Spread",
+     "text": "$\\sigma_{\\bar x_A-\\bar x_B}=\\sqrt{\\sigma_A^2/n_A+\\sigma_B^2/n_B}$ for independent samples."
+    },
+    {
+     "letter": "4",
+     "name": "Conditions",
+     "text": "Use independent random samples, check each 10% condition when sampling without replacement, and justify approximately normal mean distributions for both groups."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Find the probability one sample mean is smaller",
+     "q": "In the video, metro A has population mean commute 34 minutes, SD 10 minutes, and sample size 50. Metro B has mean 29, SD 12, and sample size 70. The random samples are independent. Assume at least 500 people in A and 700 in B and no extreme population skewness. Find the probability that A's sample mean is smaller than B's.",
+     "steps": [
+      {
+       "t": "Define the difference and check conditions.",
+       "work": {
+        "text": "Let D be sample mean A minus sample mean B. The samples are independent and random, fractions are at most 10%, and both sample sizes exceed 30."
+       }
+      },
+      {
+       "t": "Find the center and spread.",
+       "work": {
+        "text": "Subtract means, but add variance contributions.",
+        "tex": [
+         "$\\mu_D=34-29=5$",
+         "$\\sigma_D=\\sqrt{10^2/50+12^2/70}$",
+         "$\\approx2.014235$"
+        ]
+       }
+      },
+      {
+       "t": "Translate and standardize the event.",
+       "work": {
+        "text": "A smaller first mean is the event D<0.",
+        "tex": [
+         "$z=(0-5)/2.014235\\approx-2.4823$"
+        ]
+       }
+      },
+      {
+       "t": "Find the lower-tail probability.",
+       "work": {
+        "text": "Use the normal model for D.",
+        "tex": [
+         "$P(D<0)\\approx0.0065$"
+        ]
+       }
+      }
+     ],
+     "answer": "About 0.65% of such independent pairs of samples have a smaller sample mean commute in A despite A's higher population mean.",
+     "seek": 1372
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Calculator practice",
+   "title": "Calculate a probability for a difference",
+   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "steps": [
+    {
+     "title": "Combine sampling variability",
+     "suppose": "we want the SD of A minus B.",
+     "do": [
+      "Enter `s=sqrt(10^2/50+12^2/70)`."
+     ],
+     "observe": "The plus sign combines independent variance contributions.",
+     "expected": "$\\sigma_D\\approx2.014235$",
+     "seek": 724
+    },
+    {
+     "title": "Find the probability",
+     "suppose": "we want the first sample mean to be smaller.",
+     "do": [
+      "Enter `normaldist(5,s).cdf(0)`."
+     ],
+     "observe": "The event is a negative A-minus-B difference.",
+     "expected": "$P(D<0)\\approx0.0065$",
+     "seek": 1630
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Subtracting variability",
+     "weak": "Subtract the two standard deviations.",
+     "better": "For independent sample means, add the variance contributions and then take a square root.",
+     "seek": 724
+    },
+    {
+     "kind": "Common trap",
+     "title": "Reversing the event",
+     "weak": "A below B means A minus B is positive.",
+     "better": "A below B means A minus B is negative.",
+     "seek": 1630
+    },
+    {
+     "kind": "Common trap",
+     "title": "One large sample is enough",
+     "weak": "The difference is normal whenever either sample is large.",
+     "better": "Justify a normal model for both component sample means.",
+     "seek": 897
+    },
+    {
+     "kind": "Common trap",
+     "title": "Wrong population denominator",
+     "weak": "Compare the total sample size with one population.",
+     "better": "Check each sample size against its respective population size.",
+     "seek": 757
+    }
+   ],
+   "notes": []
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "Independent population SDs are 12 and 8, with sample sizes 36 and 16. What is the SD of the difference of sample means?",
+     "opts": [
+      "$12-8=4$",
+      "$\\sqrt{12^2/36+8^2/16}=\\sqrt8$",
+      "$12/36+8/16$",
+      "$\\sqrt{12^2-8^2}$"
+     ],
+     "ok": 1,
+     "why": [
+      "Individual SDs are not subtracted.",
+      "The two independent variance contributions are 4 and 4.",
+      "The SDs must be squared and the total square-rooted.",
+      "This omits sample sizes and subtracts variances."
+     ],
+     "seek": 724
+    },
+    {
+     "stem": "Population means are 40 and 35. The center of sample mean A minus sample mean B is:",
+     "opts": [
+      "75",
+      "−5",
+      "5",
+      "Dependent on sample sizes"
+     ],
+     "ok": 2,
+     "why": [
+      "Means are subtracted for this difference.",
+      "That is B minus A.",
+      "40−35=5.",
+      "The expected difference equals the population mean difference."
+     ],
+     "seek": 494
+    },
+    {
+     "stem": "Which situation requires a paired method instead of an independent two-sample method?",
+     "opts": [
+      "The same people measured before and after training",
+      "Two independently sampled towns",
+      "Unrelated randomly sampled products from two factories",
+      "Randomized groups of different people"
+     ],
+     "ok": 0,
+     "why": [
+      "Measurements within a person are paired.",
+      "These samples can be independent.",
+      "These samples can be independent.",
+      "Different independent experimental units support a two-group comparison."
+     ],
+     "seek": 201
+    },
+    {
+     "stem": "If D is defined as A minus B, what does D>3 mean?",
+     "opts": [
+      "B exceeds A by more than 3",
+      "A equals 3",
+      "A and B are both above 3",
+      "A exceeds B by more than 3"
+     ],
+     "ok": 3,
+     "why": [
+      "The sign is reversed.",
+      "D is a difference, not A alone.",
+      "Both values can be below 3 while their difference exceeds 3.",
+      "This translates the defined difference correctly."
+     ],
+     "seek": 84
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "Two independent normal populations of component lengths have means 102 and 100 mm, with SDs 6 and 8 mm. Independent random samples contain 36 and 64 components from populations exceeding 10,000 each.",
+   "parts": [
+    "(a) Describe the distribution of sample mean A minus sample mean B and verify conditions.",
+    "(b) Calculate the probability that A's sample mean is below B's.",
+    "(c) Explain the effect of quadrupling both sample sizes."
+   ],
+   "sample": [
+    "(a) Both samples are independent and random, sampling fractions are below 10%, and the populations are normal. The difference is normal with mean 2 mm and SD √(36/36+64/64)=√2 mm.",
+    "(b) The event is D<0. Its z-score is (0−2)/√2≈-1.4142, giving probability 0.0786.",
+    "(c) The center stays 2 mm. Both variance contributions divide by four, so the sampling SD is halved. The chance that the first mean is below the second becomes smaller."
+   ],
+   "checklist": [
+    "Defines A minus B.",
+    "Checks independent random sampling and sampling fractions.",
+    "Gives the correct center and sampling SD.",
+    "Translates the event and calculates its probability.",
+    "Explains the effect of larger sample sizes."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   }
+  ]
+ }
+}

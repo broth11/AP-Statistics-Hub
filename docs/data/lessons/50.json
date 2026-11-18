@@ -1,0 +1,374 @@
+{
+ "n": 50,
+ "unit": 4,
+ "topic": "4.9 & 4.10",
+ "title": "Conducting a Test for the Difference Between Two Population Means",
+ "videoId": "3U6gHhhnNFQ",
+ "videoTitle": "AP Statistics Topic 4.9 & 4.10 Conducting a Test for the Difference Between Two Population Means",
+ "intro": "Set up and carry out a two-sample t-test, interpret the p-value, and justify a conclusion in context.",
+ "moments": [
+  {
+   "t": 69,
+   "type": "Key idea",
+   "title": "A question about a mean",
+   "text": "A test compares a sample result with a hypothesized population value."
+  },
+  {
+   "t": 720,
+   "type": "Key idea",
+   "title": "Define the parameter",
+   "text": "Name the population, response variable, and any subtraction order."
+  },
+  {
+   "t": 739,
+   "type": "Key idea",
+   "title": "Verify conditions",
+   "text": "Check the design and the distribution of the appropriate observations."
+  },
+  {
+   "t": 890,
+   "type": "Key idea",
+   "title": "State population hypotheses",
+   "text": "The null states equality; choose the alternative from the question."
+  },
+  {
+   "t": 1155,
+   "type": "Key idea",
+   "title": "A t statistic",
+   "text": "Measure distance from the null in estimated standard-error units."
+  },
+  {
+   "t": 1195,
+   "type": "Key idea",
+   "title": "Calculate standard error",
+   "text": "Use sample variability to standardize the observed difference."
+  },
+  {
+   "t": 1272,
+   "type": "Key idea",
+   "title": "Choose the correct tail",
+   "text": "The alternative determines which outcomes count as more extreme."
+  },
+  {
+   "t": 1562,
+   "type": "Key idea",
+   "title": "Make a decision",
+   "text": "Compare the p-value with the significance level and conclude in context."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose and justify",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Parameter",
+     "text": "Define the population mean SAT score for public-school students minus that for private-school students in the state before writing hypotheses."
+    },
+    {
+     "letter": "2",
+     "name": "Select the method",
+     "text": "Two-sample t-test. Use paired differences for matched observations; use two-sample methods for independent groups."
+    },
+    {
+     "letter": "3",
+     "name": "Conditions",
+     "text": "Check the actual design. For small paired samples inspect differences, not the two separate measurement distributions."
+    },
+    {
+     "letter": "4",
+     "name": "Tail",
+     "text": "Choose less than, greater than, or two-sided from the investigative question before looking at the result."
+    },
+    {
+     "letter": "5",
+     "name": "Conclusion",
+     "text": "Compare p with alpha, then state the strength of evidence about the population alternative in context."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Carry out a t hypothesis test",
+     "q": "The video gives independent random samples: public-school students n=45, mean SAT 1120, SD 100; private-school students n=50, mean 1050, SD 120. Test for a population mean difference at 5%. Assume at least 500 students in each population.",
+     "steps": [
+      {
+       "t": "Define the parameter, method, and hypotheses.",
+       "work": {
+        "text": "Use a two-sample t-test for the population mean SAT score for public-school students minus that for private-school students in the state.",
+        "tex": [
+         "$H_0:\\mu_1-\\mu_2=0$",
+         "$H_a:\\mu_1-\\mu_2\\ne0$"
+        ]
+       }
+      },
+      {
+       "t": "Check the conditions.",
+       "work": {
+        "text": "The two random samples are independent; each sampling fraction is at most 10%; both sample sizes are at least 30."
+       }
+      },
+      {
+       "t": "Calculate the standard error and test statistic.",
+       "work": {
+        "text": "Use the unrounded standard error.",
+        "tex": [
+         "$SE\\approx22.588099$",
+         "$t=(70-0)/SE\\approx3.098977$"
+        ]
+       }
+      },
+      {
+       "t": "Find the p-value using the correct tail.",
+       "work": {
+        "text": "The alternative determines the tail; degrees of freedom come from the relevant t method.",
+        "tex": [
+         "$df\\approx92.4761$",
+         "$p\\approx0.002573$"
+        ]
+       }
+      },
+      {
+       "t": "Compare with the significance level and conclude.",
+       "work": {
+        "text": "0.002573 ≤ 0.05; reject the null hypothesis."
+       }
+      }
+     ],
+     "answer": "There is convincing evidence at the 5% level that the population mean SAT score for public-school students minus that for private-school students in the state differs from 0 SAT points.",
+     "seek": 1676,
+     "formula": [
+      "$t=\\dfrac{\\text{estimate}-\\text{null value}}{SE}$"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "desmos",
+   "type": "desmos",
+   "tab": "Desmos",
+   "kicker": "Calculator practice",
+   "title": "Calculate the t statistic and p-value",
+   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "steps": [
+    {
+     "title": "Standardize",
+     "suppose": "we want the t statistic for the worked example.",
+     "do": [
+      "Enter `s=22.588099128130`.",
+      "Enter `u=(70-0)/s`."
+     ],
+     "observe": "Here s is the standard error, not an individual-observation SD.",
+     "expected": "$t\\approx3.098977$",
+     "seek": 1195
+    },
+    {
+     "title": "Find the tail area",
+     "suppose": "we want the p-value for the stated alternative.",
+     "do": [
+      "Enter `v=92.476135476611`.",
+      "Enter `2*tdist(v).cdf(-abs(u))`."
+     ],
+     "observe": "A two-sided p-value includes both tails. Do not double a result already calculated for both tails.",
+     "expected": "$p\\approx0.002573$",
+     "seek": 1272
+    },
+    {
+     "title": "Compare with alpha",
+     "suppose": "we use significance level 0.05.",
+     "do": [
+      "Compare the displayed p-value with the stated significance level."
+     ],
+     "observe": "A small p-value is evidence against the null, not the probability the null is true.",
+     "expected": "Reject $H_0$.",
+     "seek": 1562
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Sample hypotheses",
+     "weak": "The null states that the observed sample mean equals a value.",
+     "better": "Hypotheses concern population parameters. The sample statistic supplies evidence.",
+     "seek": 739
+    },
+    {
+     "kind": "Common trap",
+     "title": "A p-value is not the probability of the null",
+     "weak": "The p-value is the chance the null is true.",
+     "better": "Assuming the null and conditions, it is the probability of a result at least as extreme in the alternative direction.",
+     "seek": 1272
+    },
+    {
+     "kind": "Common trap",
+     "title": "Failure to reject proves equality",
+     "weak": "A large p-value proves no difference.",
+     "better": "It means there is insufficient evidence for the specified alternative at the chosen significance level.",
+     "seek": 1562
+    },
+    {
+     "kind": "Common trap",
+     "title": "Pairing and independence",
+     "weak": "Two measurements on the same person are independent samples.",
+     "better": "Analyze within-person differences as one sample; the number of pairs is the sample size.",
+     "seek": 890
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Use unrounded statistics to calculate the p-value. The two-sided probability is twice the appropriate one-tail area for the symmetric t distribution. A tiny p-value is not the probability of an exact observed sample."
+    },
+    {
+     "label": "Wording check.",
+     "text": "Welch degrees of freedom are used. Adding n₁−1 and n₂−1 is not the general unpooled two-sample formula; the video describes that shortcut as good enough, but this page calculates the appropriate reference distribution."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check your reasoning",
+   "questions": [
+    {
+     "stem": "A one-sample mean test has sample mean 46, null mean 50, sample SD 8, and n=16. What is t?",
+     "opts": [
+      "−0.5",
+      "2",
+      "−2",
+      "−8"
+     ],
+     "ok": 2,
+     "why": [
+      "This omits the square-root sample-size adjustment.",
+      "The sign is negative.",
+      "SE=8/4=2 and t=(46−50)/2=−2.",
+      "This is not the standardized difference."
+     ],
+     "seek": 1195
+    },
+    {
+     "stem": "A two-sided test reports p=0.03 and alpha=0.05. Which conclusion follows?",
+     "opts": [
+      "Reject the null in favor of evidence of a difference",
+      "Accept equality as certain",
+      "The null has probability 0.03",
+      "Fail to reject because p is positive"
+     ],
+     "ok": 0,
+     "why": [
+      "The p-value is below alpha.",
+      "The result supplies evidence against equality.",
+      "A p-value conditions on the null; it does not assign its probability.",
+      "Compare with alpha, not zero."
+     ],
+     "seek": 1562
+    },
+    {
+     "stem": "Twenty people are measured before and after training. What is the sample size and reference df for a paired t-test?",
+     "opts": [
+      "40 and 39",
+      "20 and 38",
+      "40 and 20",
+      "20 and 19"
+     ],
+     "ok": 3,
+     "why": [
+      "There are 20 pairs, not 40 independent units.",
+      "A one-sample t procedure on differences uses n−1.",
+      "Neither value is appropriate.",
+      "Twenty differences give df=19."
+     ],
+     "seek": 890
+    },
+    {
+     "stem": "An independent two-sample t-test uses which standard error?",
+     "opts": [
+      "$s_1-s_2$",
+      "$\\sqrt{s_1^2/n_1+s_2^2/n_2}$",
+      "$s_1+s_2$",
+      "$\\sqrt{(s_1^2-s_2^2)/(n_1+n_2)}$"
+     ],
+     "ok": 1,
+     "why": [
+      "SDs are not subtracted.",
+      "Independent variance contributions add.",
+      "SDs are not simply added.",
+      "Variance contributions add, and each is divided by its own sample size."
+     ],
+     "seek": 1155
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "Independent random samples of repair jobs from two large depots give A: n=40, mean 18 minutes, SD 6 minutes; B: n=45, mean 15 minutes, SD 5 minutes. Both depots handle more than 1,000 jobs.",
+   "parts": [
+    "(a) Define the parameter, hypotheses, and procedure for testing a difference.",
+    "(b) Verify conditions and calculate the test statistic and p-value.",
+    "(c) Conclude at 5% significance and state a limitation on causality."
+   ],
+   "sample": [
+    "(a) Let μA−μB be the difference in population mean repair times. Test H₀: μA−μB=0 against Hₐ: μA−μB≠0 using a two-sample t-test.",
+    "(b) The samples are independent and random, each sampling fraction is below 10%, and both n values exceed 30. SE≈1.20646, t≈2.48661, Welch df≈76.255, and two-sided p≈0.01508.",
+    "(c) The p-value is below 0.05, so reject H₀. There is convincing evidence the population mean repair times differ. The observational samples do not establish that depot assignment causes the difference."
+   ],
+   "checklist": [
+    "Defines populations and subtraction order.",
+    "States a two-sided population alternative and appropriate method.",
+    "Checks design and sample conditions.",
+    "Calculates unpooled SE and two-tailed p-value.",
+    "Concludes in context without a causal overclaim."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned directly to the Fall 2026 CED topic files. Original practice is newly written; AP Classroom items are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Video seeks were checked against caption excerpts, not independently scrubbed against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "Use unrounded statistics to calculate the p-value. The two-sided probability is twice the appropriate one-tail area for the symmetric t distribution. A tiny p-value is not the probability of an exact observed sample."
+   },
+   {
+    "kind": "wording",
+    "text": "Welch degrees of freedom are used. Adding n₁−1 and n₂−1 is not the general unpooled two-sample formula; the video describes that shortcut as good enough, but this page calculates the appropriate reference distribution."
+   }
+  ]
+ }
+}
