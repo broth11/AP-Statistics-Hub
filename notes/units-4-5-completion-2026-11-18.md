@@ -15,3 +15,7 @@ Validation: every one of the 50 lesson JSON files passes the repository validato
 Review limits: timestamps are anchored to caption excerpts rather than independently checked video frames. The CED profiles and raw source material were not updated. New pages are marked live on review branches; merging publishes through the existing Pages workflow.
 
 Merge lesson branches in order after the earlier Unit 1 branches: lessons/ced-4-1-to-4-5, lessons/ced-4-6-to-5-1, lessons/ced-5-2-to-5-5. The standalone fix/literal-question-labels branch can be merged independently; the same styling fix is included with the lesson additions.
+
+## Shared-style regression check
+
+All 50 pages were loaded with the label fix. The twelve additions passed. Four older lessons (videos 36, 39, 40, and 58) report worked questions taller than the preferred 791px limit. Baseline checks without the font fix reproduce exactly the same heights, so these are pre-existing layout warnings. Existing lessons were not rewritten.

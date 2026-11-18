@@ -29,7 +29,7 @@ function menuHtml(site, lessons, activeUnit, current) {
   </div>`;
 }
 
-export function renderTopbar({ site, lessons = [], activeUnit = null, current = null, crumb = '', sections = null }) {
+export function renderTopbar({ site, lessons = [], activeUnit = null, current = null, crumb = '', sections = null, showUnits = true }) {
   const live = lessons.filter((l) => l.status === 'live').sort((a, b) => a.n - b.n);
   const i = live.findIndex((l) => l.n === current);
   const arrow = (l, sym, word) => (l
@@ -44,7 +44,7 @@ export function renderTopbar({ site, lessons = [], activeUnit = null, current = 
   return `
     <div class="topbar-row">
       <a class="site-title" href="index.html">${esc(site.siteTitle)}</a>
-      ${menuHtml(site, lessons, activeUnit, current)}
+      ${showUnits ? menuHtml(site, lessons, activeUnit, current) : ''}
       <div class="crumb">${esc(crumb)}</div>
       ${nav}
     </div>

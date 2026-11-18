@@ -23,8 +23,9 @@ function lessonRow(l) {
 
 function render(site, index) {
   const unit = unitFromHash();
+  const focusedUnit = document.activeElement?.dataset?.homeUnit;
   document.title = site.siteTitle;
-  document.getElementById('topbar').innerHTML = renderTopbar({ site, lessons: index.lessons, activeUnit: unit });
+  document.getElementById('topbar').innerHTML = renderTopbar({ site, showUnits: false });
   watchTopbar();
   const u = site.units.find((x) => x.id === unit);
   const pane = u ? `
@@ -42,9 +43,21 @@ function render(site, index) {
         <div class="lede">${esc(site.home.lede)}</div>
         ${site.home.pilot ? `<div class="pilot">${esc(site.home.pilot)}</div>` : ''}
       </div>
-      <div class="home-list">${pane}</div>
+      <div class="home-list">
+        <nav class="home-units" aria-label="Choose a unit">
+          ${site.units.filter((x) => !x.fallback).map((x) => `<button class="home-unit-btn${x.id === unit ? ' is-active' : ''}" data-home-unit="${x.id}" aria-pressed="${x.id === unit}" aria-controls="home-lessons">${esc(x.tab)}</button>`).join('')}
+        </nav>
+        <div class="home-lessons" id="home-lessons" aria-live="polite">${pane}</div>
+        ${site.units.filter((x) => x.fallback).map((x) => `<a class="home-reviews" href="#unit-${x.id}"${x.id === unit ? ' aria-current="page"' : ''}>${esc(x.name)}</a>`).join('')}
+      </div>
     </div>`;
+  if (focusedUnit) document.querySelector(`[data-home-unit="${focusedUnit}"]`)?.focus({ preventScroll: true });
 }
+
+document.addEventListener('click', (e) => {
+  const button = e.target.closest('[data-home-unit]');
+  if (button) location.hash = `unit-${button.dataset.homeUnit}`;
+});
 
 Promise.all([getJSON('data/site.json'), getJSON('data/lessons.json')]).then(([site, index]) => {
   render(site, index);
