@@ -2,7 +2,11 @@
 
 Moved to Claude on 2026-11-05 from a previous project. The old copy is read-only. This file captures where the work stood so it can continue here.
 
-## Status (5 Nov 2026)
+## Status (18 Nov 2026)
+
+All indexed CED Unit 1–3 videos now have study pages: 38 pages, including twelve new Unit 1 pages. No new explorers were added. See `unit-1-completion-2026-11-18.md` for scope, checks, sources, and review limits. The sections below retain historical notes and may describe earlier states.
+
+## Historical status (5 Nov 2026)
 
 Moved to GitHub and rebuilt as a modular static site in `docs/` (plain HTML, CSS, JavaScript, and one JSON file per lesson). The original single-file build is in `archive/`. 2.10 is live. 1.13 and 3.6-3.7 were built with the `video-study-site` skill and are drafts in review. Transcripts moved to the private `AP-Statistics-Hub-transcripts` repo, linked as a submodule. See the README for publishing and building lessons.
 

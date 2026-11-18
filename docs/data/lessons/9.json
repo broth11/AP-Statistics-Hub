@@ -1,0 +1,307 @@
+{
+ "n": 9,
+ "unit": 1,
+ "topic": "1.9",
+ "title": "Comparisons of the Distributions for One Quantitative Variable",
+ "videoId": "S2wXF4QVYPU",
+ "videoTitle": "AP Statistics Topic 1.9 Comparisons of the Distributions for One Quantitative Variable",
+ "intro": "Compare distributions directly and use z-scores to compare relative positions within different reference groups.",
+ "moments": [
+  {
+   "t": 89,
+   "type": "Key idea",
+   "title": "Compare full distributions",
+   "text": "Compare center, spread, shape, and unusual features."
+  },
+  {
+   "t": 151,
+   "type": "Key idea",
+   "title": "Boxplot comparisons",
+   "text": "Compare median and IQR while recognizing what is not shown."
+  },
+  {
+   "t": 279,
+   "type": "Key idea",
+   "title": "Use comparative sentences",
+   "text": "Say which group has the larger center or greater spread."
+  },
+  {
+   "t": 599,
+   "type": "Key idea",
+   "title": "Standardized scores",
+   "text": "Express a value's displacement in standard-deviation units."
+  },
+  {
+   "t": 665,
+   "type": "Key idea",
+   "title": "The z-score formula",
+   "text": "Subtract the mean and divide by the standard deviation."
+  },
+  {
+   "t": 726,
+   "type": "Key idea",
+   "title": "Interpret the sign",
+   "text": "A negative score is below the mean; a positive score is above it."
+  },
+  {
+   "t": 899,
+   "type": "Key idea",
+   "title": "Relative position",
+   "text": "Compare individuals relative to their own distributions."
+  },
+  {
+   "t": 1026,
+   "type": "Key idea",
+   "title": "A raw score needs a reference",
+   "text": "The same score can have different z-scores in different classes."
+  },
+  {
+   "t": 1070,
+   "type": "Key idea",
+   "title": "Score of 78",
+   "text": "A score of 78 with mean 80 and SD 5 is slightly below average."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Compare like with like",
+     "text": "Use the same variable and units, and pair median with median or mean with mean."
+    },
+    {
+     "letter": "2",
+     "name": "Compare directly",
+     "text": "State higher or lower center and greater or smaller spread, supported by values."
+    },
+    {
+     "letter": "3",
+     "name": "Standardize",
+     "text": "Subtract the reference mean and divide by the reference SD."
+    },
+    {
+     "letter": "4",
+     "name": "Interpret relative performance",
+     "text": "A higher z-score means a higher relative value; whether that is better depends on context."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Compare the same score in different classes",
+     "q": "In the video, a score of 78 is compared with a class mean of 80 and SD 5, and with another class mean of 70 and SD 12. Calculate and interpret both z-scores.",
+     "steps": [
+      {
+       "t": "Standardize within the first class.",
+       "work": {
+        "text": "Use the first class's mean and SD.",
+        "tex": [
+         "$z_1=(78-80)/5=-0.4$"
+        ]
+       }
+      },
+      {
+       "t": "Standardize within the second class.",
+       "work": {
+        "text": "Use the second class's mean and SD.",
+        "tex": [
+         "$z_2=(78-70)/12\\approx0.667$"
+        ]
+       }
+      },
+      {
+       "t": "Compare relative positions.",
+       "work": {
+        "text": "The first score is 0.4 SD below its class mean. The second is about 0.667 SD above its class mean."
+       }
+      }
+     ],
+     "answer": "78 has the higher relative position in the second class, even though the raw score is the same.",
+     "seek": 1070,
+     "formula": [
+      "$z=\\dfrac{x-\\mu}{\\sigma}$"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Two separate descriptions",
+     "weak": "A has median 20. B has median 30.",
+     "better": "B has the higher median: 30 minutes compared with 20 minutes for A.",
+     "seek": 280
+    },
+    {
+     "kind": "Common trap",
+     "title": "A percentile from a z-score",
+     "weak": "A z-score of 1 means the 84th percentile for any data.",
+     "better": "A z-score of 1 means one SD above the mean. A percentile requires distributional information.",
+     "seek": 600
+    },
+    {
+     "kind": "Common trap",
+     "title": "Reversed subtraction",
+     "weak": "Subtract the score from the mean.",
+     "better": "Subtract the mean from the score, then divide by SD.",
+     "seek": 665
+    },
+    {
+     "kind": "Common trap",
+     "title": "Higher means better",
+     "weak": "The largest z-score always represents the best result.",
+     "better": "Higher is better for some outcomes, but lower is better for outcomes such as completion time.",
+     "seek": 900
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Z-scores can be calculated without a normal model. Statements about most observations being within one, two, or three SDs need distributional qualifications."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "A time of 42 minutes is recorded in a population with mean 50 and SD 4 minutes. What is its z-score?",
+     "opts": [
+      "2",
+      "−2",
+      "−8",
+      "10.5"
+     ],
+     "ok": 1,
+     "why": [
+      "The sign must be negative because 42 is below 50.",
+      "(42−50)/4=−2.",
+      "−8 is the unstandardized deviation.",
+      "Dividing 42 by 4 omits the mean."
+     ],
+     "seek": 665
+    },
+    {
+     "stem": "Which statement compares distributions directly?",
+     "opts": [
+      "Group A has some variation",
+      "Both are graphs",
+      "B has a higher median and a smaller IQR than A",
+      "Group A contains numbers"
+     ],
+     "ok": 2,
+     "why": [
+      "No comparison is made.",
+      "This says nothing about the distributions.",
+      "It compares matching measures of center and spread.",
+      "This does not compare statistical features."
+     ],
+     "seek": 280
+    },
+    {
+     "stem": "Rae has z=1.4 in a speed test; Sol has z=0.9 in a different speed test. Which follows?",
+     "opts": [
+      "Rae's speed is farther above its reference mean in SD units",
+      "Rae must have the larger raw speed",
+      "Rae must be at the 90th percentile",
+      "The two tests have equal SDs"
+     ],
+     "ok": 0,
+     "why": [
+      "1.4 exceeds 0.9 in standardized units.",
+      "Raw speeds depend on different means and SDs.",
+      "A percentile requires distributional information.",
+      "Standardizing does not imply equal original SDs."
+     ],
+     "seek": 900
+    },
+    {
+     "stem": "Which is required to calculate a z-score?",
+     "opts": [
+      "A normal distribution",
+      "A median and IQR",
+      "A histogram",
+      "A reference mean and a positive SD"
+     ],
+     "ok": 3,
+     "why": [
+      "Normality is not needed for the calculation.",
+      "These are not the values in the z formula.",
+      "A histogram is not required.",
+      "The SD must be positive to divide by it."
+     ],
+     "seek": 665
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "Route A has median travel time 32 minutes and IQR 8 minutes. Route B has median 38 minutes and IQR 5 minutes. For a different comparison, population means and SDs are A: 34 and 4 minutes; B: 40 and 6 minutes.",
+   "parts": [
+    "(a) Compare typical travel time and the middle-half variability.",
+    "(b) Find the z-score of a 30-minute journey on each route.",
+    "(c) Which 30-minute journey is relatively faster, and why does a z-score not give an exact percentile here?"
+   ],
+   "sample": [
+    "(a) Route A has the shorter typical time, with median 32 versus 38 minutes. Route B has the less variable middle half, with IQR 5 versus 8 minutes.",
+    "(b) For A, z=(30−34)/4=−1. For B, z=(30−40)/6≈−1.667.",
+    "(c) The B journey is relatively faster because it is farther below its route's mean in SD units. The population distribution shapes are not given, so these z-scores do not determine exact percentiles."
+   ],
+   "checklist": [
+    "Compares medians in context.",
+    "Compares IQRs in context.",
+    "Calculates both signed z-scores.",
+    "Explains why the lower standardized time is relatively faster.",
+    "Avoids assuming normality."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.9, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "Z-scores can be calculated without a normal model. Statements about most observations being within one, two, or three SDs need distributional qualifications."
+   }
+  ]
+ }
+}

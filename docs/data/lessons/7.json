@@ -176,7 +176,6 @@
       }
      ],
      "answer": "The mean and median are 4 kg, and package masses typically differ from the sample mean by about 1.581 kg.",
-     "seek": 1630,
      "formula": [
       "$s=\\sqrt{\\dfrac{\\sum(x_i-\\bar x)^2}{n-1}}$"
      ]
@@ -214,8 +213,7 @@
        }
       }
      ],
-     "answer": "The median is 8 minutes, and the middle half spans from 4.5 to 12 minutes.",
-     "seek": 982
+     "answer": "The median is 8 minutes, and the middle half spans from 4.5 to 12 minutes."
     }
    ]
   },
