@@ -1,0 +1,296 @@
+{
+ "n": 3,
+ "unit": 1,
+ "topic": "1.3",
+ "title": "Tabular Representation and Summary Statistics of One Categorical Variable",
+ "videoId": "chnlfzt5h7U",
+ "videoTitle": "AP Statistics Topic 1.3 Tabular Representation and Summary Statistics of One Categorical Variable",
+ "intro": "Construct frequency and relative frequency tables and support categorical claims with counts and proportions.",
+ "moments": [
+  {
+   "t": 63,
+   "type": "Key idea",
+   "title": "Categorical data",
+   "text": "Record each individual's category."
+  },
+  {
+   "t": 99,
+   "type": "Key idea",
+   "title": "Frequency tables",
+   "text": "A frequency is the number of observations in a category."
+  },
+  {
+   "t": 155,
+   "type": "Key idea",
+   "title": "Relative frequency tables",
+   "text": "Divide each category count by the total."
+  },
+  {
+   "t": 191,
+   "type": "Key idea",
+   "title": "Proportions and percentages",
+   "text": "Multiply a proportion by 100 to express it as a percentage."
+  },
+  {
+   "t": 237,
+   "type": "Key idea",
+   "title": "Rounding",
+   "text": "Retain enough precision to interpret the data."
+  },
+  {
+   "t": 295,
+   "type": "Key idea",
+   "title": "Describe the table",
+   "text": "Identify common categories and compare their counts or proportions."
+  },
+  {
+   "t": 334,
+   "type": "Key idea",
+   "title": "Lemur types",
+   "text": "Count each lemur type to organize the sample."
+  },
+  {
+   "t": 389,
+   "type": "Key idea",
+   "title": "Calculate relative frequencies",
+   "text": "The sample contains 70 lemurs, including 20 ring-tailed and 11 mouse lemurs."
+  },
+  {
+   "t": 480,
+   "type": "Key idea",
+   "title": "Most common category",
+   "text": "Compare the counts to identify the modal category."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Frequency",
+     "text": "A category count answers how many."
+    },
+    {
+     "letter": "2",
+     "name": "Relative frequency",
+     "text": "The category count divided by the total answers what proportion."
+    },
+    {
+     "letter": "3",
+     "name": "Percentage",
+     "text": "A relative frequency expressed out of 100."
+    },
+    {
+     "letter": "4",
+     "name": "Check the total",
+     "text": "Mutually exclusive, exhaustive category counts total the sample size."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Convert counts to relative frequencies",
+     "q": "In the video's sample of 70 lemurs, 20 are ring-tailed and 11 are mouse lemurs. Find each relative frequency.",
+     "steps": [
+      {
+       "t": "Use the full sample as the denominator.",
+       "work": {
+        "text": "Both proportions use the total of 70 lemurs."
+       }
+      },
+      {
+       "t": "Divide each category count by the total.",
+       "work": {
+        "text": "Keep the unrounded fractions for calculations.",
+        "tex": [
+         "$20/70\\approx0.286$",
+         "$11/70\\approx0.157$"
+        ]
+       }
+      },
+      {
+       "t": "Report percentages in context.",
+       "work": {
+        "text": "Multiply each proportion by 100.",
+        "tex": [
+         "$100(20/70)\\approx28.6\\%$",
+         "$100(11/70)\\approx15.7\\%$"
+        ]
+       }
+      }
+     ],
+     "answer": "About 28.6% of the sampled lemurs are ring-tailed and 15.7% are mouse lemurs.",
+     "seek": 389
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Counts do not change variable type",
+     "weak": "Lemur type becomes quantitative after counting.",
+     "better": "Lemur type remains categorical; the table records counts of each type.",
+     "seek": 100
+    },
+    {
+     "kind": "Common trap",
+     "title": "Wrong denominator",
+     "weak": "Divide by the largest category.",
+     "better": "Divide by the total number of observations in the relevant sample.",
+     "seek": 155
+    },
+    {
+     "kind": "Common trap",
+     "title": "Proportion versus percent",
+     "weak": "A relative frequency of 0.18 is 0.18%.",
+     "better": "A relative frequency of 0.18 is 18%.",
+     "seek": 192
+    },
+    {
+     "kind": "Common trap",
+     "title": "Rounded totals",
+     "weak": "Rounded percentages must sum to exactly 100%.",
+     "better": "Unrounded relative frequencies sum to 1. Rounded displays can differ slightly.",
+     "seek": 389
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "A survey records walking: 18, cycling: 12, bus: 30. What is the relative frequency for cycling?",
+     "opts": [
+      "0.12",
+      "0.20",
+      "0.40",
+      "12"
+     ],
+     "ok": 1,
+     "why": [
+      "12 is not divided by 100 here.",
+      "There are 60 responses, so 12/60=0.20.",
+      "12/30 uses the bus count, not the total.",
+      "12 is the frequency."
+     ],
+     "seek": 155
+    },
+    {
+     "stem": "A pet-type table gives 38% dogs, 27% cats, 21% fish, and 14% other. Which claim is supported?",
+     "opts": [
+      "Most respondents have dogs",
+      "Dogs are 38% of all pets in the country",
+      "Dogs are the most common recorded category",
+      "There are exactly 38 dogs"
+     ],
+     "ok": 2,
+     "why": [
+      "38% is less than a majority.",
+      "These data do not establish a country-wide percentage.",
+      "38% exceeds each of the other category percentages.",
+      "The sample size is unknown."
+     ],
+     "seek": 295
+    },
+    {
+     "stem": "A relative frequency table totals 0.999 after rounding. What is the best response?",
+     "opts": [
+      "Check the counts and rounding before declaring an error",
+      "Add an observation to the largest category",
+      "Replace the last proportion with zero",
+      "The variable must be quantitative"
+     ],
+     "ok": 0,
+     "why": [
+      "Small discrepancies can result from rounding.",
+      "Changing data is not a valid correction.",
+      "This would discard a category.",
+      "Rounding does not determine variable type."
+     ],
+     "seek": 389
+    },
+    {
+     "stem": "Which is sufficient to recover category counts exactly from relative frequencies?",
+     "opts": [
+      "Only the most common category",
+      "Only the largest percentage",
+      "Only the variable name",
+      "The total and exact, unrounded proportions"
+     ],
+     "ok": 3,
+     "why": [
+      "A category name is insufficient.",
+      "A percentage alone does not determine a count.",
+      "The variable name supplies no sample size.",
+      "Multiply each exact proportion by the total."
+     ],
+     "seek": 155
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "A community center records one preferred activity for each of 80 members: swimming 32, badminton 24, yoga 16, and other 8.",
+   "parts": [
+    "(a) Construct a frequency and relative frequency table in words or text.",
+    "(b) Describe the two most common preferences using percentages.",
+    "(c) Assess the claim that a majority chose swimming."
+   ],
+   "sample": [
+    "(a) Swimming: 32, 0.40; badminton: 24, 0.30; yoga: 16, 0.20; other: 8, 0.10. Counts total 80 and proportions total 1.",
+    "(b) Swimming is most common at 40%, followed by badminton at 30%.",
+    "(c) The claim is false: 40% chose swimming, which is less than 50%. It is the largest category, but not a majority."
+   ],
+   "checklist": [
+    "Lists all four category counts.",
+    "Uses 80 as the denominator.",
+    "Gives all four correct relative frequencies.",
+    "Compares the two largest categories in context.",
+    "Distinguishes a modal category from a majority."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.3, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   }
+  ]
+ }
+}

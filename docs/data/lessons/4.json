@@ -1,0 +1,304 @@
+{
+ "n": 4,
+ "unit": 1,
+ "topic": "1.4",
+ "title": "Graphical Representations for One Categorical Variable",
+ "videoId": "LKd3jLSUO7o",
+ "videoTitle": "AP Statistics Topic 1.4 Graphical Representations for One Categorical Variable",
+ "intro": "Choose bar charts or pie charts, interpret their scales, and compare categorical distributions fairly.",
+ "moments": [
+  {
+   "t": 67,
+   "type": "Key idea",
+   "title": "Two displays",
+   "text": "Bar charts and pie charts display categorical data."
+  },
+  {
+   "t": 82,
+   "type": "Key idea",
+   "title": "Bar height",
+   "text": "Height or length represents a count or relative frequency."
+  },
+  {
+   "t": 109,
+   "type": "Key idea",
+   "title": "Equal bar widths",
+   "text": "Compare heights rather than changing the widths of bars."
+  },
+  {
+   "t": 136,
+   "type": "Key idea",
+   "title": "Estimate from a scale",
+   "text": "Read the axis before estimating category counts."
+  },
+  {
+   "t": 211,
+   "type": "Key idea",
+   "title": "Pie charts",
+   "text": "Slice areas represent fractions of the whole."
+  },
+  {
+   "t": 282,
+   "type": "Key idea",
+   "title": "Claims need evidence",
+   "text": "Use a displayed count or proportion to support a claim."
+  },
+  {
+   "t": 325,
+   "type": "Key idea",
+   "title": "Compare groups carefully",
+   "text": "Different group totals can reverse a comparison of counts and proportions."
+  },
+  {
+   "t": 445,
+   "type": "Key idea",
+   "title": "Tree species example",
+   "text": "Read approximate species counts from a sample of 300 trees."
+  },
+  {
+   "t": 549,
+   "type": "Key idea",
+   "title": "Convert counts to proportions",
+   "text": "Divide estimated counts by the known sample total."
+  }
+ ],
+ "sections": [
+  {
+   "id": "decision",
+   "type": "decision",
+   "tab": "Decision check",
+   "kicker": "Choose and justify",
+   "title": "Choose the right interpretation",
+   "columns": [],
+   "cards": [
+    {
+     "letter": "1",
+     "name": "Bar chart",
+     "text": "Use a common baseline, equal widths, category labels, and a count or proportion scale."
+    },
+    {
+     "letter": "2",
+     "name": "Pie chart",
+     "text": "Use disjoint categories that account for the whole; slices total 100%."
+    },
+    {
+     "letter": "3",
+     "name": "Different group sizes",
+     "text": "Compare proportions when the question concerns the share in each category."
+    },
+    {
+     "letter": "4",
+     "name": "Graph readings",
+     "text": "Treat readings from an unlabeled bar as estimates, not exact counts."
+    }
+   ]
+  },
+  {
+   "id": "procedure",
+   "type": "procedure",
+   "tab": "Worked questions",
+   "kicker": "Worked examples",
+   "title": "Work through the method",
+   "questions": [
+    {
+     "obj": "Estimate a proportion from a bar chart",
+     "q": "The video shows a sample of 300 Ohio trees. The elm bar is approximately 25 trees. Estimate the percentage of sampled trees that are elms.",
+     "steps": [
+      {
+       "t": "Read the scale and category.",
+       "work": {
+        "text": "The axis shows counts, and the elm bar is approximately 25."
+       }
+      },
+      {
+       "t": "Divide by the total sample size.",
+       "work": {
+        "text": "The given total is 300 trees.",
+        "tex": [
+         "$25/300\\approx0.0833$"
+        ]
+       }
+      },
+      {
+       "t": "Convert to a percentage.",
+       "work": {
+        "text": "The estimate inherits the uncertainty of reading the bar.",
+        "tex": [
+         "$100(25/300)\\approx8.3\\%$"
+        ]
+       }
+      }
+     ],
+     "answer": "Approximately 8.3% of the sampled trees are elms.",
+     "seek": 474
+    }
+   ]
+  },
+  {
+   "id": "wording",
+   "type": "wording",
+   "tab": "Wording and traps",
+   "kicker": "Exam wording",
+   "title": "Avoid these exam traps",
+   "traps": [
+    {
+     "kind": "Common trap",
+     "title": "Counts versus shares",
+     "weak": "A taller count bar always means a larger percentage.",
+     "better": "Compare category counts relative to their own group totals.",
+     "seek": 326
+    },
+    {
+     "kind": "Common trap",
+     "title": "Unsupported precision",
+     "weak": "The bar contains exactly 25 trees.",
+     "better": "The unlabeled bar appears to represent approximately 25 trees.",
+     "seek": 136
+    },
+    {
+     "kind": "Common trap",
+     "title": "A pie with overlap",
+     "weak": "Use slices for overlapping memberships.",
+     "better": "Pie slices must form disjoint parts of one whole.",
+     "seek": 212
+    },
+    {
+     "kind": "Common trap",
+     "title": "Drawing a chart",
+     "weak": "Technology means construction is not a required skill.",
+     "better": "Know how to label axes, choose a scale, and represent the counts or proportions correctly.",
+     "seek": 410
+    }
+   ],
+   "notes": [
+    {
+     "label": "Wording check.",
+     "text": "Constructing categorical graphs is a CED learning objective. The video downplays drawing them by hand; this page retains the construction requirements."
+    }
+   ]
+  },
+  {
+   "id": "mcq",
+   "type": "mcq",
+   "tab": "Multiple choice",
+   "kicker": "Check your understanding",
+   "title": "Check the reasoning",
+   "questions": [
+    {
+     "stem": "Club A has 30 cyclists among 50 members. Club B has 48 among 120. Which is true?",
+     "opts": [
+      "A has more cyclists and a higher proportion",
+      "B has a higher proportion",
+      "A has a higher proportion, but B has more cyclists",
+      "Both proportions are equal"
+     ],
+     "ok": 2,
+     "why": [
+      "30 is less than 48.",
+      "48/120=0.40, below 30/50=0.60.",
+      "A has 60% and B has 40%, while 48 exceeds 30.",
+      "60% differs from 40%."
+     ],
+     "seek": 326
+    },
+    {
+     "stem": "Which is essential for a conventional bar chart of counts?",
+     "opts": [
+      "A common zero baseline and a labeled count scale",
+      "Bars ordered numerically by category name",
+      "Bars of different widths",
+      "A continuous horizontal number line"
+     ],
+     "ok": 0,
+     "why": [
+      "A common zero baseline lets lengths represent counts fairly.",
+      "Category names have no required numerical order.",
+      "Unequal widths can mislead.",
+      "A categorical axis lists categories."
+     ],
+     "seek": 82
+    },
+    {
+     "stem": "A pie chart slice represents one quarter of the area. What does it establish?",
+     "opts": [
+      "There are 25 individuals",
+      "That category is 25% of observations",
+      "The sample size is four",
+      "The category count exceeds every other count"
+     ],
+     "ok": 1,
+     "why": [
+      "The sample size is unknown.",
+      "A quarter of the area represents one quarter of the observations.",
+      "Four equal quarters do not imply four individuals.",
+      "Another slice could be larger."
+     ],
+     "seek": 212
+    },
+    {
+     "stem": "A chart records which sports students play; students may choose several. Why is an ordinary pie chart unsuitable?",
+     "opts": [
+      "The categories are words",
+      "The chart would need colors",
+      "Sports cannot be counted",
+      "The responses overlap and do not partition students"
+     ],
+     "ok": 3,
+     "why": [
+      "Pie charts use categorical labels.",
+      "Color is not the mathematical issue.",
+      "Sports participation can be counted.",
+      "One student can belong to several categories, so slices are not disjoint parts of the whole."
+     ],
+     "seek": 212
+    }
+   ]
+  },
+  {
+   "id": "frq",
+   "type": "frq",
+   "tab": "Free response",
+   "kicker": "Practice",
+   "title": "Write a complete response",
+   "prompt": "At two campuses, students report one main lunch choice. Campus A: packed 48, cafeteria 24, other 8. Campus B: packed 60, cafeteria 90, other 50.",
+   "parts": [
+    "(a) Specify how to construct comparable relative frequency bar charts.",
+    "(b) Compare packed-lunch choices using counts and percentages.",
+    "(c) Explain why the counts alone give a different impression."
+   ],
+   "sample": [
+    "(a) Use the same categories and a common percentage scale starting at zero. For A, plot 60%, 30%, and 10%; for B, plot 30%, 45%, and 25%, with equal-width bars and clear labels.",
+    "(b) Campus B has more packed lunches, 60 versus 48. Campus A has the larger share, 60% versus 30%.",
+    "(c) The campus totals differ: A has 80 students and B has 200. Relative frequencies account for those unequal totals."
+   ],
+   "checklist": [
+    "Finds the totals 80 and 200.",
+    "Gives all six percentages.",
+    "Specifies a common labeled percentage scale.",
+    "Compares counts and proportions correctly.",
+    "Explains the effect of different totals."
+   ]
+  }
+ ],
+ "review": {
+  "status": "approved",
+  "flags": [
+   {
+    "kind": "alignment",
+    "text": "Aligned to Fall 2026 CED topic 1.4, local topic profile, and relevant question-archetype logic. Practice questions are original; source exemplars are not reproduced."
+   },
+   {
+    "kind": "timestamps",
+    "text": "Seek links are anchored to auto-generated transcript lines. They have not been independently checked against video frames."
+   },
+   {
+    "kind": "placement",
+    "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "wording",
+    "text": "Constructing categorical graphs is a CED learning objective. The video downplays drawing them by hand; this page retains the construction requirements."
+   }
+  ]
+ }
+}
