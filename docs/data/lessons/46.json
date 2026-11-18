@@ -158,41 +158,50 @@
    "id": "desmos",
    "type": "desmos",
    "tab": "Desmos",
-   "kicker": "Calculator practice",
-   "title": "Calculate the t statistic and p-value",
-   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Use the menus and controls below to carry out each task yourself, then reveal the expected result.",
    "steps": [
     {
-     "title": "Standardize",
-     "suppose": "we want the t statistic for the worked example.",
+     "title": "Enter the sample information",
+     "suppose": "we want to test a claim about the population mean.",
      "do": [
-      "Enter `s=7.216878364870`.",
-      "Enter `u=(780-800)/s`."
+      "Press {plus}, then choose {inference}.",
+      "Under [[Inference for Quantitative Data]], choose [[t-test]].",
+      "Choose the [[Stats]] tab.",
+      "Under [[SAMPLE 1]], enter 12 for [[sample size]].",
+      "Enter 780 for [[mean]].",
+      "Enter 25 for [[stdev]].",
+      "Press [[Create Test]]."
      ],
-     "observe": "Here s is the standard error, not an individual-observation SD.",
-     "expected": "$t\\approx-2.771281$",
-     "seek": 991
+     "observe": "Enter the sample SD, not the standard error. The tool calculates the standard error.",
+     "expected": "$t\\approx-2.771281$ after the null and tail are set.",
+     "seek": 1636
     },
     {
-     "title": "Find the tail area",
+     "title": "Set the null and alternative",
      "suppose": "we want the p-value for the stated alternative.",
      "do": [
-      "Enter `v=11.000000000000`.",
-      "Enter `tdist(v).cdf(u)`."
+      "On the test item, open [[Significance Test]].",
+      "Under [[Null hypothesis]], enter 800 in the hypothesis field.",
+      "Under [[Tails]], select [[Left]].",
+      "Read the displayed t statistic, df, and p-value.",
+      "For more digits, open the three-dot output menu beside the test results."
      ],
-     "observe": "A two-sided p-value includes both tails. Do not double a result already calculated for both tails.",
-     "expected": "$p\\approx0.009093$",
-     "seek": 1140
+     "observe": "Left corresponds to a population mean below the hypothesized value.",
+     "expected": "$t\\approx-2.771281$, $p\\approx0.009093$.",
+     "seek": 1636
     },
     {
-     "title": "Compare with alpha",
+     "title": "Make the decision",
      "suppose": "we use significance level 0.05.",
      "do": [
-      "Compare the displayed p-value with the stated significance level."
+      "Compare the displayed p-value with 0.05.",
+      "Write the decision and the conclusion about the population in context."
      ],
-     "observe": "A small p-value is evidence against the null, not the probability the null is true.",
+     "observe": "The significance level is used for your decision. The p-value is calculated assuming the null hypothesis, not as a probability that the null is true.",
      "expected": "Reject $H_0$.",
-     "seek": 1422
+     "seek": 1636
     }
    ]
   },
@@ -360,6 +369,10 @@
    {
     "kind": "wording",
     "text": "Use unrounded statistics to calculate the p-value. The two-sided probability is twice the appropriate one-tail area for the symmetric t distribution. A tiny p-value is not the probability of an exact observed sample."
+   },
+   {
+    "kind": "calculator",
+    "text": "Revised to menu-guided instructions with the existing Desmos button icons. The inference, t-test Stats, sample 2, Confidence Interval, Significance Test, distribution, table, regression, and statistics-function controls were inspected in the embedded calculator."
    }
   ]
  }

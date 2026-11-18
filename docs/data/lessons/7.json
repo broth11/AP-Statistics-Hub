@@ -221,50 +221,59 @@
    "id": "desmos",
    "type": "desmos",
    "tab": "Desmos",
-   "kicker": "Calculator practice",
-   "title": "Calculate summaries from a list",
-   "intro": "Use the empty calculator to enter the supplementary package-mass data. These commands follow the video; the data are new.",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "Start with the empty calculator. Summary statistics use the table and statistics-function menus; an inference test is not needed for describing a data set.",
    "steps": [
     {
-     "title": "Enter the data",
+     "title": "Enter measurements in a table",
      "suppose": "we want summaries for package masses 2, 3, 4, 5, and 6 kg.",
      "do": [
-      "On an empty expression line, enter `W=[2,3,4,5,6]`.",
-      "Check each entry against the data before continuing."
+      "Press {plus}, then choose [[table]].",
+      "Select the first column heading and replace it with `W`.",
+      "Enter 2, 3, 4, 5, and 6 down the W column, one value per row.",
+      "Check that all five masses are entered correctly; leave the second column unused."
      ],
-     "observe": "W stores all five observations. The capital letter is the same in every command.",
+     "observe": "W is the list of five masses. Keep using this same column name for every summary.",
      "expected": "$n=5$",
      "seek": 2042
     },
     {
-     "title": "Find center",
-     "suppose": "we want the mean and median.",
+     "title": "Find the mean and median",
+     "suppose": "we want two measures of center.",
      "do": [
-      "On a new line type `mean(W)`.",
-      "On another line type `median(W)`."
+      "Press {plus}, then choose [[expression]].",
+      "Open [[funcs]] on the calculator keypad. Under [[STATISTICS]], choose [[mean]].",
+      "Enter `W` inside the parentheses to make `mean(W)`.",
+      "Add another [[expression]], then use [[funcs]] → [[STATISTICS]] → [[median]] and enter W."
      ],
-     "observe": "The functions summarize the list without replacing the original observations.",
-     "expected": "$\\bar x=4$, median $=4$ kg.",
+     "observe": "The mean uses all five masses, while the median is the middle ordered mass.",
+     "expected": "$\\bar x=4$ kg; median $=4$ kg.",
      "seek": 2116
     },
     {
-     "title": "Find sample spread",
-     "suppose": "we want the sample standard deviation.",
+     "title": "Find the sample standard deviation",
+     "suppose": "we want the sample spread in kilograms.",
      "do": [
-      "On a new line type `stdev(W)`."
+      "Press {plus}, then choose [[expression]].",
+      "Open [[funcs]]. Under [[STATISTICS]], choose [[stdev]].",
+      "Enter W inside the parentheses to make `stdev(W)`."
      ],
-     "observe": "Use the sample SD; it uses one fewer than the number of observations in the denominator.",
+     "observe": "Choose stdev, not stdevp: stdev is the sample standard deviation and uses one fewer than the number of observations.",
      "expected": "$s=\\sqrt{2.5}\\approx1.581$ kg.",
      "seek": 2145
     },
     {
-     "title": "Find quartiles",
-     "suppose": "we want the endpoints of the middle half.",
+     "title": "Read the five-number summary",
+     "suppose": "we want the quartiles and extremes.",
      "do": [
-      "On separate lines enter `quartile(W,1)` and `quartile(W,3)`."
+      "Press {plus}, then choose [[expression]].",
+      "Open [[funcs]]. Under [[STATISTICS]], choose [[stats]].",
+      "Enter W inside the parentheses to make `stats(W)`.",
+      "Read the displayed [[Min]], [[Q1]], [[Median]], [[Q3]], and [[Max]] outputs."
      ],
-     "observe": "Quartile conventions can differ across tools for small samples. Report the calculator convention used here.",
-     "expected": "$Q_1=2.5$, $Q_3=5.5$, and $IQR=3$ kg.",
+     "observe": "The stats summary gives the five-number summary. Subtract Q1 from Q3 to find the IQR. Quartile conventions can differ between tools for small samples.",
+     "expected": "Min $=2$, $Q_1=2.5$, median $=4$, $Q_3=5.5$, max $=6$, and $IQR=3$ kg.",
      "seek": 2156
     }
    ]
@@ -441,6 +450,10 @@
    {
     "kind": "alignment",
     "text": "Linear transformations are a CED supplement. The video link attached to the transformation checks reviews standard deviation rather than demonstrating a transformation. Calculator commands use a new five-value list rather than reconstructing the video table."
+   },
+   {
+    "kind": "calculator",
+    "text": "Revised to menu-guided instructions with the existing Desmos button icons. The inference, t-test Stats, sample 2, Confidence Interval, Significance Test, distribution, table, regression, and statistics-function controls were inspected in the embedded calculator."
    }
   ]
  }

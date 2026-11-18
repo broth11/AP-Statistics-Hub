@@ -175,38 +175,47 @@
    "id": "desmos",
    "type": "desmos",
    "tab": "Desmos",
-   "kicker": "Calculator practice",
-   "title": "Normal probabilities for averages",
-   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Use the menus and controls below to carry out each task yourself, then reveal the expected result.",
    "steps": [
     {
-     "title": "Set the sampling SD",
-     "suppose": "we want a probability for the mean of nine study times.",
+     "title": "Create the sampling distribution",
+     "suppose": "we want a model for mean study time from nine students.",
      "do": [
-      "Enter `s=8/sqrt(9)`.",
-      "Enter `normaldist(42,s)`."
+      "Press {plus}, then choose {inference}, then [[Probability Distribution]].",
+      "Choose [[Normal distribution]].",
+      "Enter 42 for [[mean]].",
+      "Enter 8/3 for [[stdev]].",
+      "Press [[Create Distribution]]."
      ],
-     "observe": "The distribution uses the SD of averages.",
-     "expected": "$\\sigma_{\\bar x}\\approx2.666667$",
+     "observe": "Use the sampling standard deviation, not 8. For nine students, the square root of the sample size is 3, so the exact sampling SD is 8/3.",
+     "expected": "$\\mu_{\\bar x}=42$, $\\sigma_{\\bar x}\\approx2.666667$ minutes.",
      "seek": 495
     },
     {
-     "title": "Find an upper tail",
-     "suppose": "we want the probability the mean exceeds 45.",
+     "title": "Find an upper-tail probability",
+     "suppose": "we want the probability that the mean exceeds 45 minutes.",
      "do": [
-      "Enter `1-normaldist(42,s).cdf(45)`."
+      "On the distribution item, open [[Cumulative Probability]].",
+      "Under COMPUTE, keep [[Area]].",
+      "Under REGION, choose [[Right]].",
+      "Enter 45 for the lower bound."
      ],
-     "observe": "The complement leaves the right tail.",
+     "observe": "The shaded right tail describes averages of nine students, rather than individual study times.",
      "expected": "$P(\\bar X>45)\\approx0.1303$",
      "seek": 1405
     },
     {
      "title": "Find the upper one-percent cutoff",
-     "suppose": "we want the 99th percentile of the means.",
+     "suppose": "we want the sample mean that starts the highest 1%.",
      "do": [
-      "Enter `normaldist(42,s).inversecdf(0.99)`."
+      "On the same distribution, open [[Cumulative Probability]] if necessary.",
+      "Under COMPUTE choose [[Bounds]].",
+      "Under REGION choose [[Right]].",
+      "Enter 0.01 for the right-tail probability."
      ],
-     "observe": "Only 1% of sample means lie above this value.",
+     "observe": "The reported bound leaves 1% of sample means above it. The equivalent cumulative probability is 0.99.",
      "expected": "$c\\approx48.204$ minutes.",
      "seek": 1559
     }
@@ -376,6 +385,10 @@
    {
     "kind": "wording",
     "text": "The CLT supplies an approximation, not a guarantee at a particular sample size. The university example explicitly assumes at least 90 students to justify sampling independence."
+   },
+   {
+    "kind": "calculator",
+    "text": "Revised to menu-guided instructions with the existing Desmos button icons. The inference, t-test Stats, sample 2, Confidence Interval, Significance Test, distribution, table, regression, and statistics-function controls were inspected in the embedded calculator."
    }
   ]
  }
