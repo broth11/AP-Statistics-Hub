@@ -158,40 +158,52 @@
    "id": "desmos",
    "type": "desmos",
    "tab": "Desmos",
-   "kicker": "Calculator practice",
-   "title": "Calculate a t confidence interval",
-   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Use the menus and controls below to carry out each task yourself, then reveal the expected result.",
    "steps": [
     {
-     "title": "Find the standard error",
-     "suppose": "we want the interval for the worked example.",
+     "title": "Enter both sample summaries",
+     "suppose": "we want a 92% interval for population mean A minus population mean B.",
      "do": [
-      "Enter `s=sqrt(15.2^2/35+13.8^2/38)`.",
-      "Enter `v=68.788673847556`."
+      "Press {plus}, then choose {inference}.",
+      "Under [[Inference for Quantitative Data]], choose [[t-test]].",
+      "Choose the [[Stats]] tab.",
+      "Under [[SAMPLE 1]], enter 35 for [[sample size]].",
+      "Enter 62.4 for [[mean]].",
+      "Enter 15.2 for [[stdev]].",
+      "Press {plus} beside [[SAMPLE 2 (optional)]].",
+      "Under [[SAMPLE 2]], enter 38 for [[sample size]].",
+      "Enter 54.1 for [[mean]].",
+      "Enter 13.8 for [[stdev]].",
+      "Press [[Create Test]]."
      ],
-     "observe": "Here v is the degrees of freedom; use the Welch value from the worked calculation for independent samples.",
-     "expected": "$SE\\approx3.407744$, $df\\approx68.7887$.",
-     "seek": 871
+     "observe": "Keep school A in SAMPLE 1 and school B in SAMPLE 2. Reversing them reverses the sign of the difference.",
+     "expected": "$\\bar x_A-\\bar x_B=8.3$ minutes.",
+     "seek": 2187
     },
     {
-     "title": "Find the central critical value",
-     "suppose": "we want 92% confidence.",
+     "title": "Build the difference interval",
+     "suppose": "we want Desmos to calculate the whole interval.",
      "do": [
-      "Enter `c=tdist(v).inversecdf(0.96)`."
+      "Open [[Confidence Interval]] on the test item.",
+      "Change [[Confidence level]] to 0.92.",
+      "Open the three-dot output menu at the right of the interval graphic.",
+      "Read [[Lower bound]], [[Upper bound]], [[Point estimate]], and [[Standard error]]."
      ],
-     "observe": "The upper cumulative probability leaves half of the excluded area in each tail.",
-     "expected": "$t^*\\approx1.776935$",
-     "seek": 1289
+     "observe": "Desmos uses both groups to calculate the standard error and Welch degrees of freedom. You do not need to type a precomputed degrees-of-freedom value.",
+     "expected": "92% interval $\\approx(2.2447,\\ 14.3553)$ minutes; $SE\\approx3.407744$.",
+     "seek": 2187
     },
     {
-     "title": "Find the endpoints",
-     "suppose": "we want the lower and upper endpoints.",
+     "title": "Interpret the order",
+     "suppose": "we want to explain the positive interval.",
      "do": [
-      "Enter `8.3-c*s`. ",
-      "Enter `8.3+c*s`."
+      "Check once more that school A was entered as SAMPLE 1.",
+      "Use the two positive endpoints to describe how much greater the population mean for A may be."
      ],
-     "observe": "Retain the unrounded calculator values.",
-     "expected": "$(2.2447,\\ 14.3553)$ minutes.",
+     "observe": "The interval is for population means, not individual students' homework times. Both endpoints are positive.",
+     "expected": "Mean A is estimated to be between 2.245 and 14.355 minutes greater than mean B.",
      "seek": 2187
     }
    ]
@@ -372,6 +384,10 @@
    {
     "kind": "values",
     "text": "Worked-example summary values come from the narration. Population-size assumptions are explicitly supplied to make the 10% condition reviewable. All interval values are recomputed from unrounded inputs."
+   },
+   {
+    "kind": "calculator",
+    "text": "Revised to menu-guided instructions with the existing Desmos button icons. The inference, t-test Stats, sample 2, Confidence Interval, Significance Test, distribution, table, regression, and statistics-function controls were inspected in the embedded calculator."
    }
   ]
  }

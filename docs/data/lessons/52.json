@@ -157,29 +157,32 @@
    "id": "desmos",
    "type": "desmos",
    "tab": "Desmos",
-   "kicker": "Calculator practice",
-   "title": "Calculate and interpret correlation",
-   "intro": "Start with the empty calculator. Type each expression yourself; a video link reviews the underlying method.",
+   "kicker": "Guided practice",
+   "title": "Desmos walkthrough",
+   "intro": "The calculator starts empty. Use the menus and controls below to carry out each task yourself, then reveal the expected result.",
    "steps": [
     {
-     "title": "Enter paired lists",
-     "suppose": "we use the video's five paired observations.",
+     "title": "Enter the paired observations",
+     "suppose": "we use the video's five pairs.",
      "do": [
-      "Enter `X=[5,7,12,16,20]`.",
-      "Enter `Y=[16.5,18.9,19.1,21.6,25.7]`.",
-      "Enter `(X,Y)` to display the scatterplot."
+      "Press {plus}, then choose [[table]].",
+      "Enter 5, 7, 12, 16, and 20 down the first column.",
+      "Enter 16.5, 18.9, 19.1, 21.6, and 25.7 down the second column in the matching rows.",
+      "Check that each row contains one original pair."
      ],
-     "observe": "Equal positions in the lists must refer to the same observation. Adjust the viewing window to see the points.",
+     "observe": "The table draws the scatterplot. Inspect it before interpreting correlation; keep the five pairings intact.",
      "expected": "$n=5$ paired observations.",
      "seek": 1068
     },
     {
-     "title": "Calculate the coefficient",
+     "title": "Read the correlation",
      "suppose": "we want the linear correlation.",
      "do": [
-      "Enter `corr(X,Y)`."
+      "On the table item, press [[Add Regression]] (the small line-and-points button).",
+      "Open the model selector if necessary and choose [[Linear Regression]].",
+      "Under [[STATISTICS]], read r."
      ],
-     "observe": "The positive value describes a strong linear association for these five observations. The scatterplot still matters.",
+     "observe": "The positive value describes a strong linear association. Correlation alone does not establish causality or rule out curvature.",
      "expected": "$r\\approx0.947139$",
      "seek": 1162
     }
@@ -340,6 +343,10 @@
    {
     "kind": "placement",
     "text": "No new explorer is included, as requested."
+   },
+   {
+    "kind": "calculator",
+    "text": "Revised to menu-guided instructions with the existing Desmos button icons. The inference, t-test Stats, sample 2, Confidence Interval, Significance Test, distribution, table, regression, and statistics-function controls were inspected in the embedded calculator."
    }
   ]
  }
